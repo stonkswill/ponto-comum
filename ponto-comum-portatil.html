@@ -1,0 +1,1749 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ponto Comum</title>
+  <meta name="description" content="Análise de futebol pré-jogo: modelo de força dos clubes, comparação com o mercado, odd sugerida, bilhetes por nível de risco e diário de apostas.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f2e2a'/%3E%3Ccircle cx='32' cy='32' r='17' stroke='%23d6ef6b' stroke-width='5' fill='none'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23d6ef6b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+  <style>
+/* Ponto Comum v3 — painel de análise. Verde de campo noturno + limão do logotipo; números em colunas tabulares. */
+:root {
+  --fundo: #f3f5ef; --papel: #ffffff; --tinta: #14211e; --suave: #5b6b65; --linha: #dbe2d9; --marca: #0f2e2a; --marca-txt: #f1f6e8;
+  --limao: #d6ef6b; --acento: #3f7d2a; --acento-txt: #ffffff; --mercado: #2f6fb0; --pos: #237a3b; --neg: #b3402e; --aviso: #9a6a00;
+  --casa: #2f7d5b; --empate: #b9c2bb; --fora: #c2763a; --sombra: 0 1px 2px rgba(15, 46, 42, .06), 0 4px 18px rgba(15, 46, 42, .05);
+  --f-corpo: 'Barlow', 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif; --f-titulo: 'Barlow Condensed', 'Arial Narrow', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --fundo: #0b1513; --papel: #12201d; --tinta: #e6eee6; --suave: #98aaa2; --linha: #24372f; --marca: #081311; --marca-txt: #e9f3dc;
+    --limao: #d6ef6b; --acento: #9fd36a; --acento-txt: #0b1513; --mercado: #7fb2ea; --pos: #79d08f; --neg: #f08b76; --aviso: #e2b44e; --casa: #5bbd8e; --empate: #4a5a53; --fora: #e09a62; --sombra: none; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --fundo: #0b1513; --papel: #12201d; --tinta: #e6eee6; --suave: #98aaa2; --linha: #24372f; --marca: #081311; --marca-txt: #e9f3dc;
+  --limao: #d6ef6b; --acento: #9fd36a; --acento-txt: #0b1513; --mercado: #7fb2ea; --pos: #79d08f; --neg: #f08b76; --aviso: #e2b44e; --casa: #5bbd8e; --empate: #4a5a53; --fora: #e09a62; --sombra: none; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--fundo); color: var(--tinta); font: 15px/1.5 var(--f-corpo); font-variant-numeric: tabular-nums; }
+[hidden] { display: none !important; }
+a { color: inherit; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+
+/* Topo */
+.topo { background: var(--marca); color: var(--marca-txt); position: sticky; top: 0; z-index: 5; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-top: env(safe-area-inset-top, 0px); }
+.barra { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-block: 10px 6px; max-width: 1180px; margin: 0 auto; }
+.marca { display: flex; align-items: baseline; gap: 8px; text-decoration: none; font: 700 22px/1 var(--f-titulo); letter-spacing: .06em; }
+.marca .simbolo { color: var(--limao); font-size: 22px; }
+.marca small { font: 600 11px var(--f-corpo); color: var(--limao); letter-spacing: .1em; }
+.controles { display: flex; gap: 8px; align-items: center; }
+.controles input[type=date] { background: transparent; border: 1px solid rgba(255, 255, 255, .25); border-radius: 8px; padding: 6px 8px; color: var(--marca-txt); color-scheme: dark; }
+.topo .sec { border-color: rgba(255, 255, 255, .25); color: var(--marca-txt); background: transparent; }
+.abas { display: flex; gap: 2px; overflow-x: auto; max-width: 1180px; margin: 0 auto; scrollbar-width: none; }
+.abas a { padding: 10px 14px; text-decoration: none; font: 600 15px var(--f-corpo); color: rgba(241, 246, 232, .72); border-bottom: 3px solid transparent; white-space: nowrap; }
+.abas a.ativa { color: var(--marca-txt); border-bottom-color: var(--limao); }
+.contador { display: inline-block; min-width: 20px; padding: 0 6px; margin-left: 4px; border-radius: 10px; background: var(--limao); color: #0f2e2a; font-size: 12px; text-align: center; }
+.status { max-width: 1180px; margin: 0 auto; padding: 8px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); color: var(--suave); font-size: 13px; min-height: 28px; }
+.status .ok, .status .erro, .status .pulso { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; background: var(--pos); }
+.status .erro { background: var(--neg); }
+.status .pulso { background: var(--aviso); animation: pulso 1.2s infinite; }
+@keyframes pulso { 50% { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) { .status .pulso { animation: none; } }
+
+main { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 8px 40px; }
+.cabeca { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin: 14px 0 10px; }
+.cabeca h1 { font: 700 clamp(30px, 5vw, 44px)/1 var(--f-titulo); margin: 2px 0 0; letter-spacing: .01em; text-wrap: balance; }
+.acoes { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.sobre { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--suave); margin: 0; }
+.nota { color: var(--suave); font-size: 13px; max-width: 78ch; }
+h3 { font: 700 21px var(--f-titulo); margin: 26px 0 8px; letter-spacing: .01em; }
+h4 { margin: 14px 0 6px; font-size: 15px; }
+
+/* Botões */
+.pri, .sec, .link, .fam, .add, .rem { border-radius: 8px; border: 1px solid transparent; padding: 8px 14px; font-weight: 600; font-size: 14px; }
+.pri { background: var(--acento); color: var(--acento-txt); }
+.pri:disabled { opacity: .5; cursor: default; }
+.sec { background: var(--papel); border-color: var(--linha); color: var(--tinta); }
+.link { background: none; border: 0; padding: 0 4px; text-decoration: underline; color: inherit; font-weight: 500; }
+label.sec.arquivo { cursor: pointer; display: inline-flex; align-items: center; }
+label.sec.arquivo input { display: none; }
+.chk { font-size: 13px; color: var(--suave); display: inline-flex; gap: 6px; align-items: center; }
+
+/* Filtros e chips */
+details.filtro, details.sugestoes, details.contexto { background: var(--papel); border: 1px solid var(--linha); border-radius: 12px; padding: 10px 14px; margin: 10px 0; }
+details > summary { cursor: pointer; font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chip { display: inline-flex; gap: 6px; align-items: center; padding: 5px 10px; border: 1px solid var(--linha); border-radius: 999px; font-size: 13px; background: var(--fundo); }
+
+/* Tabelas */
+.tabela { overflow-x: auto; background: var(--papel); border: 1px solid var(--linha); border-radius: 12px; box-shadow: var(--sombra); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th { text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--suave); font-weight: 600; padding: 10px 10px; border-bottom: 1px solid var(--linha); white-space: nowrap; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--linha); vertical-align: middle; }
+tr:last-child td { border-bottom: 0; }
+td small, li small, .pernas small { display: block; color: var(--suave); font-size: 12px; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+td.num small { text-align: right; }
+.pos { color: var(--pos); font-weight: 600; }
+.neg { color: var(--neg); }
+tr.passado { opacity: .62; }
+tr.cotada td:first-child { font-weight: 600; }
+
+/* Radar */
+table.radar td { padding-block: 10px; }
+.jogo { background: none; border: 0; padding: 0; text-align: left; display: flex; flex-direction: column; font-weight: 600; font-size: 15px; }
+.jogo small { display: inline; color: var(--suave); font-weight: 500; font-size: 12px; }
+.jogo:hover span { text-decoration: underline; }
+.comp { color: var(--suave); font-size: 12px; }
+.hora { font: 700 18px var(--f-titulo); }
+.placar { font: 700 18px var(--f-titulo); }
+.ao-vivo { color: var(--neg); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.barra3 { display: flex; height: 8px; width: 150px; max-width: 100%; border-radius: 4px; overflow: hidden; margin-bottom: 4px; background: var(--linha); }
+.barra3 i:nth-child(1) { background: var(--casa); } .barra3 i:nth-child(2) { background: var(--empate); } .barra3 i:nth-child(3) { background: var(--fora); }
+.barra3.mercado i:nth-child(1) { background: var(--mercado); } .barra3.mercado i:nth-child(3) { background: color-mix(in srgb, var(--mercado) 45%, var(--fora)); }
+
+/* Análise */
+.indice { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.mini { font-size: 12px; text-decoration: none; padding: 4px 9px; border-radius: 999px; background: var(--papel); border: 1px solid var(--linha); }
+.cartao { background: var(--papel); border: 1px solid var(--linha); border-radius: 16px; padding: 18px; margin: 16px 0; box-shadow: var(--sombra); scroll-margin-top: 110px; }
+.cartao header h2 { font: 700 clamp(26px, 4vw, 34px)/1.05 var(--f-titulo); margin: 4px 0 6px; text-wrap: balance; }
+.cartao header h2 span { color: var(--suave); font-weight: 600; }
+.aviso { color: var(--aviso); font-weight: 600; font-size: 13px; }
+.resumo { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; margin: 12px 0; }
+.resumo > div { background: var(--fundo); border-radius: 10px; padding: 10px 12px; min-width: 0; }
+.resumo b { display: block; font-size: 16px; }
+.resumo small { color: var(--suave); font-weight: 500; }
+.leitura { border-left: 3px solid var(--limao); padding: 2px 0 2px 14px; margin: 14px 0; }
+.leitura h3 { margin-top: 0; }
+.leitura ul { margin: 0; padding-left: 18px; }
+.alertas { list-style: none; padding: 0 !important; margin-top: 10px !important; display: grid; gap: 6px; }
+.alertas li { font-size: 13px; padding: 7px 10px; border-radius: 8px; background: var(--fundo); }
+.alertas li.divergencia { box-shadow: inset 3px 0 0 var(--aviso); }
+.alertas li.calendario { box-shadow: inset 3px 0 0 var(--fora); }
+.alertas li.dados, .alertas li.mercado { box-shadow: inset 3px 0 0 var(--suave); }
+.alertas li.escalacao { box-shadow: inset 3px 0 0 var(--mercado); }
+.fams { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin: 12px 0 8px; }
+.fam { background: var(--fundo); border-color: var(--linha); padding: 6px 12px; }
+.fam.ativa { background: var(--marca); color: var(--marca-txt); border-color: var(--marca); }
+.so-odd { margin-left: auto; font-size: 13px; color: var(--suave); display: inline-flex; gap: 6px; align-items: center; }
+.base { display: block; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-align: right; }
+.base.mercado { color: var(--mercado); } .base.modelo { color: var(--suave); }
+.add { width: 34px; height: 34px; padding: 0; background: var(--fundo); border-color: var(--linha); font-size: 18px; line-height: 1; }
+.add.ja { background: var(--limao); color: #0f2e2a; border-color: var(--limao); }
+.dois { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.dois > div { min-width: 0; }
+.lista { list-style: none; padding: 0; margin: 4px 0; font-size: 13px; display: grid; gap: 3px; }
+.lista small { display: inline; }
+.res { display: inline-block; width: 20px; text-align: center; border-radius: 4px; font-weight: 700; font-size: 11px; margin-right: 6px; color: #fff; }
+.res.V { background: var(--casa); } .res.E { background: #8a978f; } .res.D { background: var(--neg); }
+
+/* Bilhete */
+.bilhete { background: var(--papel); border: 1px solid var(--linha); border-radius: 16px; padding: 14px; box-shadow: var(--sombra); }
+.pernas { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.pernas li { display: flex; gap: 10px; align-items: center; padding: 10px; background: var(--fundo); border-radius: 10px; }
+.pernas li > div { flex: 1; min-width: 0; }
+.odd { display: flex; flex-direction: column; font-size: 11px; color: var(--suave); }
+.odd input { width: 90px; padding: 6px 8px; border: 1px solid var(--linha); border-radius: 8px; background: var(--papel); text-align: right; }
+.rem { background: none; border: 0; font-size: 20px; color: var(--suave); padding: 4px 8px; }
+.totais { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 14px 0; }
+.totais > div { background: var(--fundo); border-radius: 10px; padding: 10px 12px; }
+.totais b { display: block; font: 700 28px/1.1 var(--f-titulo); }
+.totais small { color: var(--suave); }
+.avisos { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 6px; font-size: 13px; }
+.avisos li { padding: 7px 10px; border-radius: 8px; background: var(--fundo); }
+.avisos li.erro { box-shadow: inset 3px 0 0 var(--neg); color: var(--neg); font-weight: 600; }
+.avisos li.aviso { box-shadow: inset 3px 0 0 var(--aviso); }
+.avisos li.info { box-shadow: inset 3px 0 0 var(--linha); }
+.salvar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.salvar label { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--suave); }
+.salvar input { width: 100px; padding: 7px 8px; border: 1px solid var(--linha); border-radius: 8px; background: var(--papel); }
+.niveis { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin: 10px 0; }
+.nivel { background: var(--fundo); border-radius: 12px; padding: 12px; min-width: 0; }
+.nivel h3 { margin: 0 0 6px; }
+.nivel ul { padding-left: 18px; margin: 0 0 8px; font-size: 14px; }
+.prefs { border: 1px solid var(--linha); border-radius: 10px; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; }
+.vazio { text-align: center; padding: 48px 16px; background: var(--papel); border: 1px dashed var(--linha); border-radius: 16px; }
+.vazio h2 { font: 700 26px var(--f-titulo); margin: 0 0 6px; }
+.vazio p { color: var(--suave); max-width: 52ch; margin: 0 auto 14px; }
+
+/* Diário e validação */
+.faixas { display: grid; gap: 5px; max-width: 640px; }
+.faixa { display: grid; grid-template-columns: 70px 1fr 56px 110px; gap: 8px; align-items: center; font-size: 13px; }
+.faixa i { display: block; height: 10px; background: var(--acento); border-radius: 5px; min-width: 2px; }
+.faixa small { color: var(--suave); }
+.metodo { padding-left: 18px; max-width: 80ch; }
+.metodo li { margin-bottom: 6px; }
+.carregando { color: var(--suave); padding: 30px 0; }
+
+.rodape { max-width: 1180px; margin: 0 auto; padding: 18px max(16px, env(safe-area-inset-right, 0px)) 30px max(16px, env(safe-area-inset-left, 0px)); color: var(--suave); font-size: 12px; border-top: 1px solid var(--linha); }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); background: var(--marca); color: var(--marca-txt); padding: 10px 16px; border-radius: 10px; font-size: 14px; z-index: 10; max-width: calc(100% - 32px); box-shadow: 0 6px 24px rgba(0, 0, 0, .25); }
+
+.nw { white-space: nowrap; }
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  .abas a { padding: 10px 9px; font-size: 14px; }
+  .barra3 { width: 110px; }
+  .faixa { grid-template-columns: 60px 1fr 50px; }
+  .faixa small { display: none; }
+  .pernas li { flex-wrap: wrap; }
+  .so-odd { margin-left: 0; }
+}
+
+/* v3 */
+.tag { display: inline-block; margin-left: 6px; padding: 1px 7px; border-radius: 999px; font-size: 11px; font-weight: 600; background: var(--fundo); color: var(--suave); vertical-align: 1px; }
+.tag.div { background: color-mix(in srgb, var(--aviso) 16%, transparent); color: var(--aviso); }
+.topo-cartao { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.exportar { display: flex; gap: 10px; font-size: 13px; }
+.destaques { background: color-mix(in srgb, var(--limao) 22%, var(--papel)); border-radius: 12px; padding: 10px 14px; margin: 12px 0; }
+.destaques h3 { margin: 0 0 6px; font-size: 18px; }
+.destaques ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.destaques li { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+.destaques li small { display: block; color: var(--suave); font-size: 12px; }
+details.contexto summary small { color: var(--suave); font-weight: 500; }
+section.sugestoes { margin-top: 4px; }
+.nivel { border-top: 4px solid var(--linha); }
+.nivel.n-segura { border-top-color: var(--casa); } .nivel.n-media { border-top-color: var(--mercado); } .nivel.n-arriscada { border-top-color: var(--fora); } .nivel.n-bingo { border-top-color: var(--neg); }
+.faixa-odd { margin: -2px 0 8px; font-size: 12px; color: var(--suave); }
+.total-nivel { margin: 0 0 10px; font-size: 14px; }
+.total-nivel b { font: 700 22px var(--f-titulo); }
+.salvar select { padding: 7px 8px; border: 1px solid var(--linha); border-radius: 8px; background: var(--papel); }
+.odd small { display: block; font-size: 10px; }
+.status .link { color: var(--tinta); }
+
+</style>
+  <script>/* js/rede.js */
+/* Ponto Comum v3 · rede.js
+ * Camada de dados: todas as competições acompanhadas, por clube, a partir dos placares públicos da ESPN.
+ * Um jogo vira um registro compacto (placar de 90 min, gols por tempo, escanteios, chutes, cartões).
+ * Cache no IndexedDB: anos passados ficam 30 dias; o ano corrente, 3 horas.
+ */
+(function (G) {
+  'use strict';
+  const ESPN = 'https://site.api.espn.com/apis/site/v2/sports/soccer/';
+  const CORE = 'https://sports.core.api.espn.com/v2/sports/soccer/leagues/';
+
+  // radar 1 = na agenda do dia por padrão; 2 = opcional (desligada por padrão). As demais entram só no histórico
+  // (força dos clubes, calendário), mas o radar mostra Champions + as 5 grandes ligas.
+  const COMPS = [
+    ['uefa.champions', 'Champions League', 'continental', 'uefa', 1], ['eng.1', 'Premier League', 'league', 'eng', 1], ['esp.1', 'LaLiga', 'league', 'esp', 1],
+    ['ita.1', 'Serie A', 'league', 'ita', 1], ['ger.1', 'Bundesliga', 'league', 'ger', 1], ['fra.1', 'Ligue 1', 'league', 'fra', 1],
+    ['bra.1', 'Brasileirão Série A', 'league', 'bra', 2], ['uefa.europa', 'Europa League', 'continental', 'uefa', 2],
+    ['uefa.europa.conf', 'Conference League', 'continental', 'uefa', 2], ['conmebol.libertadores', 'Libertadores', 'continental', 'conmebol', 2],
+    ['conmebol.sudamericana', 'Sul-Americana', 'continental', 'conmebol', 2],
+    ['eng.2', 'Championship', 'league', 'eng', 0], ['esp.2', 'LaLiga 2', 'league', 'esp', 0], ['ger.2', '2. Bundesliga', 'league', 'ger', 0],
+    ['ita.2', 'Serie B (Itália)', 'league', 'ita', 0], ['fra.2', 'Ligue 2', 'league', 'fra', 0], ['bra.2', 'Brasileirão Série B', 'league', 'bra', 0],
+    ['por.1', 'Liga Portugal', 'league', 'por', 0], ['ned.1', 'Eredivisie', 'league', 'ned', 0], ['arg.1', 'Liga Profesional (ARG)', 'league', 'arg', 0],
+    ['eng.fa', 'FA Cup', 'cup', 'eng', 0], ['eng.league_cup', 'Copa da Liga Inglesa', 'cup', 'eng', 0], ['esp.copa_del_rey', 'Copa del Rey', 'cup', 'esp', 0],
+    ['ger.dfb_pokal', 'Copa da Alemanha', 'cup', 'ger', 0], ['ita.coppa_italia', 'Coppa Italia', 'cup', 'ita', 0], ['fra.coupe_de_france', 'Copa da França', 'cup', 'fra', 0],
+    ['bra.copa_do_brazil', 'Copa do Brasil', 'cup', 'bra', 0], ['bra.camp.carioca', 'Campeonato Carioca', 'state', 'bra', 0],
+    ['bra.camp.paulista', 'Campeonato Paulista', 'state', 'bra', 0], ['fifa.cwc', 'Mundial de Clubes', 'continental', 'fifa', 0]
+  ].map(([id, nome, tipo, regiao, radar]) => Object.freeze({ id, nome, tipo, regiao, radar: radar === 1, opcional: radar === 2 }));
+  const COMP_MAP = Object.freeze(Object.fromEntries(COMPS.map(c => [c.id, c])));
+  // Na agenda, só jogos com pelo menos um destes clubes (os N mais fortes da liga pelo modelo). Premier e Champions: todos.
+  const GRANDES_POR_LIGA = Object.freeze({ 'esp.1': 4, 'ita.1': 6, 'ger.1': 3, 'fra.1': 3 });
+  const VERSAO_CACHE = 'v3|';
+
+  const num = v => { if (v === null || v === undefined || v === '') return null; const n = Number(v); return Number.isFinite(n) ? n : null; };
+  const americana = v => { if (v === null || v === undefined) return null; const s = String(v).trim().toUpperCase(); if (s === 'EVEN' || s === 'EV') return 2; const n = Number(s.replace('+', '')); if (!Number.isFinite(n) || Math.abs(n) < 100) return null; return n > 0 ? 1 + n / 100 : 1 + 100 / Math.abs(n); };
+  const fracionaria = v => { const s = String(v ?? '').trim(); if (/^evens?$/i.test(s)) return 2; const m = /^(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/.exec(s); return m && +m[2] > 0 ? 1 + m[1] / m[2] : null; };
+  const statOf = (side, name) => { const s = (side.statistics || []).find(x => x && x.name === name); return s ? num(s.displayValue ?? s.value) : null; };
+  const byDate = (a, b) => Date.parse(a.date) - Date.parse(b.date) || (a.id < b.id ? -1 : 1);
+
+  /* Odds da DraftKings que a ESPN anexa ao placar de jogos futuros (preço atual e abertura). */
+  function oddsDoPlacar(o) {
+    if (!o || typeof o !== 'object') return null;
+    const ml = o.moneyline || {}, tt = o.total || {};
+    const atual = s => s ? americana((s.close || s.current || {}).odds) : null, abre = s => s && s.open ? americana(s.open.odds) : null;
+    const linha = s => { const v = s && (s.close || s.current || {}).line; const n = v ? Number(String(v).replace(/^[ou]/i, '')) : null; return Number.isFinite(n) ? n : null; };
+    const r = { casa: (o.provider && o.provider.name) || 'Casa', h: atual(ml.home), d: atual(ml.draw), a: atual(ml.away), hA: abre(ml.home), dA: abre(ml.draw), aA: abre(ml.away),
+      linha: linha(tt.over) ?? num(o.overUnder), over: atual(tt.over), under: atual(tt.under) };
+    if (!r.h && o.homeTeamOdds) r.h = americana(o.homeTeamOdds.moneyLine);
+    if (!r.a && o.awayTeamOdds) r.a = americana(o.awayTeamOdds.moneyLine);
+    if (!r.d && o.drawOdds) r.d = americana(o.drawOdds.moneyLine);
+    return (r.h && r.d && r.a) || (r.over && r.under) ? r : null;
+  }
+
+  function parseEvent(e, comp, observadoEm) {
+    const c = e && e.competitions && e.competitions[0]; if (!c) return null;
+    const list = c.competitors || [], H = list.find(x => x.homeAway === 'home'), A = list.find(x => x.homeAway === 'away');
+    if (!H || !A || !H.team || !A.team) return null;
+    const h = String(H.team.id || ''), a = String(A.team.id || '');
+    if (!/^\d+$/.test(h) || !/^\d+$/.test(a) || h === a) return null;
+    const type = (c.status && c.status.type) || {}, st = String(type.name || '');
+    const m = { id: String(e.id), comp, date: e.date || c.date, h, a, hn: H.team.displayName || H.team.name || '', an: A.team.displayName || A.team.name || '',
+      hs3: H.team.abbreviation || '', as3: A.team.abbreviation || '', neutral: c.neutralSite === true, st, state: type.state || '', done: false };
+    if (!Number.isFinite(Date.parse(m.date))) return null;
+    if (/CANCEL|POSTPON|ABANDON|SUSPEND|FORFEIT/i.test(st)) { m.void = true; return m; }
+    if (!(type.completed === true && type.state === 'post')) {
+      const od = oddsDoPlacar((c.odds || [])[0]);
+      if (od) { od.em = observadoEm || new Date().toISOString(); m.odds = od; }
+      return m;
+    }
+    const fh = num(H.score), fa = num(A.score);
+    if (fh === null || fa === null || fh > 30 || fa > 30) return m;
+    m.done = true; m.fh = fh; m.fa = fa;
+    const prorrogacao = /AET|PEN|EXTRA|SHOOTOUT/i.test(st);
+    const gols = [], am = {}, vm = {}, det = c.details || [];
+    for (const d of det) {
+      if (!d || d.shootout) continue;
+      const tid = d.team ? String(d.team.id) : '', dv = String((d.clock && d.clock.displayValue) || ''), cv = num(d.clock && d.clock.value);
+      if (d.scoringPlay) gols.push({ tid, own: d.ownGoal === true, dv, cv });
+      else if (d.redCard) vm[tid] = (vm[tid] || 0) + 1;
+      else if (d.yellowCard) am[tid] = (am[tid] || 0) + 1;
+    }
+    // Confere os gols do lance a lance com o placar final antes de usar a divisão por tempo.
+    const conta = inverteContra => { let x = 0, y = 0; for (const g of gols) { let t = g.tid; if (inverteContra && g.own) t = t === h ? a : h; if (t === h) x++; else if (t === a) y++; } return [x, y]; };
+    const c0 = conta(false), c1 = conta(true), conv = c0[0] === fh && c0[1] === fa ? 0 : c1[0] === fh && c1[1] === fa ? 1 : -1;
+    const primeiroTempo = g => /^45'\+/.test(g.dv) || (g.cv !== null && g.cv < 2700) || (/^\d+'$/.test(g.dv) && parseInt(g.dv, 10) <= 45);
+    const regulamentar = g => /^(45|90)'\+/.test(g.dv) || (g.cv !== null && g.cv <= 5400);
+    if (conv >= 0) {
+      let h1 = 0, a1 = 0, hr = 0, ar = 0, pg = null;
+      const ordem = gols.slice().sort((x, y) => (x.cv ?? 1e9) - (y.cv ?? 1e9));
+      for (const g of ordem) { let t = g.tid; if (conv && g.own) t = t === h ? a : h; const s = t === h ? 0 : t === a ? 1 : -1; if (s < 0) continue; if (primeiroTempo(g)) s ? a1++ : h1++; if (regulamentar(g)) { s ? ar++ : hr++; if (pg === null) pg = s ? 'a' : 'h'; } }
+      m.h1 = h1; m.a1 = a1; m.hg = prorrogacao ? hr : fh; m.ag = prorrogacao ? ar : fa; m.pg = m.hg + m.ag === 0 ? '-' : pg;
+    } else { m.h1 = null; m.a1 = null; m.pg = null; m.hg = prorrogacao ? null : fh; m.ag = prorrogacao ? null : fa; }
+    m.hc = statOf(H, 'wonCorners'); m.ac = statOf(A, 'wonCorners');
+    m.hsh = statOf(H, 'totalShots'); m.ash = statOf(A, 'totalShots');
+    m.hst = statOf(H, 'shotsOnTarget'); m.ast = statOf(A, 'shotsOnTarget');
+    m.hf = statOf(H, 'foulsCommitted'); m.af = statOf(A, 'foulsCommitted');
+    const cartoesConhecidos = det.length > 0 || (fh + fa === 0 && m.hf !== null);
+    m.hy = cartoesConhecidos ? (am[h] || 0) : null; m.ay = cartoesConhecidos ? (am[a] || 0) : null;
+    m.hr = cartoesConhecidos ? (vm[h] || 0) : null; m.ar = cartoesConhecidos ? (vm[a] || 0) : null;
+    return m;
+  }
+
+  /* ---------- IndexedDB (com queda silenciosa para memória) ---------- */
+  const DB_NAME = 'ponto-comum-v2'; let dbp = null; const memoria = new Map();
+  function db() {
+    if (dbp) return dbp;
+    dbp = new Promise((res, rej) => {
+      try {
+        const r = indexedDB.open(DB_NAME, 1);
+        r.onupgradeneeded = () => { const d = r.result; for (const s of ['rede', 'kv', 'diario']) if (!d.objectStoreNames.contains(s)) d.createObjectStore(s); };
+        r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
+      } catch (e) { rej(e); }
+    }).catch(() => null);
+    return dbp;
+  }
+  function pedido(d, store, mode, fn) {
+    return new Promise((res, rej) => { try { const tx = d.transaction(store, mode), req = fn(tx.objectStore(store)); tx.oncomplete = () => res(req.result); tx.onerror = tx.onabort = () => rej(tx.error); } catch (e) { rej(e); } });
+  }
+  const kv = {
+    async get(store, key) { const mk = store + '|' + key, d = await db(); if (!d) return memoria.get(mk) ?? null; try { const v = await pedido(d, store, 'readonly', s => s.get(key)); return v === undefined ? (memoria.get(mk) ?? null) : v; } catch { return memoria.get(mk) ?? null; } },
+    async put(store, key, value) { memoria.set(store + '|' + key, value); const d = await db(); if (!d) return false; try { await pedido(d, store, 'readwrite', s => s.put(value, key)); return true; } catch { return false; } },
+    async del(store, key) { memoria.delete(store + '|' + key); const d = await db(); if (!d) return; try { await pedido(d, store, 'readwrite', s => s.delete(key)); } catch { /* a cópia em memória já foi removida */ } },
+    async all(store) {
+      try {
+        const d = await db(); if (!d) throw new Error('sem IndexedDB');
+        return await new Promise((res, rej) => { const out = [], tx = d.transaction(store, 'readonly'), req = tx.objectStore(store).openCursor(); req.onsuccess = () => { const c = req.result; if (c) { out.push([c.key, c.value]); c.continue(); } else res(out); }; req.onerror = () => rej(req.error); });
+      } catch { return [...memoria].filter(([k]) => k.startsWith(store + '|')).map(([k, v]) => [k.slice(store.length + 1), v]); }
+    }
+  };
+
+  /* ---------- Rede HTTP ---------- */
+  const memo = new Map();
+  async function getJSON(url, { ttl = 0, signal, timeout = 20000 } = {}) {
+    const hit = memo.get(url); if (ttl && hit && Date.now() - hit.at < ttl) return hit.data;
+    const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), timeout), stop = () => ctl.abort();
+    if (signal) signal.addEventListener('abort', stop, { once: true });
+    try {
+      const r = await fetch(url, { credentials: 'omit', mode: 'cors', referrerPolicy: 'no-referrer', signal: ctl.signal });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const data = await r.json(); if (ttl) { memo.set(url, { at: Date.now(), data }); if (memo.size > 300) memo.delete(memo.keys().next().value); }
+      return data;
+    } finally { clearTimeout(t); if (signal) signal.removeEventListener('abort', stop); }
+  }
+  async function pool(tasks, n) { let i = 0; await Promise.all(Array.from({ length: Math.min(n, tasks.length) }, async () => { while (i < tasks.length) { const k = i++; await tasks[k](); } })); }
+
+  /* Carrega a rede inteira (30 competições × 3 anos). Primeira vez: ~10–40 s. Depois, quase tudo vem do cache. */
+  async function carregarRede({ anos, forcar = false, onProgress = () => {}, signal } = {}) {
+    const ano = new Date().getUTCFullYear(); anos = anos || [ano - 2, ano - 1, ano];
+    const jogos = new Map(), relatorio = [], tarefas = [];
+    // Remove caches de versões anteriores (registros sem os campos novos).
+    try { for (const [k] of await kv.all('rede')) if (!String(k).startsWith(VERSAO_CACHE)) await kv.del('rede', k); } catch { /* sem cache antigo */ }
+    for (const c of COMPS) for (const y of anos) tarefas.push(async () => {
+      const chave = VERSAO_CACHE + c.id + '|' + y, ttl = y < ano ? 30 * 864e5 : 3 * 3600e3, cache = await kv.get('rede', chave);
+      if (!forcar && cache && Date.now() - cache.at < ttl) { for (const m of cache.jogos) jogos.set(m.id, m); relatorio.push({ comp: c.id, ano: y, ok: true, cache: true, n: cache.jogos.length, em: new Date(cache.at).toISOString() }); onProgress(relatorio.length, tarefas.length); return; }
+      try {
+        const em = new Date().toISOString(), j = await getJSON(ESPN + c.id + '/scoreboard?dates=' + y + '&limit=1000', { signal }), lista = [];
+        for (const e of j.events || []) { const m = parseEvent(e, c.id, em); if (m) lista.push(m); }
+        for (const m of lista) jogos.set(m.id, m);
+        await kv.put('rede', chave, { at: Date.now(), jogos: lista });
+        relatorio.push({ comp: c.id, ano: y, ok: true, n: lista.length, em, truncado: (j.events || []).length >= 1000 });
+      } catch (err) {
+        if (signal && signal.aborted) throw err;
+        if (cache) for (const m of cache.jogos) jogos.set(m.id, m);
+        relatorio.push({ comp: c.id, ano: y, ok: false, antigo: !!cache, erro: String(err.message || err) });
+      }
+      onProgress(relatorio.length, tarefas.length);
+    });
+    await pool(tarefas, 6);
+    return { jogos: [...jogos.values()].sort(byDate), relatorio, carregadaEm: new Date().toISOString() };
+  }
+
+  /* Agenda de um dia em São Paulo (consulta o dia anterior, o próprio e o seguinte para cobrir fusos). */
+  const dataSP = iso => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(iso));
+  const somaDias = (dia, n) => new Date(Date.parse(dia + 'T12:00:00Z') + n * 864e5).toISOString().slice(0, 10);
+  async function carregarDia(dia, comps = COMPS.filter(c => c.radar).map(c => c.id), { signal } = {}) {
+    const dias = [-1, 0, 1].map(n => somaDias(dia, n).replaceAll('-', '')), out = new Map(), falhas = [], tarefas = [];
+    for (const comp of comps) for (const d of dias) tarefas.push(async () => {
+      try { const em = new Date().toISOString(), j = await getJSON(ESPN + comp + '/scoreboard?dates=' + d + '&limit=200', { ttl: 120e3, signal }); for (const e of j.events || []) { const m = parseEvent(e, comp, em); if (m && dataSP(m.date) === dia) out.set(m.id, m); } }
+      catch (err) { if (signal && signal.aborted) throw err; falhas.push(comp + ' ' + d + ': ' + (err.message || err)); }
+    });
+    await pool(tarefas, 6);
+    return { jogos: [...out.values()].sort(byDate), falhas };
+  }
+
+  /* Resumo da partida: odds de várias casas, escalações, desfalques, árbitro, estádio. */
+  async function carregarResumo(m, { signal } = {}) {
+    const j = await getJSON(ESPN + m.comp + '/summary?event=' + m.id, { ttl: 90e3, signal });
+    if (String((j.header && j.header.id) || '') !== String(m.id)) throw new Error('A resposta pertence a outra partida.');
+    const comp = (j.header.competitions || [])[0] || {}, st = (comp.status && comp.status.type) || {};
+    const ids = [m.h, m.a];
+    const escalacoes = (j.rosters || []).filter(r => ids.includes(String(r.team && r.team.id))).map(r => ({ time: String(r.team.id), formacao: String(r.formation || ''),
+      titulares: [...(r.roster || []), ...(r.athletes || [])].filter(p => p.starter === true || p.starter === 'true').map(p => (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || '').filter(Boolean) }));
+    const desfalques = (j.injuries || []).filter(t => ids.includes(String(t.team && t.team.id))).flatMap(t => (t.injuries || []).slice(0, 25).map(i => ({ time: String(t.team.id), jogador: (i.athlete && i.athlete.displayName) || '', status: String(i.status || (i.type && i.type.description) || ''), detalhe: String(i.shortComment || '') }))).filter(x => x.jogador);
+    const info = j.gameInfo || {}, arbitro = (info.officials || []).map(o => o.fullName || o.displayName).filter(Boolean)[0] || null;
+    return { observadoEm: new Date().toISOString(), estado: st.state || '', status: st.name || '', inicio: comp.date || m.date, cotacoes: G.PCMercado ? G.PCMercado.doResumo(j, m) : [],
+      escalacoes, desfalques, arbitro, estadio: info.venue ? info.venue.fullName || null : null };
+  }
+
+  /* Abertura e fechamento da DraftKings guardados pela ESPN — base do CLV e da validação contra o mercado. */
+  async function carregarOddsFechamento(m, { signal } = {}) {
+    const j = await getJSON(CORE + m.comp + '/events/' + m.id + '/competitions/' + m.id + '/odds', { ttl: 300e3, signal });
+    const dk = (j.items || []).find(i => /draftkings/i.test((i.provider && i.provider.name) || '')); if (!dk) return null;
+    const dec = o => o ? (americana(o.american ?? o.alternateDisplayValue) ?? (num(o.decimal) > 1 ? num(o.decimal) : null)) : null;
+    const lado = (t, w) => t && t[w] && t[w].moneyLine ? dec(t[w].moneyLine) : null, out = { casa: dk.provider.name };
+    for (const w of ['open', 'close']) {
+      const b = dk[w] || {}, ln = b.total ? Number(String(b.total.american ?? b.total.alternateDisplayValue ?? '').replace(/^[ou]/i, '')) : null;
+      out[w === 'open' ? 'abertura' : 'fechamento'] = { h: lado(dk.homeTeamOdds, w), d: b.draw ? dec(b.draw) : null, a: lado(dk.awayTeamOdds, w), linha: Number.isFinite(ln) ? ln : null, over: b.over ? dec(b.over) : null, under: b.under ? dec(b.under) : null };
+    }
+    return out;
+  }
+
+  /* Elenco com estatísticas da temporada atual e da anterior (gols, chutes, chutes no alvo, jogos, entradas do banco). */
+  async function carregarElenco(liga, timeId, { signal } = {}) {
+    const ano = new Date().getUTCFullYear(), mes = new Date().getUTCMonth() + 1, atual = liga === 'bra.1' || mes >= 7 ? ano : ano - 1;
+    const ler = async temporada => {
+      const j = await getJSON(ESPN + liga + '/teams/' + timeId + '/roster' + (temporada ? '?season=' + temporada : ''), { ttl: 6 * 3600e3, signal });
+      return (j.athletes || []).map(a => {
+        const st = {}; for (const c of ((a.statistics && a.statistics.splits && a.statistics.splits.categories) || [])) for (const s of (c.stats || [])) st[s.name] = num(s.value ?? s.displayValue);
+        return { id: String(a.id), nome: a.displayName || a.shortName || '', pos: (a.position && a.position.abbreviation) || '', jogos: st.appearances || 0, banco: st.subIns || 0, gols: st.totalGoals || 0, chutes: st.totalShots || 0, noAlvo: st.shotsOnTarget || 0, assist: st.goalAssists || 0, lesionado: Array.isArray(a.injuries) && a.injuries.length > 0 };
+      }).filter(p => p.nome);
+    };
+    const [agora, antes] = await Promise.all([ler(null), ler(atual - 1).catch(() => [])]);
+    return { liga, timeId, atual: agora, anterior: antes };
+  }
+
+  /* ---------- Consultas sobre a rede ---------- */
+  function indexar(jogos) {
+    const porTime = new Map();
+    for (const m of jogos) { if (m.void) continue; for (const t of [m.h, m.a]) { let l = porTime.get(t); if (!l) porTime.set(t, l = []); l.push(m); } }
+    return porTime;
+  }
+  function calendario(porTime, time, ref, { antes = 6, depois = 3 } = {}) {
+    const lista = porTime.get(time) || [], t = Date.parse(ref);
+    const prev = lista.filter(m => m.done && Date.parse(m.date) < t).slice(-antes).reverse(), prox = lista.filter(m => !m.done && Date.parse(m.date) > t).slice(0, depois);
+    const ultimo = prev[0] ? Date.parse(prev[0].date) : null, proximo = prox[0] ? Date.parse(prox[0].date) : null;
+    const em = dias => lista.filter(m => m.done && Date.parse(m.date) < t && Date.parse(m.date) >= t - dias * 864e5).length;
+    return { anteriores: prev, proximos: prox, descanso: ultimo ? (t - ultimo) / 864e5 : null, ateProximo: proximo ? (proximo - t) / 864e5 : null, jogos14: em(14), jogos30: em(30) };
+  }
+  function confrontos(porTime, h, a, ref, max = 8) {
+    const t = Date.parse(ref);
+    return (porTime.get(h) || []).filter(m => m.done && Date.parse(m.date) < t && ((m.h === h && m.a === a) || (m.h === a && m.a === h))).slice(-max).reverse();
+  }
+  function forma(porTime, time, ref, n = 10) {
+    const t = Date.parse(ref), ult = (porTime.get(time) || []).filter(m => m.done && m.hg != null && Date.parse(m.date) < t).slice(-n);
+    let v = 0, e = 0, d = 0, gp = 0, gc = 0, cs = 0, btts = 0, o25 = 0, chA = 0, chC = 0, nch = 0, esc = 0, nesc = 0;
+    for (const m of ult) {
+      const casa = m.h === time, pro = casa ? m.hg : m.ag, contra = casa ? m.ag : m.hg;
+      if (pro > contra) v++; else if (pro === contra) e++; else d++;
+      gp += pro; gc += contra; if (!contra) cs++; if (pro && contra) btts++; if (pro + contra > 2.5) o25++;
+      if (m.hst != null && m.ast != null) { chA += casa ? m.hst : m.ast; chC += casa ? m.ast : m.hst; nch++; }
+      if (m.hc != null && m.ac != null) { esc += casa ? m.hc : m.ac; nesc++; }
+    }
+    const n2 = ult.length || 1;
+    return { n: ult.length, v, e, d, gp: gp / n2, gc: gc / n2, semSofrer: cs, ambas: btts, over25: o25, chutesNoAlvo: nch ? chA / nch : null, chutesNoAlvoContra: nch ? chC / nch : null, escanteios: nesc ? esc / nesc : null,
+      seq: ult.slice().reverse().map(m => { const casa = m.h === time, p = casa ? m.hg : m.ag, c = casa ? m.ag : m.hg; return p > c ? 'V' : p === c ? 'E' : 'D'; }).join('') };
+  }
+
+  G.PCRede = Object.freeze({ ESPN, CORE, COMPS, COMP_MAP, GRANDES_POR_LIGA, americana, fracionaria, num, parseEvent, oddsDoPlacar, carregarRede, carregarDia, carregarResumo, carregarOddsFechamento, carregarElenco,
+    indexar, calendario, confrontos, forma, kv, getJSON, pool, dataSP, somaDias });
+})(typeof globalThis !== 'undefined' ? globalThis : window);
+
+</script>
+  <script>/* js/modelo.js */
+/* Ponto Comum v3 · modelo.js
+ * Modelo de força conjunto para todos os clubes e competições da rede.
+ *   log λ(mandante) = μ[competição] + mando[competição] + nível[liga do mandante] + ataque[mandante] − defesa_nível[liga do visitante] − defesa[visitante]
+ * - Clubes de ligas diferentes ficam comparáveis pelos jogos de copas e torneios continentais.
+ * - Recência: peso exp(−ln2 · idade / meia-vida). Copas pesam 0,8; estaduais, 0,6.
+ * - Força medida com 60% chutes no alvo (convertidos em gols) + 40% gols: menos ruído que só gols.
+ * - Dixon-Coles (ρ) corrige placares baixos. Correção de confiança (1,2) validada fora da amostra.
+ * Escanteios e cartões usam a mesma estrutura, com binomial negativa para a dispersão.
+ */
+(function (G) {
+  'use strict';
+  const LN2 = Math.LN2, clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+  const COMP = () => G.PCRede.COMP_MAP;
+
+  // Escolhido no ajuste de 12/01–30/06/2026 e conferido em 16/07–19/10/2026 (jogos que não entraram no ajuste).
+  const PADRAO = Object.freeze({ halfLife: 270, sdTeam: 0.36, sdLeague: 0.45, sdHome: 0.15, haPrior: 0.25, sotBlend: 0.6, cupW: 0.8, stateW: 0.6,
+    iters: 80, tol: 2e-5, maxAgeDays: 1100, embargoH: 3, esticar: 1.2 });
+  const PADRAO_CONTAGEM = Object.freeze(Object.assign({}, PADRAO, { sotBlend: 0, sdTeam: 0.3, esticar: 1 }));
+
+  function grupoDe(comp) { const c = COMP()[comp]; return !c ? 'O:?' : c.tipo === 'league' ? 'L:' + comp : 'O:' + c.regiao; }
+
+  function selecionar(jogos, o, alvo) {
+    const tw = { league: 1, continental: 1, cup: o.cupW, state: o.stateW }, M = [], W = [], Y = [];
+    for (const m of jogos) {
+      if (!m.done) continue; const y = alvo(m); if (!y) continue;
+      const t = Date.parse(m.date); if (!(t + o.embargoH * 3600e3 <= o.cutoff)) continue;
+      const idade = (o.cutoff - t) / 864e5; if (idade > o.maxAgeDays) continue;
+      const c = COMP()[m.comp]; if (!c) continue;
+      const w = (tw[c.tipo] ?? 0.8) * Math.exp(-LN2 * idade / o.halfLife); if (w < 1e-3) continue;
+      M.push(m); W.push(w); Y.push(y);
+    }
+    return { M, W, Y };
+  }
+
+  /* Núcleo: Poisson hierárquico penalizado, por blocos de Newton. */
+  function nucleo(R, YH, YA, o) {
+    const N = R.M.length, gScore = new Map();
+    const addG = (t, g, w) => { let s = gScore.get(t); if (!s) gScore.set(t, s = new Map()); s.set(g, (s.get(g) || 0) + w); };
+    for (let k = 0; k < N; k++) { const m = R.M[k], g = grupoDe(m.comp), mult = g[0] === 'L' ? 10 : 1; addG(m.h, g, R.W[k] * mult); addG(m.a, g, R.W[k] * mult); }
+    const teams = [...gScore.keys()], teamIdx = new Map(teams.map((t, i) => [t, i])), groups = [], gIdx = new Map(), TG = new Int32Array(teams.length);
+    teams.forEach((t, i) => { let best = null, bw = -1; for (const [g, w] of gScore.get(t)) if (w > bw) { bw = w; best = g; } let gi = gIdx.get(best); if (gi === undefined) { gi = groups.length; gIdx.set(best, gi); groups.push(best); } TG[i] = gi; });
+    const comps = [], cIdx = new Map(), H = new Int32Array(N), A = new Int32Array(N), C = new Int32Array(N), NEU = new Uint8Array(N), W = Float64Array.from(R.W);
+    for (let k = 0; k < N; k++) { const m = R.M[k]; H[k] = teamIdx.get(m.h); A[k] = teamIdx.get(m.a); let c = cIdx.get(m.comp); if (c === undefined) { c = comps.length; cIdx.set(m.comp, c); comps.push(m.comp); } C[k] = c; NEU[k] = m.neutral ? 1 : 0; }
+    const T = teams.length, NG = groups.length, NC = comps.length;
+    const att = new Float64Array(T), def = new Float64Array(T), gat = new Float64Array(NG), gdf = new Float64Array(NG), mu = new Float64Array(NC), ha = new Float64Array(NC).fill(o.haPrior);
+    { const s = new Float64Array(NC), n = new Float64Array(NC); for (let k = 0; k < N; k++) { s[C[k]] += W[k] * (YH[k] + YA[k]); n[C[k]] += 2 * W[k]; } for (let c = 0; c < NC; c++) mu[c] = Math.log(Math.max(0.05, s[c] / Math.max(1e-9, n[c]))) - o.haPrior / 2; }
+    const ini = o.init;
+    if (ini) {
+      for (let i = 0; i < T; i++) { const j = ini.teamIdx.get(teams[i]); if (j !== undefined) { att[i] = ini.att[j]; def[i] = ini.def[j]; } }
+      for (let g = 0; g < NG; g++) { const j = ini.gIdx.get(groups[g]); if (j !== undefined) { gat[g] = ini.gat[j]; gdf[g] = ini.gdf[j]; } }
+      for (let c = 0; c < NC; c++) { const j = ini.cIdx.get(comps[c]); if (j !== undefined) { mu[c] = ini.mu[j]; ha[c] = ini.ha[j]; } }
+    }
+    const LH = new Float64Array(N), LA = new Float64Array(N), pT = 1 / (o.sdTeam * o.sdTeam), pL = 1 / (o.sdLeague * o.sdLeague), pH = 1 / (o.sdHome * o.sdHome);
+    const gT = new Float64Array(T), hT = new Float64Array(T), gG = new Float64Array(NG), hG = new Float64Array(NG), gC = new Float64Array(NC), hC = new Float64Array(NC);
+    const vAtt = new Float64Array(T), vDef = new Float64Array(T), vGat = new Float64Array(NG), vGdf = new Float64Array(NG), vMu = new Float64Array(NC), vHa = new Float64Array(NC);
+    const eta = () => { for (let k = 0; k < N; k++) { const h = H[k], a = A[k], c = C[k], gh = TG[h], ga = TG[a]; LH[k] = Math.exp(mu[c] + (NEU[k] ? 0 : ha[c]) + gat[gh] + att[h] - gdf[ga] - def[a]); LA[k] = Math.exp(mu[c] + gat[ga] + att[a] - gdf[gh] - def[h]); } };
+    let it = 0, passo = 1;
+    const upd = (arr, g, h, prec, prior, i, v) => { const s = clamp((g[i] - prec * (arr[i] - prior)) / (h[i] + prec), -0.5, 0.5); arr[i] += s; v[i] = 1 / (h[i] + prec); if (Math.abs(s) > passo) passo = Math.abs(s); };
+    for (; it < o.iters && passo > o.tol; it++) {
+      passo = 0;
+      eta(); gT.fill(0); hT.fill(0);
+      for (let k = 0; k < N; k++) { const w = W[k]; gT[H[k]] += w * (YH[k] - LH[k]); hT[H[k]] += w * LH[k]; gT[A[k]] += w * (YA[k] - LA[k]); hT[A[k]] += w * LA[k]; }
+      for (let i = 0; i < T; i++) upd(att, gT, hT, pT, 0, i, vAtt);
+      eta(); gT.fill(0); hT.fill(0);
+      for (let k = 0; k < N; k++) { const w = W[k]; gT[A[k]] -= w * (YH[k] - LH[k]); hT[A[k]] += w * LH[k]; gT[H[k]] -= w * (YA[k] - LA[k]); hT[H[k]] += w * LA[k]; }
+      for (let i = 0; i < T; i++) upd(def, gT, hT, pT, 0, i, vDef);
+      eta(); gG.fill(0); hG.fill(0);
+      for (let k = 0; k < N; k++) { const w = W[k], gh = TG[H[k]], ga = TG[A[k]]; gG[gh] += w * (YH[k] - LH[k]); hG[gh] += w * LH[k]; gG[ga] += w * (YA[k] - LA[k]); hG[ga] += w * LA[k]; }
+      for (let g = 0; g < NG; g++) upd(gat, gG, hG, pL, 0, g, vGat);
+      eta(); gG.fill(0); hG.fill(0);
+      for (let k = 0; k < N; k++) { const w = W[k], gh = TG[H[k]], ga = TG[A[k]]; gG[ga] -= w * (YH[k] - LH[k]); hG[ga] += w * LH[k]; gG[gh] -= w * (YA[k] - LA[k]); hG[gh] += w * LA[k]; }
+      for (let g = 0; g < NG; g++) upd(gdf, gG, hG, pL, 0, g, vGdf);
+      eta(); gC.fill(0); hC.fill(0);
+      for (let k = 0; k < N; k++) { const w = W[k], c = C[k]; gC[c] += w * (YH[k] - LH[k] + YA[k] - LA[k]); hC[c] += w * (LH[k] + LA[k]); }
+      for (let c = 0; c < NC; c++) upd(mu, gC, hC, 1e-4, 0, c, vMu);
+      eta(); gC.fill(0); hC.fill(0);
+      for (let k = 0; k < N; k++) if (!NEU[k]) { const w = W[k], c = C[k]; gC[c] += w * (YH[k] - LH[k]); hC[c] += w * LH[k]; }
+      for (let c = 0; c < NC; c++) upd(ha, gC, hC, pH, o.haPrior, c, vHa);
+      // Movimentos exatos que não alteram nenhum λ: dividem o nível entre clube e liga como as distribuições a priori mandam.
+      const SA = new Float64Array(NG), SD = new Float64Array(NG), NGt = new Float64Array(NG);
+      for (let i = 0; i < T; i++) { SA[TG[i]] += att[i]; SD[TG[i]] += def[i]; NGt[TG[i]]++; }
+      for (let g = 0; g < NG; g++) { const den = pL + NGt[g] * pT, kA = (SA[g] * pT - gat[g] * pL) / den, kD = (SD[g] * pT - gdf[g] * pL) / den; gat[g] += kA; gdf[g] += kD; SA[g] = kA; SD[g] = kD; }
+      for (let i = 0; i < T; i++) { att[i] -= SA[TG[i]]; def[i] -= SD[TG[i]]; }
+      let mA = 0, mD = 0; for (let g = 0; g < NG; g++) { mA += gat[g]; mD += gdf[g]; } mA /= NG; mD /= NG;
+      for (let g = 0; g < NG; g++) { gat[g] -= mA; gdf[g] -= mD; } for (let c = 0; c < NC; c++) mu[c] += mA - mD;
+    }
+    eta();
+    const nT = new Float64Array(T), wT = new Float64Array(T), ultimo = new Float64Array(T), nomes = new Array(T);
+    for (let k = 0; k < N; k++) { const m = R.M[k], t = Date.parse(m.date); for (const [i, nm] of [[H[k], m.hn], [A[k], m.an]]) { nT[i]++; wT[i] += W[k]; if (t > ultimo[i]) { ultimo[i] = t; nomes[i] = nm; } } }
+    return { o, cutoff: o.cutoff, N, iters: it, convergiu: passo <= o.tol, teams, teamIdx, TG, groups, gIdx, comps, cIdx, att, def, gat, gdf, mu, ha, vAtt, vDef, vGat, vGdf, vMu, vHa, pT, pL, nT, wT, ultimo, nomes, LH, LA, W };
+  }
+
+  function tau(x, y, l, m, r) { if (x === 0 && y === 0) return 1 - l * m * r; if (x === 0 && y === 1) return 1 + l * r; if (x === 1 && y === 0) return 1 + m * r; if (x === 1 && y === 1) return 1 - r; return 1; }
+
+  /* Gols: ajuste + ρ de Dixon-Coles + fração de gols no 1º tempo por competição. */
+  function ajustarGols(jogos, opt = {}) {
+    const o = Object.assign({}, PADRAO, opt, { cutoff: opt.cutoff ?? Date.now() });
+    const R = selecionar(jogos, o, m => (m.hg == null || m.ag == null) ? null : [m.hg, m.ag, m.hst, m.ast]);
+    let g = 0, s = 0; for (const y of R.Y) if (y[2] != null && y[3] != null) { g += y[0] + y[1]; s += y[2] + y[3]; }
+    const kappa = s > 0 ? g / s : 0, b = o.sotBlend;
+    const YH = Float64Array.from(R.Y, y => (b > 0 && y[2] != null && y[3] != null) ? (1 - b) * y[0] + b * kappa * y[2] : y[0]);
+    const YA = Float64Array.from(R.Y, y => (b > 0 && y[2] != null && y[3] != null) ? (1 - b) * y[1] + b * kappa * y[3] : y[1]);
+    const F = nucleo(R, YH, YA, o);
+    let rho = 0, best = -Infinity;
+    for (let r = -0.2; r <= 0.1001; r += 0.01) { let ll = 0, ok = true; for (let k = 0; k < F.N; k++) { const y = R.Y[k]; if (y[0] > 1 || y[1] > 1) continue; const t = tau(y[0], y[1], F.LH[k], F.LA[k], r); if (!(t > 0)) { ok = false; break; } ll += F.W[k] * Math.log(t); } if (ok && ll > best) { best = ll; rho = Math.round(r * 100) / 100; } }
+    // Fração do 1º tempo: média por competição, encolhida para a média geral (peso de 300 gols).
+    const fr = new Map(); let tg = 0, t1 = 0;
+    for (const m of R.M) if (m.h1 != null && m.hg != null) { const tot = m.hg + m.ag, p = m.h1 + m.a1; let e = fr.get(m.comp); if (!e) fr.set(m.comp, e = [0, 0]); e[0] += tot; e[1] += p; tg += tot; t1 += p; }
+    const geral = tg ? t1 / tg : 0.445, fracao1T = {}; for (const [c, [a, p]] of fr) fracao1T[c] = (p + 300 * geral) / (a + 300);
+    delete F.LH; delete F.LA; delete F.W;
+    return Object.assign(F, { tipo: 'gols', rho, kappa, fracao1T, fracao1TGeral: geral });
+  }
+
+  /* Escanteios ou cartões (amarelos + vermelhos). Dispersão estimada nos jogos dos últimos 365 dias. */
+  function ajustarContagem(jogos, tipo, opt = {}) {
+    const o = Object.assign({}, PADRAO_CONTAGEM, opt, { cutoff: opt.cutoff ?? Date.now() });
+    const alvo = tipo === 'escanteios' ? (m => m.hc != null && m.ac != null ? [m.hc, m.ac] : null) : (m => m.hy != null && m.ay != null ? [m.hy + (m.hr || 0), m.ay + (m.ar || 0)] : null);
+    const R = selecionar(jogos, o, alvo), F = nucleo(R, Float64Array.from(R.Y, y => y[0]), Float64Array.from(R.Y, y => y[1]), o);
+    let num = 0, den = 0; const limite = o.cutoff - 365 * 864e5;
+    for (let k = 0; k < F.N; k++) { if (Date.parse(R.M[k].date) < limite) continue; const mu = F.LH[k] + F.LA[k], y = R.Y[k][0] + R.Y[k][1]; num += (y - mu) ** 2 - mu; den += mu * mu; }
+    const phi = num > 0 ? clamp(den / num, 2, 500) : 500;
+    delete F.LH; delete F.LA; delete F.W;
+    return Object.assign(F, { tipo, phi });
+  }
+
+  function paramTime(F, id, comp) {
+    const i = F.teamIdx.get(id);
+    if (i !== undefined) return { att: F.att[i], def: F.def[i], va: F.vAtt[i], vd: F.vDef[i], g: F.TG[i], conhecido: true, n: F.nT[i], w: F.wT[i] };
+    const g = F.gIdx.get(grupoDe(comp));
+    return { att: 0, def: 0, va: 1 / F.pT, vd: 1 / F.pT, g: g === undefined ? -1 : g, conhecido: false, n: 0, w: 0 };
+  }
+  function paramComp(F, comp) {
+    const c = F.cIdx.get(comp); if (c !== undefined) return { mu: F.mu[c], ha: F.ha[c], vmu: F.vMu[c], vha: F.vHa[c] };
+    const tipo = (COMP()[comp] || {}).tipo, xs = F.comps.map((id, i) => [id, i]).filter(([id]) => (COMP()[id] || {}).tipo === tipo), arr = xs.length ? xs : F.comps.map((id, i) => [id, i]);
+    return { mu: arr.reduce((s, [, i]) => s + F.mu[i], 0) / arr.length, ha: F.o.haPrior, vmu: 0.01, vha: F.o.sdHome ** 2 };
+  }
+  /* Previsão de λ (média e variância no log). Para gols, aplica a correção de confiança validada. */
+  function prever(F, m) {
+    const c = paramComp(F, m.comp), th = paramTime(F, m.h, m.comp), ta = paramTime(F, m.a, m.comp);
+    const ga = g => g >= 0 ? F.gat[g] : 0, gd = g => g >= 0 ? F.gdf[g] : 0, vg = (v, g) => g >= 0 ? v[g] : 1 / F.pL;
+    let eh = c.mu + (m.neutral ? 0 : c.ha) + ga(th.g) + th.att - gd(ta.g) - ta.def, ea = c.mu + ga(ta.g) + ta.att - gd(th.g) - th.def;
+    let vh = th.va + ta.vd + vg(F.vGat, th.g) + vg(F.vGdf, ta.g) + c.vmu + (m.neutral ? 0 : c.vha), va = ta.va + th.vd + vg(F.vGat, ta.g) + vg(F.vGdf, th.g) + c.vmu;
+    const s = F.o.esticar || 1;
+    if (s !== 1) { const m0 = (eh + ea) / 2; eh = m0 + s * (eh - m0); ea = m0 + s * (ea - m0); vh *= s * s; va *= s * s; }
+    return { eh, ea, vh, va, lh: Math.exp(eh), la: Math.exp(ea), casa: th, fora: ta };
+  }
+
+  /* Força para exibição: nível total (ataque + defesa, já com o nível da liga) e posição entre clubes ativos. */
+  function tabelaForca(F, { minJogos = 12, diasAtivo = 200 } = {}) {
+    const lim = F.cutoff - diasAtivo * 864e5, out = [];
+    for (let i = 0; i < F.teams.length; i++) { if (F.nT[i] < minJogos || F.ultimo[i] < lim) continue; const g = F.TG[i]; out.push({ id: F.teams[i], nome: F.nomes[i], grupo: F.groups[g], ataque: F.att[i] + F.gat[g], defesa: F.def[i] + F.gdf[g], jogos: F.nT[i] }); }
+    out.forEach(x => { x.nota = x.ataque + x.defesa; }); out.sort((a, b) => b.nota - a.nota); out.forEach((x, i) => { x.posicao = i + 1; });
+    return { lista: out, porId: new Map(out.map(x => [x.id, x])) };
+  }
+
+  /* ---------- Placar e mercados ---------- */
+  function pois(l, max) { const p = new Float64Array(max + 1); p[0] = Math.exp(-l); for (let k = 1; k <= max; k++) p[k] = p[k - 1] * l / k; return p; }
+  function matriz(lh, la, rho = 0, max = 12) {
+    const ph = pois(lh, max), pa = pois(la, max), M = []; let s = 0;
+    for (let i = 0; i <= max; i++) { const row = new Float64Array(max + 1); for (let j = 0; j <= max; j++) { let v = ph[i] * pa[j]; if (i < 2 && j < 2) v *= Math.max(0, tau(i, j, lh, la, rho)); row[j] = v; s += v; } M.push(row); }
+    for (const row of M) for (let j = 0; j < row.length; j++) row[j] /= s;
+    return M;
+  }
+  // Mercados de gols decididos pelo placar de 90 min. l = linha (handicap do próprio time no 'ah').
+  function vence(mk, i, j) {
+    const { t, s, l } = mk;
+    if (t === '1x2') return s === 'h' ? i > j : s === 'a' ? j > i : i === j;
+    if (t === 'dc') return s === '1x' ? i >= j : s === 'x2' ? j >= i : i !== j;
+    if (t === 'btts') return s === 's' ? i > 0 && j > 0 : i === 0 || j === 0;
+    if (t === 'tot') return s === 'o' ? i + j > l : i + j < l;
+    if (t === 'tm') return s === 'ho' ? i > l : s === 'hu' ? i < l : s === 'ao' ? j > l : j < l;
+    if (t === 'ah') return (s === 'h' ? i - j : j - i) + l > 0;
+    if (t === 'cs') return i === l[0] && j === l[1];
+    return false;
+  }
+  const doPlacar = mk => ['1x2', 'dc', 'btts', 'tot', 'tm', 'ah', 'cs'].includes(mk.t);
+  function prob(M, mk) { let p = 0; for (let i = 0; i < M.length; i++) for (let j = 0; j < M.length; j++) if (vence(mk, i, j)) p += M[i][j]; return p; }
+  function probConjunta(M, mks) { let p = 0; for (let i = 0; i < M.length; i++) for (let j = 0; j < M.length; j++) if (mks.every(mk => vence(mk, i, j))) p += M[i][j]; return p; }
+  const LINHAS = Object.freeze({ tot: [0.5, 1.5, 2.5, 3.5, 4.5, 5.5], tm: [0.5, 1.5, 2.5], ah: [-2.5, -1.5, -0.5, 0.5, 1.5, 2.5], t1: [0.5, 1.5, 2.5], esc: [7.5, 8.5, 9.5, 10.5, 11.5, 12.5], escT: [3.5, 4.5, 5.5], car: [2.5, 3.5, 4.5, 5.5, 6.5], carT: [0.5, 1.5, 2.5] });
+  function especificacoesGols() {
+    const out = [{ t: '1x2', s: 'h' }, { t: '1x2', s: 'd' }, { t: '1x2', s: 'a' }, { t: 'dc', s: '1x' }, { t: 'dc', s: 'x2' }, { t: 'dc', s: '12' }, { t: 'btts', s: 's' }, { t: 'btts', s: 'n' }];
+    for (const l of LINHAS.tot) out.push({ t: 'tot', s: 'o', l }, { t: 'tot', s: 'u', l });
+    for (const l of LINHAS.tm) out.push({ t: 'tm', s: 'ho', l }, { t: 'tm', s: 'hu', l }, { t: 'tm', s: 'ao', l }, { t: 'tm', s: 'au', l });
+    for (const l of LINHAS.ah) out.push({ t: 'ah', s: 'h', l }, { t: 'ah', s: 'a', l });
+    return out;
+  }
+  // Gols no 1º tempo: Poisson com λ × fração do 1º tempo da competição.
+  function prob1T(lh, la, frac, mk) { const L = (lh + la) * frac; let cdf = 0, pk = Math.exp(-L); for (let k = 0; k <= Math.floor(mk.l); k++) { if (k) pk *= L / k; cdf += pk; } return mk.s === 'o' ? 1 - cdf : cdf; }
+  // 2º tempo: a mesma conta com a fração restante dos gols.
+  function prob2T(lh, la, frac, mk) { return prob1T(lh, la, 1 - frac, mk); }
+  // Tempo com mais gols: gols de cada tempo como Poisson independentes.
+  function tempoMaisGols(lh, la, frac) {
+    const p1 = pois((lh + la) * frac, 15), p2 = pois((lh + la) * (1 - frac), 15); let a = 0, b = 0, e = 0;
+    for (let i = 0; i <= 15; i++) for (let j = 0; j <= 15; j++) { const v = p1[i] * p2[j]; if (i > j) a += v; else if (i < j) b += v; else e += v; }
+    const s = a + b + e; return { '1': a / s, '2': b / s, x: e / s };
+  }
+  // Quem marca primeiro (gols como processo de Poisson): mandante λh/L·(1−e^−L), visitante λa/L·(1−e^−L), sem gols e^−L.
+  function primeiroGol(lh, la) { const L = lh + la, q = Math.exp(-L); return { h: lh / L * (1 - q), a: la / L * (1 - q), '-': q }; }
+
+  /* Chance de um jogador marcar (experimental, sem odd para conferir): parcela dele nos gols e nos chutes no alvo do
+   * time (temporada atual + metade da anterior), por jogo como titular, aplicada aos gols esperados do time. */
+  function artilheiros(elenco, lambdaTime, { max = 4 } = {}) {
+    if (!elenco || !Number.isFinite(lambdaTime)) return [];
+    const junta = new Map();
+    for (const [lista, peso] of [[elenco.atual || [], 1], [elenco.anterior || [], 0.5]]) for (const p of lista) {
+      if (p.pos === 'G') continue;
+      const x = junta.get(p.id) || { id: p.id, nome: p.nome, pos: p.pos, jogos: 0, banco: 0, gols: 0, noAlvo: 0, lesionado: false, noElenco: false };
+      x.jogos += peso * p.jogos; x.banco += peso * p.banco; x.gols += peso * p.gols; x.noAlvo += peso * p.noAlvo;
+      if (peso === 1) { x.lesionado = p.lesionado; x.noElenco = true; x.nome = p.nome; x.pos = p.pos; x.golsAtual = p.gols; x.jogosAtual = p.jogos; }
+      junta.set(p.id, x);
+    }
+    const js = [...junta.values()].filter(p => p.noElenco), G = js.reduce((s, p) => s + p.gols, 0), S = js.reduce((s, p) => s + p.noAlvo, 0);
+    const maxJ = l => l && l.length ? Math.max(...l.map(p => p.jogos)) : 0, jogosTime = maxJ(elenco.atual) + 0.5 * maxJ(elenco.anterior);
+    if (!jogosTime || G + S === 0) return [];
+    return js.filter(p => !p.lesionado && p.jogos - p.banco >= 2).map(p => {
+      const parcela = 0.5 * (p.gols + 0.2) / (G + 2) + 0.5 * (p.noAlvo + 0.5) / (S + 5), titular = (p.jogos - p.banco) + 0.35 * p.banco;
+      const porJogo = Math.min(0.45, parcela * jogosTime / Math.max(titular, jogosTime * 0.3)), lambda = lambdaTime * porJogo;
+      return { nome: p.nome, pos: p.pos, p: 1 - Math.exp(-lambda), gols: p.golsAtual || 0, jogos: p.jogosAtual || 0 };
+    }).sort((a, b) => b.p - a.p).slice(0, max);
+  }
+
+  // Binomial negativa para contagens (média mu, dispersão phi).
+  function nbAte(mu, phi, k) { const r = phi, q = mu / (r + mu); let pk = Math.pow(r / (r + mu), r), cdf = pk; for (let i = 1; i <= k; i++) { pk *= (i - 1 + r) / i * q; cdf += pk; } return clamp(cdf, 0, 1); }
+  function probContagem(mu, phi, s, l) { const ate = nbAte(mu, phi, Math.floor(l)); return s === 'o' ? 1 - ate : ate; }
+
+  /* Gols esperados implícitos no mercado: λ que reproduzem o 1X2 sem margem (e a linha principal de gols, se houver). */
+  function implicitos(q, tot, rho = -0.03) {
+    const perda = (lh, la) => { const M = matriz(lh, la, rho, 10); let h = 0, d = 0, a = 0, ov = 0; for (let i = 0; i < M.length; i++) for (let j = 0; j < M.length; j++) { const v = M[i][j]; if (i > j) h += v; else if (i < j) a += v; else d += v; if (tot && i + j > tot.linha) ov += v; } let e = 0; if (q) e += (h - q[0]) ** 2 + (d - q[1]) ** 2 + (a - q[2]) ** 2; if (tot) e += (ov - tot.pOver) ** 2; return e; };
+    let bT = 2.6, bS = 0.55, best = Infinity;
+    for (let T = 0.6; T <= 6.01; T += 0.15) for (let s = 0.03; s <= 0.971; s += 0.02) { const v = perda(T * s, T * (1 - s)); if (v < best) { best = v; bT = T; bS = s; } }
+    let dT = 0.15, dS = 0.02;
+    for (let r = 0; r < 3; r++) { dT /= 4; dS /= 4; const cT = bT, cS = bS; for (let i = -4; i <= 4; i++) for (let j = -4; j <= 4; j++) { const T = cT + i * dT, s = cS + j * dS; if (T <= 0.2 || s <= 0.005 || s >= 0.995) continue; const v = perda(T * s, T * (1 - s)); if (v < best) { best = v; bT = T; bS = s; } } }
+    return { lh: bT * bS, la: bT * (1 - bS), erro: Math.sqrt(best / ((q ? 3 : 0) + (tot ? 1 : 0) || 1)) };
+  }
+
+  /* Faixa de 5% a 95% das probabilidades do modelo, sorteando λ pela incerteza dos parâmetros. */
+  function faixas(pred, rho, specs, n = 160, seed = 7) {
+    let st = seed >>> 0 || 1; const rnd = () => { st ^= st << 13; st ^= st >>> 17; st ^= st << 5; return ((st >>> 0) + 0.5) / 4294967296; };
+    const normal = () => Math.sqrt(-2 * Math.log(rnd())) * Math.cos(2 * Math.PI * rnd()), amostras = specs.map(() => []);
+    for (let k = 0; k < n; k++) { const M = matriz(Math.exp(pred.eh + Math.sqrt(pred.vh) * normal()), Math.exp(pred.ea + Math.sqrt(pred.va) * normal()), rho, 10); specs.forEach((mk, i) => amostras[i].push(prob(M, mk))); }
+    const q = (xs, p) => { const s = xs.slice().sort((a, b) => a - b), i = (s.length - 1) * p, lo = Math.floor(i), hi = Math.ceil(i); return s[lo] + (s[hi] - s[lo]) * (i - lo); };
+    return amostras.map(xs => [q(xs, 0.05), q(xs, 0.95)]);
+  }
+
+  G.PCModelo = Object.freeze({ PADRAO, PADRAO_CONTAGEM, LINHAS, grupoDe, ajustarGols, ajustarContagem, prever, paramTime, paramComp, tabelaForca, tau, matriz, vence, doPlacar, prob, probConjunta,
+    especificacoesGols, prob1T, prob2T, tempoMaisGols, primeiroGol, artilheiros, probContagem, implicitos, faixas });
+})(typeof globalThis !== 'undefined' ? globalThis : window);
+
+</script>
+  <script>/* js/mercado.js */
+/* Ponto Comum v3 · mercado.js
+ * Cotações (DraftKings e Bet365 via ESPN), probabilidade sem margem e gols esperados implícitos no preço.
+ * Validação (jul–out/2026, 609 jogos): o fechamento sem margem da DraftKings errou menos que o modelo
+ * (log loss 1X2 0,935 × 0,968). Por isso o mercado é a referência quando existe; o modelo cobre o resto.
+ */
+(function (G) {
+  'use strict';
+  const R = () => G.PCRede;
+  const chave = mk => mk.t + ':' + mk.s + (mk.l !== undefined && mk.l !== null ? ':' + (Array.isArray(mk.l) ? mk.l.join('-') : mk.l) : '');
+  const meia = l => Number.isFinite(l) && Math.abs(l * 2 - Math.round(l * 2)) < 1e-9 && Math.abs(l - Math.round(l)) > 1e-9;
+  const fmtLinha = l => (l > 0 ? '+' : '') + String(l).replace('.', ',');
+
+  function rotulo(mk, casa = 'Mandante', fora = 'Visitante') {
+    const L = mk.l !== undefined && mk.l !== null && !Array.isArray(mk.l) ? String(mk.l).replace('.', ',') : '';
+    switch (mk.t) {
+      case '1x2': return mk.s === 'h' ? 'Vitória ' + casa : mk.s === 'a' ? 'Vitória ' + fora : 'Empate';
+      case 'dc': return mk.s === '1x' ? casa + ' ou empate' : mk.s === 'x2' ? fora + ' ou empate' : 'Sem empate (' + casa + ' ou ' + fora + ')';
+      case 'btts': return mk.s === 's' ? 'Ambas marcam: sim' : 'Ambas marcam: não';
+      case 'tot': return (mk.s === 'o' ? 'Mais de ' : 'Menos de ') + L + ' gols';
+      case 'tm': return (mk.s[0] === 'h' ? casa : fora) + (mk.s[1] === 'o' ? ': mais de ' : ': menos de ') + L + ' gols';
+      case 'ah': return (mk.s === 'h' ? casa : fora) + ' ' + fmtLinha(mk.l) + ' (handicap)';
+      case 'cs': return 'Placar exato ' + mk.l[0] + '–' + mk.l[1];
+      case 't1': return '1º tempo: ' + (mk.s === 'o' ? 'mais de ' : 'menos de ') + L + ' gols';
+      case 't2': return '2º tempo: ' + (mk.s === 'o' ? 'mais de ' : 'menos de ') + L + ' gols';
+      case 'tmg': return 'Tempo com mais gols: ' + (mk.s === '1' ? '1º tempo' : mk.s === '2' ? '2º tempo' : 'empate');
+      case 'pg': return mk.s === 'h' ? casa + ' marca primeiro' : mk.s === 'a' ? fora + ' marca primeiro' : 'Jogo sem gols';
+      case 'esc': return 'Escanteios: ' + (mk.s === 'o' ? 'mais de ' : 'menos de ') + L;
+      case 'escT': return (mk.s[0] === 'h' ? casa : fora) + ': ' + (mk.s[1] === 'o' ? 'mais de ' : 'menos de ') + L + ' escanteios';
+      case 'car': return 'Cartões: ' + (mk.s === 'o' ? 'mais de ' : 'menos de ') + L;
+      case 'carT': return (mk.s[0] === 'h' ? casa : fora) + ': ' + (mk.s[1] === 'o' ? 'mais de ' : 'menos de ') + L + ' cartões';
+      default: return chave(mk);
+    }
+  }
+  function familia(mk) { return ['1x2', 'dc', 'ah'].includes(mk.t) ? 'resultado' : ['tot', 'tm', 'btts', 'cs'].includes(mk.t) ? 'gols' : ['t1', 't2', 'tmg', 'pg'].includes(mk.t) ? 'tempos' : mk.t.startsWith('esc') ? 'escanteios' : mk.t.startsWith('car') ? 'cartoes' : 'outros'; }
+
+  /* Cotações do resumo da ESPN. Cada uma: { casa, mk, odd }. Só linhas binárias (meio gol). */
+  function doResumo(j, m) {
+    const out = [], visto = new Set(), A = R().americana, F = R().fracionaria;
+    const add = (casa, mk, odd) => { if (!(odd > 1.005 && odd < 1000)) return; if ((mk.t === 'tot' || mk.t === 'ah') && !meia(mk.l)) return; const k = casa + '|' + chave(mk); if (visto.has(k)) return; visto.add(k); out.push({ casa, mk, odd: +odd.toFixed(3) }); };
+    for (const o of [...(j.odds || []), ...(j.pickcenter || [])]) {
+      if (!o || typeof o !== 'object') continue;
+      const casa = (o.provider && o.provider.name) || 'Casa', ml = o.moneyline || {}, tt = o.total || {}, ps = o.pointSpread || {};
+      const atual = s => s ? (s.close || s.current || null) : null;
+      const h = A((atual(ml.home) || {}).odds) || A(o.homeTeamOdds && o.homeTeamOdds.moneyLine), d = A((atual(ml.draw) || {}).odds) || A(o.drawOdds && o.drawOdds.moneyLine), a = A((atual(ml.away) || {}).odds) || A(o.awayTeamOdds && o.awayTeamOdds.moneyLine);
+      if (h && d && a) { add(casa, { t: '1x2', s: 'h' }, h); add(casa, { t: '1x2', s: 'd' }, d); add(casa, { t: '1x2', s: 'a' }, a); }
+      const ov = atual(tt.over), un = atual(tt.under);
+      if (ov && un) { const lo = Number(String(ov.line || '').replace(/^o/i, '')), lu = Number(String(un.line || '').replace(/^u/i, '')); if (lo === lu) { add(casa, { t: 'tot', s: 'o', l: lo }, A(ov.odds)); add(casa, { t: 'tot', s: 'u', l: lu }, A(un.odds)); } }
+      else if (R().num(o.overUnder) !== null && A(o.overOdds) && A(o.underOdds)) { add(casa, { t: 'tot', s: 'o', l: +o.overUnder }, A(o.overOdds)); add(casa, { t: 'tot', s: 'u', l: +o.overUnder }, A(o.underOdds)); }
+      for (const lado of ['home', 'away']) { const p = atual(ps[lado]); if (p && p.line !== undefined) add(casa, { t: 'ah', s: lado === 'home' ? 'h' : 'a', l: Number(p.line) }, A(p.odds)); }
+      const b = (o.bettingOdds && o.bettingOdds.teamOdds) || {}, f = k => b[k] ? F(b[k].value ?? b[k]) : null;
+      const r1 = f('preMatchFullTimeResultHome'), rx = f('preMatchFullTimeResultDraw'), r2 = f('preMatchFullTimeResultAway');
+      if (r1 && rx && r2) { add(casa, { t: '1x2', s: 'h' }, r1); add(casa, { t: '1x2', s: 'd' }, rx); add(casa, { t: '1x2', s: 'a' }, r2); }
+      add(casa, { t: 'dc', s: '1x' }, f('preMatchDoubleChanceHomeOrDraw')); add(casa, { t: 'dc', s: 'x2' }, f('preMatchDoubleChanceDrawOrAway')); add(casa, { t: 'dc', s: '12' }, f('preMatchDoubleChanceHomeOrAway'));
+      add(casa, { t: 'btts', s: 's' }, f('preMatchBothTeamsToScoreYes')); add(casa, { t: 'btts', s: 'n' }, f('preMatchBothTeamsToScoreNo'));
+      const gl = b.preMatchOverUnderHandicap ? Number(String(b.preMatchOverUnderHandicap.value ?? b.preMatchOverUnderHandicap).split(',')[0]) : NaN;
+      if (meia(gl)) { add(casa, { t: 'tot', s: 'o', l: gl }, f('preMatchGoalLineOver')); add(casa, { t: 'tot', s: 'u', l: gl }, f('preMatchGoalLineUnder')); }
+    }
+    return out;
+  }
+  /* Cotações a partir do placar do dia (só DraftKings 1X2 + linha principal). */
+  function doPlacar(m) {
+    const o = m && m.odds; if (!o) return [];
+    const out = [], c = o.casa;
+    if (o.h && o.d && o.a) out.push({ casa: c, mk: { t: '1x2', s: 'h' }, odd: o.h }, { casa: c, mk: { t: '1x2', s: 'd' }, odd: o.d }, { casa: c, mk: { t: '1x2', s: 'a' }, odd: o.a });
+    if (o.over && o.under && meia(o.linha)) out.push({ casa: c, mk: { t: 'tot', s: 'o', l: o.linha }, odd: o.over }, { casa: c, mk: { t: 'tot', s: 'u', l: o.linha }, odd: o.under });
+    return out;
+  }
+
+  /* Probabilidade sem margem de um mercado completo de uma casa (normalização proporcional). */
+  function semMargem(odds) { const inv = odds.map(o => 1 / o), s = inv.reduce((a, b) => a + b, 0); return { p: inv.map(v => v / s), margem: s - 1 }; }
+
+  /* Referência do mercado para a partida: 1X2 e linha principal sem margem, e os λ implícitos. */
+  function referencia(cotacoes, rho = -0.03) {
+    const porCasa = new Map(); for (const q of cotacoes) { let l = porCasa.get(q.casa); if (!l) porCasa.set(q.casa, l = []); l.push(q); }
+    const ordem = [...porCasa.keys()].sort((a, b) => (/draftkings/i.test(b) ? 1 : 0) - (/draftkings/i.test(a) ? 1 : 0));
+    let x12 = null, tot = null, fonte = [];
+    for (const casa of ordem) {
+      const qs = porCasa.get(casa), g = s => qs.find(q => q.mk.t === '1x2' && q.mk.s === s);
+      if (!x12 && g('h') && g('d') && g('a')) { const r = semMargem([g('h').odd, g('d').odd, g('a').odd]); x12 = { p: r.p, margem: r.margem, casa }; fonte.push(casa); }
+      if (!tot) { const ov = qs.filter(q => q.mk.t === 'tot' && q.mk.s === 'o'); for (const o of ov) { const u = qs.find(q => q.mk.t === 'tot' && q.mk.s === 'u' && q.mk.l === o.mk.l); if (u) { const r = semMargem([o.odd, u.odd]); const cand = { linha: o.mk.l, pOver: r.p[0], margem: r.margem, casa }; if (!tot || Math.abs(cand.pOver - 0.5) < Math.abs(tot.pOver - 0.5)) tot = cand; } } if (tot && !fonte.includes(tot.casa)) fonte.push(tot.casa); }
+    }
+    if (!x12 && !tot) return null;
+    const im = G.PCModelo.implicitos(x12 ? x12.p : null, tot, rho);
+    return { x12, tot, lh: im.lh, la: im.la, erro: im.erro, fonte: fonte.join(' + '), completo: !!(x12 && tot) };
+  }
+  /* Melhor preço disponível para um mercado. */
+  function melhorOdd(cotacoes, mk) { const k = chave(mk); let best = null; for (const q of cotacoes) if (chave(q.mk) === k && (!best || q.odd > best.odd)) best = q; return best; }
+
+  /* Odd sugerida para qualquer linha: média das casas que cotam a linha; sem cotação, o preço justo do mercado
+   * com a margem típica das casas grandes; sem mercado, o preço justo do modelo com margem um pouco maior. */
+  const MARGEM_TIPICA = 0.055;
+  function oddSugerida(cotacoes, mk, pMercado, pModelo) {
+    const k = chave(mk), qs = cotacoes.filter(q => chave(q.mk) === k);
+    if (qs.length) return { odd: +(qs.reduce((s, q) => s + q.odd, 0) / qs.length).toFixed(2), tipo: 'cotada', casas: [...new Set(qs.map(q => q.casa))], maior: Math.max(...qs.map(q => q.odd)) };
+    const temMercado = Number.isFinite(pMercado) && pMercado > 0 && pMercado < 1, p = temMercado ? pMercado : pModelo;
+    if (!(p > 0 && p < 1)) return null;
+    return { odd: +Math.max(1.01, 1 / (p * (1 + MARGEM_TIPICA + (temMercado ? 0 : 0.02)))).toFixed(2), tipo: temMercado ? 'mercado' : 'modelo', casas: [] };
+  }
+
+  G.PCMercado = Object.freeze({ chave, rotulo, familia, meia, doResumo, doPlacar, semMargem, referencia, melhorOdd, oddSugerida, MARGEM_TIPICA });
+})(typeof globalThis !== 'undefined' ? globalThis : window);
+
+</script>
+  <script>/* js/analise.js */
+/* Ponto Comum v3 · analise.js
+ * Linhas de uma partida com o MODELO na frente e o mercado ao lado.
+ * Cada linha: chance do modelo (com faixa), chance do mercado sem margem, odd sugerida (média das casas ou
+ * estimada), odd justa do modelo, valor esperado pelo modelo e se modelo e mercado concordam (até 8 p.p.).
+ * Linhas principais = as que o Iago usa (1X2, dupla chance, ambas marcam, mais/menos gols). O resto fica em
+ * "outras linhas" e só sobe para os destaques quando foge muito do normal da competição.
+ */
+(function (G) {
+  'use strict';
+  const M = () => G.PCModelo, K = () => G.PCMercado, R = () => G.PCRede;
+  const TOLERANCIA = 0.08;
+
+  function principais() {
+    const out = [{ t: '1x2', s: 'h' }, { t: '1x2', s: 'd' }, { t: '1x2', s: 'a' }, { t: 'dc', s: '1x' }, { t: 'dc', s: 'x2' }, { t: 'dc', s: '12' }, { t: 'btts', s: 's' }, { t: 'btts', s: 'n' }];
+    for (const l of [0.5, 1.5, 2.5, 3.5, 4.5]) out.push({ t: 'tot', s: 'o', l }, { t: 'tot', s: 'u', l });
+    return out;
+  }
+  function outras() {
+    const L = M().LINHAS, out = [];
+    for (const l of L.tm) out.push({ t: 'tm', s: 'ho', l }, { t: 'tm', s: 'hu', l }, { t: 'tm', s: 'ao', l }, { t: 'tm', s: 'au', l });
+    for (const l of L.ah) out.push({ t: 'ah', s: 'h', l }, { t: 'ah', s: 'a', l });
+    for (const l of [0.5, 1.5]) out.push({ t: 't1', s: 'o', l }, { t: 't1', s: 'u', l }, { t: 't2', s: 'o', l }, { t: 't2', s: 'u', l });
+    out.push({ t: 'tmg', s: '1' }, { t: 'tmg', s: '2' }, { t: 'tmg', s: 'x' }, { t: 'pg', s: 'h' }, { t: 'pg', s: 'a' }, { t: 'pg', s: '-' });
+    for (const l of L.esc) out.push({ t: 'esc', s: 'o', l }, { t: 'esc', s: 'u', l });
+    for (const l of L.escT) out.push({ t: 'escT', s: 'ho', l }, { t: 'escT', s: 'hu', l }, { t: 'escT', s: 'ao', l }, { t: 'escT', s: 'au', l });
+    for (const l of L.car) out.push({ t: 'car', s: 'o', l }, { t: 'car', s: 'u', l });
+    for (const l of L.carT) out.push({ t: 'carT', s: 'ho', l }, { t: 'carT', s: 'hu', l }, { t: 'carT', s: 'ao', l }, { t: 'carT', s: 'au', l });
+    return out;
+  }
+  const CHAVES_PRINCIPAIS = () => new Set(principais().map(mk => K().chave(mk)));
+
+  /* Probabilidade de uma linha dados os gols esperados (lh, la), a matriz de placares e as contagens. */
+  function chance(mk, g, frac, esc, car) {
+    if (M().doPlacar(mk)) return M().prob(g.M, mk);
+    if (mk.t === 't1') return M().prob1T(g.lh, g.la, frac, mk);
+    if (mk.t === 't2') return M().prob2T(g.lh, g.la, frac, mk);
+    if (mk.t === 'tmg') return M().tempoMaisGols(g.lh, g.la, frac)[mk.s];
+    if (mk.t === 'pg') return M().primeiroGol(g.lh, g.la)[mk.s];
+    const dir = mk.s.length > 1 ? mk.s[1] : mk.s;
+    if (mk.t === 'esc' && esc) return M().probContagem(esc.lh + esc.la, esc.phi, mk.s, mk.l);
+    if (mk.t === 'escT' && esc) return M().probContagem(mk.s[0] === 'h' ? esc.lh : esc.la, esc.phi, dir, mk.l);
+    if (mk.t === 'car' && car) return M().probContagem(car.lh + car.la, car.phi, mk.s, mk.l);
+    if (mk.t === 'carT' && car) return M().probContagem(mk.s[0] === 'h' ? car.lh : car.la, car.phi, dir, mk.l);
+    return null;
+  }
+
+  /* ctx: { F, Fe, Fc, porTime, forca, cotacoes, resumo, elencos: {casa, fora}, agora } */
+  function analisar(m, ctx) {
+    const agora = ctx.agora || Date.now(), F = ctx.F, pr = M().prever(F, m), rho = F.rho, frac = F.fracao1T[m.comp] ?? F.fracao1TGeral;
+    const modelo = { lh: pr.lh, la: pr.la, M: M().matriz(pr.lh, pr.la, rho) };
+    const cot = ctx.cotacoes || [], ref = cot.length ? K().referencia(cot, rho) : null, mercado = ref ? { lh: ref.lh, la: ref.la, M: M().matriz(ref.lh, ref.la, rho) } : null;
+    const pe = ctx.Fe ? M().prever(ctx.Fe, m) : null, pc = ctx.Fc ? M().prever(ctx.Fc, m) : null;
+    const esc = pe ? { lh: pe.lh, la: pe.la, phi: ctx.Fe.phi } : null, car = pc ? { lh: pc.lh, la: pc.la, phi: ctx.Fc.phi } : null;
+    // "Normal da competição": mesmos cálculos com as médias da competição (sem a força dos times).
+    const base = (Fx, s) => { if (!Fx) return null; const c = M().paramComp(Fx, m.comp); return { lh: Math.exp(c.mu + (m.neutral ? 0 : c.ha)), la: Math.exp(c.mu), phi: Fx.phi }; };
+    const bg = base(F), tipico = { lh: bg.lh, la: bg.la, M: M().matriz(bg.lh, bg.la, rho) }, escTip = base(ctx.Fe), carTip = base(ctx.Fc);
+    const lista = principais().concat(outras()), grade = lista.filter(mk => M().doPlacar(mk)), fx = M().faixas(pr, rho, grade, 120);
+    const faixa = new Map(grade.map((mk, i) => [K().chave(mk), fx[i]])), princ = CHAVES_PRINCIPAIS();
+    const parSemMargem = mk => {
+      const oposto = mk.t === 'btts' ? { t: 'btts', s: mk.s === 's' ? 'n' : 's' } : mk.t === 'tot' ? { t: 'tot', s: mk.s === 'o' ? 'u' : 'o', l: mk.l } : mk.t === 'ah' ? { t: 'ah', s: mk.s === 'h' ? 'a' : 'h', l: -mk.l } : null;
+      if (!oposto) return null;
+      for (const q of cot) if (K().chave(q.mk) === K().chave(mk)) { const o = cot.find(z => z.casa === q.casa && K().chave(z.mk) === K().chave(oposto)); if (o) return K().semMargem([q.odd, o.odd]).p[0]; }
+      return null;
+    };
+    const linhas = [];
+    for (const mk of lista) {
+      const k = K().chave(mk), pModelo = chance(mk, modelo, frac, esc, car);
+      if (!Number.isFinite(pModelo) || pModelo <= 0.002 || pModelo >= 0.998) continue;
+      let pMercado = null;
+      if (mercado && ['1x2', 'dc', 'btts', 'tot', 'tm', 'ah', 't1', 't2', 'tmg', 'pg'].includes(mk.t)) {
+        if (mk.t === '1x2' && ref.x12) pMercado = ref.x12.p[{ h: 0, d: 1, a: 2 }[mk.s]];
+        else if (mk.t === 'dc' && ref.x12) { const q = ref.x12.p; pMercado = mk.s === '1x' ? q[0] + q[1] : mk.s === 'x2' ? q[2] + q[1] : q[0] + q[2]; }
+        else pMercado = parSemMargem(mk) ?? chance(mk, mercado, frac, null, null);
+      }
+      if (!Number.isFinite(pMercado)) pMercado = null;
+      const os = K().oddSugerida(cot, mk, pMercado, pModelo), div = pMercado !== null ? pModelo - pMercado : null;
+      const pTip = chance(mk, tipico, frac, escTip, carTip);
+      linhas.push({ mk, chave: k, familia: K().familia(mk), principal: princ.has(k), rotulo: K().rotulo(mk, m.hn, m.an), p: pModelo, pModelo, pMercado, pTipico: Number.isFinite(pTip) ? pTip : null, faixa: faixa.get(k) || null,
+        odd: os ? os.odd : null, oddTipo: os ? os.tipo : null, oddCasas: os ? os.casas : [], oddMaior: os && os.maior ? os.maior : null,
+        justa: 1 / pModelo, ev: os ? pModelo * os.odd - 1 : null, evMercado: os && pMercado ? pMercado * os.odd - 1 : null, divergencia: div, concorda: div === null ? null : Math.abs(div) <= TOLERANCIA });
+    }
+    // Destaques: linhas fora das principais com chance alta e bem acima do normal da competição.
+    const destaques = linhas.filter(l => !l.principal && !['ah', 'pg', 'tmg'].includes(l.mk.t) && l.p >= 0.68 && l.p <= 0.95 && l.pTipico !== null && l.p - l.pTipico >= 0.15 && l.concorda !== false)
+      .sort((a, b) => (b.p - b.pTipico) - (a.p - a.pTipico)).filter((l, i, arr) => arr.findIndex(x => x.mk.t === l.mk.t && x.mk.s === l.mk.s) === i).slice(0, 3);
+    const placares = []; for (let i = 0; i < 7; i++) for (let j = 0; j < 7; j++) placares.push([i, j, modelo.M[i][j]]); placares.sort((a, b) => b[2] - a[2]);
+    const cal = { casa: R().calendario(ctx.porTime, m.h, m.date), fora: R().calendario(ctx.porTime, m.a, m.date) };
+    const forma = { casa: R().forma(ctx.porTime, m.h, m.date), fora: R().forma(ctx.porTime, m.a, m.date) }, h2h = R().confrontos(ctx.porTime, m.h, m.a, m.date);
+    const fc = ctx.forca ? ctx.forca.porId.get(m.h) : null, ff = ctx.forca ? ctx.forca.porId.get(m.a) : null;
+    const el = ctx.elencos || {}, jogadores = { casa: M().artilheiros(el.casa, pr.lh), fora: M().artilheiros(el.fora, pr.la) };
+    const alertas = [], x12 = linhas.filter(l => l.mk.t === '1x2' && l.divergencia !== null), maxDiv = x12.reduce((b, l) => Math.abs(l.divergencia) > Math.abs(b ? b.divergencia : 0) ? l : b, null);
+    if (maxDiv && Math.abs(maxDiv.divergencia) >= TOLERANCIA) alertas.push({ tipo: 'divergencia', texto: 'Modelo e mercado divergem ' + Math.round(Math.abs(maxDiv.divergencia) * 100) + ' p.p. em "' + maxDiv.rotulo + '" (modelo ' + Math.round(maxDiv.pModelo * 100) + '%, mercado ' + Math.round(maxDiv.pMercado * 100) + '%). Nos testes, quando os dois discordaram assim, o mercado acertou mais: confira escalações e desfalques. As sugestões automáticas não usam linhas divergentes.' });
+    for (const [lado, t, nome] of [['casa', pr.casa, m.hn], ['fora', pr.fora, m.an]]) {
+      if (!t.conhecido) alertas.push({ tipo: 'dados', texto: nome + ' não tem jogos na rede: a força dele é a média da competição.' });
+      else if (t.n < 15) alertas.push({ tipo: 'dados', texto: nome + ' tem só ' + t.n + ' jogos na rede; a estimativa dele é instável.' });
+      const c = cal[lado];
+      if (c.descanso !== null && c.descanso < 3.5) alertas.push({ tipo: 'calendario', texto: nome + ' jogou há ' + c.descanso.toFixed(1).replace('.', ',') + ' dias' + (c.jogos14 >= 4 ? ' (' + c.jogos14 + ' jogos em 14 dias)' : '') + '.' });
+      if (c.ateProximo !== null && c.ateProximo < 3.6) { const p = c.proximos[0], comp = R().COMP_MAP[p.comp]; alertas.push({ tipo: 'calendario', texto: nome + ' volta a jogar em ' + c.ateProximo.toFixed(1).replace('.', ',') + ' dias (' + (comp ? comp.nome : p.comp) + '): risco de poupar titulares.' }); }
+    }
+    if (!ref) alertas.push({ tipo: 'mercado', texto: 'Sem cotação para esta partida: as odds sugeridas são estimadas pelo modelo com a margem típica das casas.' });
+    if (ctx.resumo && ctx.resumo.escalacoes && ctx.resumo.escalacoes.some(e => e.titulares.length >= 11)) alertas.push({ tipo: 'escalacao', texto: 'Escalações confirmadas pela fonte. O modelo não as usa; o mercado já reage a elas.' });
+    const iniciado = Date.parse(m.date) <= agora || m.state === 'in' || m.done;
+    return { m, iniciado, lh: pr.lh, la: pr.la, rho, frac, pred: pr, ref, linhas, destaques, jogadores, placares: placares.slice(0, 6), escanteios: esc, cartoes: car,
+      calendario: cal, forma, h2h, forca: { casa: fc || null, fora: ff || null }, resumo: ctx.resumo || null, alertas, cotacoes: cot, geradoEm: new Date(agora).toISOString() };
+  }
+
+  G.PCAnalise = Object.freeze({ analisar, principais, outras, chance, TOLERANCIA });
+})(typeof globalThis !== 'undefined' ? globalThis : window);
+
+</script>
+  <script>/* js/bilhete.js */
+/* Ponto Comum v3 · bilhete.js
+ * Você escolhe as linhas; o bilhete já traz a odd sugerida de cada uma (editável) e calcula a chance conjunta
+ * pelo modelo e pelo mercado, a odd combinada e o valor esperado.
+ * Mesmo jogo: chance pela interseção dos placares; a odd do bloco é estimada como a de um "criar aposta".
+ * Sugestões automáticas em quatro níveis: segura, média, arriscada e bingo.
+ */
+(function (G) {
+  'use strict';
+  const M = () => G.PCModelo;
+  const CHAVE = 'pc3-bilhete', MARGEM_CRIAR_APOSTA = 0.10;
+  const ler = () => { try { const v = JSON.parse(localStorage.getItem(CHAVE) || '[]'); return Array.isArray(v) ? v : []; } catch { return []; } };
+  const gravar = pernas => { try { localStorage.setItem(CHAVE, JSON.stringify(pernas)); } catch { /* bilhete só nesta aba */ } };
+  let pernas = ler();
+
+  function deLinha(a, l, nivel = null) {
+    return { id: a.m.id + '|' + l.chave, jogoId: a.m.id, comp: a.m.comp, jogo: a.m.hn + ' × ' + a.m.an, inicio: a.m.date, mk: l.mk, rotulo: l.rotulo, familia: l.familia,
+      p: l.p, pModelo: l.pModelo, pMercado: l.pMercado, odd: l.odd, oddTipo: l.oddTipo, oddManual: null, nivel, adicionadaEm: new Date().toISOString() };
+  }
+  function adicionar(a, l) { const p = deLinha(a, l); if (!pernas.some(x => x.id === p.id)) { pernas.push(p); gravar(pernas); } return pernas.slice(); }
+  function remover(id) { pernas = pernas.filter(p => p.id !== id); gravar(pernas); return pernas.slice(); }
+  function limpar() { pernas = []; gravar(pernas); return []; }
+  function definirOdd(id, odd) { const p = pernas.find(x => x.id === id); if (p) { p.oddManual = Number.isFinite(odd) && odd > 1 ? odd : null; gravar(pernas); } return pernas.slice(); }
+  function substituir(lista) { pernas = lista.map(p => Object.assign({}, p)); gravar(pernas); return pernas.slice(); }
+  const lista = () => pernas.slice();
+  const oddDe = p => p.oddManual || p.odd || null;
+  const produto = xs => xs.reduce((s, v) => s * v, 1);
+
+  /* analises: Map(jogoId → análise atual), usada para a dependência entre linhas do mesmo jogo. */
+  function avaliar(lst = pernas, analises = new Map()) {
+    const grupos = new Map(); for (const p of lst) { let g = grupos.get(p.jogoId); if (!g) grupos.set(p.jogoId, g = []); g.push(p); }
+    let pMod = 1, pMer = 1, mercadoCompleto = true, odd = 1, oddCompleta = true, estimada = false; const avisos = [], blocos = [];
+    for (const [jogoId, g] of grupos) {
+      const a = analises.get(jogoId), placar = g.filter(p => M().doPlacar(p.mk)), outras = g.filter(p => !M().doPlacar(p.mk));
+      let bMod = 1, bMer = 1, bOdd = 1, blocoMer = true;
+      if (placar.length > 1 && a) {
+        const rho = Number.isFinite(a.rho) ? a.rho : -0.03, MM = M().matriz(a.lh, a.la, rho), mks = placar.map(p => p.mk), jm = M().probConjunta(MM, mks), margM = mks.map(mk => M().prob(MM, mk));
+        if (jm < 1e-6) avisos.push({ nivel: 'erro', texto: a.m.hn + ' × ' + a.m.an + ': as seleções se contradizem (nenhum placar satisfaz todas).' });
+        else if (Math.abs(jm - Math.min(...margM)) < 1e-6) avisos.push({ nivel: 'aviso', texto: a.m.hn + ' × ' + a.m.an + ': uma seleção já implica a outra; a perna extra não muda a chance.' });
+        bMod = jm;
+        if (a.ref && placar.every(p => Number.isFinite(p.pMercado))) { const MR = M().matriz(a.ref.lh, a.ref.la, rho), jr = M().probConjunta(MR, mks), fator = jr / produto(mks.map(mk => M().prob(MR, mk))); bMer = jr < 1e-6 ? 0 : Math.min(fator * produto(placar.map(p => p.pMercado)), ...placar.map(p => p.pMercado)); }
+        else blocoMer = false;
+        const pOdd = blocoMer ? bMer : bMod; bOdd = pOdd > 0 ? 1 / (pOdd * (1 + MARGEM_CRIAR_APOSTA)) : null; estimada = true;
+        avisos.push({ nivel: 'info', texto: a.m.hn + ' × ' + a.m.an + ': pernas do mesmo jogo têm odd própria na casa ("criar aposta"); a odd deste bloco (' + (bOdd ? bOdd.toFixed(2).replace('.', ',') : '—') + ') é estimada pela chance conjunta com margem de 10%.' });
+      } else {
+        for (const p of placar) { bMod *= p.pModelo ?? p.p; if (Number.isFinite(p.pMercado)) bMer *= p.pMercado; else blocoMer = false; const o = oddDe(p); if (o) bOdd *= o; else oddCompleta = false; }
+        if (placar.length > 1) avisos.push({ nivel: 'aviso', texto: g[0].jogo + ': análise do jogo indisponível; pernas multiplicadas como se fossem independentes.' });
+      }
+      for (const p of outras) { bMod *= p.pModelo ?? p.p; if (Number.isFinite(p.pMercado)) bMer *= p.pMercado; else blocoMer = false; const o = oddDe(p); if (o && bOdd) bOdd *= o; else oddCompleta = false; }
+      if (outras.length && g.length > 1) avisos.push({ nivel: 'info', texto: g[0].jogo + ': escanteios, cartões e tempos entram como independentes dos gols do mesmo jogo (aproximação).' });
+      if (!bOdd) oddCompleta = false;
+      pMod *= bMod; if (blocoMer) pMer *= bMer; else mercadoCompleto = false; if (bOdd) odd *= bOdd;
+      blocos.push({ jogoId, jogo: g[0].jogo, pernas: g, pModelo: bMod, pMercado: blocoMer ? bMer : null, odd: bOdd });
+    }
+    if (grupos.size > 1) avisos.push({ nivel: 'info', texto: 'Entre jogos diferentes, as chances são multiplicadas (independência).' });
+    const estimadas = lst.filter(p => !p.oddManual && p.oddTipo && p.oddTipo !== 'cotada').length;
+    if (estimadas) avisos.push({ nivel: 'info', texto: estimadas + ' perna(s) com odd estimada (sem cotação na fonte). Confira e corrija com a odd da sua casa, se quiser.' });
+    const divergentes = lst.filter(p => Number.isFinite(p.pMercado) && Math.abs((p.pModelo ?? p.p) - p.pMercado) > 0.08);
+    if (divergentes.length) avisos.push({ nivel: 'aviso', texto: divergentes.length + ' perna(s) em que modelo e mercado divergem mais de 8 p.p.: ' + divergentes.map(p => p.rotulo).join('; ') + '. Nos testes, nessas divergências o mercado acertou mais.' });
+    const oddT = lst.length && oddCompleta ? odd : null, pM = lst.length ? pMod : null, pK = lst.length && mercadoCompleto ? pMer : null;
+    return { n: lst.length, jogos: grupos.size, pModelo: pM, pMercado: pK, odd: oddT, oddEstimada: estimada, justa: pM ? 1 / pM : null,
+      ev: oddT && pM ? pM * oddT - 1 : null, evMercado: oddT && pK ? pK * oddT - 1 : null, blocos, avisos };
+  }
+
+  /* Sugestões. Filtro "meio-termo" por perna: chance do modelo ≥ mínimo do nível; se há mercado, modelo e mercado
+   * a até 8 p.p. e mercado ≥ mínimo − 5 p.p.; os dois times com ≥ 12 jogos na rede; uma perna por jogo; só pré-jogo. */
+  const NIVEIS = Object.freeze([
+    { id: 'segura', nome: 'Segura', minP: 0.60, pernas: [2, 4], odd: [2.4, 4.5] },
+    { id: 'media', nome: 'Média', minP: 0.48, pernas: [3, 6], odd: [9, 12] },
+    { id: 'arriscada', nome: 'Arriscada', minP: 0.38, pernas: [4, 8], odd: [15, 50] },
+    { id: 'bingo', nome: 'Bingo', minP: 0.25, pernas: [5, 12], odd: [100, 1500] }
+  ]);
+  const PREF_PADRAO = Object.freeze({ '1x2': true, dc: true, btts_s: true, btts_n: false, tot: true, tm: false, ah: false, tempos: false, esc: false, car: false });
+  function permitido(l, pref) {
+    const t = l.mk.t; if (t === 'btts') return l.mk.s === 's' ? pref.btts_s : pref.btts_n;
+    if (['t1', 't2', 'tmg', 'pg'].includes(t)) return !!pref.tempos;
+    if (t === 'escT') return !!pref.esc; if (t === 'carT') return !!pref.car;
+    return !!pref[t];
+  }
+  const consenso = l => Number.isFinite(l.pMercado) ? (l.pModelo + l.pMercado) / 2 : l.pModelo;
+  function sugerir(analises, pref = PREF_PADRAO) {
+    const porJogo = [];
+    for (const a of analises) {
+      if (a.iniciado || !a.pred || !a.pred.casa.conhecido || !a.pred.fora.conhecido || a.pred.casa.n < 12 || a.pred.fora.n < 12) continue;
+      const cand = a.linhas.filter(l => l.odd && permitido(l, pref) && l.pModelo <= 0.92 && (l.pMercado === null || (Math.abs(l.pModelo - l.pMercado) <= 0.08)));
+      if (cand.length) porJogo.push({ a, cand });
+    }
+    return NIVEIS.map(nv => {
+      // Programação dinâmica: para cada número de pernas e faixa de odd (em escala log), guarda a combinação de maior
+      // chance (média de modelo e mercado). Uma perna por jogo. Para a mesma odd, menos pernas costuma dar mais chance,
+      // porque a margem da casa se acumula a cada perna.
+      const grupos = porJogo.map(g => ({ a: g.a, ls: g.cand.filter(l => l.pModelo >= nv.minP && (l.pMercado === null || l.pMercado >= nv.minP - 0.05)) })).filter(g => g.ls.length);
+      let estados = new Map([['0|0', { p: 1, odd: 1, k: 0, pernas: [] }]]);
+      for (const g of grupos) {
+        const novos = new Map(estados);
+        for (const st of estados.values()) {
+          if (st.k >= nv.pernas[1]) continue;
+          for (const l of g.ls) {
+            const odd = st.odd * l.odd; if (odd > nv.odd[1] * 1.0001) continue;
+            const p = st.p * consenso(l), k = st.k + 1, chave = k + '|' + Math.round(Math.log(odd) * 60), v = novos.get(chave);
+            if (!v || p > v.p) novos.set(chave, { p, odd, k, pernas: st.pernas.concat([{ a: g.a, l }]) });
+          }
+        }
+        estados = novos;
+      }
+      let melhor = null;
+      for (const st of estados.values()) if (st.k >= nv.pernas[0] && st.odd >= nv.odd[0] && st.odd <= nv.odd[1] * 1.0001 && (!melhor || st.p > melhor.p)) melhor = st;
+      if (!melhor) return { nivel: nv, disponivel: false, motivo: grupos.length < nv.pernas[0] ? 'Poucos jogos analisados passam no filtro deste nível (' + grupos.length + '; precisa de ' + nv.pernas[0] + ').' : 'Nenhuma combinação dos jogos analisados chega à faixa de odd ' + String(nv.odd[0]).replace('.', ',') + '–' + String(nv.odd[1]).replace('.', ',') + ' com o filtro deste nível.' };
+      const ps = melhor.pernas.map(x => deLinha(x.a, x.l, nv.id)), pMer = ps.every(p => Number.isFinite(p.pMercado)) ? produto(ps.map(p => p.pMercado)) : null, pMod = produto(ps.map(p => p.pModelo));
+      return { nivel: nv, disponivel: true, pernas: ps, odd: melhor.odd, pModelo: pMod, pMercado: pMer, ev: pMod * melhor.odd - 1, evMercado: pMer ? pMer * melhor.odd - 1 : null, estimadas: ps.filter(p => p.oddTipo !== 'cotada').length };
+    });
+  }
+
+  G.PCBilhete = Object.freeze({ lista, adicionar, remover, limpar, definirOdd, substituir, avaliar, sugerir, NIVEIS, PREF_PADRAO, oddDe, deLinha });
+})(typeof globalThis !== 'undefined' ? globalThis : window);
+
+</script>
+  <script>/* js/diario.js */
+/* Ponto Comum v3 · diario.js
+ * Diário de previsões e apostas. Grava as linhas principais antes do jogo, apura pelo placar da ESPN,
+ * mede a calibração (modelo e mercado) e o CLV (odd da DraftKings na captura ÷ odd de fechamento − 1).
+ * Apostas reais: valor, odd que você pegou, nível (segura, média, arriscada, bingo) e lucro.
+ * Fica no IndexedDB deste navegador; exporte para levar a outro.
+ */
+(function (G) {
+  'use strict';
+  const R = () => G.PCRede, M = () => G.PCModelo, K = () => G.PCMercado;
+  const PRINCIPAIS = [{ t: '1x2', s: 'h' }, { t: '1x2', s: 'd' }, { t: '1x2', s: 'a' }, { t: 'dc', s: '1x' }, { t: 'dc', s: 'x2' }, { t: 'dc', s: '12' }, { t: 'btts', s: 's' }, { t: 'btts', s: 'n' },
+    { t: 'tot', s: 'o', l: 1.5 }, { t: 'tot', s: 'u', l: 1.5 }, { t: 'tot', s: 'o', l: 2.5 }, { t: 'tot', s: 'u', l: 2.5 }, { t: 'tot', s: 'o', l: 3.5 }, { t: 'tot', s: 'u', l: 3.5 },
+    { t: 't1', s: 'o', l: 0.5 }, { t: 't2', s: 'o', l: 0.5 }, { t: 'pg', s: 'h' }, { t: 'pg', s: 'a' }, { t: 'esc', s: 'o', l: 9.5 }, { t: 'car', s: 'o', l: 4.5 }];
+  const chavesPrincipais = new Set(PRINCIPAIS.map(mk => K().chave(mk)));
+
+  async function todos() { return (await R().kv.all('diario')).map(([, v]) => v).sort((a, b) => Date.parse(b.inicio) - Date.parse(a.inicio)); }
+  const salvar = r => R().kv.put('diario', r.id, r);
+
+  /* Linhas principais de uma análise pré-jogo. A primeira captura guarda a odd da DraftKings para o CLV. */
+  async function capturar(a) {
+    if (a.iniciado) return 0; let n = 0; const agora = new Date().toISOString();
+    for (const l of a.linhas) {
+      if (!chavesPrincipais.has(l.chave)) continue;
+      const id = 'p|' + a.m.id + '|' + l.chave, velho = await R().kv.get('diario', id);
+      const dk = (a.cotacoes || []).find(q => /draftkings/i.test(q.casa) && K().chave(q.mk) === l.chave);
+      const r = Object.assign({}, velho || {}, { id, tipo: 'previsao', jogoId: a.m.id, comp: a.m.comp, inicio: a.m.date, casaNome: a.m.hn, foraNome: a.m.an, mk: l.mk, chave: l.chave, familia: l.familia, rotulo: l.rotulo,
+        p: l.pModelo, pModelo: l.pModelo, pMercado: l.pMercado, odd: l.odd, oddTipo: l.oddTipo, atualizadoEm: agora,
+        primeiraEm: velho ? velho.primeiraEm : agora, oddDK: velho && velho.oddDK ? velho.oddDK : (dk ? dk.odd : null), versaoModelo: '3' });
+      await salvar(r); n++;
+    }
+    return n;
+  }
+  /* Bilhete salvo: modo 'aposta' (valor e odd que você pegou) ou 'acompanhar'. */
+  async function salvarBilhete(pernas, av, { modo = 'acompanhar', valor = null, oddPega = null, nivel = null } = {}) {
+    const agora = new Date().toISOString(), id = 'b|' + Date.now().toString(36);
+    const r = { id, tipo: 'bilhete', modo, nivel: nivel || pernas.find(p => p.nivel)?.nivel || null, valor: Number.isFinite(valor) && valor > 0 ? valor : null, criadoEm: agora, inicio: pernas.map(p => p.inicio).sort()[0],
+      pernas: pernas.map(p => ({ jogoId: p.jogoId, comp: p.comp, jogo: p.jogo, inicio: p.inicio, mk: p.mk, rotulo: p.rotulo, p: p.pModelo ?? p.p, pMercado: p.pMercado ?? null, odd: G.PCBilhete.oddDe(p), oddTipo: p.oddManual ? 'informada' : p.oddTipo })),
+      pModelo: av.pModelo, pMercado: av.pMercado, oddSugerida: av.odd, odd: Number.isFinite(oddPega) && oddPega > 1 ? oddPega : av.odd, ev: av.ev };
+    await salvar(r); return r;
+  }
+  async function remover(id) { await R().kv.del('diario', id); }
+
+  function liquidar(mk, j) {
+    const t = mk.t;
+    if (M().doPlacar(mk)) return j.hg == null ? null : M().vence(mk, j.hg, j.ag) ? 1 : 0;
+    if (t === 't1' || t === 't2' || t === 'tmg') {
+      if (j.h1 == null || j.hg == null) return null; const g1 = j.h1 + j.a1, g2 = j.hg + j.ag - g1;
+      if (t === 'tmg') return (mk.s === '1' ? g1 > g2 : mk.s === '2' ? g2 > g1 : g1 === g2) ? 1 : 0;
+      const g = t === 't1' ? g1 : g2; return (mk.s === 'o' ? g > mk.l : g < mk.l) ? 1 : 0;
+    }
+    if (t === 'pg') return j.pg == null ? null : j.pg === mk.s ? 1 : 0;
+    const par = t.startsWith('esc') ? [j.hc, j.ac] : t.startsWith('car') ? [j.hy == null ? null : j.hy + (j.hr || 0), j.ay == null ? null : j.ay + (j.ar || 0)] : null;
+    if (!par || par[0] == null || par[1] == null) return null;
+    const v = t === 'esc' || t === 'car' ? par[0] + par[1] : mk.s[0] === 'h' ? par[0] : par[1], over = t === 'esc' || t === 'car' ? mk.s === 'o' : mk.s[1] === 'o';
+    return (over ? v > mk.l : v < mk.l) ? 1 : 0;
+  }
+
+  /* Apura o que já terminou. resultados: Map(jogoId → jogo da rede). Busca o fechamento da DraftKings para o CLV. */
+  async function apurar(resultados, { onProgress = () => {} } = {}) {
+    const lista = await todos(), agora = Date.now(); let apurados = 0, clv = 0;
+    const pend = lista.filter(r => !r.apurado && Date.parse(r.inicio) + 2.5 * 3600e3 < agora), fechamento = new Map();
+    for (const [i, r] of pend.entries()) {
+      onProgress(i + 1, pend.length);
+      if (r.tipo === 'previsao') {
+        const j = resultados.get(r.jogoId); if (!j || !j.done) continue;
+        const y = liquidar(r.mk, j); if (y === null) { r.apurado = 'sem-dado'; await salvar(r); continue; }
+        r.resultado = y; r.placar = [j.hg, j.ag]; r.apurado = new Date().toISOString();
+        if ((r.mk.t === '1x2' || r.mk.t === 'tot') && r.oddDK) {
+          if (!fechamento.has(r.jogoId)) { try { fechamento.set(r.jogoId, await R().carregarOddsFechamento(j)); } catch { fechamento.set(r.jogoId, null); } }
+          const f = fechamento.get(r.jogoId), fc = f && f.fechamento;
+          if (fc) { const o = r.mk.t === '1x2' ? fc[r.mk.s] : (fc.linha === r.mk.l ? (r.mk.s === 'o' ? fc.over : fc.under) : null); if (o) { r.oddFechamento = o; r.clv = r.oddDK / o - 1; clv++; } }
+        }
+        await salvar(r); apurados++;
+      } else if (r.tipo === 'bilhete') {
+        let todasOk = true, ganhou = true;
+        for (const p of r.pernas) { const j = resultados.get(p.jogoId); const y = j && j.done ? liquidar(p.mk, j) : null; p.resultado = y; if (y === null) todasOk = false; else if (!y) ganhou = false; }
+        if (!todasOk && ganhou) { await salvar(r); continue; }
+        r.resultado = ganhou && todasOk ? 1 : 0; r.apurado = new Date().toISOString();
+        if (r.modo === 'aposta' && r.valor && r.odd) r.lucro = r.valor * (r.resultado ? r.odd - 1 : -1);
+        await salvar(r); apurados++;
+      }
+    }
+    return { apurados, comClv: clv, pendentes: pend.length - apurados };
+  }
+
+  const L = p => Math.log(Math.min(1 - 1e-9, Math.max(1e-9, p)));
+  function metricas(lista) {
+    const prev = lista.filter(r => r.tipo === 'previsao' && r.apurado && (r.resultado === 0 || r.resultado === 1));
+    const grupo = rs => { const n = rs.length; if (!n) return null; let b = 0, ll = 0, ac = 0, pm = 0, nk = 0, llk = 0;
+      for (const r of rs) { const p = r.pModelo ?? r.p; b += (p - r.resultado) ** 2; ll -= r.resultado ? L(p) : L(1 - p); ac += r.resultado; pm += p; if (Number.isFinite(r.pMercado)) { nk++; llk -= r.resultado ? L(r.pMercado) : L(1 - r.pMercado); } }
+      return { n, previsto: pm / n, aconteceu: ac / n, brier: b / n, logLoss: ll / n, logLossMercado: nk ? llk / nk : null, nMercado: nk }; };
+    const porFamilia = {}; for (const f of ['resultado', 'gols', 'tempos', 'escanteios', 'cartoes']) porFamilia[f] = grupo(prev.filter(r => r.familia === f));
+    const faixas = Array.from({ length: 10 }, (_, i) => { const rs = prev.filter(r => Math.min(9, Math.floor((r.pModelo ?? r.p) * 10)) === i); return rs.length ? { de: i / 10, ate: (i + 1) / 10, n: rs.length, previsto: rs.reduce((s, r) => s + (r.pModelo ?? r.p), 0) / rs.length, aconteceu: rs.reduce((s, r) => s + r.resultado, 0) / rs.length } : null; }).filter(Boolean);
+    const comClv = prev.filter(r => Number.isFinite(r.clv)), bil = lista.filter(r => r.tipo === 'bilhete'), apostas = bil.filter(r => r.modo === 'aposta');
+    const porNivel = {}; for (const r of apostas) { const k = r.nivel || 'manual', x = porNivel[k] || (porNivel[k] = { apostas: 0, apuradas: 0, ganhas: 0, investido: 0, lucro: 0 }); x.apostas++; if (r.apurado) { x.apuradas++; x.ganhas += r.resultado ? 1 : 0; x.investido += r.valor || 0; x.lucro += r.lucro || 0; } }
+    const apuradas = apostas.filter(r => r.apurado), investido = apuradas.reduce((s, r) => s + (r.valor || 0), 0), lucro = apuradas.reduce((s, r) => s + (r.lucro || 0), 0);
+    return { total: lista.length, previsoes: lista.filter(r => r.tipo === 'previsao').length, apuradas: prev.length, porFamilia, faixas,
+      clv: comClv.length ? { n: comClv.length, medio: comClv.reduce((s, r) => s + r.clv, 0) / comClv.length, positivos: comClv.filter(r => r.clv > 0).length } : null,
+      bilhetes: { total: bil.length, acompanhados: bil.filter(r => r.modo !== 'aposta').length, apostas: apostas.length, apuradas: apuradas.length, ganhas: apuradas.filter(r => r.resultado).length, pendentes: apostas.length - apuradas.length, investido, lucro, roi: investido ? lucro / investido : null, porNivel } };
+  }
+
+  /* Revisão jogo a jogo: o que o hub disse (as linhas preferidas mais prováveis entre 55% e 88%) e o que aconteceu. */
+  function revisao(lista, { max = 40 } = {}) {
+    const porJogo = new Map();
+    for (const r of lista) if (r.tipo === 'previsao' && r.apurado && (r.resultado === 0 || r.resultado === 1)) { let g = porJogo.get(r.jogoId); if (!g) porJogo.set(r.jogoId, g = []); g.push(r); }
+    return [...porJogo.values()].map(rs => {
+      const r0 = rs[0], pref = rs.filter(r => ['1x2', 'dc', 'btts', 'tot'].includes(r.mk.t) && !(r.mk.t === 'btts' && r.mk.s === 'n') && (r.pModelo ?? r.p) >= 0.55 && (r.pModelo ?? r.p) <= 0.88);
+      const porTipo = new Map(); for (const r of pref.sort((x, y) => (y.pModelo ?? y.p) - (x.pModelo ?? x.p))) if (!porTipo.has(r.mk.t)) porTipo.set(r.mk.t, r);
+      const ditas = [...porTipo.values()], x12 = ['h', 'd', 'a'].map(s => rs.find(r => r.mk.t === '1x2' && r.mk.s === s)).filter(Boolean);
+      const fav = x12.length === 3 ? x12.reduce((b, r) => ((r.pModelo ?? r.p) > (b.pModelo ?? b.p) ? r : b)) : null;
+      return { jogoId: r0.jogoId, jogo: r0.casaNome + ' × ' + r0.foraNome, inicio: r0.inicio, comp: r0.comp, placar: r0.placar, ditas, acertos: ditas.filter(r => r.resultado).length,
+        favorito: fav ? { rotulo: fav.rotulo, p: fav.pModelo ?? fav.p, pMercado: fav.pMercado, aconteceu: fav.resultado } : null };
+    }).sort((a, b) => Date.parse(b.inicio) - Date.parse(a.inicio)).slice(0, max);
+  }
+
+  async function exportar() { return JSON.stringify({ formato: 'ponto-comum-diario', versao: 3, exportadoEm: new Date().toISOString(), registros: await todos() }, null, 1); }
+  async function importar(texto) {
+    const d = JSON.parse(texto); if (!d || d.formato !== 'ponto-comum-diario' || !Array.isArray(d.registros)) throw new Error('Arquivo não é um diário do Ponto Comum.');
+    let n = 0; for (const r of d.registros) { if (!r || typeof r.id !== 'string' || !/^[pb]\|/.test(r.id) || !r.inicio) continue; if (!(await R().kv.get('diario', r.id))) { await salvar(Object.assign({}, r, { importado: true })); n++; } }
+    return n;
+  }
+
+  G.PCDiario = Object.freeze({ PRINCIPAIS, todos, capturar, salvarBilhete, remover, apurar, metricas, revisao, exportar, importar, liquidar });
+})(typeof globalThis !== 'undefined' ? globalThis : window);
+
+</script>
+  <script>/* js/validacao.js */
+/* Ponto Comum v3 · validacao.js
+ * Validação semana a semana: para cada semana, ajusta o modelo só com jogos anteriores e prevê a semana.
+ * Parâmetros escolhidos no período de ajuste e conferidos no período de teste (jogos que não participaram do ajuste).
+ * Compara com a DraftKings (abertura e fechamento, sem margem), mede a calibração, testa regras de aposta
+ * e o filtro das sugestões contra o que aconteceu, e confere os mercados de tempo (2º tempo, tempo com mais gols, 1º gol).
+ */
+(function (G) {
+  'use strict';
+  const M = () => G.PCModelo, R = () => G.PCRede;
+  const L = q => Math.log(Math.max(1e-12, q));
+  const ceder = (() => { if (typeof MessageChannel === 'undefined') return () => new Promise(r => setTimeout(r, 0)); const ch = new MessageChannel(), fila = []; ch.port1.onmessage = () => { const f = fila.shift(); f && f(); }; return () => new Promise(r => { fila.push(r); ch.port2.postMessage(0); }); })();
+
+  async function walkForward(jogos, cfg, { de, ate, comps, passo = 7, onProgress } = {}) {
+    const t0 = Date.parse(de), t1 = Date.parse(ate), alvo = jogos.filter(m => m.done && m.hg != null && comps.has(m.comp) && Date.parse(m.date) >= t0 && Date.parse(m.date) < t1);
+    const out = []; let ant = null, semana = 0;
+    const cfgFit = Object.assign({}, cfg, { esticar: 1 }); // a correção é aplicada depois, para poder ser escolhida sem reajustar
+    for (let s = t0; s < t1; s += passo * 864e5) {
+      const lote = alvo.filter(m => { const t = Date.parse(m.date); return t >= s && t < s + passo * 864e5; }); if (!lote.length) continue;
+      const F = M().ajustarGols(jogos, Object.assign({}, cfgFit, { cutoff: s, init: ant })); ant = F; semana++;
+      for (const m of lote) { const p = M().prever(F, m), c = M().paramComp(F, m.comp);
+        out.push({ id: m.id, comp: m.comp, data: m.date, eh: p.eh, ea: p.ea, rho: F.rho, frac: F.fracao1T[m.comp] ?? F.fracao1TGeral, bh: c.mu + (m.neutral ? 0 : c.ha), ba: c.mu,
+          conhecidos: p.casa.conhecido && p.fora.conhecido && p.casa.n >= 12 && p.fora.n >= 12,
+          y: { r: m.hg > m.ag ? 0 : m.hg === m.ag ? 1 : 2, tg: m.hg + m.ag, btts: m.hg > 0 && m.ag > 0, g1: m.h1 == null ? null : m.h1 + m.a1, pg: m.pg ?? null } }); }
+      if (onProgress) onProgress('Semana de ' + new Date(s).toISOString().slice(0, 10) + ' · ' + semana + ' ajustes');
+      await ceder();
+    }
+    return out;
+  }
+  const lambdas = (x, s) => { const m0 = (x.eh + x.ea) / 2; return [Math.exp(m0 + s * (x.eh - m0)), Math.exp(m0 + s * (x.ea - m0))]; };
+  function basicos(lh, la, rho) { const Mx = M().matriz(lh, la, rho, 10); let h = 0, d = 0, a = 0, o25 = 0, bt = 0; for (let i = 0; i < Mx.length; i++) for (let j = 0; j < Mx.length; j++) { const v = Mx[i][j]; if (i > j) h += v; else if (i < j) a += v; else d += v; if (i + j > 2.5) o25 += v; if (i && j) bt += v; } return { h, d, a, o25, bt, M: Mx }; }
+  function metricas(preds, { esticar = 1, base = false } = {}) {
+    let n = 0, ll = 0, rps = 0, br = 0, lo = 0, lb = 0;
+    for (const x of preds) { const [lh, la] = base ? [Math.exp(x.bh), Math.exp(x.ba)] : lambdas(x, esticar), p = basicos(lh, la, base ? 0 : x.rho), v = [p.h, p.d, p.a], oh = [0, 1, 2].map(i => +(x.y.r === i)); n++;
+      ll -= L(v[x.y.r]); br += v.reduce((s, q, i) => s + (q - oh[i]) ** 2, 0); rps += ((v[0] - oh[0]) ** 2 + (v[0] + v[1] - oh[0] - oh[1]) ** 2) / 2;
+      lo -= x.y.tg > 2.5 ? L(p.o25) : L(1 - p.o25); lb -= x.y.btts ? L(p.bt) : L(1 - p.bt); }
+    const r = v => +(v / n).toFixed(4);
+    return { n, logLoss1x2: r(ll), rps: r(rps), brier1x2: r(br), logLossOver25: r(lo), logLossAmbas: r(lb) };
+  }
+  /* Mercados de tempo: gol no 2º tempo (over 0,5), tempo com mais gols (3 vias) e quem marca primeiro (3 vias). */
+  function metricasTempo(preds, { esticar = 1, base = false } = {}) {
+    let n = 0, t2 = 0, tmg = 0, pg = 0, np = 0;
+    for (const x of preds) {
+      if (x.y.g1 == null) continue; const [lh, la] = base ? [Math.exp(x.bh), Math.exp(x.ba)] : lambdas(x, esticar), fr = x.frac, g2 = x.y.tg - x.y.g1; n++;
+      const p2 = M().prob2T(lh, la, fr, { t: 't2', s: 'o', l: 0.5 }); t2 -= g2 > 0 ? L(p2) : L(1 - p2);
+      const tm = M().tempoMaisGols(lh, la, fr); tmg -= L(tm[x.y.g1 > g2 ? '1' : g2 > x.y.g1 ? '2' : 'x']);
+      if (x.y.pg) { np++; pg -= L(M().primeiroGol(lh, la)[x.y.pg]); }
+    }
+    const r = (v, k) => k ? +(v / k).toFixed(4) : null;
+    return { n, gol2T: r(t2, n), tempoMaisGols: r(tmg, n), primeiroGol: r(pg, np), nPrimeiroGol: np };
+  }
+  function confiabilidade(pontos) {
+    const b = Array.from({ length: 10 }, () => [0, 0, 0]); for (const [p, y] of pontos) { const i = Math.min(9, Math.floor(p * 10)); b[i][0]++; b[i][1] += p; b[i][2] += y; }
+    let ece = 0; const faixas = b.map((x, i) => { if (!x[0]) return null; ece += x[0] / pontos.length * Math.abs(x[1] / x[0] - x[2] / x[0]); return { de: i / 10, ate: (i + 1) / 10, n: x[0], previsto: x[1] / x[0], aconteceu: x[2] / x[0] }; }).filter(Boolean);
+    return { erroMedio: ece, faixas };
+  }
+  const pontos1x2 = (preds, s) => preds.flatMap(x => { const [lh, la] = lambdas(x, s), p = basicos(lh, la, x.rho); return [p.h, p.d, p.a].map((q, k) => [q, x.y.r === k ? 1 : 0]); });
+
+  /* Regras de aposta simuladas (1 unidade por aposta) sobre o 1X2 e o total na linha da DraftKings.
+   * pm = modelo, pk = mercado sem margem, odd = preço real daquele momento (abertura ou fechamento). */
+  const REGRAS = [
+    { id: 'modelo', nome: 'Só o modelo: valor esperado do modelo > 5%', f: (pm, pk, o) => pm * o - 1 > 0.05 },
+    { id: 'meio', nome: 'Meio-termo: valor esperado do modelo > 3% e modelo a até 8 p.p. do mercado', f: (pm, pk, o) => pm * o - 1 > 0.03 && Math.abs(pm - pk) <= 0.08 },
+    { id: 'consenso', nome: 'Consenso: média de modelo e mercado com valor esperado > 2%', f: (pm, pk, o) => (pm + pk) / 2 * o - 1 > 0.02 }
+  ];
+  function simularRegras(linhas, momento) {
+    return REGRAS.map(rg => { let n = 0, lucro = 0, acertos = 0, somaOdd = 0;
+      for (const r of linhas) for (const c of r.cands[momento] || []) if (rg.f(c.pm, c.pk, c.odd)) { n++; somaOdd += c.odd; if (c.y) { acertos++; lucro += c.odd - 1; } else lucro -= 1; }
+      return { id: rg.id, nome: rg.nome, n, acertos, oddMedia: n ? +(somaOdd / n).toFixed(2) : null, roi: n ? +(lucro / n).toFixed(3) : null }; });
+  }
+  /* O filtro das sugestões (modelo e mercado a até 8 p.p., ambos acima do mínimo, times com ≥ 12 jogos) contra o resultado:
+   * a chance de consenso das linhas que passam acontece de fato? E quanto renderiam a odd de fechamento? */
+  function avaliarFiltro(linhas) {
+    const faixas = [[0.25, 0.38, 'Bingo'], [0.38, 0.48, 'Arriscada'], [0.48, 0.60, 'Média'], [0.60, 0.92, 'Segura']];
+    return faixas.map(([de, ate, nome]) => { let n = 0, prev = 0, ac = 0, lucro = 0, rej = 0, recAc = 0;
+      for (const r of linhas) { if (!r.x.conhecidos) continue; for (const c of r.cands.fechamento || []) { const cons = (c.pm + c.pk) / 2; if (cons < de || cons >= ate) continue;
+        if (Math.abs(c.pm - c.pk) > 0.08 || c.pm > 0.92 || c.pk < de - 0.05) { rej++; recAc += c.y; continue; }
+        n++; prev += cons; ac += c.y; lucro += c.y ? c.odd - 1 : -1; } }
+      return { nivel: nome, de, ate, n, previsto: n ? prev / n : null, aconteceu: n ? ac / n : null, roi: n ? +(lucro / n).toFixed(3) : null, rejeitadas: rej, aconteceuRejeitadas: rej ? recAc / rej : null }; });
+  }
+
+  /* Comparação com o mercado (baixa abertura e fechamento da DraftKings de cada jogo; ~40 KB por jogo). */
+  async function contraMercado(preds, jogosPorId, s, { onProgress } = {}) {
+    const linhas = [], tarefas = preds.map((x, i) => async () => {
+      const m = jogosPorId.get(x.id); if (!m) return; let o = null; try { o = await R().carregarOddsFechamento(m); } catch { o = null; }
+      if (onProgress && i % 20 === 0) onProgress('Odds da DraftKings · ' + (i + 1) + '/' + preds.length);
+      const f = o && o.fechamento; if (!f || !f.h || !f.d || !f.a) return;
+      const [lh, la] = lambdas(x, s), p = basicos(lh, la, x.rho), pm3 = [p.h, p.d, p.a], cands = {};
+      for (const [w, b] of [['abertura', o.abertura], ['fechamento', f]]) {
+        if (!b || !b.h || !b.d || !b.a) continue; const q = G.PCMercado.semMargem([b.h, b.d, b.a]).p, l = [];
+        [b.h, b.d, b.a].forEach((odd, k) => l.push({ pm: pm3[k], pk: q[k], odd, y: x.y.r === k ? 1 : 0, t: '1x2' }));
+        if (b.over && b.under && G.PCMercado.meia(b.linha)) { const qt = G.PCMercado.semMargem([b.over, b.under]).p; let po = 0; for (let i = 0; i < p.M.length; i++) for (let j = 0; j < p.M.length; j++) if (i + j > b.linha) po += p.M[i][j];
+          l.push({ pm: po, pk: qt[0], odd: b.over, y: x.y.tg > b.linha ? 1 : 0, t: 'tot' }, { pm: 1 - po, pk: qt[1], odd: b.under, y: x.y.tg < b.linha ? 1 : 0, t: 'tot' }); }
+        cands[w] = l;
+      }
+      linhas.push({ x, q: G.PCMercado.semMargem([f.h, f.d, f.a]).p, qa: o.abertura && o.abertura.h && o.abertura.d && o.abertura.a ? G.PCMercado.semMargem([o.abertura.h, o.abertura.d, o.abertura.a]).p : null, p: pm3, cands });
+    });
+    await R().pool(tarefas, 6);
+    linhas.sort((a, b) => Date.parse(a.x.data) - Date.parse(b.x.data));
+    if (!linhas.length) return null;
+    const ll = (rs, f) => rs.reduce((t, r) => t - L(f(r)[r.x.y.r]), 0) / rs.length, mix = w => r => r.p.map((v, i) => w * v + (1 - w) * r.q[i]);
+    const metade = Math.floor(linhas.length / 2), A = linhas.slice(0, metade), B = linhas.slice(metade), pesos = [0, 0.1, 0.2, 0.3, 0.5, 0.7, 1];
+    const curva = pesos.map(w => ll(A, mix(w))), w = pesos[curva.indexOf(Math.min(...curva))], comAb = linhas.filter(r => r.qa);
+    return { n: linhas.length, logLoss: { modelo: +ll(linhas, r => r.p).toFixed(4), mercado: +ll(linhas, r => r.q).toFixed(4), aberturaMercado: comAb.length ? +ll(comAb, r => r.qa).toFixed(4) : null }, pesoModeloNaMistura: w,
+      segundaMetade: { modelo: +ll(B, r => r.p).toFixed(4), mercado: +ll(B, r => r.q).toFixed(4), mistura: +ll(B, mix(w)).toFixed(4) },
+      regras: { abertura: simularRegras(linhas, 'abertura'), fechamento: simularRegras(linhas, 'fechamento') }, filtroSugestoes: avaliarFiltro(linhas),
+      calibracaoMercado: confiabilidade(linhas.flatMap(r => r.q.map((v, k) => [v, r.x.y.r === k ? 1 : 0]))) };
+  }
+
+  /* Validação completa. Ajuste nas primeiras semanas, teste nas últimas. Opcionalmente escolhe parâmetros. */
+  async function rodar(jogos, { semanasTeste = 14, semanasAjuste = 24, escolherParametros = false, comMercado = false, onProgress = () => {} } = {}) {
+    const comps = new Set(R().COMPS.filter(c => c.radar || c.opcional).map(c => c.id)), ultimo = jogos.filter(m => m.done && comps.has(m.comp)).reduce((t, m) => Math.max(t, Date.parse(m.date)), 0);
+    const fim = new Date(ultimo + 864e5), corte = new Date(fim - semanasTeste * 7 * 864e5), ini = new Date(corte - semanasAjuste * 7 * 864e5);
+    const base = Object.assign({}, M().PADRAO), candidatos = escolherParametros ? [[180, 0.6], [270, 0.3], [270, 0.6], [400, 0.6]].map(([halfLife, sotBlend]) => Object.assign({}, base, { halfLife, sotBlend })) : [base];
+    let melhor = null;
+    for (const [i, cfg] of candidatos.entries()) {
+      const pa = await walkForward(jogos, cfg, { de: ini.toISOString(), ate: corte.toISOString(), comps, onProgress: t => onProgress('Ajuste ' + (i + 1) + '/' + candidatos.length + ' · ' + t) });
+      for (const s of [1, 1.1, 1.2, 1.3]) { const mt = metricas(pa, { esticar: s }), nota = mt.logLoss1x2 + mt.logLossOver25 + mt.logLossAmbas; if (!melhor || nota < melhor.nota) melhor = { cfg, esticar: s, nota, ajuste: mt }; }
+    }
+    onProgress('Teste nas últimas ' + semanasTeste + ' semanas');
+    const pt = await walkForward(jogos, melhor.cfg, { de: corte.toISOString(), ate: fim.toISOString(), comps, onProgress: t => onProgress('Teste · ' + t) });
+    const rel = { geradoEm: new Date().toISOString(), periodoAjuste: [ini.toISOString().slice(0, 10), corte.toISOString().slice(0, 10)], periodoTeste: [corte.toISOString().slice(0, 10), new Date(ultimo).toISOString().slice(0, 10)],
+      parametros: { meiaVida: melhor.cfg.halfLife, pesoChutesNoAlvo: melhor.cfg.sotBlend, correcao: melhor.esticar }, ajuste: melhor.ajuste,
+      teste: { modelo: metricas(pt, { esticar: melhor.esticar }), semCorrecao: metricas(pt, { esticar: 1 }), mediaDaLiga: metricas(pt, { base: true }) },
+      tempos: { modelo: metricasTempo(pt, { esticar: melhor.esticar }), mediaDaLiga: metricasTempo(pt, { base: true }) },
+      calibracao: confiabilidade(pontos1x2(pt, melhor.esticar)), mercado: null };
+    if (comMercado) { const porId = new Map(jogos.map(m => [m.id, m])); rel.mercado = await contraMercado(pt, porId, melhor.esticar, { onProgress }); }
+    return rel;
+  }
+
+  /* Relatório medido em 19–20/10/2026 com a rede completa (30 competições). Os campos marcados como null são
+   * preenchidos quando a validação roda neste navegador. */
+  const RELATORIO_BASE = {
+    geradoEm: '2026-10-19T23:30:00-03:00', fixo: true,
+    periodoAjuste: ['2026-01-12', '2026-06-30'], periodoTeste: ['2026-07-01', '2026-10-19'],
+    parametros: { meiaVida: 270, pesoChutesNoAlvo: 0.6, correcao: 1.2, desvioClube: 0.36 },
+    ajuste: { n: 1486 },
+    teste: { modelo: { n: 635, logLoss1x2: 0.9675, logLossOver25: 0.6621, logLossAmbas: 0.6793 }, semCorrecao: { n: 635, logLoss1x2: 0.975, logLossOver25: 0.6642, logLossAmbas: 0.6791 },
+      semChutes: { n: 635, logLoss1x2: 0.9784, logLossOver25: 0.6681, logLossAmbas: 0.6824 }, mediaDaLiga: { n: 635, logLoss1x2: 1.0634, logLossOver25: 0.6933, logLossAmbas: 0.6849 } },
+    contraModeloAntigo: { n: 460, antigo: { logLoss1x2: 0.9925, logLossOver25: 0.6748, logLossAmbas: 0.6903 }, novo: { logLoss1x2: 0.9903, logLossOver25: 0.6633, logLossAmbas: 0.675 }, coberturaAntigo: 'ele só cobre 72% dos jogos do teste, porque não tem histórico suficiente em Libertadores, Sul-Americana e na fase de liga europeia' },
+    janelaCompleta: { periodo: ['2026-01-12', '2026-10-19'], n: 1716, novo: { logLoss1x2: 0.9987, logLossOver25: 0.6756, logLossAmbas: 0.6835 }, antigo: { logLoss1x2: 1.0115, logLossOver25: 0.6852, logLossAmbas: 0.6911 }, mediaDaLiga: { logLoss1x2: 1.0664, logLossOver25: 0.6968, logLossAmbas: 0.6865 } },
+    tempos: null,
+    mercado: { n: 609, logLoss: { modelo: 0.9725, mercado: 0.9347, aberturaMercado: 0.9449 }, pesoModeloNaMistura: 0, totaisNaLinhaDK: { modelo: 0.6949, mercado: 0.682 },
+      derivadasDoMercado: { ambas: [0.6768, 0.6768], over15: [0.5057, 0.5044], over25: [0.6621, 0.6495], over35: [0.6161, 0.6008], gol1T: [0.5986, 0.598], over15_1T: [0.6444, 0.6404] },
+      apostasSimuladas: { fechamento: { n: 595, roi: -0.257 }, abertura: { n: 442, roi: -0.355, clv: -0.033, clvMedioGeral: -0.0295 } }, regras: null, filtroSugestoes: null },
+    escanteios: { n: 2121, over95: { modelo: 0.708, mediaDaLiga: 0.7434 }, erroMedio: { modelo: 2.78, mediaDaLiga: 2.90 } },
+    cartoes: { n: 2120, over45: { modelo: 0.6658, mediaDaLiga: 0.7171 }, erroMedio: { modelo: 1.76, mediaDaLiga: 1.88 } },
+    calibracao1x2: { modelo: 0.0272, mercado: 0.0199 },
+    cansaco: 'Times com menos de 3,6 dias de descanso não marcaram menos nem sofreram mais, em média, depois de controlar a força (efeito estimado +1,6% e −1,1%). Incluir o efeito não melhorou a previsão.'
+  };
+
+  G.PCValidacao = Object.freeze({ walkForward, metricas, metricasTempo, confiabilidade, contraMercado, simularRegras, avaliarFiltro, REGRAS, rodar, RELATORIO_BASE });
+})(typeof globalThis !== 'undefined' ? globalThis : window);
+
+</script>
+  <script>/* js/app.js */
+/* Ponto Comum v3 · app.js — interface. Depende de rede, modelo, mercado, analise, bilhete, diario e validacao. */
+(() => {
+  'use strict';
+  const R = PCRede, M = PCModelo, K = PCMercado, A = PCAnalise, B = PCBilhete, D = PCDiario, V = PCValidacao;
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const pct = (p, d = 0) => Number.isFinite(p) ? (p * 100).toFixed(d).replace('.', ',') + '%' : '—';
+  const num = (v, d = 2) => Number.isFinite(v) ? v.toFixed(d).replace('.', ',') : '—';
+  const reais = v => Number.isFinite(v) ? v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) : '—';
+  const sinal = v => Number.isFinite(v) ? (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(1).replace('.', ',') + '%' : '—';
+  const hora = iso => new Date(iso).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' });
+  const dia = iso => new Date(iso).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' });
+  const diaHora = iso => dia(iso) + ' ' + hora(iso);
+  const nomeComp = id => (R.COMP_MAP[id] || {}).nome || id;
+  const hojeSP = () => R.dataSP(new Date().toISOString());
+  const pausa = () => new Promise(r => setTimeout(r, 0));
+  const CHAVE_PREF = 'pc3-preferencias';
+  const NIVEL_NOME = { segura: 'Segura', media: 'Média', arriscada: 'Arriscada', bingo: 'Bingo', manual: 'Montado por você' };
+
+  const S = {
+    jogos: [], porId: new Map(), porTime: new Map(), F: null, Fe: null, Fc: null, forca: null, dia: hojeSP(), agenda: [], falhasAgenda: [],
+    comps: new Set(R.COMPS.filter(c => c.radar).map(c => c.id)), todos: false, grandes: new Map(), idsGrandes: new Set(), sel: new Set(), analises: new Map(), elencos: new Map(), aba: 'radar',
+    rede: { status: 'parado', progresso: null, relatorio: [], carregadaEm: null, ajustadaEm: null, erro: null },
+    pref: Object.assign({}, B.PREF_PADRAO), familia: {}, validacao: null, rodando: false, foco: null
+  };
+
+  function lerPref() { try { const p = JSON.parse(localStorage.getItem(CHAVE_PREF) || '{}'); if (Array.isArray(p.comps) && p.comps.length) S.comps = new Set(p.comps.filter(c => R.COMP_MAP[c] && (R.COMP_MAP[c].radar || R.COMP_MAP[c].opcional))); if (p.pref) Object.assign(S.pref, p.pref); S.todos = !!p.todos; } catch { /* preferências padrão */ } }
+  function gravarPref() { try { localStorage.setItem(CHAVE_PREF, JSON.stringify({ comps: [...S.comps], pref: S.pref, todos: S.todos })); } catch { /* sem armazenamento local */ } }
+  let toastT; function toast(t) { const el = $('#toast'); el.textContent = t; el.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { el.hidden = true; }, 4200); }
+  async function copiar(texto) {
+    try { await navigator.clipboard.writeText(texto); return true; } catch { /* sem permissão: usa o método antigo */ }
+    const t = document.createElement('textarea'); t.value = texto; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch { ok = false; } t.remove(); return ok;
+  }
+  function baixar(nome, texto, tipo = 'application/json') { const url = URL.createObjectURL(new Blob([texto], { type: tipo })), a = document.createElement('a'); a.href = url; a.download = nome; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000); }
+
+  /* ---------- Dados e modelos ---------- */
+  function indexar() { S.porId = new Map(S.jogos.map(m => [m.id, m])); S.porTime = R.indexar(S.jogos); }
+  function mesclar(lista) { let mudou = false; for (const m of lista) { const v = S.porId.get(m.id); if (!v) { S.jogos.push(m); mudou = true; } else if (v.st !== m.st || v.done !== m.done || m.odds) { Object.assign(v, m); mudou = true; } } if (mudou) { S.jogos.sort((a, b) => Date.parse(a.date) - Date.parse(b.date)); indexar(); } }
+  /* Os N clubes mais fortes de cada liga (pelo modelo) — o filtro de grandes do radar. Premier e Champions: todos. */
+  function calcularGrandes() {
+    S.grandes = new Map(); if (!S.forca) return;
+    for (const [liga, n] of Object.entries(R.GRANDES_POR_LIGA)) S.grandes.set(liga, S.forca.lista.filter(x => x.grupo === 'L:' + liga).slice(0, n));
+    S.idsGrandes = new Set([...S.grandes.values()].flat().map(x => x.id));
+  }
+  const filtraGrandes = m => S.todos || !R.GRANDES_POR_LIGA[m.comp] || !S.idsGrandes.size || S.idsGrandes.has(m.h) || S.idsGrandes.has(m.a);
+  async function carregarRedeEModelos(forcar = false) {
+    S.rede.status = 'carregando'; S.rede.erro = null; renderStatus();
+    try {
+      const r = await R.carregarRede({ forcar, onProgress: (d, t) => { S.rede.progresso = [d, t]; renderStatus(); } });
+      S.jogos = r.jogos; S.rede.relatorio = r.relatorio; S.rede.carregadaEm = r.carregadaEm; indexar(); mesclar(S.agenda);
+      S.rede.status = 'ajustando'; renderStatus(); await pausa();
+      const p = await R.kv.get('kv', 'parametros'), cfg = p && p.aplicar ? { halfLife: p.meiaVida, sotBlend: p.pesoChutesNoAlvo, esticar: p.correcao } : {};
+      S.F = M.ajustarGols(S.jogos, cfg); await pausa();
+      S.Fe = M.ajustarContagem(S.jogos, 'escanteios'); await pausa();
+      S.Fc = M.ajustarContagem(S.jogos, 'cartoes'); S.forca = M.tabelaForca(S.F); calcularGrandes();
+      S.rede.status = 'pronto'; S.rede.ajustadaEm = new Date().toISOString();
+      for (const [id, a] of S.analises) S.analises.set(id, A.analisar(S.porId.get(id) || a.m, ctxAnalise(a.m, a.cotacoes, a.resumo)));
+    } catch (e) { S.rede.status = 'erro'; S.rede.erro = e.message || String(e); }
+    renderStatus(); render();
+  }
+  async function carregarAgenda() {
+    const msg = $('#radar-msg'); if (msg) msg.textContent = 'Buscando a agenda de ' + S.dia.split('-').reverse().join('/') + '…';
+    try { const r = await R.carregarDia(S.dia, [...S.comps]); S.agenda = r.jogos; S.falhasAgenda = r.falhas; if (S.jogos.length) mesclar(r.jogos); }
+    catch (e) { S.agenda = []; S.falhasAgenda = [e.message || String(e)]; }
+    renderRadar();
+  }
+  const ctxAnalise = (m, cotacoes, resumo) => ({ F: S.F, Fe: S.Fe, Fc: S.Fc, porTime: S.porTime, forca: S.forca, cotacoes, resumo, elencos: S.elencos.get(m.id) || {} });
+  function juntarCotacoes(a, b) { const visto = new Set(a.map(q => q.casa + '|' + K.chave(q.mk))); return a.concat(b.filter(q => !visto.has(q.casa + '|' + K.chave(q.mk)))); }
+  /* Liga do elenco: a liga doméstica do clube pelo modelo; sem ela, a competição do jogo. */
+  function ligaDoTime(id, comp) { const g = S.forca && S.forca.porId.get(id) ? S.forca.porId.get(id).grupo : null; return g && g.startsWith('L:') ? g.slice(2) : comp; }
+  async function elencosDe(m) {
+    if (S.elencos.has(m.id)) return S.elencos.get(m.id);
+    const ler = id => R.carregarElenco(ligaDoTime(id, m.comp), id).catch(() => null), [casa, fora] = await Promise.all([ler(m.h), ler(m.a)]), e = { casa, fora };
+    S.elencos.set(m.id, e); return e;
+  }
+  async function analisar(ids) {
+    if (!S.F) { toast('O modelo ainda está sendo ajustado. A análise começa quando a rede terminar de carregar.'); return; }
+    const lista = ids.map(id => S.porId.get(id) || S.agenda.find(m => m.id === id)).filter(Boolean); if (!lista.length) return;
+    navegar('analise'); const el = $('#analise'); el.innerHTML = '<p class="carregando">Analisando ' + lista.length + ' partida(s): odds, elencos e contexto…</p>';
+    let capturadas = 0;
+    await R.pool(lista.map(m => async () => {
+      let resumo = null, cot = K.doPlacar(m);
+      const [rs] = await Promise.all([R.carregarResumo(m).catch(e => ({ erro: e.message || String(e), cotacoes: [] })), elencosDe(m)]);
+      resumo = rs; cot = juntarCotacoes(resumo.cotacoes || [], cot);
+      const a = A.analisar(m, ctxAnalise(m, cot, resumo)); S.analises.set(m.id, a);
+      if (!a.iniciado) { const n = await D.capturar(a).catch(() => 0); capturadas += n; }
+    }), 3);
+    S.foco = lista[0].id; render();
+    if (capturadas) toast(capturadas + ' previsões registradas no diário antes do jogo.');
+  }
+
+  /* ---------- Navegação ---------- */
+  const ABAS = ['radar', 'analise', 'bilhete', 'diario', 'validacao'];
+  function navegar(aba) { if (!ABAS.includes(aba)) aba = 'radar'; S.aba = aba; $$('.vista').forEach(v => { v.hidden = v.id !== aba; }); $$('[data-aba]').forEach(a => a.classList.toggle('ativa', a.dataset.aba === aba)); if (location.hash.slice(1) !== aba) history.replaceState(null, '', '#' + aba); render(); }
+  function render() { renderStatus(); $('#n-bilhete').textContent = B.lista().length; if (S.aba === 'radar') renderRadar(); else if (S.aba === 'analise') renderAnalise(); else if (S.aba === 'bilhete') renderBilhete(); else if (S.aba === 'diario') renderDiario(); else renderValidacao(); }
+
+  function renderStatus() {
+    const r = S.rede, el = $('#status-rede'); let t = '';
+    if (r.status === 'carregando') t = '<span class="pulso"></span> Carregando a rede de jogos' + (r.progresso ? ' · ' + r.progresso[0] + '/' + r.progresso[1] + ' consultas' : '') + '. Na primeira vez leva até um minuto; depois vem do cache.';
+    else if (r.status === 'ajustando') t = '<span class="pulso"></span> Ajustando o modelo de força com ' + S.jogos.filter(m => m.done).length.toLocaleString('pt-BR') + ' jogos…';
+    else if (r.status === 'pronto') { const f = r.relatorio.filter(x => !x.ok).length; t = '<span class="ok"></span> Rede: ' + S.jogos.filter(m => m.done).length.toLocaleString('pt-BR') + ' jogos de ' + R.COMPS.length + ' competições · modelo ajustado às ' + hora(r.ajustadaEm) + (f ? ' · ' + f + ' consulta(s) falharam' : '') + ' <button class="link" id="recarregar">Atualizar</button>'; }
+    else if (r.status === 'erro') t = '<span class="erro"></span> Falha ao carregar a rede: ' + esc(r.erro) + ' <button class="link" id="recarregar">Tentar de novo</button>';
+    el.innerHTML = t;
+  }
+
+  /* ---------- Radar ---------- */
+  function previsaoRapida(m) {
+    if (!S.F) return null; const p = M.prever(S.F, m), Mx = M.matriz(p.lh, p.la, S.F.rho);
+    let h = 0, d = 0, a = 0; for (let i = 0; i < Mx.length; i++) for (let j = 0; j < Mx.length; j++) { const v = Mx[i][j]; if (i > j) h += v; else if (i < j) a += v; else d += v; }
+    let mk = null; if (m.odds && m.odds.h && m.odds.d && m.odds.a) mk = K.semMargem([m.odds.h, m.odds.d, m.odds.a]).p;
+    return { lh: p.lh, la: p.la, mod: [h, d, a], mk };
+  }
+  function barra3(p, cls = '') { return '<span class="barra3 ' + cls + '"><i style="width:' + (p[0] * 100).toFixed(1) + '%"></i><i style="width:' + (p[1] * 100).toFixed(1) + '%"></i><i style="width:' + (p[2] * 100).toFixed(1) + '%"></i></span>'; }
+  function renderRadar() {
+    const el = $('#radar'); if (!el || S.aba !== 'radar') return;
+    const doDia = S.agenda.filter(m => S.comps.has(m.comp)), jogos = doDia.filter(filtraGrandes), escondidos = doDia.length - jogos.length;
+    const chip = c => '<label class="chip"><input type="checkbox" data-comp="' + c.id + '"' + (S.comps.has(c.id) ? ' checked' : '') + '> ' + esc(c.nome) + '</label>';
+    const grandes = [...S.grandes.entries()].map(([liga, l]) => '<li><b>' + esc(nomeComp(liga)) + ':</b> ' + (l.length ? l.map(x => esc(x.nome)).join(', ') : '—') + '</li>').join('');
+    const linhas = jogos.map(m => {
+      const q = previsaoRapida(m), fc = S.forca && S.forca.porId.get(m.h), ff = S.forca && S.forca.porId.get(m.a), comecou = m.done || m.state === 'in' || Date.parse(m.date) <= Date.now();
+      const placar = m.done ? '<b class="placar">' + m.fh + '–' + m.fa + '</b>' : m.state === 'in' ? '<b class="ao-vivo">ao vivo</b>' : '<span class="hora">' + hora(m.date) + '</span>';
+      return '<tr class="' + (comecou ? 'passado' : '') + '"><td><input type="checkbox" data-sel="' + m.id + '"' + (S.sel.has(m.id) ? ' checked' : '') + ' aria-label="Selecionar ' + esc(m.hn + ' × ' + m.an) + '"></td><td>' + placar + '</td>'
+        + '<td><button class="jogo" data-analisar="' + m.id + '"><span>' + esc(m.hn) + (fc ? ' <small>' + fc.posicao + 'º</small>' : '') + '</span><span>' + esc(m.an) + (ff ? ' <small>' + ff.posicao + 'º</small>' : '') + '</span></button><small class="comp">' + esc(nomeComp(m.comp)) + '</small></td>'
+        + '<td>' + (q ? barra3(q.mod) + '<b class="nw">' + q.mod.map(v => pct(v)).join(' · ') + '</b>' + (q.mk ? '<small class="nw">mercado ' + q.mk.map(v => pct(v)).join(' · ') + '</small>' : '<small>sem odd</small>') : '<small>modelo carregando</small>') + '</td>'
+        + '<td class="num">' + (q ? num(q.lh) + ' × ' + num(q.la) + '<small>total ' + num(q.lh + q.la) + '</small>' : '—') + '</td></tr>';
+    }).join('');
+    const msg = jogos.length ? jogos.length + ' partidas' + (escondidos ? ' · ' + escondidos + ' escondida(s) por não ter um dos grandes da liga' : '') + '. A posição ao lado do nome é a força do clube entre ' + (S.forca ? S.forca.lista.length.toLocaleString('pt-BR') : '…') + ' clubes ativos da rede.'
+      : S.falhasAgenda.length && !doDia.length ? 'A agenda não respondeu: ' + esc(S.falhasAgenda.slice(0, 2).join(' · ')) : escondidos ? 'Nenhuma partida com os grandes nesta data (' + escondidos + ' escondida(s)).' : 'Nenhuma partida nas competições selecionadas nesta data.';
+    el.innerHTML = '<div class="cabeca"><div><p class="sobre">AGENDA · ' + esc(S.dia.split('-').reverse().join('/')) + ' · HORÁRIO DE SÃO PAULO</p><h1>Radar do dia</h1></div><div class="acoes"><button class="sec" id="sel-todos">Selecionar pré-jogo</button><button class="pri" id="analisar-sel">Analisar selecionados (' + S.sel.size + ')</button></div></div>'
+      + '<details class="filtro"><summary>Competições e filtro de grandes</summary><p class="sobre">NO RADAR</p><div class="chips">' + R.COMPS.filter(c => c.radar).map(chip).join('') + '</div><p class="sobre" style="margin-top:12px">OPCIONAIS</p><div class="chips">' + R.COMPS.filter(c => c.opcional).map(chip).join('') + '</div>'
+      + '<label class="chk" style="margin-top:12px"><input type="checkbox" id="mostrar-todos"' + (S.todos ? ' checked' : '') + '> mostrar todos os jogos (sem o filtro de grandes)</label>'
+      + '<p class="nota">Premier League e Champions: todos os jogos. LaLiga, Serie A, Bundesliga e Ligue 1: só jogos com pelo menos um dos clubes mais fortes da liga pelo modelo (calculado a cada atualização):</p>' + (grandes ? '<ul class="lista">' + grandes + '</ul>' : '<p class="nota">A lista aparece quando o modelo terminar de ajustar.</p>') + '</details>'
+      + '<p class="nota" id="radar-msg">' + msg + '</p>'
+      + (jogos.length ? '<div class="tabela"><table class="radar"><thead><tr><th></th><th>Hora</th><th>Partida</th><th>Modelo · 1 X 2</th><th class="num">Gols esperados</th></tr></thead><tbody>' + linhas + '</tbody></table></div>' : '')
+      + '<p class="nota">Modelo = força dos clubes em todas as competições. Mercado = DraftKings sem a margem da casa. Clique numa partida para a análise completa.</p>';
+  }
+
+  /* ---------- Análise ---------- */
+  const OUTRAS = [['times', 'Gols por time e handicap', l => ['tm', 'ah'].includes(l.mk.t)], ['tempos', 'Tempos e 1º gol', l => l.familia === 'tempos'], ['escanteios', 'Escanteios', l => l.familia === 'escanteios'], ['cartoes', 'Cartões', l => l.familia === 'cartoes']];
+  const trivial = (l, lim) => l.pModelo > lim || l.pModelo < 1 - lim;
+  function tipoOdd(l) {
+    if (l.oddTipo === 'cotada') return (l.oddCasas.length > 1 ? 'média de ' + l.oddCasas.length + ' casas' : esc(l.oddCasas[0] || 'casa')) + (l.oddMaior && l.oddMaior > l.odd + 0.005 ? ' · maior ' + num(l.oddMaior) : '');
+    return l.oddTipo === 'mercado' ? 'estimada pelo mercado' : 'estimada pelo modelo';
+  }
+  function linhaTabela(a, l) {
+    const naBilhete = B.lista().some(p => p.id === a.m.id + '|' + l.chave), evCls = l.ev === null || l.oddTipo !== 'cotada' ? '' : l.ev > 0.03 ? 'pos' : l.ev < -0.08 ? 'neg' : '';
+    const faixa = l.faixa ? '<small>' + pct(l.faixa[0]) + '–' + pct(l.faixa[1]) + '</small>' : '';
+    const tag = l.concorda === false ? '<span class="tag div">diverge ' + Math.round(Math.abs(l.divergencia) * 100) + ' p.p.</span>' : '';
+    return '<tr><td>' + esc(l.rotulo) + tag + '</td><td class="num"><b>' + pct(l.pModelo, 1) + '</b>' + faixa + '</td><td class="num">' + pct(l.pMercado, 1) + '</td>'
+      + '<td class="num"><b>' + num(l.odd) + '</b><small>' + tipoOdd(l) + '</small></td><td class="num">' + num(l.justa) + '</td><td class="num ' + evCls + '">' + (l.oddTipo === 'cotada' ? sinal(l.ev) : '<small>só com odd cotada</small>') + '</td>'
+      + '<td><button class="add' + (naBilhete ? ' ja' : '') + '" data-add="' + a.m.id + '|' + esc(l.chave) + '" title="' + (naBilhete ? 'Já está no bilhete' : 'Adicionar ao bilhete') + '">' + (naBilhete ? '✓' : '+') + '</button></td></tr>';
+  }
+  const CAB = '<thead><tr><th>Linha</th><th class="num">Modelo <small>faixa 90%</small></th><th class="num">Mercado</th><th class="num">Odd sugerida</th><th class="num">Odd justa</th><th class="num">Valor (modelo)</th><th></th></tr></thead>';
+  const fortes = a => { const porTipo = new Map(); for (const l of a.linhas.filter(l => ['1x2', 'dc', 'btts', 'tot'].includes(l.mk.t) && !(l.mk.t === 'btts' && l.mk.s === 'n') && l.pModelo >= 0.55 && l.pModelo <= 0.88 && l.concorda !== false).sort((x, y) => Math.abs(x.pModelo - 0.7) - Math.abs(y.pModelo - 0.7))) if (!porTipo.has(l.mk.t)) porTipo.set(l.mk.t, l); return [...porTipo.values()]; };
+  function leitura(a) {
+    const out = [], ref = a.ref, m = a.m, fc = a.forca.casa, ff = a.forca.fora;
+    out.push('Modelo: gols esperados ' + num(a.lh) + ' × ' + num(a.la) + (fc && ff ? '; força na rede: ' + esc(m.hn) + ' ' + fc.posicao + 'º, ' + esc(m.an) + ' ' + ff.posicao + 'º.' : '.') + (ref ? ' Mercado (' + esc(ref.fonte) + '): ' + num(ref.lh) + ' × ' + num(ref.la) + '.' : ''));
+    const f = fortes(a);
+    if (f.length) out.push('Nos seus mercados (55% a 88%, modelo e mercado de acordo): ' + f.map(l => esc(l.rotulo) + ' <b>' + pct(l.pModelo) + '</b> a ' + num(l.odd)).join('; ') + '.');
+    else out.push('<b>Nada bom neste jogo</b> pelos critérios do hub: nenhuma linha dos seus mercados fica entre 55% e 88% com modelo e mercado de acordo.');
+    const valor = a.linhas.filter(l => l.principal && l.oddTipo === 'cotada' && l.ev !== null && l.ev > 0.05 && l.concorda !== false).sort((x, y) => y.ev - x.ev);
+    if (valor.length) out.push('Odd acima do justo pelo modelo: ' + valor.slice(0, 3).map(l => esc(l.rotulo) + ' a ' + num(l.odd) + ' (' + sinal(l.ev) + ')').join('; ') + '. É sinal, não garantia: veja a Validação.');
+    return out;
+  }
+  function blocoCalendario(a, lado) {
+    const c = a.calendario[lado], f = a.forma[lado], nome = lado === 'casa' ? a.m.hn : a.m.an, eu = lado === 'casa' ? a.m.h : a.m.a;
+    const ant = c.anteriores.map(j => { const casa = j.h === eu, adv = casa ? j.an : j.hn, adId = casa ? j.a : j.h, pos = S.forca && S.forca.porId.get(adId), p = casa ? j.hg ?? j.fh : j.ag ?? j.fa, q = casa ? j.ag ?? j.fa : j.hg ?? j.fh, r = p > q ? 'V' : p === q ? 'E' : 'D';
+      return '<li><span class="res ' + r + '">' + r + '</span>' + dia(j.date) + ' · ' + (casa ? 'casa' : 'fora') + ' · ' + esc(adv) + (pos ? ' <small>(' + pos.posicao + 'º)</small>' : '') + ' <b>' + p + '–' + q + '</b> <small>' + esc(nomeComp(j.comp)) + '</small></li>'; }).join('');
+    const prox = c.proximos.map(j => '<li>' + diaHora(j.date) + ' · ' + esc(j.h === eu ? j.an : j.hn) + ' <small>' + esc(nomeComp(j.comp)) + '</small></li>').join('');
+    return '<div class="time"><h4>' + esc(nome) + '</h4><p class="nota">Últimos ' + f.n + ' (todas as competições): <b>' + esc(f.seq) + '</b> · ' + num(f.gp, 1) + ' gols feitos e ' + num(f.gc, 1) + ' sofridos por jogo · ambas marcaram ' + f.ambas + '/' + f.n + ' · over 2,5 em ' + f.over25 + '/' + f.n
+      + (f.chutesNoAlvo !== null ? ' · ' + num(f.chutesNoAlvo, 1) + ' chutes no alvo (' + num(f.chutesNoAlvoContra, 1) + ' contra)' : '') + '</p><p class="nota">Descanso: ' + (c.descanso !== null ? num(c.descanso, 1) + ' dias' : '—') + ' · ' + c.jogos14 + ' jogos em 14 dias' + (c.ateProximo !== null ? ' · próximo jogo em ' + num(c.ateProximo, 1) + ' dias' : '') + '</p><ul class="lista">' + ant + '</ul>' + (prox ? '<p class="sobre">PRÓXIMOS</p><ul class="lista">' + prox + '</ul>' : '') + '</div>';
+  }
+  function blocoJogadores(a) {
+    const lado = (lista, nome) => '<div><h4>' + esc(nome) + '</h4>' + (lista.length ? '<ul class="lista">' + lista.map(j => '<li><b>' + esc(j.nome) + '</b> <small>' + esc(j.pos) + ' · ' + j.gols + ' gol(s) em ' + j.jogos + ' jogos</small> · ' + pct(j.p) + ' <small>odd ~' + num(1 / (j.p * 1.12)) + '</small></li>').join('') + '</ul>' : '<p class="nota">Elenco indisponível na fonte.</p>') + '</div>';
+    return '<details class="contexto"><summary>Quem pode marcar <small>(experimental)</small></summary><div class="dois">' + lado(a.jogadores.casa, a.m.hn) + lado(a.jogadores.fora, a.m.an) + '</div><p class="nota">Chance de marcar a qualquer momento: parcela do jogador nos gols e chutes no alvo do time (temporada atual + metade da anterior), por jogo como titular, aplicada aos gols esperados do time. Supõe que ele começa jogando. A fonte não traz odds de jogador, então não há como conferir com o mercado; a odd ao lado é só a justa com margem típica de 12%.</p></details>';
+  }
+  function cartaoAnalise(a) {
+    const m = a.m, fam = S.familia[m.id] || 'times', principais = a.linhas.filter(l => l.principal && !(l.mk.t === 'tot' && trivial(l, 0.92)));
+    const grupo = OUTRAS.find(x => x[0] === fam) || OUTRAS[0], outras = a.linhas.filter(l => !l.principal && grupo[2](l) && !trivial(l, 0.85));
+    const ref = a.ref && a.ref.x12 ? a.ref.x12.p : null, mod = ['h', 'd', 'a'].map(s => (a.linhas.find(l => l.chave === '1x2:' + s) || {}).pModelo);
+    const abas = OUTRAS.map(([id, nome]) => '<button class="fam' + (fam === id ? ' ativa' : '') + '" data-fam="' + m.id + '|' + id + '">' + nome + '</button>').join('');
+    const res = a.resumo || {}, escal = (res.escalacoes || []).filter(e => e.titulares.length >= 11), desf = res.desfalques || [];
+    const h2h = a.h2h.map(j => '<li>' + dia(j.date) + ' · ' + esc(j.hn) + ' <b>' + (j.hg ?? j.fh) + '–' + (j.ag ?? j.fa) + '</b> ' + esc(j.an) + ' <small>' + esc(nomeComp(j.comp)) + '</small></li>').join('');
+    const dest = a.destaques.length ? '<div class="destaques"><h3>Fora do normal</h3><ul>' + a.destaques.map(l => '<li><span><b>' + esc(l.rotulo) + '</b> ' + pct(l.pModelo) + ' <small>normal da competição: ' + pct(l.pTipico) + ' · odd ' + num(l.odd) + ' (' + tipoOdd(l) + ')</small></span><button class="add' + (B.lista().some(p => p.id === m.id + '|' + l.chave) ? ' ja' : '') + '" data-add="' + m.id + '|' + esc(l.chave) + '">+</button></li>').join('') + '</ul></div>' : '';
+    return '<article class="cartao" id="a-' + m.id + '"><header><div class="topo-cartao"><p class="sobre">' + esc(nomeComp(m.comp)) + ' · ' + diaHora(m.date) + (res.estadio ? ' · ' + esc(res.estadio) : '') + (res.arbitro ? ' · árbitro ' + esc(res.arbitro) : '') + '</p><div class="exportar"><button class="link" data-copiar="' + m.id + '">Copiar</button><button class="link" data-baixar="' + m.id + '">Baixar</button></div></div>'
+      + '<h2>' + esc(m.hn) + ' <span>×</span> ' + esc(m.an) + '</h2>' + (a.iniciado ? '<p class="aviso">Partida já iniciada ou encerrada: sem registro pré-jogo.' + (m.done ? ' Placar: ' + m.fh + '–' + m.fa + '.' : '') + '</p>' : '') + '</header>'
+      + '<div class="resumo"><div><span class="sobre">Modelo · 1 X 2</span>' + barra3(mod) + '<b>' + mod.map(v => pct(v)).join(' · ') + '</b></div><div><span class="sobre">Mercado · 1 X 2</span>' + (ref ? barra3(ref, 'mercado') + '<b>' + ref.map(v => pct(v)).join(' · ') + '</b>' : '<b>sem odd</b>') + '</div>'
+      + '<div><span class="sobre">Gols esperados</span><b>' + num(a.lh) + ' × ' + num(a.la) + ' <small>modelo</small></b>' + (a.ref ? '<small>mercado ' + num(a.ref.lh) + ' × ' + num(a.ref.la) + '</small>' : '') + '</div><div><span class="sobre">Placares mais prováveis</span><b>' + a.placares.slice(0, 4).map(p => '<span class="nw">' + p[0] + '–' + p[1] + ' <small>' + pct(p[2]) + '</small></span>').join(' · ') + '</b></div></div>'
+      + '<div class="leitura"><h3>Leitura</h3><ul>' + leitura(a).map(t => '<li>' + t + '</li>').join('') + '</ul>' + (a.alertas.length ? '<ul class="alertas">' + a.alertas.map(x => '<li class="' + x.tipo + '">' + esc(x.texto) + '</li>').join('') + '</ul>' : '') + '</div>'
+      + dest
+      + '<h3>Linhas principais</h3><div class="tabela"><table>' + CAB + '<tbody>' + principais.map(l => linhaTabela(a, l)).join('') + '</tbody></table></div>'
+      + '<p class="nota">Odd sugerida: média das casas que cotam a linha; sem cotação, o preço justo (do mercado, ou do modelo) com a margem típica das casas. Valor = chance do modelo × odd − 1, só quando a odd é cotada por uma casa (com odd estimada, o valor só repetiria a diferença entre modelo e mercado). Linhas de gols quase certas (acima de 92%) ficam fora.</p>'
+      + '<details class="contexto"><summary>Outras linhas</summary><div class="fams">' + abas + '</div><div class="tabela"><table>' + CAB + '<tbody>' + (outras.length ? outras.map(l => linhaTabela(a, l)).join('') : '<tr><td colspan="7" class="nota">Sem linhas neste grupo.</td></tr>') + '</tbody></table></div>'
+      + '<p class="nota">' + (fam === 'escanteios' && a.escanteios ? 'Média esperada de escanteios: ' + num(a.escanteios.lh, 1) + ' × ' + num(a.escanteios.la, 1) + '. ' : '') + (fam === 'cartoes' && a.cartoes ? 'Média esperada de cartões: ' + num(a.cartoes.lh, 1) + ' × ' + num(a.cartoes.la, 1) + ' (sem o efeito do árbitro). ' : '') + 'Escanteios e cartões não têm odd na fonte; só sobem para "Fora do normal" quando a chance fica bem acima da média da competição.</p></details>'
+      + blocoJogadores(a)
+      + '<details class="contexto"><summary>Calendário, forma e confrontos</summary><div class="dois">' + blocoCalendario(a, 'casa') + blocoCalendario(a, 'fora') + '</div>'
+      + '<h4>Confrontos diretos (todas as competições, desde 2024)</h4>' + (h2h ? '<ul class="lista">' + h2h + '</ul>' : '<p class="nota">Sem confrontos na rede.</p>')
+      + (escal.length ? '<h4>Escalações confirmadas</h4>' + escal.map(e => '<p class="nota"><b>' + esc(e.time === m.h ? m.hn : m.an) + '</b> ' + esc(e.formacao) + ': ' + esc(e.titulares.join(', ')) + '</p>').join('') : '')
+      + (desf.length ? '<h4>Desfalques informados</h4><ul class="lista">' + desf.slice(0, 16).map(d => '<li>' + esc(d.time === m.h ? m.hn : m.an) + ' · ' + esc(d.jogador) + ' <small>' + esc(d.status) + '</small></li>').join('') + '</ul>' : '') + '</details></article>';
+  }
+  function renderAnalise() {
+    const el = $('#analise'); if (!el || S.aba !== 'analise') return;
+    const lista = [...S.analises.values()].sort((x, y) => Date.parse(x.m.date) - Date.parse(y.m.date));
+    if (!lista.length) { el.innerHTML = '<div class="vazio"><h2>Nenhuma partida analisada</h2><p>No Radar, marque as partidas e toque em Analisar selecionados, ou clique direto numa partida.</p><button class="pri" data-ir="radar">Abrir o Radar</button></div>'; return; }
+    const nav = lista.map(a => '<a href="#a-' + a.m.id + '" class="mini">' + hora(a.m.date) + ' · ' + esc(a.m.hn) + ' × ' + esc(a.m.an) + '</a>').join('');
+    el.innerHTML = '<div class="cabeca"><div><p class="sobre">' + lista.length + ' PARTIDA(S)</p><h1>Análise</h1></div><div class="acoes"><button class="sec" id="copiar-todas">Copiar todas</button><button class="sec" id="baixar-todas">Baixar todas</button><button class="sec" id="limpar-analises">Limpar</button></div></div><nav class="indice">' + nav + '</nav>' + lista.map(cartaoAnalise).join('');
+  }
+
+  /* ---------- Exportar análise ---------- */
+  const p2 = v => Number.isFinite(v) ? Math.round(v * 1e4) / 1e4 : null;
+  function dadosAnalise(a) {
+    const m = a.m;
+    return { partida: { id: m.id, competicao: nomeComp(m.comp), inicio: m.date, casa: m.hn, fora: m.an, placarFinal: m.done ? [m.fh, m.fa] : null },
+      modelo: { golsEsperados: [p2(a.lh), p2(a.la)], x12: ['h', 'd', 'a'].map(s => p2((a.linhas.find(l => l.chave === '1x2:' + s) || {}).pModelo)) },
+      mercado: a.ref ? { fonte: a.ref.fonte, golsEsperados: [p2(a.ref.lh), p2(a.ref.la)], x12: a.ref.x12 ? a.ref.x12.p.map(p2) : null } : null,
+      linhas: a.linhas.map(l => ({ linha: l.rotulo, principal: l.principal, modelo: p2(l.pModelo), faixa90: l.faixa ? l.faixa.map(p2) : null, mercado: p2(l.pMercado), normalDaCompeticao: p2(l.pTipico), oddSugerida: l.odd, tipoOdd: l.oddTipo, casas: l.oddCasas, oddJusta: p2(l.justa), valorModelo: p2(l.ev) })),
+      foraDoNormal: a.destaques.map(l => l.rotulo), quemPodeMarcar: { casa: a.jogadores.casa.map(j => ({ nome: j.nome, chance: p2(j.p) })), fora: a.jogadores.fora.map(j => ({ nome: j.nome, chance: p2(j.p) })) },
+      placaresMaisProvaveis: a.placares.map(p => ({ placar: p[0] + '-' + p[1], chance: p2(p[2]) })), alertas: a.alertas.map(x => x.texto), geradoEm: a.geradoEm, versao: 'Ponto Comum v3' };
+  }
+  function textoAnalise(a) {
+    const m = a.m, x12 = ['h', 'd', 'a'].map(s => a.linhas.find(l => l.chave === '1x2:' + s)), out = [];
+    out.push('⚽ ' + m.hn + ' × ' + m.an + ' — ' + nomeComp(m.comp) + ' · ' + diaHora(m.date));
+    out.push('Modelo 1X2: ' + x12.map(l => pct(l && l.pModelo)).join(' · ') + (a.ref && a.ref.x12 ? ' | mercado ' + a.ref.x12.p.map(v => pct(v)).join(' · ') : ''));
+    out.push('Gols esperados: ' + num(a.lh) + ' × ' + num(a.la) + (a.ref ? ' (mercado ' + num(a.ref.lh) + ' × ' + num(a.ref.la) + ')' : ''));
+    out.push('', 'Linha · modelo · mercado · odd sugerida');
+    for (const l of a.linhas.filter(l => l.principal && !(l.mk.t === 'tot' && trivial(l, 0.92)))) out.push('• ' + l.rotulo + ': ' + pct(l.pModelo) + ' · ' + pct(l.pMercado) + ' · ' + num(l.odd) + (l.oddTipo !== 'cotada' ? ' (estimada)' : '') + (l.concorda === false ? ' ⚠ diverge' : ''));
+    const f = fortes(a); out.push('', f.length ? 'Nos seus mercados (55–88%): ' + f.map(l => l.rotulo + ' ' + pct(l.pModelo) + ' a ' + num(l.odd)).join('; ') : 'Nada bom neste jogo pelos critérios do hub.');
+    if (a.destaques.length) out.push('Fora do normal: ' + a.destaques.map(l => l.rotulo + ' ' + pct(l.pModelo) + ' (normal ' + pct(l.pTipico) + ')').join('; '));
+    out.push('Placares: ' + a.placares.slice(0, 4).map(p => p[0] + '-' + p[1] + ' ' + pct(p[2])).join(', '));
+    if (a.alertas.length) out.push('', ...a.alertas.map(x => '! ' + x.texto));
+    return out.join('\n');
+  }
+
+  /* ---------- Bilhete ---------- */
+  const PREFS = [['1x2', 'Resultado (1X2)'], ['dc', 'Dupla chance'], ['btts_s', 'Ambas marcam: sim'], ['btts_n', 'Ambas marcam: não'], ['tot', 'Total de gols'], ['tm', 'Gols de um time'], ['ah', 'Handicap'], ['tempos', 'Tempos e 1º gol'], ['esc', 'Escanteios'], ['car', 'Cartões']];
+  const tipoOddPerna = p => p.oddManual ? 'sua odd' : p.oddTipo === 'cotada' ? 'média das casas' : 'estimada';
+  function renderBilhete() {
+    const el = $('#bilhete'); if (!el || S.aba !== 'bilhete') return;
+    const ps = B.lista(), av = B.avaliar(ps, S.analises), nivelAtual = ps.find(p => p.nivel) ? ps.find(p => p.nivel).nivel : 'manual';
+    const pernas = ps.map(p => '<li><div><b>' + esc(p.rotulo) + '</b><small>' + esc(p.jogo) + ' · ' + diaHora(p.inicio) + '</small><small>modelo ' + pct(p.pModelo ?? p.p, 1) + (Number.isFinite(p.pMercado) ? ' · mercado ' + pct(p.pMercado, 1) : '') + '</small></div>'
+      + '<label class="odd">odd <small>' + tipoOddPerna(p) + '</small><input type="number" step="0.01" min="1.01" inputmode="decimal" id="odd-' + esc(p.id) + '" data-odd="' + esc(p.id) + '" value="' + (B.oddDe(p) ? B.oddDe(p).toFixed(2) : '') + '"></label><button class="rem" data-rem="' + esc(p.id) + '" aria-label="Remover">×</button></li>').join('');
+    const sug = S.analises.size ? B.sugerir([...S.analises.values()], S.pref) : [];
+    const cartaoNivel = s => '<div class="nivel n-' + s.nivel.id + '"><h3>' + s.nivel.nome + '</h3><p class="faixa-odd">odd ' + String(s.nivel.odd[0]).replace('.', ',') + '–' + String(s.nivel.odd[1]).replace('.', ',') + ' · ' + s.nivel.pernas[0] + '–' + s.nivel.pernas[1] + ' jogos · pernas ≥ ' + pct(s.nivel.minP) + '</p>'
+      + (s.disponivel ? '<ul>' + s.pernas.map(p => '<li>' + esc(p.rotulo) + ' <small>' + esc(p.jogo) + ' · ' + pct(p.pModelo) + ' · ' + num(p.odd) + (p.oddTipo !== 'cotada' ? ' (estimada)' : '') + '</small></li>').join('') + '</ul><p class="total-nivel"><b>odd ' + num(s.odd) + '</b> · chance ' + pct(s.pModelo, 1) + (s.pMercado ? ' <small>(mercado ' + pct(s.pMercado, 1) + ')</small>' : '') + '</p><button class="sec" data-usar="' + s.nivel.id + '">Usar no bilhete</button>' : '<p class="nota">' + esc(s.motivo) + '</p>') + '</div>';
+    el.innerHTML = '<div class="cabeca"><div><p class="sobre">SUGESTÕES E MONTAGEM</p><h1>Bilhete</h1></div><div class="acoes">' + (ps.length ? '<button class="sec" id="limpar-bilhete">Limpar</button>' : '') + '</div></div>'
+      + '<section class="sugestoes"><div class="niveis">' + (sug.length ? sug.map(cartaoNivel).join('') : '<p class="nota">Analise partidas para gerar as sugestões segura, média, arriscada e bingo.</p>') + '</div>'
+      + '<p class="nota">Filtro: os dois times com 12+ jogos na rede, modelo e mercado a até 8 p.p. em cada perna, nenhuma perna acima de 92% (não paga nada), uma perna por jogo, só pré-jogo. Dentro da faixa de odd do nível, escolhe a combinação com maior chance pela média de modelo e mercado.</p>'
+      + '<details class="filtro"><summary>Mercados nas sugestões</summary><fieldset class="prefs">' + PREFS.map(([k, n]) => '<label><input type="checkbox" data-pref="' + k + '"' + (S.pref[k] ? ' checked' : '') + '> ' + n + '</label>').join('') + '</fieldset></details></section>'
+      + '<h3>Seu bilhete</h3>'
+      + (ps.length ? '<div class="bilhete"><ul class="pernas">' + pernas + '</ul><div class="totais"><div><span class="sobre">Odd combinada</span><b>' + (av.odd ? num(av.odd) : '—') + '</b><small>' + (av.oddEstimada ? 'com bloco do mesmo jogo estimado' : 'justa pelo modelo: ' + num(av.justa)) + '</small></div><div><span class="sobre">Chance (modelo)</span><b>' + pct(av.pModelo, 1) + '</b><small>mercado: ' + pct(av.pMercado, 1) + '</small></div><div><span class="sobre">Valor esperado</span><b class="' + (av.ev === null ? '' : av.ev > 0 ? 'pos' : 'neg') + '">' + sinal(av.ev) + '</b><small>modelo · mercado ' + sinal(av.evMercado) + '</small></div></div>'
+        + (av.avisos.length ? '<ul class="avisos">' + av.avisos.map(x => '<li class="' + x.nivel + '">' + esc(x.texto) + '</li>').join('') + '</ul>' : '')
+        + '<div class="salvar"><label>nível <select id="nivel-aposta">' + Object.entries(NIVEL_NOME).map(([k, n]) => '<option value="' + k + '"' + (k === nivelAtual ? ' selected' : '') + '>' + n + '</option>').join('') + '</select></label><label>valor <input type="number" id="valor-aposta" min="0" step="0.5" inputmode="decimal" placeholder="R$"></label><label>odd que você pegou <input type="number" id="odd-pega" min="1.01" step="0.01" inputmode="decimal" placeholder="' + (av.odd ? num(av.odd).replace(',', '.') : '') + '"></label><button class="pri" id="registrar-aposta">Registrar aposta</button><button class="sec" id="acompanhar">Só acompanhar</button></div></div>'
+        : '<div class="vazio"><h2>Bilhete vazio</h2><p>Use uma sugestão acima ou, na Análise, toque em + ao lado de qualquer linha. A odd vem preenchida (média das casas ou estimada); troque pela da sua casa se quiser.</p></div>');
+    S._sugestoes = sug;
+  }
+
+  /* ---------- Diário ---------- */
+  async function renderDiario() {
+    const el = $('#diario'); if (!el || S.aba !== 'diario') return;
+    const lista = await D.todos(), mt = D.metricas(lista), rev = D.revisao(lista), b = mt.bilhetes;
+    const fam = { resultado: 'Resultado', gols: 'Gols', tempos: 'Tempos', escanteios: 'Escanteios', cartoes: 'Cartões' };
+    const linhasFam = Object.entries(mt.porFamilia).filter(([, g]) => g).map(([f, g]) => '<tr><td>' + fam[f] + '</td><td class="num">' + g.n + '</td><td class="num">' + pct(g.previsto, 1) + '</td><td class="num">' + pct(g.aconteceu, 1) + '</td><td class="num">' + num(g.logLoss, 3) + '</td><td class="num">' + (g.logLossMercado !== null ? num(g.logLossMercado, 3) + '<small>' + g.nMercado + ' linhas</small>' : '—') + '</td></tr>').join('');
+    const faixas = mt.faixas.map(f => '<div class="faixa"><span>' + Math.round(f.de * 100) + '–' + Math.round(f.ate * 100) + '%</span><i style="width:' + (f.aconteceu * 100).toFixed(0) + '%"></i><b>' + pct(f.aconteceu) + '</b><small>' + f.n + '</small></div>').join('');
+    const niveis = Object.entries(b.porNivel).map(([k, x]) => '<tr><td>' + (NIVEL_NOME[k] || k) + '</td><td class="num">' + x.apostas + '</td><td class="num">' + x.ganhas + '/' + x.apuradas + '</td><td class="num">' + reais(x.investido) + '</td><td class="num ' + (x.lucro > 0 ? 'pos' : x.lucro < 0 ? 'neg' : '') + '">' + reais(x.lucro) + '</td><td class="num">' + (x.investido ? sinal(x.lucro / x.investido) : '—') + '</td></tr>').join('');
+    const bilhetes = lista.filter(r => r.tipo === 'bilhete').slice(0, 60).map(r => '<tr><td>' + diaHora(r.inicio) + '</td><td>' + (r.modo === 'aposta' ? '<b>' + (NIVEL_NOME[r.nivel] || 'Aposta') + '</b>' : 'Acompanhado') + ' · ' + r.pernas.length + ' perna(s)<small>' + r.pernas.map(p => (p.resultado === 1 ? '✓ ' : p.resultado === 0 ? '✗ ' : '') + esc(p.rotulo) + ' (' + esc(p.jogo) + ')').join('<br>') + '</small></td>'
+      + '<td class="num">' + num(r.odd) + '<small>chance ' + pct(r.pModelo, 1) + '</small></td><td class="num">' + (r.valor ? reais(r.valor) : '—') + '</td><td>' + (r.apurado ? (r.resultado ? '<b class="pos">ganhou</b>' : '<b class="neg">perdeu</b>') + (Number.isFinite(r.lucro) ? '<small>' + reais(r.lucro) + '</small>' : '') : 'pendente') + '</td><td><button class="rem" data-del="' + esc(r.id) + '" aria-label="Apagar registro">×</button></td></tr>').join('');
+    const revisao = rev.map(g => '<tr><td>' + dia(g.inicio) + '<small>' + esc(nomeComp(g.comp)) + '</small></td><td><b>' + esc(g.jogo) + '</b> ' + (g.placar ? g.placar.join('–') : '') + '</td><td>' + (g.favorito ? (g.favorito.aconteceu ? '✓ ' : '✗ ') + esc(g.favorito.rotulo) + ' <small>modelo ' + pct(g.favorito.p) + (Number.isFinite(g.favorito.pMercado) ? ' · mercado ' + pct(g.favorito.pMercado) : '') + '</small>' : '—') + '</td>'
+      + '<td>' + (g.ditas.length ? g.ditas.map(r => (r.resultado ? '<span class="pos">✓</span> ' : '<span class="neg">✗</span> ') + esc(r.rotulo) + ' <small class="nw">' + pct(r.pModelo ?? r.p) + '</small>').join('<br>') : '<small>nada entre 55% e 88%</small>') + '</td><td class="num">' + (g.ditas.length ? g.acertos + '/' + g.ditas.length : '—') + '</td></tr>').join('');
+    const totDitas = rev.reduce((s, g) => s + g.ditas.length, 0), totAc = rev.reduce((s, g) => s + g.acertos, 0), espDitas = rev.reduce((s, g) => s + g.ditas.reduce((t, r) => t + (r.pModelo ?? r.p), 0), 0);
+    el.innerHTML = '<div class="cabeca"><div><p class="sobre">PREVISÃO → RESULTADO → APRENDIZADO</p><h1>Diário</h1></div><div class="acoes"><button class="pri" id="apurar">Apurar resultados</button><button class="sec" id="exportar">Exportar</button><label class="sec arquivo">Importar<input type="file" id="importar" accept="application/json,.json"></label></div></div>'
+      + '<div class="resumo"><div><span class="sobre">Apostas reais</span><b class="' + (b.lucro > 0 ? 'pos' : b.lucro < 0 ? 'neg' : '') + '">' + reais(b.lucro) + '</b><small>' + b.apostas + ' apostas · ' + b.ganhas + ' ganhas de ' + b.apuradas + ' apuradas · ' + b.pendentes + ' pendentes</small></div><div><span class="sobre">Retorno</span><b>' + (b.roi !== null ? sinal(b.roi) : '—') + '</b><small>investido ' + reais(b.investido) + '</small></div>'
+      + '<div><span class="sobre">O hub acertou</span><b>' + (totDitas ? totAc + '/' + totDitas : '—') + '</b><small>' + (totDitas ? 'linhas ditas na leitura · esperado ' + num(espDitas, 1) : 'aparece após apurar') + '</small></div><div><span class="sobre">CLV médio</span><b>' + (mt.clv ? sinal(mt.clv.medio) : '—') + '</b><small>' + (mt.clv ? mt.clv.n + ' linhas · ' + mt.clv.positivos + ' positivas' : 'odd da DraftKings na análise ÷ fechamento') + '</small></div></div>'
+      + (niveis ? '<h3>Apostas por nível</h3><div class="tabela"><table><thead><tr><th>Nível</th><th class="num">Apostas</th><th class="num">Ganhas</th><th class="num">Investido</th><th class="num">Lucro</th><th class="num">Retorno</th></tr></thead><tbody>' + niveis + '</tbody></table></div>' : '')
+      + '<h3>Bilhetes e apostas</h3>' + (bilhetes ? '<div class="tabela"><table><thead><tr><th>Início</th><th>Bilhete</th><th class="num">Odd</th><th class="num">Valor</th><th>Resultado</th><th></th></tr></thead><tbody>' + bilhetes + '</tbody></table></div>' : '<p class="nota">Nenhum bilhete salvo. No Bilhete, informe valor e odd e toque em Registrar aposta.</p>')
+      + '<h3>Revisão: o que o hub disse × o que aconteceu</h3>' + (revisao ? '<div class="tabela"><table><thead><tr><th>Dia</th><th>Jogo</th><th>Favorito do modelo</th><th>Linhas da leitura (55–88%)</th><th class="num">Acertos</th></tr></thead><tbody>' + revisao + '</tbody></table></div><p class="nota">Se o hub estiver bem calibrado, os acertos ficam perto do esperado (a soma das chances). Muito acima ou muito abaixo, por muitas semanas, indica erro.</p>' : '<p class="nota">Aparece depois de apurar jogos que você analisou antes do início.</p>')
+      + (linhasFam ? '<h3>Calibração das previsões registradas</h3><div class="tabela"><table><thead><tr><th>Mercado</th><th class="num">Linhas</th><th class="num">Chance média do modelo</th><th class="num">Aconteceu</th><th class="num">Log loss modelo ↓</th><th class="num">Log loss mercado ↓</th></tr></thead><tbody>' + linhasFam + '</tbody></table></div><h3>Os 70% acontecem 70% das vezes?</h3><div class="faixas">' + faixas + '</div><p class="nota">Linhas do mesmo jogo são correlacionadas; avalie com centenas de jogos, não dezenas.</p>' : '');
+  }
+
+  /* ---------- Validação ---------- */
+  function tabelaMetricas(linhas) { return '<div class="tabela"><table><thead><tr><th></th><th class="num">Jogos</th><th class="num">Log loss 1X2 ↓</th><th class="num">Log loss over 2,5 ↓</th><th class="num">Log loss ambas ↓</th></tr></thead><tbody>' + linhas.map(([n, m]) => m ? '<tr><td>' + n + '</td><td class="num">' + (m.n ?? '—') + '</td><td class="num">' + num(m.logLoss1x2, 4) + '</td><td class="num">' + num(m.logLossOver25, 4) + '</td><td class="num">' + num(m.logLossAmbas, 4) + '</td></tr>' : '').join('') + '</tbody></table></div>'; }
+  function tabelaRegras(rg) {
+    const linha = (x, w) => '<tr><td>' + esc(x.nome) + '</td><td>' + w + '</td><td class="num">' + x.n + '</td><td class="num">' + (x.n ? pct(x.acertos / x.n) : '—') + '</td><td class="num">' + num(x.oddMedia) + '</td><td class="num ' + (x.roi > 0 ? 'pos' : 'neg') + '">' + sinal(x.roi) + '</td></tr>';
+    return '<div class="tabela"><table><thead><tr><th>Regra</th><th>Odd</th><th class="num">Apostas</th><th class="num">Acerto</th><th class="num">Odd média</th><th class="num">Retorno</th></tr></thead><tbody>' + rg.abertura.map(x => linha(x, 'abertura')).join('') + rg.fechamento.map(x => linha(x, 'fechamento')).join('') + '</tbody></table></div>';
+  }
+  function renderValidacao() {
+    const el = $('#validacao'); if (!el || S.aba !== 'validacao') return;
+    const r = S.validacao || V.RELATORIO_BASE, base = r === V.RELATORIO_BASE || r.fixo;
+    const mk = r.mercado, cal = r.calibracao ? r.calibracao.faixas : null, tp = r.tempos;
+    el.innerHTML = '<div class="cabeca"><div><p class="sobre">' + (base ? 'MEDIDO EM 19/10/2026' : 'RODADO EM ' + diaHora(r.geradoEm)) + '</p><h1>Validação</h1></div><div class="acoes"><label class="chk"><input type="checkbox" id="val-mercado" checked> comparar com o mercado (~600 consultas)</label><label class="chk"><input type="checkbox" id="val-param"> reescolher parâmetros</label><button class="pri" id="rodar-validacao"' + (S.rodando || !S.F ? ' disabled' : '') + '>' + (S.rodando ? 'Rodando…' : 'Rodar validação') + '</button></div></div>'
+      + '<p class="nota" id="val-progresso">Método: a cada semana, o modelo é ajustado só com jogos anteriores e prevê a semana seguinte. Os parâmetros são escolhidos no período de ajuste (' + r.periodoAjuste.map(d => d.split('-').reverse().join('/')).join(' a ') + ') e conferidos no período de teste (' + r.periodoTeste.map(d => d.split('-').reverse().join('/')).join(' a ') + '), que não participou da escolha. Log loss menor = previsão melhor.</p>'
+      + '<h3>Período de teste</h3>' + tabelaMetricas([['Modelo (com correção ' + num(r.parametros.correcao, 1) + ')', r.teste.modelo], ['Modelo sem correção', r.teste.semCorrecao], ['Modelo sem chutes no alvo', r.teste.semChutes], ['Média da liga', r.teste.mediaDaLiga]])
+      + (r.contraModeloAntigo ? '<h3>Contra o modelo antigo do hub</h3><p class="nota">Nos ' + r.contraModeloAntigo.n + ' jogos do teste que o modelo antigo conseguiu prever; ' + esc(r.contraModeloAntigo.coberturaAntigo) + '.</p>' + tabelaMetricas([['Antigo (Poisson por mando, só a liga do jogo)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.antigo)], ['Atual (todas as competições)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.novo)]]) : '')
+      + (mk ? '<h3>Contra o mercado (DraftKings, sem margem)</h3><div class="tabela"><table><tbody><tr><td>Log loss 1X2 · modelo</td><td class="num">' + num(mk.logLoss.modelo, 4) + '</td></tr><tr><td>Log loss 1X2 · mercado no fechamento</td><td class="num"><b>' + num(mk.logLoss.mercado, 4) + '</b></td></tr>' + (mk.logLoss.aberturaMercado ? '<tr><td>Log loss 1X2 · mercado na abertura</td><td class="num">' + num(mk.logLoss.aberturaMercado, 4) + '</td></tr>' : '') + '<tr><td>Melhor peso do modelo numa mistura com o mercado</td><td class="num">' + num(mk.pesoModeloNaMistura * 100, 0) + '%</td></tr>'
+        + (!mk.regras && mk.apostasSimuladas && mk.apostasSimuladas.fechamento ? '<tr><td>Apostar onde o modelo vê valor > 5% (fechamento)</td><td class="num">' + mk.apostasSimuladas.fechamento.n + ' apostas · ' + sinal(mk.apostasSimuladas.fechamento.roi) + '</td></tr><tr><td>Idem, na abertura</td><td class="num">' + mk.apostasSimuladas.abertura.n + ' apostas · ' + sinal(mk.apostasSimuladas.abertura.roi) + '</td></tr>' : '') + '</tbody></table></div>'
+        + (mk.regras ? '<h3>Regras de aposta no teste (1X2 e total na linha da DraftKings)</h3>' + tabelaRegras(mk.regras) + '<p class="nota">Uma unidade por aposta, nas odds reais daquele momento. Retorno negativo = a regra perde dinheiro.</p>' : '')
+        + (mk.filtroSugestoes ? '<h3>O filtro das sugestões contra o resultado</h3><div class="tabela"><table><thead><tr><th>Faixa (nível)</th><th class="num">Linhas que passam</th><th class="num">Chance prevista</th><th class="num">Aconteceu</th><th class="num">Retorno no fechamento</th><th class="num">Barradas</th><th class="num">Aconteceu nas barradas</th></tr></thead><tbody>' + mk.filtroSugestoes.map(f => '<tr><td>' + f.nivel + ' <small>' + pct(f.de) + '–' + pct(f.ate) + '</small></td><td class="num">' + f.n + '</td><td class="num">' + pct(f.previsto, 1) + '</td><td class="num">' + pct(f.aconteceu, 1) + '</td><td class="num">' + sinal(f.roi) + '</td><td class="num">' + f.rejeitadas + '</td><td class="num">' + pct(f.aconteceuRejeitadas, 1) + '</td></tr>').join('') + '</tbody></table></div><p class="nota">Chance prevista = média de modelo e mercado. Se "aconteceu" fica perto da prevista, o filtro não deixa passar linha ruim disfarçada.</p>' : '')
+        + '<p class="nota">Leitura: o mercado erra menos que o modelo, e apostar só onde o modelo vê valor perdeu dinheiro. Por isso o hub mostra o modelo na frente (é a opinião própria dele), mas as sugestões só usam linhas em que modelo e mercado concordam.</p>' : '')
+      + (tp ? '<h3>Mercados de tempo</h3><div class="tabela"><table><thead><tr><th></th><th class="num">Jogos</th><th class="num">Gol no 2º tempo ↓</th><th class="num">Tempo com mais gols ↓</th><th class="num">Quem marca primeiro ↓</th></tr></thead><tbody><tr><td>Modelo</td><td class="num">' + tp.modelo.n + '</td><td class="num">' + num(tp.modelo.gol2T, 4) + '</td><td class="num">' + num(tp.modelo.tempoMaisGols, 4) + '</td><td class="num">' + num(tp.modelo.primeiroGol, 4) + '</td></tr><tr><td>Média da liga</td><td class="num">' + tp.mediaDaLiga.n + '</td><td class="num">' + num(tp.mediaDaLiga.gol2T, 4) + '</td><td class="num">' + num(tp.mediaDaLiga.tempoMaisGols, 4) + '</td><td class="num">' + num(tp.mediaDaLiga.primeiroGol, 4) + '</td></tr></tbody></table></div>' : '')
+      + (r.escanteios ? '<h3>Escanteios e cartões (sem odds na fonte)</h3><div class="tabela"><table><thead><tr><th></th><th class="num">Jogos</th><th class="num">Log loss modelo</th><th class="num">Log loss média da liga</th><th class="num">Erro médio modelo</th><th class="num">Erro médio liga</th></tr></thead><tbody><tr><td>Escanteios, over 9,5</td><td class="num">' + r.escanteios.n + '</td><td class="num">' + num(r.escanteios.over95.modelo, 3) + '</td><td class="num">' + num(r.escanteios.over95.mediaDaLiga, 3) + '</td><td class="num">' + num(r.escanteios.erroMedio.modelo, 2) + '</td><td class="num">' + num(r.escanteios.erroMedio.mediaDaLiga, 2) + '</td></tr><tr><td>Cartões, over 4,5</td><td class="num">' + r.cartoes.n + '</td><td class="num">' + num(r.cartoes.over45.modelo, 3) + '</td><td class="num">' + num(r.cartoes.over45.mediaDaLiga, 3) + '</td><td class="num">' + num(r.cartoes.erroMedio.modelo, 2) + '</td><td class="num">' + num(r.cartoes.erroMedio.mediaDaLiga, 2) + '</td></tr></tbody></table></div>' : '')
+      + (cal ? '<h3>Calibração do modelo no teste</h3><div class="faixas">' + cal.map(f => '<div class="faixa"><span>' + Math.round(f.de * 100) + '–' + Math.round(f.ate * 100) + '%</span><i style="width:' + (f.aconteceu * 100).toFixed(0) + '%"></i><b>' + pct(f.aconteceu) + '</b><small>previsto ' + pct(f.previsto) + ' · ' + f.n + '</small></div>').join('') + '</div><p class="nota">Desvio médio: ' + num(r.calibracao.erroMedio * 100, 1) + ' p.p.</p>' : '<p class="nota">No teste de 19/10, o desvio médio de calibração do 1X2 foi de ' + num((r.calibracao1x2 || {}).modelo * 100, 1) + ' p.p. no modelo e ' + num((r.calibracao1x2 || {}).mercado * 100, 1) + ' p.p. no mercado. A tabela por faixas aparece quando você roda a validação neste navegador.</p>')
+      + (r.cansaco ? '<h3>Cansaço e calendário</h3><p class="nota">' + esc(r.cansaco) + ' O hub mostra o calendário completo de cada time como contexto, sem mexer na probabilidade.</p>' : '')
+      + (!base && r.parametros ? '<p class="nota">Parâmetros desta rodada: meia-vida ' + r.parametros.meiaVida + ' dias, chutes no alvo ' + num(r.parametros.pesoChutesNoAlvo * 100, 0) + '%, correção ' + num(r.parametros.correcao, 1) + '. <button class="sec" id="aplicar-param">Usar estes parâmetros</button> <button class="link" id="param-padrao">Voltar ao padrão</button></p>' : '')
+      + '<h3>Como o hub calcula</h3><ul class="metodo"><li><b>Força dos clubes:</b> um único modelo para 30 competições. Ataque e defesa de cada clube, nível de cada liga, fator casa por competição, peso maior para jogos recentes (meia-vida de 270 dias); mistura gols com chutes no alvo, que oscilam menos.</li><li><b>Modelo na frente:</b> a chance mostrada primeiro é sempre a do modelo; o mercado sem margem fica ao lado para comparar.</li><li><b>Odd sugerida:</b> média das casas que cotam a linha; sem cotação, o preço justo do mercado (ou do modelo) com a margem típica das casas (5,5%).</li><li><b>Sugestões:</b> quatro níveis por faixa de odd; só linhas em que modelo e mercado concordam (até 8 p.p.).</li><li><b>Bilhete:</b> linhas do mesmo jogo pela interseção dos placares; jogos diferentes como independentes.</li><li><b>Limites:</b> escalações e desfalques não entram no modelo; escanteios, cartões e jogadores não têm odd para conferir.</li></ul>';
+  }
+  async function rodarValidacao() {
+    if (S.rodando || !S.F) return; S.rodando = true; const comMercado = $('#val-mercado') && $('#val-mercado').checked, escolher = $('#val-param') && $('#val-param').checked; renderValidacao();
+    try { const rel = await V.rodar(S.jogos, { comMercado, escolherParametros: escolher, onProgress: t => { const p = $('#val-progresso'); if (p) p.textContent = t; } }); S.validacao = rel; await R.kv.put('kv', 'validacao', rel); toast('Validação concluída.'); }
+    catch (e) { toast('Falha na validação: ' + (e.message || e)); }
+    S.rodando = false; renderValidacao();
+  }
+
+  /* ---------- Eventos ---------- */
+  function bind() {
+    $('#dia').addEventListener('change', e => { S.dia = e.target.value || hojeSP(); S.sel.clear(); carregarAgenda(); });
+    $('#hoje').addEventListener('click', () => { S.dia = hojeSP(); $('#dia').value = S.dia; S.sel.clear(); carregarAgenda(); navegar('radar'); });
+    window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (ABAS.includes(h)) navegar(h); });
+    document.addEventListener('change', e => {
+      const t = e.target;
+      if (t.dataset.comp) { if (t.checked) S.comps.add(t.dataset.comp); else S.comps.delete(t.dataset.comp); gravarPref(); carregarAgenda(); }
+      else if (t.id === 'mostrar-todos') { S.todos = t.checked; gravarPref(); renderRadar(); }
+      else if (t.dataset.sel) { if (t.checked) S.sel.add(t.dataset.sel); else S.sel.delete(t.dataset.sel); const b = $('#analisar-sel'); if (b) b.textContent = 'Analisar selecionados (' + S.sel.size + ')'; }
+      else if (t.dataset.odd) { B.definirOdd(t.dataset.odd, parseFloat(String(t.value).replace(',', '.'))); renderBilhete(); }
+      else if (t.dataset.pref) { S.pref[t.dataset.pref] = t.checked; gravarPref(); renderBilhete(); }
+      else if (t.id === 'importar' && t.files && t.files[0]) { t.files[0].text().then(D.importar).then(n => { toast(n + ' registros importados.'); renderDiario(); }).catch(err => toast('Importação recusada: ' + err.message)); }
+    });
+    document.addEventListener('click', async e => {
+      const t = e.target.closest('button, a'); if (!t) return;
+      if (t.dataset.ir) { navegar(t.dataset.ir); return; }
+      if (t.dataset.analisar) { analisar([t.dataset.analisar]); return; }
+      if (t.dataset.add) { const [id, ...k] = t.dataset.add.split('|'), a = S.analises.get(id), l = a && a.linhas.find(x => x.chave === k.join('|')); if (a && l) { B.adicionar(a, l); toast('Adicionada ao bilhete: ' + l.rotulo + ' a ' + num(l.odd)); render(); } return; }
+      if (t.dataset.fam) { const [id, f] = t.dataset.fam.split('|'); S.familia[id] = f; renderAnalise(); const c = $('#a-' + id); if (c) { const d = c.querySelectorAll('details')[0]; if (d) d.open = true; c.scrollIntoView({ block: 'nearest' }); } return; }
+      if (t.dataset.rem) { B.remover(t.dataset.rem); render(); return; }
+      if (t.dataset.usar) { const s = (S._sugestoes || []).find(x => x.nivel.id === t.dataset.usar); if (s && s.disponivel) { B.substituir(s.pernas); toast('Sugestão ' + s.nivel.nome.toLowerCase() + ' carregada no bilhete (odd ' + num(s.odd) + ').'); render(); } return; }
+      if (t.dataset.del) { await D.remover(t.dataset.del); renderDiario(); return; }
+      if (t.dataset.copiar) { const a = S.analises.get(t.dataset.copiar); if (a) toast(await copiar(textoAnalise(a)) ? 'Análise copiada.' : 'Não consegui copiar; use Baixar.'); return; }
+      if (t.dataset.baixar) { const a = S.analises.get(t.dataset.baixar); if (a) baixar('ponto-comum-' + R.dataSP(a.m.date) + '-' + (a.m.hn + '-' + a.m.an).toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-') + '.json', JSON.stringify(dadosAnalise(a), null, 1)); return; }
+      switch (t.id) {
+        case 'recarregar': carregarRedeEModelos(true); carregarAgenda(); break;
+        case 'sel-todos': for (const m of S.agenda) if (S.comps.has(m.comp) && filtraGrandes(m) && !m.done && Date.parse(m.date) > Date.now()) S.sel.add(m.id); renderRadar(); break;
+        case 'analisar-sel': if (!S.sel.size) toast('Marque ao menos uma partida.'); else analisar([...S.sel]); break;
+        case 'limpar-analises': S.analises.clear(); renderAnalise(); break;
+        case 'copiar-todas': { const ls = [...S.analises.values()].sort((x, y) => Date.parse(x.m.date) - Date.parse(y.m.date)); toast(await copiar(ls.map(textoAnalise).join('\n\n———\n\n')) ? ls.length + ' análises copiadas.' : 'Não consegui copiar; use Baixar.'); break; }
+        case 'baixar-todas': baixar('ponto-comum-analises-' + S.dia + '.json', JSON.stringify([...S.analises.values()].map(dadosAnalise), null, 1)); break;
+        case 'limpar-bilhete': B.limpar(); render(); break;
+        case 'acompanhar': case 'registrar-aposta': {
+          const ps = B.lista(); if (!ps.length) break; const av = B.avaliar(ps, S.analises), lerN = id => parseFloat(String(($('#' + id) || {}).value || '').replace(',', '.'));
+          const valor = lerN('valor-aposta'), oddPega = lerN('odd-pega'), nivel = ($('#nivel-aposta') || {}).value || 'manual';
+          if (t.id === 'registrar-aposta' && !(valor > 0)) { toast('Informe o valor apostado.'); break; }
+          if (t.id === 'registrar-aposta' && !av.odd && !(oddPega > 1)) { toast('Informe a odd que você pegou.'); break; }
+          await D.salvarBilhete(ps, av, { modo: t.id === 'acompanhar' ? 'acompanhar' : 'aposta', valor, oddPega, nivel }); toast(t.id === 'acompanhar' ? 'Bilhete salvo para acompanhar.' : 'Aposta registrada: ' + reais(valor) + ' a ' + num(oddPega > 1 ? oddPega : av.odd) + '.'); break; }
+        case 'apurar': {
+          t.disabled = true; t.textContent = 'Apurando…';
+          const lista = await D.todos(), pend = lista.filter(r => !r.apurado && Date.parse(r.inicio) + 2.5 * 3600e3 < Date.now()), porDia = new Map();
+          for (const r of pend) for (const x of r.tipo === 'bilhete' ? r.pernas : [r]) { const d = R.dataSP(x.inicio); if (!porDia.has(d)) porDia.set(d, new Set()); porDia.get(d).add(x.comp); }
+          for (const [d, cs] of [...porDia.entries()].slice(-14)) { try { const r = await R.carregarDia(d, [...cs]); mesclar(r.jogos); } catch { /* tenta com a rede atual */ } }
+          const res = await D.apurar(S.porId); toast(res.apurados + ' registro(s) apurado(s)' + (res.comClv ? ', ' + res.comClv + ' com CLV' : '') + '.'); renderDiario(); break; }
+        case 'exportar': baixar('ponto-comum-diario-' + hojeSP() + '.json', await D.exportar()); break;
+        case 'rodar-validacao': rodarValidacao(); break;
+        case 'aplicar-param': if (S.validacao && S.validacao.parametros) { await R.kv.put('kv', 'parametros', Object.assign({ aplicar: true }, S.validacao.parametros)); toast('Parâmetros aplicados. Reajustando o modelo…'); carregarRedeEModelos(); } break;
+        case 'param-padrao': await R.kv.del('kv', 'parametros'); toast('Parâmetros padrão restaurados.'); carregarRedeEModelos(); break;
+      }
+    });
+  }
+
+  async function iniciar() {
+    lerPref(); bind(); $('#dia').value = S.dia;
+    const v = await R.kv.get('kv', 'validacao'); if (v && v.teste && v.tempos) S.validacao = v;
+    const h = location.hash.slice(1); navegar(ABAS.includes(h) ? h : 'radar');
+    carregarAgenda(); carregarRedeEModelos();
+    setInterval(() => { if (S.aba === 'radar' && S.dia === hojeSP()) carregarAgenda(); }, 5 * 60e3);
+  }
+  globalThis.PontoComum = Object.freeze({ estado: S, analisar, navegar, recarregar: () => carregarRedeEModelos(true), textoAnalise, dadosAnalise });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})();
+
+</script>
+</head>
+<body>
+  <header class="topo">
+    <div class="barra">
+      <a class="marca" href="#radar" aria-label="Ponto Comum, início"><span class="simbolo" aria-hidden="true">◎</span><span>PONTO COMUM</span><small>v3</small></a>
+      <div class="controles">
+        <label class="data"><span class="vh">Data das partidas</span><input type="date" id="dia"></label>
+        <button class="sec" id="hoje">Hoje</button>
+      </div>
+    </div>
+    <nav class="abas" aria-label="Seções">
+      <a href="#radar" data-aba="radar">Radar</a>
+      <a href="#analise" data-aba="analise">Análise</a>
+      <a href="#bilhete" data-aba="bilhete">Bilhete <span id="n-bilhete" class="contador">0</span></a>
+      <a href="#diario" data-aba="diario">Diário</a>
+      <a href="#validacao" data-aba="validacao">Validação</a>
+    </nav>
+  </header>
+  <div id="status-rede" class="status" role="status" aria-live="polite"></div>
+  <main>
+    <section id="radar" class="vista"></section>
+    <section id="analise" class="vista" hidden></section>
+    <section id="bilhete" class="vista" hidden></section>
+    <section id="diario" class="vista" hidden></section>
+    <section id="validacao" class="vista" hidden></section>
+  </main>
+  <footer class="rodape">Dados públicos da ESPN (placares, estatísticas e odds da DraftKings e Bet365). Ferramenta de análise: nenhum resultado é garantido e nada aqui é recomendação de aposta. Aposte só o que pode perder.</footer>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
