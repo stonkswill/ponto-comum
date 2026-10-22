@@ -1,0 +1,193 @@
+{
+ "geradoEm": "2026-10-22T21:04:08.374Z",
+ "jogos": 0,
+ "porFamilia": {},
+ "leitura": {
+  "n": 0,
+  "acertos": 0,
+  "esperado": 0
+ },
+ "niveis": {
+  "segura": {
+   "bilhetes": 0,
+   "ganhos": 0,
+   "pendentes": 1,
+   "lucro": 0,
+   "nMercado": 0,
+   "retorno": null,
+   "oddMedia": null,
+   "chanceMedia": null,
+   "chanceMercadoMedia": null
+  }
+ },
+ "movimentoDoMercado": {
+  "n": 0,
+  "aFavorDoModelo": 0,
+  "medio": null
+ },
+ "dias": [
+  {
+   "dia": "2026-10-24",
+   "jogos": [
+    {
+     "id": "401874958",
+     "jogo": "Cagliari × Bologna",
+     "comp": "ita.1",
+     "inicio": "2026-10-24T13:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874961",
+     "jogo": "Como × Sassuolo",
+     "comp": "ita.1",
+     "inicio": "2026-10-24T13:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879256",
+     "jogo": "Aston Villa × Manchester City",
+     "comp": "eng.1",
+     "inicio": "2026-10-24T11:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882830",
+     "jogo": "Rayo Vallecano × Elche",
+     "comp": "esp.1",
+     "inicio": "2026-10-24T12:00Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": [
+    {
+     "nivel": "segura",
+     "odd": 2.445,
+     "pModelo": 0.4497,
+     "pMercado": 0.3602,
+     "status": "pendente",
+     "pernas": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "jogo": "Aston Villa × Manchester City",
+       "odd": 1.63,
+       "ok": null
+      },
+      {
+       "rotulo": "Vitória Como",
+       "jogo": "Como × Sassuolo",
+       "odd": 1.5,
+       "ok": null
+      }
+     ]
+    },
+    {
+     "nivel": "media",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (2; precisa de 3)."
+    },
+    {
+     "nivel": "arriscada",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (2; precisa de 4)."
+    },
+    {
+     "nivel": "bingo",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (2; precisa de 5)."
+    }
+   ]
+  },
+  {
+   "dia": "2026-10-23",
+   "jogos": [
+    {
+     "id": "401841287",
+     "jogo": "Cruzeiro × Remo",
+     "comp": "bra.1",
+     "inicio": "2026-10-23T23:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874957",
+     "jogo": "Torino × Monza",
+     "comp": "ita.1",
+     "inicio": "2026-10-23T18:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401876428",
+     "jogo": "Brest × Nice",
+     "comp": "fra.1",
+     "inicio": "2026-10-23T18:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401879253",
+     "jogo": "Ipswich Town × Nottingham Forest",
+     "comp": "eng.1",
+     "inicio": "2026-10-23T19:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882836",
+     "jogo": "Alavés × Málaga",
+     "comp": "esp.1",
+     "inicio": "2026-10-23T19:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401884761",
+     "jogo": "VfB Stuttgart × Borussia Mönchengladbach",
+     "comp": "ger.1",
+     "inicio": "2026-10-23T18:30Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": [
+    {
+     "nivel": "segura",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (1; precisa de 2)."
+    },
+    {
+     "nivel": "media",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (1; precisa de 3)."
+    },
+    {
+     "nivel": "arriscada",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (1; precisa de 4)."
+    },
+    {
+     "nivel": "bingo",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (1; precisa de 5)."
+    }
+   ]
+  },
+  {
+   "dia": "2026-10-22",
+   "jogos": [
+    {
+     "id": "401912521",
+     "jogo": "Flamengo × Estudiantes de La Plata",
+     "comp": "conmebol.libertadores",
+     "inicio": "2026-10-23T00:30Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": [
+    {
+     "nivel": "segura",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (0; precisa de 2)."
+    },
+    {
+     "nivel": "media",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (0; precisa de 3)."
+    },
+    {
+     "nivel": "arriscada",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (0; precisa de 4)."
+    },
+    {
+     "nivel": "bingo",
+     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (0; precisa de 5)."
+    }
+   ]
+  }
+ ]
+}
