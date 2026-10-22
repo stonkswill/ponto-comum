@@ -141,14 +141,29 @@
   }
   async function pool(tasks, n) { let i = 0; await Promise.all(Array.from({ length: Math.min(n, tasks.length) }, async () => { while (i < tasks.length) { const k = i++; await tasks[k](); } })); }
 
-  /* Carrega a rede inteira (30 competições × 3 anos). Primeira vez: ~10–40 s. Depois, quase tudo vem do cache. */
+  /* Arquivos que o robô do repositório publica junto com o site (dados/…). Fora do site publicado (arquivo local), não existem. */
+  const temDadosLocais = () => typeof location !== 'undefined' && /^https?:$/.test(location.protocol);
+  async function carregarDados(nome, { ttl = 0, timeout = 15000 } = {}) {
+    if (!temDadosLocais()) return null;
+    try { return await getJSON('dados/' + nome + (nome.includes('?') ? '&' : '?') + 'v=' + Math.floor(Date.now() / 600e3), { ttl, timeout }); } catch { return null; }
+  }
+
+  /* Carrega a rede inteira (30 competições × 3 anos). Primeiro tenta a base pronta publicada com o site (atualizada pelo robô
+   * várias vezes por dia); o que faltar ou estiver velho vem da ESPN. Depois, quase tudo vem do cache do navegador. */
   async function carregarRede({ anos, forcar = false, onProgress = () => {}, signal } = {}) {
     const ano = new Date().getUTCFullYear(); anos = anos || [ano - 2, ano - 1, ano];
     const jogos = new Map(), relatorio = [], tarefas = [];
+    const base = forcar ? null : await carregarDados('rede/indice.json'), baseNova = base && Date.now() - Date.parse(base.geradoEm) < 6 * 3600e3;
+    const daBase = (comp, y) => { if (!base) return null; const a = base.arquivos.find(x => x.comp === comp && x.ano === y); return a && (y < ano || baseNova) ? a : null; };
     // Remove caches de versões anteriores (registros sem os campos novos).
     try { for (const [k] of await kv.all('rede')) if (!String(k).startsWith(VERSAO_CACHE)) await kv.del('rede', k); } catch { /* sem cache antigo */ }
     for (const c of COMPS) for (const y of anos) tarefas.push(async () => {
-      const chave = VERSAO_CACHE + c.id + '|' + y, ttl = y < ano ? 30 * 864e5 : 3 * 3600e3, cache = await kv.get('rede', chave);
+      const chave = VERSAO_CACHE + c.id + '|' + y, ttl = y < ano ? 30 * 864e5 : 3 * 3600e3, cache = await kv.get('rede', chave), arq = daBase(c.id, y);
+      if (arq) {
+        if (cache && cache.carimbo === arq.atualizadoEm) { for (const m of cache.jogos) jogos.set(m.id, m); relatorio.push({ comp: c.id, ano: y, ok: true, cache: true, base: true, n: cache.jogos.length }); onProgress(relatorio.length, tarefas.length); return; }
+        const lista = await carregarDados('rede/' + arq.arquivo + '?c=' + encodeURIComponent(arq.atualizadoEm), { timeout: 30000 });
+        if (Array.isArray(lista)) { for (const m of lista) jogos.set(m.id, m); await kv.put('rede', chave, { at: Date.now(), carimbo: arq.atualizadoEm, jogos: lista }); relatorio.push({ comp: c.id, ano: y, ok: true, base: true, n: lista.length }); onProgress(relatorio.length, tarefas.length); return; }
+      }
       if (!forcar && cache && Date.now() - cache.at < ttl) { for (const m of cache.jogos) jogos.set(m.id, m); relatorio.push({ comp: c.id, ano: y, ok: true, cache: true, n: cache.jogos.length, em: new Date(cache.at).toISOString() }); onProgress(relatorio.length, tarefas.length); return; }
       try {
         const em = new Date().toISOString(), j = await getJSON(ESPN + c.id + '/scoreboard?dates=' + y + '&limit=1000', { signal }), lista = [];
@@ -253,6 +268,6 @@
       seq: ult.slice().reverse().map(m => { const casa = m.h === time, p = casa ? m.hg : m.ag, c = casa ? m.ag : m.hg; return p > c ? 'V' : p === c ? 'E' : 'D'; }).join('') };
   }
 
-  G.PCRede = Object.freeze({ ESPN, CORE, COMPS, COMP_MAP, GRANDES_POR_LIGA, americana, fracionaria, num, parseEvent, oddsDoPlacar, carregarRede, carregarDia, carregarResumo, carregarOddsFechamento, carregarElenco,
+  G.PCRede = Object.freeze({ carregarDados, ESPN, CORE, COMPS, COMP_MAP, GRANDES_POR_LIGA, americana, fracionaria, num, parseEvent, oddsDoPlacar, carregarRede, carregarDia, carregarResumo, carregarOddsFechamento, carregarElenco,
     indexar, calendario, confrontos, forma, kv, getJSON, pool, dataSP, somaDias });
 })(typeof globalThis !== 'undefined' ? globalThis : window);

@@ -1,0 +1,335 @@
+{
+ "geradoEm": "2026-10-22T21:29:28.315Z",
+ "periodoAjuste": [
+  "2026-01-30",
+  "2026-07-17"
+ ],
+ "periodoTeste": [
+  "2026-07-17",
+  "2026-10-22"
+ ],
+ "parametros": {
+  "meiaVida": 270,
+  "pesoChutesNoAlvo": 0.6,
+  "correcao": 1.1
+ },
+ "ajuste": {
+  "n": 1293,
+  "logLoss1x2": 1.0047,
+  "rps": 0.2064,
+  "brier1x2": 0.5999,
+  "logLossOver25": 0.6749,
+  "logLossAmbas": 0.6816
+ },
+ "teste": {
+  "modelo": {
+   "n": 691,
+   "logLoss1x2": 0.9697,
+   "rps": 0.1972,
+   "brier1x2": 0.5758,
+   "logLossOver25": 0.6592,
+   "logLossAmbas": 0.6804
+  },
+  "semCorrecao": {
+   "n": 691,
+   "logLoss1x2": 0.9729,
+   "rps": 0.1981,
+   "brier1x2": 0.5778,
+   "logLossOver25": 0.6605,
+   "logLossAmbas": 0.6801
+  },
+  "mediaDaLiga": {
+   "n": 691,
+   "logLoss1x2": 1.065,
+   "rps": 0.229,
+   "brier1x2": 0.6437,
+   "logLossOver25": 0.6916,
+   "logLossAmbas": 0.6837
+  }
+ },
+ "tempos": {
+  "modelo": {
+   "n": 691,
+   "gol2T": 0.4558,
+   "tempoMaisGols": 1.0514,
+   "primeiroGol": 0.8359,
+   "nPrimeiroGol": 691
+  },
+  "mediaDaLiga": {
+   "n": 691,
+   "gol2T": 0.4607,
+   "tempoMaisGols": 1.055,
+   "primeiroGol": 0.8769,
+   "nPrimeiroGol": 691
+  }
+ },
+ "calibracao": {
+  "erroMedio": 0.02019761142648531,
+  "faixas": [
+   {
+    "de": 0,
+    "ate": 0.1,
+    "n": 47,
+    "previsto": 0.07129013541984758,
+    "aconteceu": 0.02127659574468085
+   },
+   {
+    "de": 0.1,
+    "ate": 0.2,
+    "n": 253,
+    "previsto": 0.16122931575553606,
+    "aconteceu": 0.13438735177865613
+   },
+   {
+    "de": 0.2,
+    "ate": 0.3,
+    "n": 860,
+    "previsto": 0.2513044529019876,
+    "aconteceu": 0.2569767441860465
+   },
+   {
+    "de": 0.3,
+    "ate": 0.4,
+    "n": 334,
+    "previsto": 0.3478714657802119,
+    "aconteceu": 0.3143712574850299
+   },
+   {
+    "de": 0.4,
+    "ate": 0.5,
+    "n": 249,
+    "previsto": 0.4494048143540601,
+    "aconteceu": 0.4578313253012048
+   },
+   {
+    "de": 0.5,
+    "ate": 0.6,
+    "n": 175,
+    "previsto": 0.5467647589442372,
+    "aconteceu": 0.5542857142857143
+   },
+   {
+    "de": 0.6,
+    "ate": 0.7,
+    "n": 99,
+    "previsto": 0.6402235719250426,
+    "aconteceu": 0.7373737373737373
+   },
+   {
+    "de": 0.7,
+    "ate": 0.8,
+    "n": 39,
+    "previsto": 0.7464718857411184,
+    "aconteceu": 0.8205128205128205
+   },
+   {
+    "de": 0.8,
+    "ate": 0.9,
+    "n": 15,
+    "previsto": 0.8402734281385207,
+    "aconteceu": 0.8
+   },
+   {
+    "de": 0.9,
+    "ate": 1,
+    "n": 2,
+    "previsto": 0.9315887534266591,
+    "aconteceu": 1
+   }
+  ]
+ },
+ "mercado": {
+  "n": 665,
+  "logLoss": {
+   "modelo": 0.9663,
+   "mercado": 0.9308,
+   "aberturaMercado": 0.9394
+  },
+  "pesoModeloNaMistura": 0,
+  "segundaMetade": {
+   "modelo": 0.9345,
+   "mercado": 0.8944,
+   "mistura": 0.8944
+  },
+  "regras": {
+   "abertura": [
+    {
+     "id": "modelo",
+     "nome": "Só o modelo: valor esperado do modelo > 5%",
+     "n": 541,
+     "acertos": 170,
+     "oddMedia": 4.02,
+     "roi": -0.196
+    },
+    {
+     "id": "meio",
+     "nome": "Meio-termo: valor esperado do modelo > 3% e modelo a até 8 p.p. do mercado",
+     "n": 419,
+     "acertos": 105,
+     "oddMedia": 4.11,
+     "roi": -0.313
+    },
+    {
+     "id": "consenso",
+     "nome": "Consenso: média de modelo e mercado com valor esperado > 2%",
+     "n": 255,
+     "acertos": 85,
+     "oddMedia": 4.24,
+     "roi": -0.131
+    }
+   ],
+   "fechamento": [
+    {
+     "id": "modelo",
+     "nome": "Só o modelo: valor esperado do modelo > 5%",
+     "n": 850,
+     "acertos": 248,
+     "oddMedia": 4.35,
+     "roi": -0.211
+    },
+    {
+     "id": "meio",
+     "nome": "Meio-termo: valor esperado do modelo > 3% e modelo a até 8 p.p. do mercado",
+     "n": 627,
+     "acertos": 188,
+     "oddMedia": 4.41,
+     "roi": -0.16
+    },
+    {
+     "id": "consenso",
+     "nome": "Consenso: média de modelo e mercado com valor esperado > 2%",
+     "n": 564,
+     "acertos": 156,
+     "oddMedia": 4.44,
+     "roi": -0.25
+    }
+   ]
+  },
+  "filtroSugestoes": [
+   {
+    "nivel": "Bingo",
+    "de": 0.25,
+    "ate": 0.38,
+    "n": 577,
+    "previsto": 0.29548671788795083,
+    "aconteceu": 0.292894280762565,
+    "roi": -0.061,
+    "rejeitadas": 108,
+    "aconteceuRejeitadas": 0.37037037037037035
+   },
+   {
+    "nivel": "Arriscada",
+    "de": 0.38,
+    "ate": 0.48,
+    "n": 498,
+    "previsto": 0.43370307809481495,
+    "aconteceu": 0.45582329317269077,
+    "roi": -0.004,
+    "rejeitadas": 136,
+    "aconteceuRejeitadas": 0.4117647058823529
+   },
+   {
+    "nivel": "Média",
+    "de": 0.48,
+    "ate": 0.6,
+    "n": 601,
+    "previsto": 0.5350254486728132,
+    "aconteceu": 0.5324459234608985,
+    "roi": -0.06,
+    "rejeitadas": 176,
+    "aconteceuRejeitadas": 0.5170454545454546
+   },
+   {
+    "nivel": "Segura",
+    "de": 0.6,
+    "ate": 0.92,
+    "n": 139,
+    "previsto": 0.6616428116504659,
+    "aconteceu": 0.697841726618705,
+    "roi": 0.025,
+    "rejeitadas": 103,
+    "aconteceuRejeitadas": 0.7184466019417476
+   }
+  ],
+  "calibracaoMercado": {
+   "erroMedio": 0.016580570634027774,
+   "faixas": [
+    {
+     "de": 0,
+     "ate": 0.1,
+     "n": 102,
+     "previsto": 0.06374647208352877,
+     "aconteceu": 0.0392156862745098
+    },
+    {
+     "de": 0.1,
+     "ate": 0.2,
+     "n": 323,
+     "previsto": 0.15505645219789843,
+     "aconteceu": 0.15789473684210525
+    },
+    {
+     "de": 0.2,
+     "ate": 0.3,
+     "n": 695,
+     "previsto": 0.25315177419319046,
+     "aconteceu": 0.2503597122302158
+    },
+    {
+     "de": 0.3,
+     "ate": 0.4,
+     "n": 314,
+     "previsto": 0.34232689160274343,
+     "aconteceu": 0.3184713375796178
+    },
+    {
+     "de": 0.4,
+     "ate": 0.5,
+     "n": 199,
+     "previsto": 0.4480835624996976,
+     "aconteceu": 0.4723618090452261
+    },
+    {
+     "de": 0.5,
+     "ate": 0.6,
+     "n": 150,
+     "previsto": 0.5507056801826267,
+     "aconteceu": 0.52
+    },
+    {
+     "de": 0.6,
+     "ate": 0.7,
+     "n": 110,
+     "previsto": 0.6514415571750114,
+     "aconteceu": 0.7181818181818181
+    },
+    {
+     "de": 0.7,
+     "ate": 0.8,
+     "n": 50,
+     "previsto": 0.7450042480715179,
+     "aconteceu": 0.76
+    },
+    {
+     "de": 0.8,
+     "ate": 0.9,
+     "n": 43,
+     "previsto": 0.8340878804843904,
+     "aconteceu": 0.8837209302325582
+    },
+    {
+     "de": 0.9,
+     "ate": 1,
+     "n": 9,
+     "previsto": 0.9371616935044879,
+     "aconteceu": 1
+    }
+   ]
+  }
+ },
+ "publicado": true,
+ "base": {
+  "jogos": 21534,
+  "geradaEm": "2026-10-22T21:03:38.360Z"
+ }
+}

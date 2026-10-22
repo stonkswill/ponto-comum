@@ -66,8 +66,17 @@
     return out;
   }
 
-  /* Probabilidade sem margem de um mercado completo de uma casa (normalização proporcional). */
-  function semMargem(odds) { const inv = odds.map(o => 1 / o), s = inv.reduce((a, b) => a + b, 0); return { p: inv.map(v => v / s), margem: s - 1 }; }
+  /* Probabilidade sem margem de um mercado completo de uma casa.
+   * 1X2 (3 resultados): método da potência, p = (1/odd)^k com k tal que a soma dê 1. Põe mais margem nas zebras, onde ela
+   * de fato está: com 2.418 jogos reais da DraftKings, errou menos que a divisão proporcional (0,9646 × 0,9655 no fechamento).
+   * Dois resultados (mais/menos, ambas): proporcional (os métodos empataram). */
+  function semMargem(odds) {
+    const inv = odds.map(o => 1 / o), s = inv.reduce((a, b) => a + b, 0);
+    if (odds.length < 3 || !(s > 1)) return { p: inv.map(v => v / s), margem: s - 1 };
+    let lo = 0.5, hi = 2.5; for (let i = 0; i < 50; i++) { const k = (lo + hi) / 2, t = inv.reduce((a, v) => a + Math.pow(v, k), 0); if (t > 1) lo = k; else hi = k; }
+    const k = (lo + hi) / 2, p = inv.map(v => Math.pow(v, k)), t = p.reduce((a, b) => a + b, 0);
+    return { p: p.map(v => v / t), margem: s - 1 };
+  }
 
   /* Referência do mercado para a partida: 1X2 e linha principal sem margem, e os λ implícitos. */
   function referencia(cotacoes, rho = -0.03) {

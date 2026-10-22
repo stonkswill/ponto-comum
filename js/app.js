@@ -21,7 +21,7 @@
     jogos: [], porId: new Map(), porTime: new Map(), F: null, Fe: null, Fc: null, forca: null, dia: hojeSP(), agenda: [], falhasAgenda: [],
     comps: new Set(R.COMPS.filter(c => c.radar).map(c => c.id)), todos: false, grandes: new Map(), idsGrandes: new Set(), sel: new Set(), analises: new Map(), elencos: new Map(), aba: 'radar',
     rede: { status: 'parado', progresso: null, relatorio: [], carregadaEm: null, ajustadaEm: null, erro: null },
-    pref: Object.assign({}, B.PREF_PADRAO), familia: {}, validacao: null, rodando: false, foco: null
+    pref: Object.assign({}, B.PREF_PADRAO), familia: {}, validacao: null, valPublicada: null, revisao: null, rodando: false, foco: null
   };
 
   function lerPref() { try { const p = JSON.parse(localStorage.getItem(CHAVE_PREF) || '{}'); if (Array.isArray(p.comps) && p.comps.length) S.comps = new Set(p.comps.filter(c => R.COMP_MAP[c] && (R.COMP_MAP[c].radar || R.COMP_MAP[c].opcional))); if (p.pref) Object.assign(S.pref, p.pref); S.todos = !!p.todos; } catch { /* preferências padrão */ } }
@@ -256,6 +256,26 @@
   }
 
   /* ---------- Diário ---------- */
+  /* Histórico do hub: previsões e bilhetes que o robô registrou antes dos jogos (o mesmo em qualquer aparelho). */
+  const FAM_NOME = { resultado: 'Resultado (1X2, dupla, handicap)', gols: 'Gols (totais, ambas)', tempos: 'Tempos e 1º gol', escanteios: 'Escanteios', cartoes: 'Cartões' };
+  function blocoHistorico() {
+    const r = S.revisao; if (!r || !r.jogos) return r === null ? '' : '<h3>Histórico do hub</h3><p class="nota">O robô começou a registrar as previsões antes dos jogos; o histórico aparece quando os primeiros jogos terminarem.</p>';
+    const lt = r.leitura || {}, mv = r.movimentoDoMercado || {};
+    const niveis = ['segura', 'media', 'arriscada', 'bingo'].filter(k => r.niveis && r.niveis[k]).map(k => { const x = r.niveis[k]; return '<tr><td>' + NIVEL_NOME[k] + '</td><td class="num">' + x.ganhos + '/' + x.bilhetes + (x.pendentes ? '<small>' + x.pendentes + ' pendente(s)</small>' : '') + '</td><td class="num">' + num(x.oddMedia) + '</td><td class="num">' + pct(x.chanceMedia, 1) + (x.chanceMercadoMedia ? '<small>mercado ' + pct(x.chanceMercadoMedia, 1) + '</small>' : '') + '</td><td class="num ' + (x.retorno > 0 ? 'pos' : x.retorno < 0 ? 'neg' : '') + '">' + sinal(x.retorno) + '</td></tr>'; }).join('');
+    const fams = Object.entries(r.porFamilia || {}).map(([f, x]) => '<tr><td>' + (FAM_NOME[f] || f) + '</td><td class="num">' + x.n + '</td><td class="num">' + num(x.llModeloComMercado ?? x.llModelo, 3) + '</td><td class="num">' + (x.llMercado !== null ? '<b>' + num(x.llMercado, 3) + '</b>' : '—') + '</td></tr>').join('');
+    const dias = (r.dias || []).slice(0, 14).map(d => {
+      const feitos = d.jogos.filter(j => !j.pendente), sug = d.sugestoes.filter(s => s.pernas);
+      const jogos = feitos.map(j => '<li><b>' + esc(j.jogo) + '</b> ' + j.placar.join('–') + ' <small>' + esc(nomeComp(j.comp)) + '</small>' + (j.leitura.length ? '<br>' + j.leitura.map(l => (l.ok ? '<span class="pos">✓</span> ' : l.ok === 0 ? '<span class="neg">✗</span> ' : '· ') + esc(l.rotulo) + ' <small class="nw">' + pct(l.p) + (l.odd ? ' a ' + num(l.odd) : '') + '</small>').join(' · ') : '<br><small>nada entre 55% e 88%</small>') + '</li>').join('');
+      const bil = sug.map(s => '<li><b>' + (NIVEL_NOME[s.nivel] || s.nivel) + '</b> odd ' + num(s.odd) + ' · ' + (s.status === 'ganhou' ? '<b class="pos">ganhou</b>' : s.status === 'perdeu' ? '<b class="neg">perdeu</b>' : 'pendente') + '<small>' + s.pernas.map(p => (p.ok === 1 ? '✓ ' : p.ok === 0 ? '✗ ' : '· ') + esc(p.rotulo) + ' (' + esc(p.jogo) + ', ' + num(p.odd) + ')').join('<br>') + '</small></li>').join('');
+      return '<details class="contexto"><summary>' + d.dia.split('-').reverse().join('/') + ' <small>' + feitos.length + ' jogo(s) apurado(s)' + (sug.length ? ' · ' + sug.length + ' bilhete(s)' : '') + '</small></summary>' + (jogos ? '<ul class="lista">' + jogos + '</ul>' : '<p class="nota">Jogos ainda não terminaram.</p>') + (bil ? '<h4>Bilhetes sugeridos</h4><ul class="lista">' + bil + '</ul>' : '') + '</details>';
+    }).join('');
+    return '<h3>Histórico do hub</h3><p class="nota">Registrado pelo robô do site antes de cada jogo (o mesmo em qualquer aparelho) e conferido depois. Atualizado às ' + diaHora(r.geradoEm) + '.</p>'
+      + '<div class="resumo"><div><span class="sobre">Jogos apurados</span><b>' + r.jogos + '</b></div><div><span class="sobre">Leitura do hub</span><b>' + (lt.n ? lt.acertos + '/' + lt.n : '—') + '</b><small>' + (lt.n ? 'esperado ' + num(lt.esperado, 1) + ' pela chance do modelo' : '') + '</small></div>'
+      + '<div><span class="sobre">Mercado andou para o lado do modelo</span><b>' + (mv.n ? pct(mv.aFavorDoModelo / mv.n) : '—') + '</b><small>' + (mv.n ? mv.n + ' linhas de 1X2 em que os dois discordavam 3+ p.p. · do registro ao fechamento' : 'aparece com as odds de fechamento') + '</small></div></div>'
+      + (niveis ? '<div class="tabela"><table><thead><tr><th>Bilhetes do robô</th><th class="num">Ganhos</th><th class="num">Odd média</th><th class="num">Chance média</th><th class="num">Retorno</th></tr></thead><tbody>' + niveis + '</tbody></table></div><p class="nota">Retorno de apostar 1 unidade em cada bilhete sugerido, na odd sugerida. Com poucos bilhetes, sorte pesa mais que método.</p>' : '')
+      + (fams ? '<div class="tabela"><table><thead><tr><th>Mercado</th><th class="num">Linhas</th><th class="num">Erro do modelo ↓</th><th class="num">Erro do mercado ↓</th></tr></thead><tbody>' + fams + '</tbody></table></div><p class="nota">Log loss nas linhas registradas que têm preço de mercado (menor é melhor). Escanteios e cartões não têm mercado na fonte.</p>' : '')
+      + dias;
+  }
   async function renderDiario() {
     const el = $('#diario'); if (!el || S.aba !== 'diario') return;
     const lista = await D.todos(), mt = D.metricas(lista), rev = D.revisao(lista), b = mt.bilhetes;
@@ -273,7 +293,8 @@
       + '<div><span class="sobre">O hub acertou</span><b>' + (totDitas ? totAc + '/' + totDitas : '—') + '</b><small>' + (totDitas ? 'linhas ditas na leitura · esperado ' + num(espDitas, 1) : 'aparece após apurar') + '</small></div><div><span class="sobre">CLV médio</span><b>' + (mt.clv ? sinal(mt.clv.medio) : '—') + '</b><small>' + (mt.clv ? mt.clv.n + ' linhas · ' + mt.clv.positivos + ' positivas' : 'odd da DraftKings na análise ÷ fechamento') + '</small></div></div>'
       + (niveis ? '<h3>Apostas por nível</h3><div class="tabela"><table><thead><tr><th>Nível</th><th class="num">Apostas</th><th class="num">Ganhas</th><th class="num">Investido</th><th class="num">Lucro</th><th class="num">Retorno</th></tr></thead><tbody>' + niveis + '</tbody></table></div>' : '')
       + '<h3>Bilhetes e apostas</h3>' + (bilhetes ? '<div class="tabela"><table><thead><tr><th>Início</th><th>Bilhete</th><th class="num">Odd</th><th class="num">Valor</th><th>Resultado</th><th></th></tr></thead><tbody>' + bilhetes + '</tbody></table></div>' : '<p class="nota">Nenhum bilhete salvo. No Bilhete, informe valor e odd e toque em Registrar aposta.</p>')
-      + '<h3>Revisão: o que o hub disse × o que aconteceu</h3>' + (revisao ? '<div class="tabela"><table><thead><tr><th>Dia</th><th>Jogo</th><th>Favorito do modelo</th><th>Linhas da leitura (55–88%)</th><th class="num">Acertos</th></tr></thead><tbody>' + revisao + '</tbody></table></div><p class="nota">Se o hub estiver bem calibrado, os acertos ficam perto do esperado (a soma das chances). Muito acima ou muito abaixo, por muitas semanas, indica erro.</p>' : '<p class="nota">Aparece depois de apurar jogos que você analisou antes do início.</p>')
+      + blocoHistorico()
+      + '<h3>Revisão das suas análises neste aparelho</h3>' + (revisao ? '<div class="tabela"><table><thead><tr><th>Dia</th><th>Jogo</th><th>Favorito do modelo</th><th>Linhas da leitura (55–88%)</th><th class="num">Acertos</th></tr></thead><tbody>' + revisao + '</tbody></table></div><p class="nota">Se o hub estiver bem calibrado, os acertos ficam perto do esperado (a soma das chances). Muito acima ou muito abaixo, por muitas semanas, indica erro.</p>' : '<p class="nota">Aparece depois de apurar jogos que você analisou antes do início.</p>')
       + (linhasFam ? '<h3>Calibração das previsões registradas</h3><div class="tabela"><table><thead><tr><th>Mercado</th><th class="num">Linhas</th><th class="num">Chance média do modelo</th><th class="num">Aconteceu</th><th class="num">Log loss modelo ↓</th><th class="num">Log loss mercado ↓</th></tr></thead><tbody>' + linhasFam + '</tbody></table></div><h3>Os 70% acontecem 70% das vezes?</h3><div class="faixas">' + faixas + '</div><p class="nota">Linhas do mesmo jogo são correlacionadas; avalie com centenas de jogos, não dezenas.</p>' : '');
   }
 
@@ -285,9 +306,9 @@
   }
   function renderValidacao() {
     const el = $('#validacao'); if (!el || S.aba !== 'validacao') return;
-    const r = S.validacao || V.RELATORIO_BASE, base = r === V.RELATORIO_BASE || r.fixo;
+    const r = S.validacao || S.valPublicada || V.RELATORIO_BASE, base = r === V.RELATORIO_BASE || r.fixo;
     const mk = r.mercado, cal = r.calibracao ? r.calibracao.faixas : null, tp = r.tempos;
-    el.innerHTML = '<div class="cabeca"><div><p class="sobre">' + (base ? 'MEDIDO EM 19/10/2026' : 'RODADO EM ' + diaHora(r.geradoEm)) + '</p><h1>Validação</h1></div><div class="acoes"><label class="chk"><input type="checkbox" id="val-mercado" checked> comparar com o mercado (~600 consultas)</label><label class="chk"><input type="checkbox" id="val-param"> reescolher parâmetros</label><button class="pri" id="rodar-validacao"' + (S.rodando || !S.F ? ' disabled' : '') + '>' + (S.rodando ? 'Rodando…' : 'Rodar validação') + '</button></div></div>'
+    el.innerHTML = '<div class="cabeca"><div><p class="sobre">' + (base ? 'MEDIDO EM 19/10/2026' : r.publicado ? 'PUBLICADO EM ' + diaHora(r.geradoEm) + ' · DADOS REAIS' : 'RODADO NESTE NAVEGADOR EM ' + diaHora(r.geradoEm)) + '</p><h1>Validação</h1></div><div class="acoes"><label class="chk"><input type="checkbox" id="val-mercado" checked> comparar com o mercado (~600 consultas)</label><label class="chk"><input type="checkbox" id="val-param"> reescolher parâmetros</label><button class="pri" id="rodar-validacao"' + (S.rodando || !S.F ? ' disabled' : '') + '>' + (S.rodando ? 'Rodando…' : 'Rodar validação') + '</button></div></div>'
       + '<p class="nota" id="val-progresso">Método: a cada semana, o modelo é ajustado só com jogos anteriores e prevê a semana seguinte. Os parâmetros são escolhidos no período de ajuste (' + r.periodoAjuste.map(d => d.split('-').reverse().join('/')).join(' a ') + ') e conferidos no período de teste (' + r.periodoTeste.map(d => d.split('-').reverse().join('/')).join(' a ') + '), que não participou da escolha. Log loss menor = previsão melhor.</p>'
       + '<h3>Período de teste</h3>' + tabelaMetricas([['Modelo (com correção ' + num(r.parametros.correcao, 1) + ')', r.teste.modelo], ['Modelo sem correção', r.teste.semCorrecao], ['Modelo sem chutes no alvo', r.teste.semChutes], ['Média da liga', r.teste.mediaDaLiga]])
       + (r.contraModeloAntigo ? '<h3>Contra o modelo antigo do hub</h3><p class="nota">Nos ' + r.contraModeloAntigo.n + ' jogos do teste que o modelo antigo conseguiu prever; ' + esc(r.contraModeloAntigo.coberturaAntigo) + '.</p>' + tabelaMetricas([['Antigo (Poisson por mando, só a liga do jogo)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.antigo)], ['Atual (todas as competições)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.novo)]]) : '')
@@ -366,6 +387,8 @@
   async function iniciar() {
     lerPref(); bind(); $('#dia').value = S.dia;
     const v = await R.kv.get('kv', 'validacao'); if (v && v.teste && v.tempos) S.validacao = v;
+    R.carregarDados('validacao.json').then(x => { if (x && x.teste) { S.valPublicada = Object.assign(x, { publicado: true }); if (S.validacao && Date.parse(S.validacao.geradoEm) < Date.parse(x.geradoEm)) S.validacao = null; if (S.aba === 'validacao') renderValidacao(); } });
+    R.carregarDados('revisao.json').then(x => { S.revisao = x || false; if (S.aba === 'diario') renderDiario(); });
     const h = location.hash.slice(1); navegar(ABAS.includes(h) ? h : 'radar');
     carregarAgenda(); carregarRedeEModelos();
     setInterval(() => { if (S.aba === 'radar' && S.dia === hojeSP()) carregarAgenda(); }, 5 * 60e3);

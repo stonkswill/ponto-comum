@@ -7,6 +7,7 @@
 import fs from 'node:fs'; import path from 'node:path';
 import { carregarHub, gravarJSON, lerJSON, RAIZ } from './hub.mjs';
 import { revisar } from './revisar.mjs';
+import { anexarImplicitos } from './implicitos.mjs';
 
 const { R, M, K, A, B, D } = carregarHub();
 const DADOS = process.env.DADOS_DIR || path.join(RAIZ, 'dados'), agora = Number(process.env.AGORA) || Date.now(), ano = new Date(agora).getUTCFullYear();
@@ -19,18 +20,6 @@ const RADAR = R.COMPS.filter(c => c.radar || c.opcional).map(c => c.id);
 const rede = await R.carregarRede({ anos: [ano - 2, ano - 1, ano], onProgress: (d, t) => { if (d % 20 === 0) log('rede', d + '/' + t); } });
 const falhas = rede.relatorio.filter(x => !x.ok);
 log('rede:', rede.jogos.length, 'jogos;', falhas.length, 'falhas', falhas.slice(0, 5).map(x => x.comp + ' ' + x.ano + ' ' + x.erro).join(' | '));
-const dirRede = path.join(DADOS, 'rede'), indiceAntigo = lerJSON(path.join(dirRede, 'indice.json'), { arquivos: [] });
-const arquivos = [];
-for (const c of R.COMPS) for (const y of [ano - 2, ano - 1, ano]) {
-  const nome = c.id + '-' + y + '.json', rel = rede.relatorio.find(x => x.comp === c.id && x.ano === y), antigo = indiceAntigo.arquivos.find(a => a.arquivo === nome);
-  if (!rel || !rel.ok) { if (antigo) arquivos.push(antigo); continue; }
-  // Sem as odds dos jogos futuros: elas mudam a cada hora e o site busca as do dia ao vivo.
-  const lista = rede.jogos.filter(m => m.comp === c.id && new Date(m.date).getUTCFullYear() === y).map(m => { const { odds, ...resto } = m; return resto; });
-  const mudou = gravarJSON(path.join(dirRede, nome), lista);
-  arquivos.push({ arquivo: nome, comp: c.id, ano: y, n: lista.length, atualizadoEm: mudou || !antigo ? new Date(agora).toISOString() : antigo.atualizadoEm, truncado: !!rel.truncado });
-}
-gravarJSON(path.join(dirRede, 'indice.json'), { geradoEm: new Date(agora).toISOString(), versao: 3, arquivos }, { compacto: false });
-
 const porId = new Map(rede.jogos.map(m => [m.id, m]));
 const mesclar = lista => { for (const m of lista) { const v = porId.get(m.id); if (v) Object.assign(v, m); else { porId.set(m.id, m); rede.jogos.push(m); } } };
 
@@ -53,6 +42,21 @@ await R.pool(pendentesOdds.slice(0, MAX_ODDS).map(({ m, k }) => async () => {
 }), 6);
 for (const k of sujos) { const [comp, y] = k.split('|'); gravarJSON(arqOdds(comp, y), odds.get(k)); }
 log('odds:', nOdds, 'novas;', Math.max(0, pendentesOdds.length - MAX_ODDS), 'ficam para a próxima');
+const sujosI = anexarImplicitos(rede.jogos, { M, K, dados: DADOS, odds });
+for (const k of sujosI) { const [comp, y] = k.split('|'); gravarJSON(arqOdds(comp, y), odds.get(k)); }
+log('gols implícitos:', rede.jogos.filter(m => m.ilh != null).length, 'jogos');
+const dirRede = path.join(DADOS, 'rede'), indiceAntigo = lerJSON(path.join(dirRede, 'indice.json'), { arquivos: [] });
+const arquivos = [];
+for (const c of R.COMPS) for (const y of [ano - 2, ano - 1, ano]) {
+  const nome = c.id + '-' + y + '.json', rel = rede.relatorio.find(x => x.comp === c.id && x.ano === y), antigo = indiceAntigo.arquivos.find(a => a.arquivo === nome);
+  if (!rel || !rel.ok) { if (antigo) arquivos.push(antigo); continue; }
+  // Sem as odds dos jogos futuros: elas mudam a cada hora e o site busca as do dia ao vivo.
+  const lista = rede.jogos.filter(m => m.comp === c.id && new Date(m.date).getUTCFullYear() === y).map(m => { const { odds, ...resto } = m; return resto; });
+  const mudou = gravarJSON(path.join(dirRede, nome), lista);
+  arquivos.push({ arquivo: nome, comp: c.id, ano: y, n: lista.length, atualizadoEm: mudou || !antigo ? new Date(agora).toISOString() : antigo.atualizadoEm, truncado: !!rel.truncado });
+}
+gravarJSON(path.join(dirRede, 'indice.json'), { geradoEm: new Date(agora).toISOString(), versao: 3, arquivos }, { compacto: false });
+
 
 // ---------- 3. Agenda, cotações pré-jogo e modelo ----------
 const hoje = R.dataSP(new Date(agora).toISOString()), amanha = R.dataSP(new Date(agora + 864e5).toISOString());

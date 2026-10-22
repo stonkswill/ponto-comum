@@ -3,7 +3,8 @@
  *   log λ(mandante) = μ[competição] + mando[competição] + nível[liga do mandante] + ataque[mandante] − defesa_nível[liga do visitante] − defesa[visitante]
  * - Clubes de ligas diferentes ficam comparáveis pelos jogos de copas e torneios continentais.
  * - Recência: peso exp(−ln2 · idade / meia-vida). Copas pesam 0,8; estaduais, 0,6.
- * - Força medida com 60% chutes no alvo (convertidos em gols) + 40% gols: menos ruído que só gols.
+ * - Força medida com 60% chutes no alvo (convertidos em gols) + 40% gols: menos ruído que só gols. Nos jogos com odds de
+ *   fechamento, metade do alvo vem dos gols esperados implícitos nesse preço (ainda menos ruído).
  * - Dixon-Coles (ρ) corrige placares baixos. Correção de confiança (1,2) validada fora da amostra.
  * Escanteios e cartões usam a mesma estrutura, com binomial negativa para a dispersão.
  */
@@ -12,10 +13,12 @@
   const LN2 = Math.LN2, clamp = (x, a, b) => Math.max(a, Math.min(b, x));
   const COMP = () => G.PCRede.COMP_MAP;
 
-  // Escolhido no ajuste de 12/01–30/06/2026 e conferido em 16/07–19/10/2026 (jogos que não entraram no ajuste).
-  const PADRAO = Object.freeze({ halfLife: 270, sdTeam: 0.36, sdLeague: 0.45, sdHome: 0.15, haPrior: 0.25, sotBlend: 0.6, cupW: 0.8, stateW: 0.6,
-    iters: 80, tol: 2e-5, maxAgeDays: 1100, embargoH: 3, esticar: 1.2 });
-  const PADRAO_CONTAGEM = Object.freeze(Object.assign({}, PADRAO, { sotBlend: 0, sdTeam: 0.3, esticar: 1 }));
+  // Meia-vida, chutes e correção escolhidos no ajuste (jan–jul/2026) e conferidos no teste (jul–out/2026).
+  // Em 22/10, com a base real: forças mais espalhadas (0,5) e 50% de gols esperados do fechamento do mercado nos jogos
+  // passados (mktBlend) baixaram o log loss 1X2 do teste de 0,9743 para 0,9683, sem piorar o ajuste.
+  const PADRAO = Object.freeze({ halfLife: 270, sdTeam: 0.5, sdLeague: 0.45, sdHome: 0.15, haPrior: 0.25, sotBlend: 0.6, cupW: 0.8, stateW: 0.6,
+    iters: 80, tol: 2e-5, maxAgeDays: 1100, embargoH: 3, esticar: 1.2, mktBlend: 0.5 });
+  const PADRAO_CONTAGEM = Object.freeze(Object.assign({}, PADRAO, { sotBlend: 0, sdTeam: 0.3, esticar: 1, mktBlend: 0 }));
 
   function grupoDe(comp) { const c = COMP()[comp]; return !c ? 'O:?' : c.tipo === 'league' ? 'L:' + comp : 'O:' + c.regiao; }
 
@@ -95,11 +98,13 @@
   /* Gols: ajuste + ρ de Dixon-Coles + fração de gols no 1º tempo por competição. */
   function ajustarGols(jogos, opt = {}) {
     const o = Object.assign({}, PADRAO, opt, { cutoff: opt.cutoff ?? Date.now() });
-    const R = selecionar(jogos, o, m => (m.hg == null || m.ag == null) ? null : [m.hg, m.ag, m.hst, m.ast]);
+    const R = selecionar(jogos, o, m => (m.hg == null || m.ag == null) ? null : [m.hg, m.ag, m.hst, m.ast, m.ilh ?? null, m.ila ?? null]);
     let g = 0, s = 0; for (const y of R.Y) if (y[2] != null && y[3] != null) { g += y[0] + y[1]; s += y[2] + y[3]; }
     const kappa = s > 0 ? g / s : 0, b = o.sotBlend;
     const YH = Float64Array.from(R.Y, y => (b > 0 && y[2] != null && y[3] != null) ? (1 - b) * y[0] + b * kappa * y[2] : y[0]);
     const YA = Float64Array.from(R.Y, y => (b > 0 && y[2] != null && y[3] != null) ? (1 - b) * y[1] + b * kappa * y[3] : y[1]);
+    // Gols esperados implícitos no fechamento do mercado (jogos passados): menos ruído que placar e chutes.
+    const w = o.mktBlend || 0; if (w > 0) for (let k = 0; k < R.Y.length; k++) { const y = R.Y[k]; if (y[4] != null && y[5] != null) { YH[k] = (1 - w) * YH[k] + w * y[4]; YA[k] = (1 - w) * YA[k] + w * y[5]; } }
     const F = nucleo(R, YH, YA, o);
     let rho = 0, best = -Infinity;
     for (let r = -0.2; r <= 0.1001; r += 0.01) { let ll = 0, ok = true; for (let k = 0; k < F.N; k++) { const y = R.Y[k]; if (y[0] > 1 || y[1] > 1) continue; const t = tau(y[0], y[1], F.LH[k], F.LA[k], r); if (!(t > 0)) { ok = false; break; } ll += F.W[k] * Math.log(t); } if (ok && ll > best) { best = ll; rho = Math.round(r * 100) / 100; } }

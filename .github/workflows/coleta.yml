@@ -27,6 +27,8 @@ jobs:
           node-version: '22'
       - name: Coletar
         run: node ferramentas/coletar.mjs
+        env:
+          MAX_ODDS: "4000"
       - name: Gravar no repositório
         run: |
           git config user.name "ponto-comum-robo"
