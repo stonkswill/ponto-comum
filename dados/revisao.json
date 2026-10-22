@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-10-22T21:04:08.374Z",
+ "geradoEm": "2026-10-22T21:31:16.673Z",
  "jogos": 0,
  "porFamilia": {},
  "leitura": {
@@ -7,19 +7,7 @@
   "acertos": 0,
   "esperado": 0
  },
- "niveis": {
-  "segura": {
-   "bilhetes": 0,
-   "ganhos": 0,
-   "pendentes": 1,
-   "lucro": 0,
-   "nMercado": 0,
-   "retorno": null,
-   "oddMedia": null,
-   "chanceMedia": null,
-   "chanceMercadoMedia": null
-  }
- },
+ "niveis": {},
  "movimentoDoMercado": {
   "n": 0,
   "aFavorDoModelo": 0,
@@ -56,29 +44,47 @@
      "comp": "esp.1",
      "inicio": "2026-10-24T12:00Z",
      "pendente": true
+    },
+    {
+     "id": "401884755",
+     "jogo": "SC Paderborn 07 × Hamburg SV",
+     "comp": "ger.1",
+     "inicio": "2026-10-24T13:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884756",
+     "jogo": "FC Cologne × Schalke 04",
+     "comp": "ger.1",
+     "inicio": "2026-10-24T13:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884757",
+     "jogo": "Mainz × Werder Bremen",
+     "comp": "ger.1",
+     "inicio": "2026-10-24T13:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884758",
+     "jogo": "FC Augsburg × 1. FC Union Berlin",
+     "comp": "ger.1",
+     "inicio": "2026-10-24T13:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884762",
+     "jogo": "RB Leipzig × SV Elversberg",
+     "comp": "ger.1",
+     "inicio": "2026-10-24T13:30Z",
+     "pendente": true
     }
    ],
    "sugestoes": [
     {
      "nivel": "segura",
-     "odd": 2.445,
-     "pModelo": 0.4497,
-     "pMercado": 0.3602,
-     "status": "pendente",
-     "pernas": [
-      {
-       "rotulo": "Menos de 3,5 gols",
-       "jogo": "Aston Villa × Manchester City",
-       "odd": 1.63,
-       "ok": null
-      },
-      {
-       "rotulo": "Vitória Como",
-       "jogo": "Como × Sassuolo",
-       "odd": 1.5,
-       "ok": null
-      }
-     ]
+     "indisponivel": "Nenhuma combinação dos jogos analisados chega à faixa de odd 2,4–4,5 com o filtro deste nível."
     },
     {
      "nivel": "media",
