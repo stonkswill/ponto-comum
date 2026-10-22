@@ -1,0 +1,1682 @@
+{
+ "jogo": "Flamengo × Estudiantes de La Plata",
+ "comp": "conmebol.libertadores",
+ "odds": [
+  {
+   "provider": {
+    "id": "100",
+    "name": "DraftKings",
+    "priority": 1,
+    "logos": [
+     {
+      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+      "rel": [
+       "light"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+      "rel": [
+       "dark"
+      ]
+     }
+    ]
+   },
+   "details": "FLA -205",
+   "overUnder": 2.5,
+   "spread": -1.5,
+   "overOdds": 120,
+   "underOdds": -160,
+   "awayTeamOdds": {
+    "favorite": false,
+    "underdog": true,
+    "moneyLine": 650,
+    "spreadOdds": -220,
+    "team": {
+     "id": "8",
+     "uid": "s:600~t:8",
+     "location": "Estudiantes de La Plata",
+     "name": "Estudiantes de La Plata",
+     "abbreviation": "EST",
+     "displayName": "Estudiantes de La Plata",
+     "shortDisplayName": "Estudiantes",
+     "color": "C60000",
+     "isActive": true,
+     "links": [
+      {
+       "language": "en-US",
+       "rel": [
+        "clubhouse",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/club/_/id/8/estudiantes-de-la-plata",
+       "text": "Clubhouse",
+       "shortText": "Clubhouse",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "stats",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/stats/_/id/8/estudiantes-de-la-plata",
+       "text": "Stats",
+       "shortText": "Stats",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "stats",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=stats",
+       "text": "Stats",
+       "shortText": "Stats",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "schedule",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/8/estudiantes-de-la-plata",
+       "text": "Fixtures",
+       "shortText": "Fixtures",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "schedule",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=scores",
+       "text": "Fixtures",
+       "shortText": "Fixtures",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "results",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/results/_/id/8/estudiantes-de-la-plata",
+       "text": "Results",
+       "shortText": "Results",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "results",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=scores",
+       "text": "Results",
+       "shortText": "Results",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "standings",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/standings/_/league/conmebol.libertadores",
+       "text": "Standings",
+       "shortText": "Standings",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "standings",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=standings",
+       "text": "Standings",
+       "shortText": "Standings",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "squad",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/squad/_/id/8/estudiantes-de-la-plata",
+       "text": "Squad",
+       "shortText": "Squad",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "squad",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=squad",
+       "text": "Squad",
+       "shortText": "Squad",
+       "isExternal": false,
+       "isPremium": false
+      }
+     ]
+    },
+    "favoriteAtOpen": false
+   },
+   "homeTeamOdds": {
+    "favorite": true,
+    "underdog": false,
+    "moneyLine": -205,
+    "spreadOdds": 155,
+    "team": {
+     "id": "819",
+     "uid": "s:600~t:819",
+     "location": "Flamengo",
+     "name": "Flamengo",
+     "abbreviation": "FLA",
+     "displayName": "Flamengo",
+     "shortDisplayName": "Flamengo",
+     "color": "C60000",
+     "isActive": true,
+     "links": [
+      {
+       "language": "en-US",
+       "rel": [
+        "clubhouse",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/club/_/id/819/flamengo",
+       "text": "Clubhouse",
+       "shortText": "Clubhouse",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "stats",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/stats/_/id/819/flamengo",
+       "text": "Stats",
+       "shortText": "Stats",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "stats",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=stats",
+       "text": "Stats",
+       "shortText": "Stats",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "schedule",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/819/flamengo",
+       "text": "Fixtures",
+       "shortText": "Fixtures",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "schedule",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=scores",
+       "text": "Fixtures",
+       "shortText": "Fixtures",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "results",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/results/_/id/819/flamengo",
+       "text": "Results",
+       "shortText": "Results",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "results",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=scores",
+       "text": "Results",
+       "shortText": "Results",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "standings",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/standings/_/league/conmebol.libertadores",
+       "text": "Standings",
+       "shortText": "Standings",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "standings",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=standings",
+       "text": "Standings",
+       "shortText": "Standings",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "squad",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/squad/_/id/819/flamengo",
+       "text": "Squad",
+       "shortText": "Squad",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "squad",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=squad",
+       "text": "Squad",
+       "shortText": "Squad",
+       "isExternal": false,
+       "isPremium": false
+      }
+     ]
+    },
+    "favoriteAtOpen": true
+   },
+   "drawOdds": {
+    "moneyLine": 300
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "home",
+      "desktop",
+      "bets",
+      "draftkings"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_1",
+     "text": "Home Bet",
+     "shortText": "Home Bet",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "home",
+       "betType": "straight"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "away",
+      "desktop",
+      "bets",
+      "draftkings"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_3",
+     "text": "Away Bet",
+     "shortText": "Away Bet",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "away",
+       "betType": "straight"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "draw",
+      "desktop",
+      "bets",
+      "draftkings"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_2",
+     "text": "Draw Bet",
+     "shortText": "Draw Bet",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "draw",
+       "betType": "straight"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "homeSpread",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0HC86769614N150_1",
+     "text": "Home Point Spread",
+     "shortText": "Home Point Spread",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "none",
+       "betType": "straight",
+       "betDetails": "Spread:FLA-1.5"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "awaySpread",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0HC86769614P150_3",
+     "text": "Away Point Spread",
+     "shortText": "Away Point Spread",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "none",
+       "betType": "straight",
+       "betDetails": "Spread:EST+1.5"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "over",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0OU86769609O250_1",
+     "text": "Over Odds",
+     "shortText": "Over Odds",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "over",
+       "betType": "straight",
+       "betDetails": "Over:2.5"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "under",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0OU86769609U250_3",
+     "text": "Under Odds",
+     "shortText": "Under Odds",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "under",
+       "betType": "straight",
+       "betDetails": "Under:2.5"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "game",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794",
+     "text": "See More Odds",
+     "shortText": "Game",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "none",
+       "betType": "straight"
+      }
+     }
+    }
+   ],
+   "moneyline": {
+    "displayName": "Moneyline",
+    "shortDisplayName": "ML",
+    "home": {
+     "close": {
+      "odds": "-205",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "home",
+        "desktop",
+        "bets",
+        "draftkings"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_1",
+       "text": "Home Bet",
+       "shortText": "Home Bet",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "home",
+         "betType": "straight"
+        }
+       }
+      }
+     },
+     "open": {
+      "odds": "-255"
+     }
+    },
+    "away": {
+     "close": {
+      "odds": "+650",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "away",
+        "desktop",
+        "bets",
+        "draftkings"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_3",
+       "text": "Away Bet",
+       "shortText": "Away Bet",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "away",
+         "betType": "straight"
+        }
+       }
+      }
+     },
+     "open": {
+      "odds": "+700"
+     }
+    },
+    "draw": {
+     "close": {
+      "odds": "+300",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "draw",
+        "desktop",
+        "bets",
+        "draftkings"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_2",
+       "text": "Draw Bet",
+       "shortText": "Draw Bet",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "draw",
+         "betType": "straight"
+        }
+       }
+      }
+     },
+     "open": {
+      "odds": "+330"
+     }
+    }
+   },
+   "pointSpread": {
+    "displayName": "Spread",
+    "shortDisplayName": "Spread",
+    "home": {
+     "close": {
+      "line": "-1.5",
+      "odds": "+155",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "homeSpread",
+        "desktop",
+        "bets"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0HC86769614N150_1",
+       "text": "Home Point Spread",
+       "shortText": "Home Point Spread",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "none",
+         "betType": "straight",
+         "betDetails": "Spread:FLA-1.5"
+        }
+       }
+      }
+     },
+     "open": {
+      "line": "-1.5",
+      "odds": "+115"
+     }
+    },
+    "away": {
+     "close": {
+      "line": "+1.5",
+      "odds": "-220",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "awaySpread",
+        "desktop",
+        "bets"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0HC86769614P150_3",
+       "text": "Away Point Spread",
+       "shortText": "Away Point Spread",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "none",
+         "betType": "straight",
+         "betDetails": "Spread:EST+1.5"
+        }
+       }
+      }
+     },
+     "open": {
+      "line": "+1.5",
+      "odds": "-175"
+     }
+    }
+   },
+   "total": {
+    "displayName": "Total",
+    "shortDisplayName": "Total",
+    "over": {
+     "close": {
+      "line": "o2.5",
+      "odds": "+120",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "over",
+        "desktop",
+        "bets"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0OU86769609O250_1",
+       "text": "Over Odds",
+       "shortText": "Over Odds",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "over",
+         "betType": "straight",
+         "betDetails": "Over:2.5"
+        }
+       }
+      }
+     },
+     "open": {
+      "line": "o2.5",
+      "odds": "+105"
+     }
+    },
+    "under": {
+     "close": {
+      "line": "u2.5",
+      "odds": "-160",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "under",
+        "desktop",
+        "bets"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0OU86769609U250_3",
+       "text": "Under Odds",
+       "shortText": "Under Odds",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "under",
+         "betType": "straight",
+         "betDetails": "Under:2.5"
+        }
+       }
+      }
+     },
+     "open": {
+      "line": "u2.5",
+      "odds": "-150"
+     }
+    }
+   },
+   "link": {
+    "language": "en-US",
+    "rel": [
+     "game",
+     "desktop",
+     "bets"
+    ],
+    "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794",
+    "text": "See More Odds",
+    "shortText": "Game",
+    "isExternal": true,
+    "isPremium": false,
+    "tracking": {
+     "campaign": "betting-integrations",
+     "tags": {
+      "league": "conmebol.libertadores",
+      "sport": "soccer",
+      "gameId": 401912521,
+      "betSide": "none",
+      "betType": "straight"
+     }
+    }
+   },
+   "header": {
+    "logo": {
+     "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+     "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+     "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+     "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+    },
+    "text": "Game Odds"
+   },
+   "footer": {
+    "disclaimer": "GAMBLING PROBLEM? CALL 1-800-GAMBLER or 1-800-MY-RESET, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Call 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD), 1-800-981-0023 (PR). 21+ and present in most states. (18+ DC/KY/NH/PR/WY). Void in ONT. Eligibility restrictions apply. Terms: draftkings.com/sportsbook. On behalf of Boot Hill Casino (KS). Pass-thru of per wager tax may apply in IL."
+   }
+  }
+ ],
+ "pickcenter": [
+  {
+   "provider": {
+    "id": "100",
+    "name": "DraftKings",
+    "priority": 1,
+    "logos": [
+     {
+      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+      "rel": [
+       "light"
+      ]
+     },
+     {
+      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+      "rel": [
+       "dark"
+      ]
+     }
+    ]
+   },
+   "details": "FLA -205",
+   "overUnder": 2.5,
+   "spread": -1.5,
+   "overOdds": 120,
+   "underOdds": -160,
+   "awayTeamOdds": {
+    "favorite": false,
+    "underdog": true,
+    "moneyLine": 650,
+    "spreadOdds": -220,
+    "team": {
+     "id": "8",
+     "uid": "s:600~t:8",
+     "location": "Estudiantes de La Plata",
+     "name": "Estudiantes de La Plata",
+     "abbreviation": "EST",
+     "displayName": "Estudiantes de La Plata",
+     "shortDisplayName": "Estudiantes",
+     "color": "C60000",
+     "isActive": true,
+     "links": [
+      {
+       "language": "en-US",
+       "rel": [
+        "clubhouse",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/club/_/id/8/estudiantes-de-la-plata",
+       "text": "Clubhouse",
+       "shortText": "Clubhouse",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "stats",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/stats/_/id/8/estudiantes-de-la-plata",
+       "text": "Stats",
+       "shortText": "Stats",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "stats",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=stats",
+       "text": "Stats",
+       "shortText": "Stats",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "schedule",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/8/estudiantes-de-la-plata",
+       "text": "Fixtures",
+       "shortText": "Fixtures",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "schedule",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=scores",
+       "text": "Fixtures",
+       "shortText": "Fixtures",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "results",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/results/_/id/8/estudiantes-de-la-plata",
+       "text": "Results",
+       "shortText": "Results",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "results",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=scores",
+       "text": "Results",
+       "shortText": "Results",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "standings",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/standings/_/league/conmebol.libertadores",
+       "text": "Standings",
+       "shortText": "Standings",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "standings",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=standings",
+       "text": "Standings",
+       "shortText": "Standings",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "squad",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/squad/_/id/8/estudiantes-de-la-plata",
+       "text": "Squad",
+       "shortText": "Squad",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "squad",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:8&section=squad",
+       "text": "Squad",
+       "shortText": "Squad",
+       "isExternal": false,
+       "isPremium": false
+      }
+     ]
+    },
+    "favoriteAtOpen": false
+   },
+   "homeTeamOdds": {
+    "favorite": true,
+    "underdog": false,
+    "moneyLine": -205,
+    "spreadOdds": 155,
+    "team": {
+     "id": "819",
+     "uid": "s:600~t:819",
+     "location": "Flamengo",
+     "name": "Flamengo",
+     "abbreviation": "FLA",
+     "displayName": "Flamengo",
+     "shortDisplayName": "Flamengo",
+     "color": "C60000",
+     "isActive": true,
+     "links": [
+      {
+       "language": "en-US",
+       "rel": [
+        "clubhouse",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/club/_/id/819/flamengo",
+       "text": "Clubhouse",
+       "shortText": "Clubhouse",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "stats",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/stats/_/id/819/flamengo",
+       "text": "Stats",
+       "shortText": "Stats",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "stats",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=stats",
+       "text": "Stats",
+       "shortText": "Stats",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "schedule",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/819/flamengo",
+       "text": "Fixtures",
+       "shortText": "Fixtures",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "schedule",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=scores",
+       "text": "Fixtures",
+       "shortText": "Fixtures",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "results",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/results/_/id/819/flamengo",
+       "text": "Results",
+       "shortText": "Results",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "results",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=scores",
+       "text": "Results",
+       "shortText": "Results",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "standings",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/standings/_/league/conmebol.libertadores",
+       "text": "Standings",
+       "shortText": "Standings",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "standings",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=standings",
+       "text": "Standings",
+       "shortText": "Standings",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "squad",
+        "desktop",
+        "team"
+       ],
+       "href": "https://www.espn.com/soccer/team/squad/_/id/819/flamengo",
+       "text": "Squad",
+       "shortText": "Squad",
+       "isExternal": false,
+       "isPremium": false
+      },
+      {
+       "language": "en-US",
+       "rel": [
+        "squad",
+        "sportscenter",
+        "app",
+        "team"
+       ],
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:819&section=squad",
+       "text": "Squad",
+       "shortText": "Squad",
+       "isExternal": false,
+       "isPremium": false
+      }
+     ]
+    },
+    "favoriteAtOpen": true
+   },
+   "drawOdds": {
+    "moneyLine": 300
+   },
+   "links": [
+    {
+     "language": "en-US",
+     "rel": [
+      "home",
+      "desktop",
+      "bets",
+      "draftkings"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_1",
+     "text": "Home Bet",
+     "shortText": "Home Bet",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "home",
+       "betType": "straight"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "away",
+      "desktop",
+      "bets",
+      "draftkings"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_3",
+     "text": "Away Bet",
+     "shortText": "Away Bet",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "away",
+       "betType": "straight"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "draw",
+      "desktop",
+      "bets",
+      "draftkings"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_2",
+     "text": "Draw Bet",
+     "shortText": "Draw Bet",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "draw",
+       "betType": "straight"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "homeSpread",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0HC86769614N150_1",
+     "text": "Home Point Spread",
+     "shortText": "Home Point Spread",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "none",
+       "betType": "straight",
+       "betDetails": "Spread:FLA-1.5"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "awaySpread",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0HC86769614P150_3",
+     "text": "Away Point Spread",
+     "shortText": "Away Point Spread",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "none",
+       "betType": "straight",
+       "betDetails": "Spread:EST+1.5"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "over",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0OU86769609O250_1",
+     "text": "Over Odds",
+     "shortText": "Over Odds",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "over",
+       "betType": "straight",
+       "betDetails": "Over:2.5"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "under",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0OU86769609U250_3",
+     "text": "Under Odds",
+     "shortText": "Under Odds",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "under",
+       "betType": "straight",
+       "betDetails": "Under:2.5"
+      }
+     }
+    },
+    {
+     "language": "en-US",
+     "rel": [
+      "game",
+      "desktop",
+      "bets"
+     ],
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794",
+     "text": "See More Odds",
+     "shortText": "Game",
+     "isExternal": true,
+     "isPremium": false,
+     "tracking": {
+      "campaign": "betting-integrations",
+      "tags": {
+       "league": "conmebol.libertadores",
+       "sport": "soccer",
+       "gameId": 401912521,
+       "betSide": "none",
+       "betType": "straight"
+      }
+     }
+    }
+   ],
+   "moneyline": {
+    "displayName": "Moneyline",
+    "shortDisplayName": "ML",
+    "home": {
+     "close": {
+      "odds": "-205",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "home",
+        "desktop",
+        "bets",
+        "draftkings"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_1",
+       "text": "Home Bet",
+       "shortText": "Home Bet",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "home",
+         "betType": "straight"
+        }
+       }
+      }
+     },
+     "open": {
+      "odds": "-255"
+     }
+    },
+    "away": {
+     "close": {
+      "odds": "+650",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "away",
+        "desktop",
+        "bets",
+        "draftkings"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_3",
+       "text": "Away Bet",
+       "shortText": "Away Bet",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "away",
+         "betType": "straight"
+        }
+       }
+      }
+     },
+     "open": {
+      "odds": "+700"
+     }
+    },
+    "draw": {
+     "close": {
+      "odds": "+300",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "draw",
+        "desktop",
+        "bets",
+        "draftkings"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0ML86769573_2",
+       "text": "Draw Bet",
+       "shortText": "Draw Bet",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "draw",
+         "betType": "straight"
+        }
+       }
+      }
+     },
+     "open": {
+      "odds": "+330"
+     }
+    }
+   },
+   "pointSpread": {
+    "displayName": "Spread",
+    "shortDisplayName": "Spread",
+    "home": {
+     "close": {
+      "line": "-1.5",
+      "odds": "+155",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "homeSpread",
+        "desktop",
+        "bets"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0HC86769614N150_1",
+       "text": "Home Point Spread",
+       "shortText": "Home Point Spread",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "none",
+         "betType": "straight",
+         "betDetails": "Spread:FLA-1.5"
+        }
+       }
+      }
+     },
+     "open": {
+      "line": "-1.5",
+      "odds": "+115"
+     }
+    },
+    "away": {
+     "close": {
+      "line": "+1.5",
+      "odds": "-220",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "awaySpread",
+        "desktop",
+        "bets"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0HC86769614P150_3",
+       "text": "Away Point Spread",
+       "shortText": "Away Point Spread",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "none",
+         "betType": "straight",
+         "betDetails": "Spread:EST+1.5"
+        }
+       }
+      }
+     },
+     "open": {
+      "line": "+1.5",
+      "odds": "-175"
+     }
+    }
+   },
+   "total": {
+    "displayName": "Total",
+    "shortDisplayName": "Total",
+    "over": {
+     "close": {
+      "line": "o2.5",
+      "odds": "+120",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "over",
+        "desktop",
+        "bets"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0OU86769609O250_1",
+       "text": "Over Odds",
+       "shortText": "Over Odds",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "over",
+         "betType": "straight",
+         "betDetails": "Over:2.5"
+        }
+       }
+      }
+     },
+     "open": {
+      "line": "o2.5",
+      "odds": "+105"
+     }
+    },
+    "under": {
+     "close": {
+      "line": "u2.5",
+      "odds": "-160",
+      "link": {
+       "language": "en-US",
+       "rel": [
+        "under",
+        "desktop",
+        "bets"
+       ],
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794%3Foutcomes%3D0OU86769609U250_3",
+       "text": "Under Odds",
+       "shortText": "Under Odds",
+       "isExternal": true,
+       "isPremium": false,
+       "tracking": {
+        "campaign": "betting-integrations",
+        "tags": {
+         "league": "conmebol.libertadores",
+         "sport": "soccer",
+         "gameId": 401912521,
+         "betSide": "under",
+         "betType": "straight",
+         "betDetails": "Under:2.5"
+        }
+       }
+      }
+     },
+     "open": {
+      "line": "u2.5",
+      "odds": "-150"
+     }
+    }
+   },
+   "link": {
+    "language": "en-US",
+    "rel": [
+     "game",
+     "desktop",
+     "bets"
+    ],
+    "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34840794",
+    "text": "See More Odds",
+    "shortText": "Game",
+    "isExternal": true,
+    "isPremium": false,
+    "tracking": {
+     "campaign": "betting-integrations",
+     "tags": {
+      "league": "conmebol.libertadores",
+      "sport": "soccer",
+      "gameId": 401912521,
+      "betSide": "none",
+      "betType": "straight"
+     }
+    }
+   },
+   "header": {
+    "logo": {
+     "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+     "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+     "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+     "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+    },
+    "text": "Game Odds"
+   },
+   "footer": {
+    "disclaimer": "GAMBLING PROBLEM? CALL 1-800-GAMBLER or 1-800-MY-RESET, (800) 327-5050 or visit gamblinghelplinema.org (MA). Call 877-8-HOPENY/text HOPENY (467369) (NY). Call 888-789-7777/visit ccpg.org (CT), or visit www.mdgamblinghelp.org (MD), 1-800-981-0023 (PR). 21+ and present in most states. (18+ DC/KY/NH/PR/WY). Void in ONT. Eligibility restrictions apply. Terms: draftkings.com/sportsbook. On behalf of Boot Hill Casino (KS). Pass-thru of per wager tax may apply in IL."
+   }
+  }
+ ]
+}
