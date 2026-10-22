@@ -203,9 +203,9 @@
   function primeiroGol(lh, la) { const L = lh + la, q = Math.exp(-L); return { h: lh / L * (1 - q), a: la / L * (1 - q), '-': q }; }
 
   /* Chance de um jogador marcar (se começar jogando). Taxa de gols por jogo como titular a partir de gols e chutes no alvo
-   * (temporada atual + metade da anterior), puxada para uma âncora da posição até o jogador ter jogos suficientes (k = 5):
+   * (temporada atual + metade da anterior), puxada para uma âncora da posição até o jogador ter jogos suficientes (k = 8):
    * evita que 1 gol em 2 jogos vire 50% de chance. As taxas são normalizadas para somar os gols esperados do time no jogo. */
-  const ANCORA_POSICAO = { F: 0.30, M: 0.10, D: 0.035 }, K_ANCORA = 5;
+  const ANCORA_POSICAO = { F: 0.30, M: 0.15, D: 0.07 }, K_ANCORA = 8; // ajustado em 22/10 contra 357 odds de jogador da Bet365
   function artilheiros(elenco, lambdaTime, { max = 4 } = {}) {
     if (!elenco || !Number.isFinite(lambdaTime)) return [];
     const junta = new Map();
