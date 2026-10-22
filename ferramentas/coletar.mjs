@@ -78,15 +78,18 @@ const arqDia = (pasta, d) => path.join(DADOS, pasta, d + '.json');
 await R.pool(proximos.map(m => async () => {
   let resumo = null; try { resumo = await R.carregarResumo(m); } catch { resumo = { cotacoes: [] }; }
   const visto = new Set((resumo.cotacoes || []).map(q => q.casa + '|' + K.chave(q.mk))), cot = (resumo.cotacoes || []).concat(K.doPlacar(m).filter(q => !visto.has(q.casa + '|' + K.chave(q.mk))));
-  const a = A.analisar(m, { F, Fe, Fc, porTime, forca, cotacoes: cot, resumo, elencos: {}, agora });
+  const liga = id => { const g = forca.porId.get(id); return g && g.grupo.startsWith('L:') ? g.grupo.slice(2) : m.comp; };
+  const [ec, ef] = await Promise.all([m.h, m.a].map(id => R.carregarElenco(liga(id), id).catch(() => null)));
+  const a = A.analisar(m, { F, Fe, Fc, porTime, forca, cotacoes: cot, resumo, elencos: { casa: ec, fora: ef }, agora });
   const d = R.dataSP(m.date);
   if (!pre.has(d)) pre.set(d, lerJSON(arqDia('pre', d), {}));
-  pre.get(d)[m.id] = { em: new Date(agora).toISOString(), cot: cot.map(q => [q.casa, K.chave(q.mk), q.odd]), escalacoes: !!(resumo.escalacoes && resumo.escalacoes.some(e => e.titulares.length >= 11)) };
+  pre.get(d)[m.id] = { em: new Date(agora).toISOString(), cot: cot.map(q => [q.casa, K.chave(q.mk), q.odd]), escalacoes: !!(resumo.escalacoes && resumo.escalacoes.some(e => e.titulares.length >= 11)), jogadores: resumo.jogadores ? { casa: resumo.jogadores.casa, qualquer: resumo.jogadores.qualquer.map(x => [x.nome, x.odd]), primeiro: resumo.jogadores.primeiro.map(x => [x.nome, x.odd]) } : null };
   if (!prev.has(d)) prev.set(d, lerJSON(arqDia('previsoes', d), { jogos: {}, sugestoes: {} }));
   prev.get(d).jogos[m.id] = { comp: m.comp, inicio: m.date, casa: m.hn, fora: m.an, h: m.h, a: m.a, filtro: passaFiltro(m), em: new Date(agora).toISOString(),
     lh: r4(a.lh), la: r4(a.la), mercado: a.ref ? { lh: r4(a.ref.lh), la: r4(a.ref.la), fonte: a.ref.fonte } : null,
     linhas: Object.fromEntries(a.linhas.map(l => [l.chave, [r4(l.pModelo), r4(l.pMercado), l.odd, TIPO[l.oddTipo] || '?']])),
-    leitura: fortes(a).map(l => l.chave), destaques: a.destaques.map(l => l.chave) };
+    leitura: fortes(a).map(l => l.chave), destaques: a.destaques.map(l => l.chave),
+    jogadores: { casa: a.jogadores.casa.map(j => [j.nome, r4(j.p), j.odd]), fora: a.jogadores.fora.map(j => [j.nome, r4(j.p), j.odd]) } };
   if (!analisesPorDia.has(d)) analisesPorDia.set(d, []); analisesPorDia.get(d).push(a);
 }), 4);
 

@@ -73,7 +73,7 @@
     for (const d of det) {
       if (!d || d.shootout) continue;
       const tid = d.team ? String(d.team.id) : '', dv = String((d.clock && d.clock.displayValue) || ''), cv = num(d.clock && d.clock.value);
-      if (d.scoringPlay) gols.push({ tid, own: d.ownGoal === true, dv, cv });
+      if (d.scoringPlay) gols.push({ tid, own: d.ownGoal === true, dv, cv, nome: String(((d.athletesInvolved || [])[0] || {}).displayName || '') });
       else if (d.redCard) vm[tid] = (vm[tid] || 0) + 1;
       else if (d.yellowCard) am[tid] = (am[tid] || 0) + 1;
     }
@@ -85,7 +85,9 @@
     if (conv >= 0) {
       let h1 = 0, a1 = 0, hr = 0, ar = 0, pg = null;
       const ordem = gols.slice().sort((x, y) => (x.cv ?? 1e9) - (y.cv ?? 1e9));
-      for (const g of ordem) { let t = g.tid; if (conv && g.own) t = t === h ? a : h; const s = t === h ? 0 : t === a ? 1 : -1; if (s < 0) continue; if (primeiroTempo(g)) s ? a1++ : h1++; if (regulamentar(g)) { s ? ar++ : hr++; if (pg === null) pg = s ? 'a' : 'h'; } }
+      const gm = [];
+      for (const g of ordem) { let t = g.tid; if (conv && g.own) t = t === h ? a : h; const s = t === h ? 0 : t === a ? 1 : -1; if (s < 0) continue; if (primeiroTempo(g)) s ? a1++ : h1++; if (regulamentar(g)) { s ? ar++ : hr++; if (pg === null) pg = s ? 'a' : 'h'; if (g.nome) gm.push([s ? 'a' : 'h', g.nome, g.own ? 1 : 0]); } }
+      if (gm.length) m.gm = gm; // quem marcou no tempo regulamentar: [lado, nome, gol contra]
       m.h1 = h1; m.a1 = a1; m.hg = prorrogacao ? hr : fh; m.ag = prorrogacao ? ar : fa; m.pg = m.hg + m.ag === 0 ? '-' : pg;
     } else { m.h1 = null; m.a1 = null; m.pg = null; m.hg = prorrogacao ? null : fh; m.ag = prorrogacao ? null : fa; }
     m.hc = statOf(H, 'wonCorners'); m.ac = statOf(A, 'wonCorners');
@@ -205,7 +207,7 @@
       titulares: [...(r.roster || []), ...(r.athletes || [])].filter(p => p.starter === true || p.starter === 'true').map(p => (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || '').filter(Boolean) }));
     const desfalques = (j.injuries || []).filter(t => ids.includes(String(t.team && t.team.id))).flatMap(t => (t.injuries || []).slice(0, 25).map(i => ({ time: String(t.team.id), jogador: (i.athlete && i.athlete.displayName) || '', status: String(i.status || (i.type && i.type.description) || ''), detalhe: String(i.shortComment || '') }))).filter(x => x.jogador);
     const info = j.gameInfo || {}, arbitro = (info.officials || []).map(o => o.fullName || o.displayName).filter(Boolean)[0] || null;
-    return { observadoEm: new Date().toISOString(), estado: st.state || '', status: st.name || '', inicio: comp.date || m.date, cotacoes: G.PCMercado ? G.PCMercado.doResumo(j, m) : [],
+    return { observadoEm: new Date().toISOString(), estado: st.state || '', status: st.name || '', inicio: comp.date || m.date, cotacoes: G.PCMercado ? G.PCMercado.doResumo(j, m) : [], jogadores: G.PCMercado ? G.PCMercado.jogadoresDoResumo(j) : null,
       escalacoes, desfalques, arbitro, estadio: info.venue ? info.venue.fullName || null : null };
   }
 

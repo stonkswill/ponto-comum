@@ -15,6 +15,7 @@ export function revisar({ K, D, jogos, dados, dias = 45 }) {
   const arquivos = fs.readdirSync(dir).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
   const cacheOdds = new Map(), fechamento = (comp, inicio, id) => { const k = comp + '-' + new Date(inicio).getUTCFullYear(); if (!cacheOdds.has(k)) cacheOdds.set(k, lerJSON(path.join(dados, 'odds', k + '.json'), {})); const o = cacheOdds.get(k)[id]; return o && o.f && o.f[0] && o.f[1] && o.f[2] ? o.f : null; };
   const fam = {}, leitura = { n: 0, acertos: 0, esperado: 0 }, niveis = {}, mov = { n: 0, aFavor: 0, soma: 0 }, porDia = [];
+  const jog = { n: 0, marcaram: 0, previsto: 0, llModelo: 0, comOdd: 0, marcaramComOdd: 0, previstoComOdd: 0, implicitoBruto: 0, apostas: 0, lucro: 0, faixas: Array.from({ length: 6 }, () => [0, 0, 0]) };
   const somaFam = (f, p, q, y) => { const x = fam[f] || (fam[f] = { n: 0, llModelo: 0, llMercado: 0, nMercado: 0, llModeloComMercado: 0, brier: 0, previsto: 0, aconteceu: 0 }); x.n++; x.llModelo -= y ? L(p) : L(1 - p); x.brier += (p - y) ** 2; x.previsto += p; x.aconteceu += y; if (Number.isFinite(q)) { x.nMercado++; x.llMercado -= y ? L(q) : L(1 - q); x.llModeloComMercado -= y ? L(p) : L(1 - p); } };
   let nJogos = 0;
   for (const f of arquivos) {
@@ -29,6 +30,14 @@ export function revisar({ K, D, jogos, dados, dias = 45 }) {
       if (f12 && x12.length === 3 && x12.every(x => Number.isFinite(x.l[1]))) {
         const inv = f12.slice(0, 3).map(o => 1 / o), s = inv[0] + inv[1] + inv[2], qf = inv.map(v => v / s);
         x12.forEach((x, i) => { const dif = x.l[0] - x.l[1]; if (Math.abs(dif) < 0.03) return; const andou = qf[i] - x.l[1]; mov.n++; mov.soma += Math.sign(dif) * andou; if (Math.sign(andou) === Math.sign(dif)) mov.aFavor++; });
+      }
+      if (p.jogadores && j.gm) for (const lado of ['casa', 'fora']) {
+        const marcadores = j.gm.filter(g => g[0] === (lado === 'casa' ? 'h' : 'a') && !g[2]).map(g => ({ nome: g[1] }));
+        for (const [nome, pj, odd] of p.jogadores[lado] || []) {
+          if (!Number.isFinite(pj)) continue; const y = K.acharJogador(marcadores, nome) ? 1 : 0;
+          jog.n++; jog.marcaram += y; jog.previsto += pj; jog.llModelo -= y ? L(pj) : L(1 - pj); const fx = jog.faixas[Math.min(5, Math.floor(pj * 10))]; fx[0]++; fx[1] += pj; fx[2] += y;
+          if (odd > 1) { jog.comOdd++; jog.marcaramComOdd += y; jog.previstoComOdd += pj; jog.implicitoBruto += 1 / odd; if (pj * odd > 1.1) { jog.apostas++; jog.lucro += y ? odd - 1 : -1; } }
+        }
       }
       det.jogos.push({ id, jogo: p.casa + ' × ' + p.fora, comp: p.comp, inicio: p.inicio, placar: [j.hg, j.ag], favorito: fav ? { rotulo: K.rotulo({ t: '1x2', s: fav.s }, p.casa, p.fora), p: fav.l[0], pMercado: fav.l[1], ok: D.liquidar({ t: '1x2', s: fav.s }, j) } : null, leitura: ditas, filtro: p.filtro });
     }
@@ -45,6 +54,8 @@ export function revisar({ K, D, jogos, dados, dias = 45 }) {
   for (const x of Object.values(fam)) { const n = x.n; x.llModelo = r4(x.llModelo / n); x.brier = r4(x.brier / n); x.previsto = r4(x.previsto / n); x.aconteceu = r4(x.aconteceu / n); x.llMercado = x.nMercado ? r4(x.llMercado / x.nMercado) : null; x.llModeloComMercado = x.nMercado ? r4(x.llModeloComMercado / x.nMercado) : null; }
   for (const x of Object.values(niveis)) { x.retorno = x.bilhetes ? r4(x.lucro / x.bilhetes) : null; x.oddMedia = x.bilhetes ? r4(x.somaOdd / x.bilhetes) : null; x.chanceMedia = x.bilhetes ? r4(x.somaChance / x.bilhetes) : null; x.chanceMercadoMedia = x.nMercado ? r4(x.somaChanceMercado / x.nMercado) : null; x.lucro = r4(x.lucro); delete x.somaOdd; delete x.somaChance; delete x.somaChanceMercado; }
   return { geradoEm: new Date().toISOString(), jogos: nJogos, porFamilia: fam, leitura: { n: leitura.n, acertos: leitura.acertos, esperado: r4(leitura.esperado) },
+    jogadores: jog.n ? { n: jog.n, marcaram: jog.marcaram, previsto: r4(jog.previsto), llModelo: r4(jog.llModelo / jog.n), comOdd: jog.comOdd, marcaramComOdd: jog.marcaramComOdd, previstoModeloComOdd: r4(jog.previstoComOdd), implicitoBrutoComOdd: r4(jog.implicitoBruto),
+      apostasModeloAcimaDaOdd: { n: jog.apostas, retorno: jog.apostas ? r4(jog.lucro / jog.apostas) : null }, faixas: jog.faixas.map((f, i) => f[0] ? { de: i / 10, n: f[0], previsto: r4(f[1] / f[0]), aconteceu: r4(f[2] / f[0]) } : null).filter(Boolean) } : null,
     niveis, movimentoDoMercado: { n: mov.n, aFavorDoModelo: mov.aFavor, medio: mov.n ? r4(mov.soma / mov.n) : null },
     dias: porDia.slice(-dias).reverse() };
 }

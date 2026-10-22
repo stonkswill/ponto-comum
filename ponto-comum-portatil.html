@@ -292,7 +292,7 @@ section.sugestoes { margin-top: 4px; }
     for (const d of det) {
       if (!d || d.shootout) continue;
       const tid = d.team ? String(d.team.id) : '', dv = String((d.clock && d.clock.displayValue) || ''), cv = num(d.clock && d.clock.value);
-      if (d.scoringPlay) gols.push({ tid, own: d.ownGoal === true, dv, cv });
+      if (d.scoringPlay) gols.push({ tid, own: d.ownGoal === true, dv, cv, nome: String(((d.athletesInvolved || [])[0] || {}).displayName || '') });
       else if (d.redCard) vm[tid] = (vm[tid] || 0) + 1;
       else if (d.yellowCard) am[tid] = (am[tid] || 0) + 1;
     }
@@ -304,7 +304,9 @@ section.sugestoes { margin-top: 4px; }
     if (conv >= 0) {
       let h1 = 0, a1 = 0, hr = 0, ar = 0, pg = null;
       const ordem = gols.slice().sort((x, y) => (x.cv ?? 1e9) - (y.cv ?? 1e9));
-      for (const g of ordem) { let t = g.tid; if (conv && g.own) t = t === h ? a : h; const s = t === h ? 0 : t === a ? 1 : -1; if (s < 0) continue; if (primeiroTempo(g)) s ? a1++ : h1++; if (regulamentar(g)) { s ? ar++ : hr++; if (pg === null) pg = s ? 'a' : 'h'; } }
+      const gm = [];
+      for (const g of ordem) { let t = g.tid; if (conv && g.own) t = t === h ? a : h; const s = t === h ? 0 : t === a ? 1 : -1; if (s < 0) continue; if (primeiroTempo(g)) s ? a1++ : h1++; if (regulamentar(g)) { s ? ar++ : hr++; if (pg === null) pg = s ? 'a' : 'h'; if (g.nome) gm.push([s ? 'a' : 'h', g.nome, g.own ? 1 : 0]); } }
+      if (gm.length) m.gm = gm; // quem marcou no tempo regulamentar: [lado, nome, gol contra]
       m.h1 = h1; m.a1 = a1; m.hg = prorrogacao ? hr : fh; m.ag = prorrogacao ? ar : fa; m.pg = m.hg + m.ag === 0 ? '-' : pg;
     } else { m.h1 = null; m.a1 = null; m.pg = null; m.hg = prorrogacao ? null : fh; m.ag = prorrogacao ? null : fa; }
     m.hc = statOf(H, 'wonCorners'); m.ac = statOf(A, 'wonCorners');
@@ -424,7 +426,7 @@ section.sugestoes { margin-top: 4px; }
       titulares: [...(r.roster || []), ...(r.athletes || [])].filter(p => p.starter === true || p.starter === 'true').map(p => (p.athlete && (p.athlete.displayName || p.athlete.shortName)) || '').filter(Boolean) }));
     const desfalques = (j.injuries || []).filter(t => ids.includes(String(t.team && t.team.id))).flatMap(t => (t.injuries || []).slice(0, 25).map(i => ({ time: String(t.team.id), jogador: (i.athlete && i.athlete.displayName) || '', status: String(i.status || (i.type && i.type.description) || ''), detalhe: String(i.shortComment || '') }))).filter(x => x.jogador);
     const info = j.gameInfo || {}, arbitro = (info.officials || []).map(o => o.fullName || o.displayName).filter(Boolean)[0] || null;
-    return { observadoEm: new Date().toISOString(), estado: st.state || '', status: st.name || '', inicio: comp.date || m.date, cotacoes: G.PCMercado ? G.PCMercado.doResumo(j, m) : [],
+    return { observadoEm: new Date().toISOString(), estado: st.state || '', status: st.name || '', inicio: comp.date || m.date, cotacoes: G.PCMercado ? G.PCMercado.doResumo(j, m) : [], jogadores: G.PCMercado ? G.PCMercado.jogadoresDoResumo(j) : null,
       escalacoes, desfalques, arbitro, estadio: info.venue ? info.venue.fullName || null : null };
   }
 
@@ -807,6 +809,25 @@ section.sugestoes { margin-top: 4px; }
     }
     return out;
   }
+  /* Odds de jogador da Bet365 (marcar a qualquer momento e primeiro gol), quando a ESPN publica. */
+  const normNome = v => String(v || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, ' ').replace(/\s+/g, ' ').trim();
+  function jogadoresDoResumo(j) {
+    const F = R().fracionaria, out = { casa: null, qualquer: [], primeiro: [] };
+    for (const o of [...(j.odds || []), ...(j.pickcenter || [])]) {
+      const po = o && o.bettingOdds && o.bettingOdds.playerOdds; if (!po || out.casa) continue;
+      out.casa = (o.provider && o.provider.name) || 'Casa';
+      const ler = lista => (Array.isArray(lista) ? lista : []).map(x => ({ nome: String(x.player || ''), odd: F(x.value) })).filter(x => x.nome && x.odd > 1);
+      out.qualquer = ler(po.preMatchAnyTimeGoalScorer); out.primeiro = ler(po.preMatchFirstGoalScorer);
+    }
+    return out.qualquer.length || out.primeiro.length ? out : null;
+  }
+  /* Acha um jogador numa lista pelo nome (exato sem acentos; senão sobrenome + inicial). */
+  function acharJogador(lista, nome) {
+    const n = normNome(nome); if (!n || !lista) return null; let x = lista.find(p => normNome(p.nome) === n); if (x) return x;
+    const partes = n.split(' '), ult = partes[partes.length - 1], ini = partes[0][0];
+    const c = lista.filter(p => { const q = normNome(p.nome).split(' '); return q[q.length - 1] === ult && q[0][0] === ini; }); return c.length === 1 ? c[0] : null;
+  }
+
   /* Cotações a partir do placar do dia (só DraftKings 1X2 + linha principal). */
   function doPlacar(m) {
     const o = m && m.odds; if (!o) return [];
@@ -856,7 +877,7 @@ section.sugestoes { margin-top: 4px; }
     return { odd: +Math.max(1.01, 1 / (p * (1 + MARGEM_TIPICA + (temMercado ? 0 : 0.02)))).toFixed(2), tipo: temMercado ? 'mercado' : 'modelo', casas: [] };
   }
 
-  G.PCMercado = Object.freeze({ chave, rotulo, familia, meia, doResumo, doPlacar, semMargem, referencia, melhorOdd, oddSugerida, MARGEM_TIPICA });
+  G.PCMercado = Object.freeze({ normNome, jogadoresDoResumo, acharJogador, chave, rotulo, familia, meia, doResumo, doPlacar, semMargem, referencia, melhorOdd, oddSugerida, MARGEM_TIPICA });
 })(typeof globalThis !== 'undefined' ? globalThis : window);
 
 </script>
@@ -949,7 +970,16 @@ section.sugestoes { margin-top: 4px; }
     const cal = { casa: R().calendario(ctx.porTime, m.h, m.date), fora: R().calendario(ctx.porTime, m.a, m.date) };
     const forma = { casa: R().forma(ctx.porTime, m.h, m.date), fora: R().forma(ctx.porTime, m.a, m.date) }, h2h = R().confrontos(ctx.porTime, m.h, m.a, m.date);
     const fc = ctx.forca ? ctx.forca.porId.get(m.h) : null, ff = ctx.forca ? ctx.forca.porId.get(m.a) : null;
-    const el = ctx.elencos || {}, jogadores = { casa: M().artilheiros(el.casa, pr.lh), fora: M().artilheiros(el.fora, pr.la) };
+    // Quem pode marcar: chance do modelo + odd da Bet365 (quando publicada). Junta os 4 mais prováveis pelo modelo e os 3
+    // favoritos do mercado que estão no elenco de cada time.
+    const el = ctx.elencos || {}, oj = ctx.resumo && ctx.resumo.jogadores, jogadores = {};
+    for (const [lado, lam] of [['casa', pr.lh], ['fora', pr.la]]) {
+      const todos = M().artilheiros(el[lado], lam, { max: 60 }), mercado = oj ? oj.qualquer : [];
+      const daCasa = mercado.map(x => ({ x, j: K().acharJogador(todos, x.nome) || (el[lado] && K().acharJogador(el[lado].atual, x.nome) ? { nome: x.nome, p: null } : null) })).filter(z => z.j).sort((a, b) => a.x.odd - b.x.odd).slice(0, 3).map(z => z.j);
+      const lista = [...todos.slice(0, 4)]; for (const j of daCasa) if (!lista.includes(j) && !lista.some(z => z.nome === j.nome)) lista.push(j);
+      jogadores[lado] = lista.map(j => { const q = K().acharJogador(mercado, j.nome); return Object.assign({}, j, { odd: q ? q.odd : null, ev: q && j.p ? j.p * q.odd - 1 : null }); }).sort((a, b) => (b.p ?? 0) - (a.p ?? 0));
+    }
+    jogadores.casaOdds = oj ? oj.casa : null;
     const alertas = [], x12 = linhas.filter(l => l.mk.t === '1x2' && l.divergencia !== null), maxDiv = x12.reduce((b, l) => Math.abs(l.divergencia) > Math.abs(b ? b.divergencia : 0) ? l : b, null);
     if (maxDiv && Math.abs(maxDiv.divergencia) >= TOLERANCIA) alertas.push({ tipo: 'divergencia', texto: 'Modelo e mercado divergem ' + Math.round(Math.abs(maxDiv.divergencia) * 100) + ' p.p. em "' + maxDiv.rotulo + '" (modelo ' + Math.round(maxDiv.pModelo * 100) + '%, mercado ' + Math.round(maxDiv.pMercado * 100) + '%). Nos testes, quando os dois discordaram assim, o mercado acertou mais: confira escalações e desfalques. As sugestões automáticas não usam linhas divergentes.' });
     for (const [lado, t, nome] of [['casa', pr.casa, m.hn], ['fora', pr.fora, m.an]]) {
@@ -1543,8 +1573,11 @@ section.sugestoes { margin-top: 4px; }
       + (f.chutesNoAlvo !== null ? ' · ' + num(f.chutesNoAlvo, 1) + ' chutes no alvo (' + num(f.chutesNoAlvoContra, 1) + ' contra)' : '') + '</p><p class="nota">Descanso: ' + (c.descanso !== null ? num(c.descanso, 1) + ' dias' : '—') + ' · ' + c.jogos14 + ' jogos em 14 dias' + (c.ateProximo !== null ? ' · próximo jogo em ' + num(c.ateProximo, 1) + ' dias' : '') + '</p><ul class="lista">' + ant + '</ul>' + (prox ? '<p class="sobre">PRÓXIMOS</p><ul class="lista">' + prox + '</ul>' : '') + '</div>';
   }
   function blocoJogadores(a) {
-    const lado = (lista, nome) => '<div><h4>' + esc(nome) + '</h4>' + (lista.length ? '<ul class="lista">' + lista.map(j => '<li><b>' + esc(j.nome) + '</b> <small>' + esc(j.pos) + ' · ' + j.gols + ' gol(s) em ' + j.jogos + ' jogos</small> · ' + pct(j.p) + ' <small>odd ~' + num(1 / (j.p * 1.12)) + '</small></li>').join('') + '</ul>' : '<p class="nota">Elenco indisponível na fonte.</p>') + '</div>';
-    return '<details class="contexto"><summary>Quem pode marcar <small>(experimental)</small></summary><div class="dois">' + lado(a.jogadores.casa, a.m.hn) + lado(a.jogadores.fora, a.m.an) + '</div><p class="nota">Chance de marcar a qualquer momento: parcela do jogador nos gols e chutes no alvo do time (temporada atual + metade da anterior), por jogo como titular, aplicada aos gols esperados do time. Supõe que ele começa jogando. A fonte não traz odds de jogador, então não há como conferir com o mercado; a odd ao lado é só a justa com margem típica de 12%.</p></details>';
+    const temOdd = a.jogadores.casaOdds;
+    const linha = j => '<li><b>' + esc(j.nome) + '</b> ' + (j.pos ? '<small>' + esc(j.pos) + (j.jogos ? ' · ' + j.gols + ' gol(s) em ' + j.jogos + ' jogos' : '') + '</small> ' : '') + '· modelo ' + (j.p !== null && j.p !== undefined ? pct(j.p) : '—')
+      + (j.odd ? ' · <b>odd ' + num(j.odd) + '</b> <small>' + esc(temOdd) + ' (' + pct(1 / j.odd) + ' com margem)</small>' : j.p ? ' <small>odd justa ~' + num(1 / j.p) + '</small>' : '') + '</li>';
+    const lado = (lista, nome) => '<div><h4>' + esc(nome) + '</h4>' + (lista.length ? '<ul class="lista">' + lista.map(linha).join('') + '</ul>' : '<p class="nota">Elenco indisponível na fonte.</p>') + '</div>';
+    return '<details class="contexto"><summary>Quem pode marcar' + (temOdd ? ' <small>com odds da ' + esc(temOdd) + '</small>' : ' <small>(sem odds de jogador para este jogo)</small>') + '</summary><div class="dois">' + lado(a.jogadores.casa, a.m.hn) + lado(a.jogadores.fora, a.m.an) + '</div><p class="nota">Modelo: parcela do jogador nos gols e chutes no alvo do time (temporada atual + metade da anterior), por jogo como titular, aplicada aos gols esperados do time; supõe que ele começa jogando. A odd é a de marcar a qualquer momento; a chance implícita nela inclui a margem da casa, que nesse mercado é alta. O robô está registrando essas odds e quem marcou para validar o modelo de jogador.</p></details>';
   }
   function cartaoAnalise(a) {
     const m = a.m, fam = S.familia[m.id] || 'times', principais = a.linhas.filter(l => l.principal && !(l.mk.t === 'tot' && trivial(l, 0.92)));
@@ -1586,7 +1619,7 @@ section.sugestoes { margin-top: 4px; }
       modelo: { golsEsperados: [p2(a.lh), p2(a.la)], x12: ['h', 'd', 'a'].map(s => p2((a.linhas.find(l => l.chave === '1x2:' + s) || {}).pModelo)) },
       mercado: a.ref ? { fonte: a.ref.fonte, golsEsperados: [p2(a.ref.lh), p2(a.ref.la)], x12: a.ref.x12 ? a.ref.x12.p.map(p2) : null } : null,
       linhas: a.linhas.map(l => ({ linha: l.rotulo, principal: l.principal, modelo: p2(l.pModelo), faixa90: l.faixa ? l.faixa.map(p2) : null, mercado: p2(l.pMercado), normalDaCompeticao: p2(l.pTipico), oddSugerida: l.odd, tipoOdd: l.oddTipo, casas: l.oddCasas, oddJusta: p2(l.justa), valorModelo: p2(l.ev) })),
-      foraDoNormal: a.destaques.map(l => l.rotulo), quemPodeMarcar: { casa: a.jogadores.casa.map(j => ({ nome: j.nome, chance: p2(j.p) })), fora: a.jogadores.fora.map(j => ({ nome: j.nome, chance: p2(j.p) })) },
+      foraDoNormal: a.destaques.map(l => l.rotulo), quemPodeMarcar: { casa: a.jogadores.casa.map(j => ({ nome: j.nome, chance: p2(j.p), odd: j.odd })), fora: a.jogadores.fora.map(j => ({ nome: j.nome, chance: p2(j.p), odd: j.odd })), casaDasOdds: a.jogadores.casaOdds },
       placaresMaisProvaveis: a.placares.map(p => ({ placar: p[0] + '-' + p[1], chance: p2(p[2]) })), alertas: a.alertas.map(x => x.texto), geradoEm: a.geradoEm, versao: 'Ponto Comum v3' };
   }
   function textoAnalise(a) {
@@ -1597,6 +1630,8 @@ section.sugestoes { margin-top: 4px; }
     out.push('', 'Linha · modelo · mercado · odd sugerida');
     for (const l of a.linhas.filter(l => l.principal && !(l.mk.t === 'tot' && trivial(l, 0.92)))) out.push('• ' + l.rotulo + ': ' + pct(l.pModelo) + ' · ' + pct(l.pMercado) + ' · ' + num(l.odd) + (l.oddTipo !== 'cotada' ? ' (estimada)' : '') + (l.concorda === false ? ' ⚠ diverge' : ''));
     const f = fortes(a); out.push('', f.length ? 'Nos seus mercados (55–88%): ' + f.map(l => l.rotulo + ' ' + pct(l.pModelo) + ' a ' + num(l.odd)).join('; ') : 'Nada bom neste jogo pelos critérios do hub.');
+    const jg = [...a.jogadores.casa, ...a.jogadores.fora].filter(j => j.p).sort((x, y) => y.p - x.p).slice(0, 4);
+    if (jg.length) out.push('Quem pode marcar: ' + jg.map(j => j.nome + ' ' + pct(j.p) + (j.odd ? ' (odd ' + num(j.odd) + ')' : '')).join('; '));
     if (a.destaques.length) out.push('Fora do normal: ' + a.destaques.map(l => l.rotulo + ' ' + pct(l.pModelo) + ' (normal ' + pct(l.pTipico) + ')').join('; '));
     out.push('Placares: ' + a.placares.slice(0, 4).map(p => p[0] + '-' + p[1] + ' ' + pct(p[2])).join(', '));
     if (a.alertas.length) out.push('', ...a.alertas.map(x => '! ' + x.texto));
@@ -1693,7 +1728,7 @@ section.sugestoes { margin-top: 4px; }
       + (cal ? '<h3>Calibração do modelo no teste</h3><div class="faixas">' + cal.map(f => '<div class="faixa"><span>' + Math.round(f.de * 100) + '–' + Math.round(f.ate * 100) + '%</span><i style="width:' + (f.aconteceu * 100).toFixed(0) + '%"></i><b>' + pct(f.aconteceu) + '</b><small>previsto ' + pct(f.previsto) + ' · ' + f.n + '</small></div>').join('') + '</div><p class="nota">Desvio médio: ' + num(r.calibracao.erroMedio * 100, 1) + ' p.p.</p>' : '<p class="nota">No teste de 19/10, o desvio médio de calibração do 1X2 foi de ' + num((r.calibracao1x2 || {}).modelo * 100, 1) + ' p.p. no modelo e ' + num((r.calibracao1x2 || {}).mercado * 100, 1) + ' p.p. no mercado. A tabela por faixas aparece quando você roda a validação neste navegador.</p>')
       + (r.cansaco ? '<h3>Cansaço e calendário</h3><p class="nota">' + esc(r.cansaco) + ' O hub mostra o calendário completo de cada time como contexto, sem mexer na probabilidade.</p>' : '')
       + (!base && r.parametros ? '<p class="nota">Parâmetros desta rodada: meia-vida ' + r.parametros.meiaVida + ' dias, chutes no alvo ' + num(r.parametros.pesoChutesNoAlvo * 100, 0) + '%, correção ' + num(r.parametros.correcao, 1) + '. <button class="sec" id="aplicar-param">Usar estes parâmetros</button> <button class="link" id="param-padrao">Voltar ao padrão</button></p>' : '')
-      + '<h3>Como o hub calcula</h3><ul class="metodo"><li><b>Força dos clubes:</b> um único modelo para 30 competições. Ataque e defesa de cada clube, nível de cada liga, fator casa por competição, peso maior para jogos recentes (meia-vida de 270 dias); mistura gols com chutes no alvo, que oscilam menos.</li><li><b>Modelo na frente:</b> a chance mostrada primeiro é sempre a do modelo; o mercado sem margem fica ao lado para comparar.</li><li><b>Odd sugerida:</b> média das casas que cotam a linha; sem cotação, o preço justo do mercado (ou do modelo) com a margem típica das casas (5,5%).</li><li><b>Sugestões:</b> quatro níveis por faixa de odd; só linhas em que modelo e mercado concordam (até 8 p.p.).</li><li><b>Bilhete:</b> linhas do mesmo jogo pela interseção dos placares; jogos diferentes como independentes.</li><li><b>Limites:</b> escalações e desfalques não entram no modelo; escanteios, cartões e jogadores não têm odd para conferir.</li></ul>';
+      + '<h3>Como o hub calcula</h3><ul class="metodo"><li><b>Força dos clubes:</b> um único modelo para 30 competições. Ataque e defesa de cada clube, nível de cada liga, fator casa por competição, peso maior para jogos recentes (meia-vida de 270 dias); mistura gols com chutes no alvo, que oscilam menos.</li><li><b>Modelo na frente:</b> a chance mostrada primeiro é sempre a do modelo; o mercado sem margem fica ao lado para comparar.</li><li><b>Odd sugerida:</b> média das casas que cotam a linha; sem cotação, o preço justo do mercado (ou do modelo) com a margem típica das casas (5,5%).</li><li><b>Sugestões:</b> quatro níveis por faixa de odd; só linhas em que modelo e mercado concordam (até 8 p.p.).</li><li><b>Bilhete:</b> linhas do mesmo jogo pela interseção dos placares; jogos diferentes como independentes.</li><li><b>Limites:</b> escalações e desfalques não entram no modelo; escanteios e cartões não têm odd para conferir; odds de jogador só quando a Bet365 publica pela ESPN.</li></ul>';
   }
   async function rodarValidacao() {
     if (S.rodando || !S.F) return; S.rodando = true; const comMercado = $('#val-mercado') && $('#val-mercado').checked, escolher = $('#val-param') && $('#val-param').checked; renderValidacao();

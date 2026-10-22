@@ -86,7 +86,16 @@
     const cal = { casa: R().calendario(ctx.porTime, m.h, m.date), fora: R().calendario(ctx.porTime, m.a, m.date) };
     const forma = { casa: R().forma(ctx.porTime, m.h, m.date), fora: R().forma(ctx.porTime, m.a, m.date) }, h2h = R().confrontos(ctx.porTime, m.h, m.a, m.date);
     const fc = ctx.forca ? ctx.forca.porId.get(m.h) : null, ff = ctx.forca ? ctx.forca.porId.get(m.a) : null;
-    const el = ctx.elencos || {}, jogadores = { casa: M().artilheiros(el.casa, pr.lh), fora: M().artilheiros(el.fora, pr.la) };
+    // Quem pode marcar: chance do modelo + odd da Bet365 (quando publicada). Junta os 4 mais prováveis pelo modelo e os 3
+    // favoritos do mercado que estão no elenco de cada time.
+    const el = ctx.elencos || {}, oj = ctx.resumo && ctx.resumo.jogadores, jogadores = {};
+    for (const [lado, lam] of [['casa', pr.lh], ['fora', pr.la]]) {
+      const todos = M().artilheiros(el[lado], lam, { max: 60 }), mercado = oj ? oj.qualquer : [];
+      const daCasa = mercado.map(x => ({ x, j: K().acharJogador(todos, x.nome) || (el[lado] && K().acharJogador(el[lado].atual, x.nome) ? { nome: x.nome, p: null } : null) })).filter(z => z.j).sort((a, b) => a.x.odd - b.x.odd).slice(0, 3).map(z => z.j);
+      const lista = [...todos.slice(0, 4)]; for (const j of daCasa) if (!lista.includes(j) && !lista.some(z => z.nome === j.nome)) lista.push(j);
+      jogadores[lado] = lista.map(j => { const q = K().acharJogador(mercado, j.nome); return Object.assign({}, j, { odd: q ? q.odd : null, ev: q && j.p ? j.p * q.odd - 1 : null }); }).sort((a, b) => (b.p ?? 0) - (a.p ?? 0));
+    }
+    jogadores.casaOdds = oj ? oj.casa : null;
     const alertas = [], x12 = linhas.filter(l => l.mk.t === '1x2' && l.divergencia !== null), maxDiv = x12.reduce((b, l) => Math.abs(l.divergencia) > Math.abs(b ? b.divergencia : 0) ? l : b, null);
     if (maxDiv && Math.abs(maxDiv.divergencia) >= TOLERANCIA) alertas.push({ tipo: 'divergencia', texto: 'Modelo e mercado divergem ' + Math.round(Math.abs(maxDiv.divergencia) * 100) + ' p.p. em "' + maxDiv.rotulo + '" (modelo ' + Math.round(maxDiv.pModelo * 100) + '%, mercado ' + Math.round(maxDiv.pMercado * 100) + '%). Nos testes, quando os dois discordaram assim, o mercado acertou mais: confira escalações e desfalques. As sugestões automáticas não usam linhas divergentes.' });
     for (const [lado, t, nome] of [['casa', pr.casa, m.hn], ['fora', pr.fora, m.an]]) {

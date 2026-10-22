@@ -57,6 +57,25 @@
     }
     return out;
   }
+  /* Odds de jogador da Bet365 (marcar a qualquer momento e primeiro gol), quando a ESPN publica. */
+  const normNome = v => String(v || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z ]/g, ' ').replace(/\s+/g, ' ').trim();
+  function jogadoresDoResumo(j) {
+    const F = R().fracionaria, out = { casa: null, qualquer: [], primeiro: [] };
+    for (const o of [...(j.odds || []), ...(j.pickcenter || [])]) {
+      const po = o && o.bettingOdds && o.bettingOdds.playerOdds; if (!po || out.casa) continue;
+      out.casa = (o.provider && o.provider.name) || 'Casa';
+      const ler = lista => (Array.isArray(lista) ? lista : []).map(x => ({ nome: String(x.player || ''), odd: F(x.value) })).filter(x => x.nome && x.odd > 1);
+      out.qualquer = ler(po.preMatchAnyTimeGoalScorer); out.primeiro = ler(po.preMatchFirstGoalScorer);
+    }
+    return out.qualquer.length || out.primeiro.length ? out : null;
+  }
+  /* Acha um jogador numa lista pelo nome (exato sem acentos; senão sobrenome + inicial). */
+  function acharJogador(lista, nome) {
+    const n = normNome(nome); if (!n || !lista) return null; let x = lista.find(p => normNome(p.nome) === n); if (x) return x;
+    const partes = n.split(' '), ult = partes[partes.length - 1], ini = partes[0][0];
+    const c = lista.filter(p => { const q = normNome(p.nome).split(' '); return q[q.length - 1] === ult && q[0][0] === ini; }); return c.length === 1 ? c[0] : null;
+  }
+
   /* Cotações a partir do placar do dia (só DraftKings 1X2 + linha principal). */
   function doPlacar(m) {
     const o = m && m.odds; if (!o) return [];
@@ -106,5 +125,5 @@
     return { odd: +Math.max(1.01, 1 / (p * (1 + MARGEM_TIPICA + (temMercado ? 0 : 0.02)))).toFixed(2), tipo: temMercado ? 'mercado' : 'modelo', casas: [] };
   }
 
-  G.PCMercado = Object.freeze({ chave, rotulo, familia, meia, doResumo, doPlacar, semMargem, referencia, melhorOdd, oddSugerida, MARGEM_TIPICA });
+  G.PCMercado = Object.freeze({ normNome, jogadoresDoResumo, acharJogador, chave, rotulo, familia, meia, doResumo, doPlacar, semMargem, referencia, melhorOdd, oddSugerida, MARGEM_TIPICA });
 })(typeof globalThis !== 'undefined' ? globalThis : window);
