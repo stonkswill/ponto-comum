@@ -1,6 +1,6 @@
 # Ponto Comum v3
 
-Hub de análise de futebol pré-jogo que roda inteiro no navegador. Usa os dados públicos da ESPN: placares, estatísticas e odds da DraftKings e da Bet365. Abra `ponto-comum-portatil.html` direto no navegador (funciona sem servidor).
+Hub de análise de futebol pré-jogo que roda inteiro no navegador. Usa os dados públicos da ESPN: placares, estatísticas e odds da DraftKings e da Bet365. No ar em **https://stonkswill.github.io/ponto-comum/**. `ponto-comum-portatil.html` é a versão de um arquivo só (abre direto no navegador, sem os dados do robô).
 
 ## O que mudou na v3
 
@@ -15,19 +15,38 @@ Hub de análise de futebol pré-jogo que roda inteiro no navegador. Usa os dados
 | Diário com apostas reais | Registre valor, odd que pegou e nível. O diário mostra lucro, retorno por nível, CLV e a **revisão jogo a jogo**: o que o hub disse × o que aconteceu |
 | Exportar análise | Cada análise tem **Copiar** (texto pronto para colar) e **Baixar** (JSON). Também dá para copiar ou baixar todas |
 
-## Validação medida em 19/10/2026
+## Robô de dados (GitHub Actions)
 
-Método semana a semana: a cada semana, o modelo é ajustado só com jogos anteriores e prevê a semana seguinte. Log loss menor = previsão melhor. Teste de 01/07 a 19/10/2026, fora da escolha dos parâmetros.
+O repositório tem um robô (`.github/workflows/coleta.yml` → `ferramentas/coletar.mjs`) que roda 7 vezes por dia e grava em `dados/`:
 
-| Período de teste (635 jogos) | 1X2 | Over 2,5 | Ambas marcam |
+| Pasta | O que é |
+|---|---|
+| `dados/rede/` | Base de jogos das 30 competições (3 anos). O site carrega daqui primeiro: abre rápido no celular |
+| `dados/odds/` | Abertura e fechamento da DraftKings dos jogos encerrados das competições do radar, com os gols esperados implícitos no preço |
+| `dados/pre/` | Cotações (DraftKings e Bet365) dos jogos das próximas 40 h, a última antes do início |
+| `dados/previsoes/` | O que o hub disse antes de cada jogo (todas as linhas, a leitura e os bilhetes sugeridos), congelado no início |
+| `dados/revisao.json` | O que o hub disse × o que aconteceu: acertos da leitura, retorno dos bilhetes por nível, erro do modelo e do mercado |
+| `dados/validacao.json` | Validação semana a semana com dados reais (gerada com `node ferramentas/validar.mjs`) |
+
+Para testar uma mudança no modelo: `node ferramentas/experimento.mjs` (usa só os arquivos de `dados/`, sem internet).
+
+## Validação com dados reais (22/10/2026)
+
+Teste de 16/07 a 22/10/2026 (691 jogos do radar), parâmetros escolhidos antes desse período. Log loss menor = melhor.
+
+| | 1X2 | Over 2,5 | Ambas marcam |
 |---|---|---|---|
-| Modelo (correção 1,2) | **0,9675** | **0,6621** | 0,6793 |
-| Modelo sem chutes no alvo | 0,9784 | 0,6681 | 0,6824 |
-| Média da liga | 1,0634 | 0,6933 | 0,6849 |
+| Modelo atual | **0,9697** | **0,6592** | 0,6804 |
+| Modelo da v3 original | 0,9743 | 0,6588 | 0,6788 |
+| Média da liga | 1,0652 | 0,6907 | 0,6833 |
 
-- **Contra o modelo antigo** (460 jogos que ele prevê): melhor nos três mercados; o antigo não cobre 28% dos jogos.
-- **Contra o mercado** (fechamento DraftKings, 609 jogos): mercado 0,9347 × modelo 0,9725. Apostar onde só o modelo via valor > 5% perdeu 25,7%. Por isso as sugestões exigem modelo e mercado de acordo.
-- A aba Validação roda de novo no seu navegador e acrescenta: regras de aposta na abertura e no fechamento, o filtro das sugestões contra o resultado real, e os mercados de tempo.
+- **Mercado** (DraftKings sem margem, 665 jogos): fechamento 0,9308, abertura 0,9394, modelo 0,9663. Peso ótimo do modelo numa mistura: 0%.
+- **Regras de aposta por valor** perdem dinheiro na abertura e no fechamento (−13% a −31%). Por isso as sugestões não apostam em "valor": usam linhas em que modelo e mercado concordam.
+- **Filtro das sugestões**: nas linhas que passam, a chance prevista bate com o que acontece (média: 53,5% previsto, 53,2% real; arriscada: 43,4% × 45,6%).
+- **Quem marca primeiro**: modelo 0,836 × média da liga 0,877. 2º tempo e tempo com mais gols: ganho pequeno.
+- **Viés favorito–zebra** (2.418 jogos): favoritos fortes acontecem um pouco mais que o preço indica e zebras um pouco menos, mas apostar nos favoritos só empata depois da margem.
+
+O que mudou no modelo com esses dados: forças dos clubes mais espalhadas, metade do alvo dos jogos passados vindo dos gols esperados implícitos no fechamento do mercado, e margem do 1X2 retirada pelo método da potência.
 
 ## Arquivos
 
@@ -41,6 +60,7 @@ js/analise.js     linhas de uma partida (modelo na frente), destaques, alertas
 js/bilhete.js     bilhete com chance conjunta e sugestões em quatro níveis
 js/diario.js      previsões e apostas, apuração, CLV, revisão jogo a jogo
 js/validacao.js   validação semana a semana, mercado, regras, filtro, tempos
+ferramentas/      robô de coleta, revisão, validação e experimentos (Node, sem navegador)
 ```
 
 ## Fontes (ESPN, sem chave)
