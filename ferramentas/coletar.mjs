@@ -90,6 +90,9 @@ await R.pool(proximos.map(m => async () => {
   if (!analisesPorDia.has(d)) analisesPorDia.set(d, []); analisesPorDia.get(d).push(a);
 }), 4);
 
+// Amostra crua das odds de um resumo (para conferir nomes de campos da Bet365 e de outras casas).
+if (proximos.length) { try { const m = proximos[0], j = await (await fetch(R.ESPN + m.comp + '/summary?event=' + m.id)).json(); gravarJSON(path.join(DADOS, 'amostras', 'resumo-odds.json'), { jogo: m.hn + ' × ' + m.an, comp: m.comp, odds: j.odds || null, pickcenter: j.pickcenter || null }, { compacto: false }); } catch (e) { log('amostra', e.message); } }
+
 // Bilhetes sugeridos do dia (só jogos do radar com o filtro de grandes). Congelados quando o primeiro jogo do bilhete começa.
 for (const [d, as] of analisesPorDia) {
   const arq = prev.get(d), sug = B.sugerir(as.filter(a => passaFiltro(a.m)));
