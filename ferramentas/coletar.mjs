@@ -81,6 +81,7 @@ await R.pool(proximos.map(m => async () => {
   const liga = id => { const g = forca.porId.get(id); return g && g.grupo.startsWith('L:') ? g.grupo.slice(2) : m.comp; };
   const [ec, ef] = await Promise.all([m.h, m.a].map(id => R.carregarElenco(liga(id), id).catch(() => null)));
   const a = A.analisar(m, { F, Fe, Fc, porTime, forca, cotacoes: cot, resumo, elencos: { casa: ec, fora: ef }, agora });
+  for (const [id, e] of [[m.h, ec], [m.a, ef]]) if (e) gravarJSON(path.join(DADOS, 'elencos', id + '.json'), { em: new Date(agora).toISOString(), liga: e.liga, atual: e.atual.map(p => [p.id, p.nome, p.pos, p.jogos, p.banco, p.gols, p.noAlvo, p.lesionado ? 1 : 0]), anterior: e.anterior.map(p => [p.id, p.nome, p.pos, p.jogos, p.banco, p.gols, p.noAlvo, 0]) });
   const d = R.dataSP(m.date);
   if (!pre.has(d)) pre.set(d, lerJSON(arqDia('pre', d), {}));
   pre.get(d)[m.id] = { em: new Date(agora).toISOString(), cot: cot.map(q => [q.casa, K.chave(q.mk), q.odd]), escalacoes: !!(resumo.escalacoes && resumo.escalacoes.some(e => e.titulares.length >= 11)), jogadores: resumo.jogadores ? { casa: resumo.jogadores.casa, qualquer: resumo.jogadores.qualquer.map(x => [x.nome, x.odd]), primeiro: resumo.jogadores.primeiro.map(x => [x.nome, x.odd]) } : null };

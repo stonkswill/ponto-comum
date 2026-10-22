@@ -202,8 +202,10 @@
   // Quem marca primeiro (gols como processo de Poisson): mandante λh/L·(1−e^−L), visitante λa/L·(1−e^−L), sem gols e^−L.
   function primeiroGol(lh, la) { const L = lh + la, q = Math.exp(-L); return { h: lh / L * (1 - q), a: la / L * (1 - q), '-': q }; }
 
-  /* Chance de um jogador marcar (experimental, sem odd para conferir): parcela dele nos gols e nos chutes no alvo do
-   * time (temporada atual + metade da anterior), por jogo como titular, aplicada aos gols esperados do time. */
+  /* Chance de um jogador marcar (se começar jogando). Taxa de gols por jogo como titular a partir de gols e chutes no alvo
+   * (temporada atual + metade da anterior), puxada para uma âncora da posição até o jogador ter jogos suficientes (k = 5):
+   * evita que 1 gol em 2 jogos vire 50% de chance. As taxas são normalizadas para somar os gols esperados do time no jogo. */
+  const ANCORA_POSICAO = { F: 0.30, M: 0.10, D: 0.035 }, K_ANCORA = 5;
   function artilheiros(elenco, lambdaTime, { max = 4 } = {}) {
     if (!elenco || !Number.isFinite(lambdaTime)) return [];
     const junta = new Map();
@@ -214,12 +216,14 @@
       if (peso === 1) { x.lesionado = p.lesionado; x.noElenco = true; x.nome = p.nome; x.pos = p.pos; x.golsAtual = p.gols; x.jogosAtual = p.jogos; }
       junta.set(p.id, x);
     }
-    const js = [...junta.values()].filter(p => p.noElenco), G = js.reduce((s, p) => s + p.gols, 0), S = js.reduce((s, p) => s + p.noAlvo, 0);
+    const js = [...junta.values()], G = js.reduce((s, p) => s + p.gols, 0), S = js.reduce((s, p) => s + p.noAlvo, 0);
     const maxJ = l => l && l.length ? Math.max(...l.map(p => p.jogos)) : 0, jogosTime = maxJ(elenco.atual) + 0.5 * maxJ(elenco.anterior);
-    if (!jogosTime || G + S === 0) return [];
-    return js.filter(p => !p.lesionado && p.jogos - p.banco >= 2).map(p => {
-      const parcela = 0.5 * (p.gols + 0.2) / (G + 2) + 0.5 * (p.noAlvo + 0.5) / (S + 5), titular = (p.jogos - p.banco) + 0.35 * p.banco;
-      const porJogo = Math.min(0.45, parcela * jogosTime / Math.max(titular, jogosTime * 0.3)), lambda = lambdaTime * porJogo;
+    if (!jogosTime) return [];
+    const kappa = G > 0 && S > 0 ? G / S : 0.3;
+    for (const p of js) { p.titular = Math.max(0, p.jogos - p.banco) + 0.35 * p.banco; const obs = 0.5 * p.gols + 0.5 * kappa * p.noAlvo, a = ANCORA_POSICAO[p.pos] ?? 0.08; p.taxa = (obs + a * K_ANCORA) / (p.titular + K_ANCORA); }
+    const T = js.reduce((s, p) => s + p.taxa * Math.min(1, p.titular / jogosTime), 0); if (!(T > 0)) return [];
+    return js.filter(p => p.noElenco && !p.lesionado && p.jogos - p.banco >= 2).map(p => {
+      const lambda = p.taxa * lambdaTime / T;
       return { nome: p.nome, pos: p.pos, p: 1 - Math.exp(-lambda), gols: p.golsAtual || 0, jogos: p.jogosAtual || 0 };
     }).sort((a, b) => b.p - a.p).slice(0, max);
   }
