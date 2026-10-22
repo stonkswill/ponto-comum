@@ -1,0 +1,38 @@
+name: Coleta de dados
+
+on:
+  schedule:
+    # Horários em UTC (São Paulo = UTC−3). Pega os jogos da Europa antes do início e apura depois.
+    - cron: '17 2,10,12,14,16,18,21 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['ferramentas/**', 'js/**', '.github/workflows/coleta.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: coleta
+  cancel-in-progress: false
+
+jobs:
+  coleta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Coletar
+        run: node ferramentas/coletar.mjs
+      - name: Gravar no repositório
+        run: |
+          git config user.name "ponto-comum-robo"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados
+          if git diff --cached --quiet; then echo "Nada novo."; exit 0; fi
+          git commit -q -m "Dados $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q && exit 0; sleep 5; done
+          exit 1
