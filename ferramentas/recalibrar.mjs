@@ -36,9 +36,9 @@ async function avaliarModelo(cfg) {
   return { ajuste: r4(nota(ma)), teste: r4(nota(mt)), n: mt.n, teste1x2: mt.logLoss1x2 };
 }
 const variacoes = [
-  ['mktBlend', v => [Math.max(0, v - 0.2), Math.min(0.9, v + 0.2)]], ['xgBlend', v => [Math.max(0, v - 0.2), Math.min(0.9, v + 0.2)]],
+  ['mktBlend', v => [Math.max(0, v - 0.2), Math.min(0.9, v + 0.2)].map(x => +x.toFixed(2))], ['xgBlend', v => [Math.max(0, v - 0.2), Math.min(0.9, v + 0.2)].map(x => +x.toFixed(2))],
   ['sdTeam', v => [+(v * 0.8).toFixed(3), +(v * 1.2).toFixed(3)]], ['halfLife', v => [Math.round(v * 0.7), Math.round(v * 1.4)]],
-  ['sotBlend', v => [Math.max(0, v - 0.2), Math.min(0.9, v + 0.2)]], ['esticar', v => [+(v - 0.1).toFixed(2), +(v + 0.1).toFixed(2)]]
+  ['sotBlend', v => [Math.max(0, v - 0.2), Math.min(0.9, v + 0.2)].map(x => +x.toFixed(2))], ['esticar', v => [+(v - 0.1).toFixed(2), +(v + 0.1).toFixed(2)]]
 ];
 log('modelo: avaliando os ajustes atuais');
 const baseModelo = await avaliarModelo(atualModelo); log('  atual', JSON.stringify(baseModelo));
