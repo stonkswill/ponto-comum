@@ -27,6 +27,8 @@ O repositório tem um robô (`.github/workflows/coleta.yml` → `ferramentas/col
 | `dados/previsoes/` | O que o hub disse antes de cada jogo (todas as linhas, a leitura e os palpites), congelado no início |
 | `dados/revisao.json` | O que o hub disse × o que aconteceu: acerto e retorno de cada tipo de palpite, erro do modelo e do mercado, modelo de jogador × Bet365 |
 | `dados/validacao.json` | Validação semana a semana com dados reais (gerada com `node ferramentas/validar.mjs`) |
+| `dados/modelo/parametros.json` | Ajustes do modelo e das regras adotados pela recalibração semanal (o site e o robô aplicam) |
+| `dados/modelo/recalibracao.json` | Registro de cada recalibração: variações testadas, quais passaram na trava, decisão |
 
 Para testar uma mudança no modelo: `node ferramentas/experimento.mjs` (usa só os arquivos de `dados/`, sem internet). Antes de publicar mudanças no site: `node ferramentas/versao.mjs` (carimba a versão dos arquivos para o navegador não misturar novo e velho).
 
@@ -48,6 +50,14 @@ Teste de 16/07 a 22/10/2026 (691 jogos do radar), parâmetros escolhidos antes d
 - **Viés favorito–zebra** (2.418 jogos): favoritos fortes acontecem um pouco mais que o preço indica e zebras um pouco menos, mas apostar nos favoritos só empata depois da margem.
 
 O que mudou no modelo com esses dados: forças dos clubes mais espalhadas, metade do alvo dos jogos passados vindo dos gols esperados implícitos no fechamento do mercado, e margem do 1X2 retirada pelo método da potência.
+
+## Recalibração semanal com trava
+
+`.github/workflows/recalibrar.yml` → `ferramentas/recalibrar.mjs`, toda segunda às 06:17 (São Paulo), depois da rodada e das fontes externas.
+
+- **Modelo**: testa, uma de cada vez, variações dos ajustes atuais (peso das odds de fechamento passadas, peso do xG, dispersão dos times, meia-vida, peso dos chutes no alvo, correção dos extremos) na validação semana a semana da base ESPN: 24 semanas de ajuste + as últimas 14 de teste. Passa na trava se melhorar a soma dos log loss (1X2 + over 2,5 + ambas) em pelo menos 0,002 **nos dois períodos**, com 400+ jogos no teste.
+- **Regras dos palpites**: testa variações da distância modelo × mercado, odd mínima, chance mínima e faixa da odd maior no backtest da football-data (treino até 2023/24, teste depois), na odd da Bet365 de antes da rodada. Passa se o retorno subir 1 p.p. ou mais nos dois períodos, com volume mínimo.
+- **Adoção**: só se a mesma variação passar em **2 semanas seguidas**, e no máximo **uma mudança a cada 28 dias**. Vai para `dados/modelo/parametros.json` com data, de/para e ganho; a aba Validação mostra tudo.
 
 ## Backtest financeiro (23/10/2026)
 

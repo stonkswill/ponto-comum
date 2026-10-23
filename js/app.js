@@ -50,7 +50,9 @@
       const r = await R.carregarRede({ forcar, onProgress: (d, t) => { S.rede.progresso = [d, t]; renderStatus(); } });
       S.jogos = r.jogos; S.rede.relatorio = r.relatorio; S.rede.carregadaEm = r.carregadaEm; indexar(); mesclar(S.agenda);
       S.rede.status = 'ajustando'; renderStatus(); await pausa();
-      const p = await R.kv.get('kv', 'parametros'), cfg = p && p.aplicar ? { halfLife: p.meiaVida, sotBlend: p.pesoChutesNoAlvo, esticar: p.correcao } : {};
+      // Ajustes adotados pela recalibração semanal (dados/modelo/parametros.json); um ajuste manual da aba Validação vale por cima.
+      const pub = await parametrosPublicados(), p = await R.kv.get('kv', 'parametros');
+      const cfg = Object.assign({}, pub.modelo || {}, p && p.aplicar ? { halfLife: p.meiaVida, sotBlend: p.pesoChutesNoAlvo, esticar: p.correcao } : {});
       S.F = M.ajustarGols(S.jogos, cfg); await pausa();
       S.Fe = M.ajustarContagem(S.jogos, 'escanteios'); await pausa();
       S.Fc = M.ajustarContagem(S.jogos, 'cartoes'); S.forca = M.tabelaForca(S.F); calcularGrandes();
@@ -65,7 +67,9 @@
     catch (e) { S.agenda = []; S.falhasAgenda = [e.message || String(e)]; }
     renderRadar(); if (S.aba === 'palpites') carregarPalpites();
   }
-  const ctxAnalise = (m, cotacoes, resumo) => ({ F: S.F, Fe: S.Fe, Fc: S.Fc, porTime: S.porTime, forca: S.forca, cotacoes, resumo, elencos: S.elencos.get(m.id) || {} });
+  let promParam = null;
+  const parametrosPublicados = () => promParam || (promParam = R.carregarDados('modelo/parametros.json').then(x => (S.paramPub = x || {})).catch(() => (S.paramPub = {})));
+  const ctxAnalise = (m, cotacoes, resumo) => ({ regra: S.paramPub && S.paramPub.regra && Object.keys(S.paramPub.regra).length ? S.paramPub.regra : null, F: S.F, Fe: S.Fe, Fc: S.Fc, porTime: S.porTime, forca: S.forca, cotacoes, resumo, elencos: S.elencos.get(m.id) || {} });
   function juntarCotacoes(a, b) { const visto = new Set(a.map(q => q.casa + '|' + K.chave(q.mk))); return a.concat(b.filter(q => !visto.has(q.casa + '|' + K.chave(q.mk)))); }
   /* Liga do elenco: a liga doméstica do clube pelo modelo; sem ela, a competição do jogo. */
   function ligaDoTime(id, comp) { const g = S.forca && S.forca.porId.get(id) ? S.forca.porId.get(id).grupo : null; return g && g.startsWith('L:') ? g.slice(2) : comp; }
@@ -302,6 +306,22 @@
       + (fams ? '<div class="tabela"><table><thead><tr><th>Mercado</th><th class="num">Linhas</th><th class="num">Erro do modelo ↓</th><th class="num">Erro do mercado ↓</th></tr></thead><tbody>' + fams + '</tbody></table></div><p class="nota">Log loss nas linhas registradas que têm preço de mercado (menor é melhor). Escanteios e cartões não têm mercado na fonte.</p>' : '')
       + dias;
   }
+  /* Recalibração semanal com trava (dados/modelo/recalibracao.json, gravado pelo robô toda segunda). */
+  const NOME_PARAM = { mktBlend: 'Peso das odds de fechamento passadas', xgBlend: 'Peso do xG', sdTeam: 'Quanto os times podem se afastar da média', halfLife: 'Meia-vida dos jogos (dias)', sotBlend: 'Peso dos chutes no alvo', esticar: 'Correção dos extremos', acordo: 'Distância máxima entre modelo e mercado', oddMin: 'Odd mínima do principal', chanceMin: 'Chance mínima do principal', alt: 'Faixa da odd maior' };
+  const valorParam = (p, v) => Array.isArray(v) ? v.map(x => num(x)).join('–') : p === 'acordo' ? num(v * 100, 0) + ' p.p.' : p === 'chanceMin' ? pct(v) : p === 'halfLife' ? String(v) : num(v, p === 'sdTeam' ? 3 : 2);
+  function blocoRecalibracao() {
+    const r = S.recal; if (!r || !r.semanas || !r.semanas.length) return '';
+    const u = r.semanas[0], t = r.trava || {}, mud = (S.paramPub && S.paramPub.mudancas) || [];
+    const ganho = c => c.tipo === 'modelo' ? '<span class="' + (c.ganhoAjuste > 0 && c.ganhoTeste > 0 ? 'pos' : 'neg') + '">' + num(c.ganhoAjuste * 1000, 1) + ' / ' + num(c.ganhoTeste * 1000, 1) + '</span>' : '<span class="' + (c.ganhoTreino > 0 && c.ganhoTeste > 0 ? 'pos' : 'neg') + '">' + sinal(c.ganhoTreino) + ' / ' + sinal(c.ganhoTeste) + '</span>';
+    const linhas = u.candidatos.slice().sort((a, b) => (b.margem || 0) - (a.margem || 0)).map(c => '<tr' + (c.passou ? ' class="valor"' : '') + '><td>' + esc(NOME_PARAM[c.param] || c.param) + (c.palpite ? ' <small>(' + (c.palpite === 'principal' ? 'principal' : 'odd maior') + ')</small>' : '') + '</td><td class="num nw">' + valorParam(c.param, c.atual) + ' → ' + valorParam(c.param, c.valor) + '</td><td class="num nw">' + ganho(c) + '</td><td>' + (c.passou ? '<b>passou</b>' : 'não') + '</td></tr>').join('');
+    const hist = r.semanas.slice(0, 8).map(w => '<li><b>' + w.data.slice(0, 10).split('-').reverse().join('/') + '</b>: ' + esc(w.decisao) + '</li>').join('');
+    return '<h3>Recalibração semanal</h3><p class="nota">Toda segunda-feira, depois da rodada, o robô testa pequenas variações nos ajustes do modelo (validação semana a semana na base ESPN) e nas regras dos palpites (backtest de 18 mil jogos da football-data). <b>Trava:</b> a mudança precisa melhorar o período de ajuste e o de teste ao mesmo tempo (modelo: log loss ' + num((t.modelo || 0.002) * 1000, 0) + ' milésimos ou mais; regras: retorno ' + sinal(t.regra || 0.01) + ' ou mais), passar em ' + (t.semanasSeguidas || 2) + ' semanas seguidas e respeitar ' + (t.diasEntreMudancas || 28) + ' dias desde a última mudança. Assim um fim de semana de sorte ou azar não mexe no modelo.</p>'
+      + '<div class="resumo"><div><span class="sobre">Última rodada</span><b>' + diaHora(u.data) + '</b><small>' + u.candidatos.length + ' variações testadas</small></div><div><span class="sobre">Em observação</span><b>' + (r.pendente ? esc(NOME_PARAM[r.pendente.chave.split('.')[1].split('=')[0]] || r.pendente.chave) : 'nenhuma') + '</b><small>' + (r.pendente ? 'passou ' + r.pendente.semanas + ' de ' + (t.semanasSeguidas || 2) + ' semanas' : 'nada passou na trava') + '</small></div><div><span class="sobre">Mudanças adotadas</span><b>' + mud.length + '</b><small>' + (mud.length ? 'última em ' + mud[mud.length - 1].data.slice(0, 10).split('-').reverse().join('/') : 'o modelo segue com os ajustes de fábrica') + '</small></div></div>'
+      + '<p class="nota"><b>Decisão desta semana:</b> ' + esc(u.decisao) + '</p>'
+      + '<details class="filtro"><summary>Variações testadas nesta semana</summary><div class="tabela"><table><thead><tr><th>Ajuste</th><th class="num">Atual → testado</th><th class="num">Ganho ajuste / teste</th><th>Trava</th></tr></thead><tbody>' + linhas + '</tbody></table></div><p class="nota">Modelo: ganho em milésimos de log loss (positivo = previu melhor). Regras: diferença no retorno por aposta na odd da Bet365.</p></details>'
+      + (mud.length ? '<h4>Mudanças adotadas</h4><ul class="lista">' + mud.slice().reverse().map(m => { const p = m.chave.split('.')[1].split('=')[0]; return '<li><b>' + m.data.slice(0, 10).split('-').reverse().join('/') + '</b>: ' + esc(NOME_PARAM[p] || p) + ' ' + valorParam(p, m.de) + ' → ' + valorParam(p, m.para) + '</li>'; }).join('') + '</ul>' : '')
+      + (r.semanas.length > 1 ? '<details class="contexto"><summary>Semanas anteriores</summary><ul class="lista">' + hist + '</ul></details>' : '');
+  }
   /* ---------- Validação ---------- */
   function tabelaMetricas(linhas) { return '<div class="tabela"><table><thead><tr><th></th><th class="num">Jogos</th><th class="num">Log loss 1X2 ↓</th><th class="num">Log loss over 2,5 ↓</th><th class="num">Log loss ambas ↓</th></tr></thead><tbody>' + linhas.map(([n, m]) => m ? '<tr><td>' + n + '</td><td class="num">' + (m.n ?? '—') + '</td><td class="num">' + num(m.logLoss1x2, 4) + '</td><td class="num">' + num(m.logLossOver25, 4) + '</td><td class="num">' + num(m.logLossAmbas, 4) + '</td></tr>' : '').join('') + '</tbody></table></div>'; }
   function tabelaRegras(rg) {
@@ -329,7 +349,7 @@
     const mk = r.mercado, cal = r.calibracao ? r.calibracao.faixas : null, tp = r.tempos;
     el.innerHTML = '<div class="cabeca"><div><p class="sobre">' + (base ? 'MEDIDO EM 19/10/2026' : r.publicado ? 'PUBLICADO EM ' + diaHora(r.geradoEm) + ' · DADOS REAIS' : 'RODADO NESTE NAVEGADOR EM ' + diaHora(r.geradoEm)) + '</p><h1>Validação</h1></div><div class="acoes"><label class="chk"><input type="checkbox" id="val-mercado" checked> comparar com o mercado (~600 consultas)</label><label class="chk"><input type="checkbox" id="val-param"> reescolher parâmetros</label><button class="pri" id="rodar-validacao"' + (S.rodando || !S.F ? ' disabled' : '') + '>' + (S.rodando ? 'Rodando…' : 'Rodar validação') + '</button></div></div>'
       + '<p class="nota" id="val-progresso">Método: a cada semana, o modelo é ajustado só com jogos anteriores e prevê a semana seguinte. Os parâmetros são escolhidos no período de ajuste (' + r.periodoAjuste.map(d => d.split('-').reverse().join('/')).join(' a ') + ') e conferidos no período de teste (' + r.periodoTeste.map(d => d.split('-').reverse().join('/')).join(' a ') + '), que não participou da escolha. Log loss menor = previsão melhor.</p>'
-      + blocoHistorico() + blocoBacktest() + '<h3>Período de teste (base ESPN)</h3>' + tabelaMetricas([['Modelo (com correção ' + num(r.parametros.correcao, 1) + ')', r.teste.modelo], ['Modelo sem correção', r.teste.semCorrecao], ['Modelo sem chutes no alvo', r.teste.semChutes], ['Média da liga', r.teste.mediaDaLiga]])
+      + blocoHistorico() + blocoRecalibracao() + blocoBacktest() + '<h3>Período de teste (base ESPN)</h3>' + tabelaMetricas([['Modelo (com correção ' + num(r.parametros.correcao, 1) + ')', r.teste.modelo], ['Modelo sem correção', r.teste.semCorrecao], ['Modelo sem chutes no alvo', r.teste.semChutes], ['Média da liga', r.teste.mediaDaLiga]])
       + (r.contraModeloAntigo ? '<h3>Contra o modelo antigo do hub</h3><p class="nota">Nos ' + r.contraModeloAntigo.n + ' jogos do teste que o modelo antigo conseguiu prever; ' + esc(r.contraModeloAntigo.coberturaAntigo) + '.</p>' + tabelaMetricas([['Antigo (Poisson por mando, só a liga do jogo)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.antigo)], ['Atual (todas as competições)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.novo)]]) : '')
       + (mk ? '<h3>Contra o mercado (DraftKings, sem margem)</h3><div class="tabela"><table><tbody><tr><td>Log loss 1X2 · modelo</td><td class="num">' + num(mk.logLoss.modelo, 4) + '</td></tr><tr><td>Log loss 1X2 · mercado no fechamento</td><td class="num"><b>' + num(mk.logLoss.mercado, 4) + '</b></td></tr>' + (mk.logLoss.aberturaMercado ? '<tr><td>Log loss 1X2 · mercado na abertura</td><td class="num">' + num(mk.logLoss.aberturaMercado, 4) + '</td></tr>' : '') + '<tr><td>Melhor peso do modelo numa mistura com o mercado</td><td class="num">' + num(mk.pesoModeloNaMistura * 100, 0) + '%</td></tr>'
         + (!mk.regras && mk.apostasSimuladas && mk.apostasSimuladas.fechamento ? '<tr><td>Apostar onde o modelo vê valor > 5% (fechamento)</td><td class="num">' + mk.apostasSimuladas.fechamento.n + ' apostas · ' + sinal(mk.apostasSimuladas.fechamento.roi) + '</td></tr><tr><td>Idem, na abertura</td><td class="num">' + mk.apostasSimuladas.abertura.n + ' apostas · ' + sinal(mk.apostasSimuladas.abertura.roi) + '</td></tr>' : '') + '</tbody></table></div>'
@@ -390,6 +410,7 @@
     R.carregarDados('validacao.json').then(x => { if (x && x.teste) { S.valPublicada = Object.assign(x, { publicado: true }); if (S.validacao && Date.parse(S.validacao.geradoEm) < Date.parse(x.geradoEm)) S.validacao = null; if (S.aba === 'validacao') renderValidacao(); } });
     R.carregarDados('revisao.json').then(x => { S.revisao = x || false; if (S.aba === 'validacao') renderValidacao(); });
     R.carregarDados('backtest.json').then(x => { S.backtest = x || null; if (S.aba === 'validacao') renderValidacao(); });
+    R.carregarDados('modelo/recalibracao.json').then(x => { S.recal = x || null; if (S.aba === 'validacao') renderValidacao(); });
     const h = location.hash.slice(1); navegar(ABAS.includes(h) ? h : 'radar');
     carregarAgenda(); carregarRedeEModelos();
     setInterval(() => { if (S.aba === 'radar' && S.dia === hojeSP()) carregarAgenda(); }, 5 * 60e3);

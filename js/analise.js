@@ -113,7 +113,7 @@
     if (!ref) alertas.push({ tipo: 'mercado', texto: 'Sem cotação para esta partida: as odds sugeridas são estimadas pelo modelo com a margem típica das casas.' });
     if (ctx.resumo && ctx.resumo.escalacoes && ctx.resumo.escalacoes.some(e => e.titulares.length >= 11)) alertas.push({ tipo: 'escalacao', texto: 'Escalações confirmadas pela fonte. O modelo não as usa; o mercado já reage a elas.' });
     const iniciado = Date.parse(m.date) <= agora || m.state === 'in' || m.done;
-    const pal = palpites({ linhas, destaques, jogadores });
+    const pal = palpites({ linhas, destaques, jogadores }, ctx.regra ? Object.assign({}, REGRA_PALPITE, ctx.regra) : REGRA_PALPITE);
     return { m, iniciado, lh: pr.lh, la: pr.la, rho, frac, pred: pr, ref, linhas, destaques, jogadores, palpites: pal, placares: placares.slice(0, 6), escanteios: esc, cartoes: car,
       calendario: cal, forma, h2h, forca: { casa: fc || null, fora: ff || null }, resumo: ctx.resumo || null, alertas, cotacoes: cot, geradoEm: new Date(agora).toISOString() };
   }
