@@ -1,71 +1,177 @@
 {
- "geradoEm": "2026-10-23T18:55:57.252Z",
- "jogos": 1,
+ "geradoEm": "2026-10-23T21:47:14.982Z",
+ "jogos": 6,
  "porFamilia": {
   "resultado": {
-   "n": 18,
-   "llModelo": 0.5155,
-   "llMercado": 0.5004,
-   "nMercado": 18,
-   "llModeloComMercado": 0.5155,
-   "brier": 0.1876,
+   "n": 108,
+   "llModelo": 0.5196,
+   "llMercado": 0.5156,
+   "nMercado": 108,
+   "llModeloComMercado": 0.5196,
+   "brier": 0.1801,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 24,
-   "llModelo": 0.7266,
-   "llMercado": 0.7079,
-   "nMercado": 24,
-   "llModeloComMercado": 0.7266,
-   "brier": 0.2514,
+   "n": 144,
+   "llModelo": 0.557,
+   "llMercado": 0.5318,
+   "nMercado": 144,
+   "llModeloComMercado": 0.557,
+   "brier": 0.1859,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 14,
-   "llModelo": 0.8989,
-   "llMercado": 0.8822,
-   "nMercado": 14,
-   "llModeloComMercado": 0.8989,
-   "brier": 0.3281,
+   "n": 84,
+   "llModelo": 0.5834,
+   "llMercado": 0.5698,
+   "nMercado": 84,
+   "llModeloComMercado": 0.5834,
+   "brier": 0.1985,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 24,
-   "llModelo": 0.7341,
+   "n": 144,
+   "llModelo": 0.5912,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2734,
+   "brier": 0.2037,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 22,
-   "llModelo": 0.5999,
+   "n": 132,
+   "llModelo": 0.5905,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2018,
+   "brier": 0.2013,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 3,
-  "acertos": 0,
-  "esperado": 2.1354
+  "n": 18,
+  "acertos": 10,
+  "esperado": 12.3918
  },
- "jogadores": null,
- "palpites": {},
+ "jogadores": {
+  "n": 46,
+  "marcaram": 5,
+  "previsto": 10.3581,
+  "llModelo": 0.3796,
+  "comOdd": 30,
+  "marcaramComOdd": 4,
+  "previstoModeloComOdd": 6.6348,
+  "implicitoBrutoComOdd": 9.7802,
+  "apostasModeloAcimaDaOdd": {
+   "n": 0,
+   "retorno": null
+  },
+  "faixas": [
+   {
+    "de": 0,
+    "n": 2,
+    "previsto": 0.0915,
+    "aconteceu": 0
+   },
+   {
+    "de": 0.1,
+    "n": 16,
+    "previsto": 0.1648,
+    "aconteceu": 0.0625
+   },
+   {
+    "de": 0.2,
+    "n": 22,
+    "previsto": 0.2393,
+    "aconteceu": 0.1364
+   },
+   {
+    "de": 0.3,
+    "n": 3,
+    "previsto": 0.3369,
+    "aconteceu": 0
+   },
+   {
+    "de": 0.4,
+    "n": 3,
+    "previsto": 0.4205,
+    "aconteceu": 0.3333
+   }
+  ]
+ },
+ "palpites": {
+  "principal": {
+   "n": 5,
+   "acertos": 1,
+   "previsto": 0.6164,
+   "comOdd": 5,
+   "lucro": -3.33,
+   "oddMedia": 1.566,
+   "retorno": -0.666,
+   "retornoMelhorOdd": -0.6666
+  },
+  "oddMaior": {
+   "n": 3,
+   "acertos": 1,
+   "previsto": 0.5127,
+   "comOdd": 3,
+   "lucro": -1.26,
+   "oddMedia": 1.9367,
+   "retorno": -0.42,
+   "retornoMelhorOdd": -0.42
+  },
+  "jogador": {
+   "n": 3,
+   "acertos": 1,
+   "previsto": 0.2977,
+   "comOdd": 3,
+   "lucro": -1.0476,
+   "oddMedia": 3.0675,
+   "retorno": -0.3492,
+   "retornoMelhorOdd": -0.3492
+  },
+  "destaque": {
+   "n": 2,
+   "acertos": 2,
+   "previsto": 0.6969,
+   "comOdd": 2,
+   "lucro": 0.67,
+   "oddMedia": 1.335,
+   "retorno": 0.335,
+   "retornoMelhorOdd": 0.335
+  }
+ },
  "movimentoDoMercado": {
-  "n": 0,
-  "aFavorDoModelo": 0,
-  "medio": null
+  "n": 4,
+  "aFavorDoModelo": 2,
+  "medio": 0.0115
  },
  "dias": [
+  {
+   "dia": "2026-10-25",
+   "jogos": [
+    {
+     "id": "401875036",
+     "jogo": "Internazionale × Fiorentina",
+     "comp": "ita.1",
+     "inicio": "2026-10-25T11:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882835",
+     "jogo": "Athletic Club × Getafe",
+     "comp": "esp.1",
+     "inicio": "2026-10-25T13:00Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-10-24",
    "jogos": [
@@ -269,35 +375,301 @@
      "jogo": "Torino × Monza",
      "comp": "ita.1",
      "inicio": "2026-10-23T18:45Z",
-     "pendente": true
+     "placar": [
+      3,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Monza ou empate",
+       "odd": 1.7,
+       "casa": "Bet 365",
+       "chance": 0.5399,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.925,
+       "casa": "Bet 365",
+       "chance": 0.517,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Torino",
+      "p": 0.4609,
+      "pMercado": 0.4593,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7202,
+       "odd": 1.27,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Torino ou Monza)",
+       "p": 0.7303,
+       "odd": 1.3,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876428",
      "jogo": "Brest × Nice",
      "comp": "fra.1",
      "inicio": "2026-10-23T18:45Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Brest ou empate",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.6942,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 2.15,
+       "casa": "DraftKings",
+       "chance": 0.4532,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Pathé Mboup marca",
+       "odd": 3.5,
+       "chance": 0.2418,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Brest",
+      "p": 0.4564,
+      "pMercado": 0.4,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Brest ou empate",
+       "p": 0.7106,
+       "odd": 1.36,
+       "ok": 0
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.689,
+       "odd": 1.41,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5651,
+       "odd": 1.62,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401879253",
      "jogo": "Ipswich Town × Nottingham Forest",
      "comp": "eng.1",
      "inicio": "2026-10-23T19:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ipswich Town ou empate",
+       "odd": 1.667,
+       "casa": "Bet 365",
+       "chance": 0.5738,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.74,
+       "casa": null,
+       "chance": 0.5678,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Nottingham Forest: menos de 2,5 cartões",
+       "odd": 1.34,
+       "casa": null,
+       "chance": 0.6919,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Jack Clarke marca",
+       "odd": 3.75,
+       "chance": 0.2395,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Nottingham Forest",
+      "p": 0.4233,
+      "pMercado": 0.429,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Nottingham Forest ou empate",
+       "p": 0.6754,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6654,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5898,
+       "odd": 1.74,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882836",
      "jogo": "Alavés × Málaga",
      "comp": "esp.1",
      "inicio": "2026-10-23T19:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Alavés",
+       "odd": 1.625,
+       "casa": "DraftKings",
+       "chance": 0.6079,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Alavés: mais de 1,5 cartões",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.7019,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Alavés",
+      "p": 0.6148,
+      "pMercado": 0.6009,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6862,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Alavés ou Málaga)",
+       "p": 0.7789,
+       "odd": 1.26,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Alavés",
+       "p": 0.6148,
+       "odd": 1.63,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884761",
      "jogo": "VfB Stuttgart × Borussia Mönchengladbach",
      "comp": "ger.1",
      "inicio": "2026-10-23T18:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.47,
+       "casa": null,
+       "chance": 0.6664,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ermedin Demirovic marca",
+       "odd": 1.9523809523809523,
+       "chance": 0.4117,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória VfB Stuttgart",
+      "p": 0.6932,
+      "pMercado": 0.7376,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória VfB Stuttgart",
+       "p": 0.6932,
+       "odd": 1.32,
+       "ok": 0
+      },
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.6885,
+       "odd": 1.47,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6188,
+       "odd": 1.52,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (VfB Stuttgart ou Borussia Mönchengladbach)",
+       "p": 0.8302,
+       "odd": 1.14,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
