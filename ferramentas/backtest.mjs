@@ -177,6 +177,23 @@ Object.assign(atual, {
 const porTemporada = (r) => { const out = {}; for (const t of [...new Set(J.map(j => j.temporada))].sort()) { out[t] = simular(J.filter(j => j.temporada === t), r, { parte: 'tudo' }); } return out; };
 const regraAtual = {}; for (const [k, r] of Object.entries(atual)) regraAtual[k] = { treino: simular(J, r, { parte: 'treino' }), teste: simular(J, r, { parte: 'teste' }), testeFechamento: simular(J, r, { parte: 'teste', momento: 'fech' }), testeMelhorOdd: simular(J, r, { parte: 'teste', fonte: 'max' }), porTemporada: porTemporada(r) };
 log('regra atual:', JSON.stringify(regraAtual));
+// Só as apostas que o hub recomendaria (principal + odd maior), separadas por faixa de odd.
+const palpitesPorFaixa = [];
+for (const [lo, hi] of [[1.35, 1.6], [1.6, 2.0], [2.0, 2.6], [2.6, 3.5]]) {
+  const r = { treino: [], teste: [] };
+  for (const [k, regra] of [['principal', atual.principal5], ['oddMaior', atual.oddMaior26]]) {
+    const filtroFaixa = Object.assign({}, regra, { escolher: true });
+    for (const parte of ['treino', 'teste']) {
+      // escolhe pela regra (uma por jogo) e só depois filtra pela faixa da odd escolhida
+      const ap = [];
+      for (const j of J) { if (parte === 'treino' ? j.teste : !j.teste) continue; const ls = linhas(j, 'b365', 'pre').filter(regra.filtro); if (!ls.length) continue; const l = ls.reduce((b, x) => regra.nota(x) > regra.nota(b) ? x : b); if (l.odd >= lo && l.odd < hi) ap.push({ data: j.m.date, odd: l.odd, y: l.y, p: cons(l), tipo: k, mk: l.t }); }
+      r[parte].push(...ap);
+    }
+  }
+  const resumo = parte => { const ap = r[parte].sort((a, b) => a.data.localeCompare(b.data)); const f = financas(ap); f.porMercado = Object.fromEntries(['1x2', 'dc', 'tot'].map(t => [t, financas(ap.filter(a => a.mk === t))])); return f; };
+  palpitesPorFaixa.push({ de: lo, ate: hi, treino: resumo('treino'), teste: resumo('teste') });
+}
+log('palpites por faixa:', JSON.stringify(palpitesPorFaixa.map(x => [x.de, x.ate, x.treino.n, x.treino.retorno, x.teste.n, x.teste.retorno])));
 
 // 4) Variantes do modelo (opcional): sem odds de fechamento passadas, com xG.
 let variantes = (() => { try { return JSON.parse(fs.readFileSync(path.join(DADOS, 'backtest.json'), 'utf8')).variantes || null; } catch { return null; } })();
@@ -189,6 +206,6 @@ if (process.argv.includes('--variantes')) {
 }
 
 const saida = { geradoEm: new Date().toISOString(), fonte: 'football-data.co.uk (odds de Bet365, Pinnacle, média e melhor odd do mercado) + xG do Understat', ligas: [...comps], jogos: J.length,
-  periodo: { previsoes: INICIO_PREV, inicioTeste: INICIO_TESTE }, qualidade: Q, faixas, regrasTop: topo, regrasSemPinnacle: topoSemPinnacle, regraAtual, variantes, segundos: Math.round((Date.now() - t0) / 1000) };
+  periodo: { previsoes: INICIO_PREV, inicioTeste: INICIO_TESTE }, qualidade: Q, faixas, palpitesPorFaixa, regrasTop: topo, regrasSemPinnacle: topoSemPinnacle, regraAtual, variantes, segundos: Math.round((Date.now() - t0) / 1000) };
 gravarJSON(path.join(DADOS, 'backtest.json'), saida, { compacto: false });
 log('ok · dados/backtest.json');

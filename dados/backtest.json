@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-10-23T17:32:32.622Z",
+ "geradoEm": "2026-10-23T18:10:42.020Z",
  "fonte": "football-data.co.uk (odds de Bet365, Pinnacle, média e melhor odd do mercado) + xG do Understat",
  "ligas": [
   "eng.2",
@@ -1312,6 +1312,448 @@
      "piorSequencia": 62,
      "bancaKelly": 74.4,
      "quedaKelly": 0.258
+    }
+   }
+  }
+ ],
+ "palpitesPorFaixa": [
+  {
+   "de": 1.35,
+   "ate": 1.6,
+   "treino": {
+    "n": 5263,
+    "acerto": 0.6795,
+    "chanceImplicita": 0.6989,
+    "oddMedia": 1.434,
+    "lucro": -142.97,
+    "retorno": -0.0272,
+    "ic90": [
+     -0.0433,
+     -0.0125
+    ],
+    "quedaMaxima": 166.48,
+    "piorSequencia": 7,
+    "bancaKelly": 101.8,
+    "quedaKelly": 0.018,
+    "porMercado": {
+     "1x2": {
+      "n": 1078,
+      "acerto": 0.6939,
+      "chanceImplicita": 0.6858,
+      "oddMedia": 1.461,
+      "lucro": 11.74,
+      "retorno": 0.0109,
+      "ic90": [
+       -0.0221,
+       0.0424
+      ],
+      "quedaMaxima": 15.96,
+      "piorSequencia": 9,
+      "bancaKelly": 101.8,
+      "quedaKelly": 0.018
+     },
+     "dc": {
+      "n": 2918,
+      "acerto": 0.683,
+      "chanceImplicita": 0.7161,
+      "oddMedia": 1.398,
+      "lucro": -135.07,
+      "retorno": -0.0463,
+      "ic90": [
+       -0.0665,
+       -0.0276
+      ],
+      "quedaMaxima": 145.2,
+      "piorSequencia": 6,
+      "bancaKelly": 100,
+      "quedaKelly": 0
+     },
+     "tot": {
+      "n": 1267,
+      "acerto": 0.659,
+      "chanceImplicita": 0.6704,
+      "oddMedia": 1.495,
+      "lucro": -19.64,
+      "retorno": -0.0155,
+      "ic90": [
+       -0.0481,
+       0.0152
+      ],
+      "quedaMaxima": 54.13,
+      "piorSequencia": 6,
+      "bancaKelly": 100,
+      "quedaKelly": 0
+     }
+    }
+   },
+   "teste": {
+    "n": 2950,
+    "acerto": 0.6529,
+    "chanceImplicita": 0.6956,
+    "oddMedia": 1.441,
+    "lucro": -179.53,
+    "retorno": -0.0609,
+    "ic90": [
+     -0.0812,
+     -0.0405
+    ],
+    "quedaMaxima": 191.57,
+    "piorSequencia": 8,
+    "bancaKelly": 100.7,
+    "quedaKelly": 0.011,
+    "porMercado": {
+     "1x2": {
+      "n": 560,
+      "acerto": 0.6446,
+      "chanceImplicita": 0.6841,
+      "oddMedia": 1.465,
+      "lucro": -32.88,
+      "retorno": -0.0587,
+      "ic90": [
+       -0.1106,
+       -0.0095
+      ],
+      "quedaMaxima": 40.78,
+      "piorSequencia": 8,
+      "bancaKelly": 100.7,
+      "quedaKelly": 0.011
+     },
+     "dc": {
+      "n": 1550,
+      "acerto": 0.6677,
+      "chanceImplicita": 0.7121,
+      "oddMedia": 1.406,
+      "lucro": -95.4,
+      "retorno": -0.0615,
+      "ic90": [
+       -0.0888,
+       -0.0335
+      ],
+      "quedaMaxima": 102.48,
+      "piorSequencia": 8,
+      "bancaKelly": 100,
+      "quedaKelly": 0
+     },
+     "tot": {
+      "n": 840,
+      "acerto": 0.631,
+      "chanceImplicita": 0.673,
+      "oddMedia": 1.489,
+      "lucro": -51.25,
+      "retorno": -0.061,
+      "ic90": [
+       -0.1033,
+       -0.0249
+      ],
+      "quedaMaxima": 66.32,
+      "piorSequencia": 6,
+      "bancaKelly": 100,
+      "quedaKelly": 0
+     }
+    }
+   }
+  },
+  {
+   "de": 1.6,
+   "ate": 2,
+   "treino": {
+    "n": 9328,
+    "acerto": 0.5464,
+    "chanceImplicita": 0.5661,
+    "oddMedia": 1.772,
+    "lucro": -328.05,
+    "retorno": -0.0352,
+    "ic90": [
+     -0.0501,
+     -0.0212
+    ],
+    "quedaMaxima": 353.39,
+    "piorSequencia": 15,
+    "bancaKelly": 87.1,
+    "quedaKelly": 0.132,
+    "porMercado": {
+     "1x2": {
+      "n": 1652,
+      "acerto": 0.5527,
+      "chanceImplicita": 0.571,
+      "oddMedia": 1.757,
+      "lucro": -54.15,
+      "retorno": -0.0328,
+      "ic90": [
+       -0.0675,
+       0.0014
+      ],
+      "quedaMaxima": 89.59,
+      "piorSequencia": 9,
+      "bancaKelly": 92.7,
+      "quedaKelly": 0.076
+     },
+     "dc": {
+      "n": 1513,
+      "acerto": 0.5426,
+      "chanceImplicita": 0.5674,
+      "oddMedia": 1.767,
+      "lucro": -64.02,
+      "retorno": -0.0423,
+      "ic90": [
+       -0.0826,
+       -0.0066
+      ],
+      "quedaMaxima": 78.25,
+      "piorSequencia": 10,
+      "bancaKelly": 100,
+      "quedaKelly": 0
+     },
+     "tot": {
+      "n": 6163,
+      "acerto": 0.5457,
+      "chanceImplicita": 0.5645,
+      "oddMedia": 1.778,
+      "lucro": -209.88,
+      "retorno": -0.0341,
+      "ic90": [
+       -0.0516,
+       -0.0142
+      ],
+      "quedaMaxima": 234.41,
+      "piorSequencia": 12,
+      "bancaKelly": 93.9,
+      "quedaKelly": 0.103
+     }
+    }
+   },
+   "teste": {
+    "n": 4919,
+    "acerto": 0.5513,
+    "chanceImplicita": 0.5643,
+    "oddMedia": 1.778,
+    "lucro": -109.81,
+    "retorno": -0.0223,
+    "ic90": [
+     -0.0436,
+     -0.0015
+    ],
+    "quedaMaxima": 150.37,
+    "piorSequencia": 12,
+    "bancaKelly": 99.7,
+    "quedaKelly": 0.071,
+    "porMercado": {
+     "1x2": {
+      "n": 957,
+      "acerto": 0.5496,
+      "chanceImplicita": 0.5704,
+      "oddMedia": 1.758,
+      "lucro": -33.36,
+      "retorno": -0.0349,
+      "ic90": [
+       -0.0787,
+       0.0083
+      ],
+      "quedaMaxima": 44.71,
+      "piorSequencia": 8,
+      "bancaKelly": 101.7,
+      "quedaKelly": 0.028
+     },
+     "dc": {
+      "n": 732,
+      "acerto": 0.5164,
+      "chanceImplicita": 0.5681,
+      "oddMedia": 1.765,
+      "lucro": -64.7,
+      "retorno": -0.0884,
+      "ic90": [
+       -0.1455,
+       -0.0311
+      ],
+      "quedaMaxima": 70.79,
+      "piorSequencia": 9,
+      "bancaKelly": 100,
+      "quedaKelly": 0
+     },
+     "tot": {
+      "n": 3230,
+      "acerto": 0.5598,
+      "chanceImplicita": 0.5616,
+      "oddMedia": 1.786,
+      "lucro": -11.75,
+      "retorno": -0.0036,
+      "ic90": [
+       -0.0314,
+       0.0207
+      ],
+      "quedaMaxima": 73.59,
+      "piorSequencia": 11,
+      "bancaKelly": 98,
+      "quedaKelly": 0.053
+     }
+    }
+   }
+  },
+  {
+   "de": 2,
+   "ate": 2.6,
+   "treino": {
+    "n": 4045,
+    "acerto": 0.4289,
+    "chanceImplicita": 0.4591,
+    "oddMedia": 2.189,
+    "lucro": -267.99,
+    "retorno": -0.0663,
+    "ic90": [
+     -0.0942,
+     -0.0367
+    ],
+    "quedaMaxima": 281.3,
+    "piorSequencia": 11,
+    "bancaKelly": 91.1,
+    "quedaKelly": 0.092,
+    "porMercado": {
+     "1x2": {
+      "n": 863,
+      "acerto": 0.4229,
+      "chanceImplicita": 0.4498,
+      "oddMedia": 2.236,
+      "lucro": -54.85,
+      "retorno": -0.0636,
+      "ic90": [
+       -0.1226,
+       0.005
+      ],
+      "quedaMaxima": 63.84,
+      "piorSequencia": 7,
+      "bancaKelly": 94.5,
+      "quedaKelly": 0.056
+     },
+     "dc": {
+      "n": 315,
+      "acerto": 0.4381,
+      "chanceImplicita": 0.4538,
+      "oddMedia": 2.216,
+      "lucro": -10.28,
+      "retorno": -0.0326,
+      "ic90": [
+       -0.1256,
+       0.0696
+      ],
+      "quedaMaxima": 18.27,
+      "piorSequencia": 8,
+      "bancaKelly": 100,
+      "quedaKelly": 0
+     },
+     "tot": {
+      "n": 2867,
+      "acerto": 0.4297,
+      "chanceImplicita": 0.4624,
+      "oddMedia": 2.172,
+      "lucro": -202.86,
+      "retorno": -0.0708,
+      "ic90": [
+       -0.1054,
+       -0.039
+      ],
+      "quedaMaxima": 219.33,
+      "piorSequencia": 11,
+      "bancaKelly": 96.4,
+      "quedaKelly": 0.063
+     }
+    }
+   },
+   "teste": {
+    "n": 2167,
+    "acerto": 0.4393,
+    "chanceImplicita": 0.4595,
+    "oddMedia": 2.187,
+    "lucro": -95.23,
+    "retorno": -0.0439,
+    "ic90": [
+     -0.0788,
+     -0.0054
+    ],
+    "quedaMaxima": 122.75,
+    "piorSequencia": 15,
+    "bancaKelly": 99.9,
+    "quedaKelly": 0.048,
+    "porMercado": {
+     "1x2": {
+      "n": 473,
+      "acerto": 0.4228,
+      "chanceImplicita": 0.4482,
+      "oddMedia": 2.244,
+      "lucro": -27.06,
+      "retorno": -0.0572,
+      "ic90": [
+       -0.1358,
+       0.0298
+      ],
+      "quedaMaxima": 32.9,
+      "piorSequencia": 8,
+      "bancaKelly": 100.9,
+      "quedaKelly": 0.018
+     },
+     "dc": {
+      "n": 205,
+      "acerto": 0.5122,
+      "chanceImplicita": 0.4517,
+      "oddMedia": 2.225,
+      "lucro": 27.49,
+      "retorno": 0.1341,
+      "ic90": [
+       -0.0097,
+       0.2634
+      ],
+      "quedaMaxima": 9.26,
+      "piorSequencia": 6,
+      "bancaKelly": 100,
+      "quedaKelly": 0
+     },
+     "tot": {
+      "n": 1489,
+      "acerto": 0.4345,
+      "chanceImplicita": 0.4641,
+      "oddMedia": 2.164,
+      "lucro": -95.66,
+      "retorno": -0.0642,
+      "ic90": [
+       -0.1147,
+       -0.0212
+      ],
+      "quedaMaxima": 109.64,
+      "piorSequencia": 10,
+      "bancaKelly": 98.9,
+      "quedaKelly": 0.046
+     }
+    }
+   }
+  },
+  {
+   "de": 2.6,
+   "ate": 3.5,
+   "treino": {
+    "n": 0,
+    "porMercado": {
+     "1x2": {
+      "n": 0
+     },
+     "dc": {
+      "n": 0
+     },
+     "tot": {
+      "n": 0
+     }
+    }
+   },
+   "teste": {
+    "n": 0,
+    "porMercado": {
+     "1x2": {
+      "n": 0
+     },
+     "dc": {
+      "n": 0
+     },
+     "tot": {
+      "n": 0
+     }
     }
    }
   }
@@ -7644,5 +8086,5 @@
    }
   }
  },
- "segundos": 51
+ "segundos": 64
 }
