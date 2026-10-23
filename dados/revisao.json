@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-10-23T02:49:17.044Z",
+ "geradoEm": "2026-10-23T10:47:10.434Z",
  "jogos": 1,
  "porFamilia": {
   "resultado": {
@@ -115,6 +115,55 @@
    "dia": "2026-10-24",
    "jogos": [
     {
+     "id": "401841278",
+     "jogo": "Chapecoense × Fluminense",
+     "comp": "bra.1",
+     "inicio": "2026-10-24T22:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401841280",
+     "jogo": "Vitória × Athletico-PR",
+     "comp": "bra.1",
+     "inicio": "2026-10-24T19:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401841281",
+     "jogo": "Vasco da Gama × Corinthians",
+     "comp": "bra.1",
+     "inicio": "2026-10-24T21:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401841282",
+     "jogo": "Santos × Bahia",
+     "comp": "bra.1",
+     "inicio": "2026-10-25T00:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401841283",
+     "jogo": "Palmeiras × Red Bull Bragantino",
+     "comp": "bra.1",
+     "inicio": "2026-10-24T21:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401841284",
+     "jogo": "Mirassol × São Paulo",
+     "comp": "bra.1",
+     "inicio": "2026-10-24T19:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401841285",
+     "jogo": "Internacional × Botafogo",
+     "comp": "bra.1",
+     "inicio": "2026-10-24T19:30Z",
+     "pendente": true
+    },
+    {
      "id": "401874948",
      "jogo": "Napoli × AS Roma",
      "comp": "ita.1",
@@ -199,6 +248,13 @@
      "pendente": true
     },
     {
+     "id": "401882834",
+     "jogo": "Atlético Madrid × Deportivo",
+     "comp": "esp.1",
+     "inicio": "2026-10-24T19:00Z",
+     "pendente": true
+    },
+    {
      "id": "401884755",
      "jogo": "SC Paderborn 07 × Hamburg SV",
      "comp": "ger.1",
@@ -244,36 +300,42 @@
    "sugestoes": [
     {
      "nivel": "segura",
-     "odd": 2.475,
+     "odd": 2.4287,
      "pModelo": 0.4265,
-     "pMercado": 0.3703,
+     "pMercado": 0.3803,
      "status": "pendente",
      "pernas": [
       {
        "rotulo": "Vitória Como",
        "jogo": "Como × Sassuolo",
-       "odd": 1.5,
+       "odd": 1.49,
        "ok": null
       },
       {
        "rotulo": "Menos de 3,5 gols",
        "jogo": "Chelsea × Tottenham Hotspur",
-       "odd": 1.65,
+       "odd": 1.63,
        "ok": null
       }
      ]
     },
     {
      "nivel": "media",
-     "odd": 9.1209,
-     "pModelo": 0.1383,
-     "pMercado": 0.0908,
+     "odd": 9.0716,
+     "pModelo": 0.1384,
+     "pMercado": 0.091,
      "status": "pendente",
      "pernas": [
       {
-       "rotulo": "Menos de 3,5 gols",
-       "jogo": "Como × Sassuolo",
-       "odd": 1.74,
+       "rotulo": "Menos de 4,5 gols",
+       "jogo": "Aston Villa × Manchester City",
+       "odd": 1.23,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 2,5 gols",
+       "jogo": "Arsenal × Everton",
+       "odd": 1.98,
        "ok": null
       },
       {
@@ -284,92 +346,80 @@
       },
       {
        "rotulo": "Menos de 3,5 gols",
-       "jogo": "Valencia × Villarreal",
-       "odd": 1.4,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 3,5 gols",
        "jogo": "Borussia Dortmund × Eintracht Frankfurt",
-       "odd": 1.94,
+       "odd": 1.93,
        "ok": null
       }
      ]
     },
     {
      "nivel": "arriscada",
-     "odd": 15.0037,
-     "pModelo": 0.0876,
-     "pMercado": 0.0555,
+     "odd": 15.0691,
+     "pModelo": 0.0892,
+     "pMercado": 0.0551,
      "status": "pendente",
      "pernas": [
       {
        "rotulo": "Menos de 2,5 gols",
+       "jogo": "Aston Villa × Manchester City",
+       "odd": 2.6,
+       "ok": null
+      },
+      {
+       "rotulo": "Vitória Arsenal",
        "jogo": "Arsenal × Everton",
-       "odd": 1.98,
+       "odd": 1.43,
        "ok": null
       },
       {
-       "rotulo": "Vitória Napoli",
+       "rotulo": "Menos de 2,5 gols",
        "jogo": "Napoli × AS Roma",
-       "odd": 2.79,
+       "odd": 1.93,
        "ok": null
       },
       {
-       "rotulo": "Menos de 3,5 gols",
+       "rotulo": "Menos de 2,5 gols",
        "jogo": "Valencia × Villarreal",
-       "odd": 1.4,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 3,5 gols",
-       "jogo": "Borussia Dortmund × Eintracht Frankfurt",
-       "odd": 1.94,
+       "odd": 2.1,
        "ok": null
       }
      ]
     },
     {
      "nivel": "bingo",
-     "odd": 100.8158,
-     "pModelo": 0.0155,
-     "pMercado": 0.0074,
+     "odd": 103.1764,
+     "pModelo": 0.0159,
+     "pMercado": 0.0076,
      "status": "pendente",
      "pernas": [
       {
-       "rotulo": "Menos de 4,5 gols",
-       "jogo": "Aston Villa × Manchester City",
-       "odd": 1.24,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 3,5 gols",
-       "jogo": "Como × Sassuolo",
-       "odd": 1.74,
-       "ok": null
-      },
-      {
        "rotulo": "Menos de 2,5 gols",
-       "jogo": "Arsenal × Everton",
-       "odd": 1.98,
+       "jogo": "Aston Villa × Manchester City",
+       "odd": 2.6,
        "ok": null
       },
       {
-       "rotulo": "Vitória Napoli",
-       "jogo": "Napoli × AS Roma",
-       "odd": 2.79,
+       "rotulo": "Vitória Como",
+       "jogo": "Como × Sassuolo",
+       "odd": 1.49,
        "ok": null
       },
       {
        "rotulo": "Menos de 1,5 gols",
-       "jogo": "Valencia × Villarreal",
-       "odd": 4.36,
+       "jogo": "Napoli × AS Roma",
+       "odd": 3.82,
        "ok": null
       },
       {
-       "rotulo": "Menos de 3,5 gols",
+       "rotulo": "Menos de 2,5 gols",
+       "jogo": "Valencia × Villarreal",
+       "odd": 2.1,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 2,5 gols",
        "jogo": "Borussia Dortmund × Eintracht Frankfurt",
-       "odd": 1.94,
+       "odd": 3.32,
        "ok": null
       }
      ]
