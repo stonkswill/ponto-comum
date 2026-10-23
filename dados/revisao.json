@@ -1,5 +1,5 @@
 {
- "geradoEm": "2026-10-23T12:58:28.953Z",
+ "geradoEm": "2026-10-23T14:19:00.572Z",
  "jogos": 1,
  "porFamilia": {
   "resultado": {
@@ -59,52 +59,7 @@
   "esperado": 2.1354
  },
  "jogadores": null,
- "niveis": {
-  "segura": {
-   "bilhetes": 0,
-   "ganhos": 0,
-   "pendentes": 1,
-   "lucro": 0,
-   "nMercado": 0,
-   "retorno": null,
-   "oddMedia": null,
-   "chanceMedia": null,
-   "chanceMercadoMedia": null
-  },
-  "media": {
-   "bilhetes": 0,
-   "ganhos": 0,
-   "pendentes": 1,
-   "lucro": 0,
-   "nMercado": 0,
-   "retorno": null,
-   "oddMedia": null,
-   "chanceMedia": null,
-   "chanceMercadoMedia": null
-  },
-  "arriscada": {
-   "bilhetes": 0,
-   "ganhos": 0,
-   "pendentes": 1,
-   "lucro": 0,
-   "nMercado": 0,
-   "retorno": null,
-   "oddMedia": null,
-   "chanceMedia": null,
-   "chanceMercadoMedia": null
-  },
-  "bingo": {
-   "bilhetes": 0,
-   "ganhos": 0,
-   "pendentes": 1,
-   "lucro": 0,
-   "nMercado": 0,
-   "retorno": null,
-   "oddMedia": null,
-   "chanceMedia": null,
-   "chanceMercadoMedia": null
-  }
- },
+ "palpites": {},
  "movimentoDoMercado": {
   "n": 0,
   "aFavorDoModelo": 0,
@@ -297,134 +252,7 @@
      "pendente": true
     }
    ],
-   "sugestoes": [
-    {
-     "nivel": "segura",
-     "odd": 2.445,
-     "pModelo": 0.4307,
-     "pMercado": 0.3674,
-     "status": "pendente",
-     "pernas": [
-      {
-       "rotulo": "Napoli ou empate",
-       "jogo": "Napoli × AS Roma",
-       "odd": 1.5,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 3,5 gols",
-       "jogo": "Chelsea × Tottenham Hotspur",
-       "odd": 1.63,
-       "ok": null
-      }
-     ]
-    },
-    {
-     "nivel": "media",
-     "odd": 9.0682,
-     "pModelo": 0.1348,
-     "pMercado": 0.0927,
-     "status": "pendente",
-     "pernas": [
-      {
-       "rotulo": "Como ou empate",
-       "jogo": "Como × Sassuolo",
-       "odd": 1.13,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 2,5 gols",
-       "jogo": "Arsenal × Everton",
-       "odd": 1.98,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 2,5 gols",
-       "jogo": "Napoli × AS Roma",
-       "odd": 1.93,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 2,5 gols",
-       "jogo": "Valencia × Villarreal",
-       "odd": 2.1,
-       "ok": null
-      }
-     ]
-    },
-    {
-     "nivel": "arriscada",
-     "odd": 15.0545,
-     "pModelo": 0.0889,
-     "pMercado": 0.0554,
-     "status": "pendente",
-     "pernas": [
-      {
-       "rotulo": "Menos de 2,5 gols",
-       "jogo": "Aston Villa × Manchester City",
-       "odd": 2.6,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 4,5 gols",
-       "jogo": "Arsenal × Everton",
-       "odd": 1.11,
-       "ok": null
-      },
-      {
-       "rotulo": "Vitória Napoli",
-       "jogo": "Napoli × AS Roma",
-       "odd": 2.76,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 3,5 gols",
-       "jogo": "Borussia Dortmund × Eintracht Frankfurt",
-       "odd": 1.89,
-       "ok": null
-      }
-     ]
-    },
-    {
-     "nivel": "bingo",
-     "odd": 101.0613,
-     "pModelo": 0.0158,
-     "pMercado": 0.0078,
-     "status": "pendente",
-     "pernas": [
-      {
-       "rotulo": "Menos de 2,5 gols",
-       "jogo": "Aston Villa × Manchester City",
-       "odd": 2.6,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 2,5 gols",
-       "jogo": "Como × Sassuolo",
-       "odd": 2.91,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 4,5 gols",
-       "jogo": "Arsenal × Everton",
-       "odd": 1.11,
-       "ok": null
-      },
-      {
-       "rotulo": "Vitória Napoli",
-       "jogo": "Napoli × AS Roma",
-       "odd": 2.76,
-       "ok": null
-      },
-      {
-       "rotulo": "Menos de 1,5 gols",
-       "jogo": "Valencia × Villarreal",
-       "odd": 4.36,
-       "ok": null
-      }
-     ]
-    }
-   ]
+   "sugestoes": []
   },
   {
    "dia": "2026-10-23",
@@ -472,24 +300,7 @@
      "pendente": true
     }
    ],
-   "sugestoes": [
-    {
-     "nivel": "segura",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (1; precisa de 2)."
-    },
-    {
-     "nivel": "media",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (1; precisa de 3)."
-    },
-    {
-     "nivel": "arriscada",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (1; precisa de 4)."
-    },
-    {
-     "nivel": "bingo",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (1; precisa de 5)."
-    }
-   ]
+   "sugestoes": []
   },
   {
    "dia": "2026-10-22",
@@ -503,6 +314,8 @@
       0,
       0
      ],
+     "palpites": [],
+     "nada": false,
      "favorito": {
       "rotulo": "Vitória Flamengo",
       "p": 0.6585,
@@ -532,24 +345,7 @@
      "filtro": false
     }
    ],
-   "sugestoes": [
-    {
-     "nivel": "segura",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (0; precisa de 2)."
-    },
-    {
-     "nivel": "media",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (0; precisa de 3)."
-    },
-    {
-     "nivel": "arriscada",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (0; precisa de 4)."
-    },
-    {
-     "nivel": "bingo",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (0; precisa de 5)."
-    }
-   ]
+   "sugestoes": []
   }
  ]
 }
