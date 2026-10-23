@@ -7,12 +7,12 @@ Hub de análise de futebol pré-jogo que roda inteiro no navegador. Usa os dados
 | Pedido | Como ficou |
 |---|---|
 | Modelo na frente | Toda linha mostra primeiro a chance do **modelo** (com faixa de 90%), depois a do mercado sem margem. Diferença acima de 8 p.p. ganha a etiqueta "diverge" |
-| Odd já pronta | **Odd sugerida** em toda linha: média das casas que cotam a linha; sem cotação, o preço justo do mercado (ou do modelo) com a margem típica das casas (5,5%). O bilhete já vem com essas odds; você pode trocar pela da sua casa |
+| Odd já pronta | **Odd sugerida** em toda linha: média das casas que cotam a linha; sem cotação, o preço justo do mercado (ou do modelo) com a margem típica das casas (5,5%). Nos palpites aparece a melhor odd e em qual casa |
 | Menos linhas | Tabela principal só com 1X2, dupla chance, ambas marcam e mais/menos gols (as quase certas, acima de 92%, saem). O resto fica fechado em "Outras linhas". Escanteios e cartões só aparecem em destaque ("Fora do normal") quando a chance passa bem da média da competição |
-| Palpites por jogo (sem múltiplas) | Aba **Palpites**: para cada jogo do radar, a aposta **principal** (maior chance nos seus mercados com odd ≥ 1,35 e modelo e mercado a até 8 p.p.), uma de **odd maior** (1,70–3,20), o **fora do normal** (escanteios, cartões, tempos) e o **jogador** com mais chance de marcar entre os que têm odd. Sem nada bom, o hub diz "nada bom". O criador de múltiplas saiu: cada perna a mais multiplica a margem da casa |
+| Palpites por jogo (sem múltiplas) | Aba **Palpites**: para cada jogo do radar, a aposta **principal** (maior chance nos seus mercados com odd ≥ 1,35 e modelo e mercado a até 5 p.p.), uma de **odd maior** (1,70–2,60), o **fora do normal** (escanteios, cartões, tempos) e o **jogador** com mais chance de marcar entre os que têm odd. Sem nada bom, o hub diz "nada bom". O criador de múltiplas, o bilhete e o diário saíram do app |
 | Competições | Radar: Champions + Premier League (todos os jogos) + LaLiga, Serie A, Bundesliga e Ligue 1 só com jogos dos grandes (4, 6, 3 e 3 clubes mais fortes pelo modelo, recalculados a cada atualização). Brasileirão, Europa, Conference, Libertadores e Sul-Americana ficam como opcionais. A rede de 30 competições continua alimentando a força dos clubes |
 | Linhas alternativas | Entraram 2º tempo, tempo com mais gols e quem marca primeiro (validados na aba Validação) e **quem pode marcar** (experimental: a fonte não tem odd de jogador para conferir) |
-| Diário com apostas reais | Registre valor e a odd que pegou (simples ou múltipla). O diário mostra lucro, retorno por tipo, CLV e a **revisão jogo a jogo**: o que o hub disse × o que aconteceu |
+| Histórico | O app não registra nada no aparelho. O robô grava os palpites de cada jogo (com a odd principal e a melhor odd) em `dados/previsoes/` antes do início e confere depois em `dados/revisao.json`; o resumo aparece na aba Validação |
 | Exportar análise | Cada análise tem **Copiar** (texto pronto para colar) e **Baixar** (JSON). Também dá para copiar ou baixar todas |
 
 ## Robô de dados (GitHub Actions)
@@ -61,14 +61,13 @@ O que mudou no modelo com esses dados: forças dos clubes mais espalhadas, metad
 ## Arquivos
 
 ```
-index.html        interface (Radar, Análise, Bilhete, Diário, Validação)
+index.html        interface (Radar, Palpites, Análise, Validação)
 style.css         estilo (tema claro e escuro)
 js/rede.js        competições, leitura da ESPN, cache, elencos, calendário, forma, confrontos
 js/modelo.js      modelo de força, matriz de placares, mercados, tempos, 1º gol, quem marca
 js/mercado.js     cotações, probabilidade sem margem, referência do mercado, odd sugerida
 js/analise.js     linhas de uma partida (modelo na frente), palpites por jogo, destaques, alertas
-js/bilhete.js     bilhete para registrar o que você apostou (simples ou múltipla), com chance conjunta
-js/diario.js      previsões e apostas, apuração, CLV, revisão jogo a jogo
+js/diario.js      apuração de uma linha pelo placar (usado só pelo robô)
 js/validacao.js   validação semana a semana, mercado, regras, filtro, tempos
 ferramentas/      robôs (coleta e fontes externas), revisão, validação, backtest e experimentos (Node, sem navegador)
 ```

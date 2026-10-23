@@ -101,7 +101,7 @@ await R.pool(proximos.map(m => async () => {
     linhas: Object.fromEntries(a.linhas.map(l => [l.chave, [r4(l.pModelo), r4(l.pMercado), l.odd, TIPO[l.oddTipo] || '?']])),
     leitura: fortes(a).map(l => l.chave), destaques: a.destaques.map(l => l.chave),
     jogadores: { casa: a.jogadores.casa.map(j => [j.nome, r4(j.p), j.odd]), fora: a.jogadores.fora.map(j => [j.nome, r4(j.p), j.odd]) },
-    palpites: (() => { const P = a.palpites, l = x => x && { chave: x.chave, rotulo: x.rotulo, odd: x.odd, tipoOdd: TIPO[x.oddTipo] || '?', chance: r4(P.chance(x)), pModelo: r4(x.pModelo), pMercado: r4(x.pMercado) };
+    palpites: (() => { const P = a.palpites, l = x => x && { chave: x.chave, rotulo: x.rotulo, odd: x.odd, melhorOdd: x.oddMaior || x.odd, casaMelhor: x.casaMaior || (x.oddCasas && x.oddCasas[0]) || null, tipoOdd: TIPO[x.oddTipo] || '?', chance: r4(P.chance(x)), pModelo: r4(x.pModelo), pMercado: r4(x.pMercado) };
       const jl = P.jogador && (a.jogadores.casa.includes(P.jogador) ? 'h' : 'a');
       return { nada: !!P.nada, valor: P.valor && { chave: P.valor.chave, rotulo: P.valor.rotulo, odd: P.valor.oddOutra, casa: P.valor.casaOutra, tipoOdd: 'c', chance: r4(P.valor.pPinnacle), pModelo: r4(P.valor.pModelo), pMercado: r4(P.valor.pMercado), valorPinnacle: r4(P.valorPin) }, principal: l(P.principal), oddMaior: l(P.oddMaior), destaque: l(P.destaque), jogador: P.jogador && { nome: P.jogador.nome, lado: jl, p: r4(P.jogador.p), odd: P.jogador.odd } }; })() };
   if (!analisesPorDia.has(d)) analisesPorDia.set(d, []); analisesPorDia.get(d).push(a);

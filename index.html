@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Ponto Comum</title>
-  <meta name="description" content="Análise de futebol pré-jogo: modelo de força dos clubes, comparação com o mercado, odd sugerida, melhores apostas por jogo e diário de apostas.">
+  <meta name="description" content="Análise de futebol pré-jogo: modelo de força dos clubes, comparação com o mercado, odd sugerida, melhores apostas por jogo e histórico dos palpites.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f2e2a'/%3E%3Ccircle cx='32' cy='32' r='17' stroke='%23d6ef6b' stroke-width='5' fill='none'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23d6ef6b'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +14,8 @@
   <script defer src="js/modelo.js?v=998f2cac"></script>
   <script defer src="js/mercado.js?v=bebb69b4"></script>
   <script defer src="js/analise.js?v=5b6bed8b"></script>
-  <script defer src="js/bilhete.js?v=338e60e2"></script>
-  <script defer src="js/diario.js?v=9d61b5c5"></script>
   <script defer src="js/validacao.js?v=5db03875"></script>
-  <script defer src="js/app.js?v=b60e814a"></script>
+  <script defer src="js/app.js?v=cf702581"></script>
 </head>
 <body>
   <header class="topo">
@@ -32,8 +30,6 @@
       <a href="#radar" data-aba="radar">Radar</a>
       <a href="#palpites" data-aba="palpites">Palpites</a>
       <a href="#analise" data-aba="analise">Análise</a>
-      <a href="#bilhete" data-aba="bilhete">Bilhete <span id="n-bilhete" class="contador">0</span></a>
-      <a href="#diario" data-aba="diario">Diário</a>
       <a href="#validacao" data-aba="validacao">Validação</a>
     </nav>
   </header>
@@ -42,8 +38,6 @@
     <section id="radar" class="vista"></section>
     <section id="palpites" class="vista" hidden></section>
     <section id="analise" class="vista" hidden></section>
-    <section id="bilhete" class="vista" hidden></section>
-    <section id="diario" class="vista" hidden></section>
     <section id="validacao" class="vista" hidden></section>
   </main>
   <footer class="rodape">Dados públicos da ESPN (placares, estatísticas e odds da DraftKings e Bet365). Ferramenta de análise: nenhum resultado é garantido e nada aqui é recomendação de aposta. Aposte só o que pode perder.</footer>

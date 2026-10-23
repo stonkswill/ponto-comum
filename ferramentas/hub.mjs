@@ -2,7 +2,7 @@
 import fs from 'node:fs'; import vm from 'node:vm'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
 
 export const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const MODULOS = ['rede.js', 'modelo.js', 'mercado.js', 'analise.js', 'bilhete.js', 'diario.js', 'validacao.js'];
+const MODULOS = ['rede.js', 'modelo.js', 'mercado.js', 'analise.js', 'diario.js', 'validacao.js'];
 
 export function carregarHub({ semRede = false } = {}) {
   const armazenamento = new Map();
@@ -13,7 +13,7 @@ export function carregarHub({ semRede = false } = {}) {
   });
   ctx.globalThis = ctx;
   for (const f of MODULOS) vm.runInContext(fs.readFileSync(path.join(RAIZ, 'js', f), 'utf8'), ctx, { filename: f });
-  return { R: ctx.PCRede, M: ctx.PCModelo, K: ctx.PCMercado, A: ctx.PCAnalise, B: ctx.PCBilhete, D: ctx.PCDiario, V: ctx.PCValidacao, ctx };
+  return { R: ctx.PCRede, M: ctx.PCModelo, K: ctx.PCMercado, A: ctx.PCAnalise, D: ctx.PCDiario, V: ctx.PCValidacao, ctx };
 }
 
 export const lerJSON = (f, padrao = null) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return padrao; } };

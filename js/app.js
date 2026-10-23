@@ -1,12 +1,12 @@
-/* Ponto Comum v3 · app.js — interface. Depende de rede, modelo, mercado, analise, bilhete, diario e validacao. */
+/* Ponto Comum v3 · app.js — interface. Depende de rede, modelo, mercado, analise e validacao. Não registra nada no aparelho:
+ * o histórico dos palpites é gravado pelo robô do repositório (dados/previsoes e dados/revisao.json). */
 (() => {
   'use strict';
-  const R = PCRede, M = PCModelo, K = PCMercado, A = PCAnalise, B = PCBilhete, D = PCDiario, V = PCValidacao;
+  const R = PCRede, M = PCModelo, K = PCMercado, A = PCAnalise, V = PCValidacao;
   const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const pct = (p, d = 0) => Number.isFinite(p) ? (p * 100).toFixed(d).replace('.', ',') + '%' : '—';
   const num = (v, d = 2) => Number.isFinite(v) ? v.toFixed(d).replace('.', ',') : '—';
-  const reais = v => Number.isFinite(v) ? v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) : '—';
   const sinal = v => Number.isFinite(v) ? (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(1).replace('.', ',') + '%' : '—';
   const hora = iso => new Date(iso).toLocaleTimeString('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' });
   const dia = iso => new Date(iso).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' });
@@ -15,7 +15,6 @@
   const hojeSP = () => R.dataSP(new Date().toISOString());
   const pausa = () => new Promise(r => setTimeout(r, 0));
   const CHAVE_PREF = 'pc3-preferencias';
-  const NIVEL_NOME = { simples: 'Simples', multipla: 'Múltipla', segura: 'Segura (antigo)', media: 'Média (antigo)', arriscada: 'Arriscada (antigo)', bingo: 'Bingo (antigo)', manual: 'Montado por você' };
   const TIPO_PALPITE = { valor: 'Valor', principal: 'Principal', oddMaior: 'Odd maior', destaque: 'Fora do normal', jogador: 'Jogador marca' };
 
   const S = {
@@ -82,7 +81,6 @@
       const [rs] = await Promise.all([R.carregarResumo(m).catch(e => ({ erro: e.message || String(e), cotacoes: [] })), elencosDe(m)]);
       resumo = rs; cot = juntarCotacoes(resumo.cotacoes || [], cot);
       const a = A.analisar(m, ctxAnalise(m, cot, resumo)); S.analises.set(m.id, a);
-      if (!a.iniciado) { const n = await D.capturar(a).catch(() => 0); capturadas += n; }
     }), 3);
     return capturadas;
   }
@@ -92,13 +90,12 @@
     navegar('analise'); const el = $('#analise'); el.innerHTML = '<p class="carregando">Analisando ' + lista.length + ' partida(s): odds, elencos e contexto…</p>';
     const capturadas = await analisarLista(lista);
     S.foco = lista[0].id; render();
-    if (capturadas) toast(capturadas + ' previsões registradas no diário antes do jogo.');
   }
 
   /* ---------- Navegação ---------- */
-  const ABAS = ['radar', 'palpites', 'analise', 'bilhete', 'diario', 'validacao'];
+  const ABAS = ['radar', 'palpites', 'analise', 'validacao'];
   function navegar(aba) { if (!ABAS.includes(aba)) aba = 'radar'; S.aba = aba; if (aba === 'palpites') setTimeout(carregarPalpites, 0); $$('.vista').forEach(v => { v.hidden = v.id !== aba; }); $$('[data-aba]').forEach(a => a.classList.toggle('ativa', a.dataset.aba === aba)); if (location.hash.slice(1) !== aba) history.replaceState(null, '', '#' + aba); render(); }
-  function render() { renderStatus(); $('#n-bilhete').textContent = B.lista().length; if (S.aba === 'radar') renderRadar(); else if (S.aba === 'palpites') renderPalpites(); else if (S.aba === 'analise') renderAnalise(); else if (S.aba === 'bilhete') renderBilhete(); else if (S.aba === 'diario') renderDiario(); else renderValidacao(); }
+  function render() { renderStatus(); if (S.aba === 'radar') renderRadar(); else if (S.aba === 'palpites') renderPalpites(); else if (S.aba === 'analise') renderAnalise(); else renderValidacao(); }
 
   function renderStatus() {
     const r = S.rede, el = $('#status-rede'); let t = '';
@@ -149,14 +146,14 @@
     return l.oddTipo === 'mercado' ? 'estimada pelo mercado' : 'estimada pelo modelo';
   }
   function linhaTabela(a, l) {
-    const naBilhete = B.lista().some(p => p.id === a.m.id + '|' + l.chave), evCls = l.ev === null || l.oddTipo !== 'cotada' ? '' : l.ev > 0.03 ? 'pos' : l.ev < -0.08 ? 'neg' : '';
+    const evCls = l.ev === null || l.oddTipo !== 'cotada' ? '' : l.ev > 0.03 ? 'pos' : l.ev < -0.08 ? 'neg' : '';
     const faixa = l.faixa ? '<small>' + pct(l.faixa[0]) + '–' + pct(l.faixa[1]) + '</small>' : '';
     const tag = l.concorda === false ? '<span class="tag div">diverge ' + Math.round(Math.abs(l.divergencia) * 100) + ' p.p.</span>' : '';
     return '<tr><td>' + esc(l.rotulo) + tag + '</td><td class="num"><b>' + pct(l.pModelo, 1) + '</b>' + faixa + '</td><td class="num">' + pct(l.pMercado, 1) + '</td>'
       + '<td class="num"><b>' + num(l.odd) + '</b><small>' + tipoOdd(l) + '</small></td><td class="num">' + num(l.justa) + '</td><td class="num ' + evCls + '">' + (l.oddTipo === 'cotada' ? sinal(l.ev) : '<small>só com odd cotada</small>') + '</td>'
-      + '<td><button class="add' + (naBilhete ? ' ja' : '') + '" data-add="' + a.m.id + '|' + esc(l.chave) + '" title="' + (naBilhete ? 'Já está no bilhete' : 'Adicionar ao bilhete') + '">' + (naBilhete ? '✓' : '+') + '</button></td></tr>';
+      + '</tr>';
   }
-  const CAB = '<thead><tr><th>Linha</th><th class="num">Modelo <small>faixa 90%</small></th><th class="num">Mercado</th><th class="num">Odd sugerida</th><th class="num">Odd justa</th><th class="num">Valor (modelo)</th><th></th></tr></thead>';
+  const CAB = '<thead><tr><th>Linha</th><th class="num">Modelo <small>faixa 90%</small></th><th class="num">Mercado</th><th class="num">Odd sugerida</th><th class="num">Odd justa</th><th class="num">Valor (modelo)</th></tr></thead>';
   const fortes = a => { const porTipo = new Map(); for (const l of a.linhas.filter(l => ['1x2', 'dc', 'btts', 'tot'].includes(l.mk.t) && !(l.mk.t === 'btts' && l.mk.s === 'n') && l.pModelo >= 0.55 && l.pModelo <= 0.88 && l.concorda !== false).sort((x, y) => Math.abs(x.pModelo - 0.7) - Math.abs(y.pModelo - 0.7))) if (!porTipo.has(l.mk.t)) porTipo.set(l.mk.t, l); return [...porTipo.values()]; };
   function leitura(a) {
     const out = [], ref = a.ref, m = a.m, fc = a.forca.casa, ff = a.forca.fora;
@@ -187,10 +184,10 @@
   function linhaPalpite(a, tipo, x) {
     const m = a.m, P = a.palpites;
     if (tipo === 'jogador') return '<li><span class="tipo">' + TIPO_PALPITE[tipo] + '</span><span><b>' + esc(x.nome) + ' marca</b> <small>modelo ' + pct(x.p) + ' · odd ' + num(x.odd) + ' ' + esc(a.jogadores.casaOdds || '') + '</small></span></li>';
-    const ch = P.chance(x), naB = B.lista().some(p => p.id === m.id + '|' + x.chave);
-    if (tipo === 'valor') return '<li class="valor"><span class="tipo">Valor</span><span><b>' + esc(x.rotulo) + '</b> · <b>odd ' + num(x.oddOutra) + '</b> <small>na ' + esc(x.casaOutra || '') + ' · preço justo da Pinnacle ' + num(1 / x.pPinnacle) + ' (' + pct(x.pPinnacle) + ') · ' + sinal(P.valorPin) + ' acima · modelo ' + pct(x.pModelo) + '</small></span><button class="add' + (naB ? ' ja' : '') + '" data-add="' + m.id + '|' + esc(x.chave) + '" title="Adicionar ao bilhete">' + (naB ? '✓' : '+') + '</button></li>';
+    const ch = P.chance(x);
+    if (tipo === 'valor') return '<li class="valor"><span class="tipo">Valor</span><span><b>' + esc(x.rotulo) + '</b> · <b>odd ' + num(x.oddOutra) + '</b> <small>na ' + esc(x.casaOutra || '') + ' · preço justo da Pinnacle ' + num(1 / x.pPinnacle) + ' (' + pct(x.pPinnacle) + ') · ' + sinal(P.valorPin) + ' acima · modelo ' + pct(x.pModelo) + '</small></span></li>';
     const melhor = x.oddTipo === 'cotada' && x.oddMaior && x.oddCasas.length > 1 ? x.oddMaior : x.odd;
-    return '<li><span class="tipo">' + TIPO_PALPITE[tipo] + '</span><span><b>' + esc(x.rotulo) + '</b> · <b>odd ' + num(melhor) + '</b> <small>' + (x.oddTipo === 'cotada' ? (x.oddCasas.length > 1 ? 'melhor odd, na ' + esc(x.casaMaior || '') + ' (média ' + num(x.odd) + ')' : esc(x.oddCasas[0] || '')) : 'odd estimada: confira na sua casa') + ' · chance ' + pct(ch) + ' (modelo ' + pct(x.pModelo) + (Number.isFinite(x.pMercado) ? ', mercado ' + pct(x.pMercado) : ', sem mercado') + ')' + (tipo === 'destaque' && x.pTipico !== null ? ' · normal da competição ' + pct(x.pTipico) : '') + '</small></span><button class="add' + (naB ? ' ja' : '') + '" data-add="' + m.id + '|' + esc(x.chave) + '" title="Adicionar ao bilhete">' + (naB ? '✓' : '+') + '</button></li>';
+    return '<li><span class="tipo">' + TIPO_PALPITE[tipo] + '</span><span><b>' + esc(x.rotulo) + '</b> · <b>odd ' + num(melhor) + '</b> <small>' + (x.oddTipo === 'cotada' ? (x.oddCasas.length > 1 ? 'melhor odd, na ' + esc(x.casaMaior || '') + ' (média ' + num(x.odd) + ')' : esc(x.oddCasas[0] || '')) : 'odd estimada: confira na sua casa') + ' · chance ' + pct(ch) + ' (modelo ' + pct(x.pModelo) + (Number.isFinite(x.pMercado) ? ', mercado ' + pct(x.pMercado) : ', sem mercado') + ')' + (tipo === 'destaque' && x.pTipico !== null ? ' · normal da competição ' + pct(x.pTipico) : '') + '</small></span></li>';
   }
   function blocoPalpites(a) {
     const P = a.palpites; if (!P) return '';
@@ -214,7 +211,7 @@
       + dest
       + '<h3>Linhas principais</h3><div class="tabela"><table>' + CAB + '<tbody>' + principais.map(l => linhaTabela(a, l)).join('') + '</tbody></table></div>'
       + '<p class="nota">Odd sugerida: média das casas que cotam a linha; sem cotação, o preço justo (do mercado, ou do modelo) com a margem típica das casas. Valor = chance do modelo × odd − 1, só quando a odd é cotada por uma casa (com odd estimada, o valor só repetiria a diferença entre modelo e mercado). Linhas de gols quase certas (acima de 92%) ficam fora.</p>'
-      + '<details class="contexto"><summary>Outras linhas</summary><div class="fams">' + abas + '</div><div class="tabela"><table>' + CAB + '<tbody>' + (outras.length ? outras.map(l => linhaTabela(a, l)).join('') : '<tr><td colspan="7" class="nota">Sem linhas neste grupo.</td></tr>') + '</tbody></table></div>'
+      + '<details class="contexto"><summary>Outras linhas</summary><div class="fams">' + abas + '</div><div class="tabela"><table>' + CAB + '<tbody>' + (outras.length ? outras.map(l => linhaTabela(a, l)).join('') : '<tr><td colspan="6" class="nota">Sem linhas neste grupo.</td></tr>') + '</tbody></table></div>'
       + '<p class="nota">' + (fam === 'escanteios' && a.escanteios ? 'Média esperada de escanteios: ' + num(a.escanteios.lh, 1) + ' × ' + num(a.escanteios.la, 1) + '. ' : '') + (fam === 'cartoes' && a.cartoes ? 'Média esperada de cartões: ' + num(a.cartoes.lh, 1) + ' × ' + num(a.cartoes.la, 1) + ' (sem o efeito do árbitro). ' : '') + 'Escanteios e cartões não têm odd na fonte; só sobem para "Fora do normal" quando a chance fica bem acima da média da competição.</p></details>'
       + blocoJogadores(a)
       + '<details class="contexto"><summary>Calendário, forma e confrontos</summary><div class="dois">' + blocoCalendario(a, 'casa') + blocoCalendario(a, 'fora') + '</div>'
@@ -264,7 +261,7 @@
     if (!S.F) return; const dia = S.dia, jogos = doDiaParaPalpites(), faltam = jogos.filter(m => !S.analises.has(m.id) && !m.done && m.state !== 'in');
     if (S.palpitesDia && S.palpitesDia.dia === dia && !faltam.length) return;
     S.palpitesDia = { dia, carregando: faltam.length }; renderPalpites();
-    if (faltam.length) { const n = await analisarLista(faltam); if (n) toast(n + ' previsões registradas no diário antes do jogo.'); }
+    if (faltam.length) await analisarLista(faltam);
     S.palpitesDia = { dia, carregando: 0 }; renderPalpites();
   }
   function textoPalpites(lista) {
@@ -285,63 +282,26 @@
       + '<details class="filtro"><summary>Como os palpites são escolhidos (e o que deu nos testes)</summary><p class="nota">Backtest de 18 mil jogos de 8 ligas (football-data.co.uk, 2020–2026), com o modelo prevendo semana a semana só com jogos anteriores. Regras escolhidas até 2023/24 e conferidas de 2024/25 em diante, nas odds da Bet365 de antes da rodada. Retorno = lucro ÷ total apostado.</p><ul class="metodo"><li><b>Principal:</b> a linha de maior chance nos seus mercados com odd de pelo menos 1,35 e modelo e mercado a até 5 p.p. Acerta cerca de 61%, mas perde 4,3% na Bet365: é a margem da casa. Pegando a melhor odd do mercado, a perda cai para 1,4%.</li><li><b>Odd maior:</b> outro mercado com odd de 1,70 a 2,60. Teste −3,3% na Bet365, −1,4% com a melhor odd.</li><li><b>Odds altas sem valor perdem mais:</b> todas as apostas de odd 8 a 13 renderam −38% no teste; de 13 para cima, −46%. As casas cobram margem maior nas zebras.</li><li><b>Fora do normal e jogador:</b> sem histórico de odds suficiente; o robô está medindo.</li><li><b>Por que não há palpite de "valor":</b> a única regra que lucrou no passado (Bet365 pagando acima do preço justo da Pinnacle) deu +22% em 2024/25, mas −25% em 2025/26 e −17% em 2026/27, e a fonte deixou de ter odds da Pinnacle. Os números estão na aba Validação.</li><li>Use a melhor odd que encontrar: em todas as faixas, foi o que mais reduziu a perda. Aposte valores pequenos e iguais: sem vantagem comprovada, aumentar a aposta só aumenta a perda esperada.</li></ul></details>';
   }
 
-  /* ---------- Bilhete ---------- */
-  const tipoOddPerna = p => p.oddManual ? 'sua odd' : p.oddTipo === 'cotada' ? 'média das casas' : 'estimada';
-  function renderBilhete() {
-    const el = $('#bilhete'); if (!el || S.aba !== 'bilhete') return;
-    const ps = B.lista(), av = B.avaliar(ps, S.analises);
-    const pernas = ps.map(p => '<li><div><b>' + esc(p.rotulo) + '</b><small>' + esc(p.jogo) + ' · ' + diaHora(p.inicio) + '</small><small>modelo ' + pct(p.pModelo ?? p.p, 1) + (Number.isFinite(p.pMercado) ? ' · mercado ' + pct(p.pMercado, 1) : '') + '</small></div>'
-      + '<label class="odd">odd <small>' + tipoOddPerna(p) + '</small><input type="number" step="0.01" min="1.01" inputmode="decimal" id="odd-' + esc(p.id) + '" data-odd="' + esc(p.id) + '" value="' + (B.oddDe(p) ? B.oddDe(p).toFixed(2) : '') + '"></label><button class="rem" data-rem="' + esc(p.id) + '" aria-label="Remover">×</button></li>').join('');
-    el.innerHTML = '<div class="cabeca"><div><p class="sobre">O QUE VOCÊ APOSTOU</p><h1>Bilhete</h1></div><div class="acoes">' + (ps.length ? '<button class="sec" id="limpar-bilhete">Limpar</button>' : '') + '</div></div>'
-      + (ps.length ? '<div class="bilhete"><ul class="pernas">' + pernas + '</ul><div class="totais"><div><span class="sobre">Odd ' + (ps.length > 1 ? 'combinada' : '') + '</span><b>' + (av.odd ? num(av.odd) : '—') + '</b><small>' + (av.oddEstimada ? 'com bloco do mesmo jogo estimado' : 'justa pelo modelo: ' + num(av.justa)) + '</small></div><div><span class="sobre">Chance (modelo)</span><b>' + pct(av.pModelo, 1) + '</b><small>mercado: ' + pct(av.pMercado, 1) + '</small></div><div><span class="sobre">Valor esperado</span><b class="' + (av.ev === null ? '' : av.ev > 0 ? 'pos' : 'neg') + '">' + sinal(av.ev) + '</b><small>modelo · mercado ' + sinal(av.evMercado) + '</small></div></div>'
-        + (av.avisos.length ? '<ul class="avisos">' + av.avisos.map(x => '<li class="' + x.nivel + '">' + esc(x.texto) + '</li>').join('') + '</ul>' : '')
-        + (ps.length > 2 ? '<p class="nota">Cada perna a mais multiplica também a margem da casa: numa múltipla de ' + ps.length + ' pernas, o retorno esperado cai bem mais que numa aposta simples.</p>' : '')
-        + '<div class="salvar"><label>valor <input type="number" id="valor-aposta" min="0" step="0.5" inputmode="decimal" placeholder="R$"></label><label>odd que você pegou <input type="number" id="odd-pega" min="1.01" step="0.01" inputmode="decimal" placeholder="' + (av.odd ? num(av.odd).replace(',', '.') : '') + '"></label><button class="pri" id="registrar-aposta">Registrar aposta</button><button class="sec" id="acompanhar">Só acompanhar</button></div></div>'
-        : '<div class="vazio"><h2>Bilhete vazio</h2><p>Nos Palpites ou na Análise, toque em + ao lado de uma aposta para registrar o que você jogou de fato (simples ou múltipla). A odd vem preenchida; troque pela da sua casa.</p></div>');
-  }
-
-  /* ---------- Diário ---------- */
-  /* Histórico do hub: previsões e bilhetes que o robô registrou antes dos jogos (o mesmo em qualquer aparelho). */
+  /* ---------- Histórico do hub ---------- */
+  /* Palpites que o robô registrou antes dos jogos e conferiu depois (dados/revisao.json). Só leitura. */
   const FAM_NOME = { resultado: 'Resultado (1X2, dupla, handicap)', gols: 'Gols (totais, ambas)', tempos: 'Tempos e 1º gol', escanteios: 'Escanteios', cartoes: 'Cartões' };
   function blocoHistorico() {
-    const r = S.revisao; if (!r || !r.jogos) return r === null ? '' : '<h3>Histórico do hub</h3><p class="nota">O robô começou a registrar as previsões antes dos jogos; o histórico aparece quando os primeiros jogos terminarem.</p>';
+    const r = S.revisao; if (!r || !r.jogos) return r === null ? '' : '<h3>Histórico dos palpites</h3><p class="nota">O robô começou a registrar os palpites antes dos jogos; o histórico aparece quando os primeiros jogos terminarem.</p>';
     const lt = r.leitura || {}, mv = r.movimentoDoMercado || {};
-    const pal = ['valor', 'principal', 'oddMaior', 'destaque', 'jogador'].filter(k => r.palpites && r.palpites[k] && r.palpites[k].n).map(k => { const x = r.palpites[k]; return '<tr><td>' + TIPO_PALPITE[k] + '</td><td class="num">' + x.acertos + '/' + x.n + '</td><td class="num">' + pct(x.acertos / x.n) + '<small>previsto ' + pct(x.previsto) + '</small></td><td class="num">' + (x.oddMedia ? num(x.oddMedia) : '—') + '</td><td class="num ' + (x.retorno > 0 ? 'pos' : x.retorno < 0 ? 'neg' : '') + '">' + (x.retorno !== null && x.retorno !== undefined ? sinal(x.retorno) : '—') + '</td></tr>'; }).join('');
+    const pal = ['valor', 'principal', 'oddMaior', 'destaque', 'jogador'].filter(k => r.palpites && r.palpites[k] && r.palpites[k].n).map(k => { const x = r.palpites[k]; const r2 = v => v !== null && v !== undefined ? '<span class="' + (v > 0 ? 'pos' : v < 0 ? 'neg' : '') + '">' + sinal(v) + '</span>' : '—'; return '<tr><td>' + TIPO_PALPITE[k] + '</td><td class="num">' + x.acertos + '/' + x.n + '</td><td class="num">' + pct(x.acertos / x.n) + '<small>previsto ' + pct(x.previsto) + '</small></td><td class="num">' + (x.oddMedia ? num(x.oddMedia) : '—') + '</td><td class="num">' + r2(x.retorno) + '</td><td class="num">' + r2(x.retornoMelhorOdd) + '</td></tr>'; }).join('');
     const fams = Object.entries(r.porFamilia || {}).map(([f, x]) => '<tr><td>' + (FAM_NOME[f] || f) + '</td><td class="num">' + x.n + '</td><td class="num">' + num(x.llModeloComMercado ?? x.llModelo, 3) + '</td><td class="num">' + (x.llMercado !== null ? '<b>' + num(x.llMercado, 3) + '</b>' : '—') + '</td></tr>').join('');
     const dias = (r.dias || []).slice(0, 14).map(d => {
       const feitos = d.jogos.filter(j => !j.pendente), marca = ok => ok === 1 ? '<span class="pos">✓</span> ' : ok === 0 ? '<span class="neg">✗</span> ' : '· ';
       const jogos = feitos.map(j => '<li><b>' + esc(j.jogo) + '</b> ' + j.placar.join('–') + ' <small>' + esc(nomeComp(j.comp)) + '</small><br>' + (j.palpites && j.palpites.length ? j.palpites.map(x => marca(x.ok) + '<small>' + TIPO_PALPITE[x.tipo] + ':</small> ' + esc(x.rotulo) + (x.odd ? ' <small class="nw">a ' + num(x.odd) + '</small>' : '')).join('<br>') : j.nada ? '<small>nada bom (sem palpite)</small>' : j.leitura && j.leitura.length ? j.leitura.map(l => marca(l.ok) + esc(l.rotulo) + ' <small class="nw">' + pct(l.p) + '</small>').join(' · ') : '<small>sem palpite registrado</small>') + '</li>').join('');
       return '<details class="contexto"><summary>' + d.dia.split('-').reverse().join('/') + ' <small>' + feitos.length + ' jogo(s) apurado(s)</small></summary>' + (jogos ? '<ul class="lista">' + jogos + '</ul>' : '<p class="nota">Jogos ainda não terminaram.</p>') + '</details>';
     }).join('');
-    return '<h3>Histórico do hub</h3><p class="nota">Registrado pelo robô do site antes de cada jogo (o mesmo em qualquer aparelho) e conferido depois. Atualizado às ' + diaHora(r.geradoEm) + '.</p>'
+    return '<h3>Histórico dos palpites</h3><p class="nota">Registrado pelo robô do site na base de dados antes de cada jogo e conferido depois. É a base para recalibrar o modelo. Atualizado às ' + diaHora(r.geradoEm) + '.</p>'
       + '<div class="resumo"><div><span class="sobre">Jogos apurados</span><b>' + r.jogos + '</b></div><div><span class="sobre">Palpite principal</span><b>' + (r.palpites && r.palpites.principal && r.palpites.principal.n ? r.palpites.principal.acertos + '/' + r.palpites.principal.n : '—') + '</b><small>' + (r.palpites && r.palpites.principal && r.palpites.principal.n ? 'esperado ' + num(r.palpites.principal.previsto * r.palpites.principal.n, 1) + ' pela chance' : 'aparece quando os jogos terminarem') + '</small></div>'
       + '<div><span class="sobre">Mercado andou para o lado do modelo</span><b>' + (mv.n ? pct(mv.aFavorDoModelo / mv.n) : '—') + '</b><small>' + (mv.n ? mv.n + ' linhas de 1X2 em que os dois discordavam 3+ p.p. · do registro ao fechamento' : 'aparece com as odds de fechamento') + '</small></div></div>'
-      + (pal ? '<div class="tabela"><table><thead><tr><th>Palpites do robô</th><th class="num">Acertos</th><th class="num">Taxa</th><th class="num">Odd média</th><th class="num">Retorno</th></tr></thead><tbody>' + pal + '</tbody></table></div><p class="nota">Retorno de apostar 1 unidade em cada palpite, na odd registrada antes do jogo. Com poucos jogos, sorte pesa mais que método.</p>' : '')
+      + (pal ? '<div class="tabela"><table><thead><tr><th>Palpites do robô</th><th class="num">Acertos</th><th class="num">Taxa</th><th class="num">Odd média</th><th class="num">Retorno (odd média)</th><th class="num">Retorno (melhor odd)</th></tr></thead><tbody>' + pal + '</tbody></table></div><p class="nota">Retorno de apostar 1 unidade em cada palpite, na odd registrada antes do jogo. Com poucos jogos, sorte pesa mais que método.</p>' : '')
       + (fams ? '<div class="tabela"><table><thead><tr><th>Mercado</th><th class="num">Linhas</th><th class="num">Erro do modelo ↓</th><th class="num">Erro do mercado ↓</th></tr></thead><tbody>' + fams + '</tbody></table></div><p class="nota">Log loss nas linhas registradas que têm preço de mercado (menor é melhor). Escanteios e cartões não têm mercado na fonte.</p>' : '')
       + dias;
   }
-  async function renderDiario() {
-    const el = $('#diario'); if (!el || S.aba !== 'diario') return;
-    const lista = await D.todos(), mt = D.metricas(lista), rev = D.revisao(lista), b = mt.bilhetes;
-    const fam = { resultado: 'Resultado', gols: 'Gols', tempos: 'Tempos', escanteios: 'Escanteios', cartoes: 'Cartões' };
-    const linhasFam = Object.entries(mt.porFamilia).filter(([, g]) => g).map(([f, g]) => '<tr><td>' + fam[f] + '</td><td class="num">' + g.n + '</td><td class="num">' + pct(g.previsto, 1) + '</td><td class="num">' + pct(g.aconteceu, 1) + '</td><td class="num">' + num(g.logLoss, 3) + '</td><td class="num">' + (g.logLossMercado !== null ? num(g.logLossMercado, 3) + '<small>' + g.nMercado + ' linhas</small>' : '—') + '</td></tr>').join('');
-    const faixas = mt.faixas.map(f => '<div class="faixa"><span>' + Math.round(f.de * 100) + '–' + Math.round(f.ate * 100) + '%</span><i style="width:' + (f.aconteceu * 100).toFixed(0) + '%"></i><b>' + pct(f.aconteceu) + '</b><small>' + f.n + '</small></div>').join('');
-    const niveis = Object.entries(b.porNivel).map(([k, x]) => '<tr><td>' + (NIVEL_NOME[k] || k) + '</td><td class="num">' + x.apostas + '</td><td class="num">' + x.ganhas + '/' + x.apuradas + '</td><td class="num">' + reais(x.investido) + '</td><td class="num ' + (x.lucro > 0 ? 'pos' : x.lucro < 0 ? 'neg' : '') + '">' + reais(x.lucro) + '</td><td class="num">' + (x.investido ? sinal(x.lucro / x.investido) : '—') + '</td></tr>').join('');
-    const bilhetes = lista.filter(r => r.tipo === 'bilhete').slice(0, 60).map(r => '<tr><td>' + diaHora(r.inicio) + '</td><td>' + (r.modo === 'aposta' ? '<b>' + (NIVEL_NOME[r.nivel] || 'Aposta') + '</b>' : 'Acompanhado') + ' · ' + r.pernas.length + ' perna(s)<small>' + r.pernas.map(p => (p.resultado === 1 ? '✓ ' : p.resultado === 0 ? '✗ ' : '') + esc(p.rotulo) + ' (' + esc(p.jogo) + ')').join('<br>') + '</small></td>'
-      + '<td class="num">' + num(r.odd) + '<small>chance ' + pct(r.pModelo, 1) + '</small></td><td class="num">' + (r.valor ? reais(r.valor) : '—') + '</td><td>' + (r.apurado ? (r.resultado ? '<b class="pos">ganhou</b>' : '<b class="neg">perdeu</b>') + (Number.isFinite(r.lucro) ? '<small>' + reais(r.lucro) + '</small>' : '') : 'pendente') + '</td><td><button class="rem" data-del="' + esc(r.id) + '" aria-label="Apagar registro">×</button></td></tr>').join('');
-    const revisao = rev.map(g => '<tr><td>' + dia(g.inicio) + '<small>' + esc(nomeComp(g.comp)) + '</small></td><td><b>' + esc(g.jogo) + '</b> ' + (g.placar ? g.placar.join('–') : '') + '</td><td>' + (g.favorito ? (g.favorito.aconteceu ? '✓ ' : '✗ ') + esc(g.favorito.rotulo) + ' <small>modelo ' + pct(g.favorito.p) + (Number.isFinite(g.favorito.pMercado) ? ' · mercado ' + pct(g.favorito.pMercado) : '') + '</small>' : '—') + '</td>'
-      + '<td>' + (g.ditas.length ? g.ditas.map(r => (r.resultado ? '<span class="pos">✓</span> ' : '<span class="neg">✗</span> ') + esc(r.rotulo) + ' <small class="nw">' + pct(r.pModelo ?? r.p) + '</small>').join('<br>') : '<small>nada entre 55% e 88%</small>') + '</td><td class="num">' + (g.ditas.length ? g.acertos + '/' + g.ditas.length : '—') + '</td></tr>').join('');
-    const totDitas = rev.reduce((s, g) => s + g.ditas.length, 0), totAc = rev.reduce((s, g) => s + g.acertos, 0), espDitas = rev.reduce((s, g) => s + g.ditas.reduce((t, r) => t + (r.pModelo ?? r.p), 0), 0);
-    el.innerHTML = '<div class="cabeca"><div><p class="sobre">PREVISÃO → RESULTADO → APRENDIZADO</p><h1>Diário</h1></div><div class="acoes"><button class="pri" id="apurar">Apurar resultados</button><button class="sec" id="exportar">Exportar</button><label class="sec arquivo">Importar<input type="file" id="importar" accept="application/json,.json"></label></div></div>'
-      + '<div class="resumo"><div><span class="sobre">Apostas reais</span><b class="' + (b.lucro > 0 ? 'pos' : b.lucro < 0 ? 'neg' : '') + '">' + reais(b.lucro) + '</b><small>' + b.apostas + ' apostas · ' + b.ganhas + ' ganhas de ' + b.apuradas + ' apuradas · ' + b.pendentes + ' pendentes</small></div><div><span class="sobre">Retorno</span><b>' + (b.roi !== null ? sinal(b.roi) : '—') + '</b><small>investido ' + reais(b.investido) + '</small></div>'
-      + '<div><span class="sobre">O hub acertou</span><b>' + (totDitas ? totAc + '/' + totDitas : '—') + '</b><small>' + (totDitas ? 'linhas ditas na leitura · esperado ' + num(espDitas, 1) : 'aparece após apurar') + '</small></div><div><span class="sobre">CLV médio</span><b>' + (mt.clv ? sinal(mt.clv.medio) : '—') + '</b><small>' + (mt.clv ? mt.clv.n + ' linhas · ' + mt.clv.positivos + ' positivas' : 'odd da DraftKings na análise ÷ fechamento') + '</small></div></div>'
-      + (niveis ? '<h3>Apostas por tipo</h3><div class="tabela"><table><thead><tr><th>Tipo</th><th class="num">Apostas</th><th class="num">Ganhas</th><th class="num">Investido</th><th class="num">Lucro</th><th class="num">Retorno</th></tr></thead><tbody>' + niveis + '</tbody></table></div>' : '')
-      + '<h3>Bilhetes e apostas</h3>' + (bilhetes ? '<div class="tabela"><table><thead><tr><th>Início</th><th>Bilhete</th><th class="num">Odd</th><th class="num">Valor</th><th>Resultado</th><th></th></tr></thead><tbody>' + bilhetes + '</tbody></table></div>' : '<p class="nota">Nenhum bilhete salvo. No Bilhete, informe valor e odd e toque em Registrar aposta.</p>')
-      + blocoHistorico()
-      + '<h3>Revisão das suas análises neste aparelho</h3>' + (revisao ? '<div class="tabela"><table><thead><tr><th>Dia</th><th>Jogo</th><th>Favorito do modelo</th><th>Linhas da leitura (55–88%)</th><th class="num">Acertos</th></tr></thead><tbody>' + revisao + '</tbody></table></div><p class="nota">Se o hub estiver bem calibrado, os acertos ficam perto do esperado (a soma das chances). Muito acima ou muito abaixo, por muitas semanas, indica erro.</p>' : '<p class="nota">Aparece depois de apurar jogos que você analisou antes do início.</p>')
-      + (linhasFam ? '<h3>Calibração das previsões registradas</h3><div class="tabela"><table><thead><tr><th>Mercado</th><th class="num">Linhas</th><th class="num">Chance média do modelo</th><th class="num">Aconteceu</th><th class="num">Log loss modelo ↓</th><th class="num">Log loss mercado ↓</th></tr></thead><tbody>' + linhasFam + '</tbody></table></div><h3>Os 70% acontecem 70% das vezes?</h3><div class="faixas">' + faixas + '</div><p class="nota">Linhas do mesmo jogo são correlacionadas; avalie com centenas de jogos, não dezenas.</p>' : '');
-  }
-
   /* ---------- Validação ---------- */
   function tabelaMetricas(linhas) { return '<div class="tabela"><table><thead><tr><th></th><th class="num">Jogos</th><th class="num">Log loss 1X2 ↓</th><th class="num">Log loss over 2,5 ↓</th><th class="num">Log loss ambas ↓</th></tr></thead><tbody>' + linhas.map(([n, m]) => m ? '<tr><td>' + n + '</td><td class="num">' + (m.n ?? '—') + '</td><td class="num">' + num(m.logLoss1x2, 4) + '</td><td class="num">' + num(m.logLossOver25, 4) + '</td><td class="num">' + num(m.logLossAmbas, 4) + '</td></tr>' : '').join('') + '</tbody></table></div>'; }
   function tabelaRegras(rg) {
@@ -369,7 +329,7 @@
     const mk = r.mercado, cal = r.calibracao ? r.calibracao.faixas : null, tp = r.tempos;
     el.innerHTML = '<div class="cabeca"><div><p class="sobre">' + (base ? 'MEDIDO EM 19/10/2026' : r.publicado ? 'PUBLICADO EM ' + diaHora(r.geradoEm) + ' · DADOS REAIS' : 'RODADO NESTE NAVEGADOR EM ' + diaHora(r.geradoEm)) + '</p><h1>Validação</h1></div><div class="acoes"><label class="chk"><input type="checkbox" id="val-mercado" checked> comparar com o mercado (~600 consultas)</label><label class="chk"><input type="checkbox" id="val-param"> reescolher parâmetros</label><button class="pri" id="rodar-validacao"' + (S.rodando || !S.F ? ' disabled' : '') + '>' + (S.rodando ? 'Rodando…' : 'Rodar validação') + '</button></div></div>'
       + '<p class="nota" id="val-progresso">Método: a cada semana, o modelo é ajustado só com jogos anteriores e prevê a semana seguinte. Os parâmetros são escolhidos no período de ajuste (' + r.periodoAjuste.map(d => d.split('-').reverse().join('/')).join(' a ') + ') e conferidos no período de teste (' + r.periodoTeste.map(d => d.split('-').reverse().join('/')).join(' a ') + '), que não participou da escolha. Log loss menor = previsão melhor.</p>'
-      + blocoBacktest() + '<h3>Período de teste (base ESPN)</h3>' + tabelaMetricas([['Modelo (com correção ' + num(r.parametros.correcao, 1) + ')', r.teste.modelo], ['Modelo sem correção', r.teste.semCorrecao], ['Modelo sem chutes no alvo', r.teste.semChutes], ['Média da liga', r.teste.mediaDaLiga]])
+      + blocoHistorico() + blocoBacktest() + '<h3>Período de teste (base ESPN)</h3>' + tabelaMetricas([['Modelo (com correção ' + num(r.parametros.correcao, 1) + ')', r.teste.modelo], ['Modelo sem correção', r.teste.semCorrecao], ['Modelo sem chutes no alvo', r.teste.semChutes], ['Média da liga', r.teste.mediaDaLiga]])
       + (r.contraModeloAntigo ? '<h3>Contra o modelo antigo do hub</h3><p class="nota">Nos ' + r.contraModeloAntigo.n + ' jogos do teste que o modelo antigo conseguiu prever; ' + esc(r.contraModeloAntigo.coberturaAntigo) + '.</p>' + tabelaMetricas([['Antigo (Poisson por mando, só a liga do jogo)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.antigo)], ['Atual (todas as competições)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.novo)]]) : '')
       + (mk ? '<h3>Contra o mercado (DraftKings, sem margem)</h3><div class="tabela"><table><tbody><tr><td>Log loss 1X2 · modelo</td><td class="num">' + num(mk.logLoss.modelo, 4) + '</td></tr><tr><td>Log loss 1X2 · mercado no fechamento</td><td class="num"><b>' + num(mk.logLoss.mercado, 4) + '</b></td></tr>' + (mk.logLoss.aberturaMercado ? '<tr><td>Log loss 1X2 · mercado na abertura</td><td class="num">' + num(mk.logLoss.aberturaMercado, 4) + '</td></tr>' : '') + '<tr><td>Melhor peso do modelo numa mistura com o mercado</td><td class="num">' + num(mk.pesoModeloNaMistura * 100, 0) + '%</td></tr>'
         + (!mk.regras && mk.apostasSimuladas && mk.apostasSimuladas.fechamento ? '<tr><td>Apostar onde o modelo vê valor > 5% (fechamento)</td><td class="num">' + mk.apostasSimuladas.fechamento.n + ' apostas · ' + sinal(mk.apostasSimuladas.fechamento.roi) + '</td></tr><tr><td>Idem, na abertura</td><td class="num">' + mk.apostasSimuladas.abertura.n + ' apostas · ' + sinal(mk.apostasSimuladas.abertura.roi) + '</td></tr>' : '') + '</tbody></table></div>'
@@ -401,17 +361,12 @@
       if (t.dataset.comp) { if (t.checked) S.comps.add(t.dataset.comp); else S.comps.delete(t.dataset.comp); gravarPref(); carregarAgenda(); }
       else if (t.id === 'mostrar-todos') { S.todos = t.checked; gravarPref(); renderRadar(); }
       else if (t.dataset.sel) { if (t.checked) S.sel.add(t.dataset.sel); else S.sel.delete(t.dataset.sel); const b = $('#analisar-sel'); if (b) b.textContent = 'Analisar selecionados (' + S.sel.size + ')'; }
-      else if (t.dataset.odd) { B.definirOdd(t.dataset.odd, parseFloat(String(t.value).replace(',', '.'))); renderBilhete(); }
-      else if (t.id === 'importar' && t.files && t.files[0]) { t.files[0].text().then(D.importar).then(n => { toast(n + ' registros importados.'); renderDiario(); }).catch(err => toast('Importação recusada: ' + err.message)); }
     });
     document.addEventListener('click', async e => {
       const t = e.target.closest('button, a'); if (!t) return;
       if (t.dataset.ir) { navegar(t.dataset.ir); return; }
       if (t.dataset.analisar) { analisar([t.dataset.analisar]); return; }
-      if (t.dataset.add) { const [id, ...k] = t.dataset.add.split('|'), a = S.analises.get(id), l = a && a.linhas.find(x => x.chave === k.join('|')); if (a && l) { B.adicionar(a, l); toast('Adicionada ao bilhete: ' + l.rotulo + ' a ' + num(l.odd)); render(); } return; }
       if (t.dataset.fam) { const [id, f] = t.dataset.fam.split('|'); S.familia[id] = f; renderAnalise(); const c = $('#a-' + id); if (c) { const d = c.querySelectorAll('details')[0]; if (d) d.open = true; c.scrollIntoView({ block: 'nearest' }); } return; }
-      if (t.dataset.rem) { B.remover(t.dataset.rem); render(); return; }
-      if (t.dataset.del) { await D.remover(t.dataset.del); renderDiario(); return; }
       if (t.dataset.copiar) { const a = S.analises.get(t.dataset.copiar); if (a) toast(await copiar(textoAnalise(a)) ? 'Análise copiada.' : 'Não consegui copiar; use Baixar.'); return; }
       if (t.dataset.baixar) { const a = S.analises.get(t.dataset.baixar); if (a) baixar('ponto-comum-' + R.dataSP(a.m.date) + '-' + (a.m.hn + '-' + a.m.an).toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-') + '.json', JSON.stringify(dadosAnalise(a), null, 1)); return; }
       switch (t.id) {
@@ -422,20 +377,6 @@
         case 'copiar-todas': { const ls = [...S.analises.values()].sort((x, y) => Date.parse(x.m.date) - Date.parse(y.m.date)); toast(await copiar(ls.map(textoAnalise).join('\n\n———\n\n')) ? ls.length + ' análises copiadas.' : 'Não consegui copiar; use Baixar.'); break; }
         case 'copiar-palpites': { const ls = doDiaParaPalpites().map(m => S.analises.get(m.id)).filter(Boolean).sort((x, y) => Date.parse(x.m.date) - Date.parse(y.m.date)); toast(await copiar(textoPalpites(ls)) ? 'Palpites copiados.' : 'Não consegui copiar.'); break; }
         case 'baixar-todas': baixar('ponto-comum-analises-' + S.dia + '.json', JSON.stringify([...S.analises.values()].map(dadosAnalise), null, 1)); break;
-        case 'limpar-bilhete': B.limpar(); render(); break;
-        case 'acompanhar': case 'registrar-aposta': {
-          const ps = B.lista(); if (!ps.length) break; const av = B.avaliar(ps, S.analises), lerN = id => parseFloat(String(($('#' + id) || {}).value || '').replace(',', '.'));
-          const valor = lerN('valor-aposta'), oddPega = lerN('odd-pega'), nivel = ps.length > 1 ? 'multipla' : 'simples';
-          if (t.id === 'registrar-aposta' && !(valor > 0)) { toast('Informe o valor apostado.'); break; }
-          if (t.id === 'registrar-aposta' && !av.odd && !(oddPega > 1)) { toast('Informe a odd que você pegou.'); break; }
-          await D.salvarBilhete(ps, av, { modo: t.id === 'acompanhar' ? 'acompanhar' : 'aposta', valor, oddPega, nivel }); toast(t.id === 'acompanhar' ? 'Bilhete salvo para acompanhar.' : 'Aposta registrada: ' + reais(valor) + ' a ' + num(oddPega > 1 ? oddPega : av.odd) + '.'); break; }
-        case 'apurar': {
-          t.disabled = true; t.textContent = 'Apurando…';
-          const lista = await D.todos(), pend = lista.filter(r => !r.apurado && Date.parse(r.inicio) + 2.5 * 3600e3 < Date.now()), porDia = new Map();
-          for (const r of pend) for (const x of r.tipo === 'bilhete' ? r.pernas : [r]) { const d = R.dataSP(x.inicio); if (!porDia.has(d)) porDia.set(d, new Set()); porDia.get(d).add(x.comp); }
-          for (const [d, cs] of [...porDia.entries()].slice(-14)) { try { const r = await R.carregarDia(d, [...cs]); mesclar(r.jogos); } catch { /* tenta com a rede atual */ } }
-          const res = await D.apurar(S.porId); toast(res.apurados + ' registro(s) apurado(s)' + (res.comClv ? ', ' + res.comClv + ' com CLV' : '') + '.'); renderDiario(); break; }
-        case 'exportar': baixar('ponto-comum-diario-' + hojeSP() + '.json', await D.exportar()); break;
         case 'rodar-validacao': rodarValidacao(); break;
         case 'aplicar-param': if (S.validacao && S.validacao.parametros) { await R.kv.put('kv', 'parametros', Object.assign({ aplicar: true }, S.validacao.parametros)); toast('Parâmetros aplicados. Reajustando o modelo…'); carregarRedeEModelos(); } break;
         case 'param-padrao': await R.kv.del('kv', 'parametros'); toast('Parâmetros padrão restaurados.'); carregarRedeEModelos(); break;
@@ -447,7 +388,7 @@
     lerPref(); bind(); $('#dia').value = S.dia;
     const v = await R.kv.get('kv', 'validacao'); if (v && v.teste && v.tempos) S.validacao = v;
     R.carregarDados('validacao.json').then(x => { if (x && x.teste) { S.valPublicada = Object.assign(x, { publicado: true }); if (S.validacao && Date.parse(S.validacao.geradoEm) < Date.parse(x.geradoEm)) S.validacao = null; if (S.aba === 'validacao') renderValidacao(); } });
-    R.carregarDados('revisao.json').then(x => { S.revisao = x || false; if (S.aba === 'diario') renderDiario(); });
+    R.carregarDados('revisao.json').then(x => { S.revisao = x || false; if (S.aba === 'validacao') renderValidacao(); });
     R.carregarDados('backtest.json').then(x => { S.backtest = x || null; if (S.aba === 'validacao') renderValidacao(); });
     const h = location.hash.slice(1); navegar(ABAS.includes(h) ? h : 'radar');
     carregarAgenda(); carregarRedeEModelos();

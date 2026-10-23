@@ -15,7 +15,7 @@ export function revisar({ K, D, jogos, dados, dias = 45 }) {
   const arquivos = fs.readdirSync(dir).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
   const cacheOdds = new Map(), fechamento = (comp, inicio, id) => { const k = comp + '-' + new Date(inicio).getUTCFullYear(); if (!cacheOdds.has(k)) cacheOdds.set(k, lerJSON(path.join(dados, 'odds', k + '.json'), {})); const o = cacheOdds.get(k)[id]; return o && o.f && o.f[0] && o.f[1] && o.f[2] ? o.f : null; };
   const fam = {}, leitura = { n: 0, acertos: 0, esperado: 0 }, mov = { n: 0, aFavor: 0, soma: 0 }, porDia = [];
-  const pal = {}; const somaPal = (tipo, chance, odd, y) => { const x = pal[tipo] || (pal[tipo] = { n: 0, acertos: 0, previsto: 0, comOdd: 0, somaOdd: 0, lucro: 0 }); x.n++; x.acertos += y; x.previsto += chance; if (odd > 1) { x.comOdd++; x.somaOdd += odd; x.lucro += y ? odd - 1 : -1; } };
+  const pal = {}; const somaPal = (tipo, chance, odd, y, melhor) => { const x = pal[tipo] || (pal[tipo] = { n: 0, acertos: 0, previsto: 0, comOdd: 0, somaOdd: 0, lucro: 0, lucroMelhor: 0 }); x.n++; x.acertos += y; x.previsto += chance; if (odd > 1) { const mo = melhor > 1 ? melhor : odd; x.comOdd++; x.somaOdd += odd; x.lucro += y ? odd - 1 : -1; x.lucroMelhor += y ? mo - 1 : -1; } };
   const jog = { n: 0, marcaram: 0, previsto: 0, llModelo: 0, comOdd: 0, marcaramComOdd: 0, previstoComOdd: 0, implicitoBruto: 0, apostas: 0, lucro: 0, faixas: Array.from({ length: 6 }, () => [0, 0, 0]) };
   const somaFam = (f, p, q, y) => { const x = fam[f] || (fam[f] = { n: 0, llModelo: 0, llMercado: 0, nMercado: 0, llModeloComMercado: 0, brier: 0, previsto: 0, aconteceu: 0 }); x.n++; x.llModelo -= y ? L(p) : L(1 - p); x.brier += (p - y) ** 2; x.previsto += p; x.aconteceu += y; if (Number.isFinite(q)) { x.nMercado++; x.llMercado -= y ? L(q) : L(1 - q); x.llModeloComMercado -= y ? L(p) : L(1 - p); } };
   let nJogos = 0;
@@ -42,7 +42,7 @@ export function revisar({ K, D, jogos, dados, dias = 45 }) {
       }
       const palDia = [];
       if (p.palpites) {
-        for (const tipo of ['valor', 'principal', 'oddMaior', 'destaque']) { const x = p.palpites[tipo]; if (!x) continue; const y = D.liquidar(deChave(x.chave), j); if (y === null) continue; somaPal(tipo, x.chance, x.odd, y); palDia.push({ tipo, rotulo: x.rotulo, odd: x.odd, chance: x.chance, ok: y }); }
+        for (const tipo of ['valor', 'principal', 'oddMaior', 'destaque']) { const x = p.palpites[tipo]; if (!x) continue; const y = D.liquidar(deChave(x.chave), j); if (y === null) continue; somaPal(tipo, x.chance, x.odd, y, x.melhorOdd); palDia.push({ tipo, rotulo: x.rotulo, odd: x.melhorOdd || x.odd, casa: x.casaMelhor || null, chance: x.chance, ok: y }); }
         const xj = p.palpites.jogador; if (xj && j.gm) { const y = K.acharJogador(j.gm.filter(g => g[0] === xj.lado && !g[2]).map(g => ({ nome: g[1] })), xj.nome) ? 1 : 0; somaPal('jogador', xj.p, xj.odd, y); palDia.push({ tipo: 'jogador', rotulo: xj.nome + ' marca', odd: xj.odd, chance: xj.p, ok: y }); }
       }
       det.jogos.push({ id, jogo: p.casa + ' × ' + p.fora, comp: p.comp, inicio: p.inicio, placar: [j.hg, j.ag], palpites: palDia, nada: !!(p.palpites && p.palpites.nada), favorito: fav ? { rotulo: K.rotulo({ t: '1x2', s: fav.s }, p.casa, p.fora), p: fav.l[0], pMercado: fav.l[1], ok: D.liquidar({ t: '1x2', s: fav.s }, j) } : null, leitura: ditas, filtro: p.filtro });
@@ -50,7 +50,7 @@ export function revisar({ K, D, jogos, dados, dias = 45 }) {
     porDia.push(det);
   }
   for (const x of Object.values(fam)) { const n = x.n; x.llModelo = r4(x.llModelo / n); x.brier = r4(x.brier / n); x.previsto = r4(x.previsto / n); x.aconteceu = r4(x.aconteceu / n); x.llMercado = x.nMercado ? r4(x.llMercado / x.nMercado) : null; x.llModeloComMercado = x.nMercado ? r4(x.llModeloComMercado / x.nMercado) : null; }
-  for (const x of Object.values(pal)) { x.previsto = r4(x.previsto / x.n); x.oddMedia = x.comOdd ? r4(x.somaOdd / x.comOdd) : null; x.retorno = x.comOdd ? r4(x.lucro / x.comOdd) : null; x.lucro = r4(x.lucro); delete x.somaOdd; }
+  for (const x of Object.values(pal)) { x.previsto = r4(x.previsto / x.n); x.oddMedia = x.comOdd ? r4(x.somaOdd / x.comOdd) : null; x.retorno = x.comOdd ? r4(x.lucro / x.comOdd) : null; x.retornoMelhorOdd = x.comOdd ? r4(x.lucroMelhor / x.comOdd) : null; x.lucro = r4(x.lucro); delete x.lucroMelhor; delete x.somaOdd; }
   return { geradoEm: new Date().toISOString(), jogos: nJogos, porFamilia: fam, leitura: { n: leitura.n, acertos: leitura.acertos, esperado: r4(leitura.esperado) },
     jogadores: jog.n ? { n: jog.n, marcaram: jog.marcaram, previsto: r4(jog.previsto), llModelo: r4(jog.llModelo / jog.n), comOdd: jog.comOdd, marcaramComOdd: jog.marcaramComOdd, previstoModeloComOdd: r4(jog.previstoComOdd), implicitoBrutoComOdd: r4(jog.implicitoBruto),
       apostasModeloAcimaDaOdd: { n: jog.apostas, retorno: jog.apostas ? r4(jog.lucro / jog.apostas) : null }, faixas: jog.faixas.map((f, i) => f[0] ? { de: i / 10, n: f[0], previsto: r4(f[1] / f[0]), aconteceu: r4(f[2] / f[0]) } : null).filter(Boolean) } : null,
