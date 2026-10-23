@@ -1,14 +1,110 @@
 {
- "geradoEm": "2026-10-22T21:55:33.016Z",
- "jogos": 0,
- "porFamilia": {},
+ "geradoEm": "2026-10-23T02:49:17.044Z",
+ "jogos": 1,
+ "porFamilia": {
+  "resultado": {
+   "n": 18,
+   "llModelo": 0.5155,
+   "llMercado": 0.5004,
+   "nMercado": 18,
+   "llModeloComMercado": 0.5155,
+   "brier": 0.1876,
+   "previsto": 0.5,
+   "aconteceu": 0.5
+  },
+  "gols": {
+   "n": 24,
+   "llModelo": 0.7266,
+   "llMercado": 0.7079,
+   "nMercado": 24,
+   "llModeloComMercado": 0.7266,
+   "brier": 0.2514,
+   "previsto": 0.5,
+   "aconteceu": 0.5
+  },
+  "tempos": {
+   "n": 14,
+   "llModelo": 0.8989,
+   "llMercado": 0.8822,
+   "nMercado": 14,
+   "llModeloComMercado": 0.8989,
+   "brier": 0.3281,
+   "previsto": 0.4286,
+   "aconteceu": 0.4286
+  },
+  "escanteios": {
+   "n": 24,
+   "llModelo": 0.7341,
+   "llMercado": null,
+   "nMercado": 0,
+   "llModeloComMercado": null,
+   "brier": 0.2734,
+   "previsto": 0.5,
+   "aconteceu": 0.5
+  },
+  "cartoes": {
+   "n": 22,
+   "llModelo": 0.5999,
+   "llMercado": null,
+   "nMercado": 0,
+   "llModeloComMercado": null,
+   "brier": 0.2018,
+   "previsto": 0.5,
+   "aconteceu": 0.5
+  }
+ },
  "leitura": {
-  "n": 0,
+  "n": 3,
   "acertos": 0,
-  "esperado": 0
+  "esperado": 2.1354
  },
  "jogadores": null,
- "niveis": {},
+ "niveis": {
+  "segura": {
+   "bilhetes": 0,
+   "ganhos": 0,
+   "pendentes": 1,
+   "lucro": 0,
+   "nMercado": 0,
+   "retorno": null,
+   "oddMedia": null,
+   "chanceMedia": null,
+   "chanceMercadoMedia": null
+  },
+  "media": {
+   "bilhetes": 0,
+   "ganhos": 0,
+   "pendentes": 1,
+   "lucro": 0,
+   "nMercado": 0,
+   "retorno": null,
+   "oddMedia": null,
+   "chanceMedia": null,
+   "chanceMercadoMedia": null
+  },
+  "arriscada": {
+   "bilhetes": 0,
+   "ganhos": 0,
+   "pendentes": 1,
+   "lucro": 0,
+   "nMercado": 0,
+   "retorno": null,
+   "oddMedia": null,
+   "chanceMedia": null,
+   "chanceMercadoMedia": null
+  },
+  "bingo": {
+   "bilhetes": 0,
+   "ganhos": 0,
+   "pendentes": 1,
+   "lucro": 0,
+   "nMercado": 0,
+   "retorno": null,
+   "oddMedia": null,
+   "chanceMedia": null,
+   "chanceMercadoMedia": null
+  }
+ },
  "movimentoDoMercado": {
   "n": 0,
   "aFavorDoModelo": 0,
@@ -18,6 +114,20 @@
   {
    "dia": "2026-10-24",
    "jogos": [
+    {
+     "id": "401874948",
+     "jogo": "Napoli × AS Roma",
+     "comp": "ita.1",
+     "inicio": "2026-10-24T16:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874955",
+     "jogo": "Lazio × Parma",
+     "comp": "ita.1",
+     "inicio": "2026-10-24T18:45Z",
+     "pendente": true
+    },
     {
      "id": "401874958",
      "jogo": "Cagliari × Bologna",
@@ -33,6 +143,34 @@
      "pendente": true
     },
     {
+     "id": "401876427",
+     "jogo": "Lens × Paris FC",
+     "comp": "fra.1",
+     "inicio": "2026-10-24T18:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401878767",
+     "jogo": "Chelsea × Tottenham Hotspur",
+     "comp": "eng.1",
+     "inicio": "2026-10-24T16:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401878768",
+     "jogo": "Arsenal × Everton",
+     "comp": "eng.1",
+     "inicio": "2026-10-24T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879255",
+     "jogo": "Coventry City × Fulham",
+     "comp": "eng.1",
+     "inicio": "2026-10-24T14:00Z",
+     "pendente": true
+    },
+    {
      "id": "401879256",
      "jogo": "Aston Villa × Manchester City",
      "comp": "eng.1",
@@ -40,10 +178,24 @@
      "pendente": true
     },
     {
+     "id": "401882827",
+     "jogo": "Valencia × Villarreal",
+     "comp": "esp.1",
+     "inicio": "2026-10-24T16:30Z",
+     "pendente": true
+    },
+    {
      "id": "401882830",
      "jogo": "Rayo Vallecano × Elche",
      "comp": "esp.1",
      "inicio": "2026-10-24T12:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882831",
+     "jogo": "Racing Santander × Espanyol",
+     "comp": "esp.1",
+     "inicio": "2026-10-24T14:15Z",
      "pendente": true
     },
     {
@@ -80,24 +232,147 @@
      "comp": "ger.1",
      "inicio": "2026-10-24T13:30Z",
      "pendente": true
+    },
+    {
+     "id": "401884763",
+     "jogo": "Borussia Dortmund × Eintracht Frankfurt",
+     "comp": "ger.1",
+     "inicio": "2026-10-24T16:30Z",
+     "pendente": true
     }
    ],
    "sugestoes": [
     {
      "nivel": "segura",
-     "indisponivel": "Nenhuma combinação dos jogos analisados chega à faixa de odd 2,4–4,5 com o filtro deste nível."
+     "odd": 2.475,
+     "pModelo": 0.4265,
+     "pMercado": 0.3703,
+     "status": "pendente",
+     "pernas": [
+      {
+       "rotulo": "Vitória Como",
+       "jogo": "Como × Sassuolo",
+       "odd": 1.5,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "jogo": "Chelsea × Tottenham Hotspur",
+       "odd": 1.65,
+       "ok": null
+      }
+     ]
     },
     {
      "nivel": "media",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (2; precisa de 3)."
+     "odd": 9.1209,
+     "pModelo": 0.1383,
+     "pMercado": 0.0908,
+     "status": "pendente",
+     "pernas": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "jogo": "Como × Sassuolo",
+       "odd": 1.74,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 2,5 gols",
+       "jogo": "Napoli × AS Roma",
+       "odd": 1.93,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "jogo": "Valencia × Villarreal",
+       "odd": 1.4,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "jogo": "Borussia Dortmund × Eintracht Frankfurt",
+       "odd": 1.94,
+       "ok": null
+      }
+     ]
     },
     {
      "nivel": "arriscada",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (2; precisa de 4)."
+     "odd": 15.0037,
+     "pModelo": 0.0876,
+     "pMercado": 0.0555,
+     "status": "pendente",
+     "pernas": [
+      {
+       "rotulo": "Menos de 2,5 gols",
+       "jogo": "Arsenal × Everton",
+       "odd": 1.98,
+       "ok": null
+      },
+      {
+       "rotulo": "Vitória Napoli",
+       "jogo": "Napoli × AS Roma",
+       "odd": 2.79,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "jogo": "Valencia × Villarreal",
+       "odd": 1.4,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "jogo": "Borussia Dortmund × Eintracht Frankfurt",
+       "odd": 1.94,
+       "ok": null
+      }
+     ]
     },
     {
      "nivel": "bingo",
-     "indisponivel": "Poucos jogos analisados passam no filtro deste nível (2; precisa de 5)."
+     "odd": 100.8158,
+     "pModelo": 0.0155,
+     "pMercado": 0.0074,
+     "status": "pendente",
+     "pernas": [
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "jogo": "Aston Villa × Manchester City",
+       "odd": 1.24,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "jogo": "Como × Sassuolo",
+       "odd": 1.74,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 2,5 gols",
+       "jogo": "Arsenal × Everton",
+       "odd": 1.98,
+       "ok": null
+      },
+      {
+       "rotulo": "Vitória Napoli",
+       "jogo": "Napoli × AS Roma",
+       "odd": 2.79,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 1,5 gols",
+       "jogo": "Valencia × Villarreal",
+       "odd": 4.36,
+       "ok": null
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "jogo": "Borussia Dortmund × Eintracht Frankfurt",
+       "odd": 1.94,
+       "ok": null
+      }
+     ]
     }
    ]
   },
@@ -174,7 +449,37 @@
      "jogo": "Flamengo × Estudiantes de La Plata",
      "comp": "conmebol.libertadores",
      "inicio": "2026-10-23T00:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "favorito": {
+      "rotulo": "Vitória Flamengo",
+      "p": 0.6585,
+      "pMercado": 0.6472,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7008,
+       "odd": 1.37,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Flamengo",
+       "p": 0.6585,
+       "odd": 1.5,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Flamengo ou Estudiantes de La Plata)",
+       "p": 0.7761,
+       "odd": 1.23,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": [
