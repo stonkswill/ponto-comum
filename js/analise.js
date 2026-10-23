@@ -120,15 +120,15 @@
 
   /* Melhores apostas do jogo (sem múltiplas). Calibradas pelo LUCRO num backtest de 18 mil jogos (football-data.co.uk, 8 ligas,
    * 2020–2026; regras escolhidas até 2023/24 e conferidas de 2024/25 em diante, nas odds da Bet365 de antes da rodada):
-   * - Valor: a Bet365/DraftKings paga acima do preço justo da Pinnacle (sem margem), odd 2,60–13, modelo e mercado a até 8 p.p.
-   *   Treino +12,0% (757 apostas), teste +5,9% (255), acerto 27,5%, odd média 4,21. Por temporada: +0, +11, +5, +33, +22 e −29%
-   *   (2025/26): a vantagem oscila e pode estar sumindo. Só aparece quando há odds da Pinnacle para o jogo.
+   * - Valor (DESLIGADO): Bet365 acima do preço justo da Pinnacle, odd 2,60–13. Lucrou até 2024/25 (+0, +11, +5, +33, +22%), mas
+   *   perdeu em 2025/26 (−29%) e 2026/27 (−17%), e a football-data deixou de receber odds da Pinnacle. A bolsa da Betfair, testada
+   *   como substituta, não é afiada antes da rodada. Fica desligado (regra.valor = null) até haver fonte e evidência recentes.
    * - Principal: nos seus mercados, a linha de maior chance (média de modelo e mercado) com chance ≥ 50%, odd ≥ 1,35 e modelo e
    *   mercado a até 5 p.p. Teste −4,3% na Bet365 e −1,4% pegando a melhor odd do mercado (é a margem da casa).
    * - Odd maior: outro mercado, odd 1,70–2,60, a até 5 p.p. e modelo não abaixo do mercado. Teste −3,3% (Bet365), −1,4% (melhor odd).
    * - Fora do normal: escanteios, cartões, tempos ou gols de um time bem acima do normal da competição (sem odd na fonte).
    * - Jogador: quem tem mais chance de marcar pelo modelo entre os que têm odd, sem o modelo abaixo do preço justo da casa. */
-  const REGRA_PALPITE = Object.freeze({ oddMin: 1.35, chanceMin: 0.5, chanceMax: 0.92, acordo: 0.05, alt: [1.7, 2.6], valor: { odd: [2.6, 13], acordo: 0.08 }, margemJogador: 1.25 });
+  const REGRA_PALPITE = Object.freeze({ oddMin: 1.35, chanceMin: 0.5, chanceMax: 0.92, acordo: 0.05, alt: [1.7, 2.6], valor: null, margemJogador: 1.25 });
   const PREFERIDOS = l => ['1x2', 'dc', 'tot'].includes(l.mk.t) || (l.mk.t === 'btts' && l.mk.s === 's');
   function palpites(a, regra = REGRA_PALPITE) {
     const cons = l => Number.isFinite(l.pMercado) ? (l.pModelo + l.pMercado) / 2 : l.pModelo;
@@ -138,7 +138,7 @@
     const principal = melhor(base.filter(l => acorda(l, regra.acordo) && l.odd >= regra.oddMin && cons(l) >= regra.chanceMin));
     const oddMaior = melhor(base.filter(l => acorda(l, regra.acordo) && l.odd >= regra.alt[0] && l.odd < regra.alt[1] && (!Number.isFinite(l.pMercado) || l.pModelo >= l.pMercado) && (!principal || l.mk.t !== principal.mk.t)));
     const vPin = l => l.oddOutra * l.pPinnacle - 1;
-    const valor = melhor(a.linhas.filter(l => Number.isFinite(l.pPinnacle) && l.oddOutra >= regra.valor.odd[0] && l.oddOutra < regra.valor.odd[1] && vPin(l) >= 0 && acorda(l, regra.valor.acordo)), vPin);
+    const valor = !regra.valor ? null : melhor(a.linhas.filter(l => Number.isFinite(l.pPinnacle) && l.oddOutra >= regra.valor.odd[0] && l.oddOutra < regra.valor.odd[1] && vPin(l) >= 0 && acorda(l, regra.valor.acordo)), vPin);
     const destaque = (a.destaques || []).find(l => l.odd >= 1.3) || null;
     const js = [...((a.jogadores && a.jogadores.casa) || []), ...((a.jogadores && a.jogadores.fora) || [])].filter(j => j.p && j.odd);
     const jogador = js.filter(j => j.p >= 1 / j.odd / regra.margemJogador).sort((x, y) => y.p - x.p)[0] || null;

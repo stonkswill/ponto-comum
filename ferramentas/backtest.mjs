@@ -60,13 +60,13 @@ function montar(preds, esticar = 1.2) {
 function linhas(j, fonte, momento, ref = 'b365') {
   const o = j.m.odds[momento][fonte], R0 = j.m.odds[momento][ref] || {}, P = j.m.odds[momento].ps.x12 ? j.m.odds[momento].ps : j.m.odds[momento].avg; // Pinnacle do MESMO momento (sem olhar o futuro)
   const out = []; if (!o) return out;
-  const q = devig(R0.x12), qp = devig(P && P.x12), qo = devig(R0.ou25), qpo = devig(P && P.ou25), pm = j.pm;
+  const q = devig(R0.x12), qp = devig(P && P.x12), qo = devig(R0.ou25), qpo = devig(P && P.ou25), pm = j.pm, BF = j.m.odds[momento].bfe || {}, qb = devig(BF.x12), qbo = devig(BF.ou25);
   if (o.x12) {
     const S = ['h', 'd', 'a'];
-    S.forEach((s, i) => out.push({ t: '1x2', s, pm: pm[s], pk: q ? q[i] : null, pin: qp ? qp[i] : null, odd: o.x12[i], y: j.r === s ? 1 : 0 }));
-    for (const [s, a, b] of [['1x', 0, 1], ['x2', 2, 1], ['12', 0, 2]]) out.push({ t: 'dc', s, pm: pm[S[a]] + pm[S[b]], pk: q ? q[a] + q[b] : null, pin: qp ? qp[a] + qp[b] : null, odd: 1 / (1 / o.x12[a] + 1 / o.x12[b]), y: j.r === S[a] || j.r === S[b] ? 1 : 0 });
+    S.forEach((s, i) => out.push({ t: '1x2', s, pm: pm[s], pk: q ? q[i] : null, pin: qp ? qp[i] : null, bfe: qb ? qb[i] : null, odd: o.x12[i], y: j.r === s ? 1 : 0 }));
+    for (const [s, a, b] of [['1x', 0, 1], ['x2', 2, 1], ['12', 0, 2]]) out.push({ t: 'dc', s, pm: pm[S[a]] + pm[S[b]], pk: q ? q[a] + q[b] : null, pin: qp ? qp[a] + qp[b] : null, bfe: qb ? qb[a] + qb[b] : null, odd: 1 / (1 / o.x12[a] + 1 / o.x12[b]), y: j.r === S[a] || j.r === S[b] ? 1 : 0 });
   }
-  if (o.ou25) { out.push({ t: 'tot', s: 'o', pm: pm.o, pk: qo ? qo[0] : null, pin: qpo ? qpo[0] : null, odd: o.ou25[0], y: j.tg > 2.5 ? 1 : 0 }, { t: 'tot', s: 'u', pm: 1 - pm.o, pk: qo ? qo[1] : null, pin: qpo ? qpo[1] : null, odd: o.ou25[1], y: j.tg < 2.5 ? 1 : 0 }); }
+  if (o.ou25) { out.push({ t: 'tot', s: 'o', pm: pm.o, pk: qo ? qo[0] : null, pin: qpo ? qpo[0] : null, bfe: qbo ? qbo[0] : null, odd: o.ou25[0], y: j.tg > 2.5 ? 1 : 0 }, { t: 'tot', s: 'u', pm: 1 - pm.o, pk: qo ? qo[1] : null, pin: qpo ? qpo[1] : null, bfe: qbo ? qbo[1] : null, odd: o.ou25[1], y: j.tg < 2.5 ? 1 : 0 }); }
   return out.filter(l => l.odd > 1);
 }
 const cons = l => Number.isFinite(l.pk) ? (l.pm + l.pk) / 2 : l.pm;
@@ -114,6 +114,8 @@ function qualidade(js) {
   return { n: c.n, logLoss1x2: { modelo: r(c.modelo / c.n), bet365: r(c.b365 / c.n), pinnacle: r(c.pin / c.n), mistura20: r(c.mistura / c.n) }, nOU: c.nOU, logLossOver25: { modelo: r(c.ouModelo / c.nOU), bet365: r(c.ouB365 / c.nOU), pinnacle: r(c.ouPin / c.nOU) } };
 }
 const Q = { treino: qualidade(J.filter(j => !j.teste)), teste: qualidade(J.filter(j => j.teste)) };
+{ let n = 0, lp = 0, lb = 0, lb3 = 0; for (const j of J) { const p = devig(j.m.odds.pre.ps.x12), b = devig(j.m.odds.pre.bfe.x12), b3 = devig(j.m.odds.pre.b365.x12); if (!p || !b || !b3) continue; const i = { h: 0, d: 1, a: 2 }[j.r]; n++; lp -= Math.log(p[i]); lb -= Math.log(b[i]); lb3 -= Math.log(b3[i]); }
+  Q.betfairXpinnacle = { n, pinnacle: +(lp / n).toFixed(4), betfair: +(lb / n).toFixed(4), bet365: +(lb3 / n).toFixed(4) }; log('Betfair × Pinnacle × Bet365 (antes da rodada, mesmos jogos):', JSON.stringify(Q.betfairXpinnacle)); }
 log('qualidade:', JSON.stringify(Q));
 
 // 2) Faixas de odd: o que cada faixa rende (todas as linhas da faixa, sem filtro do modelo) e com o filtro do modelo.
@@ -165,6 +167,10 @@ Object.assign(atual, {
   valorConsenso: { filtro: l => l.odd >= 1.6 && l.odd < 3.5 && cons(l) >= 0.6 && Number.isFinite(l.pk) && Math.abs(l.pm - l.pk) <= 0.05, porJogo: 'uma', nota: cons },
   valorPinnacle: { filtro: l => l.odd >= 2.6 && l.odd < 13 && pinValor(l) >= 0 && Number.isFinite(l.pk) && Math.abs(l.pm - l.pk) <= 0.08, porJogo: 'uma', nota: pinValor, prob: l => l.pin },
   valorPinnacle2: { filtro: l => l.odd >= 2.0 && l.odd < 13 && pinValor(l) >= 0.02 && Number.isFinite(l.pk) && Math.abs(l.pm - l.pk) <= 0.08, porJogo: 'uma', nota: pinValor, prob: l => l.pin },
+  valorBetfair: { filtro: l => l.odd >= 2.6 && l.odd < 13 && Number.isFinite(l.bfe) && l.bfe * l.odd - 1 >= 0 && Number.isFinite(l.pk) && Math.abs(l.pm - l.pk) <= 0.08, porJogo: 'uma', nota: l => l.bfe * l.odd - 1, prob: l => l.bfe },
+  valorBetfair3: { filtro: l => l.odd >= 2.6 && l.odd < 13 && Number.isFinite(l.bfe) && l.bfe * l.odd - 1 >= 0.03 && Number.isFinite(l.pk) && Math.abs(l.pm - l.pk) <= 0.08, porJogo: 'uma', nota: l => l.bfe * l.odd - 1, prob: l => l.bfe },
+  valorBetfairTudo: { filtro: l => l.odd >= 1.35 && l.odd < 13 && Number.isFinite(l.bfe) && l.bfe * l.odd - 1 >= 0.02, porJogo: 'uma', nota: l => l.bfe * l.odd - 1, prob: l => l.bfe },
+  valorPinnacleTeste: { filtro: l => l.odd >= 2.6 && l.odd < 13 && Number.isFinite(l.pin) && Number.isFinite(l.bfe) && l.pin * l.odd - 1 >= 0 && Number.isFinite(l.pk) && Math.abs(l.pm - l.pk) <= 0.08, porJogo: 'uma', nota: l => l.pin * l.odd - 1, prob: l => l.pin },
   oddMaior26: { filtro: l => l.odd >= 1.7 && l.odd < 2.6 && (!Number.isFinite(l.pk) || (Math.abs(l.pm - l.pk) <= 0.05 && l.pm >= l.pk)), porJogo: 'uma', nota: cons }
 });
 // Retorno por temporada das regras (estabilidade no tempo).

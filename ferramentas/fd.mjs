@@ -26,11 +26,11 @@ const par = (r, a, b) => { const x = [odd(r[a]), odd(r[b])]; return x.every(Bool
 /* Odds de um jogo. pre = coletadas antes da rodada (sexta/terça); fech = fechamento. b365 = Bet365, ps = Pinnacle, max = melhor odd do mercado, avg = média. */
 export function oddsDe(r) {
   const o = { pre: {}, fech: {} };
-  for (const [k, p] of [['b365', 'B365'], ['ps', 'PS'], ['max', 'Max'], ['avg', 'Avg']]) {
+  for (const [k, p] of [['b365', 'B365'], ['ps', 'PS'], ['bfe', 'BFE'], ['max', 'Max'], ['avg', 'Avg']]) {
     o.pre[k] = { x12: trio(r, p + 'H', p + 'D', p + 'A') || (k === 'max' ? trio(r, 'BbMxH', 'BbMxD', 'BbMxA') : k === 'avg' ? trio(r, 'BbAvH', 'BbAvD', 'BbAvA') : null) };
     o.fech[k] = { x12: trio(r, p + 'CH', p + 'CD', p + 'CA') };
   }
-  const ou = { b365: ['B365>2.5', 'B365<2.5', 'B365C>2.5', 'B365C<2.5'], ps: ['P>2.5', 'P<2.5', 'PC>2.5', 'PC<2.5'], max: ['Max>2.5', 'Max<2.5', 'MaxC>2.5', 'MaxC<2.5'], avg: ['Avg>2.5', 'Avg<2.5', 'AvgC>2.5', 'AvgC<2.5'] };
+  const ou = { b365: ['B365>2.5', 'B365<2.5', 'B365C>2.5', 'B365C<2.5'], ps: ['P>2.5', 'P<2.5', 'PC>2.5', 'PC<2.5'], bfe: ['BFE>2.5', 'BFE<2.5', 'BFEC>2.5', 'BFEC<2.5'], max: ['Max>2.5', 'Max<2.5', 'MaxC>2.5', 'MaxC<2.5'], avg: ['Avg>2.5', 'Avg<2.5', 'AvgC>2.5', 'AvgC<2.5'] };
   for (const [k, [a, b, c, d]] of Object.entries(ou)) { o.pre[k].ou25 = par(r, a, b) || (k === 'max' ? par(r, 'BbMx>2.5', 'BbMx<2.5') : k === 'avg' ? par(r, 'BbAv>2.5', 'BbAv<2.5') : null); o.fech[k].ou25 = par(r, c, d); }
   return o;
 }
