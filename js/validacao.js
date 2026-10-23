@@ -64,15 +64,28 @@
   ];
   function simularRegras(linhas, momento) {
     return REGRAS.map(rg => { let n = 0, lucro = 0, acertos = 0, somaOdd = 0;
-      for (const r of linhas) for (const c of r.cands[momento] || []) if (rg.f(c.pm, c.pk, c.odd)) { n++; somaOdd += c.odd; if (c.y) { acertos++; lucro += c.odd - 1; } else lucro -= 1; }
+      for (const r of linhas) for (const c of (r.cands[momento] || []).filter(c => c.t !== 'dc')) if (rg.f(c.pm, c.pk, c.odd)) { n++; somaOdd += c.odd; if (c.y) { acertos++; lucro += c.odd - 1; } else lucro -= 1; }
       return { id: rg.id, nome: rg.nome, n, acertos, oddMedia: n ? +(somaOdd / n).toFixed(2) : null, roi: n ? +(lucro / n).toFixed(3) : null }; });
+  }
+  /* A regra dos palpites por jogo (a mesma de PCAnalise.palpites), com as odds reais daquele momento. Ambas marcam fica de
+   * fora porque a fonte não guarda odds dela. */
+  function avaliarPalpites(linhas, momento = 'fechamento') {
+    const R0 = G.PCAnalise ? G.PCAnalise.REGRA_PALPITE : { oddMin: 1.35, chanceMin: 0.5, chanceMax: 0.92, alt: [1.7, 3.2] }, cons = c => (c.pm + c.pk) / 2;
+    const out = { jogos: 0, principal: { n: 0, acertos: 0, previsto: 0, somaOdd: 0, lucro: 0 }, oddMaior: { n: 0, acertos: 0, previsto: 0, somaOdd: 0, lucro: 0 } };
+    const soma = (x, c) => { x.n++; x.acertos += c.y; x.previsto += cons(c); x.somaOdd += c.odd; x.lucro += c.y ? c.odd - 1 : -1; };
+    for (const r of linhas) { const cs = (r.cands[momento] || []).filter(c => Math.abs(c.pm - c.pk) <= 0.08 && c.pm <= R0.chanceMax); if (!cs.length) continue; out.jogos++;
+      const melhor = ls => ls.reduce((b, c) => !b || cons(c) > cons(b) ? c : b, null);
+      const p = melhor(cs.filter(c => c.odd >= R0.oddMin && cons(c) >= R0.chanceMin)); if (p) soma(out.principal, p);
+      const o = melhor(cs.filter(c => c.odd >= R0.alt[0] && c.odd <= R0.alt[1] && c.pm >= c.pk && (!p || c.t !== p.t))); if (o) soma(out.oddMaior, o); }
+    for (const k of ['principal', 'oddMaior']) { const x = out[k]; x.taxa = x.n ? x.acertos / x.n : null; x.previsto = x.n ? x.previsto / x.n : null; x.oddMedia = x.n ? +(x.somaOdd / x.n).toFixed(2) : null; x.retorno = x.n ? +(x.lucro / x.n).toFixed(3) : null; delete x.somaOdd; }
+    return out;
   }
   /* O filtro das sugestões (modelo e mercado a até 8 p.p., ambos acima do mínimo, times com ≥ 12 jogos) contra o resultado:
    * a chance de consenso das linhas que passam acontece de fato? E quanto renderiam a odd de fechamento? */
   function avaliarFiltro(linhas) {
     const faixas = [[0.25, 0.38, 'Bingo'], [0.38, 0.48, 'Arriscada'], [0.48, 0.60, 'Média'], [0.60, 0.92, 'Segura']];
     return faixas.map(([de, ate, nome]) => { let n = 0, prev = 0, ac = 0, lucro = 0, rej = 0, recAc = 0;
-      for (const r of linhas) { if (!r.x.conhecidos) continue; for (const c of r.cands.fechamento || []) { const cons = (c.pm + c.pk) / 2; if (cons < de || cons >= ate) continue;
+      for (const r of linhas) { if (!r.x.conhecidos) continue; for (const c of (r.cands.fechamento || []).filter(c => c.t !== 'dc')) { const cons = (c.pm + c.pk) / 2; if (cons < de || cons >= ate) continue;
         if (Math.abs(c.pm - c.pk) > 0.08 || c.pm > 0.92 || c.pk < de - 0.05) { rej++; recAc += c.y; continue; }
         n++; prev += cons; ac += c.y; lucro += c.y ? c.odd - 1 : -1; } }
       return { nivel: nome, de, ate, n, previsto: n ? prev / n : null, aconteceu: n ? ac / n : null, roi: n ? +(lucro / n).toFixed(3) : null, rejeitadas: rej, aconteceuRejeitadas: rej ? recAc / rej : null }; });
@@ -88,6 +101,8 @@
       for (const [w, b] of [['abertura', o.abertura], ['fechamento', f]]) {
         if (!b || !b.h || !b.d || !b.a) continue; const q = G.PCMercado.semMargem([b.h, b.d, b.a]).p, l = [];
         [b.h, b.d, b.a].forEach((odd, k) => l.push({ pm: pm3[k], pk: q[k], odd, y: x.y.r === k ? 1 : 0, t: '1x2' }));
+        // Dupla chance com odd sintética das duas odds de 1X2 (mesma margem): só para a regra dos palpites.
+        for (const [i, j] of [[0, 1], [2, 1], [0, 2]]) l.push({ pm: pm3[i] + pm3[j], pk: q[i] + q[j], odd: 1 / (1 / [b.h, b.d, b.a][i] + 1 / [b.h, b.d, b.a][j]), y: x.y.r === i || x.y.r === j ? 1 : 0, t: 'dc' });
         if (b.over && b.under && G.PCMercado.meia(b.linha)) { const qt = G.PCMercado.semMargem([b.over, b.under]).p; let po = 0; for (let i = 0; i < p.M.length; i++) for (let j = 0; j < p.M.length; j++) if (i + j > b.linha) po += p.M[i][j];
           l.push({ pm: po, pk: qt[0], odd: b.over, y: x.y.tg > b.linha ? 1 : 0, t: 'tot' }, { pm: 1 - po, pk: qt[1], odd: b.under, y: x.y.tg < b.linha ? 1 : 0, t: 'tot' }); }
         cands[w] = l;
@@ -102,7 +117,7 @@
     const curva = pesos.map(w => ll(A, mix(w))), w = pesos[curva.indexOf(Math.min(...curva))], comAb = linhas.filter(r => r.qa);
     return { n: linhas.length, logLoss: { modelo: +ll(linhas, r => r.p).toFixed(4), mercado: +ll(linhas, r => r.q).toFixed(4), aberturaMercado: comAb.length ? +ll(comAb, r => r.qa).toFixed(4) : null }, pesoModeloNaMistura: w,
       segundaMetade: { modelo: +ll(B, r => r.p).toFixed(4), mercado: +ll(B, r => r.q).toFixed(4), mistura: +ll(B, mix(w)).toFixed(4) },
-      regras: { abertura: simularRegras(linhas, 'abertura'), fechamento: simularRegras(linhas, 'fechamento') }, filtroSugestoes: avaliarFiltro(linhas),
+      regras: { abertura: simularRegras(linhas, 'abertura'), fechamento: simularRegras(linhas, 'fechamento') }, filtroSugestoes: avaliarFiltro(linhas), palpites: { fechamento: avaliarPalpites(linhas, 'fechamento'), abertura: avaliarPalpites(linhas, 'abertura') },
       calibracaoMercado: confiabilidade(linhas.flatMap(r => r.q.map((v, k) => [v, r.x.y.r === k ? 1 : 0]))) };
   }
 
@@ -148,5 +163,5 @@
     cansaco: 'Times com menos de 3,6 dias de descanso não marcaram menos nem sofreram mais, em média, depois de controlar a força (efeito estimado +1,6% e −1,1%). Incluir o efeito não melhorou a previsão.'
   };
 
-  G.PCValidacao = Object.freeze({ walkForward, metricas, metricasTempo, confiabilidade, contraMercado, simularRegras, avaliarFiltro, REGRAS, rodar, RELATORIO_BASE });
+  G.PCValidacao = Object.freeze({ walkForward, metricas, metricasTempo, confiabilidade, contraMercado, simularRegras, avaliarFiltro, avaliarPalpites, REGRAS, rodar, RELATORIO_BASE });
 })(typeof globalThis !== 'undefined' ? globalThis : window);

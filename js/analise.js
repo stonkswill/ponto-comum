@@ -108,9 +108,33 @@
     if (!ref) alertas.push({ tipo: 'mercado', texto: 'Sem cotação para esta partida: as odds sugeridas são estimadas pelo modelo com a margem típica das casas.' });
     if (ctx.resumo && ctx.resumo.escalacoes && ctx.resumo.escalacoes.some(e => e.titulares.length >= 11)) alertas.push({ tipo: 'escalacao', texto: 'Escalações confirmadas pela fonte. O modelo não as usa; o mercado já reage a elas.' });
     const iniciado = Date.parse(m.date) <= agora || m.state === 'in' || m.done;
-    return { m, iniciado, lh: pr.lh, la: pr.la, rho, frac, pred: pr, ref, linhas, destaques, jogadores, placares: placares.slice(0, 6), escanteios: esc, cartoes: car,
+    const pal = palpites({ linhas, destaques, jogadores });
+    return { m, iniciado, lh: pr.lh, la: pr.la, rho, frac, pred: pr, ref, linhas, destaques, jogadores, palpites: pal, placares: placares.slice(0, 6), escanteios: esc, cartoes: car,
       calendario: cal, forma, h2h, forca: { casa: fc || null, fora: ff || null }, resumo: ctx.resumo || null, alertas, cotacoes: cot, geradoEm: new Date(agora).toISOString() };
   }
 
-  G.PCAnalise = Object.freeze({ analisar, principais, outras, chance, TOLERANCIA });
+  /* Melhores apostas do jogo (sem múltiplas). Regras testadas em 745 jogos reais com o fechamento da DraftKings (mai–out/2026):
+   * - Principal: nos seus mercados (1X2, dupla chance, ambas marcam sim, mais/menos gols), a linha de maior chance (média de
+   *   modelo e mercado) com chance ≥ 50%, odd ≥ 1,35, até 92% e modelo e mercado a até 8 p.p. Teste: 88% dos jogos com palpite,
+   *   acerto 63,5% (previsto 60,4%), odd média 1,60, retorno +0,2%.
+   * - Odd maior: outro mercado, odd 1,70–3,20, modelo e mercado de acordo e modelo não abaixo do mercado. Teste: acerto 46,7%,
+   *   odd média 2,08, retorno −4,6%.
+   * - Fora do normal: escanteios, cartões, tempos ou gols de um time com chance bem acima do normal da competição (sem odd na fonte).
+   * - Jogador: quem tem mais chance de marcar pelo modelo entre os que têm odd, sem o modelo abaixo do preço justo da casa. */
+  const REGRA_PALPITE = Object.freeze({ oddMin: 1.35, chanceMin: 0.5, chanceMax: 0.92, alt: [1.7, 3.2], margemJogador: 1.25 });
+  const PREFERIDOS = l => ['1x2', 'dc', 'tot'].includes(l.mk.t) || (l.mk.t === 'btts' && l.mk.s === 's');
+  function palpites(a, regra = REGRA_PALPITE) {
+    const cons = l => Number.isFinite(l.pMercado) ? (l.pModelo + l.pMercado) / 2 : l.pModelo;
+    const base = a.linhas.filter(l => PREFERIDOS(l) && l.odd && l.concorda !== false && l.pModelo <= regra.chanceMax);
+    const melhor = ls => ls.reduce((b, l) => !b || cons(l) > cons(b) ? l : b, null);
+    const principal = melhor(base.filter(l => l.odd >= regra.oddMin && cons(l) >= regra.chanceMin));
+    const oddMaior = melhor(base.filter(l => l.odd >= regra.alt[0] && l.odd <= regra.alt[1] && (!Number.isFinite(l.pMercado) || l.pModelo >= l.pMercado) && (!principal || l.mk.t !== principal.mk.t)));
+    const destaque = (a.destaques || []).find(l => l.odd >= 1.3) || null;
+    const js = [...((a.jogadores && a.jogadores.casa) || []), ...((a.jogadores && a.jogadores.fora) || [])].filter(j => j.p && j.odd);
+    const jogador = js.filter(j => j.p >= 1 / j.odd / regra.margemJogador).sort((x, y) => y.p - x.p)[0] || null;
+    return { principal, oddMaior, destaque, jogador, semMercado: !!principal && !Number.isFinite(principal.pMercado), chance: cons,
+      nada: principal ? null : 'Nada bom: nenhuma linha dos seus mercados com chance de 50% ou mais, odd de pelo menos 1,35 e modelo e mercado de acordo.' };
+  }
+
+  G.PCAnalise = Object.freeze({ analisar, principais, outras, chance, palpites, REGRA_PALPITE, TOLERANCIA });
 })(typeof globalThis !== 'undefined' ? globalThis : window);

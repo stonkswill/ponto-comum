@@ -2,7 +2,7 @@
 // 1. Base de jogos (30 competições × 3 anos) → dados/rede/
 // 2. Odds de abertura e fechamento da DraftKings dos jogos encerrados → dados/odds/
 // 3. Cotações pré-jogo (DraftKings + Bet365) dos jogos das próximas 40 h → dados/pre/
-// 4. Previsões e bilhetes do hub, congelados no início de cada jogo → dados/previsoes/
+// 4. Previsões e palpites do hub (melhores apostas por jogo), congelados no início de cada jogo → dados/previsoes/
 // 5. Revisão: o que o hub disse × o que aconteceu → dados/revisao.json
 import fs from 'node:fs'; import path from 'node:path';
 import { carregarHub, gravarJSON, lerJSON, RAIZ } from './hub.mjs';
@@ -85,12 +85,15 @@ await R.pool(proximos.map(m => async () => {
   const d = R.dataSP(m.date);
   if (!pre.has(d)) pre.set(d, lerJSON(arqDia('pre', d), {}));
   pre.get(d)[m.id] = { em: new Date(agora).toISOString(), cot: cot.map(q => [q.casa, K.chave(q.mk), q.odd]), escalacoes: !!(resumo.escalacoes && resumo.escalacoes.some(e => e.titulares.length >= 11)), jogadores: resumo.jogadores ? { casa: resumo.jogadores.casa, qualquer: resumo.jogadores.qualquer.map(x => [x.nome, x.odd]), primeiro: resumo.jogadores.primeiro.map(x => [x.nome, x.odd]) } : null };
-  if (!prev.has(d)) prev.set(d, lerJSON(arqDia('previsoes', d), { jogos: {}, sugestoes: {} }));
+  if (!prev.has(d)) prev.set(d, lerJSON(arqDia('previsoes', d), { jogos: {} }));
   prev.get(d).jogos[m.id] = { comp: m.comp, inicio: m.date, casa: m.hn, fora: m.an, h: m.h, a: m.a, filtro: passaFiltro(m), em: new Date(agora).toISOString(),
     lh: r4(a.lh), la: r4(a.la), mercado: a.ref ? { lh: r4(a.ref.lh), la: r4(a.ref.la), fonte: a.ref.fonte } : null,
     linhas: Object.fromEntries(a.linhas.map(l => [l.chave, [r4(l.pModelo), r4(l.pMercado), l.odd, TIPO[l.oddTipo] || '?']])),
     leitura: fortes(a).map(l => l.chave), destaques: a.destaques.map(l => l.chave),
-    jogadores: { casa: a.jogadores.casa.map(j => [j.nome, r4(j.p), j.odd]), fora: a.jogadores.fora.map(j => [j.nome, r4(j.p), j.odd]) } };
+    jogadores: { casa: a.jogadores.casa.map(j => [j.nome, r4(j.p), j.odd]), fora: a.jogadores.fora.map(j => [j.nome, r4(j.p), j.odd]) },
+    palpites: (() => { const P = a.palpites, l = x => x && { chave: x.chave, rotulo: x.rotulo, odd: x.odd, tipoOdd: TIPO[x.oddTipo] || '?', chance: r4(P.chance(x)), pModelo: r4(x.pModelo), pMercado: r4(x.pMercado) };
+      const jl = P.jogador && (a.jogadores.casa.includes(P.jogador) ? 'h' : 'a');
+      return { nada: !!P.nada, principal: l(P.principal), oddMaior: l(P.oddMaior), destaque: l(P.destaque), jogador: P.jogador && { nome: P.jogador.nome, lado: jl, p: r4(P.jogador.p), odd: P.jogador.odd } }; })() };
   if (!analisesPorDia.has(d)) analisesPorDia.set(d, []); analisesPorDia.get(d).push(a);
 }), 4);
 
@@ -98,15 +101,6 @@ await R.pool(proximos.map(m => async () => {
 for (const m of proximos.slice(0, 15)) { try { const j = await (await fetch(R.ESPN + m.comp + '/summary?event=' + m.id)).json(), todas = [...(j.odds || []), ...(j.pickcenter || [])];
   if (!todas.some(o => o && o.bettingOdds)) continue; gravarJSON(path.join(DADOS, 'amostras', 'resumo-odds.json'), { jogo: m.hn + ' × ' + m.an, comp: m.comp, odds: j.odds || null, pickcenter: j.pickcenter || null }, { compacto: false }); break; } catch (e) { log('amostra', e.message); } }
 
-// Bilhetes sugeridos do dia (só jogos do radar com o filtro de grandes). Congelados quando o primeiro jogo do bilhete começa.
-for (const [d, as] of analisesPorDia) {
-  const arq = prev.get(d), sug = B.sugerir(as.filter(a => passaFiltro(a.m)));
-  for (const s of sug) {
-    const velho = arq.sugestoes[s.nivel.id], comecou = velho && velho.pernas && velho.pernas.some(p => Date.parse(p.inicio) <= agora);
-    if (comecou) continue;
-    arq.sugestoes[s.nivel.id] = s.disponivel ? { em: new Date(agora).toISOString(), odd: r4(s.odd), pModelo: r4(s.pModelo), pMercado: r4(s.pMercado), pernas: s.pernas.map(p => ({ id: p.jogoId, chave: K.chave(p.mk), rotulo: p.rotulo, jogo: p.jogo, inicio: p.inicio, odd: p.odd, tipo: TIPO[p.oddTipo] || '?', pModelo: r4(p.pModelo), pMercado: r4(p.pMercado) })) } : { em: new Date(agora).toISOString(), indisponivel: s.motivo };
-  }
-}
 for (const [d, x] of pre) gravarJSON(arqDia('pre', d), x);
 for (const [d, x] of prev) { x.geradoEm = new Date(agora).toISOString(); gravarJSON(arqDia('previsoes', d), x); }
 

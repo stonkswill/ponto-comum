@@ -9,10 +9,10 @@ Hub de análise de futebol pré-jogo que roda inteiro no navegador. Usa os dados
 | Modelo na frente | Toda linha mostra primeiro a chance do **modelo** (com faixa de 90%), depois a do mercado sem margem. Diferença acima de 8 p.p. ganha a etiqueta "diverge" |
 | Odd já pronta | **Odd sugerida** em toda linha: média das casas que cotam a linha; sem cotação, o preço justo do mercado (ou do modelo) com a margem típica das casas (5,5%). O bilhete já vem com essas odds; você pode trocar pela da sua casa |
 | Menos linhas | Tabela principal só com 1X2, dupla chance, ambas marcam e mais/menos gols (as quase certas, acima de 92%, saem). O resto fica fechado em "Outras linhas". Escanteios e cartões só aparecem em destaque ("Fora do normal") quando a chance passa bem da média da competição |
-| Níveis de risco | **Segura** odd 2,4–4,5 · **Média** 9–12 · **Arriscada** 15–50 · **Bingo** 100–1.500. Filtro meio-termo: modelo e mercado a até 8 p.p. em cada perna, nenhuma perna acima de 92%, times com 12+ jogos, uma perna por jogo. Dentro da faixa, escolhe a combinação de maior chance (costuma usar poucas pernas, porque a margem da casa se acumula a cada perna) |
+| Palpites por jogo (sem múltiplas) | Aba **Palpites**: para cada jogo do radar, a aposta **principal** (maior chance nos seus mercados com odd ≥ 1,35 e modelo e mercado a até 8 p.p.), uma de **odd maior** (1,70–3,20), o **fora do normal** (escanteios, cartões, tempos) e o **jogador** com mais chance de marcar entre os que têm odd. Sem nada bom, o hub diz "nada bom". O criador de múltiplas saiu: cada perna a mais multiplica a margem da casa |
 | Competições | Radar: Champions + Premier League (todos os jogos) + LaLiga, Serie A, Bundesliga e Ligue 1 só com jogos dos grandes (4, 6, 3 e 3 clubes mais fortes pelo modelo, recalculados a cada atualização). Brasileirão, Europa, Conference, Libertadores e Sul-Americana ficam como opcionais. A rede de 30 competições continua alimentando a força dos clubes |
 | Linhas alternativas | Entraram 2º tempo, tempo com mais gols e quem marca primeiro (validados na aba Validação) e **quem pode marcar** (experimental: a fonte não tem odd de jogador para conferir) |
-| Diário com apostas reais | Registre valor, odd que pegou e nível. O diário mostra lucro, retorno por nível, CLV e a **revisão jogo a jogo**: o que o hub disse × o que aconteceu |
+| Diário com apostas reais | Registre valor e a odd que pegou (simples ou múltipla). O diário mostra lucro, retorno por tipo, CLV e a **revisão jogo a jogo**: o que o hub disse × o que aconteceu |
 | Exportar análise | Cada análise tem **Copiar** (texto pronto para colar) e **Baixar** (JSON). Também dá para copiar ou baixar todas |
 
 ## Robô de dados (GitHub Actions)
@@ -24,8 +24,8 @@ O repositório tem um robô (`.github/workflows/coleta.yml` → `ferramentas/col
 | `dados/rede/` | Base de jogos das 30 competições (3 anos). O site carrega daqui primeiro: abre rápido no celular |
 | `dados/odds/` | Abertura e fechamento da DraftKings dos jogos encerrados das competições do radar, com os gols esperados implícitos no preço |
 | `dados/pre/` | Cotações (DraftKings e Bet365) dos jogos das próximas 40 h, a última antes do início |
-| `dados/previsoes/` | O que o hub disse antes de cada jogo (todas as linhas, a leitura e os bilhetes sugeridos), congelado no início |
-| `dados/revisao.json` | O que o hub disse × o que aconteceu: acertos da leitura, retorno dos bilhetes por nível, erro do modelo e do mercado |
+| `dados/previsoes/` | O que o hub disse antes de cada jogo (todas as linhas, a leitura e os palpites), congelado no início |
+| `dados/revisao.json` | O que o hub disse × o que aconteceu: acerto e retorno de cada tipo de palpite, erro do modelo e do mercado, modelo de jogador × Bet365 |
 | `dados/validacao.json` | Validação semana a semana com dados reais (gerada com `node ferramentas/validar.mjs`) |
 
 Para testar uma mudança no modelo: `node ferramentas/experimento.mjs` (usa só os arquivos de `dados/`, sem internet).
@@ -42,7 +42,8 @@ Teste de 16/07 a 22/10/2026 (691 jogos do radar), parâmetros escolhidos antes d
 
 - **Mercado** (DraftKings sem margem, 665 jogos): fechamento 0,9308, abertura 0,9394, modelo 0,9663. Peso ótimo do modelo numa mistura: 0%.
 - **Regras de aposta por valor** perdem dinheiro na abertura e no fechamento (−13% a −31%). Por isso as sugestões não apostam em "valor": usam linhas em que modelo e mercado concordam.
-- **Filtro das sugestões**: nas linhas que passam, a chance prevista bate com o que acontece (média: 53,5% previsto, 53,2% real; arriscada: 43,4% × 45,6%).
+- **Palpites por jogo** (mesma regra da aba Palpites, odds reais da DraftKings, jul–out): principal acertou 65,2% no fechamento (previsto 60,4%), odd média 1,60, retorno +2,8%; na abertura, 59,6% e −6,0%. Odd maior: −7,5% (fechamento) e −9,1% (abertura). Em 745 jogos de mai–out, a principal ficou em +0,2%. Ou seja: perto do empate, sem vantagem garantida.
+- **Calibração**: nas linhas em que modelo e mercado concordam, a chance prevista bate com o que acontece.
 - **Quem marca primeiro**: modelo 0,836 × média da liga 0,877. 2º tempo e tempo com mais gols: ganho pequeno.
 - **Viés favorito–zebra** (2.418 jogos): favoritos fortes acontecem um pouco mais que o preço indica e zebras um pouco menos, mas apostar nos favoritos só empata depois da margem.
 
@@ -56,8 +57,8 @@ style.css         estilo (tema claro e escuro)
 js/rede.js        competições, leitura da ESPN, cache, elencos, calendário, forma, confrontos
 js/modelo.js      modelo de força, matriz de placares, mercados, tempos, 1º gol, quem marca
 js/mercado.js     cotações, probabilidade sem margem, referência do mercado, odd sugerida
-js/analise.js     linhas de uma partida (modelo na frente), destaques, alertas
-js/bilhete.js     bilhete com chance conjunta e sugestões em quatro níveis
+js/analise.js     linhas de uma partida (modelo na frente), palpites por jogo, destaques, alertas
+js/bilhete.js     bilhete para registrar o que você apostou (simples ou múltipla), com chance conjunta
 js/diario.js      previsões e apostas, apuração, CLV, revisão jogo a jogo
 js/validacao.js   validação semana a semana, mercado, regras, filtro, tempos
 ferramentas/      robô de coleta, revisão, validação e experimentos (Node, sem navegador)

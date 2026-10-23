@@ -15,17 +15,18 @@
   const hojeSP = () => R.dataSP(new Date().toISOString());
   const pausa = () => new Promise(r => setTimeout(r, 0));
   const CHAVE_PREF = 'pc3-preferencias';
-  const NIVEL_NOME = { segura: 'Segura', media: 'Média', arriscada: 'Arriscada', bingo: 'Bingo', manual: 'Montado por você' };
+  const NIVEL_NOME = { simples: 'Simples', multipla: 'Múltipla', segura: 'Segura (antigo)', media: 'Média (antigo)', arriscada: 'Arriscada (antigo)', bingo: 'Bingo (antigo)', manual: 'Montado por você' };
+  const TIPO_PALPITE = { principal: 'Principal', oddMaior: 'Odd maior', destaque: 'Fora do normal', jogador: 'Jogador marca' };
 
   const S = {
     jogos: [], porId: new Map(), porTime: new Map(), F: null, Fe: null, Fc: null, forca: null, dia: hojeSP(), agenda: [], falhasAgenda: [],
     comps: new Set(R.COMPS.filter(c => c.radar).map(c => c.id)), todos: false, grandes: new Map(), idsGrandes: new Set(), sel: new Set(), analises: new Map(), elencos: new Map(), aba: 'radar',
     rede: { status: 'parado', progresso: null, relatorio: [], carregadaEm: null, ajustadaEm: null, erro: null },
-    pref: Object.assign({}, B.PREF_PADRAO), familia: {}, validacao: null, valPublicada: null, revisao: null, rodando: false, foco: null
+    familia: {}, palpitesDia: null, validacao: null, valPublicada: null, revisao: null, rodando: false, foco: null
   };
 
-  function lerPref() { try { const p = JSON.parse(localStorage.getItem(CHAVE_PREF) || '{}'); if (Array.isArray(p.comps) && p.comps.length) S.comps = new Set(p.comps.filter(c => R.COMP_MAP[c] && (R.COMP_MAP[c].radar || R.COMP_MAP[c].opcional))); if (p.pref) Object.assign(S.pref, p.pref); S.todos = !!p.todos; } catch { /* preferências padrão */ } }
-  function gravarPref() { try { localStorage.setItem(CHAVE_PREF, JSON.stringify({ comps: [...S.comps], pref: S.pref, todos: S.todos })); } catch { /* sem armazenamento local */ } }
+  function lerPref() { try { const p = JSON.parse(localStorage.getItem(CHAVE_PREF) || '{}'); if (Array.isArray(p.comps) && p.comps.length) S.comps = new Set(p.comps.filter(c => R.COMP_MAP[c] && (R.COMP_MAP[c].radar || R.COMP_MAP[c].opcional))); S.todos = !!p.todos; } catch { /* preferências padrão */ } }
+  function gravarPref() { try { localStorage.setItem(CHAVE_PREF, JSON.stringify({ comps: [...S.comps], todos: S.todos })); } catch { /* sem armazenamento local */ } }
   let toastT; function toast(t) { const el = $('#toast'); el.textContent = t; el.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => { el.hidden = true; }, 4200); }
   async function copiar(texto) {
     try { await navigator.clipboard.writeText(texto); return true; } catch { /* sem permissão: usa o método antigo */ }
@@ -57,13 +58,13 @@
       S.rede.status = 'pronto'; S.rede.ajustadaEm = new Date().toISOString();
       for (const [id, a] of S.analises) S.analises.set(id, A.analisar(S.porId.get(id) || a.m, ctxAnalise(a.m, a.cotacoes, a.resumo)));
     } catch (e) { S.rede.status = 'erro'; S.rede.erro = e.message || String(e); }
-    renderStatus(); render();
+    renderStatus(); render(); if (S.aba === 'palpites') carregarPalpites();
   }
   async function carregarAgenda() {
     const msg = $('#radar-msg'); if (msg) msg.textContent = 'Buscando a agenda de ' + S.dia.split('-').reverse().join('/') + '…';
     try { const r = await R.carregarDia(S.dia, [...S.comps]); S.agenda = r.jogos; S.falhasAgenda = r.falhas; if (S.jogos.length) mesclar(r.jogos); }
     catch (e) { S.agenda = []; S.falhasAgenda = [e.message || String(e)]; }
-    renderRadar();
+    renderRadar(); if (S.aba === 'palpites') carregarPalpites();
   }
   const ctxAnalise = (m, cotacoes, resumo) => ({ F: S.F, Fe: S.Fe, Fc: S.Fc, porTime: S.porTime, forca: S.forca, cotacoes, resumo, elencos: S.elencos.get(m.id) || {} });
   function juntarCotacoes(a, b) { const visto = new Set(a.map(q => q.casa + '|' + K.chave(q.mk))); return a.concat(b.filter(q => !visto.has(q.casa + '|' + K.chave(q.mk)))); }
@@ -74,10 +75,7 @@
     const ler = id => R.carregarElenco(ligaDoTime(id, m.comp), id).catch(() => null), [casa, fora] = await Promise.all([ler(m.h), ler(m.a)]), e = { casa, fora };
     S.elencos.set(m.id, e); return e;
   }
-  async function analisar(ids) {
-    if (!S.F) { toast('O modelo ainda está sendo ajustado. A análise começa quando a rede terminar de carregar.'); return; }
-    const lista = ids.map(id => S.porId.get(id) || S.agenda.find(m => m.id === id)).filter(Boolean); if (!lista.length) return;
-    navegar('analise'); const el = $('#analise'); el.innerHTML = '<p class="carregando">Analisando ' + lista.length + ' partida(s): odds, elencos e contexto…</p>';
+  async function analisarLista(lista) {
     let capturadas = 0;
     await R.pool(lista.map(m => async () => {
       let resumo = null, cot = K.doPlacar(m);
@@ -86,14 +84,21 @@
       const a = A.analisar(m, ctxAnalise(m, cot, resumo)); S.analises.set(m.id, a);
       if (!a.iniciado) { const n = await D.capturar(a).catch(() => 0); capturadas += n; }
     }), 3);
+    return capturadas;
+  }
+  async function analisar(ids) {
+    if (!S.F) { toast('O modelo ainda está sendo ajustado. A análise começa quando a rede terminar de carregar.'); return; }
+    const lista = ids.map(id => S.porId.get(id) || S.agenda.find(m => m.id === id)).filter(Boolean); if (!lista.length) return;
+    navegar('analise'); const el = $('#analise'); el.innerHTML = '<p class="carregando">Analisando ' + lista.length + ' partida(s): odds, elencos e contexto…</p>';
+    const capturadas = await analisarLista(lista);
     S.foco = lista[0].id; render();
     if (capturadas) toast(capturadas + ' previsões registradas no diário antes do jogo.');
   }
 
   /* ---------- Navegação ---------- */
-  const ABAS = ['radar', 'analise', 'bilhete', 'diario', 'validacao'];
-  function navegar(aba) { if (!ABAS.includes(aba)) aba = 'radar'; S.aba = aba; $$('.vista').forEach(v => { v.hidden = v.id !== aba; }); $$('[data-aba]').forEach(a => a.classList.toggle('ativa', a.dataset.aba === aba)); if (location.hash.slice(1) !== aba) history.replaceState(null, '', '#' + aba); render(); }
-  function render() { renderStatus(); $('#n-bilhete').textContent = B.lista().length; if (S.aba === 'radar') renderRadar(); else if (S.aba === 'analise') renderAnalise(); else if (S.aba === 'bilhete') renderBilhete(); else if (S.aba === 'diario') renderDiario(); else renderValidacao(); }
+  const ABAS = ['radar', 'palpites', 'analise', 'bilhete', 'diario', 'validacao'];
+  function navegar(aba) { if (!ABAS.includes(aba)) aba = 'radar'; S.aba = aba; if (aba === 'palpites') setTimeout(carregarPalpites, 0); $$('.vista').forEach(v => { v.hidden = v.id !== aba; }); $$('[data-aba]').forEach(a => a.classList.toggle('ativa', a.dataset.aba === aba)); if (location.hash.slice(1) !== aba) history.replaceState(null, '', '#' + aba); render(); }
+  function render() { renderStatus(); $('#n-bilhete').textContent = B.lista().length; if (S.aba === 'radar') renderRadar(); else if (S.aba === 'palpites') renderPalpites(); else if (S.aba === 'analise') renderAnalise(); else if (S.aba === 'bilhete') renderBilhete(); else if (S.aba === 'diario') renderDiario(); else renderValidacao(); }
 
   function renderStatus() {
     const r = S.rede, el = $('#status-rede'); let t = '';
@@ -178,6 +183,19 @@
     const lado = (lista, nome) => '<div><h4>' + esc(nome) + '</h4>' + (lista.length ? '<ul class="lista">' + lista.map(linha).join('') + '</ul>' : '<p class="nota">Elenco indisponível na fonte.</p>') + '</div>';
     return '<details class="contexto"><summary>Quem pode marcar' + (temOdd ? ' <small>com odds da ' + esc(temOdd) + '</small>' : ' <small>(sem odds de jogador para este jogo)</small>') + '</summary><div class="dois">' + lado(a.jogadores.casa, a.m.hn) + lado(a.jogadores.fora, a.m.an) + '</div><p class="nota">Modelo: parcela do jogador nos gols e chutes no alvo do time (temporada atual + metade da anterior), por jogo como titular, aplicada aos gols esperados do time; supõe que ele começa jogando. A odd é a de marcar a qualquer momento; a chance implícita nela inclui a margem da casa, que nesse mercado é alta. O robô está registrando essas odds e quem marcou para validar o modelo de jogador.</p></details>';
   }
+  /* ---------- Melhores apostas do jogo ---------- */
+  function linhaPalpite(a, tipo, x) {
+    const m = a.m, P = a.palpites;
+    if (tipo === 'jogador') return '<li><span class="tipo">' + TIPO_PALPITE[tipo] + '</span><span><b>' + esc(x.nome) + ' marca</b> <small>modelo ' + pct(x.p) + ' · odd ' + num(x.odd) + ' ' + esc(a.jogadores.casaOdds || '') + '</small></span></li>';
+    const ch = P.chance(x), naB = B.lista().some(p => p.id === m.id + '|' + x.chave);
+    return '<li><span class="tipo">' + TIPO_PALPITE[tipo] + '</span><span><b>' + esc(x.rotulo) + '</b> · <b>odd ' + num(x.odd) + '</b> <small>' + (x.oddTipo === 'cotada' ? tipoOdd(x) : 'odd estimada') + ' · chance ' + pct(ch) + ' (modelo ' + pct(x.pModelo) + (Number.isFinite(x.pMercado) ? ', mercado ' + pct(x.pMercado) : ', sem mercado') + ')' + (tipo === 'destaque' && x.pTipico !== null ? ' · normal da competição ' + pct(x.pTipico) : '') + '</small></span><button class="add' + (naB ? ' ja' : '') + '" data-add="' + m.id + '|' + esc(x.chave) + '" title="Adicionar ao bilhete">' + (naB ? '✓' : '+') + '</button></li>';
+  }
+  function blocoPalpites(a) {
+    const P = a.palpites; if (!P) return '';
+    const itens = ['principal', 'oddMaior', 'destaque', 'jogador'].filter(k => P[k]).map(k => linhaPalpite(a, k, P[k])).join('');
+    return '<div class="palpites"><h3>Melhores apostas deste jogo</h3>' + (P.nada ? '<p class="nada">' + esc(P.nada) + '</p>' : '') + (itens ? '<ul>' + itens + '</ul>' : '') + '</div>';
+  }
+
   function cartaoAnalise(a) {
     const m = a.m, fam = S.familia[m.id] || 'times', principais = a.linhas.filter(l => l.principal && !(l.mk.t === 'tot' && trivial(l, 0.92)));
     const grupo = OUTRAS.find(x => x[0] === fam) || OUTRAS[0], outras = a.linhas.filter(l => !l.principal && grupo[2](l) && !trivial(l, 0.85));
@@ -185,7 +203,7 @@
     const abas = OUTRAS.map(([id, nome]) => '<button class="fam' + (fam === id ? ' ativa' : '') + '" data-fam="' + m.id + '|' + id + '">' + nome + '</button>').join('');
     const res = a.resumo || {}, escal = (res.escalacoes || []).filter(e => e.titulares.length >= 11), desf = res.desfalques || [];
     const h2h = a.h2h.map(j => '<li>' + dia(j.date) + ' · ' + esc(j.hn) + ' <b>' + (j.hg ?? j.fh) + '–' + (j.ag ?? j.fa) + '</b> ' + esc(j.an) + ' <small>' + esc(nomeComp(j.comp)) + '</small></li>').join('');
-    const dest = a.destaques.length ? '<div class="destaques"><h3>Fora do normal</h3><ul>' + a.destaques.map(l => '<li><span><b>' + esc(l.rotulo) + '</b> ' + pct(l.pModelo) + ' <small>normal da competição: ' + pct(l.pTipico) + ' · odd ' + num(l.odd) + ' (' + tipoOdd(l) + ')</small></span><button class="add' + (B.lista().some(p => p.id === m.id + '|' + l.chave) ? ' ja' : '') + '" data-add="' + m.id + '|' + esc(l.chave) + '">+</button></li>').join('') + '</ul></div>' : '';
+    const dest = blocoPalpites(a);
     return '<article class="cartao" id="a-' + m.id + '"><header><div class="topo-cartao"><p class="sobre">' + esc(nomeComp(m.comp)) + ' · ' + diaHora(m.date) + (res.estadio ? ' · ' + esc(res.estadio) : '') + (res.arbitro ? ' · árbitro ' + esc(res.arbitro) : '') + '</p><div class="exportar"><button class="link" data-copiar="' + m.id + '">Copiar</button><button class="link" data-baixar="' + m.id + '">Baixar</button></div></div>'
       + '<h2>' + esc(m.hn) + ' <span>×</span> ' + esc(m.an) + '</h2>' + (a.iniciado ? '<p class="aviso">Partida já iniciada ou encerrada: sem registro pré-jogo.' + (m.done ? ' Placar: ' + m.fh + '–' + m.fa + '.' : '') + '</p>' : '') + '</header>'
       + '<div class="resumo"><div><span class="sobre">Modelo · 1 X 2</span>' + barra3(mod) + '<b>' + mod.map(v => pct(v)).join(' · ') + '</b></div><div><span class="sobre">Mercado · 1 X 2</span>' + (ref ? barra3(ref, 'mercado') + '<b>' + ref.map(v => pct(v)).join(' · ') + '</b>' : '<b>sem odd</b>') + '</div>'
@@ -218,7 +236,7 @@
       modelo: { golsEsperados: [p2(a.lh), p2(a.la)], x12: ['h', 'd', 'a'].map(s => p2((a.linhas.find(l => l.chave === '1x2:' + s) || {}).pModelo)) },
       mercado: a.ref ? { fonte: a.ref.fonte, golsEsperados: [p2(a.ref.lh), p2(a.ref.la)], x12: a.ref.x12 ? a.ref.x12.p.map(p2) : null } : null,
       linhas: a.linhas.map(l => ({ linha: l.rotulo, principal: l.principal, modelo: p2(l.pModelo), faixa90: l.faixa ? l.faixa.map(p2) : null, mercado: p2(l.pMercado), normalDaCompeticao: p2(l.pTipico), oddSugerida: l.odd, tipoOdd: l.oddTipo, casas: l.oddCasas, oddJusta: p2(l.justa), valorModelo: p2(l.ev) })),
-      foraDoNormal: a.destaques.map(l => l.rotulo), quemPodeMarcar: { casa: a.jogadores.casa.map(j => ({ nome: j.nome, chance: p2(j.p), odd: j.odd })), fora: a.jogadores.fora.map(j => ({ nome: j.nome, chance: p2(j.p), odd: j.odd })), casaDasOdds: a.jogadores.casaOdds },
+      foraDoNormal: a.destaques.map(l => l.rotulo), melhoresApostas: a.palpites ? { nada: a.palpites.nada, principal: a.palpites.principal && { linha: a.palpites.principal.rotulo, odd: a.palpites.principal.odd, chance: p2(a.palpites.chance(a.palpites.principal)) }, oddMaior: a.palpites.oddMaior && { linha: a.palpites.oddMaior.rotulo, odd: a.palpites.oddMaior.odd, chance: p2(a.palpites.chance(a.palpites.oddMaior)) }, foraDoNormal: a.palpites.destaque && { linha: a.palpites.destaque.rotulo, odd: a.palpites.destaque.odd }, jogador: a.palpites.jogador && { nome: a.palpites.jogador.nome, odd: a.palpites.jogador.odd, chance: p2(a.palpites.jogador.p) } } : null, quemPodeMarcar: { casa: a.jogadores.casa.map(j => ({ nome: j.nome, chance: p2(j.p), odd: j.odd })), fora: a.jogadores.fora.map(j => ({ nome: j.nome, chance: p2(j.p), odd: j.odd })), casaDasOdds: a.jogadores.casaOdds },
       placaresMaisProvaveis: a.placares.map(p => ({ placar: p[0] + '-' + p[1], chance: p2(p[2]) })), alertas: a.alertas.map(x => x.texto), geradoEm: a.geradoEm, versao: 'Ponto Comum v3' };
   }
   function textoAnalise(a) {
@@ -228,6 +246,7 @@
     out.push('Gols esperados: ' + num(a.lh) + ' × ' + num(a.la) + (a.ref ? ' (mercado ' + num(a.ref.lh) + ' × ' + num(a.ref.la) + ')' : ''));
     out.push('', 'Linha · modelo · mercado · odd sugerida');
     for (const l of a.linhas.filter(l => l.principal && !(l.mk.t === 'tot' && trivial(l, 0.92)))) out.push('• ' + l.rotulo + ': ' + pct(l.pModelo) + ' · ' + pct(l.pMercado) + ' · ' + num(l.odd) + (l.oddTipo !== 'cotada' ? ' (estimada)' : '') + (l.concorda === false ? ' ⚠ diverge' : ''));
+    const P = a.palpites; if (P) { out.push('', 'Melhores apostas:'); if (P.nada) out.push('• ' + P.nada); for (const k of ['principal', 'oddMaior', 'destaque']) if (P[k]) out.push('• ' + TIPO_PALPITE[k] + ': ' + P[k].rotulo + ' a ' + num(P[k].odd) + ' (chance ' + pct(P.chance(P[k])) + ')'); if (P.jogador) out.push('• Jogador: ' + P.jogador.nome + ' marca a ' + num(P.jogador.odd) + ' (modelo ' + pct(P.jogador.p) + ')'); }
     const f = fortes(a); out.push('', f.length ? 'Nos seus mercados (55–88%): ' + f.map(l => l.rotulo + ' ' + pct(l.pModelo) + ' a ' + num(l.odd)).join('; ') : 'Nada bom neste jogo pelos critérios do hub.');
     const jg = [...a.jogadores.casa, ...a.jogadores.fora].filter(j => j.p).sort((x, y) => y.p - x.p).slice(0, 4);
     if (jg.length) out.push('Quem pode marcar: ' + jg.map(j => j.nome + ' ' + pct(j.p) + (j.odd ? ' (odd ' + num(j.odd) + ')' : '')).join('; '));
@@ -237,27 +256,46 @@
     return out.join('\n');
   }
 
+  /* ---------- Palpites do dia ---------- */
+  const doDiaParaPalpites = () => S.agenda.filter(m => S.comps.has(m.comp) && filtraGrandes(m) && !m.void);
+  async function carregarPalpites() {
+    if (!S.F) return; const dia = S.dia, jogos = doDiaParaPalpites(), faltam = jogos.filter(m => !S.analises.has(m.id) && !m.done && m.state !== 'in');
+    if (S.palpitesDia && S.palpitesDia.dia === dia && !faltam.length) return;
+    S.palpitesDia = { dia, carregando: faltam.length }; renderPalpites();
+    if (faltam.length) { const n = await analisarLista(faltam); if (n) toast(n + ' previsões registradas no diário antes do jogo.'); }
+    S.palpitesDia = { dia, carregando: 0 }; renderPalpites();
+  }
+  function textoPalpites(lista) {
+    const out = ['Palpites Ponto Comum · ' + S.dia.split('-').reverse().join('/')];
+    for (const a of lista) { const P = a.palpites; out.push('', hora(a.m.date) + ' ' + a.m.hn + ' × ' + a.m.an + ' (' + nomeComp(a.m.comp) + ')');
+      if (P.nada) out.push('  ' + P.nada); for (const k of ['principal', 'oddMaior', 'destaque']) if (P[k]) out.push('  ' + TIPO_PALPITE[k] + ': ' + P[k].rotulo + ' @ ' + num(P[k].odd) + ' (' + pct(P.chance(P[k])) + ')'); if (P.jogador) out.push('  Jogador: ' + P.jogador.nome + ' marca @ ' + num(P.jogador.odd) + ' (' + pct(P.jogador.p) + ')'); }
+    return out.join('\n');
+  }
+  function renderPalpites() {
+    const el = $('#palpites'); if (!el || S.aba !== 'palpites') return;
+    const jogos = doDiaParaPalpites(), lista = jogos.map(m => S.analises.get(m.id)).filter(Boolean).sort((x, y) => Date.parse(x.m.date) - Date.parse(y.m.date));
+    const carregando = !S.F ? 'O modelo ainda está sendo ajustado…' : S.palpitesDia && S.palpitesDia.carregando ? 'Analisando ' + S.palpitesDia.carregando + ' partida(s): odds, elencos e contexto…' : '';
+    const comPalpite = lista.filter(a => a.palpites && a.palpites.principal).length;
+    const cartao = a => { const m = a.m, P = a.palpites; return '<article class="palpite-jogo' + (a.iniciado ? ' passado' : '') + '"><header><span class="hora">' + (m.done ? m.fh + '–' + m.fa : hora(m.date)) + '</span><div><b>' + esc(m.hn) + ' × ' + esc(m.an) + '</b><small>' + esc(nomeComp(m.comp)) + (a.iniciado ? ' · já começou' : '') + '</small></div><button class="link" data-analisar="' + m.id + '">análise</button></header>' + blocoPalpites(a).replace('<h3>Melhores apostas deste jogo</h3>', '') + '</article>'; };
+    el.innerHTML = '<div class="cabeca"><div><p class="sobre">MELHORES APOSTAS POR JOGO · ' + esc(S.dia.split('-').reverse().join('/')) + '</p><h1>Palpites</h1></div><div class="acoes">' + (lista.length ? '<button class="sec" id="copiar-palpites">Copiar palpites</button>' : '') + '</div></div>'
+      + '<p class="nota">' + (carregando ? '<span class="pulso"></span> ' + carregando : lista.length ? comPalpite + ' de ' + lista.length + ' jogos com aposta principal. ' : '') + 'Jogos do radar desta data (com o filtro de grandes). Sem múltiplas: cada jogo tem a sua melhor aposta.</p>'
+      + (lista.length ? lista.map(cartao).join('') : !carregando ? '<div class="vazio"><h2>Sem jogos</h2><p>Nenhuma partida do radar nesta data. Escolha outra data no topo.</p></div>' : '')
+      + '<details class="filtro"><summary>Como os palpites são escolhidos (e o que deu nos testes)</summary><ul class="metodo"><li><b>Principal:</b> nos seus mercados (1X2, dupla chance, ambas marcam sim, mais/menos gols), a linha com mais chance pela média de modelo e mercado, com chance de 50% ou mais, odd de pelo menos 1,35 e modelo e mercado a até 8 p.p. Em 745 jogos reais com o fechamento da DraftKings: palpite em 88% dos jogos, acerto de 63,5% (previsto 60,4%), odd média 1,60, retorno de +0,2%.</li><li><b>Odd maior:</b> outro mercado com odd de 1,70 a 3,20, modelo e mercado de acordo e o modelo não abaixo do mercado. Nos mesmos jogos: acerto de 46,7%, odd média 2,08, retorno de −4,6%. Mais risco, e a margem da casa pesa mais.</li><li><b>Fora do normal:</b> escanteios, cartões, tempos ou gols de um time bem acima do normal da competição. Sem odd na fonte para conferir.</li><li><b>Jogador:</b> quem mais tem chance de marcar pelo modelo entre os que têm odd da Bet365, sem o modelo abaixo do preço justo dela.</li><li>Retorno perto de zero quer dizer que o hub acerta as chances, mas não tem vantagem garantida sobre a casa. Use como filtro, com valores que você pode perder.</li></ul></details>';
+  }
+
   /* ---------- Bilhete ---------- */
-  const PREFS = [['1x2', 'Resultado (1X2)'], ['dc', 'Dupla chance'], ['btts_s', 'Ambas marcam: sim'], ['btts_n', 'Ambas marcam: não'], ['tot', 'Total de gols'], ['tm', 'Gols de um time'], ['ah', 'Handicap'], ['tempos', 'Tempos e 1º gol'], ['esc', 'Escanteios'], ['car', 'Cartões']];
   const tipoOddPerna = p => p.oddManual ? 'sua odd' : p.oddTipo === 'cotada' ? 'média das casas' : 'estimada';
   function renderBilhete() {
     const el = $('#bilhete'); if (!el || S.aba !== 'bilhete') return;
-    const ps = B.lista(), av = B.avaliar(ps, S.analises), nivelAtual = ps.find(p => p.nivel) ? ps.find(p => p.nivel).nivel : 'manual';
+    const ps = B.lista(), av = B.avaliar(ps, S.analises);
     const pernas = ps.map(p => '<li><div><b>' + esc(p.rotulo) + '</b><small>' + esc(p.jogo) + ' · ' + diaHora(p.inicio) + '</small><small>modelo ' + pct(p.pModelo ?? p.p, 1) + (Number.isFinite(p.pMercado) ? ' · mercado ' + pct(p.pMercado, 1) : '') + '</small></div>'
       + '<label class="odd">odd <small>' + tipoOddPerna(p) + '</small><input type="number" step="0.01" min="1.01" inputmode="decimal" id="odd-' + esc(p.id) + '" data-odd="' + esc(p.id) + '" value="' + (B.oddDe(p) ? B.oddDe(p).toFixed(2) : '') + '"></label><button class="rem" data-rem="' + esc(p.id) + '" aria-label="Remover">×</button></li>').join('');
-    const sug = S.analises.size ? B.sugerir([...S.analises.values()], S.pref) : [];
-    const cartaoNivel = s => '<div class="nivel n-' + s.nivel.id + '"><h3>' + s.nivel.nome + '</h3><p class="faixa-odd">odd ' + String(s.nivel.odd[0]).replace('.', ',') + '–' + String(s.nivel.odd[1]).replace('.', ',') + ' · ' + s.nivel.pernas[0] + '–' + s.nivel.pernas[1] + ' jogos · pernas ≥ ' + pct(s.nivel.minP) + '</p>'
-      + (s.disponivel ? '<ul>' + s.pernas.map(p => '<li>' + esc(p.rotulo) + ' <small>' + esc(p.jogo) + ' · ' + pct(p.pModelo) + ' · ' + num(p.odd) + (p.oddTipo !== 'cotada' ? ' (estimada)' : '') + '</small></li>').join('') + '</ul><p class="total-nivel"><b>odd ' + num(s.odd) + '</b> · chance ' + pct(s.pModelo, 1) + (s.pMercado ? ' <small>(mercado ' + pct(s.pMercado, 1) + ')</small>' : '') + '</p><button class="sec" data-usar="' + s.nivel.id + '">Usar no bilhete</button>' : '<p class="nota">' + esc(s.motivo) + '</p>') + '</div>';
-    el.innerHTML = '<div class="cabeca"><div><p class="sobre">SUGESTÕES E MONTAGEM</p><h1>Bilhete</h1></div><div class="acoes">' + (ps.length ? '<button class="sec" id="limpar-bilhete">Limpar</button>' : '') + '</div></div>'
-      + '<section class="sugestoes"><div class="niveis">' + (sug.length ? sug.map(cartaoNivel).join('') : '<p class="nota">Analise partidas para gerar as sugestões segura, média, arriscada e bingo.</p>') + '</div>'
-      + '<p class="nota">Filtro: os dois times com 12+ jogos na rede, modelo e mercado a até 8 p.p. em cada perna, nenhuma perna acima de 92% (não paga nada), uma perna por jogo, só pré-jogo. Dentro da faixa de odd do nível, escolhe a combinação com maior chance pela média de modelo e mercado.</p>'
-      + '<details class="filtro"><summary>Mercados nas sugestões</summary><fieldset class="prefs">' + PREFS.map(([k, n]) => '<label><input type="checkbox" data-pref="' + k + '"' + (S.pref[k] ? ' checked' : '') + '> ' + n + '</label>').join('') + '</fieldset></details></section>'
-      + '<h3>Seu bilhete</h3>'
-      + (ps.length ? '<div class="bilhete"><ul class="pernas">' + pernas + '</ul><div class="totais"><div><span class="sobre">Odd combinada</span><b>' + (av.odd ? num(av.odd) : '—') + '</b><small>' + (av.oddEstimada ? 'com bloco do mesmo jogo estimado' : 'justa pelo modelo: ' + num(av.justa)) + '</small></div><div><span class="sobre">Chance (modelo)</span><b>' + pct(av.pModelo, 1) + '</b><small>mercado: ' + pct(av.pMercado, 1) + '</small></div><div><span class="sobre">Valor esperado</span><b class="' + (av.ev === null ? '' : av.ev > 0 ? 'pos' : 'neg') + '">' + sinal(av.ev) + '</b><small>modelo · mercado ' + sinal(av.evMercado) + '</small></div></div>'
+    el.innerHTML = '<div class="cabeca"><div><p class="sobre">O QUE VOCÊ APOSTOU</p><h1>Bilhete</h1></div><div class="acoes">' + (ps.length ? '<button class="sec" id="limpar-bilhete">Limpar</button>' : '') + '</div></div>'
+      + (ps.length ? '<div class="bilhete"><ul class="pernas">' + pernas + '</ul><div class="totais"><div><span class="sobre">Odd ' + (ps.length > 1 ? 'combinada' : '') + '</span><b>' + (av.odd ? num(av.odd) : '—') + '</b><small>' + (av.oddEstimada ? 'com bloco do mesmo jogo estimado' : 'justa pelo modelo: ' + num(av.justa)) + '</small></div><div><span class="sobre">Chance (modelo)</span><b>' + pct(av.pModelo, 1) + '</b><small>mercado: ' + pct(av.pMercado, 1) + '</small></div><div><span class="sobre">Valor esperado</span><b class="' + (av.ev === null ? '' : av.ev > 0 ? 'pos' : 'neg') + '">' + sinal(av.ev) + '</b><small>modelo · mercado ' + sinal(av.evMercado) + '</small></div></div>'
         + (av.avisos.length ? '<ul class="avisos">' + av.avisos.map(x => '<li class="' + x.nivel + '">' + esc(x.texto) + '</li>').join('') + '</ul>' : '')
-        + '<div class="salvar"><label>nível <select id="nivel-aposta">' + Object.entries(NIVEL_NOME).map(([k, n]) => '<option value="' + k + '"' + (k === nivelAtual ? ' selected' : '') + '>' + n + '</option>').join('') + '</select></label><label>valor <input type="number" id="valor-aposta" min="0" step="0.5" inputmode="decimal" placeholder="R$"></label><label>odd que você pegou <input type="number" id="odd-pega" min="1.01" step="0.01" inputmode="decimal" placeholder="' + (av.odd ? num(av.odd).replace(',', '.') : '') + '"></label><button class="pri" id="registrar-aposta">Registrar aposta</button><button class="sec" id="acompanhar">Só acompanhar</button></div></div>'
-        : '<div class="vazio"><h2>Bilhete vazio</h2><p>Use uma sugestão acima ou, na Análise, toque em + ao lado de qualquer linha. A odd vem preenchida (média das casas ou estimada); troque pela da sua casa se quiser.</p></div>');
-    S._sugestoes = sug;
+        + (ps.length > 2 ? '<p class="nota">Cada perna a mais multiplica também a margem da casa: numa múltipla de ' + ps.length + ' pernas, o retorno esperado cai bem mais que numa aposta simples.</p>' : '')
+        + '<div class="salvar"><label>valor <input type="number" id="valor-aposta" min="0" step="0.5" inputmode="decimal" placeholder="R$"></label><label>odd que você pegou <input type="number" id="odd-pega" min="1.01" step="0.01" inputmode="decimal" placeholder="' + (av.odd ? num(av.odd).replace(',', '.') : '') + '"></label><button class="pri" id="registrar-aposta">Registrar aposta</button><button class="sec" id="acompanhar">Só acompanhar</button></div></div>'
+        : '<div class="vazio"><h2>Bilhete vazio</h2><p>Nos Palpites ou na Análise, toque em + ao lado de uma aposta para registrar o que você jogou de fato (simples ou múltipla). A odd vem preenchida; troque pela da sua casa.</p></div>');
   }
 
   /* ---------- Diário ---------- */
@@ -266,18 +304,17 @@
   function blocoHistorico() {
     const r = S.revisao; if (!r || !r.jogos) return r === null ? '' : '<h3>Histórico do hub</h3><p class="nota">O robô começou a registrar as previsões antes dos jogos; o histórico aparece quando os primeiros jogos terminarem.</p>';
     const lt = r.leitura || {}, mv = r.movimentoDoMercado || {};
-    const niveis = ['segura', 'media', 'arriscada', 'bingo'].filter(k => r.niveis && r.niveis[k]).map(k => { const x = r.niveis[k]; return '<tr><td>' + NIVEL_NOME[k] + '</td><td class="num">' + x.ganhos + '/' + x.bilhetes + (x.pendentes ? '<small>' + x.pendentes + ' pendente(s)</small>' : '') + '</td><td class="num">' + num(x.oddMedia) + '</td><td class="num">' + pct(x.chanceMedia, 1) + (x.chanceMercadoMedia ? '<small>mercado ' + pct(x.chanceMercadoMedia, 1) + '</small>' : '') + '</td><td class="num ' + (x.retorno > 0 ? 'pos' : x.retorno < 0 ? 'neg' : '') + '">' + sinal(x.retorno) + '</td></tr>'; }).join('');
+    const pal = ['principal', 'oddMaior', 'destaque', 'jogador'].filter(k => r.palpites && r.palpites[k] && r.palpites[k].n).map(k => { const x = r.palpites[k]; return '<tr><td>' + TIPO_PALPITE[k] + '</td><td class="num">' + x.acertos + '/' + x.n + '</td><td class="num">' + pct(x.acertos / x.n) + '<small>previsto ' + pct(x.previsto) + '</small></td><td class="num">' + (x.oddMedia ? num(x.oddMedia) : '—') + '</td><td class="num ' + (x.retorno > 0 ? 'pos' : x.retorno < 0 ? 'neg' : '') + '">' + (x.retorno !== null && x.retorno !== undefined ? sinal(x.retorno) : '—') + '</td></tr>'; }).join('');
     const fams = Object.entries(r.porFamilia || {}).map(([f, x]) => '<tr><td>' + (FAM_NOME[f] || f) + '</td><td class="num">' + x.n + '</td><td class="num">' + num(x.llModeloComMercado ?? x.llModelo, 3) + '</td><td class="num">' + (x.llMercado !== null ? '<b>' + num(x.llMercado, 3) + '</b>' : '—') + '</td></tr>').join('');
     const dias = (r.dias || []).slice(0, 14).map(d => {
-      const feitos = d.jogos.filter(j => !j.pendente), sug = d.sugestoes.filter(s => s.pernas);
-      const jogos = feitos.map(j => '<li><b>' + esc(j.jogo) + '</b> ' + j.placar.join('–') + ' <small>' + esc(nomeComp(j.comp)) + '</small>' + (j.leitura.length ? '<br>' + j.leitura.map(l => (l.ok ? '<span class="pos">✓</span> ' : l.ok === 0 ? '<span class="neg">✗</span> ' : '· ') + esc(l.rotulo) + ' <small class="nw">' + pct(l.p) + (l.odd ? ' a ' + num(l.odd) : '') + '</small>').join(' · ') : '<br><small>nada entre 55% e 88%</small>') + '</li>').join('');
-      const bil = sug.map(s => '<li><b>' + (NIVEL_NOME[s.nivel] || s.nivel) + '</b> odd ' + num(s.odd) + ' · ' + (s.status === 'ganhou' ? '<b class="pos">ganhou</b>' : s.status === 'perdeu' ? '<b class="neg">perdeu</b>' : 'pendente') + '<small>' + s.pernas.map(p => (p.ok === 1 ? '✓ ' : p.ok === 0 ? '✗ ' : '· ') + esc(p.rotulo) + ' (' + esc(p.jogo) + ', ' + num(p.odd) + ')').join('<br>') + '</small></li>').join('');
-      return '<details class="contexto"><summary>' + d.dia.split('-').reverse().join('/') + ' <small>' + feitos.length + ' jogo(s) apurado(s)' + (sug.length ? ' · ' + sug.length + ' bilhete(s)' : '') + '</small></summary>' + (jogos ? '<ul class="lista">' + jogos + '</ul>' : '<p class="nota">Jogos ainda não terminaram.</p>') + (bil ? '<h4>Bilhetes sugeridos</h4><ul class="lista">' + bil + '</ul>' : '') + '</details>';
+      const feitos = d.jogos.filter(j => !j.pendente), marca = ok => ok === 1 ? '<span class="pos">✓</span> ' : ok === 0 ? '<span class="neg">✗</span> ' : '· ';
+      const jogos = feitos.map(j => '<li><b>' + esc(j.jogo) + '</b> ' + j.placar.join('–') + ' <small>' + esc(nomeComp(j.comp)) + '</small><br>' + (j.palpites && j.palpites.length ? j.palpites.map(x => marca(x.ok) + '<small>' + TIPO_PALPITE[x.tipo] + ':</small> ' + esc(x.rotulo) + (x.odd ? ' <small class="nw">a ' + num(x.odd) + '</small>' : '')).join('<br>') : j.nada ? '<small>nada bom (sem palpite)</small>' : j.leitura && j.leitura.length ? j.leitura.map(l => marca(l.ok) + esc(l.rotulo) + ' <small class="nw">' + pct(l.p) + '</small>').join(' · ') : '<small>sem palpite registrado</small>') + '</li>').join('');
+      return '<details class="contexto"><summary>' + d.dia.split('-').reverse().join('/') + ' <small>' + feitos.length + ' jogo(s) apurado(s)</small></summary>' + (jogos ? '<ul class="lista">' + jogos + '</ul>' : '<p class="nota">Jogos ainda não terminaram.</p>') + '</details>';
     }).join('');
     return '<h3>Histórico do hub</h3><p class="nota">Registrado pelo robô do site antes de cada jogo (o mesmo em qualquer aparelho) e conferido depois. Atualizado às ' + diaHora(r.geradoEm) + '.</p>'
-      + '<div class="resumo"><div><span class="sobre">Jogos apurados</span><b>' + r.jogos + '</b></div><div><span class="sobre">Leitura do hub</span><b>' + (lt.n ? lt.acertos + '/' + lt.n : '—') + '</b><small>' + (lt.n ? 'esperado ' + num(lt.esperado, 1) + ' pela chance do modelo' : '') + '</small></div>'
+      + '<div class="resumo"><div><span class="sobre">Jogos apurados</span><b>' + r.jogos + '</b></div><div><span class="sobre">Palpite principal</span><b>' + (r.palpites && r.palpites.principal && r.palpites.principal.n ? r.palpites.principal.acertos + '/' + r.palpites.principal.n : '—') + '</b><small>' + (r.palpites && r.palpites.principal && r.palpites.principal.n ? 'esperado ' + num(r.palpites.principal.previsto * r.palpites.principal.n, 1) + ' pela chance' : 'aparece quando os jogos terminarem') + '</small></div>'
       + '<div><span class="sobre">Mercado andou para o lado do modelo</span><b>' + (mv.n ? pct(mv.aFavorDoModelo / mv.n) : '—') + '</b><small>' + (mv.n ? mv.n + ' linhas de 1X2 em que os dois discordavam 3+ p.p. · do registro ao fechamento' : 'aparece com as odds de fechamento') + '</small></div></div>'
-      + (niveis ? '<div class="tabela"><table><thead><tr><th>Bilhetes do robô</th><th class="num">Ganhos</th><th class="num">Odd média</th><th class="num">Chance média</th><th class="num">Retorno</th></tr></thead><tbody>' + niveis + '</tbody></table></div><p class="nota">Retorno de apostar 1 unidade em cada bilhete sugerido, na odd sugerida. Com poucos bilhetes, sorte pesa mais que método.</p>' : '')
+      + (pal ? '<div class="tabela"><table><thead><tr><th>Palpites do robô</th><th class="num">Acertos</th><th class="num">Taxa</th><th class="num">Odd média</th><th class="num">Retorno</th></tr></thead><tbody>' + pal + '</tbody></table></div><p class="nota">Retorno de apostar 1 unidade em cada palpite, na odd registrada antes do jogo. Com poucos jogos, sorte pesa mais que método.</p>' : '')
       + (fams ? '<div class="tabela"><table><thead><tr><th>Mercado</th><th class="num">Linhas</th><th class="num">Erro do modelo ↓</th><th class="num">Erro do mercado ↓</th></tr></thead><tbody>' + fams + '</tbody></table></div><p class="nota">Log loss nas linhas registradas que têm preço de mercado (menor é melhor). Escanteios e cartões não têm mercado na fonte.</p>' : '')
       + dias;
   }
@@ -296,7 +333,7 @@
     el.innerHTML = '<div class="cabeca"><div><p class="sobre">PREVISÃO → RESULTADO → APRENDIZADO</p><h1>Diário</h1></div><div class="acoes"><button class="pri" id="apurar">Apurar resultados</button><button class="sec" id="exportar">Exportar</button><label class="sec arquivo">Importar<input type="file" id="importar" accept="application/json,.json"></label></div></div>'
       + '<div class="resumo"><div><span class="sobre">Apostas reais</span><b class="' + (b.lucro > 0 ? 'pos' : b.lucro < 0 ? 'neg' : '') + '">' + reais(b.lucro) + '</b><small>' + b.apostas + ' apostas · ' + b.ganhas + ' ganhas de ' + b.apuradas + ' apuradas · ' + b.pendentes + ' pendentes</small></div><div><span class="sobre">Retorno</span><b>' + (b.roi !== null ? sinal(b.roi) : '—') + '</b><small>investido ' + reais(b.investido) + '</small></div>'
       + '<div><span class="sobre">O hub acertou</span><b>' + (totDitas ? totAc + '/' + totDitas : '—') + '</b><small>' + (totDitas ? 'linhas ditas na leitura · esperado ' + num(espDitas, 1) : 'aparece após apurar') + '</small></div><div><span class="sobre">CLV médio</span><b>' + (mt.clv ? sinal(mt.clv.medio) : '—') + '</b><small>' + (mt.clv ? mt.clv.n + ' linhas · ' + mt.clv.positivos + ' positivas' : 'odd da DraftKings na análise ÷ fechamento') + '</small></div></div>'
-      + (niveis ? '<h3>Apostas por nível</h3><div class="tabela"><table><thead><tr><th>Nível</th><th class="num">Apostas</th><th class="num">Ganhas</th><th class="num">Investido</th><th class="num">Lucro</th><th class="num">Retorno</th></tr></thead><tbody>' + niveis + '</tbody></table></div>' : '')
+      + (niveis ? '<h3>Apostas por tipo</h3><div class="tabela"><table><thead><tr><th>Tipo</th><th class="num">Apostas</th><th class="num">Ganhas</th><th class="num">Investido</th><th class="num">Lucro</th><th class="num">Retorno</th></tr></thead><tbody>' + niveis + '</tbody></table></div>' : '')
       + '<h3>Bilhetes e apostas</h3>' + (bilhetes ? '<div class="tabela"><table><thead><tr><th>Início</th><th>Bilhete</th><th class="num">Odd</th><th class="num">Valor</th><th>Resultado</th><th></th></tr></thead><tbody>' + bilhetes + '</tbody></table></div>' : '<p class="nota">Nenhum bilhete salvo. No Bilhete, informe valor e odd e toque em Registrar aposta.</p>')
       + blocoHistorico()
       + '<h3>Revisão das suas análises neste aparelho</h3>' + (revisao ? '<div class="tabela"><table><thead><tr><th>Dia</th><th>Jogo</th><th>Favorito do modelo</th><th>Linhas da leitura (55–88%)</th><th class="num">Acertos</th></tr></thead><tbody>' + revisao + '</tbody></table></div><p class="nota">Se o hub estiver bem calibrado, os acertos ficam perto do esperado (a soma das chances). Muito acima ou muito abaixo, por muitas semanas, indica erro.</p>' : '<p class="nota">Aparece depois de apurar jogos que você analisou antes do início.</p>')
@@ -320,14 +357,15 @@
       + (mk ? '<h3>Contra o mercado (DraftKings, sem margem)</h3><div class="tabela"><table><tbody><tr><td>Log loss 1X2 · modelo</td><td class="num">' + num(mk.logLoss.modelo, 4) + '</td></tr><tr><td>Log loss 1X2 · mercado no fechamento</td><td class="num"><b>' + num(mk.logLoss.mercado, 4) + '</b></td></tr>' + (mk.logLoss.aberturaMercado ? '<tr><td>Log loss 1X2 · mercado na abertura</td><td class="num">' + num(mk.logLoss.aberturaMercado, 4) + '</td></tr>' : '') + '<tr><td>Melhor peso do modelo numa mistura com o mercado</td><td class="num">' + num(mk.pesoModeloNaMistura * 100, 0) + '%</td></tr>'
         + (!mk.regras && mk.apostasSimuladas && mk.apostasSimuladas.fechamento ? '<tr><td>Apostar onde o modelo vê valor > 5% (fechamento)</td><td class="num">' + mk.apostasSimuladas.fechamento.n + ' apostas · ' + sinal(mk.apostasSimuladas.fechamento.roi) + '</td></tr><tr><td>Idem, na abertura</td><td class="num">' + mk.apostasSimuladas.abertura.n + ' apostas · ' + sinal(mk.apostasSimuladas.abertura.roi) + '</td></tr>' : '') + '</tbody></table></div>'
         + (mk.regras ? '<h3>Regras de aposta no teste (1X2 e total na linha da DraftKings)</h3>' + tabelaRegras(mk.regras) + '<p class="nota">Uma unidade por aposta, nas odds reais daquele momento. Retorno negativo = a regra perde dinheiro.</p>' : '')
-        + (mk.filtroSugestoes ? '<h3>O filtro das sugestões contra o resultado</h3><div class="tabela"><table><thead><tr><th>Faixa (nível)</th><th class="num">Linhas que passam</th><th class="num">Chance prevista</th><th class="num">Aconteceu</th><th class="num">Retorno no fechamento</th><th class="num">Barradas</th><th class="num">Aconteceu nas barradas</th></tr></thead><tbody>' + mk.filtroSugestoes.map(f => '<tr><td>' + f.nivel + ' <small>' + pct(f.de) + '–' + pct(f.ate) + '</small></td><td class="num">' + f.n + '</td><td class="num">' + pct(f.previsto, 1) + '</td><td class="num">' + pct(f.aconteceu, 1) + '</td><td class="num">' + sinal(f.roi) + '</td><td class="num">' + f.rejeitadas + '</td><td class="num">' + pct(f.aconteceuRejeitadas, 1) + '</td></tr>').join('') + '</tbody></table></div><p class="nota">Chance prevista = média de modelo e mercado. Se "aconteceu" fica perto da prevista, o filtro não deixa passar linha ruim disfarçada.</p>' : '')
+        + (mk.palpites ? '<h3>Os palpites por jogo contra o resultado</h3><div class="tabela"><table><thead><tr><th>Palpite</th><th>Odd</th><th class="num">Jogos</th><th class="num">Acerto</th><th class="num">Previsto</th><th class="num">Odd média</th><th class="num">Retorno</th></tr></thead><tbody>' + ['fechamento', 'abertura'].flatMap(w => ['principal', 'oddMaior'].map(k => { const x = mk.palpites[w][k]; return '<tr><td>' + TIPO_PALPITE[k] + '</td><td>' + w + '</td><td class="num">' + x.n + '</td><td class="num">' + pct(x.taxa, 1) + '</td><td class="num">' + pct(x.previsto, 1) + '</td><td class="num">' + num(x.oddMedia) + '</td><td class="num ' + (x.retorno > 0 ? 'pos' : 'neg') + '">' + sinal(x.retorno) + '</td></tr>'; })).join('') + '</tbody></table></div><p class="nota">A mesma regra da aba Palpites, com as odds reais da DraftKings em cada momento (1X2, dupla chance e a linha principal de gols; ambas marcam fica de fora porque a fonte não guarda essas odds). Retorno de 1 unidade por palpite.</p>' : '')
+        + (mk.filtroSugestoes ? '<h3>Calibração das linhas em que modelo e mercado concordam</h3><div class="tabela"><table><thead><tr><th>Faixa de chance</th><th class="num">Linhas que passam</th><th class="num">Chance prevista</th><th class="num">Aconteceu</th><th class="num">Retorno no fechamento</th><th class="num">Barradas</th><th class="num">Aconteceu nas barradas</th></tr></thead><tbody>' + mk.filtroSugestoes.map(f => '<tr><td>' + pct(f.de) + '–' + pct(f.ate) + '</td><td class="num">' + f.n + '</td><td class="num">' + pct(f.previsto, 1) + '</td><td class="num">' + pct(f.aconteceu, 1) + '</td><td class="num">' + sinal(f.roi) + '</td><td class="num">' + f.rejeitadas + '</td><td class="num">' + pct(f.aconteceuRejeitadas, 1) + '</td></tr>').join('') + '</tbody></table></div><p class="nota">Chance prevista = média de modelo e mercado. Se "aconteceu" fica perto da prevista, o filtro não deixa passar linha ruim disfarçada.</p>' : '')
         + '<p class="nota">Leitura: o mercado erra menos que o modelo, e apostar só onde o modelo vê valor perdeu dinheiro. Por isso o hub mostra o modelo na frente (é a opinião própria dele), mas as sugestões só usam linhas em que modelo e mercado concordam.</p>' : '')
       + (tp ? '<h3>Mercados de tempo</h3><div class="tabela"><table><thead><tr><th></th><th class="num">Jogos</th><th class="num">Gol no 2º tempo ↓</th><th class="num">Tempo com mais gols ↓</th><th class="num">Quem marca primeiro ↓</th></tr></thead><tbody><tr><td>Modelo</td><td class="num">' + tp.modelo.n + '</td><td class="num">' + num(tp.modelo.gol2T, 4) + '</td><td class="num">' + num(tp.modelo.tempoMaisGols, 4) + '</td><td class="num">' + num(tp.modelo.primeiroGol, 4) + '</td></tr><tr><td>Média da liga</td><td class="num">' + tp.mediaDaLiga.n + '</td><td class="num">' + num(tp.mediaDaLiga.gol2T, 4) + '</td><td class="num">' + num(tp.mediaDaLiga.tempoMaisGols, 4) + '</td><td class="num">' + num(tp.mediaDaLiga.primeiroGol, 4) + '</td></tr></tbody></table></div>' : '')
       + (r.escanteios ? '<h3>Escanteios e cartões (sem odds na fonte)</h3><div class="tabela"><table><thead><tr><th></th><th class="num">Jogos</th><th class="num">Log loss modelo</th><th class="num">Log loss média da liga</th><th class="num">Erro médio modelo</th><th class="num">Erro médio liga</th></tr></thead><tbody><tr><td>Escanteios, over 9,5</td><td class="num">' + r.escanteios.n + '</td><td class="num">' + num(r.escanteios.over95.modelo, 3) + '</td><td class="num">' + num(r.escanteios.over95.mediaDaLiga, 3) + '</td><td class="num">' + num(r.escanteios.erroMedio.modelo, 2) + '</td><td class="num">' + num(r.escanteios.erroMedio.mediaDaLiga, 2) + '</td></tr><tr><td>Cartões, over 4,5</td><td class="num">' + r.cartoes.n + '</td><td class="num">' + num(r.cartoes.over45.modelo, 3) + '</td><td class="num">' + num(r.cartoes.over45.mediaDaLiga, 3) + '</td><td class="num">' + num(r.cartoes.erroMedio.modelo, 2) + '</td><td class="num">' + num(r.cartoes.erroMedio.mediaDaLiga, 2) + '</td></tr></tbody></table></div>' : '')
       + (cal ? '<h3>Calibração do modelo no teste</h3><div class="faixas">' + cal.map(f => '<div class="faixa"><span>' + Math.round(f.de * 100) + '–' + Math.round(f.ate * 100) + '%</span><i style="width:' + (f.aconteceu * 100).toFixed(0) + '%"></i><b>' + pct(f.aconteceu) + '</b><small>previsto ' + pct(f.previsto) + ' · ' + f.n + '</small></div>').join('') + '</div><p class="nota">Desvio médio: ' + num(r.calibracao.erroMedio * 100, 1) + ' p.p.</p>' : '<p class="nota">No teste de 19/10, o desvio médio de calibração do 1X2 foi de ' + num((r.calibracao1x2 || {}).modelo * 100, 1) + ' p.p. no modelo e ' + num((r.calibracao1x2 || {}).mercado * 100, 1) + ' p.p. no mercado. A tabela por faixas aparece quando você roda a validação neste navegador.</p>')
       + (r.cansaco ? '<h3>Cansaço e calendário</h3><p class="nota">' + esc(r.cansaco) + ' O hub mostra o calendário completo de cada time como contexto, sem mexer na probabilidade.</p>' : '')
       + (!base && r.parametros ? '<p class="nota">Parâmetros desta rodada: meia-vida ' + r.parametros.meiaVida + ' dias, chutes no alvo ' + num(r.parametros.pesoChutesNoAlvo * 100, 0) + '%, correção ' + num(r.parametros.correcao, 1) + '. <button class="sec" id="aplicar-param">Usar estes parâmetros</button> <button class="link" id="param-padrao">Voltar ao padrão</button></p>' : '')
-      + '<h3>Como o hub calcula</h3><ul class="metodo"><li><b>Força dos clubes:</b> um único modelo para 30 competições. Ataque e defesa de cada clube, nível de cada liga, fator casa por competição, peso maior para jogos recentes (meia-vida de 270 dias); mistura gols com chutes no alvo, que oscilam menos.</li><li><b>Modelo na frente:</b> a chance mostrada primeiro é sempre a do modelo; o mercado sem margem fica ao lado para comparar.</li><li><b>Odd sugerida:</b> média das casas que cotam a linha; sem cotação, o preço justo do mercado (ou do modelo) com a margem típica das casas (5,5%).</li><li><b>Sugestões:</b> quatro níveis por faixa de odd; só linhas em que modelo e mercado concordam (até 8 p.p.).</li><li><b>Bilhete:</b> linhas do mesmo jogo pela interseção dos placares; jogos diferentes como independentes.</li><li><b>Limites:</b> escalações e desfalques não entram no modelo; escanteios e cartões não têm odd para conferir; odds de jogador só quando a Bet365 publica pela ESPN.</li></ul>';
+      + '<h3>Como o hub calcula</h3><ul class="metodo"><li><b>Força dos clubes:</b> um único modelo para 30 competições. Ataque e defesa de cada clube, nível de cada liga, fator casa por competição, peso maior para jogos recentes (meia-vida de 270 dias); mistura gols com chutes no alvo, que oscilam menos.</li><li><b>Modelo na frente:</b> a chance mostrada primeiro é sempre a do modelo; o mercado sem margem fica ao lado para comparar.</li><li><b>Odd sugerida:</b> média das casas que cotam a linha; sem cotação, o preço justo do mercado (ou do modelo) com a margem típica das casas (5,5%).</li><li><b>Palpites:</b> por jogo, sem múltiplas: a linha de maior chance nos seus mercados com odd de pelo menos 1,35 e modelo e mercado de acordo; quando nada passa, "nada bom".</li><li><b>Bilhete:</b> linhas do mesmo jogo pela interseção dos placares; jogos diferentes como independentes.</li><li><b>Limites:</b> escalações e desfalques não entram no modelo; escanteios e cartões não têm odd para conferir; odds de jogador só quando a Bet365 publica pela ESPN.</li></ul>';
   }
   async function rodarValidacao() {
     if (S.rodando || !S.F) return; S.rodando = true; const comMercado = $('#val-mercado') && $('#val-mercado').checked, escolher = $('#val-param') && $('#val-param').checked; renderValidacao();
@@ -347,7 +385,6 @@
       else if (t.id === 'mostrar-todos') { S.todos = t.checked; gravarPref(); renderRadar(); }
       else if (t.dataset.sel) { if (t.checked) S.sel.add(t.dataset.sel); else S.sel.delete(t.dataset.sel); const b = $('#analisar-sel'); if (b) b.textContent = 'Analisar selecionados (' + S.sel.size + ')'; }
       else if (t.dataset.odd) { B.definirOdd(t.dataset.odd, parseFloat(String(t.value).replace(',', '.'))); renderBilhete(); }
-      else if (t.dataset.pref) { S.pref[t.dataset.pref] = t.checked; gravarPref(); renderBilhete(); }
       else if (t.id === 'importar' && t.files && t.files[0]) { t.files[0].text().then(D.importar).then(n => { toast(n + ' registros importados.'); renderDiario(); }).catch(err => toast('Importação recusada: ' + err.message)); }
     });
     document.addEventListener('click', async e => {
@@ -357,7 +394,6 @@
       if (t.dataset.add) { const [id, ...k] = t.dataset.add.split('|'), a = S.analises.get(id), l = a && a.linhas.find(x => x.chave === k.join('|')); if (a && l) { B.adicionar(a, l); toast('Adicionada ao bilhete: ' + l.rotulo + ' a ' + num(l.odd)); render(); } return; }
       if (t.dataset.fam) { const [id, f] = t.dataset.fam.split('|'); S.familia[id] = f; renderAnalise(); const c = $('#a-' + id); if (c) { const d = c.querySelectorAll('details')[0]; if (d) d.open = true; c.scrollIntoView({ block: 'nearest' }); } return; }
       if (t.dataset.rem) { B.remover(t.dataset.rem); render(); return; }
-      if (t.dataset.usar) { const s = (S._sugestoes || []).find(x => x.nivel.id === t.dataset.usar); if (s && s.disponivel) { B.substituir(s.pernas); toast('Sugestão ' + s.nivel.nome.toLowerCase() + ' carregada no bilhete (odd ' + num(s.odd) + ').'); render(); } return; }
       if (t.dataset.del) { await D.remover(t.dataset.del); renderDiario(); return; }
       if (t.dataset.copiar) { const a = S.analises.get(t.dataset.copiar); if (a) toast(await copiar(textoAnalise(a)) ? 'Análise copiada.' : 'Não consegui copiar; use Baixar.'); return; }
       if (t.dataset.baixar) { const a = S.analises.get(t.dataset.baixar); if (a) baixar('ponto-comum-' + R.dataSP(a.m.date) + '-' + (a.m.hn + '-' + a.m.an).toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-') + '.json', JSON.stringify(dadosAnalise(a), null, 1)); return; }
@@ -367,11 +403,12 @@
         case 'analisar-sel': if (!S.sel.size) toast('Marque ao menos uma partida.'); else analisar([...S.sel]); break;
         case 'limpar-analises': S.analises.clear(); renderAnalise(); break;
         case 'copiar-todas': { const ls = [...S.analises.values()].sort((x, y) => Date.parse(x.m.date) - Date.parse(y.m.date)); toast(await copiar(ls.map(textoAnalise).join('\n\n———\n\n')) ? ls.length + ' análises copiadas.' : 'Não consegui copiar; use Baixar.'); break; }
+        case 'copiar-palpites': { const ls = doDiaParaPalpites().map(m => S.analises.get(m.id)).filter(Boolean).sort((x, y) => Date.parse(x.m.date) - Date.parse(y.m.date)); toast(await copiar(textoPalpites(ls)) ? 'Palpites copiados.' : 'Não consegui copiar.'); break; }
         case 'baixar-todas': baixar('ponto-comum-analises-' + S.dia + '.json', JSON.stringify([...S.analises.values()].map(dadosAnalise), null, 1)); break;
         case 'limpar-bilhete': B.limpar(); render(); break;
         case 'acompanhar': case 'registrar-aposta': {
           const ps = B.lista(); if (!ps.length) break; const av = B.avaliar(ps, S.analises), lerN = id => parseFloat(String(($('#' + id) || {}).value || '').replace(',', '.'));
-          const valor = lerN('valor-aposta'), oddPega = lerN('odd-pega'), nivel = ($('#nivel-aposta') || {}).value || 'manual';
+          const valor = lerN('valor-aposta'), oddPega = lerN('odd-pega'), nivel = ps.length > 1 ? 'multipla' : 'simples';
           if (t.id === 'registrar-aposta' && !(valor > 0)) { toast('Informe o valor apostado.'); break; }
           if (t.id === 'registrar-aposta' && !av.odd && !(oddPega > 1)) { toast('Informe a odd que você pegou.'); break; }
           await D.salvarBilhete(ps, av, { modo: t.id === 'acompanhar' ? 'acompanhar' : 'aposta', valor, oddPega, nivel }); toast(t.id === 'acompanhar' ? 'Bilhete salvo para acompanhar.' : 'Aposta registrada: ' + reais(valor) + ' a ' + num(oddPega > 1 ? oddPega : av.odd) + '.'); break; }
