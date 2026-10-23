@@ -28,7 +28,7 @@ O repositório tem um robô (`.github/workflows/coleta.yml` → `ferramentas/col
 | `dados/revisao.json` | O que o hub disse × o que aconteceu: acerto e retorno de cada tipo de palpite, erro do modelo e do mercado, modelo de jogador × Bet365 |
 | `dados/validacao.json` | Validação semana a semana com dados reais (gerada com `node ferramentas/validar.mjs`) |
 
-Para testar uma mudança no modelo: `node ferramentas/experimento.mjs` (usa só os arquivos de `dados/`, sem internet).
+Para testar uma mudança no modelo: `node ferramentas/experimento.mjs` (usa só os arquivos de `dados/`, sem internet). Antes de publicar mudanças no site: `node ferramentas/versao.mjs` (carimba a versão dos arquivos para o navegador não misturar novo e velho).
 
 ## Validação com dados reais (22/10/2026)
 
