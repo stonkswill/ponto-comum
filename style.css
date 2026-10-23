@@ -220,3 +220,5 @@ section.sugestoes { margin-top: 4px; }
 .palpite-jogo .palpites { background: none; padding: 0; margin: 8px 0 0; }
 .nota .pulso { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--aviso); margin-right: 4px; animation: pulso 1.2s infinite; }
 @media (max-width: 640px) { .palpites li { grid-template-columns: 1fr auto; } .palpites .tipo { grid-column: 1 / -1; margin-bottom: -6px; } }
+.palpites li.valor .tipo { color: var(--pos); }
+.palpites li.valor { background: color-mix(in srgb, var(--pos) 10%, transparent); border-radius: 8px; padding: 4px 6px; margin: -4px -6px; }

@@ -1,7 +1,8 @@
 // Validação com dados reais, sem rede: usa dados/rede e dados/odds (coletados pelo robô). Grava dados/validacao.json.
 import path from 'node:path';
 import { carregarHub, lerJSON, gravarJSON, lerRede, RAIZ } from './hub.mjs';
-import { anexarImplicitos } from './implicitos.mjs';
+import { anexarImplicitos, implicitosFD } from './implicitos.mjs';
+import { carregarFD, enriquecer } from './fd.mjs';
 
 const H = carregarHub({ semRede: true }), { R, M, K, V, ctx } = H;
 const DADOS = path.join(RAIZ, 'dados'), cache = new Map();
@@ -12,6 +13,7 @@ ctx.PCRede = Object.freeze(Object.assign({}, R, {
 }));
 const rede = lerRede(); if (!rede) throw new Error('Sem dados/rede.');
 anexarImplicitos(rede.jogos, { M, K, dados: DADOS });
+{ const { jogos: fd } = carregarFD({ dados: DADOS }); if (fd.length) console.log('fontes externas:', JSON.stringify(enriquecer(rede.jogos, fd, implicitosFD(fd, { K, arquivo: path.join(DADOS, 'externo', 'derivado', 'implicitos-fd.json') })))); }
 const t0 = Date.now();
 const rel = await V.rodar(rede.jogos, { comMercado: true, escolherParametros: process.argv.includes('--parametros'), onProgress: t => process.stdout.write('\r' + t.padEnd(60)) });
 rel.publicado = true; rel.base = { jogos: rede.jogos.length, geradaEm: rede.indice.geradoEm };

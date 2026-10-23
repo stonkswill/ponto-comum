@@ -16,9 +16,11 @@
   // Meia-vida, chutes e correção escolhidos no ajuste (jan–jul/2026) e conferidos no teste (jul–out/2026).
   // Em 22/10, com a base real: forças mais espalhadas (0,5) e 50% de gols esperados do fechamento do mercado nos jogos
   // passados (mktBlend) baixaram o log loss 1X2 do teste de 0,9743 para 0,9683, sem piorar o ajuste.
+  // Em 23/10: preços de fechamento da Pinnacle (football-data.co.uk, 6 temporadas) e 50% de xG do Understat no alvo dos jogos
+  // passados: teste 0,9691 → 0,9669 no 1X2 e 0,6574 → 0,6556 no over 2,5; confirmado num backtest de 18 mil jogos.
   const PADRAO = Object.freeze({ halfLife: 270, sdTeam: 0.5, sdLeague: 0.45, sdHome: 0.15, haPrior: 0.25, sotBlend: 0.6, cupW: 0.8, stateW: 0.6,
-    iters: 80, tol: 2e-5, maxAgeDays: 1100, embargoH: 3, esticar: 1.2, mktBlend: 0.5 });
-  const PADRAO_CONTAGEM = Object.freeze(Object.assign({}, PADRAO, { sotBlend: 0, sdTeam: 0.3, esticar: 1, mktBlend: 0 }));
+    iters: 80, tol: 2e-5, maxAgeDays: 1100, embargoH: 3, esticar: 1.2, mktBlend: 0.5, xgBlend: 0.5 });
+  const PADRAO_CONTAGEM = Object.freeze(Object.assign({}, PADRAO, { sotBlend: 0, sdTeam: 0.3, esticar: 1, mktBlend: 0, xgBlend: 0 }));
 
   function grupoDe(comp) { const c = COMP()[comp]; return !c ? 'O:?' : c.tipo === 'league' ? 'L:' + comp : 'O:' + c.regiao; }
 
@@ -98,11 +100,13 @@
   /* Gols: ajuste + ρ de Dixon-Coles + fração de gols no 1º tempo por competição. */
   function ajustarGols(jogos, opt = {}) {
     const o = Object.assign({}, PADRAO, opt, { cutoff: opt.cutoff ?? Date.now() });
-    const R = selecionar(jogos, o, m => (m.hg == null || m.ag == null) ? null : [m.hg, m.ag, m.hst, m.ast, m.ilh ?? null, m.ila ?? null]);
+    const R = selecionar(jogos, o, m => (m.hg == null || m.ag == null) ? null : [m.hg, m.ag, m.hst, m.ast, m.ilh ?? null, m.ila ?? null, m.xgh ?? null, m.xga ?? null]);
     let g = 0, s = 0; for (const y of R.Y) if (y[2] != null && y[3] != null) { g += y[0] + y[1]; s += y[2] + y[3]; }
     const kappa = s > 0 ? g / s : 0, b = o.sotBlend;
     const YH = Float64Array.from(R.Y, y => (b > 0 && y[2] != null && y[3] != null) ? (1 - b) * y[0] + b * kappa * y[2] : y[0]);
     const YA = Float64Array.from(R.Y, y => (b > 0 && y[2] != null && y[3] != null) ? (1 - b) * y[1] + b * kappa * y[3] : y[1]);
+    // xG (gols esperados pela qualidade das chances), quando a fonte tiver: substitui parte do alvo.
+    const xb = o.xgBlend || 0; if (xb > 0) for (let k = 0; k < R.Y.length; k++) { const y = R.Y[k]; if (y[6] != null && y[7] != null) { YH[k] = (1 - xb) * YH[k] + xb * y[6]; YA[k] = (1 - xb) * YA[k] + xb * y[7]; } }
     // Gols esperados implícitos no fechamento do mercado (jogos passados): menos ruído que placar e chutes.
     const w = o.mktBlend || 0; if (w > 0) for (let k = 0; k < R.Y.length; k++) { const y = R.Y[k]; if (y[4] != null && y[5] != null) { YH[k] = (1 - w) * YH[k] + w * y[4]; YA[k] = (1 - w) * YA[k] + w * y[5]; } }
     const F = nucleo(R, YH, YA, o);

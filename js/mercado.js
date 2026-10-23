@@ -76,6 +76,26 @@
     const c = lista.filter(p => { const q = normNome(p.nome).split(' '); return q[q.length - 1] === ult && q[0][0] === ini; }); return c.length === 1 ? c[0] : null;
   }
 
+  /* Times da ESPN × football-data: nomes diferentes para o mesmo clube ("Manchester United" × "Man United"). */
+  const normTime = v => normNome(v).replace(/\b(fc|cf|ac|sc|afc|club|de|calcio|ssc|as|us|sv|vfb|vfl|tsg|fsv|ogc|rc|losc|stade|real|sporting|athletic|ath|cd|ud|sd|ca)\b/g, ' ').replace(/\s+/g, ' ').trim();
+  const APELIDOS = { 'man united': 'manchester united', 'man city': 'manchester city', 'nott m forest': 'nottingham forest', 'wolves': 'wolverhampton wanderers', 'sheffield weds': 'sheffield wednesday', 'qpr': 'queens park rangers', 'west brom': 'west bromwich albion', 'm gladbach': 'borussia m gladbach', 'ein frankfurt': 'eintracht frankfurt', 'paris sg': 'paris saint germain', 'st etienne': 'saint etienne', 'espanol': 'espanyol', 'vallecano': 'rayo vallecano', 'fc koln': 'koln', 'hertha': 'hertha berlin', 'leverkusen': 'bayer leverkusen', 'dortmund': 'borussia dortmund', 'bielefeld': 'arminia bielefeld', 'inter': 'internazionale' };
+  function parecidoTimes(a, b) {
+    const x = normTime(APELIDOS[normTime(a)] || a), y = normTime(APELIDOS[normTime(b)] || b); if (!x || !y) return 0;
+    if (x === y) return 4; if (x.includes(y) || y.includes(x)) return 3;
+    const tx = x.split(' '), ty = y.split(' '); if (tx.some(t => t.length >= 4 && ty.includes(t))) return 2; if (x.slice(0, 4) === y.slice(0, 4)) return 1; return 0;
+  }
+  /* Cotações da Pinnacle (e a melhor odd do mercado, só como informação) para um jogo da ESPN, a partir dos próximos jogos da football-data. */
+  function deProximos(lista, m) {
+    if (!Array.isArray(lista) || !m) return [];
+    const t = Date.parse(m.date); let melhor = null, nota = 0;
+    for (const f of lista) { if (f.comp !== m.comp || Math.abs(Date.parse(f.date) - t) > 30 * 3600e3) continue; const s = parecidoTimes(m.hn, f.casa) + parecidoTimes(m.an, f.fora); if (s > nota) { nota = s; melhor = f; } }
+    if (!melhor || nota < 4) return [];
+    const out = [], ps = melhor.odds.ps || {};
+    if (ps.x12) ['h', 'd', 'a'].forEach((s, i) => out.push({ casa: 'Pinnacle', mk: { t: '1x2', s }, odd: ps.x12[i] }));
+    if (ps.ou25) out.push({ casa: 'Pinnacle', mk: { t: 'tot', s: 'o', l: 2.5 }, odd: ps.ou25[0] }, { casa: 'Pinnacle', mk: { t: 'tot', s: 'u', l: 2.5 }, odd: ps.ou25[1] });
+    return out;
+  }
+
   /* Cotações a partir do placar do dia (só DraftKings 1X2 + linha principal). */
   function doPlacar(m) {
     const o = m && m.odds; if (!o) return [];
@@ -100,7 +120,7 @@
   /* Referência do mercado para a partida: 1X2 e linha principal sem margem, e os λ implícitos. */
   function referencia(cotacoes, rho = -0.03) {
     const porCasa = new Map(); for (const q of cotacoes) { let l = porCasa.get(q.casa); if (!l) porCasa.set(q.casa, l = []); l.push(q); }
-    const ordem = [...porCasa.keys()].sort((a, b) => (/draftkings/i.test(b) ? 1 : 0) - (/draftkings/i.test(a) ? 1 : 0));
+    const peso = c => /pinnacle/i.test(c) ? 2 : /draftkings/i.test(c) ? 1 : 0, ordem = [...porCasa.keys()].sort((a, b) => peso(b) - peso(a)); // Pinnacle é a casa mais afiada (backtest de 18 mil jogos)
     let x12 = null, tot = null, fonte = [];
     for (const casa of ordem) {
       const qs = porCasa.get(casa), g = s => qs.find(q => q.mk.t === '1x2' && q.mk.s === s);
@@ -119,11 +139,11 @@
   const MARGEM_TIPICA = 0.055;
   function oddSugerida(cotacoes, mk, pMercado, pModelo) {
     const k = chave(mk), qs = cotacoes.filter(q => chave(q.mk) === k);
-    if (qs.length) return { odd: +(qs.reduce((s, q) => s + q.odd, 0) / qs.length).toFixed(2), tipo: 'cotada', casas: [...new Set(qs.map(q => q.casa))], maior: Math.max(...qs.map(q => q.odd)) };
+    if (qs.length) { const top = qs.reduce((b, q) => q.odd > b.odd ? q : b); return { odd: +(qs.reduce((s, q) => s + q.odd, 0) / qs.length).toFixed(2), tipo: 'cotada', casas: [...new Set(qs.map(q => q.casa))], maior: top.odd, casaMaior: top.casa }; }
     const temMercado = Number.isFinite(pMercado) && pMercado > 0 && pMercado < 1, p = temMercado ? pMercado : pModelo;
     if (!(p > 0 && p < 1)) return null;
     return { odd: +Math.max(1.01, 1 / (p * (1 + MARGEM_TIPICA + (temMercado ? 0 : 0.02)))).toFixed(2), tipo: temMercado ? 'mercado' : 'modelo', casas: [] };
   }
 
-  G.PCMercado = Object.freeze({ normNome, jogadoresDoResumo, acharJogador, chave, rotulo, familia, meia, doResumo, doPlacar, semMargem, referencia, melhorOdd, oddSugerida, MARGEM_TIPICA });
+  G.PCMercado = Object.freeze({ normNome, parecidoTimes, deProximos, jogadoresDoResumo, acharJogador, chave, rotulo, familia, meia, doResumo, doPlacar, semMargem, referencia, melhorOdd, oddSugerida, MARGEM_TIPICA });
 })(typeof globalThis !== 'undefined' ? globalThis : window);

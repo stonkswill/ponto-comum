@@ -73,10 +73,10 @@
     const R0 = G.PCAnalise ? G.PCAnalise.REGRA_PALPITE : { oddMin: 1.35, chanceMin: 0.5, chanceMax: 0.92, alt: [1.7, 3.2] }, cons = c => (c.pm + c.pk) / 2;
     const out = { jogos: 0, principal: { n: 0, acertos: 0, previsto: 0, somaOdd: 0, lucro: 0 }, oddMaior: { n: 0, acertos: 0, previsto: 0, somaOdd: 0, lucro: 0 } };
     const soma = (x, c) => { x.n++; x.acertos += c.y; x.previsto += cons(c); x.somaOdd += c.odd; x.lucro += c.y ? c.odd - 1 : -1; };
-    for (const r of linhas) { const cs = (r.cands[momento] || []).filter(c => Math.abs(c.pm - c.pk) <= 0.08 && c.pm <= R0.chanceMax); if (!cs.length) continue; out.jogos++;
+    for (const r of linhas) { const cs = (r.cands[momento] || []).filter(c => Math.abs(c.pm - c.pk) <= (R0.acordo ?? 0.08) && c.pm <= R0.chanceMax); if (!cs.length) continue; out.jogos++;
       const melhor = ls => ls.reduce((b, c) => !b || cons(c) > cons(b) ? c : b, null);
       const p = melhor(cs.filter(c => c.odd >= R0.oddMin && cons(c) >= R0.chanceMin)); if (p) soma(out.principal, p);
-      const o = melhor(cs.filter(c => c.odd >= R0.alt[0] && c.odd <= R0.alt[1] && c.pm >= c.pk && (!p || c.t !== p.t))); if (o) soma(out.oddMaior, o); }
+      const o = melhor(cs.filter(c => c.odd >= R0.alt[0] && c.odd < R0.alt[1] && c.pm >= c.pk && (!p || c.t !== p.t))); if (o) soma(out.oddMaior, o); }
     for (const k of ['principal', 'oddMaior']) { const x = out[k]; x.taxa = x.n ? x.acertos / x.n : null; x.previsto = x.n ? x.previsto / x.n : null; x.oddMedia = x.n ? +(x.somaOdd / x.n).toFixed(2) : null; x.retorno = x.n ? +(x.lucro / x.n).toFixed(3) : null; delete x.somaOdd; }
     return out;
   }

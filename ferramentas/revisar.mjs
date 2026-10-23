@@ -42,7 +42,7 @@ export function revisar({ K, D, jogos, dados, dias = 45 }) {
       }
       const palDia = [];
       if (p.palpites) {
-        for (const tipo of ['principal', 'oddMaior', 'destaque']) { const x = p.palpites[tipo]; if (!x) continue; const y = D.liquidar(deChave(x.chave), j); if (y === null) continue; somaPal(tipo, x.chance, x.odd, y); palDia.push({ tipo, rotulo: x.rotulo, odd: x.odd, chance: x.chance, ok: y }); }
+        for (const tipo of ['valor', 'principal', 'oddMaior', 'destaque']) { const x = p.palpites[tipo]; if (!x) continue; const y = D.liquidar(deChave(x.chave), j); if (y === null) continue; somaPal(tipo, x.chance, x.odd, y); palDia.push({ tipo, rotulo: x.rotulo, odd: x.odd, chance: x.chance, ok: y }); }
         const xj = p.palpites.jogador; if (xj && j.gm) { const y = K.acharJogador(j.gm.filter(g => g[0] === xj.lado && !g[2]).map(g => ({ nome: g[1] })), xj.nome) ? 1 : 0; somaPal('jogador', xj.p, xj.odd, y); palDia.push({ tipo: 'jogador', rotulo: xj.nome + ' marca', odd: xj.odd, chance: xj.p, ok: y }); }
       }
       det.jogos.push({ id, jogo: p.casa + ' × ' + p.fora, comp: p.comp, inicio: p.inicio, placar: [j.hg, j.ag], palpites: palDia, nada: !!(p.palpites && p.palpites.nada), favorito: fav ? { rotulo: K.rotulo({ t: '1x2', s: fav.s }, p.casa, p.fora), p: fav.l[0], pMercado: fav.l[1], ok: D.liquidar({ t: '1x2', s: fav.s }, j) } : null, leitura: ditas, filtro: p.filtro });

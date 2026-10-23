@@ -7,7 +7,8 @@
 import fs from 'node:fs'; import path from 'node:path';
 import { carregarHub, gravarJSON, lerJSON, RAIZ } from './hub.mjs';
 import { revisar } from './revisar.mjs';
-import { anexarImplicitos } from './implicitos.mjs';
+import { anexarImplicitos, implicitosFD } from './implicitos.mjs';
+import { carregarFD, enriquecer, lerProximos } from './fd.mjs';
 
 const { R, M, K, A, B, D } = carregarHub();
 const DADOS = process.env.DADOS_DIR || path.join(RAIZ, 'dados'), agora = Number(process.env.AGORA) || Date.now(), ano = new Date(agora).getUTCFullYear();
@@ -44,7 +45,9 @@ for (const k of sujos) { const [comp, y] = k.split('|'); gravarJSON(arqOdds(comp
 log('odds:', nOdds, 'novas;', Math.max(0, pendentesOdds.length - MAX_ODDS), 'ficam para a próxima');
 const sujosI = anexarImplicitos(rede.jogos, { M, K, dados: DADOS, odds });
 for (const k of sujosI) { const [comp, y] = k.split('|'); gravarJSON(arqOdds(comp, y), odds.get(k)); }
-log('gols implícitos:', rede.jogos.filter(m => m.ilh != null).length, 'jogos');
+// Fontes externas (football-data + Understat): fechamento da Pinnacle e xG para os jogos das ligas cobertas.
+try { const { jogos: fd } = carregarFD({ dados: DADOS }); if (fd.length) { const imp = implicitosFD(fd, { K, arquivo: path.join(DADOS, 'externo', 'derivado', 'implicitos-fd.json') }); log('fontes externas:', JSON.stringify(enriquecer(rede.jogos, fd, imp))); } } catch (e) { log('fontes externas falharam:', e.message); }
+log('gols implícitos:', rede.jogos.filter(m => m.ilh != null).length, 'jogos; xG:', rede.jogos.filter(m => m.xgh != null).length);
 const dirRede = path.join(DADOS, 'rede'), indiceAntigo = lerJSON(path.join(dirRede, 'indice.json'), { arquivos: [] });
 const arquivos = [];
 for (const c of R.COMPS) for (const y of [ano - 2, ano - 1, ano]) {
@@ -57,6 +60,13 @@ for (const c of R.COMPS) for (const y of [ano - 2, ano - 1, ano]) {
 }
 gravarJSON(path.join(dirRede, 'indice.json'), { geradoEm: new Date(agora).toISOString(), versao: 3, arquivos }, { compacto: false });
 
+
+// ---------- 2b. Odds da Pinnacle e do mercado para os próximos jogos (football-data, atualizado antes de cada rodada) ----------
+try { const r = await fetch('https://www.football-data.co.uk/fixtures.csv', { headers: { 'user-agent': 'Mozilla/5.0 (ponto-comum)' } });
+  if (r.ok) { const lista = lerProximos((await r.text()).replace(/\r/g, '')); const antigo = lerJSON(path.join(DADOS, 'externo', 'proximos.json'), { jogos: [] }), mudou = JSON.stringify(antigo.jogos) !== JSON.stringify(lista);
+    gravarJSON(path.join(DADOS, 'externo', 'proximos.json'), { atualizadoEm: mudou ? new Date(agora).toISOString() : antigo.atualizadoEm, consultadoEm: new Date(agora).toISOString(), jogos: lista }, { compacto: false }); log('próximos (football-data):', lista.length, 'jogos com odds'); } }
+catch (e) { log('próximos falhou:', e.message); }
+const proximosFD = lerJSON(path.join(DADOS, 'externo', 'proximos.json'), { jogos: [] });
 
 // ---------- 3. Agenda, cotações pré-jogo e modelo ----------
 const hoje = R.dataSP(new Date(agora).toISOString()), amanha = R.dataSP(new Date(agora + 864e5).toISOString());
@@ -77,7 +87,7 @@ const analisesPorDia = new Map(), pre = new Map(), prev = new Map();
 const arqDia = (pasta, d) => path.join(DADOS, pasta, d + '.json');
 await R.pool(proximos.map(m => async () => {
   let resumo = null; try { resumo = await R.carregarResumo(m); } catch { resumo = { cotacoes: [] }; }
-  const visto = new Set((resumo.cotacoes || []).map(q => q.casa + '|' + K.chave(q.mk))), cot = (resumo.cotacoes || []).concat(K.doPlacar(m).filter(q => !visto.has(q.casa + '|' + K.chave(q.mk))));
+  const visto = new Set((resumo.cotacoes || []).map(q => q.casa + '|' + K.chave(q.mk))), cot = (resumo.cotacoes || []).concat(K.doPlacar(m).filter(q => !visto.has(q.casa + '|' + K.chave(q.mk))), K.deProximos(proximosFD.jogos, m));
   const liga = id => { const g = forca.porId.get(id); return g && g.grupo.startsWith('L:') ? g.grupo.slice(2) : m.comp; };
   const [ec, ef] = await Promise.all([m.h, m.a].map(id => R.carregarElenco(liga(id), id).catch(() => null)));
   const a = A.analisar(m, { F, Fe, Fc, porTime, forca, cotacoes: cot, resumo, elencos: { casa: ec, fora: ef }, agora });
@@ -93,7 +103,7 @@ await R.pool(proximos.map(m => async () => {
     jogadores: { casa: a.jogadores.casa.map(j => [j.nome, r4(j.p), j.odd]), fora: a.jogadores.fora.map(j => [j.nome, r4(j.p), j.odd]) },
     palpites: (() => { const P = a.palpites, l = x => x && { chave: x.chave, rotulo: x.rotulo, odd: x.odd, tipoOdd: TIPO[x.oddTipo] || '?', chance: r4(P.chance(x)), pModelo: r4(x.pModelo), pMercado: r4(x.pMercado) };
       const jl = P.jogador && (a.jogadores.casa.includes(P.jogador) ? 'h' : 'a');
-      return { nada: !!P.nada, principal: l(P.principal), oddMaior: l(P.oddMaior), destaque: l(P.destaque), jogador: P.jogador && { nome: P.jogador.nome, lado: jl, p: r4(P.jogador.p), odd: P.jogador.odd } }; })() };
+      return { nada: !!P.nada, valor: P.valor && { chave: P.valor.chave, rotulo: P.valor.rotulo, odd: P.valor.oddOutra, casa: P.valor.casaOutra, tipoOdd: 'c', chance: r4(P.valor.pPinnacle), pModelo: r4(P.valor.pModelo), pMercado: r4(P.valor.pMercado), valorPinnacle: r4(P.valorPin) }, principal: l(P.principal), oddMaior: l(P.oddMaior), destaque: l(P.destaque), jogador: P.jogador && { nome: P.jogador.nome, lado: jl, p: r4(P.jogador.p), odd: P.jogador.odd } }; })() };
   if (!analisesPorDia.has(d)) analisesPorDia.set(d, []); analisesPorDia.get(d).push(a);
 }), 4);
 

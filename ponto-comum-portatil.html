@@ -232,6 +232,8 @@ section.sugestoes { margin-top: 4px; }
 .palpite-jogo .palpites { background: none; padding: 0; margin: 8px 0 0; }
 .nota .pulso { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--aviso); margin-right: 4px; animation: pulso 1.2s infinite; }
 @media (max-width: 640px) { .palpites li { grid-template-columns: 1fr auto; } .palpites .tipo { grid-column: 1 / -1; margin-bottom: -6px; } }
+.palpites li.valor .tipo { color: var(--pos); }
+.palpites li.valor { background: color-mix(in srgb, var(--pos) 10%, transparent); border-radius: 8px; padding: 4px 6px; margin: -4px -6px; }
 
 </style>
   <script>/* js/rede.js */
@@ -531,9 +533,11 @@ section.sugestoes { margin-top: 4px; }
   // Meia-vida, chutes e correção escolhidos no ajuste (jan–jul/2026) e conferidos no teste (jul–out/2026).
   // Em 22/10, com a base real: forças mais espalhadas (0,5) e 50% de gols esperados do fechamento do mercado nos jogos
   // passados (mktBlend) baixaram o log loss 1X2 do teste de 0,9743 para 0,9683, sem piorar o ajuste.
+  // Em 23/10: preços de fechamento da Pinnacle (football-data.co.uk, 6 temporadas) e 50% de xG do Understat no alvo dos jogos
+  // passados: teste 0,9691 → 0,9669 no 1X2 e 0,6574 → 0,6556 no over 2,5; confirmado num backtest de 18 mil jogos.
   const PADRAO = Object.freeze({ halfLife: 270, sdTeam: 0.5, sdLeague: 0.45, sdHome: 0.15, haPrior: 0.25, sotBlend: 0.6, cupW: 0.8, stateW: 0.6,
-    iters: 80, tol: 2e-5, maxAgeDays: 1100, embargoH: 3, esticar: 1.2, mktBlend: 0.5 });
-  const PADRAO_CONTAGEM = Object.freeze(Object.assign({}, PADRAO, { sotBlend: 0, sdTeam: 0.3, esticar: 1, mktBlend: 0 }));
+    iters: 80, tol: 2e-5, maxAgeDays: 1100, embargoH: 3, esticar: 1.2, mktBlend: 0.5, xgBlend: 0.5 });
+  const PADRAO_CONTAGEM = Object.freeze(Object.assign({}, PADRAO, { sotBlend: 0, sdTeam: 0.3, esticar: 1, mktBlend: 0, xgBlend: 0 }));
 
   function grupoDe(comp) { const c = COMP()[comp]; return !c ? 'O:?' : c.tipo === 'league' ? 'L:' + comp : 'O:' + c.regiao; }
 
@@ -613,11 +617,13 @@ section.sugestoes { margin-top: 4px; }
   /* Gols: ajuste + ρ de Dixon-Coles + fração de gols no 1º tempo por competição. */
   function ajustarGols(jogos, opt = {}) {
     const o = Object.assign({}, PADRAO, opt, { cutoff: opt.cutoff ?? Date.now() });
-    const R = selecionar(jogos, o, m => (m.hg == null || m.ag == null) ? null : [m.hg, m.ag, m.hst, m.ast, m.ilh ?? null, m.ila ?? null]);
+    const R = selecionar(jogos, o, m => (m.hg == null || m.ag == null) ? null : [m.hg, m.ag, m.hst, m.ast, m.ilh ?? null, m.ila ?? null, m.xgh ?? null, m.xga ?? null]);
     let g = 0, s = 0; for (const y of R.Y) if (y[2] != null && y[3] != null) { g += y[0] + y[1]; s += y[2] + y[3]; }
     const kappa = s > 0 ? g / s : 0, b = o.sotBlend;
     const YH = Float64Array.from(R.Y, y => (b > 0 && y[2] != null && y[3] != null) ? (1 - b) * y[0] + b * kappa * y[2] : y[0]);
     const YA = Float64Array.from(R.Y, y => (b > 0 && y[2] != null && y[3] != null) ? (1 - b) * y[1] + b * kappa * y[3] : y[1]);
+    // xG (gols esperados pela qualidade das chances), quando a fonte tiver: substitui parte do alvo.
+    const xb = o.xgBlend || 0; if (xb > 0) for (let k = 0; k < R.Y.length; k++) { const y = R.Y[k]; if (y[6] != null && y[7] != null) { YH[k] = (1 - xb) * YH[k] + xb * y[6]; YA[k] = (1 - xb) * YA[k] + xb * y[7]; } }
     // Gols esperados implícitos no fechamento do mercado (jogos passados): menos ruído que placar e chutes.
     const w = o.mktBlend || 0; if (w > 0) for (let k = 0; k < R.Y.length; k++) { const y = R.Y[k]; if (y[4] != null && y[5] != null) { YH[k] = (1 - w) * YH[k] + w * y[4]; YA[k] = (1 - w) * YA[k] + w * y[5]; } }
     const F = nucleo(R, YH, YA, o);
@@ -850,6 +856,26 @@ section.sugestoes { margin-top: 4px; }
     const c = lista.filter(p => { const q = normNome(p.nome).split(' '); return q[q.length - 1] === ult && q[0][0] === ini; }); return c.length === 1 ? c[0] : null;
   }
 
+  /* Times da ESPN × football-data: nomes diferentes para o mesmo clube ("Manchester United" × "Man United"). */
+  const normTime = v => normNome(v).replace(/\b(fc|cf|ac|sc|afc|club|de|calcio|ssc|as|us|sv|vfb|vfl|tsg|fsv|ogc|rc|losc|stade|real|sporting|athletic|ath|cd|ud|sd|ca)\b/g, ' ').replace(/\s+/g, ' ').trim();
+  const APELIDOS = { 'man united': 'manchester united', 'man city': 'manchester city', 'nott m forest': 'nottingham forest', 'wolves': 'wolverhampton wanderers', 'sheffield weds': 'sheffield wednesday', 'qpr': 'queens park rangers', 'west brom': 'west bromwich albion', 'm gladbach': 'borussia m gladbach', 'ein frankfurt': 'eintracht frankfurt', 'paris sg': 'paris saint germain', 'st etienne': 'saint etienne', 'espanol': 'espanyol', 'vallecano': 'rayo vallecano', 'fc koln': 'koln', 'hertha': 'hertha berlin', 'leverkusen': 'bayer leverkusen', 'dortmund': 'borussia dortmund', 'bielefeld': 'arminia bielefeld', 'inter': 'internazionale' };
+  function parecidoTimes(a, b) {
+    const x = normTime(APELIDOS[normTime(a)] || a), y = normTime(APELIDOS[normTime(b)] || b); if (!x || !y) return 0;
+    if (x === y) return 4; if (x.includes(y) || y.includes(x)) return 3;
+    const tx = x.split(' '), ty = y.split(' '); if (tx.some(t => t.length >= 4 && ty.includes(t))) return 2; if (x.slice(0, 4) === y.slice(0, 4)) return 1; return 0;
+  }
+  /* Cotações da Pinnacle (e a melhor odd do mercado, só como informação) para um jogo da ESPN, a partir dos próximos jogos da football-data. */
+  function deProximos(lista, m) {
+    if (!Array.isArray(lista) || !m) return [];
+    const t = Date.parse(m.date); let melhor = null, nota = 0;
+    for (const f of lista) { if (f.comp !== m.comp || Math.abs(Date.parse(f.date) - t) > 30 * 3600e3) continue; const s = parecidoTimes(m.hn, f.casa) + parecidoTimes(m.an, f.fora); if (s > nota) { nota = s; melhor = f; } }
+    if (!melhor || nota < 4) return [];
+    const out = [], ps = melhor.odds.ps || {};
+    if (ps.x12) ['h', 'd', 'a'].forEach((s, i) => out.push({ casa: 'Pinnacle', mk: { t: '1x2', s }, odd: ps.x12[i] }));
+    if (ps.ou25) out.push({ casa: 'Pinnacle', mk: { t: 'tot', s: 'o', l: 2.5 }, odd: ps.ou25[0] }, { casa: 'Pinnacle', mk: { t: 'tot', s: 'u', l: 2.5 }, odd: ps.ou25[1] });
+    return out;
+  }
+
   /* Cotações a partir do placar do dia (só DraftKings 1X2 + linha principal). */
   function doPlacar(m) {
     const o = m && m.odds; if (!o) return [];
@@ -874,7 +900,7 @@ section.sugestoes { margin-top: 4px; }
   /* Referência do mercado para a partida: 1X2 e linha principal sem margem, e os λ implícitos. */
   function referencia(cotacoes, rho = -0.03) {
     const porCasa = new Map(); for (const q of cotacoes) { let l = porCasa.get(q.casa); if (!l) porCasa.set(q.casa, l = []); l.push(q); }
-    const ordem = [...porCasa.keys()].sort((a, b) => (/draftkings/i.test(b) ? 1 : 0) - (/draftkings/i.test(a) ? 1 : 0));
+    const peso = c => /pinnacle/i.test(c) ? 2 : /draftkings/i.test(c) ? 1 : 0, ordem = [...porCasa.keys()].sort((a, b) => peso(b) - peso(a)); // Pinnacle é a casa mais afiada (backtest de 18 mil jogos)
     let x12 = null, tot = null, fonte = [];
     for (const casa of ordem) {
       const qs = porCasa.get(casa), g = s => qs.find(q => q.mk.t === '1x2' && q.mk.s === s);
@@ -893,13 +919,13 @@ section.sugestoes { margin-top: 4px; }
   const MARGEM_TIPICA = 0.055;
   function oddSugerida(cotacoes, mk, pMercado, pModelo) {
     const k = chave(mk), qs = cotacoes.filter(q => chave(q.mk) === k);
-    if (qs.length) return { odd: +(qs.reduce((s, q) => s + q.odd, 0) / qs.length).toFixed(2), tipo: 'cotada', casas: [...new Set(qs.map(q => q.casa))], maior: Math.max(...qs.map(q => q.odd)) };
+    if (qs.length) { const top = qs.reduce((b, q) => q.odd > b.odd ? q : b); return { odd: +(qs.reduce((s, q) => s + q.odd, 0) / qs.length).toFixed(2), tipo: 'cotada', casas: [...new Set(qs.map(q => q.casa))], maior: top.odd, casaMaior: top.casa }; }
     const temMercado = Number.isFinite(pMercado) && pMercado > 0 && pMercado < 1, p = temMercado ? pMercado : pModelo;
     if (!(p > 0 && p < 1)) return null;
     return { odd: +Math.max(1.01, 1 / (p * (1 + MARGEM_TIPICA + (temMercado ? 0 : 0.02)))).toFixed(2), tipo: temMercado ? 'mercado' : 'modelo', casas: [] };
   }
 
-  G.PCMercado = Object.freeze({ normNome, jogadoresDoResumo, acharJogador, chave, rotulo, familia, meia, doResumo, doPlacar, semMargem, referencia, melhorOdd, oddSugerida, MARGEM_TIPICA });
+  G.PCMercado = Object.freeze({ normNome, parecidoTimes, deProximos, jogadoresDoResumo, acharJogador, chave, rotulo, familia, meia, doResumo, doPlacar, semMargem, referencia, melhorOdd, oddSugerida, MARGEM_TIPICA });
 })(typeof globalThis !== 'undefined' ? globalThis : window);
 
 </script>
@@ -982,9 +1008,14 @@ section.sugestoes { margin-top: 4px; }
       const os = K().oddSugerida(cot, mk, pMercado, pModelo), div = pMercado !== null ? pModelo - pMercado : null;
       const pTip = chance(mk, tipico, frac, escTip, carTip);
       linhas.push({ mk, chave: k, familia: K().familia(mk), principal: princ.has(k), rotulo: K().rotulo(mk, m.hn, m.an), p: pModelo, pModelo, pMercado, pTipico: Number.isFinite(pTip) ? pTip : null, faixa: faixa.get(k) || null,
-        odd: os ? os.odd : null, oddTipo: os ? os.tipo : null, oddCasas: os ? os.casas : [], oddMaior: os && os.maior ? os.maior : null,
+        odd: os ? os.odd : null, oddTipo: os ? os.tipo : null, oddCasas: os ? os.casas : [], oddMaior: os && os.maior ? os.maior : null, casaMaior: os && os.casaMaior ? os.casaMaior : null,
         justa: 1 / pModelo, ev: os ? pModelo * os.odd - 1 : null, evMercado: os && pMercado ? pMercado * os.odd - 1 : null, divergencia: div, concorda: div === null ? null : Math.abs(div) <= TOLERANCIA });
     }
+    // Preço justo da Pinnacle (sem margem) e a melhor odd das outras casas, para o palpite de valor.
+    const pin = {}; { const q = k => cot.find(z => /pinnacle/i.test(z.casa) && K().chave(z.mk) === k), h = q('1x2:h'), d = q('1x2:d'), a = q('1x2:a'), o = q('tot:o:2.5'), u = q('tot:u:2.5');
+      if (h && d && a) { const p = K().semMargem([h.odd, d.odd, a.odd]).p; Object.assign(pin, { '1x2:h': p[0], '1x2:d': p[1], '1x2:a': p[2], 'dc:1x': p[0] + p[1], 'dc:x2': p[2] + p[1], 'dc:12': p[0] + p[2] }); }
+      if (o && u) { const p = K().semMargem([o.odd, u.odd]).p; Object.assign(pin, { 'tot:o:2.5': p[0], 'tot:u:2.5': p[1] }); } }
+    for (const l of linhas) { l.pPinnacle = pin[l.chave] ?? null; const b = cot.filter(z => !/pinnacle/i.test(z.casa) && K().chave(z.mk) === l.chave).reduce((x, z) => !x || z.odd > x.odd ? z : x, null); l.oddOutra = b ? b.odd : null; l.casaOutra = b ? b.casa : null; }
     // Destaques: linhas fora das principais com chance alta e bem acima do normal da competição.
     const destaques = linhas.filter(l => !l.principal && !['ah', 'pg', 'tmg'].includes(l.mk.t) && l.p >= 0.68 && l.p <= 0.95 && l.pTipico !== null && l.p - l.pTipico >= 0.15 && l.concorda !== false)
       .sort((a, b) => (b.p - b.pTipico) - (a.p - a.pTipico)).filter((l, i, arr) => arr.findIndex(x => x.mk.t === l.mk.t && x.mk.s === l.mk.s) === i).slice(0, 3);
@@ -1019,27 +1050,32 @@ section.sugestoes { margin-top: 4px; }
       calendario: cal, forma, h2h, forca: { casa: fc || null, fora: ff || null }, resumo: ctx.resumo || null, alertas, cotacoes: cot, geradoEm: new Date(agora).toISOString() };
   }
 
-  /* Melhores apostas do jogo (sem múltiplas). Regras testadas em 745 jogos reais com o fechamento da DraftKings (mai–out/2026):
-   * - Principal: nos seus mercados (1X2, dupla chance, ambas marcam sim, mais/menos gols), a linha de maior chance (média de
-   *   modelo e mercado) com chance ≥ 50%, odd ≥ 1,35, até 92% e modelo e mercado a até 8 p.p. Teste: 88% dos jogos com palpite,
-   *   acerto 63,5% (previsto 60,4%), odd média 1,60, retorno +0,2%.
-   * - Odd maior: outro mercado, odd 1,70–3,20, modelo e mercado de acordo e modelo não abaixo do mercado. Teste: acerto 46,7%,
-   *   odd média 2,08, retorno −4,6%.
-   * - Fora do normal: escanteios, cartões, tempos ou gols de um time com chance bem acima do normal da competição (sem odd na fonte).
+  /* Melhores apostas do jogo (sem múltiplas). Calibradas pelo LUCRO num backtest de 18 mil jogos (football-data.co.uk, 8 ligas,
+   * 2020–2026; regras escolhidas até 2023/24 e conferidas de 2024/25 em diante, nas odds da Bet365 de antes da rodada):
+   * - Valor: a Bet365/DraftKings paga acima do preço justo da Pinnacle (sem margem), odd 2,60–13, modelo e mercado a até 8 p.p.
+   *   Treino +12,0% (757 apostas), teste +5,9% (255), acerto 27,5%, odd média 4,21. Por temporada: +0, +11, +5, +33, +22 e −29%
+   *   (2025/26): a vantagem oscila e pode estar sumindo. Só aparece quando há odds da Pinnacle para o jogo.
+   * - Principal: nos seus mercados, a linha de maior chance (média de modelo e mercado) com chance ≥ 50%, odd ≥ 1,35 e modelo e
+   *   mercado a até 5 p.p. Teste −4,3% na Bet365 e −1,4% pegando a melhor odd do mercado (é a margem da casa).
+   * - Odd maior: outro mercado, odd 1,70–2,60, a até 5 p.p. e modelo não abaixo do mercado. Teste −3,3% (Bet365), −1,4% (melhor odd).
+   * - Fora do normal: escanteios, cartões, tempos ou gols de um time bem acima do normal da competição (sem odd na fonte).
    * - Jogador: quem tem mais chance de marcar pelo modelo entre os que têm odd, sem o modelo abaixo do preço justo da casa. */
-  const REGRA_PALPITE = Object.freeze({ oddMin: 1.35, chanceMin: 0.5, chanceMax: 0.92, alt: [1.7, 3.2], margemJogador: 1.25 });
+  const REGRA_PALPITE = Object.freeze({ oddMin: 1.35, chanceMin: 0.5, chanceMax: 0.92, acordo: 0.05, alt: [1.7, 2.6], valor: { odd: [2.6, 13], acordo: 0.08 }, margemJogador: 1.25 });
   const PREFERIDOS = l => ['1x2', 'dc', 'tot'].includes(l.mk.t) || (l.mk.t === 'btts' && l.mk.s === 's');
   function palpites(a, regra = REGRA_PALPITE) {
     const cons = l => Number.isFinite(l.pMercado) ? (l.pModelo + l.pMercado) / 2 : l.pModelo;
-    const base = a.linhas.filter(l => PREFERIDOS(l) && l.odd && l.concorda !== false && l.pModelo <= regra.chanceMax);
-    const melhor = ls => ls.reduce((b, l) => !b || cons(l) > cons(b) ? l : b, null);
-    const principal = melhor(base.filter(l => l.odd >= regra.oddMin && cons(l) >= regra.chanceMin));
-    const oddMaior = melhor(base.filter(l => l.odd >= regra.alt[0] && l.odd <= regra.alt[1] && (!Number.isFinite(l.pMercado) || l.pModelo >= l.pMercado) && (!principal || l.mk.t !== principal.mk.t)));
+    const acorda = (l, lim) => !Number.isFinite(l.pMercado) || Math.abs(l.pModelo - l.pMercado) <= lim;
+    const base = a.linhas.filter(l => PREFERIDOS(l) && l.odd && l.pModelo <= regra.chanceMax);
+    const melhor = (ls, f = cons) => ls.reduce((b, l) => !b || f(l) > f(b) ? l : b, null);
+    const principal = melhor(base.filter(l => acorda(l, regra.acordo) && l.odd >= regra.oddMin && cons(l) >= regra.chanceMin));
+    const oddMaior = melhor(base.filter(l => acorda(l, regra.acordo) && l.odd >= regra.alt[0] && l.odd < regra.alt[1] && (!Number.isFinite(l.pMercado) || l.pModelo >= l.pMercado) && (!principal || l.mk.t !== principal.mk.t)));
+    const vPin = l => l.oddOutra * l.pPinnacle - 1;
+    const valor = melhor(a.linhas.filter(l => Number.isFinite(l.pPinnacle) && l.oddOutra >= regra.valor.odd[0] && l.oddOutra < regra.valor.odd[1] && vPin(l) >= 0 && acorda(l, regra.valor.acordo)), vPin);
     const destaque = (a.destaques || []).find(l => l.odd >= 1.3) || null;
     const js = [...((a.jogadores && a.jogadores.casa) || []), ...((a.jogadores && a.jogadores.fora) || [])].filter(j => j.p && j.odd);
     const jogador = js.filter(j => j.p >= 1 / j.odd / regra.margemJogador).sort((x, y) => y.p - x.p)[0] || null;
-    return { principal, oddMaior, destaque, jogador, semMercado: !!principal && !Number.isFinite(principal.pMercado), chance: cons,
-      nada: principal ? null : 'Nada bom: nenhuma linha dos seus mercados com chance de 50% ou mais, odd de pelo menos 1,35 e modelo e mercado de acordo.' };
+    return { valor, valorPin: valor ? vPin(valor) : null, principal, oddMaior, destaque, jogador, semMercado: !!principal && !Number.isFinite(principal.pMercado), chance: cons,
+      nada: principal || valor ? null : 'Nada bom: nenhuma linha dos seus mercados com chance de 50% ou mais, odd de pelo menos 1,35 e modelo e mercado a até 5 p.p.' };
   }
 
   G.PCAnalise = Object.freeze({ analisar, principais, outras, chance, palpites, REGRA_PALPITE, TOLERANCIA });
@@ -1316,10 +1352,10 @@ section.sugestoes { margin-top: 4px; }
     const R0 = G.PCAnalise ? G.PCAnalise.REGRA_PALPITE : { oddMin: 1.35, chanceMin: 0.5, chanceMax: 0.92, alt: [1.7, 3.2] }, cons = c => (c.pm + c.pk) / 2;
     const out = { jogos: 0, principal: { n: 0, acertos: 0, previsto: 0, somaOdd: 0, lucro: 0 }, oddMaior: { n: 0, acertos: 0, previsto: 0, somaOdd: 0, lucro: 0 } };
     const soma = (x, c) => { x.n++; x.acertos += c.y; x.previsto += cons(c); x.somaOdd += c.odd; x.lucro += c.y ? c.odd - 1 : -1; };
-    for (const r of linhas) { const cs = (r.cands[momento] || []).filter(c => Math.abs(c.pm - c.pk) <= 0.08 && c.pm <= R0.chanceMax); if (!cs.length) continue; out.jogos++;
+    for (const r of linhas) { const cs = (r.cands[momento] || []).filter(c => Math.abs(c.pm - c.pk) <= (R0.acordo ?? 0.08) && c.pm <= R0.chanceMax); if (!cs.length) continue; out.jogos++;
       const melhor = ls => ls.reduce((b, c) => !b || cons(c) > cons(b) ? c : b, null);
       const p = melhor(cs.filter(c => c.odd >= R0.oddMin && cons(c) >= R0.chanceMin)); if (p) soma(out.principal, p);
-      const o = melhor(cs.filter(c => c.odd >= R0.alt[0] && c.odd <= R0.alt[1] && c.pm >= c.pk && (!p || c.t !== p.t))); if (o) soma(out.oddMaior, o); }
+      const o = melhor(cs.filter(c => c.odd >= R0.alt[0] && c.odd < R0.alt[1] && c.pm >= c.pk && (!p || c.t !== p.t))); if (o) soma(out.oddMaior, o); }
     for (const k of ['principal', 'oddMaior']) { const x = out[k]; x.taxa = x.n ? x.acertos / x.n : null; x.previsto = x.n ? x.previsto / x.n : null; x.oddMedia = x.n ? +(x.somaOdd / x.n).toFixed(2) : null; x.retorno = x.n ? +(x.lucro / x.n).toFixed(3) : null; delete x.somaOdd; }
     return out;
   }
@@ -1429,13 +1465,13 @@ section.sugestoes { margin-top: 4px; }
   const pausa = () => new Promise(r => setTimeout(r, 0));
   const CHAVE_PREF = 'pc3-preferencias';
   const NIVEL_NOME = { simples: 'Simples', multipla: 'Múltipla', segura: 'Segura (antigo)', media: 'Média (antigo)', arriscada: 'Arriscada (antigo)', bingo: 'Bingo (antigo)', manual: 'Montado por você' };
-  const TIPO_PALPITE = { principal: 'Principal', oddMaior: 'Odd maior', destaque: 'Fora do normal', jogador: 'Jogador marca' };
+  const TIPO_PALPITE = { valor: 'Valor', principal: 'Principal', oddMaior: 'Odd maior', destaque: 'Fora do normal', jogador: 'Jogador marca' };
 
   const S = {
     jogos: [], porId: new Map(), porTime: new Map(), F: null, Fe: null, Fc: null, forca: null, dia: hojeSP(), agenda: [], falhasAgenda: [],
     comps: new Set(R.COMPS.filter(c => c.radar).map(c => c.id)), todos: false, grandes: new Map(), idsGrandes: new Set(), sel: new Set(), analises: new Map(), elencos: new Map(), aba: 'radar',
     rede: { status: 'parado', progresso: null, relatorio: [], carregadaEm: null, ajustadaEm: null, erro: null },
-    familia: {}, palpitesDia: null, validacao: null, valPublicada: null, revisao: null, rodando: false, foco: null
+    familia: {}, palpitesDia: null, backtest: null, validacao: null, valPublicada: null, revisao: null, rodando: false, foco: null
   };
 
   function lerPref() { try { const p = JSON.parse(localStorage.getItem(CHAVE_PREF) || '{}'); if (Array.isArray(p.comps) && p.comps.length) S.comps = new Set(p.comps.filter(c => R.COMP_MAP[c] && (R.COMP_MAP[c].radar || R.COMP_MAP[c].opcional))); S.todos = !!p.todos; } catch { /* preferências padrão */ } }
@@ -1601,11 +1637,13 @@ section.sugestoes { margin-top: 4px; }
     const m = a.m, P = a.palpites;
     if (tipo === 'jogador') return '<li><span class="tipo">' + TIPO_PALPITE[tipo] + '</span><span><b>' + esc(x.nome) + ' marca</b> <small>modelo ' + pct(x.p) + ' · odd ' + num(x.odd) + ' ' + esc(a.jogadores.casaOdds || '') + '</small></span></li>';
     const ch = P.chance(x), naB = B.lista().some(p => p.id === m.id + '|' + x.chave);
-    return '<li><span class="tipo">' + TIPO_PALPITE[tipo] + '</span><span><b>' + esc(x.rotulo) + '</b> · <b>odd ' + num(x.odd) + '</b> <small>' + (x.oddTipo === 'cotada' ? tipoOdd(x) : 'odd estimada') + ' · chance ' + pct(ch) + ' (modelo ' + pct(x.pModelo) + (Number.isFinite(x.pMercado) ? ', mercado ' + pct(x.pMercado) : ', sem mercado') + ')' + (tipo === 'destaque' && x.pTipico !== null ? ' · normal da competição ' + pct(x.pTipico) : '') + '</small></span><button class="add' + (naB ? ' ja' : '') + '" data-add="' + m.id + '|' + esc(x.chave) + '" title="Adicionar ao bilhete">' + (naB ? '✓' : '+') + '</button></li>';
+    if (tipo === 'valor') return '<li class="valor"><span class="tipo">Valor</span><span><b>' + esc(x.rotulo) + '</b> · <b>odd ' + num(x.oddOutra) + '</b> <small>na ' + esc(x.casaOutra || '') + ' · preço justo da Pinnacle ' + num(1 / x.pPinnacle) + ' (' + pct(x.pPinnacle) + ') · ' + sinal(P.valorPin) + ' acima · modelo ' + pct(x.pModelo) + '</small></span><button class="add' + (naB ? ' ja' : '') + '" data-add="' + m.id + '|' + esc(x.chave) + '" title="Adicionar ao bilhete">' + (naB ? '✓' : '+') + '</button></li>';
+    const melhor = x.oddTipo === 'cotada' && x.oddMaior && x.oddCasas.length > 1 ? x.oddMaior : x.odd;
+    return '<li><span class="tipo">' + TIPO_PALPITE[tipo] + '</span><span><b>' + esc(x.rotulo) + '</b> · <b>odd ' + num(melhor) + '</b> <small>' + (x.oddTipo === 'cotada' ? (x.oddCasas.length > 1 ? 'melhor odd, na ' + esc(x.casaMaior || '') + ' (média ' + num(x.odd) + ')' : esc(x.oddCasas[0] || '')) : 'odd estimada: confira na sua casa') + ' · chance ' + pct(ch) + ' (modelo ' + pct(x.pModelo) + (Number.isFinite(x.pMercado) ? ', mercado ' + pct(x.pMercado) : ', sem mercado') + ')' + (tipo === 'destaque' && x.pTipico !== null ? ' · normal da competição ' + pct(x.pTipico) : '') + '</small></span><button class="add' + (naB ? ' ja' : '') + '" data-add="' + m.id + '|' + esc(x.chave) + '" title="Adicionar ao bilhete">' + (naB ? '✓' : '+') + '</button></li>';
   }
   function blocoPalpites(a) {
     const P = a.palpites; if (!P) return '';
-    const itens = ['principal', 'oddMaior', 'destaque', 'jogador'].filter(k => P[k]).map(k => linhaPalpite(a, k, P[k])).join('');
+    const itens = ['valor', 'principal', 'oddMaior', 'destaque', 'jogador'].filter(k => P[k]).map(k => linhaPalpite(a, k, P[k])).join('');
     return '<div class="palpites"><h3>Melhores apostas deste jogo</h3>' + (P.nada ? '<p class="nada">' + esc(P.nada) + '</p>' : '') + (itens ? '<ul>' + itens + '</ul>' : '') + '</div>';
   }
 
@@ -1659,7 +1697,7 @@ section.sugestoes { margin-top: 4px; }
     out.push('Gols esperados: ' + num(a.lh) + ' × ' + num(a.la) + (a.ref ? ' (mercado ' + num(a.ref.lh) + ' × ' + num(a.ref.la) + ')' : ''));
     out.push('', 'Linha · modelo · mercado · odd sugerida');
     for (const l of a.linhas.filter(l => l.principal && !(l.mk.t === 'tot' && trivial(l, 0.92)))) out.push('• ' + l.rotulo + ': ' + pct(l.pModelo) + ' · ' + pct(l.pMercado) + ' · ' + num(l.odd) + (l.oddTipo !== 'cotada' ? ' (estimada)' : '') + (l.concorda === false ? ' ⚠ diverge' : ''));
-    const P = a.palpites; if (P) { out.push('', 'Melhores apostas:'); if (P.nada) out.push('• ' + P.nada); for (const k of ['principal', 'oddMaior', 'destaque']) if (P[k]) out.push('• ' + TIPO_PALPITE[k] + ': ' + P[k].rotulo + ' a ' + num(P[k].odd) + ' (chance ' + pct(P.chance(P[k])) + ')'); if (P.jogador) out.push('• Jogador: ' + P.jogador.nome + ' marca a ' + num(P.jogador.odd) + ' (modelo ' + pct(P.jogador.p) + ')'); }
+    const P = a.palpites; if (P) { out.push('', 'Melhores apostas:'); if (P.nada) out.push('• ' + P.nada); if (P.valor) out.push('• Valor: ' + P.valor.rotulo + ' a ' + num(P.valor.oddOutra) + ' na ' + P.valor.casaOutra + ' (preço justo da Pinnacle ' + num(1 / P.valor.pPinnacle) + ')'); for (const k of ['principal', 'oddMaior', 'destaque']) if (P[k]) out.push('• ' + TIPO_PALPITE[k] + ': ' + P[k].rotulo + ' a ' + num(P[k].odd) + ' (chance ' + pct(P.chance(P[k])) + ')'); if (P.jogador) out.push('• Jogador: ' + P.jogador.nome + ' marca a ' + num(P.jogador.odd) + ' (modelo ' + pct(P.jogador.p) + ')'); }
     const f = fortes(a); out.push('', f.length ? 'Nos seus mercados (55–88%): ' + f.map(l => l.rotulo + ' ' + pct(l.pModelo) + ' a ' + num(l.odd)).join('; ') : 'Nada bom neste jogo pelos critérios do hub.');
     const jg = [...a.jogadores.casa, ...a.jogadores.fora].filter(j => j.p).sort((x, y) => y.p - x.p).slice(0, 4);
     if (jg.length) out.push('Quem pode marcar: ' + jg.map(j => j.nome + ' ' + pct(j.p) + (j.odd ? ' (odd ' + num(j.odd) + ')' : '')).join('; '));
@@ -1681,7 +1719,7 @@ section.sugestoes { margin-top: 4px; }
   function textoPalpites(lista) {
     const out = ['Palpites Ponto Comum · ' + S.dia.split('-').reverse().join('/')];
     for (const a of lista) { const P = a.palpites; out.push('', hora(a.m.date) + ' ' + a.m.hn + ' × ' + a.m.an + ' (' + nomeComp(a.m.comp) + ')');
-      if (P.nada) out.push('  ' + P.nada); for (const k of ['principal', 'oddMaior', 'destaque']) if (P[k]) out.push('  ' + TIPO_PALPITE[k] + ': ' + P[k].rotulo + ' @ ' + num(P[k].odd) + ' (' + pct(P.chance(P[k])) + ')'); if (P.jogador) out.push('  Jogador: ' + P.jogador.nome + ' marca @ ' + num(P.jogador.odd) + ' (' + pct(P.jogador.p) + ')'); }
+      if (P.nada) out.push('  ' + P.nada); if (P.valor) out.push('  Valor: ' + P.valor.rotulo + ' @ ' + num(P.valor.oddOutra) + ' na ' + P.valor.casaOutra + ' (justo Pinnacle ' + num(1 / P.valor.pPinnacle) + ')'); for (const k of ['principal', 'oddMaior', 'destaque']) if (P[k]) out.push('  ' + TIPO_PALPITE[k] + ': ' + P[k].rotulo + ' @ ' + num(P[k].odd) + ' (' + pct(P.chance(P[k])) + ')'); if (P.jogador) out.push('  Jogador: ' + P.jogador.nome + ' marca @ ' + num(P.jogador.odd) + ' (' + pct(P.jogador.p) + ')'); }
     return out.join('\n');
   }
   function renderPalpites() {
@@ -1693,7 +1731,7 @@ section.sugestoes { margin-top: 4px; }
     el.innerHTML = '<div class="cabeca"><div><p class="sobre">MELHORES APOSTAS POR JOGO · ' + esc(S.dia.split('-').reverse().join('/')) + '</p><h1>Palpites</h1></div><div class="acoes">' + (lista.length ? '<button class="sec" id="copiar-palpites">Copiar palpites</button>' : '') + '</div></div>'
       + '<p class="nota">' + (carregando ? '<span class="pulso"></span> ' + carregando : lista.length ? comPalpite + ' de ' + lista.length + ' jogos com aposta principal. ' : '') + 'Jogos do radar desta data (com o filtro de grandes). Sem múltiplas: cada jogo tem a sua melhor aposta.</p>'
       + (lista.length ? lista.map(cartao).join('') : !carregando ? '<div class="vazio"><h2>Sem jogos</h2><p>Nenhuma partida do radar nesta data. Escolha outra data no topo.</p></div>' : '')
-      + '<details class="filtro"><summary>Como os palpites são escolhidos (e o que deu nos testes)</summary><ul class="metodo"><li><b>Principal:</b> nos seus mercados (1X2, dupla chance, ambas marcam sim, mais/menos gols), a linha com mais chance pela média de modelo e mercado, com chance de 50% ou mais, odd de pelo menos 1,35 e modelo e mercado a até 8 p.p. Em 745 jogos reais com o fechamento da DraftKings: palpite em 88% dos jogos, acerto de 63,5% (previsto 60,4%), odd média 1,60, retorno de +0,2%.</li><li><b>Odd maior:</b> outro mercado com odd de 1,70 a 3,20, modelo e mercado de acordo e o modelo não abaixo do mercado. Nos mesmos jogos: acerto de 46,7%, odd média 2,08, retorno de −4,6%. Mais risco, e a margem da casa pesa mais.</li><li><b>Fora do normal:</b> escanteios, cartões, tempos ou gols de um time bem acima do normal da competição. Sem odd na fonte para conferir.</li><li><b>Jogador:</b> quem mais tem chance de marcar pelo modelo entre os que têm odd da Bet365, sem o modelo abaixo do preço justo dela.</li><li>Retorno perto de zero quer dizer que o hub acerta as chances, mas não tem vantagem garantida sobre a casa. Use como filtro, com valores que você pode perder.</li></ul></details>';
+      + '<details class="filtro"><summary>Como os palpites são escolhidos (e o que deu nos testes)</summary><p class="nota">Backtest de 18 mil jogos de 8 ligas (football-data.co.uk, 2020–2026), com o modelo prevendo semana a semana só com jogos anteriores. Regras escolhidas até 2023/24 e conferidas de 2024/25 em diante, nas odds da Bet365 de antes da rodada. Retorno = lucro ÷ total apostado.</p><ul class="metodo"><li><b>Valor:</b> a Bet365 ou a DraftKings pagam acima do preço justo da Pinnacle (a casa mais afiada, sem a margem), com odd de 2,60 a 13. Treino +12,0%, teste +5,9%, acerto de 27,5% com odd média 4,21: erra muito, mas quando acerta paga mais do que o risco. Atenção: por temporada deu +0, +11, +5, +33, +22 e −29% (2025/26), então a vantagem oscila e pode estar diminuindo. Só aparece quando há odds da Pinnacle para o jogo (ligas europeias, antes da rodada).</li><li><b>Principal:</b> a linha de maior chance nos seus mercados com odd de pelo menos 1,35 e modelo e mercado a até 5 p.p. Acerta cerca de 61%, mas perde 4,3% na Bet365: é a margem da casa. Pegando a melhor odd do mercado, a perda cai para 1,4%.</li><li><b>Odd maior:</b> outro mercado com odd de 1,70 a 2,60. Teste −3,3% na Bet365, −1,4% com a melhor odd.</li><li><b>Odds altas sem valor perdem mais:</b> todas as apostas de odd 8 a 13 renderam −38% no teste; de 13 para cima, −46%. As casas cobram margem maior nas zebras.</li><li><b>Fora do normal e jogador:</b> sem histórico de odds suficiente; o robô está medindo.</li><li>Use a melhor odd que encontrar: em todas as faixas, foi o que mais reduziu a perda.</li></ul></details>';
   }
 
   /* ---------- Bilhete ---------- */
@@ -1717,7 +1755,7 @@ section.sugestoes { margin-top: 4px; }
   function blocoHistorico() {
     const r = S.revisao; if (!r || !r.jogos) return r === null ? '' : '<h3>Histórico do hub</h3><p class="nota">O robô começou a registrar as previsões antes dos jogos; o histórico aparece quando os primeiros jogos terminarem.</p>';
     const lt = r.leitura || {}, mv = r.movimentoDoMercado || {};
-    const pal = ['principal', 'oddMaior', 'destaque', 'jogador'].filter(k => r.palpites && r.palpites[k] && r.palpites[k].n).map(k => { const x = r.palpites[k]; return '<tr><td>' + TIPO_PALPITE[k] + '</td><td class="num">' + x.acertos + '/' + x.n + '</td><td class="num">' + pct(x.acertos / x.n) + '<small>previsto ' + pct(x.previsto) + '</small></td><td class="num">' + (x.oddMedia ? num(x.oddMedia) : '—') + '</td><td class="num ' + (x.retorno > 0 ? 'pos' : x.retorno < 0 ? 'neg' : '') + '">' + (x.retorno !== null && x.retorno !== undefined ? sinal(x.retorno) : '—') + '</td></tr>'; }).join('');
+    const pal = ['valor', 'principal', 'oddMaior', 'destaque', 'jogador'].filter(k => r.palpites && r.palpites[k] && r.palpites[k].n).map(k => { const x = r.palpites[k]; return '<tr><td>' + TIPO_PALPITE[k] + '</td><td class="num">' + x.acertos + '/' + x.n + '</td><td class="num">' + pct(x.acertos / x.n) + '<small>previsto ' + pct(x.previsto) + '</small></td><td class="num">' + (x.oddMedia ? num(x.oddMedia) : '—') + '</td><td class="num ' + (x.retorno > 0 ? 'pos' : x.retorno < 0 ? 'neg' : '') + '">' + (x.retorno !== null && x.retorno !== undefined ? sinal(x.retorno) : '—') + '</td></tr>'; }).join('');
     const fams = Object.entries(r.porFamilia || {}).map(([f, x]) => '<tr><td>' + (FAM_NOME[f] || f) + '</td><td class="num">' + x.n + '</td><td class="num">' + num(x.llModeloComMercado ?? x.llModelo, 3) + '</td><td class="num">' + (x.llMercado !== null ? '<b>' + num(x.llMercado, 3) + '</b>' : '—') + '</td></tr>').join('');
     const dias = (r.dias || []).slice(0, 14).map(d => {
       const feitos = d.jogos.filter(j => !j.pendente), marca = ok => ok === 1 ? '<span class="pos">✓</span> ' : ok === 0 ? '<span class="neg">✗</span> ' : '· ';
@@ -1759,13 +1797,27 @@ section.sugestoes { margin-top: 4px; }
     const linha = (x, w) => '<tr><td>' + esc(x.nome) + '</td><td>' + w + '</td><td class="num">' + x.n + '</td><td class="num">' + (x.n ? pct(x.acertos / x.n) : '—') + '</td><td class="num">' + num(x.oddMedia) + '</td><td class="num ' + (x.roi > 0 ? 'pos' : 'neg') + '">' + sinal(x.roi) + '</td></tr>';
     return '<div class="tabela"><table><thead><tr><th>Regra</th><th>Odd</th><th class="num">Apostas</th><th class="num">Acerto</th><th class="num">Odd média</th><th class="num">Retorno</th></tr></thead><tbody>' + rg.abertura.map(x => linha(x, 'abertura')).join('') + rg.fechamento.map(x => linha(x, 'fechamento')).join('') + '</tbody></table></div>';
   }
+  /* Backtest financeiro com a base da football-data.co.uk (várias temporadas e casas). */
+  function blocoBacktest() {
+    const b = S.backtest; if (!b) return '';
+    const q = b.qualidade, f = x => x && x.n ? x : null, ret = x => x && x.n ? '<span class="' + (x.retorno > 0 ? 'pos' : 'neg') + '">' + sinal(x.retorno) + '</span>' : '—';
+    const faixas = b.faixas.map(x => { const t = x.tudo.teste, m = x.melhorOdd.teste; return '<tr><td class="nw">' + num(x.de) + '–' + (x.ate >= 100 ? '…' : num(x.ate)) + '</td><td class="num">' + t.n.toLocaleString('pt-BR') + '</td><td class="num">' + pct(t.acerto, 1) + '</td><td class="num">' + pct(t.chanceImplicita, 1) + '</td><td class="num">' + ret(t) + '</td><td class="num">' + ret(m) + '</td><td class="num">' + t.piorSequencia + '</td></tr>'; }).join('');
+    const ra = b.regraAtual, linhaRA = (nome, x) => '<tr><td>' + nome + '</td><td class="num">' + x.teste.n.toLocaleString('pt-BR') + '</td><td class="num">' + pct(x.teste.acerto, 1) + '</td><td class="num">' + num(x.teste.oddMedia) + '</td><td class="num">' + ret(x.teste) + '</td><td class="num">' + ret(x.testeFechamento) + '</td><td class="num">' + ret(x.testeMelhorOdd) + '</td></tr>';
+    const vars = b.variantes ? Object.entries(b.variantes).map(([k, v]) => '<tr><td>' + esc(({ semMercado: 'Sem odds de fechamento passadas', xg50: 'Com xG (50%)', xg30: 'Com xG (30%)', xg50semMercado: 'Com xG, sem odds passadas', semChutes: 'Sem chutes no alvo' })[k] || k) + '</td><td class="num">' + num(v.teste.logLoss1x2.modelo, 4) + '</td><td class="num">' + num(v.teste.logLossOver25.modelo, 4) + '</td></tr>').join('') : '';
+    return '<h3>Backtest financeiro: ' + b.jogos.toLocaleString('pt-BR') + ' jogos de ' + b.ligas.length + ' ligas</h3><p class="nota">Fonte: ' + esc(b.fonte) + '. O modelo prevê semana a semana só com jogos anteriores. Regras escolhidas nas temporadas até 2023/24 e conferidas de ' + b.periodo.inicioTeste.split('-').reverse().join('/') + ' em diante. Retorno = lucro ÷ total apostado, com 1 unidade por aposta.</p>'
+      + '<div class="tabela"><table><thead><tr><th>Teste</th><th class="num">Modelo</th><th class="num">Bet365</th><th class="num">Pinnacle</th></tr></thead><tbody><tr><td>Log loss 1X2 ↓</td><td class="num">' + num(q.teste.logLoss1x2.modelo, 4) + '</td><td class="num">' + num(q.teste.logLoss1x2.bet365, 4) + '</td><td class="num"><b>' + num(q.teste.logLoss1x2.pinnacle, 4) + '</b></td></tr><tr><td>Log loss mais/menos 2,5 ↓</td><td class="num">' + num(q.teste.logLossOver25.modelo, 4) + '</td><td class="num">' + num(q.teste.logLossOver25.bet365, 4) + '</td><td class="num"><b>' + num(q.teste.logLossOver25.pinnacle, 4) + '</b></td></tr></tbody></table></div>'
+      + '<h4>Quanto cada faixa de odd rende (todas as apostas da faixa, teste)</h4><div class="tabela"><table><thead><tr><th>Odd</th><th class="num">Apostas</th><th class="num">Acerto</th><th class="num">Preço indica</th><th class="num">Retorno Bet365</th><th class="num">Retorno melhor odd</th><th class="num">Pior sequência</th></tr></thead><tbody>' + faixas + '</tbody></table></div><p class="nota">Odd alta paga mais, mas acerta menos do que o preço indica: a margem das casas é maior nas zebras. Pegar a melhor odd entre as casas é o que mais reduz a perda em todas as faixas.</p>'
+      + (ra ? '<h4>Regras dos palpites (teste, 2024/25 em diante)</h4><div class="tabela"><table><thead><tr><th>Palpite</th><th class="num">Apostas</th><th class="num">Acerto</th><th class="num">Odd média</th><th class="num">Bet365 antes</th><th class="num">Bet365 fechamento</th><th class="num">Melhor odd</th></tr></thead><tbody>' + [['valorPinnacle', 'Valor (contra a Pinnacle)'], ['principal5', 'Principal'], ['oddMaior26', 'Odd maior'], ['principal', 'Principal antiga (8 p.p.)'], ['oddMaior', 'Odd maior antiga (1,70–3,20)']].filter(([k]) => ra[k]).map(([k, n]) => linhaRA(n, ra[k])).join('') + '</tbody></table></div>'
+        + (ra.valorPinnacle && ra.valorPinnacle.porTemporada ? '<p class="nota"><b>Valor, temporada a temporada:</b> ' + Object.entries(ra.valorPinnacle.porTemporada).filter(([, v]) => v.n >= 10).map(([t, v]) => '20' + t.slice(0, 2) + '/' + t.slice(2) + ': ' + sinal(v.retorno) + ' <small>(' + v.n + ')</small>').join(' · ') + '. Oscila muito; o último ano foi negativo.</p>' : '') : '')
+      + (vars ? '<h4>Variantes do modelo (log loss no teste ↓)</h4><div class="tabela"><table><thead><tr><th>Modelo</th><th class="num">1X2</th><th class="num">2,5</th></tr></thead><tbody><tr><td>Atual</td><td class="num">' + num(q.teste.logLoss1x2.modelo, 4) + '</td><td class="num">' + num(q.teste.logLossOver25.modelo, 4) + '</td></tr>' + vars + '</tbody></table></div>' : '');
+  }
   function renderValidacao() {
     const el = $('#validacao'); if (!el || S.aba !== 'validacao') return;
     const r = S.validacao || S.valPublicada || V.RELATORIO_BASE, base = r === V.RELATORIO_BASE || r.fixo;
     const mk = r.mercado, cal = r.calibracao ? r.calibracao.faixas : null, tp = r.tempos;
     el.innerHTML = '<div class="cabeca"><div><p class="sobre">' + (base ? 'MEDIDO EM 19/10/2026' : r.publicado ? 'PUBLICADO EM ' + diaHora(r.geradoEm) + ' · DADOS REAIS' : 'RODADO NESTE NAVEGADOR EM ' + diaHora(r.geradoEm)) + '</p><h1>Validação</h1></div><div class="acoes"><label class="chk"><input type="checkbox" id="val-mercado" checked> comparar com o mercado (~600 consultas)</label><label class="chk"><input type="checkbox" id="val-param"> reescolher parâmetros</label><button class="pri" id="rodar-validacao"' + (S.rodando || !S.F ? ' disabled' : '') + '>' + (S.rodando ? 'Rodando…' : 'Rodar validação') + '</button></div></div>'
       + '<p class="nota" id="val-progresso">Método: a cada semana, o modelo é ajustado só com jogos anteriores e prevê a semana seguinte. Os parâmetros são escolhidos no período de ajuste (' + r.periodoAjuste.map(d => d.split('-').reverse().join('/')).join(' a ') + ') e conferidos no período de teste (' + r.periodoTeste.map(d => d.split('-').reverse().join('/')).join(' a ') + '), que não participou da escolha. Log loss menor = previsão melhor.</p>'
-      + '<h3>Período de teste</h3>' + tabelaMetricas([['Modelo (com correção ' + num(r.parametros.correcao, 1) + ')', r.teste.modelo], ['Modelo sem correção', r.teste.semCorrecao], ['Modelo sem chutes no alvo', r.teste.semChutes], ['Média da liga', r.teste.mediaDaLiga]])
+      + blocoBacktest() + '<h3>Período de teste (base ESPN)</h3>' + tabelaMetricas([['Modelo (com correção ' + num(r.parametros.correcao, 1) + ')', r.teste.modelo], ['Modelo sem correção', r.teste.semCorrecao], ['Modelo sem chutes no alvo', r.teste.semChutes], ['Média da liga', r.teste.mediaDaLiga]])
       + (r.contraModeloAntigo ? '<h3>Contra o modelo antigo do hub</h3><p class="nota">Nos ' + r.contraModeloAntigo.n + ' jogos do teste que o modelo antigo conseguiu prever; ' + esc(r.contraModeloAntigo.coberturaAntigo) + '.</p>' + tabelaMetricas([['Antigo (Poisson por mando, só a liga do jogo)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.antigo)], ['Atual (todas as competições)', Object.assign({ n: r.contraModeloAntigo.n }, r.contraModeloAntigo.novo)]]) : '')
       + (mk ? '<h3>Contra o mercado (DraftKings, sem margem)</h3><div class="tabela"><table><tbody><tr><td>Log loss 1X2 · modelo</td><td class="num">' + num(mk.logLoss.modelo, 4) + '</td></tr><tr><td>Log loss 1X2 · mercado no fechamento</td><td class="num"><b>' + num(mk.logLoss.mercado, 4) + '</b></td></tr>' + (mk.logLoss.aberturaMercado ? '<tr><td>Log loss 1X2 · mercado na abertura</td><td class="num">' + num(mk.logLoss.aberturaMercado, 4) + '</td></tr>' : '') + '<tr><td>Melhor peso do modelo numa mistura com o mercado</td><td class="num">' + num(mk.pesoModeloNaMistura * 100, 0) + '%</td></tr>'
         + (!mk.regras && mk.apostasSimuladas && mk.apostasSimuladas.fechamento ? '<tr><td>Apostar onde o modelo vê valor > 5% (fechamento)</td><td class="num">' + mk.apostasSimuladas.fechamento.n + ' apostas · ' + sinal(mk.apostasSimuladas.fechamento.roi) + '</td></tr><tr><td>Idem, na abertura</td><td class="num">' + mk.apostasSimuladas.abertura.n + ' apostas · ' + sinal(mk.apostasSimuladas.abertura.roi) + '</td></tr>' : '') + '</tbody></table></div>'
@@ -1844,6 +1896,7 @@ section.sugestoes { margin-top: 4px; }
     const v = await R.kv.get('kv', 'validacao'); if (v && v.teste && v.tempos) S.validacao = v;
     R.carregarDados('validacao.json').then(x => { if (x && x.teste) { S.valPublicada = Object.assign(x, { publicado: true }); if (S.validacao && Date.parse(S.validacao.geradoEm) < Date.parse(x.geradoEm)) S.validacao = null; if (S.aba === 'validacao') renderValidacao(); } });
     R.carregarDados('revisao.json').then(x => { S.revisao = x || false; if (S.aba === 'diario') renderDiario(); });
+    R.carregarDados('backtest.json').then(x => { S.backtest = x || null; if (S.aba === 'validacao') renderValidacao(); });
     const h = location.hash.slice(1); navegar(ABAS.includes(h) ? h : 'radar');
     carregarAgenda(); carregarRedeEModelos();
     setInterval(() => { if (S.aba === 'radar' && S.dia === hojeSP()) carregarAgenda(); }, 5 * 60e3);

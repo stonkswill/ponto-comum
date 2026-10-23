@@ -49,6 +49,15 @@ Teste de 16/07 a 22/10/2026 (691 jogos do radar), parâmetros escolhidos antes d
 
 O que mudou no modelo com esses dados: forças dos clubes mais espalhadas, metade do alvo dos jogos passados vindo dos gols esperados implícitos no fechamento do mercado, e margem do 1X2 retirada pelo método da potência.
 
+## Backtest financeiro (23/10/2026)
+
+`node ferramentas/backtest.mjs` (base da football-data.co.uk, baixada pelo robô de fontes externas): 18.359 jogos de 8 ligas europeias com previsão semana a semana desde 2020/21, odds da Bet365, Pinnacle, média e melhor odd do mercado, de antes da rodada e de fechamento. Regras escolhidas até 2023/24 e conferidas de 2024/25 em diante.
+
+- **Faixas de odd** (todas as apostas, Bet365 antes da rodada, teste): 1,35–5,00 perdem de 4,6% a 7,8%; 5–8, −11%; 8–13, −38%; 13+, −46%. Odd alta paga mais, mas acerta bem menos do que o preço indica. Pegando a melhor odd do mercado, a perda cai para −1,5% a −3% nas faixas até 5.
+- **Valor contra a Pinnacle** (Bet365 acima do preço justo da Pinnacle, odd 2,60–13): treino +12,0%, teste +5,9%, acerto 27,5%, odd média 4,21. Por temporada: +0, +11, +5, +33, +22, −29%. É a única regra com lucro nos dois períodos, mas oscila e piorou no último ano. No site, só aparece quando a football-data publica as odds da Pinnacle para o jogo (`dados/externo/proximos.json`).
+- **Principal** (maior chance, odd ≥ 1,35, modelo e mercado a até 5 p.p.): −4,3% na Bet365, −1,4% com a melhor odd. **Odd maior** (1,70–2,60): −3,3% e −1,4%.
+- **Modelo**: xG do Understat (50% do alvo) e preços de fechamento da Pinnacle dos jogos passados melhoram a previsão; a Pinnacle segue melhor que o modelo e que a Bet365.
+
 ## Arquivos
 
 ```
@@ -61,7 +70,7 @@ js/analise.js     linhas de uma partida (modelo na frente), palpites por jogo, d
 js/bilhete.js     bilhete para registrar o que você apostou (simples ou múltipla), com chance conjunta
 js/diario.js      previsões e apostas, apuração, CLV, revisão jogo a jogo
 js/validacao.js   validação semana a semana, mercado, regras, filtro, tempos
-ferramentas/      robô de coleta, revisão, validação e experimentos (Node, sem navegador)
+ferramentas/      robôs (coleta e fontes externas), revisão, validação, backtest e experimentos (Node, sem navegador)
 ```
 
 ## Fontes (ESPN, sem chave)
