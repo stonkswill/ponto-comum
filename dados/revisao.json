@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-10-23T21:47:14.982Z",
- "jogos": 6,
+ "geradoEm": "2026-10-24T02:47:45.536Z",
+ "jogos": 7,
  "porFamilia": {
   "resultado": {
-   "n": 108,
-   "llModelo": 0.5196,
-   "llMercado": 0.5156,
-   "nMercado": 108,
-   "llModeloComMercado": 0.5196,
-   "brier": 0.1801,
+   "n": 126,
+   "llModelo": 0.4798,
+   "llMercado": 0.4756,
+   "nMercado": 126,
+   "llModeloComMercado": 0.4798,
+   "brier": 0.1629,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 144,
-   "llModelo": 0.557,
-   "llMercado": 0.5318,
-   "nMercado": 144,
-   "llModeloComMercado": 0.557,
-   "brier": 0.1859,
+   "n": 168,
+   "llModelo": 0.5642,
+   "llMercado": 0.5562,
+   "nMercado": 168,
+   "llModeloComMercado": 0.5642,
+   "brier": 0.1904,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 84,
-   "llModelo": 0.5834,
-   "llMercado": 0.5698,
-   "nMercado": 84,
-   "llModeloComMercado": 0.5834,
-   "brier": 0.1985,
+   "n": 98,
+   "llModelo": 0.5963,
+   "llMercado": 0.5916,
+   "nMercado": 98,
+   "llModeloComMercado": 0.5963,
+   "brier": 0.2038,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 144,
-   "llModelo": 0.5912,
+   "n": 168,
+   "llModelo": 0.5732,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2037,
+   "brier": 0.1968,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 132,
-   "llModelo": 0.5905,
+   "n": 154,
+   "llModelo": 0.6108,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2013,
+   "brier": 0.2091,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 18,
-  "acertos": 10,
-  "esperado": 12.3918
+  "n": 21,
+  "acertos": 12,
+  "esperado": 14.5338
  },
  "jogadores": {
-  "n": 46,
+  "n": 54,
   "marcaram": 5,
-  "previsto": 10.3581,
-  "llModelo": 0.3796,
+  "previsto": 12.688,
+  "llModelo": 0.3772,
   "comOdd": 30,
   "marcaramComOdd": 4,
   "previstoModeloComOdd": 6.6348,
@@ -80,9 +80,9 @@
    },
    {
     "de": 0.1,
-    "n": 16,
-    "previsto": 0.1648,
-    "aconteceu": 0.0625
+    "n": 20,
+    "previsto": 0.1656,
+    "aconteceu": 0.05
    },
    {
     "de": 0.2,
@@ -92,8 +92,8 @@
    },
    {
     "de": 0.3,
-    "n": 3,
-    "previsto": 0.3369,
+    "n": 6,
+    "previsto": 0.3553,
     "aconteceu": 0
    },
    {
@@ -101,19 +101,35 @@
     "n": 3,
     "previsto": 0.4205,
     "aconteceu": 0.3333
+   },
+   {
+    "de": 0.5,
+    "n": 1,
+    "previsto": 0.5338,
+    "aconteceu": 0
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 5,
+   "n": 6,
    "acertos": 1,
-   "previsto": 0.6164,
-   "comOdd": 5,
-   "lucro": -3.33,
-   "oddMedia": 1.566,
-   "retorno": -0.666,
-   "retornoMelhorOdd": -0.6666
+   "previsto": 0.6034,
+   "comOdd": 6,
+   "lucro": -4.33,
+   "oddMedia": 1.5933,
+   "retorno": -0.7217,
+   "retornoMelhorOdd": -0.7222
+  },
+  "destaque": {
+   "n": 3,
+   "acertos": 3,
+   "previsto": 0.6914,
+   "comOdd": 3,
+   "lucro": 1.04,
+   "oddMedia": 1.3467,
+   "retorno": 0.3467,
+   "retornoMelhorOdd": 0.3467
   },
   "oddMaior": {
    "n": 3,
@@ -134,27 +150,38 @@
    "oddMedia": 3.0675,
    "retorno": -0.3492,
    "retornoMelhorOdd": -0.3492
-  },
-  "destaque": {
-   "n": 2,
-   "acertos": 2,
-   "previsto": 0.6969,
-   "comOdd": 2,
-   "lucro": 0.67,
-   "oddMedia": 1.335,
-   "retorno": 0.335,
-   "retornoMelhorOdd": 0.335
   }
  },
  "movimentoDoMercado": {
-  "n": 4,
-  "aFavorDoModelo": 2,
-  "medio": 0.0115
+  "n": 6,
+  "aFavorDoModelo": 4,
+  "medio": 0.0164
  },
  "dias": [
   {
    "dia": "2026-10-25",
    "jogos": [
+    {
+     "id": "401874772",
+     "jogo": "Lecce × Juventus",
+     "comp": "ita.1",
+     "inicio": "2026-10-25T17:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874952",
+     "jogo": "Genoa × Venezia",
+     "comp": "ita.1",
+     "inicio": "2026-10-25T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874972",
+     "jogo": "Atalanta × Frosinone",
+     "comp": "ita.1",
+     "inicio": "2026-10-25T14:00Z",
+     "pendente": true
+    },
     {
      "id": "401875036",
      "jogo": "Internazionale × Fiorentina",
@@ -163,10 +190,115 @@
      "pendente": true
     },
     {
+     "id": "401876423",
+     "jogo": "Toulouse × Troyes",
+     "comp": "fra.1",
+     "inicio": "2026-10-25T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401876424",
+     "jogo": "Stade Rennais × Strasbourg",
+     "comp": "fra.1",
+     "inicio": "2026-10-25T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401876425",
+     "jogo": "AS Monaco × Lille",
+     "comp": "fra.1",
+     "inicio": "2026-10-25T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401876426",
+     "jogo": "Marseille × Le Havre AC",
+     "comp": "fra.1",
+     "inicio": "2026-10-25T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401876429",
+     "jogo": "AJ Auxerre × Le Mans",
+     "comp": "fra.1",
+     "inicio": "2026-10-25T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401876430",
+     "jogo": "Angers × Lorient",
+     "comp": "fra.1",
+     "inicio": "2026-10-25T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401878764",
+     "jogo": "Sunderland × Leeds United",
+     "comp": "eng.1",
+     "inicio": "2026-10-25T16:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401878765",
+     "jogo": "Liverpool × Brighton & Hove Albion",
+     "comp": "eng.1",
+     "inicio": "2026-10-25T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401878766",
+     "jogo": "Hull City × Brentford",
+     "comp": "eng.1",
+     "inicio": "2026-10-25T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879252",
+     "jogo": "Manchester United × AFC Bournemouth",
+     "comp": "eng.1",
+     "inicio": "2026-10-25T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879254",
+     "jogo": "Crystal Palace × Newcastle United",
+     "comp": "eng.1",
+     "inicio": "2026-10-25T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882829",
+     "jogo": "Real Sociedad × Levante",
+     "comp": "esp.1",
+     "inicio": "2026-10-25T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882833",
+     "jogo": "Celta Vigo × Real Betis",
+     "comp": "esp.1",
+     "inicio": "2026-10-25T15:15Z",
+     "pendente": true
+    },
+    {
      "id": "401882835",
      "jogo": "Athletic Club × Getafe",
      "comp": "esp.1",
      "inicio": "2026-10-25T13:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401884759",
+     "jogo": "SC Freiburg × Bayern Munich",
+     "comp": "ger.1",
+     "inicio": "2026-10-25T16:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884760",
+     "jogo": "TSG Hoffenheim × Bayer Leverkusen",
+     "comp": "ger.1",
+     "inicio": "2026-10-25T14:30Z",
      "pendente": true
     }
    ],
@@ -368,7 +500,56 @@
      "jogo": "Cruzeiro × Remo",
      "comp": "bra.1",
      "inicio": "2026-10-23T23:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.73,
+       "casa": null,
+       "chance": 0.5385,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 10,5",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.6805,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Cruzeiro",
+      "p": 0.6986,
+      "pMercado": 0.7569,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Cruzeiro",
+       "p": 0.6986,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6236,
+       "odd": 1.37,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Cruzeiro ou Remo)",
+       "p": 0.8198,
+       "odd": 1.11,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874957",
