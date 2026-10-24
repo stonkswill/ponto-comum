@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-10-24T18:48:48.071Z",
- "jogos": 23,
+ "geradoEm": "2026-10-24T21:45:06.022Z",
+ "jogos": 29,
  "porFamilia": {
   "resultado": {
-   "n": 414,
-   "llModelo": 0.4891,
-   "llMercado": 0.4939,
-   "nMercado": 414,
-   "llModeloComMercado": 0.4891,
-   "brier": 0.1606,
+   "n": 522,
+   "llModelo": 0.4664,
+   "llMercado": 0.474,
+   "nMercado": 522,
+   "llModeloComMercado": 0.4664,
+   "brier": 0.1513,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 552,
-   "llModelo": 0.5715,
-   "llMercado": 0.564,
-   "nMercado": 552,
-   "llModeloComMercado": 0.5715,
-   "brier": 0.1927,
+   "n": 696,
+   "llModelo": 0.5389,
+   "llMercado": 0.5359,
+   "nMercado": 696,
+   "llModeloComMercado": 0.5389,
+   "brier": 0.1795,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 322,
-   "llModelo": 0.5926,
-   "llMercado": 0.5879,
-   "nMercado": 322,
-   "llModeloComMercado": 0.5926,
-   "brier": 0.2036,
+   "n": 406,
+   "llModelo": 0.5943,
+   "llMercado": 0.5898,
+   "nMercado": 406,
+   "llModeloComMercado": 0.5943,
+   "brier": 0.2049,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 552,
-   "llModelo": 0.6345,
+   "n": 696,
+   "llModelo": 0.648,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2214,
+   "brier": 0.2265,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 506,
-   "llModelo": 0.5377,
+   "n": 638,
+   "llModelo": 0.5541,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1807,
+   "brier": 0.1883,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 70,
-  "acertos": 47,
-  "esperado": 48.2292
+  "n": 86,
+  "acertos": 61,
+  "esperado": 59.5425
  },
  "jogadores": {
-  "n": 179,
-  "marcaram": 18,
-  "previsto": 41.4345,
-  "llModelo": 0.3705,
-  "comOdd": 117,
-  "marcaramComOdd": 14,
-  "previstoModeloComOdd": 26.3733,
-  "implicitoBrutoComOdd": 37.1921,
+  "n": 229,
+  "marcaram": 23,
+  "previsto": 52.3479,
+  "llModelo": 0.3712,
+  "comOdd": 133,
+  "marcaramComOdd": 17,
+  "previstoModeloComOdd": 29.8691,
+  "implicitoBrutoComOdd": 42.0347,
   "apostasModeloAcimaDaOdd": {
    "n": 1,
    "retorno": -1
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 65,
+    "n": 89,
     "previsto": 0.1639,
-    "aconteceu": 0.0462
+    "aconteceu": 0.0562
    },
    {
     "de": 0.2,
-    "n": 74,
-    "previsto": 0.2404,
-    "aconteceu": 0.0946
+    "n": 92,
+    "previsto": 0.2384,
+    "aconteceu": 0.087
    },
    {
     "de": 0.3,
-    "n": 26,
-    "previsto": 0.3432,
-    "aconteceu": 0.2308
+    "n": 32,
+    "previsto": 0.3411,
+    "aconteceu": 0.25
    },
    {
     "de": 0.4,
-    "n": 7,
-    "previsto": 0.4285,
-    "aconteceu": 0.2857
+    "n": 9,
+    "previsto": 0.428,
+    "aconteceu": 0.2222
    },
    {
     "de": 0.5,
@@ -112,50 +112,50 @@
  },
  "palpites": {
   "principal": {
-   "n": 20,
-   "acertos": 13,
-   "previsto": 0.652,
-   "comOdd": 20,
-   "lucro": -1.36,
-   "oddMedia": 1.485,
-   "retorno": -0.068,
-   "retornoMelhorOdd": -0.0666
+   "n": 26,
+   "acertos": 17,
+   "previsto": 0.6438,
+   "comOdd": 26,
+   "lucro": -1.33,
+   "oddMedia": 1.5027,
+   "retorno": -0.0512,
+   "retornoMelhorOdd": -0.0501
   },
   "destaque": {
-   "n": 11,
-   "acertos": 10,
-   "previsto": 0.6982,
-   "comOdd": 11,
-   "lucro": 2.36,
-   "oddMedia": 1.3364,
-   "retorno": 0.2145,
-   "retornoMelhorOdd": 0.2145
+   "n": 13,
+   "acertos": 12,
+   "previsto": 0.6978,
+   "comOdd": 13,
+   "lucro": 3.03,
+   "oddMedia": 1.3362,
+   "retorno": 0.2331,
+   "retornoMelhorOdd": 0.2331
   },
   "oddMaior": {
-   "n": 9,
-   "acertos": 6,
-   "previsto": 0.4741,
-   "comOdd": 9,
-   "lucro": 3.48,
-   "oddMedia": 2.0656,
-   "retorno": 0.3867,
-   "retornoMelhorOdd": 0.3867
+   "n": 13,
+   "acertos": 9,
+   "previsto": 0.4738,
+   "comOdd": 13,
+   "lucro": 5.5,
+   "oddMedia": 2.0623,
+   "retorno": 0.4231,
+   "retornoMelhorOdd": 0.4231
   },
   "jogador": {
-   "n": 15,
-   "acertos": 1,
-   "previsto": 0.2902,
-   "comOdd": 15,
-   "lucro": -13.0476,
-   "oddMedia": 3.3774,
-   "retorno": -0.8698,
-   "retornoMelhorOdd": -0.8698
+   "n": 17,
+   "acertos": 2,
+   "previsto": 0.291,
+   "comOdd": 17,
+   "lucro": -12.2976,
+   "oddMedia": 3.3242,
+   "retorno": -0.7234,
+   "retornoMelhorOdd": -0.7234
   }
  },
  "movimentoDoMercado": {
-  "n": 26,
-  "aFavorDoModelo": 12,
-  "medio": 0.001
+  "n": 31,
+  "aFavorDoModelo": 16,
+  "medio": 0.0026
  },
  "dias": [
   {
@@ -333,7 +333,56 @@
      "jogo": "Vitória × Athletico-PR",
      "comp": "bra.1",
      "inicio": "2026-10-24T19:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória ou empate",
+       "odd": 1.46,
+       "casa": null,
+       "chance": 0.6494,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.77,
+       "casa": null,
+       "chance": 0.546,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Vitória",
+      "p": 0.3857,
+      "pMercado": 0.3651,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.709,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Vitória ou Athletico-PR)",
+       "p": 0.736,
+       "odd": 1.32,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5564,
+       "odd": 1.77,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841281",
@@ -361,14 +410,100 @@
      "jogo": "Mirassol × São Paulo",
      "comp": "bra.1",
      "inicio": "2026-10-24T19:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.769,
+       "casa": "DraftKings",
+       "chance": 0.5526,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Mirassol",
+       "odd": 2.2,
+       "casa": "DraftKings",
+       "chance": 0.4477,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Mirassol",
+      "p": 0.4611,
+      "pMercado": 0.4343,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6913,
+       "odd": 1.31,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Mirassol ou São Paulo)",
+       "p": 0.7219,
+       "odd": 1.31,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841285",
      "jogo": "Internacional × Botafogo",
      "comp": "bra.1",
      "inicio": "2026-10-24T19:30Z",
-     "pendente": true
+     "placar": [
+      3,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.7021,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Internacional",
+       "odd": 2.1,
+       "casa": "DraftKings",
+       "chance": 0.4568,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Internacional",
+      "p": 0.4579,
+      "pMercado": 0.4557,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7114,
+       "odd": 1.37,
+       "ok": 1
+      },
+      {
+       "rotulo": "Internacional ou empate",
+       "p": 0.7172,
+       "odd": 1.33,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874948",
@@ -424,7 +559,71 @@
      "jogo": "Lazio × Parma",
      "comp": "ita.1",
      "inicio": "2026-10-24T18:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.925,
+       "casa": "Bet 365",
+       "chance": 0.5179,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.15,
+       "casa": null,
+       "chance": 0.4422,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Lazio: mais de 4,5 escanteios",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7044,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Tijjani Noslin marca",
+       "odd": 3.1,
+       "chance": 0.2762,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lazio",
+      "p": 0.6127,
+      "pMercado": 0.6647,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7223,
+       "odd": 1.27,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Lazio ou Parma)",
+       "p": 0.7653,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Lazio",
+       "p": 0.6127,
+       "odd": 1.47,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874958",
@@ -559,7 +758,63 @@
      "jogo": "Lens × Paris FC",
      "comp": "fra.1",
      "inicio": "2026-10-24T18:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.43,
+       "casa": null,
+       "chance": 0.6413,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Lens: mais de 5,5 escanteios",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6877,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Florian Thauvin marca",
+       "odd": 2.75,
+       "chance": 0.318,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lens",
+      "p": 0.611,
+      "pMercado": 0.3834,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6218,
+       "odd": 1.43,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Lens ou Paris FC)",
+       "p": 0.7887,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.567,
+       "odd": 1.59,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401878767",
@@ -970,7 +1225,48 @@
      "jogo": "Atlético Madrid × Deportivo",
      "comp": "esp.1",
      "inicio": "2026-10-24T19:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.44,
+       "casa": null,
+       "chance": 0.6355,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Atlético Madrid",
+      "p": 0.7612,
+      "pMercado": 0.7849,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Atlético Madrid",
+       "p": 0.7612,
+       "odd": 1.26,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.7879,
+       "odd": 1.27,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Atlético Madrid ou Deportivo)",
+       "p": 0.8432,
+       "odd": 1.1,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401884755",
