@@ -1,75 +1,75 @@
 {
- "geradoEm": "2026-10-24T12:55:25.319Z",
- "jogos": 7,
+ "geradoEm": "2026-10-24T14:45:06.569Z",
+ "jogos": 9,
  "porFamilia": {
   "resultado": {
-   "n": 126,
-   "llModelo": 0.4798,
-   "llMercado": 0.4756,
-   "nMercado": 126,
-   "llModeloComMercado": 0.4798,
-   "brier": 0.1629,
+   "n": 162,
+   "llModelo": 0.5861,
+   "llMercado": 0.5944,
+   "nMercado": 162,
+   "llModeloComMercado": 0.5861,
+   "brier": 0.1969,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 168,
-   "llModelo": 0.5642,
-   "llMercado": 0.5562,
-   "nMercado": 168,
-   "llModeloComMercado": 0.5642,
-   "brier": 0.1904,
+   "n": 216,
+   "llModelo": 0.5709,
+   "llMercado": 0.5678,
+   "nMercado": 216,
+   "llModeloComMercado": 0.5709,
+   "brier": 0.1917,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 98,
-   "llModelo": 0.5963,
-   "llMercado": 0.5916,
-   "nMercado": 98,
-   "llModeloComMercado": 0.5963,
-   "brier": 0.2038,
+   "n": 126,
+   "llModelo": 0.5861,
+   "llMercado": 0.5802,
+   "nMercado": 126,
+   "llModeloComMercado": 0.5861,
+   "brier": 0.2005,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 168,
-   "llModelo": 0.5732,
+   "n": 216,
+   "llModelo": 0.5826,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1968,
+   "brier": 0.2005,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 154,
-   "llModelo": 0.6108,
+   "n": 198,
+   "llModelo": 0.617,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2091,
+   "brier": 0.2116,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 21,
-  "acertos": 12,
-  "esperado": 14.5338
+  "n": 27,
+  "acertos": 16,
+  "esperado": 18.7138
  },
  "jogadores": {
-  "n": 54,
-  "marcaram": 5,
-  "previsto": 12.688,
-  "llModelo": 0.3772,
-  "comOdd": 30,
-  "marcaramComOdd": 4,
-  "previstoModeloComOdd": 6.6348,
-  "implicitoBrutoComOdd": 9.7802,
+  "n": 70,
+  "marcaram": 8,
+  "previsto": 16.1878,
+  "llModelo": 0.3896,
+  "comOdd": 38,
+  "marcaramComOdd": 6,
+  "previstoModeloComOdd": 8.3432,
+  "implicitoBrutoComOdd": 12.103,
   "apostasModeloAcimaDaOdd": {
-   "n": 0,
-   "retorno": null
+   "n": 1,
+   "retorno": -1
   },
   "faixas": [
    {
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 20,
-    "previsto": 0.1656,
-    "aconteceu": 0.05
+    "n": 28,
+    "previsto": 0.1637,
+    "aconteceu": 0.0357
    },
    {
     "de": 0.2,
-    "n": 22,
-    "previsto": 0.2393,
-    "aconteceu": 0.1364
+    "n": 28,
+    "previsto": 0.2391,
+    "aconteceu": 0.1786
    },
    {
     "de": 0.3,
-    "n": 6,
-    "previsto": 0.3553,
+    "n": 7,
+    "previsto": 0.3601,
     "aconteceu": 0
    },
    {
     "de": 0.4,
-    "n": 3,
-    "previsto": 0.4205,
-    "aconteceu": 0.3333
+    "n": 4,
+    "previsto": 0.418,
+    "aconteceu": 0.5
    },
    {
     "de": 0.5,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 6,
-   "acertos": 1,
-   "previsto": 0.6034,
-   "comOdd": 6,
-   "lucro": -4.33,
-   "oddMedia": 1.5933,
-   "retorno": -0.7217,
-   "retornoMelhorOdd": -0.7222
+   "n": 7,
+   "acertos": 2,
+   "previsto": 0.617,
+   "comOdd": 7,
+   "lucro": -3.95,
+   "oddMedia": 1.5629,
+   "retorno": -0.5643,
+   "retornoMelhorOdd": -0.5647
   },
   "destaque": {
    "n": 3,
@@ -132,30 +132,30 @@
    "retornoMelhorOdd": 0.3467
   },
   "oddMaior": {
-   "n": 3,
-   "acertos": 1,
-   "previsto": 0.5127,
-   "comOdd": 3,
-   "lucro": -1.26,
-   "oddMedia": 1.9367,
-   "retorno": -0.42,
-   "retornoMelhorOdd": -0.42
+   "n": 4,
+   "acertos": 2,
+   "previsto": 0.4956,
+   "comOdd": 4,
+   "lucro": -0.12,
+   "oddMedia": 1.9875,
+   "retorno": -0.03,
+   "retornoMelhorOdd": -0.03
   },
   "jogador": {
-   "n": 3,
+   "n": 4,
    "acertos": 1,
-   "previsto": 0.2977,
-   "comOdd": 3,
-   "lucro": -1.0476,
-   "oddMedia": 3.0675,
-   "retorno": -0.3492,
-   "retornoMelhorOdd": -0.3492
+   "previsto": 0.2721,
+   "comOdd": 4,
+   "lucro": -2.0476,
+   "oddMedia": 3.3839,
+   "retorno": -0.5119,
+   "retornoMelhorOdd": -0.5119
   }
  },
  "movimentoDoMercado": {
-  "n": 6,
-  "aFavorDoModelo": 4,
-  "medio": 0.0164
+  "n": 8,
+  "aFavorDoModelo": 6,
+  "medio": 0.0131
  },
  "dias": [
   {
@@ -431,7 +431,47 @@
      "jogo": "Aston Villa × Manchester City",
      "comp": "eng.1",
      "inicio": "2026-10-24T11:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Jérémy Doku marca",
+       "odd": 4.333333333333334,
+       "chance": 0.1955,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Manchester City",
+      "p": 0.5123,
+      "pMercado": 0.5927,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Manchester City ou empate",
+       "p": 0.7472,
+       "odd": 1.2,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5981,
+       "odd": 1.42,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.8136,
+       "odd": 1.07,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882827",
@@ -445,7 +485,56 @@
      "jogo": "Rayo Vallecano × Elche",
      "comp": "esp.1",
      "inicio": "2026-10-24T12:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.38,
+       "casa": null,
+       "chance": 0.6986,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Elche ou empate",
+       "odd": 2.14,
+       "casa": null,
+       "chance": 0.4444,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Rayo Vallecano",
+      "p": 0.5534,
+      "pMercado": 0.5577,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7096,
+       "odd": 1.38,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Rayo Vallecano ou Elche)",
+       "p": 0.7581,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Rayo Vallecano",
+       "p": 0.5534,
+       "odd": 1.74,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882831",
