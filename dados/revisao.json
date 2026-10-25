@@ -1,100 +1,100 @@
 {
- "geradoEm": "2026-10-25T18:50:25.717Z",
- "jogos": 51,
+ "geradoEm": "2026-10-25T21:44:59.675Z",
+ "jogos": 54,
  "porFamilia": {
   "resultado": {
-   "n": 918,
-   "llModelo": 0.4711,
-   "llMercado": 0.4721,
-   "nMercado": 918,
-   "llModeloComMercado": 0.4711,
-   "brier": 0.1536,
+   "n": 972,
+   "llModelo": 0.4623,
+   "llMercado": 0.4634,
+   "nMercado": 972,
+   "llModeloComMercado": 0.4623,
+   "brier": 0.1501,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1224,
-   "llModelo": 0.5513,
-   "llMercado": 0.5476,
-   "nMercado": 1224,
-   "llModeloComMercado": 0.5513,
-   "brier": 0.1845,
+   "n": 1296,
+   "llModelo": 0.5407,
+   "llMercado": 0.5373,
+   "nMercado": 1296,
+   "llModeloComMercado": 0.5407,
+   "brier": 0.1801,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 714,
-   "llModelo": 0.6139,
-   "llMercado": 0.6116,
-   "nMercado": 714,
-   "llModeloComMercado": 0.6139,
-   "brier": 0.213,
+   "n": 756,
+   "llModelo": 0.6156,
+   "llMercado": 0.6139,
+   "nMercado": 756,
+   "llModeloComMercado": 0.6156,
+   "brier": 0.2137,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1224,
-   "llModelo": 0.6422,
+   "n": 1296,
+   "llModelo": 0.6465,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.225,
+   "brier": 0.2264,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1122,
-   "llModelo": 0.5461,
+   "n": 1188,
+   "llModelo": 0.5405,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1844,
+   "brier": 0.1821,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 146,
-  "acertos": 104,
-  "esperado": 101.2593
+  "n": 155,
+  "acertos": 113,
+  "esperado": 107.6583
  },
  "jogadores": {
-  "n": 383,
-  "marcaram": 40,
-  "previsto": 88.7536,
-  "llModelo": 0.3768,
-  "comOdd": 227,
-  "marcaramComOdd": 32,
-  "previstoModeloComOdd": 52.8204,
-  "implicitoBrutoComOdd": 74.2043,
+  "n": 408,
+  "marcaram": 42,
+  "previsto": 93.9398,
+  "llModelo": 0.3723,
+  "comOdd": 241,
+  "marcaramComOdd": 33,
+  "previstoModeloComOdd": 55.5599,
+  "implicitoBrutoComOdd": 77.975,
   "apostasModeloAcimaDaOdd": {
-   "n": 3,
+   "n": 4,
    "retorno": -1
   },
   "faixas": [
    {
     "de": 0,
-    "n": 7,
-    "previsto": 0.088,
+    "n": 8,
+    "previsto": 0.0894,
     "aconteceu": 0
    },
    {
     "de": 0.1,
-    "n": 144,
-    "previsto": 0.1624,
-    "aconteceu": 0.0556
+    "n": 156,
+    "previsto": 0.161,
+    "aconteceu": 0.0513
    },
    {
     "de": 0.2,
-    "n": 160,
-    "previsto": 0.239,
-    "aconteceu": 0.1063
+    "n": 169,
+    "previsto": 0.24,
+    "aconteceu": 0.1065
    },
    {
     "de": 0.3,
-    "n": 54,
-    "previsto": 0.3434,
-    "aconteceu": 0.2222
+    "n": 57,
+    "previsto": 0.3437,
+    "aconteceu": 0.2281
    },
    {
     "de": 0.4,
@@ -112,44 +112,44 @@
  },
  "palpites": {
   "principal": {
-   "n": 46,
-   "acertos": 28,
-   "previsto": 0.6444,
-   "comOdd": 46,
-   "lucro": -5.57,
-   "oddMedia": 1.4959,
-   "retorno": -0.1211,
-   "retornoMelhorOdd": -0.1197
+   "n": 49,
+   "acertos": 31,
+   "previsto": 0.643,
+   "comOdd": 49,
+   "lucro": -3.84,
+   "oddMedia": 1.5008,
+   "retorno": -0.0784,
+   "retornoMelhorOdd": -0.0769
   },
   "destaque": {
-   "n": 21,
-   "acertos": 17,
+   "n": 22,
+   "acertos": 18,
    "previsto": 0.6982,
-   "comOdd": 21,
-   "lucro": 1.75,
-   "oddMedia": 1.3381,
-   "retorno": 0.0833,
-   "retornoMelhorOdd": 0.0833
+   "comOdd": 22,
+   "lucro": 2.08,
+   "oddMedia": 1.3377,
+   "retorno": 0.0945,
+   "retornoMelhorOdd": 0.0945
   },
   "oddMaior": {
-   "n": 23,
+   "n": 25,
    "acertos": 14,
-   "previsto": 0.4857,
-   "comOdd": 23,
-   "lucro": 4.58,
-   "oddMedia": 2.0048,
-   "retorno": 0.1991,
-   "retornoMelhorOdd": 0.1999
+   "previsto": 0.4824,
+   "comOdd": 25,
+   "lucro": 2.58,
+   "oddMedia": 2.02,
+   "retorno": 0.1032,
+   "retornoMelhorOdd": 0.1039
   },
   "jogador": {
-   "n": 29,
+   "n": 31,
    "acertos": 7,
-   "previsto": 0.3092,
-   "comOdd": 29,
-   "lucro": -10.0135,
-   "oddMedia": 3.212,
-   "retorno": -0.3453,
-   "retornoMelhorOdd": -0.3453
+   "previsto": 0.3079,
+   "comOdd": 31,
+   "lucro": -12.0135,
+   "oddMedia": 3.2494,
+   "retorno": -0.3875,
+   "retornoMelhorOdd": -0.3875
   }
  },
  "movimentoDoMercado": {
@@ -200,14 +200,112 @@
      "jogo": "Lecce × Juventus",
      "comp": "ita.1",
      "inicio": "2026-10-25T17:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.7088,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Nico González marca",
+       "odd": 3.25,
+       "chance": 0.253,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Juventus",
+      "p": 0.6566,
+      "pMercado": 0.6508,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7165,
+       "odd": 1.35,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Juventus",
+       "p": 0.6566,
+       "odd": 1.5,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Lecce ou Juventus)",
+       "p": 0.7868,
+       "odd": 1.22,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401874779",
      "jogo": "Udinese × AC Milan",
      "comp": "ita.1",
      "inicio": "2026-10-25T19:45Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória AC Milan",
+       "odd": 1.833,
+       "casa": "Bet 365",
+       "chance": 0.5278,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.84,
+       "casa": null,
+       "chance": 0.5159,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Diego Moreira marca",
+       "odd": 4.333333333333334,
+       "chance": 0.3268,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AC Milan",
+      "p": 0.5267,
+      "pMercado": 0.5288,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.72,
+       "odd": 1.32,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Udinese ou AC Milan)",
+       "p": 0.75,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401874952",
@@ -1006,7 +1104,70 @@
      "jogo": "Real Sociedad × Levante",
      "comp": "esp.1",
      "inicio": "2026-10-25T17:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Real Sociedad",
+       "odd": 1.556,
+       "casa": "DraftKings",
+       "chance": 0.6256,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Levante ou empate",
+       "odd": 2.55,
+       "casa": null,
+       "chance": 0.3744,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Cartões: mais de 3,5",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.6969,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Real Sociedad",
+      "p": 0.6228,
+      "pMercado": 0.6283,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Real Sociedad",
+       "p": 0.6228,
+       "odd": 1.56,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Real Sociedad ou Levante)",
+       "p": 0.7906,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.8026,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5531,
+       "odd": 1.53,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882832",
