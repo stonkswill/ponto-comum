@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-10-25T12:54:56.402Z",
- "jogos": 33,
+ "geradoEm": "2026-10-25T14:45:37.837Z",
+ "jogos": 34,
  "porFamilia": {
   "resultado": {
-   "n": 594,
-   "llModelo": 0.4576,
-   "llMercado": 0.4663,
-   "nMercado": 594,
-   "llModeloComMercado": 0.4576,
-   "brier": 0.1481,
+   "n": 612,
+   "llModelo": 0.4512,
+   "llMercado": 0.4597,
+   "nMercado": 612,
+   "llModeloComMercado": 0.4512,
+   "brier": 0.1455,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 792,
-   "llModelo": 0.5346,
-   "llMercado": 0.5316,
-   "nMercado": 792,
-   "llModeloComMercado": 0.5346,
-   "brier": 0.1779,
+   "n": 816,
+   "llModelo": 0.5286,
+   "llMercado": 0.5258,
+   "nMercado": 816,
+   "llModeloComMercado": 0.5286,
+   "brier": 0.1754,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 462,
-   "llModelo": 0.5852,
-   "llMercado": 0.5813,
-   "nMercado": 462,
-   "llModeloComMercado": 0.5852,
-   "brier": 0.2009,
+   "n": 476,
+   "llModelo": 0.5877,
+   "llMercado": 0.5843,
+   "nMercado": 476,
+   "llModeloComMercado": 0.5877,
+   "brier": 0.2022,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 792,
-   "llModelo": 0.6427,
+   "n": 816,
+   "llModelo": 0.6359,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2245,
+   "brier": 0.2215,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 726,
-   "llModelo": 0.5365,
+   "n": 748,
+   "llModelo": 0.5397,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.181,
+   "brier": 0.1822,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 96,
-  "acertos": 71,
-  "esperado": 66.6192
+  "n": 99,
+  "acertos": 74,
+  "esperado": 68.7961
  },
  "jogadores": {
-  "n": 261,
-  "marcaram": 24,
-  "previsto": 59.8611,
-  "llModelo": 0.363,
-  "comOdd": 133,
-  "marcaramComOdd": 17,
-  "previstoModeloComOdd": 29.8691,
-  "implicitoBrutoComOdd": 42.0347,
+  "n": 269,
+  "marcaram": 25,
+  "previsto": 61.8131,
+  "llModelo": 0.3627,
+  "comOdd": 141,
+  "marcaramComOdd": 18,
+  "previstoModeloComOdd": 31.8211,
+  "implicitoBrutoComOdd": 45.007,
   "apostasModeloAcimaDaOdd": {
    "n": 1,
    "retorno": -1
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 101,
-    "previsto": 0.1631,
-    "aconteceu": 0.0495
+    "n": 105,
+    "previsto": 0.1627,
+    "aconteceu": 0.0476
    },
    {
     "de": 0.2,
-    "n": 106,
-    "previsto": 0.2393,
-    "aconteceu": 0.0849
+    "n": 108,
+    "previsto": 0.2401,
+    "aconteceu": 0.0833
    },
    {
     "de": 0.3,
-    "n": 37,
-    "previsto": 0.3434,
-    "aconteceu": 0.2162
+    "n": 38,
+    "previsto": 0.3441,
+    "aconteceu": 0.2368
    },
    {
     "de": 0.4,
-    "n": 10,
-    "previsto": 0.4262,
-    "aconteceu": 0.2
+    "n": 11,
+    "previsto": 0.4239,
+    "aconteceu": 0.1818
    },
    {
     "de": 0.5,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 29,
-   "acertos": 19,
-   "previsto": 0.6424,
-   "comOdd": 29,
-   "lucro": -1.58,
-   "oddMedia": 1.5052,
-   "retorno": -0.0545,
-   "retornoMelhorOdd": -0.0535
+   "n": 30,
+   "acertos": 20,
+   "previsto": 0.645,
+   "comOdd": 30,
+   "lucro": -1.23,
+   "oddMedia": 1.5,
+   "retorno": -0.041,
+   "retornoMelhorOdd": -0.0396
   },
   "destaque": {
    "n": 15,
@@ -142,14 +142,14 @@
    "retornoMelhorOdd": 0.39
   },
   "jogador": {
-   "n": 17,
+   "n": 18,
    "acertos": 2,
-   "previsto": 0.291,
-   "comOdd": 17,
-   "lucro": -12.2976,
-   "oddMedia": 3.3242,
-   "retorno": -0.7234,
-   "retornoMelhorOdd": -0.7234
+   "previsto": 0.2853,
+   "comOdd": 18,
+   "lucro": -13.2976,
+   "oddMedia": 3.4034,
+   "retorno": -0.7388,
+   "retornoMelhorOdd": -0.7388
   }
  },
  "movimentoDoMercado": {
@@ -228,7 +228,55 @@
      "jogo": "Internazionale × Fiorentina",
      "comp": "ita.1",
      "inicio": "2026-10-25T11:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Internazionale",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.7202,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Franco Mastantuono marca",
+       "odd": 4.75,
+       "chance": 0.1893,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Internazionale",
+      "p": 0.7139,
+      "pMercado": 0.7266,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Internazionale",
+       "p": 0.7139,
+       "odd": 1.35,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6359,
+       "odd": 1.34,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Internazionale ou Fiorentina)",
+       "p": 0.8271,
+       "odd": 1.14,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401876423",
