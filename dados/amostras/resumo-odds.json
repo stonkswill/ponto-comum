@@ -1,5 +1,5 @@
 {
- "jogo": "Internazionale × Fiorentina",
+ "jogo": "Atalanta × Frosinone",
  "comp": "ita.1",
  "odds": [
   {
@@ -22,25 +22,25 @@
      }
     ]
    },
-   "details": "INT -300",
+   "details": "ATA -120",
    "overUnder": 3.5,
-   "spread": -1.5,
-   "overOdds": -115,
-   "underOdds": -115,
+   "spread": -0.5,
+   "overOdds": -120,
+   "underOdds": -105,
    "awayTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 600,
-    "spreadOdds": -120,
+    "moneyLine": 250,
+    "spreadOdds": -110,
     "team": {
-     "id": "109",
-     "uid": "s:600~t:109",
-     "location": "Fiorentina",
-     "name": "Fiorentina",
-     "abbreviation": "FIO",
-     "displayName": "Fiorentina",
-     "shortDisplayName": "Fiorentina",
-     "color": "4c1d84",
+     "id": "4057",
+     "uid": "s:600~t:4057",
+     "location": "Frosinone",
+     "name": "Frosinone",
+     "abbreviation": "FRO",
+     "displayName": "Frosinone",
+     "shortDisplayName": "Frosinone",
+     "color": "FACF08",
      "isActive": true,
      "links": [
       {
@@ -50,7 +50,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/club/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/club/_/id/4057/frosinone",
        "text": "Clubhouse",
        "shortText": "Clubhouse",
        "isExternal": false,
@@ -63,7 +63,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/stats/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/stats/_/id/4057/frosinone",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -77,7 +77,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=stats",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=stats",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -90,7 +90,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/fixtures/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/4057/frosinone",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -104,7 +104,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=scores",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -117,7 +117,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/results/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/results/_/id/4057/frosinone",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -131,7 +131,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=scores",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -158,7 +158,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=standings",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=standings",
        "text": "Standings",
        "shortText": "Standings",
        "isExternal": false,
@@ -171,7 +171,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/squad/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/squad/_/id/4057/frosinone",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -185,7 +185,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=squad",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=squad",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -198,17 +198,17 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -300,
-    "spreadOdds": -115,
+    "moneyLine": -120,
+    "spreadOdds": -125,
     "team": {
-     "id": "110",
-     "uid": "s:600~t:110",
-     "location": "Internazionale",
-     "name": "Internazionale",
-     "abbreviation": "INT",
-     "displayName": "Internazionale",
-     "shortDisplayName": "Inter Milan",
-     "color": "00239c",
+     "id": "105",
+     "uid": "s:600~t:105",
+     "location": "Atalanta",
+     "name": "Atalanta",
+     "abbreviation": "ATA",
+     "displayName": "Atalanta",
+     "shortDisplayName": "Atalanta",
+     "color": "1157bf",
      "isActive": true,
      "links": [
       {
@@ -218,7 +218,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/club/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/club/_/id/105/atalanta",
        "text": "Clubhouse",
        "shortText": "Clubhouse",
        "isExternal": false,
@@ -231,7 +231,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/stats/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/stats/_/id/105/atalanta",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -245,7 +245,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=stats",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=stats",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -258,7 +258,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/fixtures/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/105/atalanta",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -272,7 +272,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=scores",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -285,7 +285,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/results/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/results/_/id/105/atalanta",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -299,7 +299,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=scores",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -326,7 +326,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=standings",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=standings",
        "text": "Standings",
        "shortText": "Standings",
        "isExternal": false,
@@ -339,7 +339,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/squad/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/squad/_/id/105/atalanta",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -353,7 +353,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=squad",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=squad",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -364,7 +364,7 @@
     "favoriteAtOpen": true
    },
    "drawOdds": {
-    "moneyLine": 425
+    "moneyLine": 295
    },
    "links": [
     {
@@ -375,7 +375,7 @@
       "bets",
       "draftkings"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_1",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_1",
      "text": "Home Bet",
      "shortText": "Home Bet",
      "isExternal": true,
@@ -385,7 +385,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "home",
        "betType": "straight"
       }
@@ -399,7 +399,7 @@
       "bets",
       "draftkings"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_3",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_3",
      "text": "Away Bet",
      "shortText": "Away Bet",
      "isExternal": true,
@@ -409,7 +409,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "away",
        "betType": "straight"
       }
@@ -423,7 +423,7 @@
       "bets",
       "draftkings"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_2",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_2",
      "text": "Draw Bet",
      "shortText": "Draw Bet",
      "isExternal": true,
@@ -433,7 +433,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "draw",
        "betType": "straight"
       }
@@ -446,7 +446,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0HC86736444N150_1",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0HC86736410N50_1",
      "text": "Home Point Spread",
      "shortText": "Home Point Spread",
      "isExternal": true,
@@ -456,10 +456,10 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "none",
        "betType": "straight",
-       "betDetails": "Spread:INT-1.5"
+       "betDetails": "Spread:ATA-0.5"
       }
      }
     },
@@ -470,7 +470,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0HC86736444P150_3",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0HC86736410P50_3",
      "text": "Away Point Spread",
      "shortText": "Away Point Spread",
      "isExternal": true,
@@ -480,10 +480,10 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "none",
        "betType": "straight",
-       "betDetails": "Spread:FIO+1.5"
+       "betDetails": "Spread:FRO+0.5"
       }
      }
     },
@@ -494,7 +494,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0OU86736439O350_1",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0OU86736405O350_1",
      "text": "Over Odds",
      "shortText": "Over Odds",
      "isExternal": true,
@@ -504,7 +504,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "over",
        "betType": "straight",
        "betDetails": "Over:3.5"
@@ -518,7 +518,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0OU86736439U350_3",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0OU86736405U350_3",
      "text": "Under Odds",
      "shortText": "Under Odds",
      "isExternal": true,
@@ -528,7 +528,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "under",
        "betType": "straight",
        "betDetails": "Under:3.5"
@@ -542,7 +542,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728",
      "text": "Game",
      "shortText": "Game",
      "isExternal": true,
@@ -554,7 +554,7 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "-300",
+      "odds": "-120",
       "link": {
        "language": "en-US",
        "rel": [
@@ -563,7 +563,7 @@
         "bets",
         "draftkings"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_1",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_1",
        "text": "Home Bet",
        "shortText": "Home Bet",
        "isExternal": true,
@@ -573,7 +573,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "home",
          "betType": "straight"
         }
@@ -581,12 +581,12 @@
       }
      },
      "open": {
-      "odds": "-295"
+      "odds": "-170"
      }
     },
     "away": {
      "close": {
-      "odds": "+600",
+      "odds": "+250",
       "link": {
        "language": "en-US",
        "rel": [
@@ -595,7 +595,7 @@
         "bets",
         "draftkings"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_3",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_3",
        "text": "Away Bet",
        "shortText": "Away Bet",
        "isExternal": true,
@@ -605,7 +605,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "away",
          "betType": "straight"
         }
@@ -613,12 +613,12 @@
       }
      },
      "open": {
-      "odds": "+550"
+      "odds": "+350"
      }
     },
     "draw": {
      "close": {
-      "odds": "+425",
+      "odds": "+295",
       "link": {
        "language": "en-US",
        "rel": [
@@ -627,7 +627,7 @@
         "bets",
         "draftkings"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_2",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_2",
        "text": "Draw Bet",
        "shortText": "Draw Bet",
        "isExternal": true,
@@ -637,7 +637,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "draw",
          "betType": "straight"
         }
@@ -645,7 +645,7 @@
       }
      },
      "open": {
-      "odds": "+390"
+      "odds": "+300"
      }
     }
    },
@@ -654,8 +654,8 @@
     "shortDisplayName": "Spread",
     "home": {
      "close": {
-      "line": "-1.5",
-      "odds": "-115",
+      "line": "-0.5",
+      "odds": "-125",
       "link": {
        "language": "en-US",
        "rel": [
@@ -663,7 +663,7 @@
         "desktop",
         "bets"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0HC86736444N150_1",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0HC86736410N50_1",
        "text": "Home Point Spread",
        "shortText": "Home Point Spread",
        "isExternal": true,
@@ -673,23 +673,23 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "none",
          "betType": "straight",
-         "betDetails": "Spread:INT-1.5"
+         "betDetails": "Spread:ATA-0.5"
         }
        }
       }
      },
      "open": {
-      "line": "-1.5",
-      "odds": "-110"
+      "line": "-0.5",
+      "odds": "-180"
      }
     },
     "away": {
      "close": {
-      "line": "+1.5",
-      "odds": "-120",
+      "line": "+0.5",
+      "odds": "-110",
       "link": {
        "language": "en-US",
        "rel": [
@@ -697,7 +697,7 @@
         "desktop",
         "bets"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0HC86736444P150_3",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0HC86736410P50_3",
        "text": "Away Point Spread",
        "shortText": "Away Point Spread",
        "isExternal": true,
@@ -707,17 +707,17 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "none",
          "betType": "straight",
-         "betDetails": "Spread:FIO+1.5"
+         "betDetails": "Spread:FRO+0.5"
         }
        }
       }
      },
      "open": {
-      "line": "+1.5",
-      "odds": "-135"
+      "line": "+0.5",
+      "odds": "+115"
      }
     }
    },
@@ -727,7 +727,7 @@
     "over": {
      "close": {
       "line": "o3.5",
-      "odds": "-115",
+      "odds": "-120",
       "link": {
        "language": "en-US",
        "rel": [
@@ -735,7 +735,7 @@
         "desktop",
         "bets"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0OU86736439O350_1",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0OU86736405O350_1",
        "text": "Over Odds",
        "shortText": "Over Odds",
        "isExternal": true,
@@ -745,7 +745,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "over",
          "betType": "straight",
          "betDetails": "Over:3.5"
@@ -755,13 +755,13 @@
      },
      "open": {
       "line": "o3.5",
-      "odds": "+105"
+      "odds": "+110"
      }
     },
     "under": {
      "close": {
       "line": "u3.5",
-      "odds": "-115",
+      "odds": "-105",
       "link": {
        "language": "en-US",
        "rel": [
@@ -769,7 +769,7 @@
         "desktop",
         "bets"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0OU86736439U350_3",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0OU86736405U350_3",
        "text": "Under Odds",
        "shortText": "Under Odds",
        "isExternal": true,
@@ -779,7 +779,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "under",
          "betType": "straight",
          "betDetails": "Under:3.5"
@@ -789,7 +789,7 @@
      },
      "open": {
       "line": "u3.5",
-      "odds": "-145"
+      "odds": "-150"
      }
     }
    },
@@ -800,7 +800,7 @@
      "desktop",
      "event"
     ],
-    "href": "https://www.espn.com/soccer/odds/_/gameId/401875036",
+    "href": "https://www.espn.com/soccer/odds/_/gameId/401874972",
     "text": "See More Odds and Props",
     "shortText": "Odds",
     "isExternal": false,
@@ -827,14 +827,14 @@
    },
    "awayTeamOdds": {
     "team": {
-     "id": "109",
-     "uid": "s:600~t:109",
-     "location": "Fiorentina",
-     "name": "Fiorentina",
-     "abbreviation": "FIO",
-     "displayName": "Fiorentina",
-     "shortDisplayName": "Fiorentina",
-     "color": "4c1d84",
+     "id": "4057",
+     "uid": "s:600~t:4057",
+     "location": "Frosinone",
+     "name": "Frosinone",
+     "abbreviation": "FRO",
+     "displayName": "Frosinone",
+     "shortDisplayName": "Frosinone",
+     "color": "FACF08",
      "isActive": true,
      "links": [
       {
@@ -844,7 +844,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/club/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/club/_/id/4057/frosinone",
        "text": "Clubhouse",
        "shortText": "Clubhouse",
        "isExternal": false,
@@ -857,7 +857,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/stats/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/stats/_/id/4057/frosinone",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -871,7 +871,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=stats",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=stats",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -884,7 +884,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/fixtures/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/4057/frosinone",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -898,7 +898,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=scores",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -911,7 +911,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/results/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/results/_/id/4057/frosinone",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -925,7 +925,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=scores",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -952,7 +952,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=standings",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=standings",
        "text": "Standings",
        "shortText": "Standings",
        "isExternal": false,
@@ -965,7 +965,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/squad/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/squad/_/id/4057/frosinone",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -979,7 +979,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=squad",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=squad",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -988,21 +988,21 @@
      ]
     },
     "odds": {
-     "summary": "6/1",
-     "value": 7,
+     "summary": "5/2",
+     "value": 3.5,
      "handicap": 0
     }
    },
    "homeTeamOdds": {
     "team": {
-     "id": "110",
-     "uid": "s:600~t:110",
-     "location": "Internazionale",
-     "name": "Internazionale",
-     "abbreviation": "INT",
-     "displayName": "Internazionale",
-     "shortDisplayName": "Inter Milan",
-     "color": "00239c",
+     "id": "105",
+     "uid": "s:600~t:105",
+     "location": "Atalanta",
+     "name": "Atalanta",
+     "abbreviation": "ATA",
+     "displayName": "Atalanta",
+     "shortDisplayName": "Atalanta",
+     "color": "1157bf",
      "isActive": true,
      "links": [
       {
@@ -1012,7 +1012,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/club/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/club/_/id/105/atalanta",
        "text": "Clubhouse",
        "shortText": "Clubhouse",
        "isExternal": false,
@@ -1025,7 +1025,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/stats/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/stats/_/id/105/atalanta",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -1039,7 +1039,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=stats",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=stats",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -1052,7 +1052,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/fixtures/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/105/atalanta",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -1066,7 +1066,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=scores",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -1079,7 +1079,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/results/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/results/_/id/105/atalanta",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -1093,7 +1093,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=scores",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -1120,7 +1120,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=standings",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=standings",
        "text": "Standings",
        "shortText": "Standings",
        "isExternal": false,
@@ -1133,7 +1133,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/squad/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/squad/_/id/105/atalanta",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -1147,7 +1147,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=squad",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=squad",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -1156,951 +1156,1059 @@
      ]
     },
     "odds": {
-     "summary": "4/11",
-     "value": 1.364,
+     "summary": "17/20",
+     "value": 1.85,
      "handicap": 0
     }
    },
    "drawOdds": {
-    "summary": "17/4",
-    "value": 5.25,
+    "summary": "16/5",
+    "value": 4.2,
     "handicap": 0
    },
    "bettingOdds": {
     "homeTeam": {
-     "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/ita.1/seasons/2026/teams/110?lang=en&region=us"
+     "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/ita.1/seasons/2026/teams/105?lang=en&region=us"
     },
     "awayTeam": {
-     "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/ita.1/seasons/2026/teams/109?lang=en&region=us"
+     "$ref": "http://sports.core.api.espn.pvt/v2/sports/soccer/leagues/ita.1/seasons/2026/teams/4057?lang=en&region=us"
     },
     "teamOdds": {
      "preMatchFullTimeResultDraw": {
-      "oddId": "39211186",
-      "value": "9/2",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-39211186~9/2&bet=1"
+      "oddId": "39211625",
+      "value": "16/5",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-39211625~16/5&bet=1"
      },
      "preMatchFullTimeResultAway": {
-      "oddId": "39211190",
-      "value": "11/2",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-39211190~11/2&bet=1"
+      "oddId": "39211626",
+      "value": "5/2",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-39211626~5/2&bet=1"
      },
      "preMatchDoubleChanceDrawOrAway": {
-      "oddId": "42719349",
-      "value": "2/1",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42719349~2/1&bet=1"
+      "oddId": "42847463",
+      "value": "10/11",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42847463~10/11&bet=1"
      },
      "preMatchDoubleChanceHomeOrAway": {
-      "oddId": "42719350",
-      "value": "1/7",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42719350~1/7&bet=1"
+      "oddId": "42847472",
+      "value": "2/9",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42847472~2/9&bet=1"
      },
      "preMatchOverUnderHandicap": {
-      "oddId": "39211233",
+      "oddId": "39211638",
       "value": "3.5",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585790-39211233~3.5&bet=1"
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585792-39211638~3.5&bet=1"
      },
      "preMatchFullTimeResultHome": {
-      "oddId": "39211178",
-      "value": "4/11",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-39211178~4/11&bet=1"
+      "oddId": "39211623",
+      "value": "17/20",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-39211623~17/20&bet=1"
      },
      "preMatchGoalLineUnder": {
-      "oddId": "39211238",
-      "value": "37/40",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585790-39211238~37/40&bet=1"
+      "oddId": "39211641",
+      "value": "41/40",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585792-39211641~41/40&bet=1"
      },
      "preMatchGoalLineOver": {
-      "oddId": "39211233",
-      "value": "37/40",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585790-39211233~37/40&bet=1"
+      "oddId": "39211638",
+      "value": "33/40",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585792-39211638~33/40&bet=1"
      },
      "preMatchDoubleChanceHomeOrDraw": {
-      "oddId": "42719351",
-      "value": "1/9",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42719351~1/9&bet=1"
+      "oddId": "42847475",
+      "value": "2/7",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42847475~2/7&bet=1"
      }
     },
     "playerOdds": {
      "preMatchFirstGoalScorer": [
       {
-       "oddId": "42746063",
+       "oddId": "288542820",
+       "value": "15/4",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-288542820~15/4&bet=1",
+       "player": "Andrea Bonanomi"
+      },
+      {
+       "oddId": "288542821",
+       "value": "15/4",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-288542821~15/4&bet=1",
+       "player": "Isaac Isoa"
+      },
+      {
+       "oddId": "42868887",
        "value": "4/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746063~4/1&bet=1",
-       "player": "Lautaro Martinez"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868887~4/1&bet=1",
+       "player": "Gianluca Scamacca"
       },
       {
-       "oddId": "42746069",
+       "oddId": "42868905",
        "value": "4/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746069~4/1&bet=1",
-       "player": "Marcus Thuram"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868905~4/1&bet=1",
+       "player": "Nikola Krstovic"
       },
       {
-       "oddId": "42746001",
-       "value": "9/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746001~9/2&bet=1",
-       "player": "Ange Bonny"
+       "oddId": "42868885",
+       "value": "6/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868885~6/1&bet=1",
+       "player": "Giacomo Raspadori"
       },
       {
-       "oddId": "42746053",
-       "value": "9/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746053~9/2&bet=1",
-       "player": "Pio Esposito"
-      },
-      {
-       "oddId": "42746050",
+       "oddId": "42868888",
        "value": "13/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746050~13/2&bet=1",
-       "player": "Mattia Mosconi"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868888~13/2&bet=1",
+       "player": "Charles De Ketelaere"
       },
       {
-       "oddId": "42745989",
+       "oddId": "42868904",
+       "value": "13/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868904~13/2&bet=1",
+       "player": "Jonathan Rowe"
+      },
+      {
+       "oddId": "42868907",
+       "value": "15/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868907~15/2&bet=1",
+       "player": "Antonio Raimondo"
+      },
+      {
+       "oddId": "198339289",
+       "value": "15/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-198339289~15/2&bet=1",
+       "player": "Kamaldeen Sulemana"
+      },
+      {
+       "oddId": "42868914",
+       "value": "15/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868914~15/2&bet=1",
+       "player": "Nicola Zalewski"
+      },
+      {
+       "oddId": "42868910",
+       "value": "15/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868910~15/2&bet=1",
+       "player": "Tomas Bobcek"
+      },
+      {
+       "oddId": "42868925",
        "value": "8/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42745989~8/1&bet=1",
-       "player": "Hakan Calhanoglu"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868925~8/1&bet=1",
+       "player": "Daniel Birligea"
       },
       {
-       "oddId": "42745986",
+       "oddId": "42868929",
        "value": "9/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42745986~9/1&bet=1",
-       "player": "Mateo Pellegrino"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868929~9/1&bet=1",
+       "player": "Eljif Elmas"
       },
       {
-       "oddId": "42746067",
+       "oddId": "42868898",
+       "value": "9/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868898~9/1&bet=1",
+       "player": "Lazar Samardzic"
+      },
+      {
+       "oddId": "42868900",
        "value": "10/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746067~10/1&bet=1",
-       "player": "Beto"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868900~10/1&bet=1",
+       "player": "Giorgi Kvernadze"
       },
       {
-       "oddId": "42746032",
+       "oddId": "288542824",
        "value": "10/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746032~10/1&bet=1",
-       "player": "Henrikh Mkhitaryan"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-288542824~10/1&bet=1",
+       "player": "Sergej Levak"
       },
       {
-       "oddId": "42745992",
-       "value": "10/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42745992~10/1&bet=1",
-       "player": "Piotr Zielinski"
-      },
-      {
-       "oddId": "42746047",
+       "oddId": "42868918",
        "value": "11/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746047~11/1&bet=1",
-       "player": "Curtis Jones"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868918~11/1&bet=1",
+       "player": "Fares Ghedjemis"
       },
       {
-       "oddId": "42746059",
-       "value": "11/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746059~11/1&bet=1",
-       "player": "Luis Henrique de Lima"
-      },
-      {
-       "oddId": "42746066",
+       "oddId": "279754190",
        "value": "12/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746066~12/1&bet=1",
-       "player": "Aleksandar Stankovic"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-279754190~12/1&bet=1",
+       "player": "Digne Pounga"
       },
       {
-       "oddId": "42745964",
+       "oddId": "42868927",
        "value": "12/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42745964~12/1&bet=1",
-       "player": "Andy Diouf"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868927~12/1&bet=1",
+       "player": "Franck Kessie"
       },
       {
-       "oddId": "42746020",
-       "value": "12/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746020~12/1&bet=1",
-       "player": "Federico Dimarco"
-      },
-      {
-       "oddId": "42746058",
+       "oddId": "42868901",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746058~14/1&bet=1",
-       "player": "Franco Mastantuono"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868901~14/1&bet=1",
+       "player": "Alessio Zerbin"
       },
       {
-       "oddId": "42746017",
+       "oddId": "42868924",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746017~14/1&bet=1",
-       "player": "Nicolo Barella"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868924~14/1&bet=1",
+       "player": "Ederson Silva"
       },
       {
-       "oddId": "42746030",
+       "oddId": "279754181",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746030~14/1&bet=1",
-       "player": "Pedro Goncalves"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-279754181~14/1&bet=1",
+       "player": "Javison Idele"
       },
       {
-       "oddId": "42746052",
+       "oddId": "42868919",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746052~14/1&bet=1",
-       "player": "Petar Sucic"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868919~14/1&bet=1",
+       "player": "Luis Hasa"
       },
       {
-       "oddId": "42746036",
+       "oddId": "42868932",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746036~14/1&bet=1",
-       "player": "Sulayman Jallow"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868932~14/1&bet=1",
+       "player": "Mario Pasalic"
       },
       {
-       "oddId": "42746000",
+       "oddId": "42868931",
+       "value": "14/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868931~14/1&bet=1",
+       "player": "Seydou Fini"
+      },
+      {
+       "oddId": "42868894",
        "value": "16/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746000~16/1&bet=1",
-       "player": "Carlos Augusto"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868894~16/1&bet=1",
+       "player": "Gianluca Gaetano"
       },
       {
-       "oddId": "42745982",
-       "value": "16/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42745982~16/1&bet=1",
-       "player": "Degnand Gnonto"
-      },
-      {
-       "oddId": "279639788",
-       "value": "16/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-279639788~16/1&bet=1",
-       "player": "Francesco Stante"
-      },
-      {
-       "oddId": "42746065",
+       "oddId": "42868897",
        "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746065~18/1&bet=1",
-       "player": "Alieu Njie"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868897~18/1&bet=1",
+       "player": "Ben Kone"
       },
       {
-       "oddId": "251092756",
+       "oddId": "42868913",
        "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-251092756~18/1&bet=1",
-       "player": "Antonio Pirro"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868913~18/1&bet=1",
+       "player": "Francesco Gelli"
       },
       {
-       "oddId": "42745978",
+       "oddId": "42868928",
        "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42745978~18/1&bet=1",
-       "player": "Arthur Atta"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868928~18/1&bet=1",
+       "player": "Romano Schmid"
       },
       {
-       "oddId": "42746008",
-       "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746008~18/1&bet=1",
-       "player": "Federico Croci"
-      },
-      {
-       "oddId": "42746070",
-       "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746070~18/1&bet=1",
-       "player": "Leonardo Bovo"
-      },
-      {
-       "oddId": "42746054",
+       "oddId": "42868899",
        "value": "20/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746054~20/1&bet=1",
-       "player": "Brando Mazzeo"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868899~20/1&bet=1",
+       "player": "Davide Zappacosta"
       },
       {
-       "oddId": "42746071",
+       "oddId": "42868937",
        "value": "20/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746071~20/1&bet=1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868937~20/1&bet=1",
        "player": "No Goalscorer"
       },
       {
-       "oddId": "42745997",
+       "oddId": "42868923",
        "value": "20/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42745997~20/1&bet=1",
-       "player": "Yann Aurel Bisseck"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868923~20/1&bet=1",
+       "player": "Patrizio Masini"
       },
       {
-       "oddId": "42745981",
+       "oddId": "42868903",
+       "value": "20/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868903~20/1&bet=1",
+       "player": "Raoul Bellanova"
+      },
+      {
+       "oddId": "42868934",
        "value": "22/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42745981~22/1&bet=1",
-       "player": "Alessandro Bastoni"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868934~22/1&bet=1",
+       "player": "Giacomo Calo"
       },
       {
-       "oddId": "42746051",
-       "value": "22/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746051~22/1&bet=1",
-       "player": "John Stones"
-      },
-      {
-       "oddId": "42746044",
-       "value": "22/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746044~22/1&bet=1",
-       "player": "Manuel Akanji"
-      },
-      {
-       "oddId": "42746004",
-       "value": "22/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746004~22/1&bet=1",
-       "player": "Marco Brescianini"
-      },
-      {
-       "oddId": "42746068",
+       "oddId": "42868902",
        "value": "25/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746068~25/1&bet=1",
-       "player": "Benjamin Pavard"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868902~25/1&bet=1",
+       "player": "Giorgio Scalvini"
       },
       {
-       "oddId": "42746039",
+       "oddId": "42868930",
        "value": "25/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746039~25/1&bet=1",
-       "player": "Djed Spence"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868930~25/1&bet=1",
+       "player": "Jacopo Mirra"
       },
       {
-       "oddId": "42746060",
+       "oddId": "42868884",
+       "value": "25/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868884~25/1&bet=1",
+       "player": "Lorenzo Bernasconi"
+      },
+      {
+       "oddId": "42868892",
+       "value": "25/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868892~25/1&bet=1",
+       "player": "Matteo Cichella"
+      },
+      {
+       "oddId": "279754160",
+       "value": "25/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-279754160~25/1&bet=1",
+       "player": "Matteo Plaia"
+      },
+      {
+       "oddId": "42868916",
+       "value": "25/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868916~25/1&bet=1",
+       "player": "Relja Obric"
+      },
+      {
+       "oddId": "42868896",
        "value": "28/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746060~28/1&bet=1",
-       "player": "Alejandro Jimenez"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868896~28/1&bet=1",
+       "player": "Anouar El Azzouzi"
       },
       {
-       "oddId": "42746026",
+       "oddId": "42868917",
        "value": "28/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746026~28/1&bet=1",
-       "player": "Cher Ndour"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868917~28/1&bet=1",
+       "player": "Florian Grillitsch"
       },
       {
-       "oddId": "42746056",
+       "oddId": "42868886",
        "value": "28/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746056~28/1&bet=1",
-       "player": "Christ Oulai"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868886~28/1&bet=1",
+       "player": "Thomas Kristensen"
       },
       {
-       "oddId": "42746064",
-       "value": "28/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746064~28/1&bet=1",
-       "player": "Nicolo Fagioli"
+       "oddId": "42868920",
+       "value": "33/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868920~33/1&bet=1",
+       "player": "Anthony Oyono"
       },
       {
-       "oddId": "251092765",
+       "oddId": "42868883",
+       "value": "33/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868883~33/1&bet=1",
+       "player": "Gabriele Bracaglia"
+      },
+      {
+       "oddId": "42868922",
+       "value": "33/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868922~33/1&bet=1",
+       "player": "Sead Kolasinac"
+      },
+      {
+       "oddId": "42868891",
        "value": "40/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-251092765~40/1&bet=1",
-       "player": "Arnis Ademi"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868891~40/1&bet=1",
+       "player": "Aleksa Terzic"
       },
       {
-       "oddId": "42746049",
+       "oddId": "42868926",
        "value": "40/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746049~40/1&bet=1",
-       "player": "Dodo dos Santos"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868926~40/1&bet=1",
+       "player": "Enzo Tchato"
       },
       {
-       "oddId": "42746057",
+       "oddId": "42868912",
        "value": "40/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746057~40/1&bet=1",
-       "player": "Joao Mario"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868912~40/1&bet=1",
+       "player": "Wisdom Amey"
       },
       {
-       "oddId": "42746014",
+       "oddId": "42868895",
        "value": "50/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746014~50/1&bet=1",
-       "player": "Luca Ranieri"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868895~50/1&bet=1",
+       "player": "Gabriele Calvani"
       },
       {
-       "oddId": "42746055",
+       "oddId": "42868889",
        "value": "50/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746055~50/1&bet=1",
-       "player": "Radu Dragusin"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868889~50/1&bet=1",
+       "player": "Giorgio Cittadini"
       },
       {
-       "oddId": "42746011",
+       "oddId": "42868909",
        "value": "50/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746011~50/1&bet=1",
-       "player": "Victor Valdepenas"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868909~50/1&bet=1",
+       "player": "Ilario Monterisi"
       },
       {
-       "oddId": "42746007",
+       "oddId": "42868911",
        "value": "50/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746007~50/1&bet=1",
-       "player": "Viery Lopes"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868911~50/1&bet=1",
+       "player": "Kevin Akpoguma"
       },
       {
-       "oddId": "42745995",
-       "value": "80/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42745995~80/1&bet=1",
-       "player": "Marin Pongracic"
+       "oddId": "42868915",
+       "value": "50/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868915~50/1&bet=1",
+       "player": "Omar Fayed"
       }
      ],
      "preMatchAnyTimeGoalScorer": [
       {
-       "oddId": "42746213",
+       "oddId": "288542664",
+       "value": "4/5",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-288542664~4/5&bet=1",
+       "player": "Andrea Bonanomi"
+      },
+      {
+       "oddId": "288542666",
+       "value": "4/5",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-288542666~4/5&bet=1",
+       "player": "Isaac Isoa"
+      },
+      {
+       "oddId": "42869022",
        "value": "10/11",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746213~10/11&bet=1",
-       "player": "Lautaro Martinez"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869022~10/11&bet=1",
+       "player": "Gianluca Scamacca"
       },
       {
-       "oddId": "42746248",
+       "oddId": "42869043",
        "value": "10/11",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746248~10/11&bet=1",
-       "player": "Marcus Thuram"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869043~10/11&bet=1",
+       "player": "Nikola Krstovic"
       },
       {
-       "oddId": "42746293",
-       "value": "21/20",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746293~21/20&bet=1",
-       "player": "Ange Bonny"
+       "oddId": "42869025",
+       "value": "6/5",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869025~6/5&bet=1",
+       "player": "Giacomo Raspadori"
       },
       {
-       "oddId": "42746199",
-       "value": "21/20",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746199~21/20&bet=1",
-       "player": "Pio Esposito"
-      },
-      {
-       "oddId": "42746170",
+       "oddId": "42869026",
        "value": "13/8",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746170~13/8&bet=1",
-       "player": "Mattia Mosconi"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869026~13/8&bet=1",
+       "player": "Charles De Ketelaere"
       },
       {
-       "oddId": "42746280",
+       "oddId": "42869013",
+       "value": "13/8",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869013~13/8&bet=1",
+       "player": "Eljif Elmas"
+      },
+      {
+       "oddId": "42869040",
+       "value": "13/8",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869040~13/8&bet=1",
+       "player": "Jonathan Rowe"
+      },
+      {
+       "oddId": "42869044",
+       "value": "15/8",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869044~15/8&bet=1",
+       "player": "Antonio Raimondo"
+      },
+      {
+       "oddId": "198339376",
+       "value": "15/8",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-198339376~15/8&bet=1",
+       "player": "Kamaldeen Sulemana"
+      },
+      {
+       "oddId": "42869051",
+       "value": "15/8",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869051~15/8&bet=1",
+       "player": "Nicola Zalewski"
+      },
+      {
+       "oddId": "42869046",
+       "value": "15/8",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869046~15/8&bet=1",
+       "player": "Tomas Bobcek"
+      },
+      {
+       "oddId": "42869005",
        "value": "21/10",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746280~21/10&bet=1",
-       "player": "Hakan Calhanoglu"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869005~21/10&bet=1",
+       "player": "Daniel Birligea"
       },
       {
-       "oddId": "42746275",
+       "oddId": "42869016",
+       "value": "21/10",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869016~21/10&bet=1",
+       "player": "Mario Pasalic"
+      },
+      {
+       "oddId": "42869000",
        "value": "12/5",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746275~12/5&bet=1",
-       "player": "Mateo Pellegrino"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869000~12/5&bet=1",
+       "player": "Alejandro Cichero"
       },
       {
-       "oddId": "42746237",
+       "oddId": "288542668",
+       "value": "5/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-288542668~5/2&bet=1",
+       "player": "Sergej Levak"
+      },
+      {
+       "oddId": "42869036",
        "value": "13/5",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746237~13/5&bet=1",
-       "player": "Beto"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869036~13/5&bet=1",
+       "player": "Giorgi Kvernadze"
       },
       {
-       "oddId": "42746158",
-       "value": "13/5",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746158~13/5&bet=1",
-       "player": "Henrikh Mkhitaryan"
-      },
-      {
-       "oddId": "42746262",
-       "value": "13/5",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746262~13/5&bet=1",
-       "player": "Piotr Zielinski"
-      },
-      {
-       "oddId": "42746177",
+       "oddId": "279754632",
        "value": "3/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746177~3/1&bet=1",
-       "player": "Curtis Jones"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-279754632~3/1&bet=1",
+       "player": "Digne Pounga"
       },
       {
-       "oddId": "42746217",
+       "oddId": "42869055",
        "value": "3/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746217~3/1&bet=1",
-       "player": "Luis Henrique de Lima"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869055~3/1&bet=1",
+       "player": "Fares Ghedjemis"
       },
       {
-       "oddId": "42746234",
+       "oddId": "42869038",
+       "value": "3/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869038~3/1&bet=1",
+       "player": "Lazar Samardzic"
+      },
+      {
+       "oddId": "42869039",
        "value": "10/3",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746234~10/3&bet=1",
-       "player": "Aleksandar Stankovic"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869039~10/3&bet=1",
+       "player": "Davide Zappacosta"
       },
       {
-       "oddId": "42746251",
+       "oddId": "42869015",
        "value": "10/3",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746251~10/3&bet=1",
-       "player": "Andy Diouf"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869015~10/3&bet=1",
+       "player": "Franck Kessie"
       },
       {
-       "oddId": "42746302",
+       "oddId": "42869020",
        "value": "10/3",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746302~10/3&bet=1",
-       "player": "Federico Dimarco"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869020~10/3&bet=1",
+       "player": "Seydou Fini"
       },
       {
-       "oddId": "42746209",
+       "oddId": "42869037",
        "value": "15/4",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746209~15/4&bet=1",
-       "player": "Franco Mastantuono"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869037~15/4&bet=1",
+       "player": "Alessio Zerbin"
       },
       {
-       "oddId": "42746308",
+       "oddId": "42869002",
        "value": "15/4",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746308~15/4&bet=1",
-       "player": "Nicolo Barella"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869002~15/4&bet=1",
+       "player": "Ederson Silva"
       },
       {
-       "oddId": "42746151",
+       "oddId": "279754616",
        "value": "15/4",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746151~15/4&bet=1",
-       "player": "Pedro Goncalves"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-279754616~15/4&bet=1",
+       "player": "Javison Idele"
       },
       {
-       "oddId": "42746195",
+       "oddId": "42869029",
        "value": "15/4",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746195~15/4&bet=1",
-       "player": "Petar Sucic"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869029~15/4&bet=1",
+       "player": "Kevin Barcella"
       },
       {
-       "oddId": "42746138",
+       "oddId": "42869052",
        "value": "15/4",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746138~15/4&bet=1",
-       "player": "Sulayman Jallow"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869052~15/4&bet=1",
+       "player": "Luis Hasa"
       },
       {
-       "oddId": "42746284",
+       "oddId": "42869034",
        "value": "9/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746284~9/2&bet=1",
-       "player": "Carlos Augusto"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869034~9/2&bet=1",
+       "player": "Gianluca Gaetano"
       },
       {
-       "oddId": "42746272",
-       "value": "9/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746272~9/2&bet=1",
-       "player": "Degnand Gnonto"
-      },
-      {
-       "oddId": "279639432",
-       "value": "9/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-279639432~9/2&bet=1",
-       "player": "Francesco Stante"
-      },
-      {
-       "oddId": "42746231",
+       "oddId": "42869032",
        "value": "5/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746231~5/1&bet=1",
-       "player": "Alieu Njie"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869032~5/1&bet=1",
+       "player": "Ben Kone"
       },
       {
-       "oddId": "251092608",
+       "oddId": "42869050",
        "value": "5/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-251092608~5/1&bet=1",
-       "player": "Antonio Pirro"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869050~5/1&bet=1",
+       "player": "Francesco Gelli"
       },
       {
-       "oddId": "42746254",
+       "oddId": "42869018",
        "value": "5/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746254~5/1&bet=1",
-       "player": "Arthur Atta"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869018~5/1&bet=1",
+       "player": "Giacomo Calo"
       },
       {
-       "oddId": "42746288",
+       "oddId": "42869011",
        "value": "5/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746288~5/1&bet=1",
-       "player": "Federico Croci"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869011~5/1&bet=1",
+       "player": "Romano Schmid"
       },
       {
-       "oddId": "42746235",
-       "value": "5/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746235~5/1&bet=1",
-       "player": "Leonardo Bovo"
-      },
-      {
-       "oddId": "42746205",
+       "oddId": "42869006",
        "value": "11/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746205~11/2&bet=1",
-       "player": "Brando Mazzeo"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869006~11/2&bet=1",
+       "player": "Patrizio Masini"
       },
       {
-       "oddId": "42746283",
+       "oddId": "42869042",
        "value": "11/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746283~11/2&bet=1",
-       "player": "Yann Aurel Bisseck"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869042~11/2&bet=1",
+       "player": "Raoul Bellanova"
       },
       {
-       "oddId": "42746257",
-       "value": "6/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746257~6/1&bet=1",
-       "player": "Alessandro Bastoni"
-      },
-      {
-       "oddId": "42746173",
-       "value": "6/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746173~6/1&bet=1",
-       "player": "John Stones"
-      },
-      {
-       "oddId": "42746167",
-       "value": "6/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746167~6/1&bet=1",
-       "player": "Manuel Akanji"
-      },
-      {
-       "oddId": "42746294",
-       "value": "6/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746294~6/1&bet=1",
-       "player": "Marco Brescianini"
-      },
-      {
-       "oddId": "42746240",
+       "oddId": "42869041",
        "value": "7/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746240~7/1&bet=1",
-       "player": "Benjamin Pavard"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869041~7/1&bet=1",
+       "player": "Giorgio Scalvini"
       },
       {
-       "oddId": "42746161",
+       "oddId": "42869019",
        "value": "7/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746161~7/1&bet=1",
-       "player": "Djed Spence"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869019~7/1&bet=1",
+       "player": "Jacopo Mirra"
       },
       {
-       "oddId": "42746226",
+       "oddId": "42869024",
+       "value": "7/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869024~7/1&bet=1",
+       "player": "Lorenzo Bernasconi"
+      },
+      {
+       "oddId": "42869028",
+       "value": "7/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869028~7/1&bet=1",
+       "player": "Matteo Cichella"
+      },
+      {
+       "oddId": "279754608",
+       "value": "7/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-279754608~7/1&bet=1",
+       "player": "Matteo Plaia"
+      },
+      {
+       "oddId": "42869047",
+       "value": "7/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869047~7/1&bet=1",
+       "player": "Omar Fayed"
+      },
+      {
+       "oddId": "42869053",
+       "value": "7/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869053~7/1&bet=1",
+       "player": "Relja Obric"
+      },
+      {
+       "oddId": "42869031",
        "value": "8/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746226~8/1&bet=1",
-       "player": "Alejandro Jimenez"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869031~8/1&bet=1",
+       "player": "Anouar El Azzouzi"
       },
       {
-       "oddId": "42746144",
+       "oddId": "42868999",
        "value": "8/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746144~8/1&bet=1",
-       "player": "Cher Ndour"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868999~8/1&bet=1",
+       "player": "Anthony Oyono"
       },
       {
-       "oddId": "42746189",
+       "oddId": "42869054",
        "value": "8/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746189~8/1&bet=1",
-       "player": "Christ Oulai"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869054~8/1&bet=1",
+       "player": "Florian Grillitsch"
       },
       {
-       "oddId": "42746214",
+       "oddId": "42869021",
        "value": "8/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746214~8/1&bet=1",
-       "player": "Nicolo Fagioli"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869021~8/1&bet=1",
+       "player": "Thomas Kristensen"
       },
       {
-       "oddId": "251092594",
+       "oddId": "42869010",
+       "value": "10/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869010~10/1&bet=1",
+       "player": "Enzo Tchato"
+      },
+      {
+       "oddId": "42869023",
+       "value": "10/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869023~10/1&bet=1",
+       "player": "Gabriele Bracaglia"
+      },
+      {
+       "oddId": "42869033",
+       "value": "10/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869033~10/1&bet=1",
+       "player": "Odilon Kossounou"
+      },
+      {
+       "oddId": "42869001",
+       "value": "10/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869001~10/1&bet=1",
+       "player": "Sead Kolasinac"
+      },
+      {
+       "oddId": "42869030",
        "value": "12/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-251092594~12/1&bet=1",
-       "player": "Arnis Ademi"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869030~12/1&bet=1",
+       "player": "Aleksa Terzic"
       },
       {
-       "oddId": "42746185",
+       "oddId": "42869045",
        "value": "12/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746185~12/1&bet=1",
-       "player": "Dodo dos Santos"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869045~12/1&bet=1",
+       "player": "Ilario Monterisi"
       },
       {
-       "oddId": "42746193",
+       "oddId": "42869049",
        "value": "12/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746193~12/1&bet=1",
-       "player": "Joao Mario"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869049~12/1&bet=1",
+       "player": "Wisdom Amey"
       },
       {
-       "oddId": "42746305",
+       "oddId": "42869035",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746305~14/1&bet=1",
-       "player": "Luca Ranieri"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869035~14/1&bet=1",
+       "player": "Gabriele Calvani"
       },
       {
-       "oddId": "42746206",
+       "oddId": "42869027",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746206~14/1&bet=1",
-       "player": "Radu Dragusin"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869027~14/1&bet=1",
+       "player": "Giorgio Cittadini"
       },
       {
-       "oddId": "42746291",
+       "oddId": "42869048",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746291~14/1&bet=1",
-       "player": "Victor Valdepenas"
-      },
-      {
-       "oddId": "42746299",
-       "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746299~14/1&bet=1",
-       "player": "Viery Lopes"
-      },
-      {
-       "oddId": "42746269",
-       "value": "22/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746269~22/1&bet=1",
-       "player": "Marin Pongracic"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42869048~14/1&bet=1",
+       "player": "Kevin Akpoguma"
       }
      ],
      "preMatchLastGoalScorer": [
       {
-       "oddId": "42746075",
+       "oddId": "288543100",
+       "value": "15/4",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-288543100~15/4&bet=1",
+       "player": "Andrea Bonanomi"
+      },
+      {
+       "oddId": "288543135",
+       "value": "15/4",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-288543135~15/4&bet=1",
+       "player": "Isaac Isoa"
+      },
+      {
+       "oddId": "42868987",
        "value": "4/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746075~4/1&bet=1",
-       "player": "Lautaro Martinez"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868987~4/1&bet=1",
+       "player": "Gianluca Scamacca"
       },
       {
-       "oddId": "42746081",
+       "oddId": "42868956",
        "value": "4/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746081~4/1&bet=1",
-       "player": "Marcus Thuram"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868956~4/1&bet=1",
+       "player": "Nikola Krstovic"
       },
       {
-       "oddId": "42746093",
-       "value": "9/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746093~9/2&bet=1",
-       "player": "Ange Bonny"
+       "oddId": "42868985",
+       "value": "6/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868985~6/1&bet=1",
+       "player": "Giacomo Raspadori"
       },
       {
-       "oddId": "42746114",
-       "value": "9/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746114~9/2&bet=1",
-       "player": "Pio Esposito"
-      },
-      {
-       "oddId": "42746111",
+       "oddId": "42868988",
        "value": "13/2",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746111~13/2&bet=1",
-       "player": "Mattia Mosconi"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868988~13/2&bet=1",
+       "player": "Charles De Ketelaere"
       },
       {
-       "oddId": "42746088",
+       "oddId": "42868955",
+       "value": "13/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868955~13/2&bet=1",
+       "player": "Jonathan Rowe"
+      },
+      {
+       "oddId": "42868957",
+       "value": "15/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868957~15/2&bet=1",
+       "player": "Antonio Raimondo"
+      },
+      {
+       "oddId": "198339294",
+       "value": "15/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-198339294~15/2&bet=1",
+       "player": "Kamaldeen Sulemana"
+      },
+      {
+       "oddId": "42868963",
+       "value": "15/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868963~15/2&bet=1",
+       "player": "Nicola Zalewski"
+      },
+      {
+       "oddId": "42868959",
+       "value": "15/2",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868959~15/2&bet=1",
+       "player": "Tomas Bobcek"
+      },
+      {
+       "oddId": "42868974",
        "value": "8/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746088~8/1&bet=1",
-       "player": "Hakan Calhanoglu"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868974~8/1&bet=1",
+       "player": "Daniel Birligea"
       },
       {
-       "oddId": "42746087",
+       "oddId": "42868978",
        "value": "9/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746087~9/1&bet=1",
-       "player": "Mateo Pellegrino"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868978~9/1&bet=1",
+       "player": "Eljif Elmas"
       },
       {
-       "oddId": "42746079",
+       "oddId": "42868947",
+       "value": "9/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868947~9/1&bet=1",
+       "player": "Lazar Samardzic"
+      },
+      {
+       "oddId": "42868951",
        "value": "10/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746079~10/1&bet=1",
-       "player": "Beto"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868951~10/1&bet=1",
+       "player": "Giorgi Kvernadze"
       },
       {
-       "oddId": "42746104",
+       "oddId": "288543145",
        "value": "10/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746104~10/1&bet=1",
-       "player": "Henrikh Mkhitaryan"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-288543145~10/1&bet=1",
+       "player": "Sergej Levak"
       },
       {
-       "oddId": "42746089",
-       "value": "10/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746089~10/1&bet=1",
-       "player": "Piotr Zielinski"
-      },
-      {
-       "oddId": "42746109",
+       "oddId": "42868967",
        "value": "11/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746109~11/1&bet=1",
-       "player": "Curtis Jones"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868967~11/1&bet=1",
+       "player": "Fares Ghedjemis"
       },
       {
-       "oddId": "42746073",
-       "value": "11/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746073~11/1&bet=1",
-       "player": "Luis Henrique de Lima"
-      },
-      {
-       "oddId": "42746077",
+       "oddId": "279752728",
        "value": "12/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746077~12/1&bet=1",
-       "player": "Aleksandar Stankovic"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-279752728~12/1&bet=1",
+       "player": "Digne Pounga"
       },
       {
-       "oddId": "42746082",
+       "oddId": "42868976",
        "value": "12/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746082~12/1&bet=1",
-       "player": "Andy Diouf"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868976~12/1&bet=1",
+       "player": "Franck Kessie"
       },
       {
-       "oddId": "42746099",
-       "value": "12/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746099~12/1&bet=1",
-       "player": "Federico Dimarco"
-      },
-      {
-       "oddId": "42746128",
+       "oddId": "42868952",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746128~14/1&bet=1",
-       "player": "Franco Mastantuono"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868952~14/1&bet=1",
+       "player": "Alessio Zerbin"
       },
       {
-       "oddId": "42746098",
+       "oddId": "42868973",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746098~14/1&bet=1",
-       "player": "Nicolo Barella"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868973~14/1&bet=1",
+       "player": "Ederson Silva"
       },
       {
-       "oddId": "42746101",
+       "oddId": "279752726",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746101~14/1&bet=1",
-       "player": "Pedro Goncalves"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-279752726~14/1&bet=1",
+       "player": "Javison Idele"
       },
       {
-       "oddId": "42746113",
+       "oddId": "42868968",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746113~14/1&bet=1",
-       "player": "Petar Sucic"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868968~14/1&bet=1",
+       "player": "Luis Hasa"
       },
       {
-       "oddId": "42746105",
+       "oddId": "42868981",
        "value": "14/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746105~14/1&bet=1",
-       "player": "Sulayman Jallow"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868981~14/1&bet=1",
+       "player": "Mario Pasalic"
       },
       {
-       "oddId": "42746091",
+       "oddId": "42868980",
+       "value": "14/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868980~14/1&bet=1",
+       "player": "Seydou Fini"
+      },
+      {
+       "oddId": "42868941",
        "value": "16/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746091~16/1&bet=1",
-       "player": "Carlos Augusto"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868941~16/1&bet=1",
+       "player": "Gianluca Gaetano"
       },
       {
-       "oddId": "42746086",
-       "value": "16/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746086~16/1&bet=1",
-       "player": "Degnand Gnonto"
-      },
-      {
-       "oddId": "279637900",
-       "value": "16/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-279637900~16/1&bet=1",
-       "player": "Francesco Stante"
-      },
-      {
-       "oddId": "42746076",
+       "oddId": "42868944",
        "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746076~18/1&bet=1",
-       "player": "Alieu Njie"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868944~18/1&bet=1",
+       "player": "Ben Kone"
       },
       {
-       "oddId": "251093364",
+       "oddId": "42868962",
        "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-251093364~18/1&bet=1",
-       "player": "Antonio Pirro"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868962~18/1&bet=1",
+       "player": "Francesco Gelli"
       },
       {
-       "oddId": "42746083",
+       "oddId": "42868977",
        "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746083~18/1&bet=1",
-       "player": "Arthur Atta"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868977~18/1&bet=1",
+       "player": "Romano Schmid"
       },
       {
-       "oddId": "42746096",
-       "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746096~18/1&bet=1",
-       "player": "Federico Croci"
-      },
-      {
-       "oddId": "42746078",
-       "value": "18/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746078~18/1&bet=1",
-       "player": "Leonardo Bovo"
-      },
-      {
-       "oddId": "42746115",
+       "oddId": "42868949",
        "value": "20/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746115~20/1&bet=1",
-       "player": "Brando Mazzeo"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868949~20/1&bet=1",
+       "player": "Davide Zappacosta"
       },
       {
-       "oddId": "42746131",
+       "oddId": "42868998",
        "value": "20/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746131~20/1&bet=1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868998~20/1&bet=1",
        "player": "No Goalscorer"
       },
       {
-       "oddId": "42746090",
+       "oddId": "42868972",
        "value": "20/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746090~20/1&bet=1",
-       "player": "Yann Aurel Bisseck"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868972~20/1&bet=1",
+       "player": "Patrizio Masini"
       },
       {
-       "oddId": "42746084",
+       "oddId": "42868954",
+       "value": "20/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868954~20/1&bet=1",
+       "player": "Raoul Bellanova"
+      },
+      {
+       "oddId": "42868982",
        "value": "22/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746084~22/1&bet=1",
-       "player": "Alessandro Bastoni"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868982~22/1&bet=1",
+       "player": "Giacomo Calo"
       },
       {
-       "oddId": "42746108",
-       "value": "22/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746108~22/1&bet=1",
-       "player": "John Stones"
-      },
-      {
-       "oddId": "42746107",
-       "value": "22/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746107~22/1&bet=1",
-       "player": "Manuel Akanji"
-      },
-      {
-       "oddId": "42746094",
-       "value": "22/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746094~22/1&bet=1",
-       "player": "Marco Brescianini"
-      },
-      {
-       "oddId": "42746080",
+       "oddId": "42868953",
        "value": "25/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746080~25/1&bet=1",
-       "player": "Benjamin Pavard"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868953~25/1&bet=1",
+       "player": "Giorgio Scalvini"
       },
       {
-       "oddId": "42746106",
+       "oddId": "42868979",
        "value": "25/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746106~25/1&bet=1",
-       "player": "Djed Spence"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868979~25/1&bet=1",
+       "player": "Jacopo Mirra"
       },
       {
-       "oddId": "42746074",
+       "oddId": "42868984",
+       "value": "25/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868984~25/1&bet=1",
+       "player": "Lorenzo Bernasconi"
+      },
+      {
+       "oddId": "42868997",
+       "value": "25/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868997~25/1&bet=1",
+       "player": "Matteo Cichella"
+      },
+      {
+       "oddId": "279752733",
+       "value": "25/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-279752733~25/1&bet=1",
+       "player": "Matteo Plaia"
+      },
+      {
+       "oddId": "42868965",
+       "value": "25/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868965~25/1&bet=1",
+       "player": "Relja Obric"
+      },
+      {
+       "oddId": "42868943",
        "value": "28/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746074~28/1&bet=1",
-       "player": "Alejandro Jimenez"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868943~28/1&bet=1",
+       "player": "Anouar El Azzouzi"
       },
       {
-       "oddId": "42746100",
+       "oddId": "42868966",
        "value": "28/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746100~28/1&bet=1",
-       "player": "Cher Ndour"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868966~28/1&bet=1",
+       "player": "Florian Grillitsch"
       },
       {
-       "oddId": "42746119",
+       "oddId": "42868986",
        "value": "28/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746119~28/1&bet=1",
-       "player": "Christ Oulai"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868986~28/1&bet=1",
+       "player": "Thomas Kristensen"
       },
       {
-       "oddId": "42746072",
-       "value": "28/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746072~28/1&bet=1",
-       "player": "Nicolo Fagioli"
+       "oddId": "42868969",
+       "value": "33/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868969~33/1&bet=1",
+       "player": "Anthony Oyono"
       },
       {
-       "oddId": "251093358",
+       "oddId": "42868983",
+       "value": "33/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868983~33/1&bet=1",
+       "player": "Gabriele Bracaglia"
+      },
+      {
+       "oddId": "42868971",
+       "value": "33/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868971~33/1&bet=1",
+       "player": "Sead Kolasinac"
+      },
+      {
+       "oddId": "42868996",
        "value": "40/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-251093358~40/1&bet=1",
-       "player": "Arnis Ademi"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868996~40/1&bet=1",
+       "player": "Aleksa Terzic"
       },
       {
-       "oddId": "42746110",
+       "oddId": "42868975",
        "value": "40/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746110~40/1&bet=1",
-       "player": "Dodo dos Santos"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868975~40/1&bet=1",
+       "player": "Enzo Tchato"
       },
       {
-       "oddId": "42746112",
+       "oddId": "42868961",
        "value": "40/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746112~40/1&bet=1",
-       "player": "Joao Mario"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868961~40/1&bet=1",
+       "player": "Wisdom Amey"
       },
       {
-       "oddId": "42746097",
+       "oddId": "42868942",
        "value": "50/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746097~50/1&bet=1",
-       "player": "Luca Ranieri"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868942~50/1&bet=1",
+       "player": "Gabriele Calvani"
       },
       {
-       "oddId": "42746116",
+       "oddId": "42868990",
        "value": "50/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746116~50/1&bet=1",
-       "player": "Radu Dragusin"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868990~50/1&bet=1",
+       "player": "Giorgio Cittadini"
       },
       {
-       "oddId": "42746092",
+       "oddId": "42868958",
        "value": "50/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746092~50/1&bet=1",
-       "player": "Victor Valdepenas"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868958~50/1&bet=1",
+       "player": "Ilario Monterisi"
       },
       {
-       "oddId": "42746095",
+       "oddId": "42868960",
        "value": "50/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746095~50/1&bet=1",
-       "player": "Viery Lopes"
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868960~50/1&bet=1",
+       "player": "Kevin Akpoguma"
       },
       {
-       "oddId": "42746085",
-       "value": "80/1",
-       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585789-42746085~80/1&bet=1",
-       "player": "Marin Pongracic"
+       "oddId": "42868964",
+       "value": "50/1",
+       "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=201585791-42868964~50/1&bet=1",
+       "player": "Omar Fayed"
       }
      ]
     }
@@ -2114,7 +2222,7 @@
       "bets",
       "bet-365"
      ],
-     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=201585789-39211178~4/11",
+     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=201585791-39211623~17/20",
      "text": "Home Bet",
      "shortText": "Home Bet",
      "isExternal": true,
@@ -2128,7 +2236,7 @@
       "bets",
       "bet-365"
      ],
-     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=201585789-39211190~6/1",
+     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=201585791-39211626~5/2",
      "text": "Away Bet",
      "shortText": "Away Bet",
      "isExternal": true,
@@ -2142,7 +2250,7 @@
       "bets",
       "bet-365"
      ],
-     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=201585789-39211186~17/4",
+     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=201585791-39211625~16/5",
      "text": "Draw Bet",
      "shortText": "Draw Bet",
      "isExternal": true,
@@ -2172,25 +2280,25 @@
      }
     ]
    },
-   "details": "INT -300",
+   "details": "ATA -120",
    "overUnder": 3.5,
-   "spread": -1.5,
-   "overOdds": -115,
-   "underOdds": -115,
+   "spread": -0.5,
+   "overOdds": -120,
+   "underOdds": -105,
    "awayTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 600,
-    "spreadOdds": -120,
+    "moneyLine": 250,
+    "spreadOdds": -110,
     "team": {
-     "id": "109",
-     "uid": "s:600~t:109",
-     "location": "Fiorentina",
-     "name": "Fiorentina",
-     "abbreviation": "FIO",
-     "displayName": "Fiorentina",
-     "shortDisplayName": "Fiorentina",
-     "color": "4c1d84",
+     "id": "4057",
+     "uid": "s:600~t:4057",
+     "location": "Frosinone",
+     "name": "Frosinone",
+     "abbreviation": "FRO",
+     "displayName": "Frosinone",
+     "shortDisplayName": "Frosinone",
+     "color": "FACF08",
      "isActive": true,
      "links": [
       {
@@ -2200,7 +2308,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/club/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/club/_/id/4057/frosinone",
        "text": "Clubhouse",
        "shortText": "Clubhouse",
        "isExternal": false,
@@ -2213,7 +2321,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/stats/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/stats/_/id/4057/frosinone",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -2227,7 +2335,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=stats",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=stats",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -2240,7 +2348,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/fixtures/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/4057/frosinone",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -2254,7 +2362,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=scores",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -2267,7 +2375,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/results/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/results/_/id/4057/frosinone",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -2281,7 +2389,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=scores",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -2308,7 +2416,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=standings",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=standings",
        "text": "Standings",
        "shortText": "Standings",
        "isExternal": false,
@@ -2321,7 +2429,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/squad/_/id/109/fiorentina",
+       "href": "https://www.espn.com/soccer/team/squad/_/id/4057/frosinone",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -2335,7 +2443,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:109&section=squad",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:4057&section=squad",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -2348,17 +2456,17 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": -300,
-    "spreadOdds": -115,
+    "moneyLine": -120,
+    "spreadOdds": -125,
     "team": {
-     "id": "110",
-     "uid": "s:600~t:110",
-     "location": "Internazionale",
-     "name": "Internazionale",
-     "abbreviation": "INT",
-     "displayName": "Internazionale",
-     "shortDisplayName": "Inter Milan",
-     "color": "00239c",
+     "id": "105",
+     "uid": "s:600~t:105",
+     "location": "Atalanta",
+     "name": "Atalanta",
+     "abbreviation": "ATA",
+     "displayName": "Atalanta",
+     "shortDisplayName": "Atalanta",
+     "color": "1157bf",
      "isActive": true,
      "links": [
       {
@@ -2368,7 +2476,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/club/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/club/_/id/105/atalanta",
        "text": "Clubhouse",
        "shortText": "Clubhouse",
        "isExternal": false,
@@ -2381,7 +2489,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/stats/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/stats/_/id/105/atalanta",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -2395,7 +2503,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=stats",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=stats",
        "text": "Stats",
        "shortText": "Stats",
        "isExternal": false,
@@ -2408,7 +2516,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/fixtures/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/fixtures/_/id/105/atalanta",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -2422,7 +2530,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=scores",
        "text": "Fixtures",
        "shortText": "Fixtures",
        "isExternal": false,
@@ -2435,7 +2543,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/results/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/results/_/id/105/atalanta",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -2449,7 +2557,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=scores",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=scores",
        "text": "Results",
        "shortText": "Results",
        "isExternal": false,
@@ -2476,7 +2584,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=standings",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=standings",
        "text": "Standings",
        "shortText": "Standings",
        "isExternal": false,
@@ -2489,7 +2597,7 @@
         "desktop",
         "team"
        ],
-       "href": "https://www.espn.com/soccer/team/squad/_/id/110/internazionale",
+       "href": "https://www.espn.com/soccer/team/squad/_/id/105/atalanta",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -2503,7 +2611,7 @@
         "app",
         "team"
        ],
-       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:110&section=squad",
+       "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:105&section=squad",
        "text": "Squad",
        "shortText": "Squad",
        "isExternal": false,
@@ -2514,7 +2622,7 @@
     "favoriteAtOpen": true
    },
    "drawOdds": {
-    "moneyLine": 425
+    "moneyLine": 295
    },
    "links": [
     {
@@ -2525,7 +2633,7 @@
       "bets",
       "draftkings"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_1",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_1",
      "text": "Home Bet",
      "shortText": "Home Bet",
      "isExternal": true,
@@ -2535,7 +2643,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "home",
        "betType": "straight"
       }
@@ -2549,7 +2657,7 @@
       "bets",
       "draftkings"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_3",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_3",
      "text": "Away Bet",
      "shortText": "Away Bet",
      "isExternal": true,
@@ -2559,7 +2667,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "away",
        "betType": "straight"
       }
@@ -2573,7 +2681,7 @@
       "bets",
       "draftkings"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_2",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_2",
      "text": "Draw Bet",
      "shortText": "Draw Bet",
      "isExternal": true,
@@ -2583,7 +2691,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "draw",
        "betType": "straight"
       }
@@ -2596,7 +2704,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0HC86736444N150_1",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0HC86736410N50_1",
      "text": "Home Point Spread",
      "shortText": "Home Point Spread",
      "isExternal": true,
@@ -2606,10 +2714,10 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "none",
        "betType": "straight",
-       "betDetails": "Spread:INT-1.5"
+       "betDetails": "Spread:ATA-0.5"
       }
      }
     },
@@ -2620,7 +2728,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0HC86736444P150_3",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0HC86736410P50_3",
      "text": "Away Point Spread",
      "shortText": "Away Point Spread",
      "isExternal": true,
@@ -2630,10 +2738,10 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "none",
        "betType": "straight",
-       "betDetails": "Spread:FIO+1.5"
+       "betDetails": "Spread:FRO+0.5"
       }
      }
     },
@@ -2644,7 +2752,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0OU86736439O350_1",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0OU86736405O350_1",
      "text": "Over Odds",
      "shortText": "Over Odds",
      "isExternal": true,
@@ -2654,7 +2762,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "over",
        "betType": "straight",
        "betDetails": "Over:3.5"
@@ -2668,7 +2776,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0OU86736439U350_3",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0OU86736405U350_3",
      "text": "Under Odds",
      "shortText": "Under Odds",
      "isExternal": true,
@@ -2678,7 +2786,7 @@
       "tags": {
        "league": "ita.1",
        "sport": "soccer",
-       "gameId": 401875036,
+       "gameId": 401874972,
        "betSide": "under",
        "betType": "straight",
        "betDetails": "Under:3.5"
@@ -2692,7 +2800,7 @@
       "desktop",
       "bets"
      ],
-     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729",
+     "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728",
      "text": "Game",
      "shortText": "Game",
      "isExternal": true,
@@ -2704,7 +2812,7 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "-300",
+      "odds": "-120",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2713,7 +2821,7 @@
         "bets",
         "draftkings"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_1",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_1",
        "text": "Home Bet",
        "shortText": "Home Bet",
        "isExternal": true,
@@ -2723,7 +2831,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "home",
          "betType": "straight"
         }
@@ -2731,12 +2839,12 @@
       }
      },
      "open": {
-      "odds": "-295"
+      "odds": "-170"
      }
     },
     "away": {
      "close": {
-      "odds": "+600",
+      "odds": "+250",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2745,7 +2853,7 @@
         "bets",
         "draftkings"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_3",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_3",
        "text": "Away Bet",
        "shortText": "Away Bet",
        "isExternal": true,
@@ -2755,7 +2863,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "away",
          "betType": "straight"
         }
@@ -2763,12 +2871,12 @@
       }
      },
      "open": {
-      "odds": "+550"
+      "odds": "+350"
      }
     },
     "draw": {
      "close": {
-      "odds": "+425",
+      "odds": "+295",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2777,7 +2885,7 @@
         "bets",
         "draftkings"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0ML86735913_2",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0ML86735912_2",
        "text": "Draw Bet",
        "shortText": "Draw Bet",
        "isExternal": true,
@@ -2787,7 +2895,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "draw",
          "betType": "straight"
         }
@@ -2795,7 +2903,7 @@
       }
      },
      "open": {
-      "odds": "+390"
+      "odds": "+300"
      }
     }
    },
@@ -2804,8 +2912,8 @@
     "shortDisplayName": "Spread",
     "home": {
      "close": {
-      "line": "-1.5",
-      "odds": "-115",
+      "line": "-0.5",
+      "odds": "-125",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2813,7 +2921,7 @@
         "desktop",
         "bets"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0HC86736444N150_1",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0HC86736410N50_1",
        "text": "Home Point Spread",
        "shortText": "Home Point Spread",
        "isExternal": true,
@@ -2823,23 +2931,23 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "none",
          "betType": "straight",
-         "betDetails": "Spread:INT-1.5"
+         "betDetails": "Spread:ATA-0.5"
         }
        }
       }
      },
      "open": {
-      "line": "-1.5",
-      "odds": "-110"
+      "line": "-0.5",
+      "odds": "-180"
      }
     },
     "away": {
      "close": {
-      "line": "+1.5",
-      "odds": "-120",
+      "line": "+0.5",
+      "odds": "-110",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2847,7 +2955,7 @@
         "desktop",
         "bets"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0HC86736444P150_3",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0HC86736410P50_3",
        "text": "Away Point Spread",
        "shortText": "Away Point Spread",
        "isExternal": true,
@@ -2857,17 +2965,17 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "none",
          "betType": "straight",
-         "betDetails": "Spread:FIO+1.5"
+         "betDetails": "Spread:FRO+0.5"
         }
        }
       }
      },
      "open": {
-      "line": "+1.5",
-      "odds": "-135"
+      "line": "+0.5",
+      "odds": "+115"
      }
     }
    },
@@ -2877,7 +2985,7 @@
     "over": {
      "close": {
       "line": "o3.5",
-      "odds": "-115",
+      "odds": "-120",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2885,7 +2993,7 @@
         "desktop",
         "bets"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0OU86736439O350_1",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0OU86736405O350_1",
        "text": "Over Odds",
        "shortText": "Over Odds",
        "isExternal": true,
@@ -2895,7 +3003,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "over",
          "betType": "straight",
          "betDetails": "Over:3.5"
@@ -2905,13 +3013,13 @@
      },
      "open": {
       "line": "o3.5",
-      "odds": "+105"
+      "odds": "+110"
      }
     },
     "under": {
      "close": {
       "line": "u3.5",
-      "odds": "-115",
+      "odds": "-105",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2919,7 +3027,7 @@
         "desktop",
         "bets"
        ],
-       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828729%3Foutcomes%3D0OU86736439U350_3",
+       "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34828728%3Foutcomes%3D0OU86736405U350_3",
        "text": "Under Odds",
        "shortText": "Under Odds",
        "isExternal": true,
@@ -2929,7 +3037,7 @@
         "tags": {
          "league": "ita.1",
          "sport": "soccer",
-         "gameId": 401875036,
+         "gameId": 401874972,
          "betSide": "under",
          "betType": "straight",
          "betDetails": "Under:3.5"
@@ -2939,7 +3047,7 @@
      },
      "open": {
       "line": "u3.5",
-      "odds": "-145"
+      "odds": "-150"
      }
     }
    },
@@ -2950,7 +3058,7 @@
      "desktop",
      "event"
     ],
-    "href": "https://www.espn.com/soccer/odds/_/gameId/401875036",
+    "href": "https://www.espn.com/soccer/odds/_/gameId/401874972",
     "text": "See More Odds and Props",
     "shortText": "Odds",
     "isExternal": false,
