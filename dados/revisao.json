@@ -1,74 +1,74 @@
 {
- "geradoEm": "2026-10-25T16:47:20.083Z",
- "jogos": 43,
+ "geradoEm": "2026-10-25T18:50:25.717Z",
+ "jogos": 51,
  "porFamilia": {
   "resultado": {
-   "n": 774,
-   "llModelo": 0.4841,
-   "llMercado": 0.4854,
-   "nMercado": 774,
-   "llModeloComMercado": 0.4841,
-   "brier": 0.1586,
+   "n": 918,
+   "llModelo": 0.4711,
+   "llMercado": 0.4721,
+   "nMercado": 918,
+   "llModeloComMercado": 0.4711,
+   "brier": 0.1536,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1032,
-   "llModelo": 0.5328,
-   "llMercado": 0.5264,
-   "nMercado": 1032,
-   "llModeloComMercado": 0.5328,
-   "brier": 0.1776,
+   "n": 1224,
+   "llModelo": 0.5513,
+   "llMercado": 0.5476,
+   "nMercado": 1224,
+   "llModeloComMercado": 0.5513,
+   "brier": 0.1845,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 602,
-   "llModelo": 0.5936,
-   "llMercado": 0.5886,
-   "nMercado": 602,
-   "llModeloComMercado": 0.5936,
-   "brier": 0.2052,
+   "n": 714,
+   "llModelo": 0.6139,
+   "llMercado": 0.6116,
+   "nMercado": 714,
+   "llModeloComMercado": 0.6139,
+   "brier": 0.213,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1032,
-   "llModelo": 0.6428,
+   "n": 1224,
+   "llModelo": 0.6422,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2249,
+   "brier": 0.225,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 946,
-   "llModelo": 0.5612,
+   "n": 1122,
+   "llModelo": 0.5461,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1911,
+   "brier": 0.1844,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 124,
-  "acertos": 89,
-  "esperado": 86.0256
+  "n": 146,
+  "acertos": 104,
+  "esperado": 101.2593
  },
  "jogadores": {
-  "n": 347,
-  "marcaram": 35,
-  "previsto": 80.4378,
-  "llModelo": 0.3741,
-  "comOdd": 195,
-  "marcaramComOdd": 27,
-  "previstoModeloComOdd": 45.241,
-  "implicitoBrutoComOdd": 63.6196,
+  "n": 383,
+  "marcaram": 40,
+  "previsto": 88.7536,
+  "llModelo": 0.3768,
+  "comOdd": 227,
+  "marcaramComOdd": 32,
+  "previstoModeloComOdd": 52.8204,
+  "implicitoBrutoComOdd": 74.2043,
   "apostasModeloAcimaDaOdd": {
-   "n": 2,
+   "n": 3,
    "retorno": -1
   },
   "faixas": [
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 128,
-    "previsto": 0.1627,
-    "aconteceu": 0.0547
+    "n": 144,
+    "previsto": 0.1624,
+    "aconteceu": 0.0556
    },
    {
     "de": 0.2,
-    "n": 146,
+    "n": 160,
     "previsto": 0.239,
-    "aconteceu": 0.1027
+    "aconteceu": 0.1063
    },
    {
     "de": 0.3,
-    "n": 51,
-    "previsto": 0.3425,
-    "aconteceu": 0.1961
+    "n": 54,
+    "previsto": 0.3434,
+    "aconteceu": 0.2222
    },
    {
     "de": 0.4,
-    "n": 13,
-    "previsto": 0.4266,
-    "aconteceu": 0.1538
+    "n": 16,
+    "previsto": 0.4295,
+    "aconteceu": 0.125
    },
    {
     "de": 0.5,
@@ -112,50 +112,50 @@
  },
  "palpites": {
   "principal": {
-   "n": 38,
-   "acertos": 23,
-   "previsto": 0.6468,
-   "comOdd": 38,
-   "lucro": -4.86,
-   "oddMedia": 1.4913,
-   "retorno": -0.1279,
-   "retornoMelhorOdd": -0.1268
+   "n": 46,
+   "acertos": 28,
+   "previsto": 0.6444,
+   "comOdd": 46,
+   "lucro": -5.57,
+   "oddMedia": 1.4959,
+   "retorno": -0.1211,
+   "retornoMelhorOdd": -0.1197
   },
   "destaque": {
-   "n": 19,
-   "acertos": 15,
+   "n": 21,
+   "acertos": 17,
    "previsto": 0.6982,
-   "comOdd": 19,
-   "lucro": 1.01,
-   "oddMedia": 1.3347,
-   "retorno": 0.0532,
-   "retornoMelhorOdd": 0.0532
+   "comOdd": 21,
+   "lucro": 1.75,
+   "oddMedia": 1.3381,
+   "retorno": 0.0833,
+   "retornoMelhorOdd": 0.0833
   },
   "oddMaior": {
-   "n": 18,
-   "acertos": 12,
-   "previsto": 0.4858,
-   "comOdd": 18,
-   "lucro": 6.07,
-   "oddMedia": 2.0061,
-   "retorno": 0.3372,
-   "retornoMelhorOdd": 0.3374
+   "n": 23,
+   "acertos": 14,
+   "previsto": 0.4857,
+   "comOdd": 23,
+   "lucro": 4.58,
+   "oddMedia": 2.0048,
+   "retorno": 0.1991,
+   "retornoMelhorOdd": 0.1999
   },
   "jogador": {
-   "n": 25,
-   "acertos": 5,
-   "previsto": 0.2952,
-   "comOdd": 25,
-   "lucro": -11.0885,
-   "oddMedia": 3.3548,
-   "retorno": -0.4435,
-   "retornoMelhorOdd": -0.4435
+   "n": 29,
+   "acertos": 7,
+   "previsto": 0.3092,
+   "comOdd": 29,
+   "lucro": -10.0135,
+   "oddMedia": 3.212,
+   "retorno": -0.3453,
+   "retornoMelhorOdd": -0.3453
   }
  },
  "movimentoDoMercado": {
-  "n": 52,
-  "aFavorDoModelo": 28,
-  "medio": 0.0036
+  "n": 61,
+  "aFavorDoModelo": 36,
+  "medio": 0.0055
  },
  "dias": [
   {
@@ -384,14 +384,111 @@
      "jogo": "Toulouse × Troyes",
      "comp": "fra.1",
      "inicio": "2026-10-25T16:15Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.72,
+       "casa": null,
+       "chance": 0.5378,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Toulouse",
+      "p": 0.5871,
+      "pMercado": 0.6416,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6855,
+       "odd": 1.53,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Toulouse ou Troyes)",
+       "p": 0.7713,
+       "odd": 1.22,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Toulouse",
+       "p": 0.5871,
+       "odd": 1.51,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876424",
      "jogo": "Stade Rennais × Strasbourg",
      "comp": "fra.1",
      "inicio": "2026-10-25T16:15Z",
-     "pendente": true
+     "placar": [
+      3,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6498,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Strasbourg ou empate",
+       "odd": 2,
+       "casa": "Bet 365",
+       "chance": 0.4695,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Esteban Lepaul marca",
+       "odd": 1.9523809523809523,
+       "chance": 0.4359,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Stade Rennais",
+      "p": 0.513,
+      "pMercado": 0.548,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Stade Rennais ou empate",
+       "p": 0.7399,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6339,
+       "odd": 1.42,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6325,
+       "odd": 1.46,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876425",
@@ -461,28 +558,220 @@
      "jogo": "Marseille × Le Havre AC",
      "comp": "fra.1",
      "inicio": "2026-10-25T16:15Z",
-     "pendente": true
+     "placar": [
+      4,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Marseille",
+       "odd": 1.476,
+       "casa": "DraftKings",
+       "chance": 0.6861,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Marseille: mais de 1,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6799,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Amine Gouiri marca",
+       "odd": 2.25,
+       "chance": 0.4048,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Marseille",
+      "p": 0.7093,
+      "pMercado": 0.6628,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Marseille",
+       "p": 0.7093,
+       "odd": 1.46,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6337,
+       "odd": 1.48,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Marseille ou Le Havre AC)",
+       "p": 0.8251,
+       "odd": 1.17,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876429",
      "jogo": "AJ Auxerre × Le Mans",
      "comp": "fra.1",
      "inicio": "2026-10-25T16:15Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.64,
+       "casa": null,
+       "chance": 0.5549,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Le Mans ou empate",
+       "odd": 1.7,
+       "casa": "Bet 365",
+       "chance": 0.5449,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Cameron Archer marca",
+       "odd": 2.875,
+       "chance": 0.3616,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AJ Auxerre",
+      "p": 0.4518,
+      "pMercado": 0.4585,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "AJ Auxerre ou empate",
+       "p": 0.7153,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7258,
+       "odd": 1.41,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876430",
      "jogo": "Angers × Lorient",
      "comp": "fra.1",
      "inicio": "2026-10-25T16:15Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Lorient ou empate",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.7026,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.825,
+       "casa": "Bet 365",
+       "chance": 0.5314,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lorient",
+      "p": 0.4422,
+      "pMercado": 0.4025,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Lorient ou empate",
+       "p": 0.7136,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7223,
+       "odd": 1.31,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401878764",
      "jogo": "Sunderland × Leeds United",
      "comp": "eng.1",
      "inicio": "2026-10-25T16:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sem empate (Sunderland ou Leeds United)",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.7027,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Leeds United",
+       "odd": 2.6,
+       "casa": "Bet 365",
+       "chance": 0.3781,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Leeds United",
+      "p": 0.3804,
+      "pMercado": 0.3759,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Sunderland ou Leeds United)",
+       "p": 0.7068,
+       "odd": 1.36,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6666,
+       "odd": 1.37,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401878765",
@@ -731,7 +1020,56 @@
      "jogo": "Celta Vigo × Real Betis",
      "comp": "esp.1",
      "inicio": "2026-10-25T15:15Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.77,
+       "casa": null,
+       "chance": 0.5434,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.909,
+       "casa": "DraftKings",
+       "chance": 0.5016,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Celta Vigo",
+      "p": 0.4237,
+      "pMercado": 0.3364,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7124,
+       "odd": 1.3,
+       "ok": 1
+      },
+      {
+       "rotulo": "Celta Vigo ou empate",
+       "p": 0.6866,
+       "odd": 1.5,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5501,
+       "odd": 1.77,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882835",
@@ -777,7 +1115,69 @@
      "jogo": "SC Freiburg × Bayern Munich",
      "comp": "ger.1",
      "inicio": "2026-10-25T16:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.41,
+       "casa": null,
+       "chance": 0.6891,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Bayern Munich: mais de 1,5 gols",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7175,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Michael Olise marca",
+       "odd": 2.2,
+       "chance": 0.3826,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bayern Munich",
+      "p": 0.678,
+      "pMercado": 0.6544,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6992,
+       "odd": 1.31,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Bayern Munich",
+       "p": 0.678,
+       "odd": 1.48,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6154,
+       "odd": 1.45,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (SC Freiburg ou Bayern Munich)",
+       "p": 0.8233,
+       "odd": 1.17,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401884760",
