@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-10-26T19:03:32.220Z",
- "jogos": 55,
+ "geradoEm": "2026-10-26T21:47:12.047Z",
+ "jogos": 56,
  "porFamilia": {
   "resultado": {
-   "n": 990,
-   "llModelo": 0.466,
-   "llMercado": 0.4672,
-   "nMercado": 990,
-   "llModeloComMercado": 0.466,
-   "brier": 0.1518,
+   "n": 1008,
+   "llModelo": 0.4615,
+   "llMercado": 0.463,
+   "nMercado": 1008,
+   "llModeloComMercado": 0.4615,
+   "brier": 0.15,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1320,
-   "llModelo": 0.5388,
-   "llMercado": 0.536,
-   "nMercado": 1320,
-   "llModeloComMercado": 0.5388,
-   "brier": 0.1794,
+   "n": 1344,
+   "llModelo": 0.5375,
+   "llMercado": 0.5348,
+   "nMercado": 1344,
+   "llModeloComMercado": 0.5375,
+   "brier": 0.1791,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 770,
-   "llModelo": 0.6124,
-   "llMercado": 0.6106,
-   "nMercado": 770,
-   "llModeloComMercado": 0.6124,
-   "brier": 0.2125,
+   "n": 784,
+   "llModelo": 0.6112,
+   "llMercado": 0.6095,
+   "nMercado": 784,
+   "llModeloComMercado": 0.6112,
+   "brier": 0.2119,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1320,
-   "llModelo": 0.6437,
+   "n": 1344,
+   "llModelo": 0.6395,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2253,
+   "brier": 0.2235,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1210,
-   "llModelo": 0.5421,
+   "n": 1232,
+   "llModelo": 0.539,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1829,
+   "brier": 0.1816,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 159,
-  "acertos": 115,
-  "esperado": 110.5156
+  "n": 163,
+  "acertos": 118,
+  "esperado": 113.3857
  },
  "jogadores": {
-  "n": 416,
+  "n": 424,
   "marcaram": 44,
-  "previsto": 96.3127,
-  "llModelo": 0.3737,
-  "comOdd": 241,
+  "previsto": 98.436,
+  "llModelo": 0.3728,
+  "comOdd": 249,
   "marcaramComOdd": 33,
-  "previstoModeloComOdd": 55.5599,
-  "implicitoBrutoComOdd": 77.975,
+  "previstoModeloComOdd": 57.6832,
+  "implicitoBrutoComOdd": 80.9296,
   "apostasModeloAcimaDaOdd": {
    "n": 4,
    "retorno": -1
@@ -80,9 +80,9 @@
    },
    {
     "de": 0.1,
-    "n": 158,
-    "previsto": 0.1611,
-    "aconteceu": 0.0506
+    "n": 162,
+    "previsto": 0.1608,
+    "aconteceu": 0.0494
    },
    {
     "de": 0.2,
@@ -92,15 +92,15 @@
    },
    {
     "de": 0.3,
-    "n": 60,
-    "previsto": 0.3445,
-    "aconteceu": 0.2333
+    "n": 62,
+    "previsto": 0.3447,
+    "aconteceu": 0.2258
    },
    {
     "de": 0.4,
-    "n": 17,
-    "previsto": 0.4312,
-    "aconteceu": 0.1765
+    "n": 19,
+    "previsto": 0.4293,
+    "aconteceu": 0.1579
    },
    {
     "de": 0.5,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 50,
-   "acertos": 31,
-   "previsto": 0.6422,
-   "comOdd": 50,
-   "lucro": -4.84,
-   "oddMedia": 1.5026,
-   "retorno": -0.0968,
-   "retornoMelhorOdd": -0.0954
+   "n": 51,
+   "acertos": 32,
+   "previsto": 0.6432,
+   "comOdd": 51,
+   "lucro": -4.48,
+   "oddMedia": 1.4998,
+   "retorno": -0.0878,
+   "retornoMelhorOdd": -0.0865
   },
   "destaque": {
    "n": 22,
@@ -142,14 +142,14 @@
    "retornoMelhorOdd": 0.1561
   },
   "jogador": {
-   "n": 31,
+   "n": 32,
    "acertos": 7,
-   "previsto": 0.3079,
-   "comOdd": 31,
-   "lucro": -12.0135,
-   "oddMedia": 3.2494,
-   "retorno": -0.3875,
-   "retornoMelhorOdd": -0.3875
+   "previsto": 0.3113,
+   "comOdd": 32,
+   "lucro": -13.0135,
+   "oddMedia": 3.2119,
+   "retorno": -0.4067,
+   "retornoMelhorOdd": -0.4067
   }
  },
  "movimentoDoMercado": {
@@ -207,7 +207,61 @@
      "jogo": "Paris Saint-Germain × Lyon",
      "comp": "fra.1",
      "inicio": "2026-10-26T19:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6933,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ferran Torres marca",
+       "odd": 2.05,
+       "chance": 0.4179,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Paris Saint-Germain",
+      "p": 0.7682,
+      "pMercado": 0.7423,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.6892,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Paris Saint-Germain",
+       "p": 0.7682,
+       "odd": 1.31,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5548,
+       "odd": 1.66,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Paris Saint-Germain ou Lyon)",
+       "p": 0.8579,
+       "odd": 1.14,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882828",
