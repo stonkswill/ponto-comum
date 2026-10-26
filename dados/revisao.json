@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-10-25T21:44:59.675Z",
- "jogos": 54,
+ "geradoEm": "2026-10-26T02:51:13.712Z",
+ "jogos": 55,
  "porFamilia": {
   "resultado": {
-   "n": 972,
-   "llModelo": 0.4623,
-   "llMercado": 0.4634,
-   "nMercado": 972,
-   "llModeloComMercado": 0.4623,
-   "brier": 0.1501,
+   "n": 990,
+   "llModelo": 0.466,
+   "llMercado": 0.4672,
+   "nMercado": 990,
+   "llModeloComMercado": 0.466,
+   "brier": 0.1518,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1296,
-   "llModelo": 0.5407,
-   "llMercado": 0.5373,
-   "nMercado": 1296,
-   "llModeloComMercado": 0.5407,
-   "brier": 0.1801,
+   "n": 1320,
+   "llModelo": 0.5388,
+   "llMercado": 0.536,
+   "nMercado": 1320,
+   "llModeloComMercado": 0.5388,
+   "brier": 0.1794,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 756,
-   "llModelo": 0.6156,
-   "llMercado": 0.6139,
-   "nMercado": 756,
-   "llModeloComMercado": 0.6156,
-   "brier": 0.2137,
+   "n": 770,
+   "llModelo": 0.6124,
+   "llMercado": 0.6106,
+   "nMercado": 770,
+   "llModeloComMercado": 0.6124,
+   "brier": 0.2125,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1296,
-   "llModelo": 0.6465,
+   "n": 1320,
+   "llModelo": 0.6437,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2264,
+   "brier": 0.2253,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1188,
-   "llModelo": 0.5405,
+   "n": 1210,
+   "llModelo": 0.5421,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1821,
+   "brier": 0.1829,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 155,
-  "acertos": 113,
-  "esperado": 107.6583
+  "n": 159,
+  "acertos": 115,
+  "esperado": 110.5156
  },
  "jogadores": {
-  "n": 408,
-  "marcaram": 42,
-  "previsto": 93.9398,
-  "llModelo": 0.3723,
+  "n": 416,
+  "marcaram": 44,
+  "previsto": 96.3127,
+  "llModelo": 0.3737,
   "comOdd": 241,
   "marcaramComOdd": 33,
   "previstoModeloComOdd": 55.5599,
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 156,
-    "previsto": 0.161,
-    "aconteceu": 0.0513
+    "n": 158,
+    "previsto": 0.1611,
+    "aconteceu": 0.0506
    },
    {
     "de": 0.2,
-    "n": 169,
-    "previsto": 0.24,
-    "aconteceu": 0.1065
+    "n": 171,
+    "previsto": 0.2401,
+    "aconteceu": 0.1053
    },
    {
     "de": 0.3,
-    "n": 57,
-    "previsto": 0.3437,
-    "aconteceu": 0.2281
+    "n": 60,
+    "previsto": 0.3445,
+    "aconteceu": 0.2333
    },
    {
     "de": 0.4,
-    "n": 16,
-    "previsto": 0.4295,
-    "aconteceu": 0.125
+    "n": 17,
+    "previsto": 0.4312,
+    "aconteceu": 0.1765
    },
    {
     "de": 0.5,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 49,
+   "n": 50,
    "acertos": 31,
-   "previsto": 0.643,
-   "comOdd": 49,
-   "lucro": -3.84,
-   "oddMedia": 1.5008,
-   "retorno": -0.0784,
-   "retornoMelhorOdd": -0.0769
+   "previsto": 0.6422,
+   "comOdd": 50,
+   "lucro": -4.84,
+   "oddMedia": 1.5026,
+   "retorno": -0.0968,
+   "retornoMelhorOdd": -0.0954
   },
   "destaque": {
    "n": 22,
@@ -132,14 +132,14 @@
    "retornoMelhorOdd": 0.0945
   },
   "oddMaior": {
-   "n": 25,
-   "acertos": 14,
-   "previsto": 0.4824,
-   "comOdd": 25,
-   "lucro": 2.58,
-   "oddMedia": 2.02,
-   "retorno": 0.1032,
-   "retornoMelhorOdd": 0.1039
+   "n": 26,
+   "acertos": 15,
+   "previsto": 0.4791,
+   "comOdd": 26,
+   "lucro": 4.04,
+   "oddMedia": 2.0369,
+   "retorno": 0.1554,
+   "retornoMelhorOdd": 0.1561
   },
   "jogador": {
    "n": 31,
@@ -153,11 +153,24 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 61,
-  "aFavorDoModelo": 36,
+  "n": 62,
+  "aFavorDoModelo": 37,
   "medio": 0.0055
  },
  "dias": [
+  {
+   "dia": "2026-10-27",
+   "jogos": [
+    {
+     "id": "401874980",
+     "jogo": "Sassuolo × Lazio",
+     "comp": "ita.1",
+     "inicio": "2026-10-27T17:30Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-10-26",
    "jogos": [
@@ -1174,7 +1187,62 @@
      "jogo": "Barcelona × Real Madrid",
      "comp": "esp.1",
      "inicio": "2026-10-25T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Barcelona",
+       "odd": 1.588,
+       "casa": "DraftKings",
+       "chance": 0.6055,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Real Madrid ou empate",
+       "odd": 2.46,
+       "casa": null,
+       "chance": 0.3945,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Barcelona",
+      "p": 0.5959,
+      "pMercado": 0.615,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.7142,
+       "odd": 1.24,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.7625,
+       "odd": 1.16,
+       "ok": 1
+      },
+      {
+       "rotulo": "Barcelona ou empate",
+       "p": 0.7847,
+       "odd": 1.24,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Barcelona",
+       "p": 0.5959,
+       "odd": 1.59,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882833",
