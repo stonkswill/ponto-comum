@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-10-26T21:47:12.047Z",
- "jogos": 56,
+ "geradoEm": "2026-10-27T02:49:14.472Z",
+ "jogos": 59,
  "porFamilia": {
   "resultado": {
-   "n": 1008,
-   "llModelo": 0.4615,
-   "llMercado": 0.463,
-   "nMercado": 1008,
-   "llModeloComMercado": 0.4615,
-   "brier": 0.15,
+   "n": 1062,
+   "llModelo": 0.4577,
+   "llMercado": 0.4585,
+   "nMercado": 1062,
+   "llModeloComMercado": 0.4577,
+   "brier": 0.1486,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1344,
-   "llModelo": 0.5375,
-   "llMercado": 0.5348,
-   "nMercado": 1344,
-   "llModeloComMercado": 0.5375,
-   "brier": 0.1791,
+   "n": 1416,
+   "llModelo": 0.5398,
+   "llMercado": 0.5345,
+   "nMercado": 1416,
+   "llModeloComMercado": 0.5398,
+   "brier": 0.1803,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 784,
-   "llModelo": 0.6112,
-   "llMercado": 0.6095,
-   "nMercado": 784,
-   "llModeloComMercado": 0.6112,
-   "brier": 0.2119,
+   "n": 826,
+   "llModelo": 0.6096,
+   "llMercado": 0.607,
+   "nMercado": 826,
+   "llModeloComMercado": 0.6096,
+   "brier": 0.2113,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1344,
-   "llModelo": 0.6395,
+   "n": 1416,
+   "llModelo": 0.6453,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2235,
+   "brier": 0.2258,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1232,
-   "llModelo": 0.539,
+   "n": 1298,
+   "llModelo": 0.5533,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1816,
+   "brier": 0.1871,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 163,
-  "acertos": 118,
-  "esperado": 113.3857
+  "n": 168,
+  "acertos": 122,
+  "esperado": 117.0522
  },
  "jogadores": {
-  "n": 424,
-  "marcaram": 44,
-  "previsto": 98.436,
-  "llModelo": 0.3728,
+  "n": 448,
+  "marcaram": 49,
+  "previsto": 103.2601,
+  "llModelo": 0.3801,
   "comOdd": 249,
   "marcaramComOdd": 33,
   "previstoModeloComOdd": 57.6832,
@@ -74,27 +74,27 @@
   "faixas": [
    {
     "de": 0,
-    "n": 8,
-    "previsto": 0.0894,
+    "n": 10,
+    "previsto": 0.0911,
     "aconteceu": 0
    },
    {
     "de": 0.1,
-    "n": 162,
-    "previsto": 0.1608,
-    "aconteceu": 0.0494
+    "n": 170,
+    "previsto": 0.1604,
+    "aconteceu": 0.0529
    },
    {
     "de": 0.2,
-    "n": 171,
-    "previsto": 0.2401,
-    "aconteceu": 0.1053
+    "n": 184,
+    "previsto": 0.2397,
+    "aconteceu": 0.1196
    },
    {
     "de": 0.3,
-    "n": 62,
-    "previsto": 0.3447,
-    "aconteceu": 0.2258
+    "n": 63,
+    "previsto": 0.3452,
+    "aconteceu": 0.2222
    },
    {
     "de": 0.4,
@@ -112,34 +112,34 @@
  },
  "palpites": {
   "principal": {
-   "n": 51,
-   "acertos": 32,
-   "previsto": 0.6432,
-   "comOdd": 51,
-   "lucro": -4.48,
-   "oddMedia": 1.4998,
-   "retorno": -0.0878,
-   "retornoMelhorOdd": -0.0865
+   "n": 53,
+   "acertos": 33,
+   "previsto": 0.6453,
+   "comOdd": 53,
+   "lucro": -5.11,
+   "oddMedia": 1.4945,
+   "retorno": -0.0964,
+   "retornoMelhorOdd": -0.0951
   },
   "destaque": {
-   "n": 22,
-   "acertos": 18,
-   "previsto": 0.6982,
-   "comOdd": 22,
-   "lucro": 2.08,
-   "oddMedia": 1.3377,
-   "retorno": 0.0945,
-   "retornoMelhorOdd": 0.0945
+   "n": 23,
+   "acertos": 19,
+   "previsto": 0.6979,
+   "comOdd": 23,
+   "lucro": 2.43,
+   "oddMedia": 1.3383,
+   "retorno": 0.1057,
+   "retornoMelhorOdd": 0.1057
   },
   "oddMaior": {
-   "n": 26,
+   "n": 27,
    "acertos": 15,
-   "previsto": 0.4791,
-   "comOdd": 26,
-   "lucro": 4.04,
-   "oddMedia": 2.0369,
-   "retorno": 0.1554,
-   "retornoMelhorOdd": 0.1561
+   "previsto": 0.4793,
+   "comOdd": 27,
+   "lucro": 3.04,
+   "oddMedia": 2.0374,
+   "retorno": 0.1126,
+   "retornoMelhorOdd": 0.1133
   },
   "jogador": {
    "n": 32,
@@ -153,11 +153,38 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 62,
-  "aFavorDoModelo": 37,
-  "medio": 0.0055
+  "n": 69,
+  "aFavorDoModelo": 43,
+  "medio": 0.0065
  },
  "dias": [
+  {
+   "dia": "2026-10-28",
+   "jogos": [
+    {
+     "id": "401874773",
+     "jogo": "Venezia × Internazionale",
+     "comp": "ita.1",
+     "inicio": "2026-10-28T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401874965",
+     "jogo": "Parma × Udinese",
+     "comp": "ita.1",
+     "inicio": "2026-10-28T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401874993",
+     "jogo": "AC Milan × Bologna",
+     "comp": "ita.1",
+     "inicio": "2026-10-28T17:30Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-10-27",
    "jogos": [
@@ -193,14 +220,78 @@
      "jogo": "Coritiba × Grêmio",
      "comp": "bra.1",
      "inicio": "2026-10-26T22:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Coritiba ou empate",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6893,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Coritiba",
+      "p": 0.3973,
+      "pMercado": 0.4325,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7172,
+       "odd": 1.26,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Coritiba ou Grêmio)",
+       "p": 0.7234,
+       "odd": 1.3,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841286",
      "jogo": "Flamengo × Atlético-MG",
      "comp": "bra.1",
      "inicio": "2026-10-26T23:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "Atlético-MG: menos de 3,5 escanteios",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6916,
+       "ok": 1
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Flamengo",
+      "p": 0.6622,
+      "pMercado": 0.7843,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Flamengo ou Atlético-MG)",
+       "p": 0.7842,
+       "odd": 1.1,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876422",
@@ -268,7 +359,50 @@
      "jogo": "Sevilla × Osasuna",
      "comp": "esp.1",
      "inicio": "2026-10-26T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 1,5 gols",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.7074,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.05,
+       "casa": null,
+       "chance": 0.4857,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Sevilla",
+      "p": 0.449,
+      "pMercado": 0.5057,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sevilla ou empate",
+       "p": 0.7196,
+       "odd": 1.21,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7221,
+       "odd": 1.37,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
