@@ -1,100 +1,100 @@
 {
- "geradoEm": "2026-10-28T19:04:31.762Z",
- "jogos": 62,
+ "geradoEm": "2026-10-28T21:54:11.985Z",
+ "jogos": 67,
  "porFamilia": {
   "resultado": {
-   "n": 1116,
-   "llModelo": 0.459,
-   "llMercado": 0.4567,
-   "nMercado": 1116,
-   "llModeloComMercado": 0.459,
-   "brier": 0.149,
+   "n": 1206,
+   "llModelo": 0.4703,
+   "llMercado": 0.4681,
+   "nMercado": 1206,
+   "llModeloComMercado": 0.4703,
+   "brier": 0.1532,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1488,
-   "llModelo": 0.5467,
-   "llMercado": 0.539,
-   "nMercado": 1488,
-   "llModeloComMercado": 0.5467,
-   "brier": 0.1834,
+   "n": 1608,
+   "llModelo": 0.5554,
+   "llMercado": 0.5484,
+   "nMercado": 1608,
+   "llModeloComMercado": 0.5554,
+   "brier": 0.1869,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 868,
-   "llModelo": 0.6095,
-   "llMercado": 0.6059,
-   "nMercado": 868,
-   "llModeloComMercado": 0.6095,
-   "brier": 0.2114,
+   "n": 938,
+   "llModelo": 0.6157,
+   "llMercado": 0.6124,
+   "nMercado": 938,
+   "llModeloComMercado": 0.6157,
+   "brier": 0.2142,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1488,
-   "llModelo": 0.6522,
+   "n": 1608,
+   "llModelo": 0.6479,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2288,
+   "brier": 0.227,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1364,
-   "llModelo": 0.5576,
+   "n": 1474,
+   "llModelo": 0.559,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1891,
+   "brier": 0.1897,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 175,
-  "acertos": 127,
-  "esperado": 122.1306
+  "n": 189,
+  "acertos": 135,
+  "esperado": 131.8403
  },
  "jogadores": {
-  "n": 472,
-  "marcaram": 57,
-  "previsto": 108.3341,
-  "llModelo": 0.3931,
-  "comOdd": 272,
+  "n": 509,
+  "marcaram": 58,
+  "previsto": 115.7359,
+  "llModelo": 0.3833,
+  "comOdd": 294,
   "marcaramComOdd": 41,
-  "previstoModeloComOdd": 62.6007,
-  "implicitoBrutoComOdd": 88.2693,
+  "previstoModeloComOdd": 66.5888,
+  "implicitoBrutoComOdd": 94.2765,
   "apostasModeloAcimaDaOdd": {
-   "n": 4,
+   "n": 5,
    "retorno": -1
   },
   "faixas": [
    {
     "de": 0,
-    "n": 11,
-    "previsto": 0.0906,
+    "n": 13,
+    "previsto": 0.0904,
     "aconteceu": 0
    },
    {
     "de": 0.1,
-    "n": 182,
-    "previsto": 0.1608,
-    "aconteceu": 0.0659
+    "n": 201,
+    "previsto": 0.1601,
+    "aconteceu": 0.0597
    },
    {
     "de": 0.2,
-    "n": 192,
-    "previsto": 0.2393,
-    "aconteceu": 0.1354
+    "n": 205,
+    "previsto": 0.2397,
+    "aconteceu": 0.1317
    },
    {
     "de": 0.3,
-    "n": 65,
-    "previsto": 0.3444,
-    "aconteceu": 0.2154
+    "n": 68,
+    "previsto": 0.3455,
+    "aconteceu": 0.2059
    },
    {
     "de": 0.4,
@@ -112,50 +112,50 @@
  },
  "palpites": {
   "principal": {
-   "n": 55,
-   "acertos": 34,
-   "previsto": 0.6442,
-   "comOdd": 55,
-   "lucro": -5.39,
-   "oddMedia": 1.4964,
-   "retorno": -0.098,
-   "retornoMelhorOdd": -0.0966
+   "n": 60,
+   "acertos": 36,
+   "previsto": 0.6425,
+   "comOdd": 60,
+   "lucro": -7.22,
+   "oddMedia": 1.4988,
+   "retorno": -0.1203,
+   "retornoMelhorOdd": -0.119
   },
   "destaque": {
-   "n": 26,
-   "acertos": 19,
-   "previsto": 0.6982,
-   "comOdd": 26,
-   "lucro": -0.57,
-   "oddMedia": 1.3369,
-   "retorno": -0.0219,
-   "retornoMelhorOdd": -0.0219
+   "n": 28,
+   "acertos": 21,
+   "previsto": 0.698,
+   "comOdd": 28,
+   "lucro": 0.11,
+   "oddMedia": 1.3371,
+   "retorno": 0.0039,
+   "retornoMelhorOdd": 0.0039
   },
   "oddMaior": {
-   "n": 28,
-   "acertos": 15,
-   "previsto": 0.4785,
-   "comOdd": 28,
-   "lucro": 2.04,
-   "oddMedia": 2.0379,
-   "retorno": 0.0729,
-   "retornoMelhorOdd": 0.0735
+   "n": 30,
+   "acertos": 16,
+   "previsto": 0.4834,
+   "comOdd": 30,
+   "lucro": 1.81,
+   "oddMedia": 2.0203,
+   "retorno": 0.0603,
+   "retornoMelhorOdd": 0.0609
   },
   "jogador": {
-   "n": 34,
+   "n": 36,
    "acertos": 8,
-   "previsto": 0.3131,
-   "comOdd": 34,
-   "lucro": -13.3469,
-   "oddMedia": 3.2044,
-   "retorno": -0.3926,
-   "retornoMelhorOdd": -0.3926
+   "previsto": 0.3096,
+   "comOdd": 36,
+   "lucro": -15.3469,
+   "oddMedia": 3.2624,
+   "retorno": -0.4263,
+   "retornoMelhorOdd": -0.4263
   }
  },
  "movimentoDoMercado": {
-  "n": 72,
-  "aFavorDoModelo": 46,
-  "medio": 0.0072
+  "n": 76,
+  "aFavorDoModelo": 50,
+  "medio": 0.0081
  },
  "dias": [
   {
@@ -242,35 +242,280 @@
      "jogo": "Venezia × Internazionale",
      "comp": "ita.1",
      "inicio": "2026-10-28T17:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6805,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Internazionale: mais de 4,5 escanteios",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.7011,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Internazionale",
+      "p": 0.6837,
+      "pMercado": 0.7266,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Internazionale",
+       "p": 0.6837,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6638,
+       "odd": 1.36,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Venezia ou Internazionale)",
+       "p": 0.8202,
+       "odd": 1.13,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5785,
+       "odd": 1.64,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401874799",
      "jogo": "Monza × Napoli",
      "comp": "ita.1",
      "inicio": "2026-10-28T19:45Z",
-     "pendente": true
+     "placar": [
+      1,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.74,
+       "casa": null,
+       "chance": 0.521,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Monza: menos de 4,5 escanteios",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6883,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Napoli",
+      "p": 0.559,
+      "pMercado": 0.6115,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7427,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Monza ou Napoli)",
+       "p": 0.7554,
+       "odd": 1.22,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Napoli",
+       "p": 0.559,
+       "odd": 1.59,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401874965",
      "jogo": "Parma × Udinese",
      "comp": "ita.1",
      "inicio": "2026-10-28T17:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sem empate (Parma ou Udinese)",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.7045,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.769,
+       "casa": "DraftKings",
+       "chance": 0.5539,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Udinese",
+      "p": 0.3684,
+      "pMercado": 0.3573,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6944,
+       "odd": 1.33,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Parma ou Udinese)",
+       "p": 0.7153,
+       "odd": 1.36,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874988",
      "jogo": "Genoa × Juventus",
      "comp": "ita.1",
      "inicio": "2026-10-28T19:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 1,5 gols",
+       "odd": 1.43,
+       "casa": null,
+       "chance": 0.6868,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Juventus",
+       "odd": 1.8,
+       "casa": "Bet 365",
+       "chance": 0.5503,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Milutin Osmajic marca",
+       "odd": 4.5,
+       "chance": 0.1815,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Juventus",
+      "p": 0.5617,
+      "pMercado": 0.5389,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7098,
+       "odd": 1.43,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Genoa ou Juventus)",
+       "p": 0.7475,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Juventus",
+       "p": 0.5617,
+       "odd": 1.78,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401874993",
      "jogo": "AC Milan × Bologna",
      "comp": "ita.1",
      "inicio": "2026-10-28T17:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.741,
+       "casa": "DraftKings",
+       "chance": 0.5262,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Diego Moreira marca",
+       "odd": 4,
+       "chance": 0.3217,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AC Milan",
+      "p": 0.5265,
+      "pMercado": 0.5807,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7301,
+       "odd": 1.25,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (AC Milan ou Bologna)",
+       "p": 0.7476,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     }
    ],
    "sugestoes": []
