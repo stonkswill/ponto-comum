@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-10-28T21:54:11.985Z",
- "jogos": 67,
+ "geradoEm": "2026-10-29T03:00:04.009Z",
+ "jogos": 72,
  "porFamilia": {
   "resultado": {
-   "n": 1206,
-   "llModelo": 0.4703,
-   "llMercado": 0.4681,
-   "nMercado": 1206,
-   "llModeloComMercado": 0.4703,
-   "brier": 0.1532,
+   "n": 1296,
+   "llModelo": 0.4633,
+   "llMercado": 0.4597,
+   "nMercado": 1296,
+   "llModeloComMercado": 0.4633,
+   "brier": 0.1505,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1608,
-   "llModelo": 0.5554,
-   "llMercado": 0.5484,
-   "nMercado": 1608,
-   "llModeloComMercado": 0.5554,
-   "brier": 0.1869,
+   "n": 1728,
+   "llModelo": 0.5557,
+   "llMercado": 0.5476,
+   "nMercado": 1728,
+   "llModeloComMercado": 0.5557,
+   "brier": 0.187,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 938,
-   "llModelo": 0.6157,
-   "llMercado": 0.6124,
-   "nMercado": 938,
-   "llModeloComMercado": 0.6157,
-   "brier": 0.2142,
+   "n": 1008,
+   "llModelo": 0.6153,
+   "llMercado": 0.6116,
+   "nMercado": 1008,
+   "llModeloComMercado": 0.6153,
+   "brier": 0.2138,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1608,
-   "llModelo": 0.6479,
+   "n": 1728,
+   "llModelo": 0.6524,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.227,
+   "brier": 0.2289,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1474,
-   "llModelo": 0.559,
+   "n": 1584,
+   "llModelo": 0.5637,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1897,
+   "brier": 0.1916,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 189,
-  "acertos": 135,
-  "esperado": 131.8403
+  "n": 202,
+  "acertos": 146,
+  "esperado": 141.0092
  },
  "jogadores": {
-  "n": 509,
-  "marcaram": 58,
-  "previsto": 115.7359,
-  "llModelo": 0.3833,
+  "n": 541,
+  "marcaram": 61,
+  "previsto": 123.123,
+  "llModelo": 0.3832,
   "comOdd": 294,
   "marcaramComOdd": 41,
   "previstoModeloComOdd": 66.5888,
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 201,
-    "previsto": 0.1601,
-    "aconteceu": 0.0597
+    "n": 212,
+    "previsto": 0.1604,
+    "aconteceu": 0.0613
    },
    {
     "de": 0.2,
-    "n": 205,
-    "previsto": 0.2397,
-    "aconteceu": 0.1317
+    "n": 221,
+    "previsto": 0.24,
+    "aconteceu": 0.1267
    },
    {
     "de": 0.3,
-    "n": 68,
-    "previsto": 0.3455,
-    "aconteceu": 0.2059
+    "n": 73,
+    "previsto": 0.3448,
+    "aconteceu": 0.2055
    },
    {
     "de": 0.4,
@@ -112,34 +112,34 @@
  },
  "palpites": {
   "principal": {
-   "n": 60,
-   "acertos": 36,
-   "previsto": 0.6425,
-   "comOdd": 60,
-   "lucro": -7.22,
-   "oddMedia": 1.4988,
-   "retorno": -0.1203,
-   "retornoMelhorOdd": -0.119
+   "n": 64,
+   "acertos": 40,
+   "previsto": 0.6404,
+   "comOdd": 64,
+   "lucro": -4.94,
+   "oddMedia": 1.5033,
+   "retorno": -0.0772,
+   "retornoMelhorOdd": -0.076
   },
   "destaque": {
-   "n": 28,
-   "acertos": 21,
-   "previsto": 0.698,
-   "comOdd": 28,
-   "lucro": 0.11,
-   "oddMedia": 1.3371,
-   "retorno": 0.0039,
-   "retornoMelhorOdd": 0.0039
+   "n": 29,
+   "acertos": 22,
+   "previsto": 0.6982,
+   "comOdd": 29,
+   "lucro": 0.43,
+   "oddMedia": 1.3366,
+   "retorno": 0.0148,
+   "retornoMelhorOdd": 0.0148
   },
   "oddMaior": {
-   "n": 30,
+   "n": 34,
    "acertos": 16,
-   "previsto": 0.4834,
-   "comOdd": 30,
-   "lucro": 1.81,
-   "oddMedia": 2.0203,
-   "retorno": 0.0603,
-   "retornoMelhorOdd": 0.0609
+   "previsto": 0.4844,
+   "comOdd": 34,
+   "lucro": -2.19,
+   "oddMedia": 2.0179,
+   "retorno": -0.0644,
+   "retornoMelhorOdd": -0.0639
   },
   "jogador": {
    "n": 36,
@@ -153,11 +153,31 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 76,
-  "aFavorDoModelo": 50,
-  "medio": 0.0081
+  "n": 82,
+  "aFavorDoModelo": 54,
+  "medio": 0.0079
  },
  "dias": [
+  {
+   "dia": "2026-10-30",
+   "jogos": [
+    {
+     "id": "401876416",
+     "jogo": "Nice × Stade Rennais",
+     "comp": "fra.1",
+     "inicio": "2026-10-30T18:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401876421",
+     "jogo": "Le Havre AC × Paris Saint-Germain",
+     "comp": "fra.1",
+     "inicio": "2026-10-30T18:00Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-10-29",
    "jogos": [
@@ -207,35 +227,260 @@
      "jogo": "Fluminense × Internacional",
      "comp": "bra.1",
      "inicio": "2026-10-28T22:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Fluminense",
+       "odd": 1.8,
+       "casa": "DraftKings",
+       "chance": 0.5317,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.833,
+       "casa": "DraftKings",
+       "chance": 0.5165,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Fluminense",
+      "p": 0.5264,
+      "pMercado": 0.5371,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7327,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Fluminense ou Internacional)",
+       "p": 0.7452,
+       "odd": 1.27,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841291",
      "jogo": "Red Bull Bragantino × Chapecoense",
      "comp": "bra.1",
      "inicio": "2026-10-28T22:30Z",
-     "pendente": true
+     "placar": [
+      3,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 9,5",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7035,
+       "ok": 1
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Red Bull Bragantino",
+      "p": 0.6935,
+      "pMercado": 0.7605,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Red Bull Bragantino",
+       "p": 0.6935,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Red Bull Bragantino ou Chapecoense)",
+       "p": 0.8173,
+       "odd": 1.11,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.8304,
+       "odd": 1.06,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841293",
      "jogo": "Santos × Palmeiras",
      "comp": "bra.1",
      "inicio": "2026-10-28T22:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.699,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.71,
+       "casa": null,
+       "chance": 0.5557,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Palmeiras",
+      "p": 0.4301,
+      "pMercado": 0.4803,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7042,
+       "odd": 1.37,
+       "ok": 1
+      },
+      {
+       "rotulo": "Palmeiras ou empate",
+       "p": 0.6905,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5565,
+       "odd": 1.71,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841296",
      "jogo": "Bahia × São Paulo",
      "comp": "bra.1",
      "inicio": "2026-10-29T00:30Z",
-     "pendente": true
+     "placar": [
+      3,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.69,
+       "casa": null,
+       "chance": 0.5356,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "São Paulo ou empate",
+       "odd": 1.91,
+       "casa": null,
+       "chance": 0.503,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bahia",
+      "p": 0.489,
+      "pMercado": 0.505,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7332,
+       "odd": 1.21,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Bahia ou São Paulo)",
+       "p": 0.7383,
+       "odd": 1.27,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841297",
      "jogo": "Remo × Botafogo",
      "comp": "bra.1",
      "inicio": "2026-10-29T00:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6735,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Botafogo",
+       "odd": 2.55,
+       "casa": "DraftKings",
+       "chance": 0.3927,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Botafogo",
+      "p": 0.4129,
+      "pMercado": 0.3724,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6783,
+       "odd": 1.42,
+       "ok": 1
+      },
+      {
+       "rotulo": "Botafogo ou empate",
+       "p": 0.6684,
+       "odd": 1.49,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5804,
+       "odd": 1.61,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874773",
