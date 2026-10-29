@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-10-29T19:06:39.592Z",
- "jogos": 72,
+ "geradoEm": "2026-10-29T21:56:06.703Z",
+ "jogos": 74,
  "porFamilia": {
   "resultado": {
-   "n": 1296,
-   "llModelo": 0.4633,
-   "llMercado": 0.4597,
-   "nMercado": 1296,
-   "llModeloComMercado": 0.4633,
-   "brier": 0.1505,
+   "n": 1332,
+   "llModelo": 0.4657,
+   "llMercado": 0.4604,
+   "nMercado": 1332,
+   "llModeloComMercado": 0.4657,
+   "brier": 0.1514,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1728,
-   "llModelo": 0.5557,
-   "llMercado": 0.5476,
-   "nMercado": 1728,
-   "llModeloComMercado": 0.5557,
-   "brier": 0.187,
+   "n": 1776,
+   "llModelo": 0.5552,
+   "llMercado": 0.5442,
+   "nMercado": 1776,
+   "llModeloComMercado": 0.5552,
+   "brier": 0.1868,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1008,
-   "llModelo": 0.6153,
-   "llMercado": 0.6116,
-   "nMercado": 1008,
-   "llModeloComMercado": 0.6153,
-   "brier": 0.2138,
+   "n": 1036,
+   "llModelo": 0.6114,
+   "llMercado": 0.6064,
+   "nMercado": 1036,
+   "llModeloComMercado": 0.6114,
+   "brier": 0.2121,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1728,
-   "llModelo": 0.6524,
+   "n": 1776,
+   "llModelo": 0.6517,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2289,
+   "brier": 0.2287,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1584,
-   "llModelo": 0.5637,
+   "n": 1628,
+   "llModelo": 0.5634,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1916,
+   "brier": 0.1914,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 202,
-  "acertos": 146,
-  "esperado": 141.0092
+  "n": 208,
+  "acertos": 151,
+  "esperado": 145.2303
  },
  "jogadores": {
-  "n": 541,
-  "marcaram": 61,
-  "previsto": 123.123,
-  "llModelo": 0.3832,
-  "comOdd": 294,
-  "marcaramComOdd": 41,
-  "previstoModeloComOdd": 66.5888,
-  "implicitoBrutoComOdd": 94.2765,
+  "n": 561,
+  "marcaram": 64,
+  "previsto": 127.49,
+  "llModelo": 0.3857,
+  "comOdd": 312,
+  "marcaramComOdd": 44,
+  "previstoModeloComOdd": 70.4662,
+  "implicitoBrutoComOdd": 100.2554,
   "apostasModeloAcimaDaOdd": {
    "n": 5,
    "retorno": -1
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 212,
-    "previsto": 0.1604,
-    "aconteceu": 0.0613
+    "n": 219,
+    "previsto": 0.1602,
+    "aconteceu": 0.0685
    },
    {
     "de": 0.2,
-    "n": 221,
+    "n": 233,
     "previsto": 0.24,
-    "aconteceu": 0.1267
+    "aconteceu": 0.1245
    },
    {
     "de": 0.3,
-    "n": 73,
-    "previsto": 0.3448,
-    "aconteceu": 0.2055
+    "n": 74,
+    "previsto": 0.3453,
+    "aconteceu": 0.2027
    },
    {
     "de": 0.4,
@@ -142,22 +142,42 @@
    "retornoMelhorOdd": -0.0639
   },
   "jogador": {
-   "n": 36,
+   "n": 37,
    "acertos": 8,
-   "previsto": 0.3096,
-   "comOdd": 36,
-   "lucro": -15.3469,
-   "oddMedia": 3.2624,
-   "retorno": -0.4263,
-   "retornoMelhorOdd": -0.4263
+   "previsto": 0.3117,
+   "comOdd": 37,
+   "lucro": -16.3469,
+   "oddMedia": 3.2445,
+   "retorno": -0.4418,
+   "retornoMelhorOdd": -0.4418
   }
  },
  "movimentoDoMercado": {
-  "n": 82,
-  "aFavorDoModelo": 54,
-  "medio": 0.0079
+  "n": 86,
+  "aFavorDoModelo": 56,
+  "medio": 0.0077
  },
  "dias": [
+  {
+   "dia": "2026-10-31",
+   "jogos": [
+    {
+     "id": "401879248",
+     "jogo": "Chelsea × Manchester United",
+     "comp": "eng.1",
+     "inicio": "2026-10-31T12:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882820",
+     "jogo": "Levante × Atlético Madrid",
+     "comp": "esp.1",
+     "inicio": "2026-10-31T13:00Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-10-30",
    "jogos": [
@@ -235,14 +255,86 @@
      "jogo": "Fiorentina × Atalanta",
      "comp": "ita.1",
      "inicio": "2026-10-29T19:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Nikola Krstovic marca",
+       "odd": 2.6,
+       "chance": 0.3873,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Atalanta",
+      "p": 0.4244,
+      "pMercado": 0.3378,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Fiorentina ou Atalanta)",
+       "p": 0.7478,
+       "odd": 1.29,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.791,
+       "odd": 1.12,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5888,
+       "odd": 1.44,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874976",
      "jogo": "Frosinone × Lecce",
      "comp": "ita.1",
      "inicio": "2026-10-29T17:30Z",
-     "pendente": true
+     "placar": [
+      5,
+      1
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Frosinone",
+      "p": 0.4801,
+      "pMercado": 0.5587,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Frosinone ou empate",
+       "p": 0.727,
+       "odd": 1.2,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7894,
+       "odd": 1.09,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5771,
+       "odd": 1.45,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
