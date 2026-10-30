@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-10-30T19:00:00.958Z",
- "jogos": 77,
+ "geradoEm": "2026-10-30T21:51:54.982Z",
+ "jogos": 80,
  "porFamilia": {
   "resultado": {
-   "n": 1386,
-   "llModelo": 0.4696,
-   "llMercado": 0.4623,
-   "nMercado": 1386,
-   "llModeloComMercado": 0.4696,
-   "brier": 0.1531,
+   "n": 1440,
+   "llModelo": 0.4773,
+   "llMercado": 0.4731,
+   "nMercado": 1440,
+   "llModeloComMercado": 0.4773,
+   "brier": 0.1559,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1848,
-   "llModelo": 0.5548,
-   "llMercado": 0.5453,
-   "nMercado": 1848,
-   "llModeloComMercado": 0.5548,
-   "brier": 0.1868,
+   "n": 1920,
+   "llModelo": 0.5559,
+   "llMercado": 0.5468,
+   "nMercado": 1920,
+   "llModeloComMercado": 0.5559,
+   "brier": 0.1874,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1078,
-   "llModelo": 0.6099,
-   "llMercado": 0.6054,
-   "nMercado": 1078,
-   "llModeloComMercado": 0.6099,
-   "brier": 0.2115,
+   "n": 1120,
+   "llModelo": 0.6091,
+   "llMercado": 0.6044,
+   "nMercado": 1120,
+   "llModeloComMercado": 0.6091,
+   "brier": 0.2113,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1848,
-   "llModelo": 0.6495,
+   "n": 1920,
+   "llModelo": 0.6489,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2278,
+   "brier": 0.2276,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1694,
-   "llModelo": 0.5631,
+   "n": 1760,
+   "llModelo": 0.5662,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1913,
+   "brier": 0.1927,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 214,
-  "acertos": 155,
-  "esperado": 149.3401
+  "n": 223,
+  "acertos": 163,
+  "esperado": 155.8311
  },
  "jogadores": {
-  "n": 585,
-  "marcaram": 66,
-  "previsto": 132.644,
-  "llModelo": 0.3828,
-  "comOdd": 312,
-  "marcaramComOdd": 44,
-  "previstoModeloComOdd": 70.4662,
-  "implicitoBrutoComOdd": 100.2554,
+  "n": 610,
+  "marcaram": 71,
+  "previsto": 138.7695,
+  "llModelo": 0.3884,
+  "comOdd": 333,
+  "marcaramComOdd": 49,
+  "previstoModeloComOdd": 75.8306,
+  "implicitoBrutoComOdd": 107.7369,
   "apostasModeloAcimaDaOdd": {
    "n": 5,
    "retorno": -1
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 231,
-    "previsto": 0.1612,
-    "aconteceu": 0.0649
+    "n": 241,
+    "previsto": 0.1613,
+    "aconteceu": 0.0705
    },
    {
     "de": 0.2,
-    "n": 242,
-    "previsto": 0.2395,
-    "aconteceu": 0.124
+    "n": 251,
+    "previsto": 0.2401,
+    "aconteceu": 0.1275
    },
    {
     "de": 0.3,
-    "n": 77,
-    "previsto": 0.3446,
-    "aconteceu": 0.2078
+    "n": 81,
+    "previsto": 0.3445,
+    "aconteceu": 0.2099
    },
    {
     "de": 0.4,
-    "n": 20,
-    "previsto": 0.4328,
-    "aconteceu": 0.2
+    "n": 22,
+    "previsto": 0.431,
+    "aconteceu": 0.1818
    },
    {
     "de": 0.5,
@@ -112,24 +112,24 @@
  },
  "palpites": {
   "principal": {
-   "n": 66,
-   "acertos": 42,
-   "previsto": 0.6397,
-   "comOdd": 66,
-   "lucro": -3.79,
-   "oddMedia": 1.5055,
-   "retorno": -0.0574,
-   "retornoMelhorOdd": -0.0562
+   "n": 69,
+   "acertos": 44,
+   "previsto": 0.64,
+   "comOdd": 69,
+   "lucro": -3.89,
+   "oddMedia": 1.5032,
+   "retorno": -0.0564,
+   "retornoMelhorOdd": -0.0552
   },
   "destaque": {
-   "n": 30,
-   "acertos": 23,
-   "previsto": 0.6978,
-   "comOdd": 30,
-   "lucro": 0.78,
-   "oddMedia": 1.337,
-   "retorno": 0.026,
-   "retornoMelhorOdd": 0.026
+   "n": 31,
+   "acertos": 24,
+   "previsto": 0.6974,
+   "comOdd": 31,
+   "lucro": 1.14,
+   "oddMedia": 1.3377,
+   "retorno": 0.0368,
+   "retornoMelhorOdd": 0.0368
   },
   "oddMaior": {
    "n": 36,
@@ -142,22 +142,42 @@
    "retornoMelhorOdd": -0.1159
   },
   "jogador": {
-   "n": 37,
+   "n": 40,
    "acertos": 8,
-   "previsto": 0.3117,
-   "comOdd": 37,
-   "lucro": -16.3469,
-   "oddMedia": 3.2445,
-   "retorno": -0.4418,
-   "retornoMelhorOdd": -0.4418
+   "previsto": 0.3092,
+   "comOdd": 40,
+   "lucro": -19.3469,
+   "oddMedia": 3.2687,
+   "retorno": -0.4837,
+   "retornoMelhorOdd": -0.4837
   }
  },
  "movimentoDoMercado": {
-  "n": 90,
+  "n": 93,
   "aFavorDoModelo": 56,
-  "medio": 0.0064
+  "medio": 0.0059
  },
  "dias": [
+  {
+   "dia": "2026-11-01",
+   "jogos": [
+    {
+     "id": "401875002",
+     "jogo": "Como × Venezia",
+     "comp": "ita.1",
+     "inicio": "2026-11-01T11:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882821",
+     "jogo": "Getafe × Sevilla",
+     "comp": "esp.1",
+     "inicio": "2026-11-01T13:00Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-10-31",
    "jogos": [
@@ -340,7 +360,55 @@
      "jogo": "Nice × Stade Rennais",
      "comp": "fra.1",
      "inicio": "2026-10-30T18:00Z",
-     "pendente": true
+     "placar": [
+      5,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.46,
+       "casa": null,
+       "chance": 0.6416,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Esteban Lepaul marca",
+       "odd": 2.3,
+       "chance": 0.3651,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Stade Rennais",
+      "p": 0.3812,
+      "pMercado": 0.3541,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Nice ou Stade Rennais)",
+       "p": 0.7527,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6359,
+       "odd": 1.46,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6155,
+       "odd": 1.56,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876420",
@@ -354,7 +422,55 @@
      "jogo": "Le Havre AC × Paris Saint-Germain",
      "comp": "fra.1",
      "inicio": "2026-10-30T18:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      5
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6783,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Rayan Fofana marca",
+       "odd": 5,
+       "chance": 0.1839,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Paris Saint-Germain",
+      "p": 0.7923,
+      "pMercado": 0.7547,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6885,
+       "odd": 1.42,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Paris Saint-Germain",
+       "p": 0.7923,
+       "odd": 1.3,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Le Havre AC ou Paris Saint-Germain)",
+       "p": 0.8656,
+       "odd": 1.14,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882817",
@@ -368,7 +484,63 @@
      "jogo": "SV Elversberg × Mainz",
      "comp": "ger.1",
      "inicio": "2026-10-30T19:30Z",
-     "pendente": true
+     "placar": [
+      4,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.48,
+       "casa": null,
+       "chance": 0.6194,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Mainz: mais de 3,5 escanteios",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6857,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Lukas Petkov marca",
+       "odd": 3.4,
+       "chance": 0.2838,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Mainz",
+      "p": 0.3824,
+      "pMercado": 0.487,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (SV Elversberg ou Mainz)",
+       "p": 0.7476,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7958,
+       "odd": 1.12,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5971,
+       "odd": 1.48,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
