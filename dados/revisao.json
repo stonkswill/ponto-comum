@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-10-30T21:51:54.982Z",
- "jogos": 80,
+ "geradoEm": "2026-10-31T02:59:06.341Z",
+ "jogos": 83,
  "porFamilia": {
   "resultado": {
-   "n": 1440,
-   "llModelo": 0.4773,
-   "llMercado": 0.4731,
-   "nMercado": 1440,
-   "llModeloComMercado": 0.4773,
-   "brier": 0.1559,
+   "n": 1494,
+   "llModelo": 0.4796,
+   "llMercado": 0.4762,
+   "nMercado": 1494,
+   "llModeloComMercado": 0.4796,
+   "brier": 0.157,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1920,
-   "llModelo": 0.5559,
-   "llMercado": 0.5468,
-   "nMercado": 1920,
-   "llModeloComMercado": 0.5559,
-   "brier": 0.1874,
+   "n": 1992,
+   "llModelo": 0.5561,
+   "llMercado": 0.5479,
+   "nMercado": 1992,
+   "llModeloComMercado": 0.5561,
+   "brier": 0.1875,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1120,
-   "llModelo": 0.6091,
-   "llMercado": 0.6044,
-   "nMercado": 1120,
-   "llModeloComMercado": 0.6091,
+   "n": 1162,
+   "llModelo": 0.6089,
+   "llMercado": 0.6046,
+   "nMercado": 1162,
+   "llModeloComMercado": 0.6089,
    "brier": 0.2113,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1920,
+   "n": 1992,
    "llModelo": 0.6489,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2276,
+   "brier": 0.2277,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1760,
-   "llModelo": 0.5662,
+   "n": 1826,
+   "llModelo": 0.5622,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1927,
+   "brier": 0.1911,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 223,
-  "acertos": 163,
-  "esperado": 155.8311
+  "n": 231,
+  "acertos": 169,
+  "esperado": 161.3093
  },
  "jogadores": {
-  "n": 610,
-  "marcaram": 71,
-  "previsto": 138.7695,
-  "llModelo": 0.3884,
-  "comOdd": 333,
-  "marcaramComOdd": 49,
-  "previstoModeloComOdd": 75.8306,
-  "implicitoBrutoComOdd": 107.7369,
+  "n": 635,
+  "marcaram": 73,
+  "previsto": 144.225,
+  "llModelo": 0.387,
+  "comOdd": 341,
+  "marcaramComOdd": 50,
+  "previstoModeloComOdd": 77.5837,
+  "implicitoBrutoComOdd": 110.4451,
   "apostasModeloAcimaDaOdd": {
    "n": 5,
    "retorno": -1
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 241,
-    "previsto": 0.1613,
-    "aconteceu": 0.0705
+    "n": 251,
+    "previsto": 0.1609,
+    "aconteceu": 0.0677
    },
    {
     "de": 0.2,
-    "n": 251,
-    "previsto": 0.2401,
-    "aconteceu": 0.1275
+    "n": 262,
+    "previsto": 0.2398,
+    "aconteceu": 0.1298
    },
    {
     "de": 0.3,
-    "n": 81,
-    "previsto": 0.3445,
-    "aconteceu": 0.2099
+    "n": 84,
+    "previsto": 0.3437,
+    "aconteceu": 0.2024
    },
    {
     "de": 0.4,
-    "n": 22,
-    "previsto": 0.431,
-    "aconteceu": 0.1818
+    "n": 23,
+    "previsto": 0.4299,
+    "aconteceu": 0.1739
    },
    {
     "de": 0.5,
@@ -112,55 +112,76 @@
  },
  "palpites": {
   "principal": {
-   "n": 69,
-   "acertos": 44,
-   "previsto": 0.64,
-   "comOdd": 69,
-   "lucro": -3.89,
-   "oddMedia": 1.5032,
-   "retorno": -0.0564,
-   "retornoMelhorOdd": -0.0552
+   "n": 72,
+   "acertos": 46,
+   "previsto": 0.6393,
+   "comOdd": 72,
+   "lucro": -3.62,
+   "oddMedia": 1.5053,
+   "retorno": -0.0503,
+   "retornoMelhorOdd": -0.0492
   },
   "destaque": {
-   "n": 31,
+   "n": 32,
    "acertos": 24,
    "previsto": 0.6974,
-   "comOdd": 31,
-   "lucro": 1.14,
-   "oddMedia": 1.3377,
-   "retorno": 0.0368,
-   "retornoMelhorOdd": 0.0368
+   "comOdd": 32,
+   "lucro": 0.14,
+   "oddMedia": 1.3378,
+   "retorno": 0.0044,
+   "retornoMelhorOdd": 0.0044
   },
   "oddMaior": {
-   "n": 36,
+   "n": 37,
    "acertos": 16,
-   "previsto": 0.4863,
-   "comOdd": 36,
-   "lucro": -4.19,
-   "oddMedia": 2.0078,
-   "retorno": -0.1164,
-   "retornoMelhorOdd": -0.1159
+   "previsto": 0.4865,
+   "comOdd": 37,
+   "lucro": -5.19,
+   "oddMedia": 2.0065,
+   "retorno": -0.1403,
+   "retornoMelhorOdd": -0.1398
   },
   "jogador": {
-   "n": 40,
+   "n": 41,
    "acertos": 8,
-   "previsto": 0.3092,
-   "comOdd": 40,
-   "lucro": -19.3469,
-   "oddMedia": 3.2687,
-   "retorno": -0.4837,
-   "retornoMelhorOdd": -0.4837
+   "previsto": 0.3078,
+   "comOdd": 41,
+   "lucro": -20.3469,
+   "oddMedia": 3.2865,
+   "retorno": -0.4963,
+   "retornoMelhorOdd": -0.4963
   }
  },
  "movimentoDoMercado": {
-  "n": 93,
+  "n": 95,
   "aFavorDoModelo": 56,
-  "medio": 0.0059
+  "medio": 0.0056
  },
  "dias": [
   {
    "dia": "2026-11-01",
    "jogos": [
+    {
+     "id": "401874782",
+     "jogo": "Frosinone × Torino",
+     "comp": "ita.1",
+     "inicio": "2026-11-01T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874968",
+     "jogo": "Lecce × Genoa",
+     "comp": "ita.1",
+     "inicio": "2026-11-01T17:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874983",
+     "jogo": "Lazio × Cagliari",
+     "comp": "ita.1",
+     "inicio": "2026-11-01T14:00Z",
+     "pendente": true
+    },
     {
      "id": "401875002",
      "jogo": "Como × Venezia",
@@ -169,10 +190,66 @@
      "pendente": true
     },
     {
+     "id": "401876414",
+     "jogo": "Strasbourg × AJ Auxerre",
+     "comp": "fra.1",
+     "inicio": "2026-11-01T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401876415",
+     "jogo": "Paris FC × AS Monaco",
+     "comp": "fra.1",
+     "inicio": "2026-11-01T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401876418",
+     "jogo": "Lyon × Angers",
+     "comp": "fra.1",
+     "inicio": "2026-11-01T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401879246",
+     "jogo": "Liverpool × Arsenal",
+     "comp": "eng.1",
+     "inicio": "2026-11-01T16:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882819",
+     "jogo": "Racing Santander × Real Madrid",
+     "comp": "esp.1",
+     "inicio": "2026-11-01T15:15Z",
+     "pendente": true
+    },
+    {
      "id": "401882821",
      "jogo": "Getafe × Sevilla",
      "comp": "esp.1",
      "inicio": "2026-11-01T13:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882823",
+     "jogo": "Elche × Valencia",
+     "comp": "esp.1",
+     "inicio": "2026-11-01T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884750",
+     "jogo": "1. FC Union Berlin × FC Cologne",
+     "comp": "ger.1",
+     "inicio": "2026-11-01T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884752",
+     "jogo": "Eintracht Frankfurt × Hamburg SV",
+     "comp": "ger.1",
+     "inicio": "2026-11-01T16:30Z",
      "pendente": true
     }
    ],
@@ -353,7 +430,50 @@
      "jogo": "Corinthians × Mirassol",
      "comp": "bra.1",
      "inicio": "2026-10-30T23:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Corinthians",
+       "odd": 1.87,
+       "casa": "DraftKings",
+       "chance": 0.5079,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mirassol ou empate",
+       "odd": 1.96,
+       "casa": null,
+       "chance": 0.4921,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Corinthians",
+      "p": 0.4989,
+      "pMercado": 0.5169,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Corinthians ou Mirassol)",
+       "p": 0.7307,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876416",
@@ -415,7 +535,63 @@
      "jogo": "Lille × Lens",
      "comp": "fra.1",
      "inicio": "2026-10-30T20:05Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Lille ou empate",
+       "odd": 1.4,
+       "casa": "Bet 365",
+       "chance": 0.6687,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Lens: mais de 3,5 escanteios",
+       "odd": 1.34,
+       "casa": null,
+       "chance": 0.6965,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Dilane Bakwa marca",
+       "odd": 4,
+       "chance": 0.2531,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lille",
+      "p": 0.4233,
+      "pMercado": 0.368,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Lille ou empate",
+       "p": 0.678,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6778,
+       "odd": 1.27,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5797,
+       "odd": 1.82,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401876421",
@@ -477,7 +653,48 @@
      "jogo": "Villarreal × Espanyol",
      "comp": "esp.1",
      "inicio": "2026-10-30T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Villarreal",
+       "odd": 1.392,
+       "casa": "DraftKings",
+       "chance": 0.6924,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Villarreal",
+      "p": 0.679,
+      "pMercado": 0.7059,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Villarreal",
+       "p": 0.679,
+       "odd": 1.39,
+       "ok": 0
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6234,
+       "odd": 1.74,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Villarreal ou Espanyol)",
+       "p": 0.8096,
+       "odd": 1.15,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401884746",
