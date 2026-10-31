@@ -1,40 +1,40 @@
 {
- "geradoEm": "2026-10-31T18:58:15.220Z",
- "jogos": 98,
+ "geradoEm": "2026-10-31T21:48:22.058Z",
+ "jogos": 104,
  "porFamilia": {
   "resultado": {
-   "n": 1764,
-   "llModelo": 0.4841,
-   "llMercado": 0.4812,
-   "nMercado": 1764,
-   "llModeloComMercado": 0.4841,
-   "brier": 0.1591,
+   "n": 1872,
+   "llModelo": 0.4856,
+   "llMercado": 0.4824,
+   "nMercado": 1872,
+   "llModeloComMercado": 0.4856,
+   "brier": 0.16,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 2352,
-   "llModelo": 0.5568,
-   "llMercado": 0.5488,
-   "nMercado": 2352,
-   "llModeloComMercado": 0.5568,
-   "brier": 0.1878,
+   "n": 2496,
+   "llModelo": 0.55,
+   "llMercado": 0.5426,
+   "nMercado": 2496,
+   "llModeloComMercado": 0.55,
+   "brier": 0.1851,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1372,
-   "llModelo": 0.6066,
-   "llMercado": 0.602,
-   "nMercado": 1372,
-   "llModeloComMercado": 0.6066,
-   "brier": 0.21,
+   "n": 1456,
+   "llModelo": 0.6025,
+   "llMercado": 0.5979,
+   "nMercado": 1456,
+   "llModeloComMercado": 0.6025,
+   "brier": 0.2083,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 2352,
-   "llModelo": 0.6413,
+   "n": 2496,
+   "llModelo": 0.6415,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
@@ -43,33 +43,33 @@
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 2156,
-   "llModelo": 0.5669,
+   "n": 2288,
+   "llModelo": 0.5661,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.193,
+   "brier": 0.1926,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 274,
-  "acertos": 197,
-  "esperado": 190.6633
+  "n": 291,
+  "acertos": 209,
+  "esperado": 202.5554
  },
  "jogadores": {
-  "n": 757,
-  "marcaram": 91,
-  "previsto": 171.8347,
-  "llModelo": 0.3905,
-  "comOdd": 431,
-  "marcaramComOdd": 66,
-  "previstoModeloComOdd": 97.9383,
-  "implicitoBrutoComOdd": 139.463,
+  "n": 809,
+  "marcaram": 97,
+  "previsto": 184.2718,
+  "llModelo": 0.393,
+  "comOdd": 462,
+  "marcaramComOdd": 70,
+  "previstoModeloComOdd": 105.2731,
+  "implicitoBrutoComOdd": 150.0019,
   "apostasModeloAcimaDaOdd": {
-   "n": 7,
-   "retorno": -1
+   "n": 9,
+   "retorno": -0.3889
   },
   "faixas": [
    {
@@ -80,81 +80,81 @@
    },
    {
     "de": 0.1,
-    "n": 292,
-    "previsto": 0.1608,
-    "aconteceu": 0.0685
+    "n": 309,
+    "previsto": 0.1612,
+    "aconteceu": 0.068
    },
    {
     "de": 0.2,
-    "n": 325,
-    "previsto": 0.2398,
-    "aconteceu": 0.1323
+    "n": 351,
+    "previsto": 0.2397,
+    "aconteceu": 0.1368
    },
    {
     "de": 0.3,
-    "n": 96,
-    "previsto": 0.3423,
-    "aconteceu": 0.2083
+    "n": 103,
+    "previsto": 0.3424,
+    "aconteceu": 0.1942
    },
    {
     "de": 0.4,
-    "n": 27,
-    "previsto": 0.432,
-    "aconteceu": 0.2593
+    "n": 28,
+    "previsto": 0.4321,
+    "aconteceu": 0.25
    },
    {
     "de": 0.5,
-    "n": 2,
-    "previsto": 0.541,
-    "aconteceu": 0.5
+    "n": 3,
+    "previsto": 0.536,
+    "aconteceu": 0.3333
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 87,
-   "acertos": 56,
-   "previsto": 0.6385,
-   "comOdd": 87,
-   "lucro": -4,
-   "oddMedia": 1.5054,
-   "retorno": -0.046,
-   "retornoMelhorOdd": -0.045
+   "n": 93,
+   "acertos": 59,
+   "previsto": 0.6377,
+   "comOdd": 93,
+   "lucro": -5.6,
+   "oddMedia": 1.5069,
+   "retorno": -0.0602,
+   "retornoMelhorOdd": -0.0593
   },
   "destaque": {
-   "n": 37,
-   "acertos": 27,
-   "previsto": 0.6979,
-   "comOdd": 37,
-   "lucro": -0.87,
-   "oddMedia": 1.3365,
-   "retorno": -0.0235,
-   "retornoMelhorOdd": -0.0235
+   "n": 40,
+   "acertos": 30,
+   "previsto": 0.6973,
+   "comOdd": 40,
+   "lucro": 0.17,
+   "oddMedia": 1.3373,
+   "retorno": 0.0043,
+   "retornoMelhorOdd": 0.0043
   },
   "oddMaior": {
-   "n": 45,
-   "acertos": 21,
-   "previsto": 0.4891,
-   "comOdd": 45,
-   "lucro": -2.84,
-   "oddMedia": 2.0027,
-   "retorno": -0.0631,
-   "retornoMelhorOdd": -0.0618
+   "n": 50,
+   "acertos": 24,
+   "previsto": 0.4944,
+   "comOdd": 50,
+   "lucro": -2.5,
+   "oddMedia": 1.9804,
+   "retorno": -0.05,
+   "retornoMelhorOdd": -0.0488
   },
   "jogador": {
-   "n": 51,
-   "acertos": 11,
-   "previsto": 0.3031,
-   "comOdd": 51,
-   "lucro": -22.1969,
-   "oddMedia": 3.3421,
-   "retorno": -0.4352,
-   "retornoMelhorOdd": -0.4352
+   "n": 55,
+   "acertos": 12,
+   "previsto": 0.3024,
+   "comOdd": 55,
+   "lucro": -20.6969,
+   "oddMedia": 3.3915,
+   "retorno": -0.3763,
+   "retornoMelhorOdd": -0.3763
   }
  },
  "movimentoDoMercado": {
-  "n": 120,
-  "aFavorDoModelo": 67,
+  "n": 125,
+  "aFavorDoModelo": 71,
   "medio": 0.0051
  },
  "dias": [
@@ -284,14 +284,121 @@
      "jogo": "Coritiba × Vitória",
      "comp": "bra.1",
      "inicio": "2026-10-31T19:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória ou empate",
+       "odd": 1.75,
+       "casa": null,
+       "chance": 0.5539,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.8,
+       "casa": "DraftKings",
+       "chance": 0.5339,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Coritiba",
+      "p": 0.4333,
+      "pMercado": 0.4589,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.709,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Coritiba ou empate",
+       "p": 0.7096,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874795",
      "jogo": "AC Milan × Internazionale",
      "comp": "ita.1",
      "inicio": "2026-10-31T19:45Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6909,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.73,
+       "casa": null,
+       "chance": 0.5629,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "AC Milan: menos de 4,5 escanteios",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.688,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Diego Moreira marca",
+       "odd": 5.5,
+       "chance": 0.2654,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Internazionale",
+      "p": 0.4254,
+      "pMercado": 0.4748,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Internazionale ou empate",
+       "p": 0.6806,
+       "odd": 1.25,
+       "ok": 0
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6801,
+       "odd": 1.35,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5775,
+       "odd": 1.73,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401874798",
@@ -403,14 +510,120 @@
      "jogo": "Troyes × Le Mans",
      "comp": "fra.1",
      "inicio": "2026-10-31T19:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Le Mans ou empate",
+       "odd": 1.667,
+       "casa": "Bet 365",
+       "chance": 0.5656,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.81,
+       "casa": null,
+       "chance": 0.5319,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Erwan Colas marca",
+       "odd": 4,
+       "chance": 0.2415,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Troyes",
+      "p": 0.4397,
+      "pMercado": 0.4291,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Troyes ou empate",
+       "p": 0.7036,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7222,
+       "odd": 1.28,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401878761",
      "jogo": "Tottenham Hotspur × Crystal Palace",
      "comp": "eng.1",
      "inicio": "2026-10-31T17:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.678,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.75,
+       "casa": null,
+       "chance": 0.5536,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Sávio marca",
+       "odd": 4.333333333333334,
+       "chance": 0.2317,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Tottenham Hotspur",
+      "p": 0.4654,
+      "pMercado": 0.577,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6868,
+       "odd": 1.42,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Tottenham Hotspur ou Crystal Palace)",
+       "p": 0.7473,
+       "odd": 1.22,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5652,
+       "odd": 1.75,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401878763",
@@ -909,7 +1122,64 @@
      "jogo": "Real Betis × Málaga",
      "comp": "esp.1",
      "inicio": "2026-10-31T17:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.46,
+       "casa": null,
+       "chance": 0.6368,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.81,
+       "casa": null,
+       "chance": 0.5279,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Cartões: mais de 3,5",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6841,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Real Betis",
+      "p": 0.6945,
+      "pMercado": 0.7359,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Real Betis",
+       "p": 0.6945,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6229,
+       "odd": 1.46,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Real Betis ou Málaga)",
+       "p": 0.8182,
+       "odd": 1.13,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884747",
@@ -1215,7 +1485,69 @@
      "jogo": "Bayern Munich × Borussia Dortmund",
      "comp": "ger.1",
      "inicio": "2026-10-31T17:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.52,
+       "casa": null,
+       "chance": 0.6314,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Bayern Munich: mais de 4,5 escanteios",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.6982,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Michael Olise marca",
+       "odd": 2.25,
+       "chance": 0.4327,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bayern Munich",
+      "p": 0.7486,
+      "pMercado": 0.7446,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Bayern Munich",
+       "p": 0.7486,
+       "odd": 1.3,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.7541,
+       "odd": 1.24,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6168,
+       "odd": 1.5,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Bayern Munich ou Borussia Dortmund)",
+       "p": 0.8551,
+       "odd": 1.13,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     }
    ],
    "sugestoes": []
