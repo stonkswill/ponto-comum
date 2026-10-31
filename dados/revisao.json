@@ -1,74 +1,74 @@
 {
- "geradoEm": "2026-10-31T16:50:38.027Z",
- "jogos": 91,
+ "geradoEm": "2026-10-31T18:58:15.220Z",
+ "jogos": 98,
  "porFamilia": {
   "resultado": {
-   "n": 1638,
-   "llModelo": 0.4788,
-   "llMercado": 0.4755,
-   "nMercado": 1638,
-   "llModeloComMercado": 0.4788,
-   "brier": 0.1568,
+   "n": 1764,
+   "llModelo": 0.4841,
+   "llMercado": 0.4812,
+   "nMercado": 1764,
+   "llModeloComMercado": 0.4841,
+   "brier": 0.1591,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 2184,
-   "llModelo": 0.5554,
-   "llMercado": 0.5474,
-   "nMercado": 2184,
-   "llModeloComMercado": 0.5554,
-   "brier": 0.187,
+   "n": 2352,
+   "llModelo": 0.5568,
+   "llMercado": 0.5488,
+   "nMercado": 2352,
+   "llModeloComMercado": 0.5568,
+   "brier": 0.1878,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1274,
-   "llModelo": 0.6104,
-   "llMercado": 0.606,
-   "nMercado": 1274,
-   "llModeloComMercado": 0.6104,
-   "brier": 0.2117,
+   "n": 1372,
+   "llModelo": 0.6066,
+   "llMercado": 0.602,
+   "nMercado": 1372,
+   "llModeloComMercado": 0.6066,
+   "brier": 0.21,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 2184,
-   "llModelo": 0.6481,
+   "n": 2352,
+   "llModelo": 0.6413,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2274,
+   "brier": 0.2246,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 2002,
-   "llModelo": 0.5727,
+   "n": 2156,
+   "llModelo": 0.5669,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1954,
+   "brier": 0.193,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 256,
-  "acertos": 184,
-  "esperado": 178.2832
+  "n": 274,
+  "acertos": 197,
+  "esperado": 190.6633
  },
  "jogadores": {
-  "n": 698,
-  "marcaram": 83,
-  "previsto": 158.8175,
-  "llModelo": 0.3881,
-  "comOdd": 391,
-  "marcaramComOdd": 59,
-  "previstoModeloComOdd": 89.249,
-  "implicitoBrutoComOdd": 127.2521,
+  "n": 757,
+  "marcaram": 91,
+  "previsto": 171.8347,
+  "llModelo": 0.3905,
+  "comOdd": 431,
+  "marcaramComOdd": 66,
+  "previstoModeloComOdd": 97.9383,
+  "implicitoBrutoComOdd": 139.463,
   "apostasModeloAcimaDaOdd": {
-   "n": 6,
+   "n": 7,
    "retorno": -1
   },
   "faixas": [
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 268,
-    "previsto": 0.1605,
-    "aconteceu": 0.0634
+    "n": 292,
+    "previsto": 0.1608,
+    "aconteceu": 0.0685
    },
    {
     "de": 0.2,
-    "n": 295,
+    "n": 325,
     "previsto": 0.2398,
-    "aconteceu": 0.1356
+    "aconteceu": 0.1323
    },
    {
     "de": 0.3,
-    "n": 93,
-    "previsto": 0.3428,
-    "aconteceu": 0.2043
+    "n": 96,
+    "previsto": 0.3423,
+    "aconteceu": 0.2083
    },
    {
     "de": 0.4,
-    "n": 25,
-    "previsto": 0.4309,
-    "aconteceu": 0.24
+    "n": 27,
+    "previsto": 0.432,
+    "aconteceu": 0.2593
    },
    {
     "de": 0.5,
@@ -112,50 +112,50 @@
  },
  "palpites": {
   "principal": {
-   "n": 80,
-   "acertos": 51,
-   "previsto": 0.6392,
-   "comOdd": 80,
-   "lucro": -4.38,
-   "oddMedia": 1.504,
-   "retorno": -0.0547,
-   "retornoMelhorOdd": -0.0538
+   "n": 87,
+   "acertos": 56,
+   "previsto": 0.6385,
+   "comOdd": 87,
+   "lucro": -4,
+   "oddMedia": 1.5054,
+   "retorno": -0.046,
+   "retornoMelhorOdd": -0.045
   },
   "destaque": {
-   "n": 34,
-   "acertos": 26,
-   "previsto": 0.6972,
-   "comOdd": 34,
-   "lucro": 0.82,
-   "oddMedia": 1.3379,
-   "retorno": 0.0241,
-   "retornoMelhorOdd": 0.0241
+   "n": 37,
+   "acertos": 27,
+   "previsto": 0.6979,
+   "comOdd": 37,
+   "lucro": -0.87,
+   "oddMedia": 1.3365,
+   "retorno": -0.0235,
+   "retornoMelhorOdd": -0.0235
   },
   "oddMaior": {
-   "n": 40,
-   "acertos": 19,
-   "previsto": 0.4838,
-   "comOdd": 40,
-   "lucro": -1.7,
-   "oddMedia": 2.0182,
-   "retorno": -0.0425,
-   "retornoMelhorOdd": -0.041
+   "n": 45,
+   "acertos": 21,
+   "previsto": 0.4891,
+   "comOdd": 45,
+   "lucro": -2.84,
+   "oddMedia": 2.0027,
+   "retorno": -0.0631,
+   "retornoMelhorOdd": -0.0618
   },
   "jogador": {
-   "n": 45,
-   "acertos": 10,
-   "previsto": 0.3136,
-   "comOdd": 45,
-   "lucro": -19.1969,
-   "oddMedia": 3.2177,
-   "retorno": -0.4266,
-   "retornoMelhorOdd": -0.4266
+   "n": 51,
+   "acertos": 11,
+   "previsto": 0.3031,
+   "comOdd": 51,
+   "lucro": -22.1969,
+   "oddMedia": 3.3421,
+   "retorno": -0.4352,
+   "retornoMelhorOdd": -0.4352
   }
  },
  "movimentoDoMercado": {
-  "n": 108,
-  "aFavorDoModelo": 63,
-  "medio": 0.0057
+  "n": 120,
+  "aFavorDoModelo": 67,
+  "medio": 0.0051
  },
  "dias": [
   {
@@ -354,7 +354,49 @@
      "jogo": "Udinese × AS Roma",
      "comp": "ita.1",
      "inicio": "2026-10-31T17:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      5
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.74,
+       "casa": null,
+       "chance": 0.5307,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Jurgen Ekkelenkamp marca",
+       "odd": 6.5,
+       "chance": 0.1301,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AS Roma",
+      "p": 0.533,
+      "pMercado": 0.6458,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7511,
+       "odd": 1.16,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Udinese ou AS Roma)",
+       "p": 0.7516,
+       "odd": 1.18,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401876413",
@@ -375,21 +417,189 @@
      "jogo": "Hull City × Ipswich Town",
      "comp": "eng.1",
      "inicio": "2026-10-31T15:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ipswich Town ou empate",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.688,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.76,
+       "casa": null,
+       "chance": 0.5591,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Oliver McBurnie marca",
+       "odd": 3,
+       "chance": 0.2975,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Ipswich Town",
+      "p": 0.4362,
+      "pMercado": 0.411,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Ipswich Town ou empate",
+       "p": 0.6894,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6753,
+       "odd": 1.3,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5801,
+       "odd": 1.76,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879245",
      "jogo": "Manchester City × Brighton & Hove Albion",
      "comp": "eng.1",
      "inicio": "2026-10-31T15:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.5,
+       "casa": null,
+       "chance": 0.6285,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Manchester City",
+       "odd": 1.714,
+       "casa": "DraftKings",
+       "chance": 0.5901,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Jérémy Doku marca",
+       "odd": 3.75,
+       "chance": 0.2162,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Manchester City",
+      "p": 0.6144,
+      "pMercado": 0.5659,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6236,
+       "odd": 1.5,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Manchester City",
+       "p": 0.6144,
+       "odd": 1.71,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Manchester City ou Brighton & Hove Albion)",
+       "p": 0.7932,
+       "odd": 1.22,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5842,
+       "odd": 1.54,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879247",
      "jogo": "Coventry City × Sunderland",
      "comp": "eng.1",
      "inicio": "2026-10-31T15:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Coventry City ou empate",
+       "odd": 1.533,
+       "casa": "Bet 365",
+       "chance": 0.6307,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Coventry City: menos de 4,5 escanteios",
+       "odd": 1.31,
+       "casa": null,
+       "chance": 0.7111,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Chemsdine Talbi marca",
+       "odd": 4.5,
+       "chance": 0.1942,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Coventry City",
+      "p": 0.3767,
+      "pMercado": 0.3184,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7153,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Coventry City ou Sunderland)",
+       "p": 0.722,
+       "odd": 1.3,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879248",
@@ -451,7 +661,71 @@
      "jogo": "Brentford × Nottingham Forest",
      "comp": "eng.1",
      "inicio": "2026-10-31T15:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.4,
+       "casa": null,
+       "chance": 0.6751,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Brentford",
+       "odd": 2.1,
+       "casa": "DraftKings",
+       "chance": 0.4807,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Nottingham Forest: menos de 2,5 cartões",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7069,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Jaidon Anthony marca",
+       "odd": 3.4,
+       "chance": 0.2387,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Brentford",
+      "p": 0.5012,
+      "pMercado": 0.4602,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6736,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Brentford ou empate",
+       "p": 0.7459,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5675,
+       "odd": 1.65,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879250",
@@ -465,14 +739,115 @@
      "jogo": "AFC Bournemouth × Leeds United",
      "comp": "eng.1",
      "inicio": "2026-10-31T15:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.77,
+       "casa": null,
+       "chance": 0.5423,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.875,
+       "casa": "Bet 365",
+       "chance": 0.5229,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Marcus Tavernier marca",
+       "odd": 4.5,
+       "chance": 0.2698,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AFC Bournemouth",
+      "p": 0.523,
+      "pMercado": 0.4731,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6877,
+       "odd": 1.32,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (AFC Bournemouth ou Leeds United)",
+       "p": 0.7562,
+       "odd": 1.3,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882818",
      "jogo": "Rayo Vallecano × Celta Vigo",
      "comp": "esp.1",
      "inicio": "2026-10-31T15:15Z",
-     "pendente": true
+     "placar": [
+      3,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sem empate (Rayo Vallecano ou Celta Vigo)",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.7172,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.95,
+       "casa": null,
+       "chance": 0.5037,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Cartões: mais de 3,5",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.6996,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Rayo Vallecano",
+      "p": 0.4483,
+      "pMercado": 0.3937,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Rayo Vallecano ou empate",
+       "p": 0.7156,
+       "odd": 1.37,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7334,
+       "odd": 1.37,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882820",
