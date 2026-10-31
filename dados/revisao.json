@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-10-31T13:02:47.196Z",
- "jogos": 83,
+ "geradoEm": "2026-10-31T14:49:44.481Z",
+ "jogos": 84,
  "porFamilia": {
   "resultado": {
-   "n": 1494,
-   "llModelo": 0.4796,
-   "llMercado": 0.4762,
-   "nMercado": 1494,
-   "llModeloComMercado": 0.4796,
-   "brier": 0.157,
+   "n": 1512,
+   "llModelo": 0.4788,
+   "llMercado": 0.4761,
+   "nMercado": 1512,
+   "llModeloComMercado": 0.4788,
+   "brier": 0.1567,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 1992,
-   "llModelo": 0.5561,
-   "llMercado": 0.5479,
-   "nMercado": 1992,
-   "llModeloComMercado": 0.5561,
-   "brier": 0.1875,
+   "n": 2016,
+   "llModelo": 0.5556,
+   "llMercado": 0.5472,
+   "nMercado": 2016,
+   "llModeloComMercado": 0.5556,
+   "brier": 0.1874,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1162,
-   "llModelo": 0.6089,
-   "llMercado": 0.6046,
-   "nMercado": 1162,
-   "llModeloComMercado": 0.6089,
-   "brier": 0.2113,
+   "n": 1176,
+   "llModelo": 0.6085,
+   "llMercado": 0.6042,
+   "nMercado": 1176,
+   "llModeloComMercado": 0.6085,
+   "brier": 0.2112,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 1992,
-   "llModelo": 0.6489,
+   "n": 2016,
+   "llModelo": 0.651,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2277,
+   "brier": 0.2286,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 1826,
-   "llModelo": 0.5622,
+   "n": 1848,
+   "llModelo": 0.5624,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1911,
+   "brier": 0.1913,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 231,
-  "acertos": 169,
-  "esperado": 161.3093
+  "n": 234,
+  "acertos": 170,
+  "esperado": 163.3432
  },
  "jogadores": {
-  "n": 635,
-  "marcaram": 73,
-  "previsto": 144.225,
-  "llModelo": 0.387,
-  "comOdd": 341,
-  "marcaramComOdd": 50,
-  "previstoModeloComOdd": 77.5837,
-  "implicitoBrutoComOdd": 110.4451,
+  "n": 644,
+  "marcaram": 75,
+  "previsto": 146.3943,
+  "llModelo": 0.3888,
+  "comOdd": 350,
+  "marcaramComOdd": 52,
+  "previstoModeloComOdd": 79.753,
+  "implicitoBrutoComOdd": 113.3549,
   "apostasModeloAcimaDaOdd": {
    "n": 5,
    "retorno": -1
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 251,
-    "previsto": 0.1609,
-    "aconteceu": 0.0677
+    "n": 253,
+    "previsto": 0.161,
+    "aconteceu": 0.0672
    },
    {
     "de": 0.2,
-    "n": 262,
-    "previsto": 0.2398,
-    "aconteceu": 0.1298
+    "n": 268,
+    "previsto": 0.2399,
+    "aconteceu": 0.1343
    },
    {
     "de": 0.3,
-    "n": 84,
-    "previsto": 0.3437,
-    "aconteceu": 0.2024
+    "n": 85,
+    "previsto": 0.3439,
+    "aconteceu": 0.2
    },
    {
     "de": 0.4,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 72,
+   "n": 73,
    "acertos": 46,
-   "previsto": 0.6393,
-   "comOdd": 72,
-   "lucro": -3.62,
-   "oddMedia": 1.5053,
-   "retorno": -0.0503,
-   "retornoMelhorOdd": -0.0492
+   "previsto": 0.6391,
+   "comOdd": 73,
+   "lucro": -4.62,
+   "oddMedia": 1.506,
+   "retorno": -0.0633,
+   "retornoMelhorOdd": -0.0622
   },
   "destaque": {
    "n": 32,
@@ -142,20 +142,20 @@
    "retornoMelhorOdd": -0.1398
   },
   "jogador": {
-   "n": 41,
+   "n": 42,
    "acertos": 8,
-   "previsto": 0.3078,
-   "comOdd": 41,
-   "lucro": -20.3469,
-   "oddMedia": 3.2865,
-   "retorno": -0.4963,
-   "retornoMelhorOdd": -0.4963
+   "previsto": 0.309,
+   "comOdd": 42,
+   "lucro": -21.3469,
+   "oddMedia": 3.263,
+   "retorno": -0.5083,
+   "retornoMelhorOdd": -0.5083
   }
  },
  "movimentoDoMercado": {
-  "n": 95,
+  "n": 97,
   "aFavorDoModelo": 56,
-  "medio": 0.0056
+  "medio": 0.0051
  },
  "dias": [
   {
@@ -347,7 +347,55 @@
      "jogo": "Chelsea × Manchester United",
      "comp": "eng.1",
      "inicio": "2026-10-31T12:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.56,
+       "casa": null,
+       "chance": 0.6261,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "João Pedro marca",
+       "odd": 2.3,
+       "chance": 0.3575,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Chelsea",
+      "p": 0.5182,
+      "pMercado": 0.4597,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Chelsea ou empate",
+       "p": 0.7415,
+       "odd": 1.3,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.649,
+       "odd": 1.61,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6434,
+       "odd": 1.56,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879249",
