@@ -22,16 +22,16 @@
      }
     ]
    },
-   "details": "FRO +110",
+   "details": "FRO -105",
    "overUnder": 3.5,
    "spread": -0.5,
-   "overOdds": 100,
-   "underOdds": -125,
+   "overOdds": -110,
+   "underOdds": -120,
    "awayTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 195,
-    "spreadOdds": -145,
+    "moneyLine": 230,
+    "spreadOdds": -125,
     "team": {
      "id": "239",
      "uid": "s:600~t:239",
@@ -198,8 +198,8 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": 110,
-    "spreadOdds": 105,
+    "moneyLine": -105,
+    "spreadOdds": -110,
     "team": {
      "id": "4057",
      "uid": "s:600~t:4057",
@@ -554,7 +554,7 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "+110",
+      "odds": "-105",
       "link": {
        "language": "en-US",
        "rel": [
@@ -586,7 +586,7 @@
     },
     "away": {
      "close": {
-      "odds": "+195",
+      "odds": "+230",
       "link": {
        "language": "en-US",
        "rel": [
@@ -655,7 +655,7 @@
     "home": {
      "close": {
       "line": "-0.5",
-      "odds": "+105",
+      "odds": "-110",
       "link": {
        "language": "en-US",
        "rel": [
@@ -689,7 +689,7 @@
     "away": {
      "close": {
       "line": "+0.5",
-      "odds": "-145",
+      "odds": "-125",
       "link": {
        "language": "en-US",
        "rel": [
@@ -727,7 +727,7 @@
     "over": {
      "close": {
       "line": "o3.5",
-      "odds": "+100",
+      "odds": "-110",
       "link": {
        "language": "en-US",
        "rel": [
@@ -761,7 +761,7 @@
     "under": {
      "close": {
       "line": "u3.5",
-      "odds": "-125",
+      "odds": "-120",
       "link": {
        "language": "en-US",
        "rel": [
@@ -988,8 +988,8 @@
      ]
     },
     "odds": {
-     "summary": "11/5",
-     "value": 3.2,
+     "summary": "12/5",
+     "value": 3.4,
      "handicap": 0
     }
    },
@@ -1156,14 +1156,14 @@
      ]
     },
     "odds": {
-     "summary": "11/10",
-     "value": 2.1,
+     "summary": "19/20",
+     "value": 1.95,
      "handicap": 0
     }
    },
    "drawOdds": {
-    "summary": "11/4",
-    "value": 3.75,
+    "summary": "3/1",
+    "value": 4,
     "handicap": 0
    },
    "bettingOdds": {
@@ -1176,23 +1176,23 @@
     "teamOdds": {
      "preMatchFullTimeResultDraw": {
       "oddId": "150746764",
-      "value": "11/4",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-150746764~11/4&bet=1"
+      "value": "3/1",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-150746764~3/1&bet=1"
      },
      "preMatchFullTimeResultAway": {
       "oddId": "150746766",
-      "value": "11/5",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-150746766~11/5&bet=1"
+      "value": "12/5",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-150746766~12/5&bet=1"
      },
      "preMatchDoubleChanceDrawOrAway": {
       "oddId": "152771690",
-      "value": "7/10",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-152771690~7/10&bet=1"
+      "value": "4/5",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-152771690~4/5&bet=1"
      },
      "preMatchDoubleChanceHomeOrAway": {
       "oddId": "152771692",
-      "value": "1/4",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-152771692~1/4&bet=1"
+      "value": "2/9",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-152771692~2/9&bet=1"
      },
      "preMatchOverUnderHandicap": {
       "oddId": "150746799",
@@ -1201,23 +1201,23 @@
      },
      "preMatchFullTimeResultHome": {
       "oddId": "150746762",
-      "value": "11/10",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-150746762~11/10&bet=1"
+      "value": "19/20",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-150746762~19/20&bet=1"
      },
      "preMatchGoalLineUnder": {
       "oddId": "150746800",
-      "value": "33/40",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426278-150746800~33/40&bet=1"
+      "value": "7/8",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426278-150746800~7/8&bet=1"
      },
      "preMatchGoalLineOver": {
       "oddId": "150746799",
-      "value": "41/40",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426278-150746799~41/40&bet=1"
+      "value": "39/40",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426278-150746799~39/40&bet=1"
      },
      "preMatchDoubleChanceHomeOrDraw": {
       "oddId": "152771693",
-      "value": "4/11",
-      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-152771693~4/11&bet=1"
+      "value": "3/10",
+      "betSlipUrl": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_728984&bs=202426277-152771693~3/10&bet=1"
      }
     },
     "playerOdds": {
@@ -2144,7 +2144,7 @@
       "bets",
       "bet-365"
      ],
-     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=202426277-150746762~11/10",
+     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=202426277-150746762~19/20",
      "text": "Home Bet",
      "shortText": "Home Bet",
      "isExternal": true,
@@ -2158,7 +2158,7 @@
       "bets",
       "bet-365"
      ],
-     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=202426277-150746766~11/5",
+     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=202426277-150746766~12/5",
      "text": "Away Bet",
      "shortText": "Away Bet",
      "isExternal": true,
@@ -2172,7 +2172,7 @@
       "bets",
       "bet-365"
      ],
-     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=202426277-150746764~11/4",
+     "href": "https://www.bet365.com/dl/sportsbookredirect?affiliate=365_307577&bet=1&bs=202426277-150746764~3/1",
      "text": "Draw Bet",
      "shortText": "Draw Bet",
      "isExternal": true,
@@ -2202,16 +2202,16 @@
      }
     ]
    },
-   "details": "FRO +110",
+   "details": "FRO -105",
    "overUnder": 3.5,
    "spread": -0.5,
-   "overOdds": 100,
-   "underOdds": -125,
+   "overOdds": -110,
+   "underOdds": -120,
    "awayTeamOdds": {
     "favorite": false,
     "underdog": true,
-    "moneyLine": 195,
-    "spreadOdds": -145,
+    "moneyLine": 230,
+    "spreadOdds": -125,
     "team": {
      "id": "239",
      "uid": "s:600~t:239",
@@ -2378,8 +2378,8 @@
    "homeTeamOdds": {
     "favorite": true,
     "underdog": false,
-    "moneyLine": 110,
-    "spreadOdds": 105,
+    "moneyLine": -105,
+    "spreadOdds": -110,
     "team": {
      "id": "4057",
      "uid": "s:600~t:4057",
@@ -2734,7 +2734,7 @@
     "shortDisplayName": "ML",
     "home": {
      "close": {
-      "odds": "+110",
+      "odds": "-105",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2766,7 +2766,7 @@
     },
     "away": {
      "close": {
-      "odds": "+195",
+      "odds": "+230",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2835,7 +2835,7 @@
     "home": {
      "close": {
       "line": "-0.5",
-      "odds": "+105",
+      "odds": "-110",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2869,7 +2869,7 @@
     "away": {
      "close": {
       "line": "+0.5",
-      "odds": "-145",
+      "odds": "-125",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2907,7 +2907,7 @@
     "over": {
      "close": {
       "line": "o3.5",
-      "odds": "+100",
+      "odds": "-110",
       "link": {
        "language": "en-US",
        "rel": [
@@ -2941,7 +2941,7 @@
     "under": {
      "close": {
       "line": "u3.5",
-      "odds": "-125",
+      "odds": "-120",
       "link": {
        "language": "en-US",
        "rel": [
