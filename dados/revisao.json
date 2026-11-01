@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-01T14:51:28.321Z",
- "jogos": 107,
+ "geradoEm": "2026-11-01T16:51:06.257Z",
+ "jogos": 112,
  "porFamilia": {
   "resultado": {
-   "n": 1926,
-   "llModelo": 0.4804,
-   "llMercado": 0.4763,
-   "nMercado": 1926,
-   "llModeloComMercado": 0.4804,
-   "brier": 0.158,
+   "n": 2016,
+   "llModelo": 0.4796,
+   "llMercado": 0.477,
+   "nMercado": 2016,
+   "llModeloComMercado": 0.4796,
+   "brier": 0.1578,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 2568,
-   "llModelo": 0.5474,
-   "llMercado": 0.5403,
-   "nMercado": 2568,
-   "llModeloComMercado": 0.5474,
-   "brier": 0.1841,
+   "n": 2688,
+   "llModelo": 0.5455,
+   "llMercado": 0.5399,
+   "nMercado": 2688,
+   "llModeloComMercado": 0.5455,
+   "brier": 0.1834,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1498,
-   "llModelo": 0.6004,
-   "llMercado": 0.5959,
-   "nMercado": 1498,
-   "llModeloComMercado": 0.6004,
-   "brier": 0.2073,
+   "n": 1568,
+   "llModelo": 0.5975,
+   "llMercado": 0.5933,
+   "nMercado": 1568,
+   "llModeloComMercado": 0.5975,
+   "brier": 0.2061,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 2568,
-   "llModelo": 0.6412,
+   "n": 2688,
+   "llModelo": 0.6422,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2244,
+   "brier": 0.2249,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 2354,
-   "llModelo": 0.5609,
+   "n": 2464,
+   "llModelo": 0.5594,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1903,
+   "brier": 0.1898,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 300,
-  "acertos": 216,
-  "esperado": 208.8184
+  "n": 314,
+  "acertos": 229,
+  "esperado": 218.1778
  },
  "jogadores": {
-  "n": 834,
-  "marcaram": 101,
-  "previsto": 190.198,
-  "llModelo": 0.3925,
-  "comOdd": 469,
-  "marcaramComOdd": 71,
-  "previstoModeloComOdd": 106.5464,
-  "implicitoBrutoComOdd": 151.9578,
+  "n": 875,
+  "marcaram": 109,
+  "previsto": 199.3206,
+  "llModelo": 0.3961,
+  "comOdd": 497,
+  "marcaramComOdd": 76,
+  "previstoModeloComOdd": 112.7207,
+  "implicitoBrutoComOdd": 160.9651,
   "apostasModeloAcimaDaOdd": {
    "n": 9,
    "retorno": -0.3889
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 321,
-    "previsto": 0.161,
-    "aconteceu": 0.0685
+    "n": 334,
+    "previsto": 0.1611,
+    "aconteceu": 0.0689
    },
    {
     "de": 0.2,
-    "n": 354,
-    "previsto": 0.2398,
-    "aconteceu": 0.1356
+    "n": 380,
+    "previsto": 0.24,
+    "aconteceu": 0.1421
    },
    {
     "de": 0.3,
-    "n": 108,
-    "previsto": 0.3423,
-    "aconteceu": 0.1944
+    "n": 110,
+    "previsto": 0.3424,
+    "aconteceu": 0.2
    },
    {
     "de": 0.4,
@@ -112,50 +112,50 @@
  },
  "palpites": {
   "principal": {
-   "n": 95,
-   "acertos": 60,
-   "previsto": 0.6374,
-   "comOdd": 95,
-   "lucro": -6.21,
-   "oddMedia": 1.5078,
-   "retorno": -0.0654,
-   "retornoMelhorOdd": -0.0645
+   "n": 99,
+   "acertos": 62,
+   "previsto": 0.6369,
+   "comOdd": 99,
+   "lucro": -7.4,
+   "oddMedia": 1.5105,
+   "retorno": -0.0747,
+   "retornoMelhorOdd": -0.0739
   },
   "destaque": {
-   "n": 41,
-   "acertos": 31,
-   "previsto": 0.6969,
-   "comOdd": 41,
-   "lucro": 0.53,
-   "oddMedia": 1.3378,
-   "retorno": 0.0129,
-   "retornoMelhorOdd": 0.0129
+   "n": 44,
+   "acertos": 32,
+   "previsto": 0.6965,
+   "comOdd": 44,
+   "lucro": -1.12,
+   "oddMedia": 1.3384,
+   "retorno": -0.0255,
+   "retornoMelhorOdd": -0.0255
   },
   "oddMaior": {
-   "n": 52,
-   "acertos": 25,
-   "previsto": 0.4943,
-   "comOdd": 52,
-   "lucro": -2.55,
-   "oddMedia": 1.9812,
-   "retorno": -0.049,
-   "retornoMelhorOdd": -0.0479
+   "n": 54,
+   "acertos": 27,
+   "previsto": 0.4927,
+   "comOdd": 54,
+   "lucro": -0.32,
+   "oddMedia": 1.9861,
+   "retorno": -0.0059,
+   "retornoMelhorOdd": -0.0048
   },
   "jogador": {
-   "n": 56,
-   "acertos": 13,
-   "previsto": 0.3031,
-   "comOdd": 56,
+   "n": 59,
+   "acertos": 14,
+   "previsto": 0.3007,
+   "comOdd": 59,
    "lucro": -19.1969,
-   "oddMedia": 3.3756,
-   "retorno": -0.3428,
-   "retornoMelhorOdd": -0.3428
+   "oddMedia": 3.3791,
+   "retorno": -0.3254,
+   "retornoMelhorOdd": -0.3254
   }
  },
  "movimentoDoMercado": {
-  "n": 129,
-  "aFavorDoModelo": 75,
-  "medio": 0.0054
+  "n": 140,
+  "aFavorDoModelo": 83,
+  "medio": 0.0058
  },
  "dias": [
   {
@@ -214,7 +214,33 @@
      "jogo": "Frosinone × Torino",
      "comp": "ita.1",
      "inicio": "2026-11-01T14:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Frosinone",
+      "p": 0.4047,
+      "pMercado": 0.4833,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Frosinone ou empate",
+       "p": 0.6557,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7983,
+       "odd": 1.08,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874949",
@@ -235,7 +261,71 @@
      "jogo": "Lazio × Cagliari",
      "comp": "ita.1",
      "inicio": "2026-11-01T14:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 2.025,
+       "casa": "Bet 365",
+       "chance": 0.5059,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.07,
+       "casa": null,
+       "chance": 0.4629,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Cartões: mais de 3,5",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.687,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Daniel Maldini marca",
+       "odd": 4.333333333333334,
+       "chance": 0.2082,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lazio",
+      "p": 0.584,
+      "pMercado": 0.6633,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7288,
+       "odd": 1.24,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Lazio ou Cagliari)",
+       "p": 0.7584,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Lazio",
+       "p": 0.584,
+       "odd": 1.47,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401875002",
@@ -304,7 +394,69 @@
      "jogo": "Strasbourg × AJ Auxerre",
      "comp": "fra.1",
      "inicio": "2026-11-01T14:00Z",
-     "pendente": true
+     "placar": [
+      5,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.5,
+       "casa": null,
+       "chance": 0.6408,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 7,5",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.7008,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Cameron Archer marca",
+       "odd": 3,
+       "chance": 0.2874,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Strasbourg",
+      "p": 0.573,
+      "pMercado": 0.4947,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6516,
+       "odd": 1.5,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Strasbourg ou AJ Auxerre)",
+       "p": 0.774,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Strasbourg",
+       "p": 0.573,
+       "odd": 1.93,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5601,
+       "odd": 1.57,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876415",
@@ -346,7 +498,50 @@
      "jogo": "Getafe × Sevilla",
      "comp": "esp.1",
      "inicio": "2026-11-01T13:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sem empate (Getafe ou Sevilla)",
+       "odd": 1.39,
+       "casa": null,
+       "chance": 0.6903,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.16,
+       "casa": null,
+       "chance": 0.4385,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Getafe",
+      "p": 0.3909,
+      "pMercado": 0.2796,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Getafe ou Sevilla)",
+       "p": 0.699,
+       "odd": 1.39,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6405,
+       "odd": 1.47,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882823",
@@ -367,7 +562,63 @@
      "jogo": "1. FC Union Berlin × FC Cologne",
      "comp": "ger.1",
      "inicio": "2026-11-01T14:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6684,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "1. FC Union Berlin: mais de 4,5 escanteios",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6836,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Thijs Dallinga marca",
+       "odd": 3,
+       "chance": 0.2718,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória 1. FC Union Berlin",
+      "p": 0.4282,
+      "pMercado": 0.3553,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "1. FC Union Berlin ou empate",
+       "p": 0.6807,
+       "odd": 1.5,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6691,
+       "odd": 1.42,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5862,
+       "odd": 1.6,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884752",
