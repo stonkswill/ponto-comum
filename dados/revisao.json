@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-10-31T21:48:22.058Z",
- "jogos": 104,
+ "geradoEm": "2026-11-01T03:00:04.775Z",
+ "jogos": 106,
  "porFamilia": {
   "resultado": {
-   "n": 1872,
-   "llModelo": 0.4856,
-   "llMercado": 0.4824,
-   "nMercado": 1872,
-   "llModeloComMercado": 0.4856,
-   "brier": 0.16,
+   "n": 1908,
+   "llModelo": 0.4826,
+   "llMercado": 0.4786,
+   "nMercado": 1908,
+   "llModeloComMercado": 0.4826,
+   "brier": 0.1589,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 2496,
-   "llModelo": 0.55,
-   "llMercado": 0.5426,
-   "nMercado": 2496,
-   "llModeloComMercado": 0.55,
-   "brier": 0.1851,
+   "n": 2544,
+   "llModelo": 0.5465,
+   "llMercado": 0.5386,
+   "nMercado": 2544,
+   "llModeloComMercado": 0.5465,
+   "brier": 0.1837,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1456,
-   "llModelo": 0.6025,
-   "llMercado": 0.5979,
-   "nMercado": 1456,
-   "llModeloComMercado": 0.6025,
-   "brier": 0.2083,
+   "n": 1484,
+   "llModelo": 0.5994,
+   "llMercado": 0.5945,
+   "nMercado": 1484,
+   "llModeloComMercado": 0.5994,
+   "brier": 0.207,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 2496,
-   "llModelo": 0.6415,
+   "n": 2544,
+   "llModelo": 0.6441,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2246,
+   "brier": 0.2257,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 2288,
-   "llModelo": 0.5661,
+   "n": 2332,
+   "llModelo": 0.5623,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1926,
+   "brier": 0.1909,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 291,
-  "acertos": 209,
-  "esperado": 202.5554
+  "n": 296,
+  "acertos": 214,
+  "esperado": 206.0979
  },
  "jogadores": {
-  "n": 809,
-  "marcaram": 97,
-  "previsto": 184.2718,
-  "llModelo": 0.393,
-  "comOdd": 462,
-  "marcaramComOdd": 70,
-  "previstoModeloComOdd": 105.2731,
-  "implicitoBrutoComOdd": 150.0019,
+  "n": 826,
+  "marcaram": 101,
+  "previsto": 188.1949,
+  "llModelo": 0.3934,
+  "comOdd": 469,
+  "marcaramComOdd": 71,
+  "previstoModeloComOdd": 106.5464,
+  "implicitoBrutoComOdd": 151.9578,
   "apostasModeloAcimaDaOdd": {
    "n": 9,
    "retorno": -0.3889
@@ -74,52 +74,52 @@
   "faixas": [
    {
     "de": 0,
-    "n": 15,
-    "previsto": 0.0895,
+    "n": 17,
+    "previsto": 0.09,
     "aconteceu": 0
    },
    {
     "de": 0.1,
-    "n": 309,
-    "previsto": 0.1612,
-    "aconteceu": 0.068
+    "n": 317,
+    "previsto": 0.1611,
+    "aconteceu": 0.0694
    },
    {
     "de": 0.2,
-    "n": 351,
+    "n": 353,
     "previsto": 0.2397,
-    "aconteceu": 0.1368
+    "aconteceu": 0.136
    },
    {
     "de": 0.3,
-    "n": 103,
-    "previsto": 0.3424,
-    "aconteceu": 0.1942
+    "n": 106,
+    "previsto": 0.3423,
+    "aconteceu": 0.1981
    },
    {
     "de": 0.4,
-    "n": 28,
-    "previsto": 0.4321,
-    "aconteceu": 0.25
+    "n": 29,
+    "previsto": 0.4328,
+    "aconteceu": 0.2759
    },
    {
     "de": 0.5,
-    "n": 3,
-    "previsto": 0.536,
-    "aconteceu": 0.3333
+    "n": 4,
+    "previsto": 0.534,
+    "aconteceu": 0.5
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 93,
-   "acertos": 59,
-   "previsto": 0.6377,
-   "comOdd": 93,
-   "lucro": -5.6,
-   "oddMedia": 1.5069,
-   "retorno": -0.0602,
-   "retornoMelhorOdd": -0.0593
+   "n": 94,
+   "acertos": 60,
+   "previsto": 0.6382,
+   "comOdd": 94,
+   "lucro": -5.21,
+   "oddMedia": 1.5056,
+   "retorno": -0.0554,
+   "retornoMelhorOdd": -0.0545
   },
   "destaque": {
    "n": 40,
@@ -132,32 +132,45 @@
    "retornoMelhorOdd": 0.0043
   },
   "oddMaior": {
-   "n": 50,
-   "acertos": 24,
-   "previsto": 0.4944,
-   "comOdd": 50,
-   "lucro": -2.5,
-   "oddMedia": 1.9804,
-   "retorno": -0.05,
-   "retornoMelhorOdd": -0.0488
+   "n": 52,
+   "acertos": 25,
+   "previsto": 0.4943,
+   "comOdd": 52,
+   "lucro": -2.55,
+   "oddMedia": 1.9812,
+   "retorno": -0.049,
+   "retornoMelhorOdd": -0.0479
   },
   "jogador": {
-   "n": 55,
-   "acertos": 12,
-   "previsto": 0.3024,
-   "comOdd": 55,
-   "lucro": -20.6969,
-   "oddMedia": 3.3915,
-   "retorno": -0.3763,
-   "retornoMelhorOdd": -0.3763
+   "n": 56,
+   "acertos": 13,
+   "previsto": 0.3031,
+   "comOdd": 56,
+   "lucro": -19.1969,
+   "oddMedia": 3.3756,
+   "retorno": -0.3428,
+   "retornoMelhorOdd": -0.3428
   }
  },
  "movimentoDoMercado": {
-  "n": 125,
-  "aFavorDoModelo": 71,
+  "n": 127,
+  "aFavorDoModelo": 73,
   "medio": 0.0051
  },
  "dias": [
+  {
+   "dia": "2026-11-02",
+   "jogos": [
+    {
+     "id": "401874963",
+     "jogo": "Sassuolo × Fiorentina",
+     "comp": "ita.1",
+     "inicio": "2026-11-02T17:30Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-11-01",
    "jogos": [
@@ -945,7 +958,63 @@
      "jogo": "Aston Villa × Fulham",
      "comp": "eng.1",
      "inicio": "2026-10-31T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.39,
+       "casa": null,
+       "chance": 0.6848,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Aston Villa",
+       "odd": 2.05,
+       "casa": "DraftKings",
+       "chance": 0.4846,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Nicolas Jackson marca",
+       "odd": 2.5,
+       "chance": 0.3431,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Aston Villa",
+      "p": 0.497,
+      "pMercado": 0.4721,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6878,
+       "odd": 1.39,
+       "ok": 1
+      },
+      {
+       "rotulo": "Aston Villa ou empate",
+       "p": 0.7454,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5564,
+       "odd": 1.67,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879251",
@@ -1115,7 +1184,42 @@
      "jogo": "Barcelona × Alavés",
      "comp": "esp.1",
      "inicio": "2026-10-31T20:00Z",
-     "pendente": true
+     "placar": [
+      6,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.95,
+       "casa": null,
+       "chance": 0.4994,
+       "ok": 1
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Barcelona",
+      "p": 0.8208,
+      "pMercado": 0.8904,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.7321,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Barcelona",
+       "p": 0.8208,
+       "odd": 1.11,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882825",
