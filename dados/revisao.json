@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-11-01T13:05:15.694Z",
- "jogos": 106,
+ "geradoEm": "2026-11-01T14:51:28.321Z",
+ "jogos": 107,
  "porFamilia": {
   "resultado": {
-   "n": 1908,
-   "llModelo": 0.4826,
-   "llMercado": 0.4786,
-   "nMercado": 1908,
-   "llModeloComMercado": 0.4826,
-   "brier": 0.1589,
+   "n": 1926,
+   "llModelo": 0.4804,
+   "llMercado": 0.4763,
+   "nMercado": 1926,
+   "llModeloComMercado": 0.4804,
+   "brier": 0.158,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 2544,
-   "llModelo": 0.5465,
-   "llMercado": 0.5386,
-   "nMercado": 2544,
-   "llModeloComMercado": 0.5465,
-   "brier": 0.1837,
+   "n": 2568,
+   "llModelo": 0.5474,
+   "llMercado": 0.5403,
+   "nMercado": 2568,
+   "llModeloComMercado": 0.5474,
+   "brier": 0.1841,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1484,
-   "llModelo": 0.5994,
-   "llMercado": 0.5945,
-   "nMercado": 1484,
-   "llModeloComMercado": 0.5994,
-   "brier": 0.207,
+   "n": 1498,
+   "llModelo": 0.6004,
+   "llMercado": 0.5959,
+   "nMercado": 1498,
+   "llModeloComMercado": 0.6004,
+   "brier": 0.2073,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 2544,
-   "llModelo": 0.6441,
+   "n": 2568,
+   "llModelo": 0.6412,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2257,
+   "brier": 0.2244,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 2332,
-   "llModelo": 0.5623,
+   "n": 2354,
+   "llModelo": 0.5609,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1909,
+   "brier": 0.1903,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 296,
-  "acertos": 214,
-  "esperado": 206.0979
+  "n": 300,
+  "acertos": 216,
+  "esperado": 208.8184
  },
  "jogadores": {
-  "n": 826,
+  "n": 834,
   "marcaram": 101,
-  "previsto": 188.1949,
-  "llModelo": 0.3934,
+  "previsto": 190.198,
+  "llModelo": 0.3925,
   "comOdd": 469,
   "marcaramComOdd": 71,
   "previstoModeloComOdd": 106.5464,
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 317,
-    "previsto": 0.1611,
-    "aconteceu": 0.0694
+    "n": 321,
+    "previsto": 0.161,
+    "aconteceu": 0.0685
    },
    {
     "de": 0.2,
-    "n": 353,
-    "previsto": 0.2397,
-    "aconteceu": 0.136
+    "n": 354,
+    "previsto": 0.2398,
+    "aconteceu": 0.1356
    },
    {
     "de": 0.3,
-    "n": 106,
+    "n": 108,
     "previsto": 0.3423,
-    "aconteceu": 0.1981
+    "aconteceu": 0.1944
    },
    {
     "de": 0.4,
-    "n": 29,
-    "previsto": 0.4328,
-    "aconteceu": 0.2759
+    "n": 30,
+    "previsto": 0.4324,
+    "aconteceu": 0.2667
    },
    {
     "de": 0.5,
@@ -112,24 +112,24 @@
  },
  "palpites": {
   "principal": {
-   "n": 94,
+   "n": 95,
    "acertos": 60,
-   "previsto": 0.6382,
-   "comOdd": 94,
-   "lucro": -5.21,
-   "oddMedia": 1.5056,
-   "retorno": -0.0554,
-   "retornoMelhorOdd": -0.0545
+   "previsto": 0.6374,
+   "comOdd": 95,
+   "lucro": -6.21,
+   "oddMedia": 1.5078,
+   "retorno": -0.0654,
+   "retornoMelhorOdd": -0.0645
   },
   "destaque": {
-   "n": 40,
-   "acertos": 30,
-   "previsto": 0.6973,
-   "comOdd": 40,
-   "lucro": 0.17,
-   "oddMedia": 1.3373,
-   "retorno": 0.0043,
-   "retornoMelhorOdd": 0.0043
+   "n": 41,
+   "acertos": 31,
+   "previsto": 0.6969,
+   "comOdd": 41,
+   "lucro": 0.53,
+   "oddMedia": 1.3378,
+   "retorno": 0.0129,
+   "retornoMelhorOdd": 0.0129
   },
   "oddMaior": {
    "n": 52,
@@ -153,9 +153,9 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 127,
-  "aFavorDoModelo": 73,
-  "medio": 0.0051
+  "n": 129,
+  "aFavorDoModelo": 75,
+  "medio": 0.0054
  },
  "dias": [
   {
@@ -242,7 +242,62 @@
      "jogo": "Como × Venezia",
      "comp": "ita.1",
      "inicio": "2026-11-01T11:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.71,
+       "casa": null,
+       "chance": 0.5549,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Venezia: mais de 1,5 cartões",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6826,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Como",
+      "p": 0.6957,
+      "pMercado": 0.7601,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Como",
+       "p": 0.6957,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6479,
+       "odd": 1.34,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Como ou Venezia)",
+       "p": 0.8221,
+       "odd": 1.11,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5548,
+       "odd": 1.71,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401876414",
