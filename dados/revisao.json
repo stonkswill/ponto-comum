@@ -1,161 +1,161 @@
 {
- "geradoEm": "2026-11-01T16:51:06.257Z",
- "jogos": 112,
+ "geradoEm": "2026-11-01T18:58:24.238Z",
+ "jogos": 118,
  "porFamilia": {
   "resultado": {
-   "n": 2016,
-   "llModelo": 0.4796,
-   "llMercado": 0.477,
-   "nMercado": 2016,
-   "llModeloComMercado": 0.4796,
-   "brier": 0.1578,
+   "n": 2124,
+   "llModelo": 0.475,
+   "llMercado": 0.4706,
+   "nMercado": 2124,
+   "llModeloComMercado": 0.475,
+   "brier": 0.156,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 2688,
-   "llModelo": 0.5455,
-   "llMercado": 0.5399,
-   "nMercado": 2688,
-   "llModeloComMercado": 0.5455,
-   "brier": 0.1834,
+   "n": 2832,
+   "llModelo": 0.541,
+   "llMercado": 0.5349,
+   "nMercado": 2832,
+   "llModeloComMercado": 0.541,
+   "brier": 0.1817,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1568,
-   "llModelo": 0.5975,
-   "llMercado": 0.5933,
-   "nMercado": 1568,
-   "llModeloComMercado": 0.5975,
-   "brier": 0.2061,
+   "n": 1652,
+   "llModelo": 0.5993,
+   "llMercado": 0.5952,
+   "nMercado": 1652,
+   "llModeloComMercado": 0.5993,
+   "brier": 0.2068,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 2688,
-   "llModelo": 0.6422,
+   "n": 2832,
+   "llModelo": 0.6405,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2249,
+   "brier": 0.2242,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 2464,
-   "llModelo": 0.5594,
+   "n": 2596,
+   "llModelo": 0.566,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1898,
+   "brier": 0.1922,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 314,
-  "acertos": 229,
-  "esperado": 218.1778
+  "n": 330,
+  "acertos": 243,
+  "esperado": 229.2729
  },
  "jogadores": {
-  "n": 875,
-  "marcaram": 109,
-  "previsto": 199.3206,
-  "llModelo": 0.3961,
-  "comOdd": 497,
-  "marcaramComOdd": 76,
-  "previstoModeloComOdd": 112.7207,
-  "implicitoBrutoComOdd": 160.9651,
+  "n": 929,
+  "marcaram": 121,
+  "previsto": 211.8545,
+  "llModelo": 0.4008,
+  "comOdd": 538,
+  "marcaramComOdd": 86,
+  "previstoModeloComOdd": 121.8209,
+  "implicitoBrutoComOdd": 173.76,
   "apostasModeloAcimaDaOdd": {
-   "n": 9,
-   "retorno": -0.3889
+   "n": 10,
+   "retorno": -0.45
   },
   "faixas": [
    {
     "de": 0,
-    "n": 17,
-    "previsto": 0.09,
+    "n": 18,
+    "previsto": 0.0902,
     "aconteceu": 0
    },
    {
     "de": 0.1,
-    "n": 334,
-    "previsto": 0.1611,
-    "aconteceu": 0.0689
+    "n": 360,
+    "previsto": 0.1615,
+    "aconteceu": 0.0722
    },
    {
     "de": 0.2,
-    "n": 380,
-    "previsto": 0.24,
-    "aconteceu": 0.1421
+    "n": 394,
+    "previsto": 0.2401,
+    "aconteceu": 0.1472
    },
    {
     "de": 0.3,
-    "n": 110,
-    "previsto": 0.3424,
-    "aconteceu": 0.2
+    "n": 121,
+    "previsto": 0.3418,
+    "aconteceu": 0.2066
    },
    {
     "de": 0.4,
-    "n": 30,
-    "previsto": 0.4324,
-    "aconteceu": 0.2667
+    "n": 31,
+    "previsto": 0.4319,
+    "aconteceu": 0.2903
    },
    {
     "de": 0.5,
-    "n": 4,
-    "previsto": 0.534,
-    "aconteceu": 0.5
+    "n": 5,
+    "previsto": 0.5452,
+    "aconteceu": 0.6
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 99,
-   "acertos": 62,
-   "previsto": 0.6369,
-   "comOdd": 99,
-   "lucro": -7.4,
-   "oddMedia": 1.5105,
-   "retorno": -0.0747,
-   "retornoMelhorOdd": -0.0739
+   "n": 105,
+   "acertos": 67,
+   "previsto": 0.6393,
+   "comOdd": 105,
+   "lucro": -6.25,
+   "oddMedia": 1.5054,
+   "retorno": -0.0595,
+   "retornoMelhorOdd": -0.0586
   },
   "destaque": {
-   "n": 44,
-   "acertos": 32,
-   "previsto": 0.6965,
-   "comOdd": 44,
-   "lucro": -1.12,
-   "oddMedia": 1.3384,
-   "retorno": -0.0255,
-   "retornoMelhorOdd": -0.0255
+   "n": 48,
+   "acertos": 34,
+   "previsto": 0.6961,
+   "comOdd": 48,
+   "lucro": -2.45,
+   "oddMedia": 1.339,
+   "retorno": -0.051,
+   "retornoMelhorOdd": -0.051
   },
   "oddMaior": {
-   "n": 54,
-   "acertos": 27,
-   "previsto": 0.4927,
-   "comOdd": 54,
-   "lucro": -0.32,
-   "oddMedia": 1.9861,
-   "retorno": -0.0059,
-   "retornoMelhorOdd": -0.0048
+   "n": 55,
+   "acertos": 28,
+   "previsto": 0.4909,
+   "comOdd": 55,
+   "lucro": 1.18,
+   "oddMedia": 1.9955,
+   "retorno": 0.0215,
+   "retornoMelhorOdd": 0.0225
   },
   "jogador": {
-   "n": 59,
-   "acertos": 14,
-   "previsto": 0.3007,
-   "comOdd": 59,
-   "lucro": -19.1969,
-   "oddMedia": 3.3791,
-   "retorno": -0.3254,
-   "retornoMelhorOdd": -0.3254
+   "n": 64,
+   "acertos": 17,
+   "previsto": 0.3016,
+   "comOdd": 64,
+   "lucro": -15.7469,
+   "oddMedia": 3.3534,
+   "retorno": -0.246,
+   "retornoMelhorOdd": -0.246
   }
  },
  "movimentoDoMercado": {
-  "n": 140,
-  "aFavorDoModelo": 83,
-  "medio": 0.0058
+  "n": 146,
+  "aFavorDoModelo": 87,
+  "medio": 0.0057
  },
  "dias": [
   {
@@ -254,7 +254,49 @@
      "jogo": "Lecce × Genoa",
      "comp": "ita.1",
      "inicio": "2026-11-01T17:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sem empate (Lecce ou Genoa)",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.694,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Junior Messias marca",
+       "odd": 4,
+       "chance": 0.2056,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Genoa",
+      "p": 0.3818,
+      "pMercado": 0.3902,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Lecce ou Genoa)",
+       "p": 0.7064,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6651,
+       "odd": 1.39,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874983",
@@ -463,7 +505,63 @@
      "jogo": "Paris FC × AS Monaco",
      "comp": "fra.1",
      "inicio": "2026-11-01T16:15Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.38,
+       "casa": null,
+       "chance": 0.6835,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "AS Monaco: mais de 3,5 escanteios",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6837,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ansu Fati marca",
+       "odd": 3.4,
+       "chance": 0.3145,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AS Monaco",
+      "p": 0.4035,
+      "pMercado": 0.3483,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.682,
+       "odd": 1.38,
+       "ok": 0
+      },
+      {
+       "rotulo": "AS Monaco ou empate",
+       "p": 0.6604,
+       "odd": 1.53,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5782,
+       "odd": 1.64,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401876417",
@@ -477,21 +575,170 @@
      "jogo": "Lyon × Angers",
      "comp": "fra.1",
      "inicio": "2026-11-01T16:15Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Lyon",
+       "odd": 1.408,
+       "casa": "DraftKings",
+       "chance": 0.7105,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6902,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ernest Nuamah marca",
+       "odd": 2.4,
+       "chance": 0.3877,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lyon",
+      "p": 0.7239,
+      "pMercado": 0.6972,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Lyon",
+       "p": 0.7239,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.622,
+       "odd": 1.48,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Lyon ou Angers)",
+       "p": 0.8264,
+       "odd": 1.18,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401879246",
      "jogo": "Liverpool × Arsenal",
      "comp": "eng.1",
      "inicio": "2026-11-01T16:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.39,
+       "casa": null,
+       "chance": 0.7039,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Arsenal",
+       "odd": 2.5,
+       "casa": "DraftKings",
+       "chance": 0.3967,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Bukayo Saka marca",
+       "odd": 3.4,
+       "chance": 0.2354,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Arsenal",
+      "p": 0.4086,
+      "pMercado": 0.3849,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7243,
+       "odd": 1.39,
+       "ok": 1
+      },
+      {
+       "rotulo": "Arsenal ou empate",
+       "p": 0.6755,
+       "odd": 1.4,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882819",
      "jogo": "Racing Santander × Real Madrid",
      "comp": "esp.1",
      "inicio": "2026-11-01T15:15Z",
-     "pendente": true
+     "placar": [
+      0,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.56,
+       "casa": null,
+       "chance": 0.6244,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Real Madrid: mais de 5,5 escanteios",
+       "odd": 1.31,
+       "casa": null,
+       "chance": 0.7089,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Real Madrid",
+      "p": 0.6911,
+      "pMercado": 0.8207,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.7526,
+       "odd": 1.22,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Racing Santander ou Real Madrid)",
+       "p": 0.835,
+       "odd": 1.06,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882821",
@@ -625,7 +872,69 @@
      "jogo": "Eintracht Frankfurt × Hamburg SV",
      "comp": "ger.1",
      "inicio": "2026-11-01T16:30Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.44,
+       "casa": null,
+       "chance": 0.6529,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Eintracht Frankfurt: mais de 4,5 escanteios",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.686,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Younes Ebnoutalib marca",
+       "odd": 2.05,
+       "chance": 0.4171,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Eintracht Frankfurt",
+      "p": 0.5864,
+      "pMercado": 0.6385,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6481,
+       "odd": 1.44,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6187,
+       "odd": 1.58,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Eintracht Frankfurt ou Hamburg SV)",
+       "p": 0.7901,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Eintracht Frankfurt",
+       "p": 0.5864,
+       "odd": 1.53,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
