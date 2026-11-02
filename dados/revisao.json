@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-02T19:11:34.411Z",
- "jogos": 122,
+ "geradoEm": "2026-11-02T21:54:54.411Z",
+ "jogos": 125,
  "porFamilia": {
   "resultado": {
-   "n": 2196,
-   "llModelo": 0.4727,
-   "llMercado": 0.4691,
-   "nMercado": 2196,
-   "llModeloComMercado": 0.4727,
-   "brier": 0.1552,
+   "n": 2250,
+   "llModelo": 0.4868,
+   "llMercado": 0.4808,
+   "nMercado": 2250,
+   "llModeloComMercado": 0.4868,
+   "brier": 0.1595,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 2928,
-   "llModelo": 0.5373,
-   "llMercado": 0.5323,
-   "nMercado": 2928,
-   "llModeloComMercado": 0.5373,
-   "brier": 0.1801,
+   "n": 3000,
+   "llModelo": 0.5418,
+   "llMercado": 0.5356,
+   "nMercado": 3000,
+   "llModeloComMercado": 0.5418,
+   "brier": 0.1818,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1708,
-   "llModelo": 0.601,
-   "llMercado": 0.5974,
-   "nMercado": 1708,
-   "llModeloComMercado": 0.601,
-   "brier": 0.2076,
+   "n": 1750,
+   "llModelo": 0.5999,
+   "llMercado": 0.5958,
+   "nMercado": 1750,
+   "llModeloComMercado": 0.5999,
+   "brier": 0.2072,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 2928,
-   "llModelo": 0.6398,
+   "n": 3000,
+   "llModelo": 0.6383,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2239,
+   "brier": 0.2233,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 2684,
-   "llModelo": 0.5672,
+   "n": 2750,
+   "llModelo": 0.5652,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1927,
+   "brier": 0.1919,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 339,
-  "acertos": 249,
-  "esperado": 235.6006
+  "n": 347,
+  "acertos": 254,
+  "esperado": 241.2327
  },
  "jogadores": {
-  "n": 962,
-  "marcaram": 126,
-  "previsto": 218.3128,
-  "llModelo": 0.4014,
-  "comOdd": 550,
-  "marcaramComOdd": 90,
-  "previstoModeloComOdd": 124.106,
-  "implicitoBrutoComOdd": 177.3511,
+  "n": 986,
+  "marcaram": 131,
+  "previsto": 223.9913,
+  "llModelo": 0.4049,
+  "comOdd": 573,
+  "marcaramComOdd": 95,
+  "previstoModeloComOdd": 129.583,
+  "implicitoBrutoComOdd": 184.9032,
   "apostasModeloAcimaDaOdd": {
    "n": 10,
    "retorno": -0.45
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 377,
+    "n": 384,
     "previsto": 0.1616,
-    "aconteceu": 0.0743
+    "aconteceu": 0.0781
    },
    {
     "de": 0.2,
-    "n": 406,
-    "previsto": 0.2396,
-    "aconteceu": 0.1478
+    "n": 420,
+    "previsto": 0.2395,
+    "aconteceu": 0.15
    },
    {
     "de": 0.3,
-    "n": 124,
-    "previsto": 0.3411,
-    "aconteceu": 0.2097
+    "n": 126,
+    "previsto": 0.3416,
+    "aconteceu": 0.2063
    },
    {
     "de": 0.4,
-    "n": 31,
-    "previsto": 0.4319,
-    "aconteceu": 0.2903
+    "n": 32,
+    "previsto": 0.434,
+    "aconteceu": 0.2813
    },
    {
     "de": 0.5,
@@ -112,50 +112,50 @@
  },
  "palpites": {
   "principal": {
-   "n": 109,
-   "acertos": 69,
-   "previsto": 0.6386,
-   "comOdd": 109,
-   "lucro": -7.03,
-   "oddMedia": 1.5077,
-   "retorno": -0.0645,
-   "retornoMelhorOdd": -0.0635
+   "n": 112,
+   "acertos": 71,
+   "previsto": 0.6401,
+   "comOdd": 112,
+   "lucro": -7.27,
+   "oddMedia": 1.5046,
+   "retorno": -0.0649,
+   "retornoMelhorOdd": -0.0639
   },
   "destaque": {
-   "n": 49,
-   "acertos": 34,
-   "previsto": 0.6964,
-   "comOdd": 49,
-   "lucro": -3.45,
-   "oddMedia": 1.3384,
-   "retorno": -0.0704,
-   "retornoMelhorOdd": -0.0704
+   "n": 50,
+   "acertos": 35,
+   "previsto": 0.6962,
+   "comOdd": 50,
+   "lucro": -3.09,
+   "oddMedia": 1.3388,
+   "retorno": -0.0618,
+   "retornoMelhorOdd": -0.0618
   },
   "oddMaior": {
-   "n": 58,
+   "n": 59,
    "acertos": 31,
-   "previsto": 0.491,
-   "comOdd": 58,
-   "lucro": 4.2,
-   "oddMedia": 1.996,
-   "retorno": 0.0724,
-   "retornoMelhorOdd": 0.0734
+   "previsto": 0.4898,
+   "comOdd": 59,
+   "lucro": 3.2,
+   "oddMedia": 2.002,
+   "retorno": 0.0542,
+   "retornoMelhorOdd": 0.0553
   },
   "jogador": {
-   "n": 65,
-   "acertos": 18,
-   "previsto": 0.3019,
-   "comOdd": 65,
-   "lucro": -14.2469,
-   "oddMedia": 3.3402,
-   "retorno": -0.2192,
-   "retornoMelhorOdd": -0.2192
+   "n": 68,
+   "acertos": 19,
+   "previsto": 0.304,
+   "comOdd": 68,
+   "lucro": -14.3719,
+   "oddMedia": 3.3092,
+   "retorno": -0.2114,
+   "retornoMelhorOdd": -0.2114
   }
  },
  "movimentoDoMercado": {
-  "n": 147,
-  "aFavorDoModelo": 87,
-  "medio": 0.0055
+  "n": 150,
+  "aFavorDoModelo": 88,
+  "medio": 0.0054
  },
  "dias": [
   {
@@ -256,21 +256,175 @@
      "jogo": "Sassuolo × Fiorentina",
      "comp": "ita.1",
      "inicio": "2026-11-02T17:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Fiorentina ou empate",
+       "odd": 1.4,
+       "casa": "Bet 365",
+       "chance": 0.6617,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 2.35,
+       "casa": "DraftKings",
+       "chance": 0.4184,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Cartões: mais de 3,5",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6856,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Franco Mastantuono marca",
+       "odd": 2.875,
+       "chance": 0.2811,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Fiorentina",
+      "p": 0.3988,
+      "pMercado": 0.4152,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.66,
+       "odd": 1.51,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Sassuolo ou Fiorentina)",
+       "p": 0.7479,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5963,
+       "odd": 1.53,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874971",
      "jogo": "Atalanta × Parma",
      "comp": "ita.1",
      "inicio": "2026-11-02T19:45Z",
-     "pendente": true
+     "placar": [
+      0,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Atalanta",
+       "odd": 1.42,
+       "casa": "Bet 365",
+       "chance": 0.7049,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Nikola Krstovic marca",
+       "odd": 1.8333333333333335,
+       "chance": 0.4976,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Atalanta",
+      "p": 0.718,
+      "pMercado": 0.6918,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Atalanta",
+       "p": 0.718,
+       "odd": 1.41,
+       "ok": 0
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6395,
+       "odd": 1.69,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Atalanta ou Parma)",
+       "p": 0.8218,
+       "odd": 1.17,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876419",
      "jogo": "Lorient × Brest",
      "comp": "fra.1",
      "inicio": "2026-11-02T19:45Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sem empate (Lorient ou Brest)",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.7188,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Mamadou Koné marca",
+       "odd": 3.2,
+       "chance": 0.2689,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lorient",
+      "p": 0.4683,
+      "pMercado": 0.3848,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7202,
+       "odd": 1.21,
+       "ok": 1
+      },
+      {
+       "rotulo": "Lorient ou empate",
+       "p": 0.7284,
+       "odd": 1.36,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401878762",
