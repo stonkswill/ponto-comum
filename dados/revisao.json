@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-02T21:54:54.411Z",
- "jogos": 125,
+ "geradoEm": "2026-11-03T03:03:42.219Z",
+ "jogos": 128,
  "porFamilia": {
   "resultado": {
-   "n": 2250,
-   "llModelo": 0.4868,
-   "llMercado": 0.4808,
-   "nMercado": 2250,
-   "llModeloComMercado": 0.4868,
-   "brier": 0.1595,
+   "n": 2304,
+   "llModelo": 0.4856,
+   "llMercado": 0.4786,
+   "nMercado": 2304,
+   "llModeloComMercado": 0.4856,
+   "brier": 0.1591,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 3000,
-   "llModelo": 0.5418,
-   "llMercado": 0.5356,
-   "nMercado": 3000,
-   "llModeloComMercado": 0.5418,
-   "brier": 0.1818,
+   "n": 3072,
+   "llModelo": 0.5398,
+   "llMercado": 0.5333,
+   "nMercado": 3072,
+   "llModeloComMercado": 0.5398,
+   "brier": 0.1809,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1750,
-   "llModelo": 0.5999,
-   "llMercado": 0.5958,
-   "nMercado": 1750,
-   "llModeloComMercado": 0.5999,
-   "brier": 0.2072,
+   "n": 1792,
+   "llModelo": 0.6002,
+   "llMercado": 0.5966,
+   "nMercado": 1792,
+   "llModeloComMercado": 0.6002,
+   "brier": 0.2074,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 3000,
-   "llModelo": 0.6383,
+   "n": 3072,
+   "llModelo": 0.6356,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2233,
+   "brier": 0.2221,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 2750,
-   "llModelo": 0.5652,
+   "n": 2816,
+   "llModelo": 0.5656,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1919,
+   "brier": 0.1921,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 347,
-  "acertos": 254,
-  "esperado": 241.2327
+  "n": 354,
+  "acertos": 260,
+  "esperado": 246.1938
  },
  "jogadores": {
-  "n": 986,
-  "marcaram": 131,
-  "previsto": 223.9913,
-  "llModelo": 0.4049,
-  "comOdd": 573,
-  "marcaramComOdd": 95,
-  "previstoModeloComOdd": 129.583,
-  "implicitoBrutoComOdd": 184.9032,
+  "n": 1010,
+  "marcaram": 135,
+  "previsto": 229.5178,
+  "llModelo": 0.4052,
+  "comOdd": 579,
+  "marcaramComOdd": 96,
+  "previstoModeloComOdd": 130.8305,
+  "implicitoBrutoComOdd": 186.7097,
   "apostasModeloAcimaDaOdd": {
    "n": 10,
    "retorno": -0.45
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 384,
-    "previsto": 0.1616,
-    "aconteceu": 0.0781
+    "n": 391,
+    "previsto": 0.1615,
+    "aconteceu": 0.0767
    },
    {
     "de": 0.2,
-    "n": 420,
-    "previsto": 0.2395,
-    "aconteceu": 0.15
+    "n": 432,
+    "previsto": 0.2394,
+    "aconteceu": 0.1481
    },
    {
     "de": 0.3,
-    "n": 126,
-    "previsto": 0.3416,
-    "aconteceu": 0.2063
+    "n": 131,
+    "previsto": 0.3408,
+    "aconteceu": 0.2214
    },
    {
     "de": 0.4,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 112,
-   "acertos": 71,
-   "previsto": 0.6401,
-   "comOdd": 112,
-   "lucro": -7.27,
-   "oddMedia": 1.5046,
-   "retorno": -0.0649,
-   "retornoMelhorOdd": -0.0639
+   "n": 115,
+   "acertos": 74,
+   "previsto": 0.6399,
+   "comOdd": 115,
+   "lucro": -5.6,
+   "oddMedia": 1.5059,
+   "retorno": -0.0487,
+   "retornoMelhorOdd": -0.0477
   },
   "destaque": {
    "n": 50,
@@ -132,32 +132,59 @@
    "retornoMelhorOdd": -0.0618
   },
   "oddMaior": {
-   "n": 59,
-   "acertos": 31,
-   "previsto": 0.4898,
-   "comOdd": 59,
-   "lucro": 3.2,
-   "oddMedia": 2.002,
-   "retorno": 0.0542,
-   "retornoMelhorOdd": 0.0553
+   "n": 60,
+   "acertos": 32,
+   "previsto": 0.4897,
+   "comOdd": 60,
+   "lucro": 4.26,
+   "oddMedia": 2.003,
+   "retorno": 0.071,
+   "retornoMelhorOdd": 0.072
   },
   "jogador": {
-   "n": 68,
+   "n": 69,
    "acertos": 19,
    "previsto": 0.304,
-   "comOdd": 68,
-   "lucro": -14.3719,
-   "oddMedia": 3.3092,
-   "retorno": -0.2114,
-   "retornoMelhorOdd": -0.2114
+   "comOdd": 69,
+   "lucro": -15.3719,
+   "oddMedia": 3.3011,
+   "retorno": -0.2228,
+   "retornoMelhorOdd": -0.2228
   }
  },
  "movimentoDoMercado": {
-  "n": 150,
-  "aFavorDoModelo": 88,
-  "medio": 0.0054
+  "n": 155,
+  "aFavorDoModelo": 90,
+  "medio": 0.0051
  },
  "dias": [
+  {
+   "dia": "2026-11-04",
+   "jogos": [
+    {
+     "id": "401915382",
+     "jogo": "Fenerbahce × Liverpool",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-04T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915383",
+     "jogo": "AEK Athens × Real Madrid",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-04T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915551",
+     "jogo": "Stade Rennais × Olympiacos",
+     "comp": "uefa.europa",
+     "inicio": "2026-11-04T15:30Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-11-03",
    "jogos": [
@@ -249,7 +276,42 @@
      "jogo": "Red Bull Bragantino × Santos",
      "comp": "bra.1",
      "inicio": "2026-11-02T23:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Red Bull Bragantino",
+       "odd": 1.952,
+       "casa": "DraftKings",
+       "chance": 0.5053,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Red Bull Bragantino",
+      "p": 0.517,
+      "pMercado": 0.4937,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Red Bull Bragantino ou Santos)",
+       "p": 0.7575,
+       "odd": 1.23,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7842,
+       "odd": 1.12,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874963",
@@ -431,14 +493,105 @@
      "jogo": "Newcastle United × Everton",
      "comp": "eng.1",
      "inicio": "2026-11-02T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.6773,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "William Osula marca",
+       "odd": 2.75,
+       "chance": 0.3094,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Newcastle United",
+      "p": 0.5334,
+      "pMercado": 0.45,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6649,
+       "odd": 1.37,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Newcastle United ou Everton)",
+       "p": 0.7628,
+       "odd": 1.3,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5645,
+       "odd": 1.68,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882824",
      "jogo": "Deportivo × Osasuna",
      "comp": "esp.1",
      "inicio": "2026-11-02T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sem empate (Deportivo ou Osasuna)",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.7117,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.06,
+       "casa": null,
+       "chance": 0.4817,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Deportivo",
+      "p": 0.3683,
+      "pMercado": 0.46,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7077,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Deportivo ou Osasuna)",
+       "p": 0.7195,
+       "odd": 1.35,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
