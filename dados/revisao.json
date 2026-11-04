@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-11-03T21:58:41.591Z",
- "jogos": 137,
+ "geradoEm": "2026-11-04T03:02:49.530Z",
+ "jogos": 139,
  "porFamilia": {
   "resultado": {
-   "n": 2466,
-   "llModelo": 0.4828,
-   "llMercado": 0.4756,
-   "nMercado": 2466,
-   "llModeloComMercado": 0.4828,
-   "brier": 0.1581,
+   "n": 2502,
+   "llModelo": 0.4803,
+   "llMercado": 0.473,
+   "nMercado": 2502,
+   "llModeloComMercado": 0.4803,
+   "brier": 0.1571,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 3288,
-   "llModelo": 0.5433,
-   "llMercado": 0.5386,
-   "nMercado": 3288,
-   "llModeloComMercado": 0.5433,
-   "brier": 0.1826,
+   "n": 3336,
+   "llModelo": 0.5415,
+   "llMercado": 0.5369,
+   "nMercado": 3336,
+   "llModeloComMercado": 0.5415,
+   "brier": 0.1819,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1918,
-   "llModelo": 0.6004,
-   "llMercado": 0.5976,
-   "nMercado": 1918,
-   "llModeloComMercado": 0.6004,
-   "brier": 0.2074,
+   "n": 1946,
+   "llModelo": 0.5997,
+   "llMercado": 0.597,
+   "nMercado": 1946,
+   "llModeloComMercado": 0.5997,
+   "brier": 0.2071,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 3288,
-   "llModelo": 0.6317,
+   "n": 3336,
+   "llModelo": 0.6294,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2205,
+   "brier": 0.2195,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 3014,
-   "llModelo": 0.5666,
+   "n": 3058,
+   "llModelo": 0.5652,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1926,
+   "brier": 0.192,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 383,
-  "acertos": 279,
-  "esperado": 266.4656
+  "n": 388,
+  "acertos": 284,
+  "esperado": 269.97
  },
  "jogadores": {
-  "n": 1079,
-  "marcaram": 144,
-  "previsto": 246.2085,
-  "llModelo": 0.4051,
+  "n": 1095,
+  "marcaram": 145,
+  "previsto": 249.4955,
+  "llModelo": 0.4037,
   "comOdd": 642,
   "marcaramComOdd": 105,
   "previstoModeloComOdd": 146.0706,
@@ -80,15 +80,15 @@
    },
    {
     "de": 0.1,
-    "n": 414,
-    "previsto": 0.1618,
-    "aconteceu": 0.0773
+    "n": 418,
+    "previsto": 0.1615,
+    "aconteceu": 0.0766
    },
    {
     "de": 0.2,
-    "n": 458,
-    "previsto": 0.2401,
-    "aconteceu": 0.1463
+    "n": 470,
+    "previsto": 0.2398,
+    "aconteceu": 0.1447
    },
    {
     "de": 0.3,
@@ -112,34 +112,34 @@
  },
  "palpites": {
   "principal": {
-   "n": 123,
-   "acertos": 79,
-   "previsto": 0.6423,
-   "comOdd": 123,
-   "lucro": -6.69,
-   "oddMedia": 1.4993,
-   "retorno": -0.0544,
-   "retornoMelhorOdd": -0.0534
+   "n": 125,
+   "acertos": 81,
+   "previsto": 0.6433,
+   "comOdd": 125,
+   "lucro": -5.93,
+   "oddMedia": 1.4974,
+   "retorno": -0.0474,
+   "retornoMelhorOdd": -0.0465
   },
   "destaque": {
-   "n": 52,
-   "acertos": 36,
-   "previsto": 0.6962,
-   "comOdd": 52,
-   "lucro": -3.77,
-   "oddMedia": 1.3387,
-   "retorno": -0.0725,
-   "retornoMelhorOdd": -0.0725
+   "n": 53,
+   "acertos": 37,
+   "previsto": 0.696,
+   "comOdd": 53,
+   "lucro": -3.42,
+   "oddMedia": 1.3389,
+   "retorno": -0.0645,
+   "retornoMelhorOdd": -0.0645
   },
   "oddMaior": {
-   "n": 64,
+   "n": 65,
    "acertos": 35,
-   "previsto": 0.4886,
-   "comOdd": 64,
-   "lucro": 6.36,
-   "oddMedia": 2.0044,
-   "retorno": 0.0994,
-   "retornoMelhorOdd": 0.1006
+   "previsto": 0.4871,
+   "comOdd": 65,
+   "lucro": 5.36,
+   "oddMedia": 2.0109,
+   "retorno": 0.0825,
+   "retornoMelhorOdd": 0.0837
   },
   "jogador": {
    "n": 77,
@@ -153,11 +153,136 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 171,
+  "n": 173,
   "aFavorDoModelo": 104,
-  "medio": 0.0056
+  "medio": 0.0054
  },
  "dias": [
+  {
+   "dia": "2026-11-05",
+   "jogos": [
+    {
+     "id": "401915526",
+     "jogo": "Crystal Palace × TSG Hoffenheim",
+     "comp": "uefa.europa",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915527",
+     "jogo": "Lillestrom × Viktoria Plzen",
+     "comp": "uefa.europa",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915528",
+     "jogo": "Sparta Prague × AFC Bournemouth",
+     "comp": "uefa.europa",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915534",
+     "jogo": "AC Milan × Ferencvaros",
+     "comp": "uefa.europa",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915535",
+     "jogo": "NEC Nijmegen × Omonia Nicosia",
+     "comp": "uefa.europa",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915536",
+     "jogo": "Levski Sofia × Jagiellonia Bialystok",
+     "comp": "uefa.europa",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915537",
+     "jogo": "Real Sociedad × Lyon",
+     "comp": "uefa.europa",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915538",
+     "jogo": "Anderlecht × RB Salzburg",
+     "comp": "uefa.europa",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915741",
+     "jogo": "Mjällby AIF × Borac Banja Luka",
+     "comp": "uefa.europa.conf",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915742",
+     "jogo": "Lincoln Red Imps × Hajduk Split",
+     "comp": "uefa.europa.conf",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915825",
+     "jogo": "Trabzonspor × SC Freiburg",
+     "comp": "uefa.europa.conf",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915826",
+     "jogo": "KuPS Kuopio × KAA Gent",
+     "comp": "uefa.europa.conf",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915827",
+     "jogo": "Red Star Belgrade × Inter D'Escaldes",
+     "comp": "uefa.europa.conf",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915828",
+     "jogo": "FC Thun × Heart of Midlothian",
+     "comp": "uefa.europa.conf",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915829",
+     "jogo": "FC Midtjylland × Ajax Amsterdam",
+     "comp": "uefa.europa.conf",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915830",
+     "jogo": "Atalanta × Kairat Almaty",
+     "comp": "uefa.europa.conf",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915831",
+     "jogo": "AGF × Braga",
+     "comp": "uefa.europa.conf",
+     "inicio": "2026-11-05T17:45Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-11-04",
    "jogos": [
@@ -270,14 +395,106 @@
      "jogo": "Internacional × Coritiba",
      "comp": "bra.1",
      "inicio": "2026-11-04T00:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.7086,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Coritiba ou empate",
+       "odd": 2.43,
+       "casa": null,
+       "chance": 0.3906,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Internacional",
+      "p": 0.6085,
+      "pMercado": 0.6103,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7245,
+       "odd": 1.37,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Internacional ou Coritiba)",
+       "p": 0.7697,
+       "odd": 1.23,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Internacional",
+       "p": 0.6085,
+       "odd": 1.59,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841304",
      "jogo": "Chapecoense × Mirassol",
      "comp": "bra.1",
      "inicio": "2026-11-03T22:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.39,
+       "casa": null,
+       "chance": 0.7005,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Mirassol: menos de 2,5 cartões",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6876,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Mirassol",
+      "p": 0.417,
+      "pMercado": 0.4803,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mirassol ou empate",
+       "p": 0.6821,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7196,
+       "odd": 1.39,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915307",
