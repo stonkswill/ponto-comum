@@ -1,62 +1,62 @@
 {
- "geradoEm": "2026-11-04T17:09:49.387Z",
- "jogos": 139,
+ "geradoEm": "2026-11-04T19:14:45.582Z",
+ "jogos": 140,
  "porFamilia": {
   "resultado": {
-   "n": 2502,
-   "llModelo": 0.4803,
-   "llMercado": 0.473,
-   "nMercado": 2502,
-   "llModeloComMercado": 0.4803,
-   "brier": 0.1571,
+   "n": 2520,
+   "llModelo": 0.4799,
+   "llMercado": 0.4726,
+   "nMercado": 2520,
+   "llModeloComMercado": 0.4799,
+   "brier": 0.1569,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 3336,
-   "llModelo": 0.5415,
-   "llMercado": 0.5369,
-   "nMercado": 3336,
-   "llModeloComMercado": 0.5415,
-   "brier": 0.1819,
+   "n": 3360,
+   "llModelo": 0.5437,
+   "llMercado": 0.5398,
+   "nMercado": 3360,
+   "llModeloComMercado": 0.5437,
+   "brier": 0.1827,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 1946,
-   "llModelo": 0.5997,
-   "llMercado": 0.597,
-   "nMercado": 1946,
-   "llModeloComMercado": 0.5997,
-   "brier": 0.2071,
+   "n": 1960,
+   "llModelo": 0.6024,
+   "llMercado": 0.6003,
+   "nMercado": 1960,
+   "llModeloComMercado": 0.6024,
+   "brier": 0.2082,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 3336,
-   "llModelo": 0.6294,
+   "n": 3360,
+   "llModelo": 0.6321,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2195,
+   "brier": 0.2207,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 3058,
-   "llModelo": 0.5652,
+   "n": 3080,
+   "llModelo": 0.5677,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.192,
+   "brier": 0.1929,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 388,
-  "acertos": 284,
-  "esperado": 269.97
+  "n": 390,
+  "acertos": 286,
+  "esperado": 271.4131
  },
  "jogadores": {
   "n": 1095,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 125,
-   "acertos": 81,
-   "previsto": 0.6433,
-   "comOdd": 125,
-   "lucro": -5.93,
-   "oddMedia": 1.4974,
-   "retorno": -0.0474,
-   "retornoMelhorOdd": -0.0465
+   "n": 126,
+   "acertos": 82,
+   "previsto": 0.6437,
+   "comOdd": 126,
+   "lucro": -5.5,
+   "oddMedia": 1.4968,
+   "retorno": -0.0437,
+   "retornoMelhorOdd": -0.0427
   },
   "destaque": {
    "n": 53,
@@ -132,14 +132,14 @@
    "retornoMelhorOdd": -0.0645
   },
   "oddMaior": {
-   "n": 65,
+   "n": 66,
    "acertos": 35,
-   "previsto": 0.4871,
-   "comOdd": 65,
-   "lucro": 5.36,
-   "oddMedia": 2.0109,
-   "retorno": 0.0825,
-   "retornoMelhorOdd": 0.0837
+   "previsto": 0.4868,
+   "comOdd": 66,
+   "lucro": 4.36,
+   "oddMedia": 2.012,
+   "retorno": 0.0661,
+   "retornoMelhorOdd": 0.0673
   },
   "jogador": {
    "n": 77,
@@ -522,7 +522,50 @@
      "jogo": "Stade Rennais × Olympiacos",
      "comp": "uefa.europa",
      "inicio": "2026-11-04T15:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.43,
+       "casa": null,
+       "chance": 0.6847,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Stade Rennais",
+       "odd": 2.1,
+       "casa": "DraftKings",
+       "chance": 0.47,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Stade Rennais",
+      "p": 0.4788,
+      "pMercado": 0.4612,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7085,
+       "odd": 1.43,
+       "ok": 1
+      },
+      {
+       "rotulo": "Stade Rennais ou empate",
+       "p": 0.7346,
+       "odd": 1.3,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
