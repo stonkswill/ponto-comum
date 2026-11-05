@@ -1,70 +1,70 @@
 {
- "geradoEm": "2026-11-04T21:59:32.351Z",
- "jogos": 149,
+ "geradoEm": "2026-11-05T03:04:13.838Z",
+ "jogos": 153,
  "porFamilia": {
   "resultado": {
-   "n": 2680,
-   "llModelo": 0.4835,
-   "llMercado": 0.4712,
-   "nMercado": 2680,
-   "llModeloComMercado": 0.4835,
-   "brier": 0.1582,
+   "n": 2752,
+   "llModelo": 0.4819,
+   "llMercado": 0.4682,
+   "nMercado": 2752,
+   "llModeloComMercado": 0.4819,
+   "brier": 0.1577,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 3576,
+   "n": 3672,
    "llModelo": 0.5426,
-   "llMercado": 0.5362,
-   "nMercado": 3576,
+   "llMercado": 0.5361,
+   "nMercado": 3672,
    "llModeloComMercado": 0.5426,
    "brier": 0.1824,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 2086,
-   "llModelo": 0.5951,
+   "n": 2142,
+   "llModelo": 0.595,
    "llMercado": 0.5928,
-   "nMercado": 2086,
-   "llModeloComMercado": 0.5951,
-   "brier": 0.2052,
+   "nMercado": 2142,
+   "llModeloComMercado": 0.595,
+   "brier": 0.2051,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 3576,
-   "llModelo": 0.6359,
+   "n": 3672,
+   "llModelo": 0.6322,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2223,
+   "brier": 0.2208,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 3278,
-   "llModelo": 0.5712,
+   "n": 3366,
+   "llModelo": 0.5706,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1942,
+   "brier": 0.1939,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 417,
-  "acertos": 309,
-  "esperado": 290.5418
+  "n": 426,
+  "acertos": 313,
+  "esperado": 297.0151
  },
  "jogadores": {
-  "n": 1172,
-  "marcaram": 163,
-  "previsto": 267.2805,
-  "llModelo": 0.4103,
+  "n": 1196,
+  "marcaram": 165,
+  "previsto": 272.5217,
+  "llModelo": 0.4095,
   "comOdd": 710,
-  "marcaramComOdd": 123,
+  "marcaramComOdd": 121,
   "previstoModeloComOdd": 161.6459,
   "implicitoBrutoComOdd": 227.7799,
   "apostasModeloAcimaDaOdd": {
@@ -74,33 +74,33 @@
   "faixas": [
    {
     "de": 0,
-    "n": 27,
-    "previsto": 0.087,
+    "n": 29,
+    "previsto": 0.0875,
     "aconteceu": 0
    },
    {
     "de": 0.1,
-    "n": 449,
-    "previsto": 0.1611,
-    "aconteceu": 0.0824
+    "n": 459,
+    "previsto": 0.1609,
+    "aconteceu": 0.085
    },
    {
     "de": 0.2,
-    "n": 495,
-    "previsto": 0.2406,
-    "aconteceu": 0.1515
+    "n": 503,
+    "previsto": 0.2407,
+    "aconteceu": 0.1471
    },
    {
     "de": 0.3,
-    "n": 155,
-    "previsto": 0.3412,
-    "aconteceu": 0.2194
+    "n": 157,
+    "previsto": 0.3408,
+    "aconteceu": 0.2166
    },
    {
     "de": 0.4,
-    "n": 40,
-    "previsto": 0.4339,
-    "aconteceu": 0.325
+    "n": 42,
+    "previsto": 0.4347,
+    "aconteceu": 0.3333
    },
    {
     "de": 0.5,
@@ -112,34 +112,34 @@
  },
  "palpites": {
   "principal": {
-   "n": 133,
-   "acertos": 87,
-   "previsto": 0.643,
-   "comOdd": 133,
-   "lucro": -5.14,
-   "oddMedia": 1.4977,
-   "retorno": -0.0386,
-   "retornoMelhorOdd": -0.0377
+   "n": 135,
+   "acertos": 88,
+   "previsto": 0.6427,
+   "comOdd": 135,
+   "lucro": -5.42,
+   "oddMedia": 1.4985,
+   "retorno": -0.0401,
+   "retornoMelhorOdd": -0.0392
   },
   "destaque": {
-   "n": 60,
-   "acertos": 40,
-   "previsto": 0.6974,
-   "comOdd": 60,
-   "lucro": -6.5,
-   "oddMedia": 1.3362,
-   "retorno": -0.1083,
-   "retornoMelhorOdd": -0.1083
+   "n": 61,
+   "acertos": 41,
+   "previsto": 0.6977,
+   "comOdd": 61,
+   "lucro": -6.2,
+   "oddMedia": 1.3356,
+   "retorno": -0.1016,
+   "retornoMelhorOdd": -0.1016
   },
   "oddMaior": {
-   "n": 69,
-   "acertos": 36,
-   "previsto": 0.4844,
-   "comOdd": 69,
-   "lucro": 3.86,
-   "oddMedia": 2.022,
-   "retorno": 0.0559,
-   "retornoMelhorOdd": 0.0571
+   "n": 72,
+   "acertos": 38,
+   "previsto": 0.4839,
+   "comOdd": 72,
+   "lucro": 4.96,
+   "oddMedia": 2.0238,
+   "retorno": 0.0689,
+   "retornoMelhorOdd": 0.07
   },
   "jogador": {
    "n": 86,
@@ -153,9 +153,9 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 186,
-  "aFavorDoModelo": 110,
-  "medio": 0.0053
+  "n": 196,
+  "aFavorDoModelo": 118,
+  "medio": 0.0058
  },
  "dias": [
   {
@@ -431,28 +431,189 @@
      "jogo": "São Paulo × Corinthians",
      "comp": "bra.1",
      "inicio": "2026-11-05T00:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sem empate (São Paulo ou Corinthians)",
+       "odd": 1.38,
+       "casa": null,
+       "chance": 0.7008,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.09,
+       "casa": null,
+       "chance": 0.4549,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória São Paulo",
+      "p": 0.4408,
+      "pMercado": 0.3674,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (São Paulo ou Corinthians)",
+       "p": 0.7124,
+       "odd": 1.38,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6684,
+       "odd": 1.45,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841305",
      "jogo": "Botafogo × Atlético-MG",
      "comp": "bra.1",
      "inicio": "2026-11-05T00:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Botafogo",
+      "p": 0.4886,
+      "pMercado": 0.6317,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7096,
+       "odd": 1.2,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Botafogo ou Atlético-MG)",
+       "p": 0.7316,
+       "odd": 1.2,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841306",
      "jogo": "Athletico-PR × Vasco da Gama",
      "comp": "bra.1",
      "inicio": "2026-11-04T22:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.72,
+       "casa": null,
+       "chance": 0.5559,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.833,
+       "casa": "DraftKings",
+       "chance": 0.5241,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Athletico-PR",
+      "p": 0.4922,
+      "pMercado": 0.396,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6849,
+       "odd": 1.33,
+       "ok": 0
+      },
+      {
+       "rotulo": "Athletico-PR ou empate",
+       "p": 0.7407,
+       "odd": 1.42,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5602,
+       "odd": 1.72,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841307",
      "jogo": "Flamengo × Grêmio",
      "comp": "bra.1",
      "inicio": "2026-11-04T22:30Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.27,
+       "casa": null,
+       "chance": 0.4413,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7178,
+       "ok": 1
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Flamengo",
+      "p": 0.7554,
+      "pMercado": 0.8748,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.8249,
+       "odd": 1.06,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Flamengo ou Grêmio)",
+       "p": 0.8406,
+       "odd": 1.03,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915301",
