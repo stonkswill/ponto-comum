@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-06T19:08:57.721Z",
- "jogos": 190,
+ "geradoEm": "2026-11-06T21:53:52.205Z",
+ "jogos": 193,
  "porFamilia": {
   "resultado": {
-   "n": 3416,
-   "llModelo": 0.4787,
-   "llMercado": 0.4684,
-   "nMercado": 3398,
-   "llModeloComMercado": 0.476,
-   "brier": 0.1562,
+   "n": 3470,
+   "llModelo": 0.4779,
+   "llMercado": 0.4682,
+   "nMercado": 3452,
+   "llModeloComMercado": 0.4753,
+   "brier": 0.1559,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 4560,
-   "llModelo": 0.537,
-   "llMercado": 0.5343,
-   "nMercado": 4536,
-   "llModeloComMercado": 0.5362,
-   "brier": 0.1804,
+   "n": 4632,
+   "llModelo": 0.5356,
+   "llMercado": 0.5335,
+   "nMercado": 4608,
+   "llModeloComMercado": 0.5347,
+   "brier": 0.1798,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 2660,
-   "llModelo": 0.5963,
-   "llMercado": 0.5975,
-   "nMercado": 2646,
-   "llModeloComMercado": 0.5966,
-   "brier": 0.2058,
+   "n": 2702,
+   "llModelo": 0.595,
+   "llMercado": 0.5966,
+   "nMercado": 2688,
+   "llModeloComMercado": 0.5954,
+   "brier": 0.2053,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 4560,
-   "llModelo": 0.6248,
+   "n": 4632,
+   "llModelo": 0.6229,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2173,
+   "brier": 0.2165,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 4180,
-   "llModelo": 0.5712,
+   "n": 4246,
+   "llModelo": 0.5695,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.194,
+   "brier": 0.1933,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 514,
-  "acertos": 370,
-  "esperado": 358.9867
+  "n": 523,
+  "acertos": 378,
+  "esperado": 365.0297
  },
  "jogadores": {
-  "n": 1481,
-  "marcaram": 200,
-  "previsto": 328.9808,
-  "llModelo": 0.4041,
-  "comOdd": 828,
-  "marcaramComOdd": 137,
-  "previstoModeloComOdd": 186.2138,
-  "implicitoBrutoComOdd": 263.908,
+  "n": 1505,
+  "marcaram": 201,
+  "previsto": 334.4555,
+  "llModelo": 0.4026,
+  "comOdd": 840,
+  "marcaramComOdd": 138,
+  "previstoModeloComOdd": 189.0626,
+  "implicitoBrutoComOdd": 268.3138,
   "apostasModeloAcimaDaOdd": {
    "n": 19,
    "retorno": -0.7105
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 581,
-    "previsto": 0.1586,
-    "aconteceu": 0.0895
+    "n": 588,
+    "previsto": 0.1588,
+    "aconteceu": 0.0884
    },
    {
     "de": 0.2,
-    "n": 577,
-    "previsto": 0.2404,
-    "aconteceu": 0.1456
+    "n": 591,
+    "previsto": 0.2403,
+    "aconteceu": 0.1438
    },
    {
     "de": 0.3,
-    "n": 189,
-    "previsto": 0.3402,
-    "aconteceu": 0.2222
+    "n": 192,
+    "previsto": 0.3401,
+    "aconteceu": 0.2188
    },
    {
     "de": 0.4,
@@ -112,52 +112,72 @@
  },
  "palpites": {
   "principal": {
-   "n": 164,
-   "acertos": 103,
-   "previsto": 0.6413,
-   "comOdd": 164,
-   "lucro": -11.64,
-   "oddMedia": 1.5042,
-   "retorno": -0.071,
-   "retornoMelhorOdd": -0.07
+   "n": 167,
+   "acertos": 106,
+   "previsto": 0.6424,
+   "comOdd": 167,
+   "lucro": -10.52,
+   "oddMedia": 1.5019,
+   "retorno": -0.063,
+   "retornoMelhorOdd": -0.062
   },
   "destaque": {
-   "n": 74,
-   "acertos": 49,
-   "previsto": 0.6976,
-   "comOdd": 74,
-   "lucro": -8.42,
-   "oddMedia": 1.3377,
-   "retorno": -0.1138,
-   "retornoMelhorOdd": -0.1138
+   "n": 75,
+   "acertos": 50,
+   "previsto": 0.6977,
+   "comOdd": 75,
+   "lucro": -8.1,
+   "oddMedia": 1.3375,
+   "retorno": -0.108,
+   "retornoMelhorOdd": -0.108
   },
   "oddMaior": {
-   "n": 84,
-   "acertos": 44,
-   "previsto": 0.4853,
-   "comOdd": 84,
-   "lucro": 4.37,
-   "oddMedia": 2.0168,
-   "retorno": 0.052,
-   "retornoMelhorOdd": 0.053
+   "n": 87,
+   "acertos": 47,
+   "previsto": 0.4854,
+   "comOdd": 87,
+   "lucro": 7.53,
+   "oddMedia": 2.018,
+   "retorno": 0.0866,
+   "retornoMelhorOdd": 0.0875
   },
   "jogador": {
-   "n": 101,
+   "n": 103,
    "acertos": 24,
-   "previsto": 0.3096,
-   "comOdd": 101,
-   "lucro": -34.2385,
-   "oddMedia": 3.3174,
-   "retorno": -0.339,
-   "retornoMelhorOdd": -0.339
+   "previsto": 0.3099,
+   "comOdd": 103,
+   "lucro": -36.2385,
+   "oddMedia": 3.3064,
+   "retorno": -0.3518,
+   "retornoMelhorOdd": -0.3518
   }
  },
  "movimentoDoMercado": {
-  "n": 263,
+  "n": 264,
   "aFavorDoModelo": 169,
-  "medio": 0.0068
+  "medio": 0.0067
  },
  "dias": [
+  {
+   "dia": "2026-11-08",
+   "jogos": [
+    {
+     "id": "401874810",
+     "jogo": "Napoli × Lazio",
+     "comp": "ita.1",
+     "inicio": "2026-11-08T11:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882814",
+     "jogo": "Elche × Real Betis",
+     "comp": "esp.1",
+     "inicio": "2026-11-08T13:00Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-11-07",
    "jogos": [
@@ -312,14 +332,119 @@
      "jogo": "Venezia × Udinese",
      "comp": "ita.1",
      "inicio": "2026-11-06T19:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Venezia ou empate",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.7018,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.71,
+       "casa": null,
+       "chance": 0.5657,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Venezia",
+      "p": 0.4532,
+      "pMercado": 0.4177,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Venezia ou empate",
+       "p": 0.7047,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.675,
+       "odd": 1.34,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5776,
+       "odd": 1.71,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876405",
      "jogo": "Toulouse × Strasbourg",
      "comp": "fra.1",
      "inicio": "2026-11-06T19:45Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Toulouse ou empate",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.7124,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Toulouse",
+       "odd": 2.15,
+       "casa": "DraftKings",
+       "chance": 0.458,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Casper Tengstedt marca",
+       "odd": 2.25,
+       "chance": 0.3813,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Toulouse",
+      "p": 0.468,
+      "pMercado": 0.4479,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6843,
+       "odd": 1.41,
+       "ok": 0
+      },
+      {
+       "rotulo": "Toulouse ou empate",
+       "p": 0.7198,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5667,
+       "odd": 1.64,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401879242",
@@ -340,7 +465,71 @@
      "jogo": "Hamburg SV × Borussia Mönchengladbach",
      "comp": "ger.1",
      "inicio": "2026-11-06T19:30Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Hamburg SV ou empate",
+       "odd": 1.4,
+       "casa": "Bet 365",
+       "chance": 0.6888,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Hamburg SV",
+       "odd": 2.3,
+       "casa": "Bet 365",
+       "chance": 0.4364,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Cartões: mais de 3,5",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.704,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Yussuf Poulsen marca",
+       "odd": 3.25,
+       "chance": 0.2699,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Hamburg SV",
+      "p": 0.4599,
+      "pMercado": 0.4129,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Hamburg SV ou empate",
+       "p": 0.7003,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6173,
+       "odd": 1.73,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.7973,
+       "odd": 1.1,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
