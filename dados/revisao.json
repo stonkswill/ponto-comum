@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-11-05T21:59:00.766Z",
- "jogos": 188,
+ "geradoEm": "2026-11-06T03:02:48.803Z",
+ "jogos": 190,
  "porFamilia": {
   "resultado": {
-   "n": 3380,
-   "llModelo": 0.481,
-   "llMercado": 0.4705,
-   "nMercado": 3362,
-   "llModeloComMercado": 0.4783,
-   "brier": 0.1571,
+   "n": 3416,
+   "llModelo": 0.4787,
+   "llMercado": 0.4684,
+   "nMercado": 3398,
+   "llModeloComMercado": 0.476,
+   "brier": 0.1562,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 4512,
-   "llModelo": 0.5368,
-   "llMercado": 0.5341,
-   "nMercado": 4488,
-   "llModeloComMercado": 0.536,
-   "brier": 0.1802,
+   "n": 4560,
+   "llModelo": 0.537,
+   "llMercado": 0.5343,
+   "nMercado": 4536,
+   "llModeloComMercado": 0.5362,
+   "brier": 0.1804,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 2632,
-   "llModelo": 0.5973,
-   "llMercado": 0.5986,
-   "nMercado": 2618,
-   "llModeloComMercado": 0.5976,
-   "brier": 0.2062,
+   "n": 2660,
+   "llModelo": 0.5963,
+   "llMercado": 0.5975,
+   "nMercado": 2646,
+   "llModeloComMercado": 0.5966,
+   "brier": 0.2058,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 4512,
-   "llModelo": 0.6238,
+   "n": 4560,
+   "llModelo": 0.6248,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2169,
+   "brier": 0.2173,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 4136,
-   "llModelo": 0.5725,
+   "n": 4180,
+   "llModelo": 0.5712,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1946,
+   "brier": 0.194,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 507,
-  "acertos": 364,
-  "esperado": 354.1145
+  "n": 514,
+  "acertos": 370,
+  "esperado": 358.9867
  },
  "jogadores": {
-  "n": 1465,
-  "marcaram": 196,
-  "previsto": 324.8237,
-  "llModelo": 0.403,
+  "n": 1481,
+  "marcaram": 200,
+  "previsto": 328.9808,
+  "llModelo": 0.4041,
   "comOdd": 828,
   "marcaramComOdd": 137,
   "previstoModeloComOdd": 186.2138,
@@ -80,9 +80,9 @@
    },
    {
     "de": 0.1,
-    "n": 573,
-    "previsto": 0.1587,
-    "aconteceu": 0.089
+    "n": 581,
+    "previsto": 0.1586,
+    "aconteceu": 0.0895
    },
    {
     "de": 0.2,
@@ -92,15 +92,15 @@
    },
    {
     "de": 0.3,
-    "n": 184,
-    "previsto": 0.3407,
-    "aconteceu": 0.2228
+    "n": 189,
+    "previsto": 0.3402,
+    "aconteceu": 0.2222
    },
    {
     "de": 0.4,
-    "n": 46,
-    "previsto": 0.4372,
-    "aconteceu": 0.3043
+    "n": 49,
+    "previsto": 0.4382,
+    "aconteceu": 0.3265
    },
    {
     "de": 0.5,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 162,
-   "acertos": 102,
+   "n": 164,
+   "acertos": 103,
    "previsto": 0.6413,
-   "comOdd": 162,
-   "lucro": -11.15,
-   "oddMedia": 1.504,
-   "retorno": -0.0688,
-   "retornoMelhorOdd": -0.0678
+   "comOdd": 164,
+   "lucro": -11.64,
+   "oddMedia": 1.5042,
+   "retorno": -0.071,
+   "retornoMelhorOdd": -0.07
   },
   "destaque": {
    "n": 74,
@@ -132,14 +132,14 @@
    "retornoMelhorOdd": -0.1138
   },
   "oddMaior": {
-   "n": 83,
-   "acertos": 43,
-   "previsto": 0.4845,
-   "comOdd": 83,
-   "lucro": 3.6,
-   "oddMedia": 2.0198,
-   "retorno": 0.0434,
-   "retornoMelhorOdd": 0.0444
+   "n": 84,
+   "acertos": 44,
+   "previsto": 0.4853,
+   "comOdd": 84,
+   "lucro": 4.37,
+   "oddMedia": 2.0168,
+   "retorno": 0.052,
+   "retornoMelhorOdd": 0.053
   },
   "jogador": {
    "n": 101,
@@ -162,6 +162,41 @@
    "dia": "2026-11-07",
    "jogos": [
     {
+     "id": "401874791",
+     "jogo": "Cagliari × Frosinone",
+     "comp": "ita.1",
+     "inicio": "2026-11-07T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874811",
+     "jogo": "Torino × Lecce",
+     "comp": "ita.1",
+     "inicio": "2026-11-07T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874974",
+     "jogo": "Parma × Bologna",
+     "comp": "ita.1",
+     "inicio": "2026-11-07T17:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401876411",
+     "jogo": "AJ Auxerre × Paris FC",
+     "comp": "fra.1",
+     "inicio": "2026-11-07T18:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401878757",
+     "jogo": "Nottingham Forest × Manchester City",
+     "comp": "eng.1",
+     "inicio": "2026-11-07T17:30Z",
+     "pendente": true
+    },
+    {
      "id": "401878758",
      "jogo": "Leeds United × Tottenham Hotspur",
      "comp": "eng.1",
@@ -169,10 +204,73 @@
      "pendente": true
     },
     {
+     "id": "401878760",
+     "jogo": "Arsenal × Hull City",
+     "comp": "eng.1",
+     "inicio": "2026-11-07T15:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879241",
+     "jogo": "Fulham × Newcastle United",
+     "comp": "eng.1",
+     "inicio": "2026-11-07T15:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882811",
+     "jogo": "Osasuna × Athletic Club",
+     "comp": "esp.1",
+     "inicio": "2026-11-07T17:30Z",
+     "pendente": true
+    },
+    {
      "id": "401882812",
      "jogo": "Málaga × Racing Santander",
      "comp": "esp.1",
      "inicio": "2026-11-07T13:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882813",
+     "jogo": "Espanyol × Deportivo",
+     "comp": "esp.1",
+     "inicio": "2026-11-07T15:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401884737",
+     "jogo": "SC Paderborn 07 × Eintracht Frankfurt",
+     "comp": "ger.1",
+     "inicio": "2026-11-07T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884740",
+     "jogo": "Mainz × Bayern Munich",
+     "comp": "ger.1",
+     "inicio": "2026-11-07T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884743",
+     "jogo": "VfB Stuttgart × Werder Bremen",
+     "comp": "ger.1",
+     "inicio": "2026-11-07T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884744",
+     "jogo": "RB Leipzig × FC Augsburg",
+     "comp": "ger.1",
+     "inicio": "2026-11-07T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884745",
+     "jogo": "Borussia Dortmund × SV Elversberg",
+     "comp": "ger.1",
+     "inicio": "2026-11-07T14:30Z",
      "pendente": true
     }
    ],
@@ -234,14 +332,110 @@
      "jogo": "Palmeiras × Remo",
      "comp": "bra.1",
      "inicio": "2026-11-05T22:30Z",
-     "pendente": true
+     "placar": [
+      6,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.51,
+       "casa": null,
+       "chance": 0.6472,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Palmeiras",
+      "p": 0.7917,
+      "pMercado": 0.8153,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6652,
+       "odd": 1.51,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Palmeiras",
+       "p": 0.7917,
+       "odd": 1.2,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Palmeiras ou Remo)",
+       "p": 0.8629,
+       "odd": 1.08,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841303",
      "jogo": "Cruzeiro × Bahia",
      "comp": "bra.1",
      "inicio": "2026-11-06T00:30Z",
-     "pendente": true
+     "placar": [
+      3,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.53,
+       "casa": null,
+       "chance": 0.6393,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Cruzeiro",
+       "odd": 1.769,
+       "casa": "DraftKings",
+       "chance": 0.5558,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Cruzeiro",
+      "p": 0.5655,
+      "pMercado": 0.5461,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6582,
+       "odd": 1.53,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Cruzeiro ou Bahia)",
+       "p": 0.771,
+       "odd": 1.23,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Cruzeiro",
+       "p": 0.5655,
+       "odd": 1.77,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5577,
+       "odd": 1.59,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915522",
