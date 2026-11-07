@@ -1,75 +1,75 @@
 {
- "geradoEm": "2026-11-07T18:59:36.221Z",
- "jogos": 207,
+ "geradoEm": "2026-11-07T21:49:58.117Z",
+ "jogos": 213,
  "porFamilia": {
   "resultado": {
-   "n": 3720,
-   "llModelo": 0.4731,
-   "llMercado": 0.4644,
-   "nMercado": 3702,
-   "llModeloComMercado": 0.4706,
-   "brier": 0.1541,
+   "n": 3828,
+   "llModelo": 0.4722,
+   "llMercado": 0.463,
+   "nMercado": 3810,
+   "llModeloComMercado": 0.4698,
+   "brier": 0.1538,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 4968,
-   "llModelo": 0.5328,
-   "llMercado": 0.5312,
-   "nMercado": 4944,
-   "llModeloComMercado": 0.532,
-   "brier": 0.1786,
+   "n": 5112,
+   "llModelo": 0.5319,
+   "llMercado": 0.5307,
+   "nMercado": 5088,
+   "llModeloComMercado": 0.5311,
+   "brier": 0.1783,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 2898,
-   "llModelo": 0.5954,
-   "llMercado": 0.5972,
-   "nMercado": 2884,
-   "llModeloComMercado": 0.5957,
+   "n": 2982,
+   "llModelo": 0.5953,
+   "llMercado": 0.597,
+   "nMercado": 2968,
+   "llModeloComMercado": 0.5955,
    "brier": 0.2055,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 4968,
-   "llModelo": 0.6287,
+   "n": 5112,
+   "llModelo": 0.6289,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.219,
+   "brier": 0.2191,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 4554,
-   "llModelo": 0.5703,
+   "n": 4686,
+   "llModelo": 0.5716,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1937,
+   "brier": 0.1942,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 560,
-  "acertos": 405,
-  "esperado": 390.9121
+  "n": 576,
+  "acertos": 416,
+  "esperado": 402.0489
  },
  "jogadores": {
-  "n": 1610,
-  "marcaram": 213,
-  "previsto": 359.3881,
-  "llModelo": 0.4022,
-  "comOdd": 913,
-  "marcaramComOdd": 146,
-  "previstoModeloComOdd": 206.325,
-  "implicitoBrutoComOdd": 293.1942,
+  "n": 1660,
+  "marcaram": 218,
+  "previsto": 370.8205,
+  "llModelo": 0.4016,
+  "comOdd": 952,
+  "marcaramComOdd": 151,
+  "previstoModeloComOdd": 215.5505,
+  "implicitoBrutoComOdd": 306.0371,
   "apostasModeloAcimaDaOdd": {
-   "n": 19,
-   "retorno": -0.7105
+   "n": 21,
+   "retorno": -0.7381
   },
   "faixas": [
    {
@@ -80,81 +80,81 @@
    },
    {
     "de": 0.1,
-    "n": 630,
-    "previsto": 0.1591,
-    "aconteceu": 0.0857
+    "n": 658,
+    "previsto": 0.1595,
+    "aconteceu": 0.0851
    },
    {
     "de": 0.2,
-    "n": 624,
-    "previsto": 0.2404,
-    "aconteceu": 0.1442
+    "n": 636,
+    "previsto": 0.2405,
+    "aconteceu": 0.1431
    },
    {
     "de": 0.3,
-    "n": 210,
-    "previsto": 0.3405,
-    "aconteceu": 0.219
+    "n": 217,
+    "previsto": 0.3404,
+    "aconteceu": 0.2212
    },
    {
     "de": 0.4,
-    "n": 57,
-    "previsto": 0.4387,
-    "aconteceu": 0.2982
+    "n": 59,
+    "previsto": 0.4383,
+    "aconteceu": 0.2881
    },
    {
     "de": 0.5,
-    "n": 12,
-    "previsto": 0.5446,
-    "aconteceu": 0.4167
+    "n": 13,
+    "previsto": 0.5447,
+    "aconteceu": 0.3846
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 178,
-   "acertos": 112,
-   "previsto": 0.6438,
-   "comOdd": 178,
-   "lucro": -12.96,
-   "oddMedia": 1.4987,
-   "retorno": -0.0728,
-   "retornoMelhorOdd": -0.0719
+   "n": 184,
+   "acertos": 115,
+   "previsto": 0.6429,
+   "comOdd": 184,
+   "lucro": -14.5,
+   "oddMedia": 1.5012,
+   "retorno": -0.0788,
+   "retornoMelhorOdd": -0.0779
   },
   "destaque": {
-   "n": 82,
-   "acertos": 55,
-   "previsto": 0.6982,
-   "comOdd": 82,
-   "lucro": -8.5,
-   "oddMedia": 1.3362,
-   "retorno": -0.1037,
-   "retornoMelhorOdd": -0.1037
+   "n": 85,
+   "acertos": 57,
+   "previsto": 0.6979,
+   "comOdd": 85,
+   "lucro": -8.86,
+   "oddMedia": 1.3376,
+   "retorno": -0.1042,
+   "retornoMelhorOdd": -0.1042
   },
   "oddMaior": {
-   "n": 92,
-   "acertos": 49,
-   "previsto": 0.4849,
-   "comOdd": 92,
-   "lucro": 6.28,
-   "oddMedia": 2.0221,
-   "retorno": 0.0683,
-   "retornoMelhorOdd": 0.0692
+   "n": 94,
+   "acertos": 51,
+   "previsto": 0.4844,
+   "comOdd": 94,
+   "lucro": 8.44,
+   "oddMedia": 2.0233,
+   "retorno": 0.0898,
+   "retornoMelhorOdd": 0.0907
   },
   "jogador": {
-   "n": 112,
+   "n": 116,
    "acertos": 24,
-   "previsto": 0.3091,
-   "comOdd": 112,
-   "lucro": -45.2385,
-   "oddMedia": 3.3253,
-   "retorno": -0.4039,
-   "retornoMelhorOdd": -0.4039
+   "previsto": 0.3119,
+   "comOdd": 116,
+   "lucro": -49.2385,
+   "oddMedia": 3.3018,
+   "retorno": -0.4245,
+   "retornoMelhorOdd": -0.4245
   }
  },
  "movimentoDoMercado": {
-  "n": 283,
-  "aFavorDoModelo": 180,
+  "n": 296,
+  "aFavorDoModelo": 187,
   "medio": 0.0064
  },
  "dias": [
@@ -395,7 +395,63 @@
      "jogo": "AS Roma × Sassuolo",
      "comp": "ita.1",
      "inicio": "2026-11-07T19:45Z",
-     "pendente": true
+     "placar": [
+      3,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.76,
+       "casa": null,
+       "chance": 0.5389,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "AS Roma: mais de 4,5 escanteios",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7181,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Donyell Malen marca",
+       "odd": 1.5714285714285714,
+       "chance": 0.5463,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AS Roma",
+      "p": 0.7021,
+      "pMercado": 0.7693,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória AS Roma",
+       "p": 0.7021,
+       "odd": 1.27,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6377,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (AS Roma ou Sassuolo)",
+       "p": 0.823,
+       "odd": 1.14,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401874811",
@@ -443,7 +499,49 @@
      "jogo": "Parma × Bologna",
      "comp": "ita.1",
      "inicio": "2026-11-07T17:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 1,5 gols",
+       "odd": 1.4,
+       "casa": null,
+       "chance": 0.689,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Federico Bernardeschi marca",
+       "odd": 3.4,
+       "chance": 0.2414,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bologna",
+      "p": 0.4945,
+      "pMercado": 0.5728,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6986,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Parma ou Bologna)",
+       "p": 0.7295,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876407",
@@ -457,14 +555,119 @@
      "jogo": "AJ Auxerre × Paris FC",
      "comp": "fra.1",
      "inicio": "2026-11-07T18:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.77,
+       "casa": null,
+       "chance": 0.5368,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Cameron Archer marca",
+       "odd": 3.5,
+       "chance": 0.3459,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Paris FC",
+      "p": 0.3863,
+      "pMercado": 0.5859,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7288,
+       "odd": 1.41,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (AJ Auxerre ou Paris FC)",
+       "p": 0.7309,
+       "odd": 1.22,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401878757",
      "jogo": "Nottingham Forest × Manchester City",
      "comp": "eng.1",
      "inicio": "2026-11-07T17:30Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.46,
+       "casa": null,
+       "chance": 0.6564,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Nottingham Forest ou empate",
+       "odd": 2.2,
+       "casa": "Bet 365",
+       "chance": 0.4257,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Manchester City: mais de 4,5 escanteios",
+       "odd": 1.34,
+       "casa": null,
+       "chance": 0.692,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Manchester City",
+      "p": 0.5716,
+      "pMercado": 0.577,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6634,
+       "odd": 1.46,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Nottingham Forest ou Manchester City)",
+       "p": 0.7715,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Manchester City",
+       "p": 0.5716,
+       "odd": 1.67,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5505,
+       "odd": 1.7,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401878758",
@@ -634,7 +837,50 @@
      "jogo": "Osasuna × Athletic Club",
      "comp": "esp.1",
      "inicio": "2026-11-07T17:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.714,
+       "casa": "DraftKings",
+       "chance": 0.5508,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.96,
+       "casa": null,
+       "chance": 0.4973,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Osasuna",
+      "p": 0.3706,
+      "pMercado": 0.242,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7155,
+       "odd": 1.34,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Osasuna ou Athletic Club)",
+       "p": 0.722,
+       "odd": 1.31,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882812",
@@ -879,7 +1125,63 @@
      "jogo": "VfB Stuttgart × Werder Bremen",
      "comp": "ger.1",
      "inicio": "2026-11-07T17:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.7184,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "VfB Stuttgart: mais de 1,5 gols",
+       "odd": 1.49,
+       "casa": null,
+       "chance": 0.6591,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ermedin Demirovic marca",
+       "odd": 2.1,
+       "chance": 0.4351,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória VfB Stuttgart",
+      "p": 0.6496,
+      "pMercado": 0.531,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6726,
+       "odd": 1.36,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6084,
+       "odd": 1.4,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (VfB Stuttgart ou Werder Bremen)",
+       "p": 0.8107,
+       "odd": 1.22,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884744",
