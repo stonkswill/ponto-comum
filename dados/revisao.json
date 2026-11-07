@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-06T21:53:52.205Z",
- "jogos": 193,
+ "geradoEm": "2026-11-07T03:02:05.163Z",
+ "jogos": 196,
  "porFamilia": {
   "resultado": {
-   "n": 3470,
-   "llModelo": 0.4779,
-   "llMercado": 0.4682,
-   "nMercado": 3452,
-   "llModeloComMercado": 0.4753,
-   "brier": 0.1559,
+   "n": 3524,
+   "llModelo": 0.4788,
+   "llMercado": 0.469,
+   "nMercado": 3506,
+   "llModeloComMercado": 0.4762,
+   "brier": 0.1562,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 4632,
-   "llModelo": 0.5356,
-   "llMercado": 0.5335,
-   "nMercado": 4608,
-   "llModeloComMercado": 0.5347,
-   "brier": 0.1798,
+   "n": 4704,
+   "llModelo": 0.5367,
+   "llMercado": 0.5342,
+   "nMercado": 4680,
+   "llModeloComMercado": 0.5358,
+   "brier": 0.1802,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 2702,
-   "llModelo": 0.595,
-   "llMercado": 0.5966,
-   "nMercado": 2688,
-   "llModeloComMercado": 0.5954,
-   "brier": 0.2053,
+   "n": 2744,
+   "llModelo": 0.5967,
+   "llMercado": 0.5981,
+   "nMercado": 2730,
+   "llModeloComMercado": 0.597,
+   "brier": 0.206,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 4632,
-   "llModelo": 0.6229,
+   "n": 4704,
+   "llModelo": 0.6238,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2165,
+   "brier": 0.2169,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 4246,
-   "llModelo": 0.5695,
+   "n": 4312,
+   "llModelo": 0.5713,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1933,
+   "brier": 0.194,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 523,
-  "acertos": 378,
-  "esperado": 365.0297
+  "n": 530,
+  "acertos": 383,
+  "esperado": 369.9278
  },
  "jogadores": {
-  "n": 1505,
-  "marcaram": 201,
-  "previsto": 334.4555,
-  "llModelo": 0.4026,
-  "comOdd": 840,
-  "marcaramComOdd": 138,
-  "previstoModeloComOdd": 189.0626,
-  "implicitoBrutoComOdd": 268.3138,
+  "n": 1522,
+  "marcaram": 205,
+  "previsto": 338.0281,
+  "llModelo": 0.4037,
+  "comOdd": 846,
+  "marcaramComOdd": 139,
+  "previstoModeloComOdd": 190.2755,
+  "implicitoBrutoComOdd": 270.0105,
   "apostasModeloAcimaDaOdd": {
    "n": 19,
    "retorno": -0.7105
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 588,
+    "n": 596,
     "previsto": 0.1588,
-    "aconteceu": 0.0884
+    "aconteceu": 0.0872
    },
    {
     "de": 0.2,
-    "n": 591,
-    "previsto": 0.2403,
-    "aconteceu": 0.1438
+    "n": 599,
+    "previsto": 0.2404,
+    "aconteceu": 0.1469
    },
    {
     "de": 0.3,
-    "n": 192,
-    "previsto": 0.3401,
-    "aconteceu": 0.2188
+    "n": 193,
+    "previsto": 0.34,
+    "aconteceu": 0.2228
    },
    {
     "de": 0.4,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 167,
-   "acertos": 106,
-   "previsto": 0.6424,
-   "comOdd": 167,
-   "lucro": -10.52,
-   "oddMedia": 1.5019,
-   "retorno": -0.063,
-   "retornoMelhorOdd": -0.062
+   "n": 170,
+   "acertos": 107,
+   "previsto": 0.6432,
+   "comOdd": 170,
+   "lucro": -12.17,
+   "oddMedia": 1.4999,
+   "retorno": -0.0716,
+   "retornoMelhorOdd": -0.0706
   },
   "destaque": {
    "n": 75,
@@ -132,35 +132,49 @@
    "retornoMelhorOdd": -0.108
   },
   "oddMaior": {
-   "n": 87,
-   "acertos": 47,
-   "previsto": 0.4854,
-   "comOdd": 87,
-   "lucro": 7.53,
-   "oddMedia": 2.018,
-   "retorno": 0.0866,
-   "retornoMelhorOdd": 0.0875
+   "n": 89,
+   "acertos": 48,
+   "previsto": 0.486,
+   "comOdd": 89,
+   "lucro": 7.36,
+   "oddMedia": 2.0162,
+   "retorno": 0.0827,
+   "retornoMelhorOdd": 0.0836
   },
   "jogador": {
-   "n": 103,
+   "n": 104,
    "acertos": 24,
-   "previsto": 0.3099,
-   "comOdd": 103,
-   "lucro": -36.2385,
-   "oddMedia": 3.3064,
-   "retorno": -0.3518,
-   "retornoMelhorOdd": -0.3518
+   "previsto": 0.3092,
+   "comOdd": 104,
+   "lucro": -37.2385,
+   "oddMedia": 3.3131,
+   "retorno": -0.3581,
+   "retornoMelhorOdd": -0.3581
   }
  },
  "movimentoDoMercado": {
-  "n": 264,
-  "aFavorDoModelo": 169,
-  "medio": 0.0067
+  "n": 268,
+  "aFavorDoModelo": 173,
+  "medio": 0.0066
  },
  "dias": [
   {
    "dia": "2026-11-08",
    "jogos": [
+    {
+     "id": "401874800",
+     "jogo": "Monza × Atalanta",
+     "comp": "ita.1",
+     "inicio": "2026-11-08T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874808",
+     "jogo": "Internazionale × Como",
+     "comp": "ita.1",
+     "inicio": "2026-11-08T17:00Z",
+     "pendente": true
+    },
     {
      "id": "401874810",
      "jogo": "Napoli × Lazio",
@@ -169,10 +183,129 @@
      "pendente": true
     },
     {
+     "id": "401875018",
+     "jogo": "Genoa × AC Milan",
+     "comp": "ita.1",
+     "inicio": "2026-11-08T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401876406",
+     "jogo": "Stade Rennais × Lille",
+     "comp": "fra.1",
+     "inicio": "2026-11-08T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401876408",
+     "jogo": "Le Mans × AS Monaco",
+     "comp": "fra.1",
+     "inicio": "2026-11-08T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401876409",
+     "jogo": "Le Havre AC × Lorient",
+     "comp": "fra.1",
+     "inicio": "2026-11-08T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401876410",
+     "jogo": "Brest × Lyon",
+     "comp": "fra.1",
+     "inicio": "2026-11-08T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401876412",
+     "jogo": "Angers × Nice",
+     "comp": "fra.1",
+     "inicio": "2026-11-08T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401878759",
+     "jogo": "Ipswich Town × AFC Bournemouth",
+     "comp": "eng.1",
+     "inicio": "2026-11-08T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879239",
+     "jogo": "Sunderland × Chelsea",
+     "comp": "eng.1",
+     "inicio": "2026-11-08T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879240",
+     "jogo": "Manchester United × Aston Villa",
+     "comp": "eng.1",
+     "inicio": "2026-11-08T16:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401879243",
+     "jogo": "Crystal Palace × Liverpool",
+     "comp": "eng.1",
+     "inicio": "2026-11-08T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879244",
+     "jogo": "Brighton & Hove Albion × Brentford",
+     "comp": "eng.1",
+     "inicio": "2026-11-08T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882807",
+     "jogo": "Villarreal × Getafe",
+     "comp": "esp.1",
+     "inicio": "2026-11-08T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882810",
+     "jogo": "Real Sociedad × Rayo Vallecano",
+     "comp": "esp.1",
+     "inicio": "2026-11-08T15:15Z",
+     "pendente": true
+    },
+    {
      "id": "401882814",
      "jogo": "Elche × Real Betis",
      "comp": "esp.1",
      "inicio": "2026-11-08T13:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882815",
+     "jogo": "Celta Vigo × Levante",
+     "comp": "esp.1",
+     "inicio": "2026-11-08T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884738",
+     "jogo": "FC Cologne × Bayer Leverkusen",
+     "comp": "ger.1",
+     "inicio": "2026-11-08T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884741",
+     "jogo": "SC Freiburg × 1. FC Union Berlin",
+     "comp": "ger.1",
+     "inicio": "2026-11-08T16:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884742",
+     "jogo": "TSG Hoffenheim × Schalke 04",
+     "comp": "ger.1",
+     "inicio": "2026-11-08T18:30Z",
      "pendente": true
     }
    ],
@@ -325,7 +458,50 @@
      "jogo": "Vitória × Fluminense",
      "comp": "bra.1",
      "inicio": "2026-11-06T23:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sem empate (Vitória ou Fluminense)",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.7119,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.04,
+       "casa": null,
+       "chance": 0.488,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Fluminense",
+      "p": 0.3855,
+      "pMercado": 0.4163,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7167,
+       "odd": 1.41,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Vitória ou Fluminense)",
+       "p": 0.7228,
+       "odd": 1.35,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874815",
@@ -451,14 +627,105 @@
      "jogo": "Everton × Coventry City",
      "comp": "eng.1",
      "inicio": "2026-11-06T20:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6779,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Tyler Dibling marca",
+       "odd": 4,
+       "chance": 0.2296,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Everton",
+      "p": 0.5829,
+      "pMercado": 0.577,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6897,
+       "odd": 1.42,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Everton ou Coventry City)",
+       "p": 0.7694,
+       "odd": 1.22,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Everton",
+       "p": 0.5829,
+       "odd": 1.68,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882809",
      "jogo": "Sevilla × Alavés",
      "comp": "esp.1",
      "inicio": "2026-11-06T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 1,5 gols",
+       "odd": 1.41,
+       "casa": null,
+       "chance": 0.6868,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Alavés ou empate",
+       "odd": 1.83,
+       "casa": null,
+       "chance": 0.5395,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Sevilla",
+      "p": 0.4379,
+      "pMercado": 0.4832,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7003,
+       "odd": 1.41,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sevilla ou empate",
+       "p": 0.7163,
+       "odd": 1.22,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884739",
