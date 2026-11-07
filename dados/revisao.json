@@ -1,39 +1,39 @@
 {
- "geradoEm": "2026-11-07T13:08:06.565Z",
- "jogos": 196,
+ "geradoEm": "2026-11-07T14:53:43.874Z",
+ "jogos": 197,
  "porFamilia": {
   "resultado": {
-   "n": 3524,
-   "llModelo": 0.4788,
-   "llMercado": 0.469,
-   "nMercado": 3506,
-   "llModeloComMercado": 0.4762,
-   "brier": 0.1562,
+   "n": 3542,
+   "llModelo": 0.4782,
+   "llMercado": 0.4688,
+   "nMercado": 3524,
+   "llModeloComMercado": 0.4756,
+   "brier": 0.156,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 4704,
-   "llModelo": 0.5367,
-   "llMercado": 0.5342,
-   "nMercado": 4680,
-   "llModeloComMercado": 0.5358,
+   "n": 4728,
+   "llModelo": 0.5365,
+   "llMercado": 0.5341,
+   "nMercado": 4704,
+   "llModeloComMercado": 0.5357,
    "brier": 0.1802,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 2744,
-   "llModelo": 0.5967,
-   "llMercado": 0.5981,
-   "nMercado": 2730,
-   "llModeloComMercado": 0.597,
-   "brier": 0.206,
+   "n": 2758,
+   "llModelo": 0.5964,
+   "llMercado": 0.5979,
+   "nMercado": 2744,
+   "llModeloComMercado": 0.5967,
+   "brier": 0.2059,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 4704,
+   "n": 4728,
    "llModelo": 0.6238,
    "llMercado": null,
    "nMercado": 0,
@@ -43,30 +43,30 @@
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 4312,
-   "llModelo": 0.5713,
+   "n": 4334,
+   "llModelo": 0.5709,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.194,
+   "brier": 0.1939,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 530,
-  "acertos": 383,
-  "esperado": 369.9278
+  "n": 532,
+  "acertos": 385,
+  "esperado": 371.3506
  },
  "jogadores": {
-  "n": 1522,
-  "marcaram": 205,
-  "previsto": 338.0281,
-  "llModelo": 0.4037,
-  "comOdd": 846,
-  "marcaramComOdd": 139,
-  "previstoModeloComOdd": 190.2755,
-  "implicitoBrutoComOdd": 270.0105,
+  "n": 1530,
+  "marcaram": 206,
+  "previsto": 339.7137,
+  "llModelo": 0.4036,
+  "comOdd": 852,
+  "marcaramComOdd": 140,
+  "previstoModeloComOdd": 191.4327,
+  "implicitoBrutoComOdd": 271.7742,
   "apostasModeloAcimaDaOdd": {
    "n": 19,
    "retorno": -0.7105
@@ -80,15 +80,15 @@
    },
    {
     "de": 0.1,
-    "n": 596,
-    "previsto": 0.1588,
-    "aconteceu": 0.0872
+    "n": 600,
+    "previsto": 0.1589,
+    "aconteceu": 0.0867
    },
    {
     "de": 0.2,
-    "n": 599,
+    "n": 603,
     "previsto": 0.2404,
-    "aconteceu": 0.1469
+    "aconteceu": 0.1476
    },
    {
     "de": 0.3,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 170,
+   "n": 171,
    "acertos": 107,
-   "previsto": 0.6432,
-   "comOdd": 170,
-   "lucro": -12.17,
-   "oddMedia": 1.4999,
-   "retorno": -0.0716,
-   "retornoMelhorOdd": -0.0706
+   "previsto": 0.6426,
+   "comOdd": 171,
+   "lucro": -13.17,
+   "oddMedia": 1.5013,
+   "retorno": -0.077,
+   "retornoMelhorOdd": -0.076
   },
   "destaque": {
    "n": 75,
@@ -132,28 +132,28 @@
    "retornoMelhorOdd": -0.108
   },
   "oddMaior": {
-   "n": 89,
-   "acertos": 48,
-   "previsto": 0.486,
-   "comOdd": 89,
-   "lucro": 7.36,
-   "oddMedia": 2.0162,
-   "retorno": 0.0827,
-   "retornoMelhorOdd": 0.0836
+   "n": 90,
+   "acertos": 49,
+   "previsto": 0.4862,
+   "comOdd": 90,
+   "lucro": 8.28,
+   "oddMedia": 2.0151,
+   "retorno": 0.092,
+   "retornoMelhorOdd": 0.093
   },
   "jogador": {
-   "n": 104,
+   "n": 105,
    "acertos": 24,
-   "previsto": 0.3092,
-   "comOdd": 104,
-   "lucro": -37.2385,
-   "oddMedia": 3.3131,
-   "retorno": -0.3581,
-   "retornoMelhorOdd": -0.3581
+   "previsto": 0.3079,
+   "comOdd": 105,
+   "lucro": -38.2385,
+   "oddMedia": 3.3339,
+   "retorno": -0.3642,
+   "retornoMelhorOdd": -0.3642
   }
  },
  "movimentoDoMercado": {
-  "n": 268,
+  "n": 270,
   "aFavorDoModelo": 173,
   "medio": 0.0066
  },
@@ -389,7 +389,57 @@
      "jogo": "Leeds United × Tottenham Hotspur",
      "comp": "eng.1",
      "inicio": "2026-11-07T12:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.74,
+       "casa": null,
+       "chance": 0.54,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.925,
+       "casa": "Bet 365",
+       "chance": 0.5036,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Sávio marca",
+       "odd": 5.5,
+       "chance": 0.174,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Leeds United",
+      "p": 0.4308,
+      "pMercado": 0.3479,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Leeds United ou empate",
+       "p": 0.6966,
+       "odd": 1.5,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7262,
+       "odd": 1.31,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401878760",
