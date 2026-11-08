@@ -1,75 +1,75 @@
 {
- "geradoEm": "2026-11-08T16:52:25.230Z",
- "jogos": 225,
+ "geradoEm": "2026-11-08T18:59:14.110Z",
+ "jogos": 233,
  "porFamilia": {
   "resultado": {
-   "n": 4042,
-   "llModelo": 0.4688,
-   "llMercado": 0.4577,
-   "nMercado": 4024,
-   "llModeloComMercado": 0.4665,
-   "brier": 0.1526,
+   "n": 4186,
+   "llModelo": 0.4683,
+   "llMercado": 0.4573,
+   "nMercado": 4168,
+   "llModeloComMercado": 0.466,
+   "brier": 0.1525,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 5400,
-   "llModelo": 0.5286,
-   "llMercado": 0.5266,
-   "nMercado": 5376,
-   "llModeloComMercado": 0.5278,
-   "brier": 0.1768,
+   "n": 5592,
+   "llModelo": 0.5271,
+   "llMercado": 0.5257,
+   "nMercado": 5568,
+   "llModeloComMercado": 0.5264,
+   "brier": 0.1763,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 3150,
-   "llModelo": 0.594,
-   "llMercado": 0.5952,
-   "nMercado": 3136,
-   "llModeloComMercado": 0.5943,
-   "brier": 0.2049,
+   "n": 3262,
+   "llModelo": 0.5926,
+   "llMercado": 0.5937,
+   "nMercado": 3248,
+   "llModeloComMercado": 0.5928,
+   "brier": 0.2042,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 5400,
-   "llModelo": 0.6268,
+   "n": 5592,
+   "llModelo": 0.6243,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2182,
+   "brier": 0.217,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 4950,
-   "llModelo": 0.5735,
+   "n": 5126,
+   "llModelo": 0.5737,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1949,
+   "brier": 0.195,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 606,
-  "acertos": 440,
-  "esperado": 422.6703
+  "n": 624,
+  "acertos": 454,
+  "esperado": 435.4779
  },
  "jogadores": {
-  "n": 1766,
-  "marcaram": 230,
-  "previsto": 395.0524,
-  "llModelo": 0.4,
-  "comOdd": 1027,
-  "marcaramComOdd": 162,
-  "previstoModeloComOdd": 232.7443,
-  "implicitoBrutoComOdd": 329.8802,
+  "n": 1835,
+  "marcaram": 240,
+  "previsto": 410.6633,
+  "llModelo": 0.4008,
+  "comOdd": 1083,
+  "marcaramComOdd": 170,
+  "previstoModeloComOdd": 245.5884,
+  "implicitoBrutoComOdd": 348.3068,
   "apostasModeloAcimaDaOdd": {
-   "n": 24,
-   "retorno": -0.7708
+   "n": 26,
+   "retorno": -0.6058
   },
   "faixas": [
    {
@@ -80,27 +80,27 @@
    },
    {
     "de": 0.1,
-    "n": 695,
-    "previsto": 0.1596,
-    "aconteceu": 0.0835
+    "n": 722,
+    "previsto": 0.1599,
+    "aconteceu": 0.0817
    },
    {
     "de": 0.2,
-    "n": 685,
-    "previsto": 0.2403,
-    "aconteceu": 0.1416
+    "n": 717,
+    "previsto": 0.2402,
+    "aconteceu": 0.145
    },
    {
     "de": 0.3,
-    "n": 228,
-    "previsto": 0.3399,
-    "aconteceu": 0.2193
+    "n": 237,
+    "previsto": 0.3397,
+    "aconteceu": 0.2194
    },
    {
     "de": 0.4,
-    "n": 65,
-    "previsto": 0.4399,
-    "aconteceu": 0.2923
+    "n": 66,
+    "previsto": 0.4394,
+    "aconteceu": 0.2879
    },
    {
     "de": 0.5,
@@ -112,50 +112,50 @@
  },
  "palpites": {
   "principal": {
-   "n": 192,
-   "acertos": 121,
-   "previsto": 0.6407,
-   "comOdd": 192,
-   "lucro": -12.99,
-   "oddMedia": 1.5063,
-   "retorno": -0.0677,
-   "retornoMelhorOdd": -0.0667
+   "n": 198,
+   "acertos": 127,
+   "previsto": 0.642,
+   "comOdd": 198,
+   "lucro": -10.58,
+   "oddMedia": 1.5031,
+   "retorno": -0.0534,
+   "retornoMelhorOdd": -0.0525
   },
   "destaque": {
-   "n": 92,
-   "acertos": 60,
-   "previsto": 0.6975,
-   "comOdd": 92,
-   "lucro": -11.85,
-   "oddMedia": 1.3397,
-   "retorno": -0.1288,
-   "retornoMelhorOdd": -0.1288
+   "n": 94,
+   "acertos": 62,
+   "previsto": 0.6972,
+   "comOdd": 94,
+   "lucro": -11.12,
+   "oddMedia": 1.3402,
+   "retorno": -0.1183,
+   "retornoMelhorOdd": -0.1183
   },
   "oddMaior": {
-   "n": 99,
-   "acertos": 53,
+   "n": 105,
+   "acertos": 55,
    "previsto": 0.484,
-   "comOdd": 99,
-   "lucro": 7.28,
-   "oddMedia": 2.0244,
-   "retorno": 0.0735,
-   "retornoMelhorOdd": 0.0747
+   "comOdd": 105,
+   "lucro": 4.92,
+   "oddMedia": 2.0265,
+   "retorno": 0.0469,
+   "retornoMelhorOdd": 0.048
   },
   "jogador": {
-   "n": 125,
+   "n": 131,
    "acertos": 25,
-   "previsto": 0.3118,
-   "comOdd": 125,
-   "lucro": -55.9385,
-   "oddMedia": 3.3164,
-   "retorno": -0.4475,
-   "retornoMelhorOdd": -0.4475
+   "previsto": 0.3114,
+   "comOdd": 131,
+   "lucro": -61.9385,
+   "oddMedia": 3.3268,
+   "retorno": -0.4728,
+   "retornoMelhorOdd": -0.4728
   }
  },
  "movimentoDoMercado": {
-  "n": 316,
-  "aFavorDoModelo": 194,
-  "medio": 0.0054
+  "n": 327,
+  "aFavorDoModelo": 201,
+  "medio": 0.0055
  },
  "dias": [
   {
@@ -221,7 +221,33 @@
      "jogo": "Internazionale × Como",
      "comp": "ita.1",
      "inicio": "2026-11-08T17:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Internazionale",
+      "p": 0.545,
+      "pMercado": 0.4598,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Internazionale ou Como)",
+       "p": 0.7665,
+       "odd": 1.22,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7965,
+       "odd": 1.11,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401874810",
@@ -389,28 +415,226 @@
      "jogo": "Le Mans × AS Monaco",
      "comp": "fra.1",
      "inicio": "2026-11-08T16:15Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "AS Monaco: mais de 3,5 escanteios",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6824,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ansu Fati marca",
+       "odd": 2.75,
+       "chance": 0.3495,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória AS Monaco",
+      "p": 0.5038,
+      "pMercado": 0.6004,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6749,
+       "odd": 1.31,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Le Mans ou AS Monaco)",
+       "p": 0.7554,
+       "odd": 1.25,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401876409",
      "jogo": "Le Havre AC × Lorient",
      "comp": "fra.1",
      "inicio": "2026-11-08T16:15Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Lorient ou empate",
+       "odd": 1.4,
+       "casa": "Bet 365",
+       "chance": 0.6671,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.769,
+       "casa": "DraftKings",
+       "chance": 0.5327,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Josh Maja marca",
+       "odd": 3.4,
+       "chance": 0.2805,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lorient",
+      "p": 0.3824,
+      "pMercado": 0.3843,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7238,
+       "odd": 1.31,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Le Havre AC ou Lorient)",
+       "p": 0.7248,
+       "odd": 1.33,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876410",
      "jogo": "Brest × Lyon",
      "comp": "fra.1",
      "inicio": "2026-11-08T16:15Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.38,
+       "casa": null,
+       "chance": 0.684,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Lyon",
+       "odd": 2.5,
+       "casa": "DraftKings",
+       "chance": 0.3934,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ernest Nuamah marca",
+       "odd": 3.2,
+       "chance": 0.2863,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lyon",
+      "p": 0.4034,
+      "pMercado": 0.3834,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6819,
+       "odd": 1.38,
+       "ok": 1
+      },
+      {
+       "rotulo": "Lyon ou empate",
+       "p": 0.6602,
+       "odd": 1.4,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5782,
+       "odd": 1.65,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876412",
      "jogo": "Angers × Nice",
      "comp": "fra.1",
      "inicio": "2026-11-08T16:15Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.38,
+       "casa": null,
+       "chance": 0.7045,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Angers ou empate",
+       "odd": 1.8,
+       "casa": "Bet 365",
+       "chance": 0.5488,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Elye Wahi marca",
+       "odd": 2.5,
+       "chance": 0.356,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Nice",
+      "p": 0.4317,
+      "pMercado": 0.4708,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Nice ou empate",
+       "p": 0.6967,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7235,
+       "odd": 1.38,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401878759",
@@ -543,7 +767,63 @@
      "jogo": "Manchester United × Aston Villa",
      "comp": "eng.1",
      "inicio": "2026-11-08T16:30Z",
-     "pendente": true
+     "placar": [
+      4,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Manchester United ou empate",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.715,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 2.5,
+       "casa": null,
+       "chance": 0.3818,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Benjamin Sesko marca",
+       "odd": 2.4,
+       "chance": 0.3631,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Manchester United",
+      "p": 0.5062,
+      "pMercado": 0.4399,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Manchester United ou empate",
+       "p": 0.7377,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.619,
+       "odd": 1.49,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.785,
+       "odd": 1.22,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879243",
@@ -691,7 +971,58 @@
      "jogo": "Real Sociedad × Rayo Vallecano",
      "comp": "esp.1",
      "inicio": "2026-11-08T15:15Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.44,
+       "casa": null,
+       "chance": 0.6704,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Real Sociedad",
+       "odd": 1.87,
+       "casa": "DraftKings",
+       "chance": 0.5242,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 9,5",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.6814,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Real Sociedad",
+      "p": 0.5293,
+      "pMercado": 0.5191,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6841,
+       "odd": 1.44,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Real Sociedad ou Rayo Vallecano)",
+       "p": 0.7582,
+       "odd": 1.25,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882814",
@@ -823,7 +1154,57 @@
      "jogo": "SC Freiburg × 1. FC Union Berlin",
      "comp": "ger.1",
      "inicio": "2026-11-08T16:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.45,
+       "casa": null,
+       "chance": 0.6612,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.92,
+       "casa": null,
+       "chance": 0.5177,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Yannick Engelhardt marca",
+       "odd": 7,
+       "chance": 0.1875,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória SC Freiburg",
+      "p": 0.5809,
+      "pMercado": 0.6814,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6683,
+       "odd": 1.45,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (SC Freiburg ou 1. FC Union Berlin)",
+       "p": 0.7729,
+       "odd": 1.18,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884742",
