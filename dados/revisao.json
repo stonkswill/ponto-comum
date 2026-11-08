@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-08T13:07:56.747Z",
- "jogos": 215,
+ "geradoEm": "2026-11-08T14:52:29.765Z",
+ "jogos": 216,
  "porFamilia": {
   "resultado": {
-   "n": 3862,
-   "llModelo": 0.4717,
-   "llMercado": 0.4613,
-   "nMercado": 3844,
-   "llModeloComMercado": 0.4693,
-   "brier": 0.1537,
+   "n": 3880,
+   "llModelo": 0.4715,
+   "llMercado": 0.4612,
+   "nMercado": 3862,
+   "llModeloComMercado": 0.4691,
+   "brier": 0.1536,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 5160,
-   "llModelo": 0.5332,
-   "llMercado": 0.5307,
-   "nMercado": 5136,
-   "llModeloComMercado": 0.5324,
-   "brier": 0.1788,
+   "n": 5184,
+   "llModelo": 0.5323,
+   "llMercado": 0.53,
+   "nMercado": 5160,
+   "llModeloComMercado": 0.5315,
+   "brier": 0.1784,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 3010,
-   "llModelo": 0.596,
-   "llMercado": 0.5971,
-   "nMercado": 2996,
-   "llModeloComMercado": 0.5963,
-   "brier": 0.2057,
+   "n": 3024,
+   "llModelo": 0.5957,
+   "llMercado": 0.5968,
+   "nMercado": 3010,
+   "llModeloComMercado": 0.596,
+   "brier": 0.2056,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 5160,
-   "llModelo": 0.6279,
+   "n": 5184,
+   "llModelo": 0.6292,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2187,
+   "brier": 0.2192,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 4730,
-   "llModelo": 0.5709,
+   "n": 4752,
+   "llModelo": 0.5704,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1939,
+   "brier": 0.1938,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 579,
+  "n": 580,
   "acertos": 418,
-  "esperado": 404.2535
+  "esperado": 404.99
  },
  "jogadores": {
-  "n": 1677,
-  "marcaram": 219,
-  "previsto": 375.1573,
-  "llModelo": 0.4008,
-  "comOdd": 959,
-  "marcaramComOdd": 151,
-  "previstoModeloComOdd": 217.658,
-  "implicitoBrutoComOdd": 308.8848,
+  "n": 1686,
+  "marcaram": 220,
+  "previsto": 376.7591,
+  "llModelo": 0.401,
+  "comOdd": 966,
+  "marcaramComOdd": 152,
+  "previstoModeloComOdd": 218.7872,
+  "implicitoBrutoComOdd": 310.7334,
   "apostasModeloAcimaDaOdd": {
    "n": 21,
    "retorno": -0.7381
@@ -80,15 +80,15 @@
    },
    {
     "de": 0.1,
-    "n": 664,
-    "previsto": 0.1594,
-    "aconteceu": 0.0843
+    "n": 669,
+    "previsto": 0.1593,
+    "aconteceu": 0.0852
    },
    {
     "de": 0.2,
-    "n": 640,
-    "previsto": 0.2405,
-    "aconteceu": 0.1422
+    "n": 644,
+    "previsto": 0.2404,
+    "aconteceu": 0.1413
    },
    {
     "de": 0.3,
@@ -153,8 +153,8 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 300,
-  "aFavorDoModelo": 190,
+  "n": 302,
+  "aFavorDoModelo": 191,
   "medio": 0.0063
  },
  "dias": [
@@ -180,7 +180,27 @@
      "jogo": "Napoli × Lazio",
      "comp": "ita.1",
      "inicio": "2026-11-08T11:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Napoli",
+      "p": 0.5109,
+      "pMercado": 0.4498,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Napoli ou Lazio)",
+       "p": 0.7365,
+       "odd": 1.29,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401875003",
