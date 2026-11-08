@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-07T21:49:58.117Z",
- "jogos": 213,
+ "geradoEm": "2026-11-08T03:02:45.709Z",
+ "jogos": 215,
  "porFamilia": {
   "resultado": {
-   "n": 3828,
-   "llModelo": 0.4722,
-   "llMercado": 0.463,
-   "nMercado": 3810,
-   "llModeloComMercado": 0.4698,
-   "brier": 0.1538,
+   "n": 3862,
+   "llModelo": 0.4717,
+   "llMercado": 0.4613,
+   "nMercado": 3844,
+   "llModeloComMercado": 0.4693,
+   "brier": 0.1537,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 5112,
-   "llModelo": 0.5319,
+   "n": 5160,
+   "llModelo": 0.5332,
    "llMercado": 0.5307,
-   "nMercado": 5088,
-   "llModeloComMercado": 0.5311,
-   "brier": 0.1783,
+   "nMercado": 5136,
+   "llModeloComMercado": 0.5324,
+   "brier": 0.1788,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 2982,
-   "llModelo": 0.5953,
-   "llMercado": 0.597,
-   "nMercado": 2968,
-   "llModeloComMercado": 0.5955,
-   "brier": 0.2055,
+   "n": 3010,
+   "llModelo": 0.596,
+   "llMercado": 0.5971,
+   "nMercado": 2996,
+   "llModeloComMercado": 0.5963,
+   "brier": 0.2057,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 5112,
-   "llModelo": 0.6289,
+   "n": 5160,
+   "llModelo": 0.6279,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2191,
+   "brier": 0.2187,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 4686,
-   "llModelo": 0.5716,
+   "n": 4730,
+   "llModelo": 0.5709,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1942,
+   "brier": 0.1939,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 576,
-  "acertos": 416,
-  "esperado": 402.0489
+  "n": 579,
+  "acertos": 418,
+  "esperado": 404.2535
  },
  "jogadores": {
-  "n": 1660,
-  "marcaram": 218,
-  "previsto": 370.8205,
-  "llModelo": 0.4016,
-  "comOdd": 952,
+  "n": 1677,
+  "marcaram": 219,
+  "previsto": 375.1573,
+  "llModelo": 0.4008,
+  "comOdd": 959,
   "marcaramComOdd": 151,
-  "previstoModeloComOdd": 215.5505,
-  "implicitoBrutoComOdd": 306.0371,
+  "previstoModeloComOdd": 217.658,
+  "implicitoBrutoComOdd": 308.8848,
   "apostasModeloAcimaDaOdd": {
    "n": 21,
    "retorno": -0.7381
@@ -74,21 +74,21 @@
   "faixas": [
    {
     "de": 0,
-    "n": 77,
-    "previsto": 0.0794,
-    "aconteceu": 0.013
+    "n": 79,
+    "previsto": 0.0792,
+    "aconteceu": 0.0127
    },
    {
     "de": 0.1,
-    "n": 658,
-    "previsto": 0.1595,
-    "aconteceu": 0.0851
+    "n": 664,
+    "previsto": 0.1594,
+    "aconteceu": 0.0843
    },
    {
     "de": 0.2,
-    "n": 636,
+    "n": 640,
     "previsto": 0.2405,
-    "aconteceu": 0.1431
+    "aconteceu": 0.1422
    },
    {
     "de": 0.3,
@@ -98,9 +98,9 @@
    },
    {
     "de": 0.4,
-    "n": 59,
-    "previsto": 0.4383,
-    "aconteceu": 0.2881
+    "n": 64,
+    "previsto": 0.4401,
+    "aconteceu": 0.2813
    },
    {
     "de": 0.5,
@@ -122,40 +122,40 @@
    "retornoMelhorOdd": -0.0779
   },
   "destaque": {
-   "n": 85,
+   "n": 87,
    "acertos": 57,
-   "previsto": 0.6979,
-   "comOdd": 85,
-   "lucro": -8.86,
-   "oddMedia": 1.3376,
-   "retorno": -0.1042,
-   "retornoMelhorOdd": -0.1042
+   "previsto": 0.6973,
+   "comOdd": 87,
+   "lucro": -10.86,
+   "oddMedia": 1.3398,
+   "retorno": -0.1248,
+   "retornoMelhorOdd": -0.1248
   },
   "oddMaior": {
-   "n": 94,
+   "n": 95,
    "acertos": 51,
-   "previsto": 0.4844,
-   "comOdd": 94,
-   "lucro": 8.44,
-   "oddMedia": 2.0233,
-   "retorno": 0.0898,
-   "retornoMelhorOdd": 0.0907
+   "previsto": 0.484,
+   "comOdd": 95,
+   "lucro": 7.44,
+   "oddMedia": 2.0243,
+   "retorno": 0.0783,
+   "retornoMelhorOdd": 0.0792
   },
   "jogador": {
-   "n": 116,
+   "n": 117,
    "acertos": 24,
-   "previsto": 0.3119,
-   "comOdd": 116,
-   "lucro": -49.2385,
-   "oddMedia": 3.3018,
-   "retorno": -0.4245,
-   "retornoMelhorOdd": -0.4245
+   "previsto": 0.3135,
+   "comOdd": 117,
+   "lucro": -50.2385,
+   "oddMedia": 3.2878,
+   "retorno": -0.4294,
+   "retornoMelhorOdd": -0.4294
   }
  },
  "movimentoDoMercado": {
-  "n": 296,
-  "aFavorDoModelo": 187,
-  "medio": 0.0064
+  "n": 300,
+  "aFavorDoModelo": 190,
+  "medio": 0.0063
  },
  "dias": [
   {
@@ -548,7 +548,51 @@
      "jogo": "Paris Saint-Germain × Troyes",
      "comp": "fra.1",
      "inicio": "2026-11-07T20:05Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.12,
+       "casa": null,
+       "chance": 0.4488,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "2º tempo: mais de 1,5 gols",
+       "odd": 1.51,
+       "casa": null,
+       "chance": 0.6598,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ferran Torres marca",
+       "odd": 1.6666666666666665,
+       "chance": 0.4947,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Paris Saint-Germain",
+      "p": 0.8999,
+      "pMercado": 0.8551,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.7964,
+       "odd": 1.31,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401876411",
@@ -830,7 +874,42 @@
      "jogo": "Valencia × Real Madrid",
      "comp": "esp.1",
      "inicio": "2026-11-07T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6873,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Real Madrid",
+      "p": 0.5964,
+      "pMercado": 0.7843,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6236,
+       "odd": 1.71,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Valencia ou Real Madrid)",
+       "p": 0.7846,
+       "odd": 1.1,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882811",
