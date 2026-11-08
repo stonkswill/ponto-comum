@@ -1,106 +1,106 @@
 {
- "geradoEm": "2026-11-08T14:52:29.765Z",
- "jogos": 216,
+ "geradoEm": "2026-11-08T16:52:25.230Z",
+ "jogos": 225,
  "porFamilia": {
   "resultado": {
-   "n": 3880,
-   "llModelo": 0.4715,
-   "llMercado": 0.4612,
-   "nMercado": 3862,
-   "llModeloComMercado": 0.4691,
-   "brier": 0.1536,
+   "n": 4042,
+   "llModelo": 0.4688,
+   "llMercado": 0.4577,
+   "nMercado": 4024,
+   "llModeloComMercado": 0.4665,
+   "brier": 0.1526,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 5184,
-   "llModelo": 0.5323,
-   "llMercado": 0.53,
-   "nMercado": 5160,
-   "llModeloComMercado": 0.5315,
-   "brier": 0.1784,
+   "n": 5400,
+   "llModelo": 0.5286,
+   "llMercado": 0.5266,
+   "nMercado": 5376,
+   "llModeloComMercado": 0.5278,
+   "brier": 0.1768,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 3024,
-   "llModelo": 0.5957,
-   "llMercado": 0.5968,
-   "nMercado": 3010,
-   "llModeloComMercado": 0.596,
-   "brier": 0.2056,
+   "n": 3150,
+   "llModelo": 0.594,
+   "llMercado": 0.5952,
+   "nMercado": 3136,
+   "llModeloComMercado": 0.5943,
+   "brier": 0.2049,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 5184,
-   "llModelo": 0.6292,
+   "n": 5400,
+   "llModelo": 0.6268,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2192,
+   "brier": 0.2182,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 4752,
-   "llModelo": 0.5704,
+   "n": 4950,
+   "llModelo": 0.5735,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1938,
+   "brier": 0.1949,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 580,
-  "acertos": 418,
-  "esperado": 404.99
+  "n": 606,
+  "acertos": 440,
+  "esperado": 422.6703
  },
  "jogadores": {
-  "n": 1686,
-  "marcaram": 220,
-  "previsto": 376.7591,
-  "llModelo": 0.401,
-  "comOdd": 966,
-  "marcaramComOdd": 152,
-  "previstoModeloComOdd": 218.7872,
-  "implicitoBrutoComOdd": 310.7334,
+  "n": 1766,
+  "marcaram": 230,
+  "previsto": 395.0524,
+  "llModelo": 0.4,
+  "comOdd": 1027,
+  "marcaramComOdd": 162,
+  "previstoModeloComOdd": 232.7443,
+  "implicitoBrutoComOdd": 329.8802,
   "apostasModeloAcimaDaOdd": {
-   "n": 21,
-   "retorno": -0.7381
+   "n": 24,
+   "retorno": -0.7708
   },
   "faixas": [
    {
     "de": 0,
-    "n": 79,
-    "previsto": 0.0792,
-    "aconteceu": 0.0127
+    "n": 80,
+    "previsto": 0.0794,
+    "aconteceu": 0.0125
    },
    {
     "de": 0.1,
-    "n": 669,
-    "previsto": 0.1593,
-    "aconteceu": 0.0852
+    "n": 695,
+    "previsto": 0.1596,
+    "aconteceu": 0.0835
    },
    {
     "de": 0.2,
-    "n": 644,
-    "previsto": 0.2404,
-    "aconteceu": 0.1413
+    "n": 685,
+    "previsto": 0.2403,
+    "aconteceu": 0.1416
    },
    {
     "de": 0.3,
-    "n": 217,
-    "previsto": 0.3404,
-    "aconteceu": 0.2212
+    "n": 228,
+    "previsto": 0.3399,
+    "aconteceu": 0.2193
    },
    {
     "de": 0.4,
-    "n": 64,
-    "previsto": 0.4401,
-    "aconteceu": 0.2813
+    "n": 65,
+    "previsto": 0.4399,
+    "aconteceu": 0.2923
    },
    {
     "de": 0.5,
@@ -112,50 +112,50 @@
  },
  "palpites": {
   "principal": {
-   "n": 184,
-   "acertos": 115,
-   "previsto": 0.6429,
-   "comOdd": 184,
-   "lucro": -14.5,
-   "oddMedia": 1.5012,
-   "retorno": -0.0788,
-   "retornoMelhorOdd": -0.0779
+   "n": 192,
+   "acertos": 121,
+   "previsto": 0.6407,
+   "comOdd": 192,
+   "lucro": -12.99,
+   "oddMedia": 1.5063,
+   "retorno": -0.0677,
+   "retornoMelhorOdd": -0.0667
   },
   "destaque": {
-   "n": 87,
-   "acertos": 57,
-   "previsto": 0.6973,
-   "comOdd": 87,
-   "lucro": -10.86,
-   "oddMedia": 1.3398,
-   "retorno": -0.1248,
-   "retornoMelhorOdd": -0.1248
+   "n": 92,
+   "acertos": 60,
+   "previsto": 0.6975,
+   "comOdd": 92,
+   "lucro": -11.85,
+   "oddMedia": 1.3397,
+   "retorno": -0.1288,
+   "retornoMelhorOdd": -0.1288
   },
   "oddMaior": {
-   "n": 95,
-   "acertos": 51,
+   "n": 99,
+   "acertos": 53,
    "previsto": 0.484,
-   "comOdd": 95,
-   "lucro": 7.44,
-   "oddMedia": 2.0243,
-   "retorno": 0.0783,
-   "retornoMelhorOdd": 0.0792
+   "comOdd": 99,
+   "lucro": 7.28,
+   "oddMedia": 2.0244,
+   "retorno": 0.0735,
+   "retornoMelhorOdd": 0.0747
   },
   "jogador": {
-   "n": 117,
-   "acertos": 24,
-   "previsto": 0.3135,
-   "comOdd": 117,
-   "lucro": -50.2385,
-   "oddMedia": 3.2878,
-   "retorno": -0.4294,
-   "retornoMelhorOdd": -0.4294
+   "n": 125,
+   "acertos": 25,
+   "previsto": 0.3118,
+   "comOdd": 125,
+   "lucro": -55.9385,
+   "oddMedia": 3.3164,
+   "retorno": -0.4475,
+   "retornoMelhorOdd": -0.4475
   }
  },
  "movimentoDoMercado": {
-  "n": 302,
-  "aFavorDoModelo": 191,
-  "medio": 0.0063
+  "n": 316,
+  "aFavorDoModelo": 194,
+  "medio": 0.0054
  },
  "dias": [
   {
@@ -166,7 +166,55 @@
      "jogo": "Monza × Atalanta",
      "comp": "ita.1",
      "inicio": "2026-11-08T14:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Atalanta",
+       "odd": 1.9,
+       "casa": "Bet 365",
+       "chance": 0.5295,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Nikola Krstovic marca",
+       "odd": 2.3,
+       "chance": 0.4242,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Atalanta",
+      "p": 0.5502,
+      "pMercado": 0.5087,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Monza ou Atalanta)",
+       "p": 0.7667,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7932,
+       "odd": 1.11,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Atalanta",
+       "p": 0.5502,
+       "odd": 1.89,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874808",
@@ -214,7 +262,57 @@
      "jogo": "Genoa × AC Milan",
      "comp": "ita.1",
      "inicio": "2026-11-08T14:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.714,
+       "casa": "DraftKings",
+       "chance": 0.5427,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória AC Milan",
+       "odd": 2,
+       "casa": "Bet 365",
+       "chance": 0.4934,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Diego Moreira marca",
+       "odd": 4.333333333333334,
+       "chance": 0.3173,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AC Milan",
+      "p": 0.5035,
+      "pMercado": 0.4833,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7235,
+       "odd": 1.34,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Genoa ou AC Milan)",
+       "p": 0.7381,
+       "odd": 1.33,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401876404",
@@ -228,7 +326,63 @@
      "jogo": "Stade Rennais × Lille",
      "comp": "fra.1",
      "inicio": "2026-11-08T14:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.41,
+       "casa": null,
+       "chance": 0.6722,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Stade Rennais",
+       "odd": 2.4,
+       "casa": "DraftKings",
+       "chance": 0.4056,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Dilane Bakwa marca",
+       "odd": 4.5,
+       "chance": 0.2212,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Stade Rennais",
+      "p": 0.4118,
+      "pMercado": 0.3994,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6741,
+       "odd": 1.41,
+       "ok": 1
+      },
+      {
+       "rotulo": "Stade Rennais ou empate",
+       "p": 0.6665,
+       "odd": 1.4,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5839,
+       "odd": 1.61,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876408",
@@ -263,14 +417,126 @@
      "jogo": "Ipswich Town × AFC Bournemouth",
      "comp": "eng.1",
      "inicio": "2026-11-08T14:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.63,
+       "casa": null,
+       "chance": 0.5964,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Marcus Tavernier marca",
+       "odd": 4.5,
+       "chance": 0.3064,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AFC Bournemouth",
+      "p": 0.5579,
+      "pMercado": 0.4841,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6261,
+       "odd": 1.69,
+       "ok": 1
+      },
+      {
+       "rotulo": "AFC Bournemouth ou empate",
+       "p": 0.7779,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6116,
+       "odd": 1.63,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória AFC Bournemouth",
+       "p": 0.5579,
+       "odd": 2,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879239",
      "jogo": "Sunderland × Chelsea",
      "comp": "eng.1",
      "inicio": "2026-11-08T14:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.76,
+       "casa": null,
+       "chance": 0.5346,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.9,
+       "casa": "Bet 365",
+       "chance": 0.5113,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Sunderland: menos de 1,5 gols",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.7059,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Morgan Rogers marca",
+       "odd": 3.5,
+       "chance": 0.2289,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Chelsea",
+      "p": 0.5214,
+      "pMercado": 0.4721,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7092,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Sunderland ou Chelsea)",
+       "p": 0.7513,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879240",
@@ -284,14 +550,134 @@
      "jogo": "Crystal Palace × Liverpool",
      "comp": "eng.1",
      "inicio": "2026-11-08T14:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.58,
+       "casa": null,
+       "chance": 0.5931,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Liverpool: menos de 2,5 cartões",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7036,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Víctor Muñoz marca",
+       "odd": 3.5,
+       "chance": 0.2715,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Liverpool",
+      "p": 0.4869,
+      "pMercado": 0.6349,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Crystal Palace ou Liverpool)",
+       "p": 0.7565,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7976,
+       "odd": 1.11,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5852,
+       "odd": 1.58,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879244",
      "jogo": "Brighton & Hove Albion × Brentford",
      "comp": "eng.1",
      "inicio": "2026-11-08T14:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.49,
+       "casa": null,
+       "chance": 0.6328,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Brighton & Hove Albion",
+       "odd": 1.87,
+       "casa": "DraftKings",
+       "chance": 0.5272,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Brighton & Hove Albion: mais de 4,5 escanteios",
+       "odd": 1.34,
+       "casa": null,
+       "chance": 0.6925,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Jack Hinshelwood marca",
+       "odd": 4,
+       "chance": 0.2559,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Brighton & Hove Albion",
+      "p": 0.5352,
+      "pMercado": 0.5192,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Brighton & Hove Albion ou empate",
+       "p": 0.7652,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6284,
+       "odd": 1.49,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5941,
+       "odd": 1.6,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882807",
@@ -312,7 +698,48 @@
      "jogo": "Elche × Real Betis",
      "comp": "esp.1",
      "inicio": "2026-11-08T13:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "Cartões: mais de 3,5",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7169,
+       "ok": 1
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Real Betis",
+      "p": 0.3951,
+      "pMercado": 0.5073,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Elche ou Real Betis)",
+       "p": 0.7378,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7639,
+       "odd": 1.13,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.561,
+       "odd": 1.5,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882815",
@@ -333,7 +760,63 @@
      "jogo": "FC Cologne × Bayer Leverkusen",
      "comp": "ger.1",
      "inicio": "2026-11-08T14:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.51,
+       "casa": null,
+       "chance": 0.6212,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6832,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Thijs Dallinga marca",
+       "odd": 3.25,
+       "chance": 0.2735,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bayer Leverkusen",
+      "p": 0.4949,
+      "pMercado": 0.5556,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Bayer Leverkusen ou empate",
+       "p": 0.7291,
+       "odd": 1.2,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6172,
+       "odd": 1.62,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6141,
+       "odd": 1.51,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401884741",
