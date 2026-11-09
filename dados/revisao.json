@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-11-08T21:50:38.839Z",
- "jogos": 238,
+ "geradoEm": "2026-11-09T03:01:38.450Z",
+ "jogos": 239,
  "porFamilia": {
   "resultado": {
-   "n": 4276,
-   "llModelo": 0.4667,
-   "llMercado": 0.4555,
-   "nMercado": 4258,
-   "llModeloComMercado": 0.4645,
-   "brier": 0.1519,
+   "n": 4294,
+   "llModelo": 0.4663,
+   "llMercado": 0.4549,
+   "nMercado": 4276,
+   "llModeloComMercado": 0.4641,
+   "brier": 0.1517,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 5712,
-   "llModelo": 0.5264,
-   "llMercado": 0.5247,
-   "nMercado": 5688,
-   "llModeloComMercado": 0.5257,
-   "brier": 0.1759,
+   "n": 5736,
+   "llModelo": 0.5256,
+   "llMercado": 0.5239,
+   "nMercado": 5712,
+   "llModeloComMercado": 0.5249,
+   "brier": 0.1756,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 3332,
-   "llModelo": 0.5939,
-   "llMercado": 0.5949,
-   "nMercado": 3318,
-   "llModeloComMercado": 0.5942,
+   "n": 3346,
+   "llModelo": 0.5938,
+   "llMercado": 0.5948,
+   "nMercado": 3332,
+   "llModeloComMercado": 0.594,
    "brier": 0.2048,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 5712,
-   "llModelo": 0.6239,
+   "n": 5736,
+   "llModelo": 0.6243,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2168,
+   "brier": 0.217,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 5236,
-   "llModelo": 0.5721,
+   "n": 5258,
+   "llModelo": 0.5715,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1943,
+   "brier": 0.1941,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 638,
-  "acertos": 463,
-  "esperado": 445.2914
+  "n": 641,
+  "acertos": 466,
+  "esperado": 447.3888
  },
  "jogadores": {
-  "n": 1869,
+  "n": 1877,
   "marcaram": 247,
-  "previsto": 418.4558,
-  "llModelo": 0.4026,
+  "previsto": 420.5773,
+  "llModelo": 0.4023,
   "comOdd": 1108,
   "marcaramComOdd": 177,
   "previstoModeloComOdd": 251.3084,
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 737,
+    "n": 738,
     "previsto": 0.1601,
-    "aconteceu": 0.0841
+    "aconteceu": 0.084
    },
    {
     "de": 0.2,
-    "n": 731,
+    "n": 735,
     "previsto": 0.2405,
-    "aconteceu": 0.1464
+    "aconteceu": 0.1456
    },
    {
     "de": 0.3,
-    "n": 242,
-    "previsto": 0.3396,
-    "aconteceu": 0.219
+    "n": 245,
+    "previsto": 0.3394,
+    "aconteceu": 0.2163
    },
    {
     "de": 0.4,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 203,
-   "acertos": 130,
-   "previsto": 0.6414,
-   "comOdd": 203,
-   "lucro": -10.92,
-   "oddMedia": 1.5049,
-   "retorno": -0.0538,
-   "retornoMelhorOdd": -0.0529
+   "n": 204,
+   "acertos": 131,
+   "previsto": 0.6416,
+   "comOdd": 204,
+   "lucro": -10.56,
+   "oddMedia": 1.5042,
+   "retorno": -0.0518,
+   "retornoMelhorOdd": -0.0508
   },
   "destaque": {
    "n": 96,
@@ -153,9 +153,9 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 335,
-  "aFavorDoModelo": 206,
-  "medio": 0.0054
+  "n": 337,
+  "aFavorDoModelo": 208,
+  "medio": 0.0056
  },
  "dias": [
   {
@@ -1273,7 +1273,48 @@
      "jogo": "Atlético Madrid × Barcelona",
      "comp": "esp.1",
      "inicio": "2026-11-08T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6822,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Barcelona",
+      "p": 0.4342,
+      "pMercado": 0.5406,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6681,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.66,
+       "odd": 1.31,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Atlético Madrid ou Barcelona)",
+       "p": 0.7693,
+       "odd": 1.2,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401884738",
