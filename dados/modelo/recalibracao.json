@@ -1,6 +1,355 @@
 {
  "semanas": [
   {
+   "data": "2026-11-16T10:46:17.212Z",
+   "base": {
+    "modelo": {
+     "ajuste": 2.3673,
+     "teste": 2.2909,
+     "n": 880,
+     "teste1x2": 0.9485
+    },
+    "regras": {
+     "treino": {
+      "principal": {
+       "n": 10508,
+       "retorno": -0.0271
+      },
+      "oddMaior": {
+       "n": 5861,
+       "retorno": -0.0635
+      }
+     },
+     "teste": {
+      "principal": {
+       "n": 5885,
+       "retorno": -0.0446
+      },
+      "oddMaior": {
+       "n": 3254,
+       "retorno": -0.0277
+      }
+     }
+    }
+   },
+   "candidatos": [
+    {
+     "tipo": "modelo",
+     "chave": "modelo.mktBlend=0.3",
+     "param": "mktBlend",
+     "valor": 0.3,
+     "atual": 0.5,
+     "ganhoAjuste": -0.0007,
+     "ganhoTeste": 0.0008,
+     "passou": false,
+     "margem": -0.35
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.mktBlend=0.7",
+     "param": "mktBlend",
+     "valor": 0.7,
+     "atual": 0.5,
+     "ganhoAjuste": -0.0004,
+     "ganhoTeste": -0.0019,
+     "passou": false,
+     "margem": -0.95
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.xgBlend=0.3",
+     "param": "xgBlend",
+     "valor": 0.3,
+     "atual": 0.5,
+     "ganhoAjuste": -0.0002,
+     "ganhoTeste": -0.0001,
+     "passou": false,
+     "margem": -0.1
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.xgBlend=0.7",
+     "param": "xgBlend",
+     "valor": 0.7,
+     "atual": 0.5,
+     "ganhoAjuste": -0.0002,
+     "ganhoTeste": 0,
+     "passou": false,
+     "margem": -0.1
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.sdTeam=0.4",
+     "param": "sdTeam",
+     "valor": 0.4,
+     "atual": 0.5,
+     "ganhoAjuste": 0.0009,
+     "ganhoTeste": -0.0031,
+     "passou": false,
+     "margem": -1.5499999999999998
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.sdTeam=0.6",
+     "param": "sdTeam",
+     "valor": 0.6,
+     "atual": 0.5,
+     "ganhoAjuste": -0.0011,
+     "ganhoTeste": 0.002,
+     "passou": false,
+     "margem": -0.55
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.halfLife=189",
+     "param": "halfLife",
+     "valor": 189,
+     "atual": 270,
+     "ganhoAjuste": 0.0021,
+     "ganhoTeste": -0.001,
+     "passou": false,
+     "margem": -0.5
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.halfLife=378",
+     "param": "halfLife",
+     "valor": 378,
+     "atual": 270,
+     "ganhoAjuste": -0.0024,
+     "ganhoTeste": 0.0003,
+     "passou": false,
+     "margem": -1.2
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.sotBlend=0.4",
+     "param": "sotBlend",
+     "valor": 0.4,
+     "atual": 0.6,
+     "ganhoAjuste": -0.0012,
+     "ganhoTeste": -0.0002,
+     "passou": false,
+     "margem": -0.6
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.sotBlend=0.8",
+     "param": "sotBlend",
+     "valor": 0.8,
+     "atual": 0.6,
+     "ganhoAjuste": -0.0008,
+     "ganhoTeste": -0.0009,
+     "passou": false,
+     "margem": -0.44999999999999996
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.esticar=1.1",
+     "param": "esticar",
+     "valor": 1.1,
+     "atual": 1.2,
+     "ganhoAjuste": 0.0018,
+     "ganhoTeste": -0.0029,
+     "passou": false,
+     "margem": -1.45
+    },
+    {
+     "tipo": "modelo",
+     "chave": "modelo.esticar=1.3",
+     "param": "esticar",
+     "valor": 1.3,
+     "atual": 1.2,
+     "ganhoAjuste": -0.0038,
+     "ganhoTeste": 0.0012,
+     "passou": false,
+     "margem": -1.9
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.acordo=0.04",
+     "param": "acordo",
+     "valor": 0.04,
+     "atual": 0.05,
+     "palpite": "principal",
+     "ganhoTreino": 0.0067,
+     "ganhoTeste": -0.0076,
+     "nTeste": 5464,
+     "passou": false,
+     "margem": -0.76
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.acordo=0.04",
+     "param": "acordo",
+     "valor": 0.04,
+     "atual": 0.05,
+     "palpite": "oddMaior",
+     "ganhoTreino": -0.0014,
+     "ganhoTeste": -0.0009,
+     "nTeste": 2585,
+     "passou": false,
+     "margem": -0.13999999999999999
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.acordo=0.07",
+     "param": "acordo",
+     "valor": 0.07,
+     "atual": 0.05,
+     "palpite": "principal",
+     "ganhoTreino": -0.0028,
+     "ganhoTeste": -0.0075,
+     "nTeste": 6268,
+     "passou": false,
+     "margem": -0.75
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.acordo=0.07",
+     "param": "acordo",
+     "valor": 0.07,
+     "atual": 0.05,
+     "palpite": "oddMaior",
+     "ganhoTreino": 0.0003,
+     "ganhoTeste": -0.0124,
+     "nTeste": 4131,
+     "passou": false,
+     "margem": -1.24
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.oddMin=1.3",
+     "param": "oddMin",
+     "valor": 1.3,
+     "atual": 1.35,
+     "palpite": "principal",
+     "ganhoTreino": -0.0095,
+     "ganhoTeste": 0.0005,
+     "nTeste": 6043,
+     "passou": false,
+     "margem": -0.95
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.oddMin=1.45",
+     "param": "oddMin",
+     "valor": 1.45,
+     "atual": 1.35,
+     "palpite": "principal",
+     "ganhoTreino": -0.0038,
+     "ganhoTeste": 0.0011,
+     "nTeste": 5470,
+     "passou": false,
+     "margem": -0.38
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.chanceMin=0.45",
+     "param": "chanceMin",
+     "valor": 0.45,
+     "atual": 0.5,
+     "palpite": "principal",
+     "ganhoTreino": 0,
+     "ganhoTeste": 0,
+     "nTeste": 5885,
+     "passou": false,
+     "margem": 0
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.chanceMin=0.55",
+     "param": "chanceMin",
+     "valor": 0.55,
+     "atual": 0.5,
+     "palpite": "principal",
+     "ganhoTreino": 0.0013,
+     "ganhoTeste": -0.0021,
+     "nTeste": 4506,
+     "passou": false,
+     "margem": -0.21
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.alt=[1.6,2.6]",
+     "param": "alt",
+     "valor": [
+      1.6,
+      2.6
+     ],
+     "atual": [
+      1.7,
+      2.6
+     ],
+     "palpite": "oddMaior",
+     "ganhoTreino": 0.0062,
+     "ganhoTeste": -0.0115,
+     "nTeste": 3451,
+     "passou": false,
+     "margem": -1.15
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.alt=[1.8,2.6]",
+     "param": "alt",
+     "valor": [
+      1.8,
+      2.6
+     ],
+     "atual": [
+      1.7,
+      2.6
+     ],
+     "palpite": "oddMaior",
+     "ganhoTreino": -0.0015,
+     "ganhoTeste": 0.0021,
+     "nTeste": 2980,
+     "passou": false,
+     "margem": -0.15
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.alt=[1.7,2.3]",
+     "param": "alt",
+     "valor": [
+      1.7,
+      2.3
+     ],
+     "atual": [
+      1.7,
+      2.6
+     ],
+     "palpite": "oddMaior",
+     "ganhoTreino": -0.001,
+     "ganhoTeste": -0.0014,
+     "nTeste": 2749,
+     "passou": false,
+     "margem": -0.13999999999999999
+    },
+    {
+     "tipo": "regra",
+     "chave": "regra.alt=[1.7,3]",
+     "param": "alt",
+     "valor": [
+      1.7,
+      3
+     ],
+     "atual": [
+      1.7,
+      2.6
+     ],
+     "palpite": "oddMaior",
+     "ganhoTreino": -0.0021,
+     "ganhoTeste": -0.0023,
+     "nTeste": 3526,
+     "passou": false,
+     "margem": -0.22999999999999998
+    }
+   ],
+   "decisao": "Nenhuma variação passou na trava. Tudo fica como está.",
+   "pendente": null
+  },
+  {
    "data": "2026-10-26T09:56:48.651Z",
    "base": {
     "modelo": {
