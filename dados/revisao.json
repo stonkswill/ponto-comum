@@ -1,40 +1,40 @@
 {
- "geradoEm": "2026-11-18T18:52:39.048Z",
- "jogos": 241,
+ "geradoEm": "2026-11-19T02:36:27.704Z",
+ "jogos": 247,
  "porFamilia": {
   "resultado": {
-   "n": 4330,
-   "llModelo": 0.466,
-   "llMercado": 0.4539,
-   "nMercado": 4312,
-   "llModeloComMercado": 0.4638,
-   "brier": 0.1517,
+   "n": 4438,
+   "llModelo": 0.4649,
+   "llMercado": 0.4519,
+   "nMercado": 4420,
+   "llModeloComMercado": 0.4628,
+   "brier": 0.1512,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 5784,
+   "n": 5928,
    "llModelo": 0.526,
-   "llMercado": 0.5246,
-   "nMercado": 5760,
-   "llModeloComMercado": 0.5252,
+   "llMercado": 0.5247,
+   "nMercado": 5904,
+   "llModeloComMercado": 0.5253,
    "brier": 0.1757,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 3374,
-   "llModelo": 0.5944,
-   "llMercado": 0.5958,
-   "nMercado": 3360,
-   "llModeloComMercado": 0.5946,
-   "brier": 0.205,
+   "n": 3458,
+   "llModelo": 0.5977,
+   "llMercado": 0.5993,
+   "nMercado": 3444,
+   "llModeloComMercado": 0.598,
+   "brier": 0.2064,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 5784,
-   "llModelo": 0.6232,
+   "n": 5928,
+   "llModelo": 0.623,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
@@ -43,26 +43,26 @@
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 5302,
-   "llModelo": 0.5704,
+   "n": 5434,
+   "llModelo": 0.5678,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1937,
+   "brier": 0.1927,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 644,
-  "acertos": 468,
-  "esperado": 449.5345
+  "n": 658,
+  "acertos": 480,
+  "esperado": 459.2596
  },
  "jogadores": {
-  "n": 1885,
-  "marcaram": 248,
-  "previsto": 422.4994,
-  "llModelo": 0.4023,
+  "n": 1925,
+  "marcaram": 253,
+  "previsto": 431.888,
+  "llModelo": 0.4027,
   "comOdd": 1108,
   "marcaramComOdd": 177,
   "previstoModeloComOdd": 251.3084,
@@ -74,33 +74,33 @@
   "faixas": [
    {
     "de": 0,
-    "n": 80,
-    "previsto": 0.0794,
-    "aconteceu": 0.0125
+    "n": 81,
+    "previsto": 0.0795,
+    "aconteceu": 0.0123
    },
    {
     "de": 0.1,
-    "n": 738,
-    "previsto": 0.1601,
-    "aconteceu": 0.084
+    "n": 750,
+    "previsto": 0.1603,
+    "aconteceu": 0.0853
    },
    {
     "de": 0.2,
-    "n": 743,
-    "previsto": 0.2405,
-    "aconteceu": 0.1454
+    "n": 764,
+    "previsto": 0.2406,
+    "aconteceu": 0.144
    },
    {
     "de": 0.3,
-    "n": 245,
-    "previsto": 0.3394,
-    "aconteceu": 0.2163
+    "n": 250,
+    "previsto": 0.3395,
+    "aconteceu": 0.216
    },
    {
     "de": 0.4,
-    "n": 66,
-    "previsto": 0.4394,
-    "aconteceu": 0.2879
+    "n": 67,
+    "previsto": 0.4396,
+    "aconteceu": 0.2836
    },
    {
     "de": 0.5,
@@ -112,14 +112,14 @@
  },
  "palpites": {
   "principal": {
-   "n": 206,
-   "acertos": 133,
-   "previsto": 0.6414,
-   "comOdd": 206,
-   "lucro": -9.44,
-   "oddMedia": 1.5048,
-   "retorno": -0.0458,
-   "retornoMelhorOdd": -0.0449
+   "n": 210,
+   "acertos": 136,
+   "previsto": 0.6412,
+   "comOdd": 210,
+   "lucro": -9.19,
+   "oddMedia": 1.5054,
+   "retorno": -0.0438,
+   "retornoMelhorOdd": -0.0429
   },
   "destaque": {
    "n": 97,
@@ -132,14 +132,14 @@
    "retornoMelhorOdd": -0.1179
   },
   "oddMaior": {
-   "n": 108,
-   "acertos": 56,
-   "previsto": 0.4841,
-   "comOdd": 108,
-   "lucro": 3.79,
-   "oddMedia": 2.0247,
-   "retorno": 0.0351,
-   "retornoMelhorOdd": 0.0362
+   "n": 109,
+   "acertos": 57,
+   "previsto": 0.4837,
+   "comOdd": 109,
+   "lucro": 4.99,
+   "oddMedia": 2.0263,
+   "retorno": 0.0458,
+   "retornoMelhorOdd": 0.0469
   },
   "jogador": {
    "n": 133,
@@ -153,9 +153,9 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 340,
-  "aFavorDoModelo": 211,
-  "medio": 0.0058
+  "n": 351,
+  "aFavorDoModelo": 218,
+  "medio": 0.0059
  },
  "dias": [
   {
@@ -193,42 +193,254 @@
      "jogo": "Remo × Chapecoense",
      "comp": "bra.1",
      "inicio": "2026-11-18T23:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.39,
+       "casa": null,
+       "chance": 0.6607,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Remo",
+      "p": 0.5723,
+      "pMercado": 0.6681,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6401,
+       "odd": 1.39,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Remo ou Chapecoense)",
+       "p": 0.7776,
+       "odd": 1.18,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841312",
      "jogo": "Grêmio × Bahia",
      "comp": "bra.1",
      "inicio": "2026-11-19T00:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Grêmio ou empate",
+       "odd": 1.43,
+       "casa": null,
+       "chance": 0.6804,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 2.2,
+       "casa": "DraftKings",
+       "chance": 0.4402,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Grêmio",
+      "p": 0.4453,
+      "pMercado": 0.4039,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Grêmio ou empate",
+       "p": 0.6962,
+       "odd": 1.43,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6788,
+       "odd": 1.45,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5748,
+       "odd": 1.58,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841313",
      "jogo": "Flamengo × Athletico-PR",
      "comp": "bra.1",
      "inicio": "2026-11-18T23:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Flamengo",
+      "p": 0.7215,
+      "pMercado": 0.825,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6248,
+       "odd": 1.67,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Flamengo ou Athletico-PR)",
+       "p": 0.8265,
+       "odd": 1.07,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841314",
      "jogo": "Cruzeiro × Palmeiras",
      "comp": "bra.1",
      "inicio": "2026-11-18T23:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.43,
+       "casa": null,
+       "chance": 0.6825,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Cruzeiro",
+      "p": 0.3844,
+      "pMercado": 0.3574,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7035,
+       "odd": 1.43,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Cruzeiro ou Palmeiras)",
+       "p": 0.7398,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.56,
+       "odd": 1.59,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841315",
      "jogo": "Coritiba × Santos",
      "comp": "bra.1",
      "inicio": "2026-11-18T22:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Coritiba",
+      "p": 0.3656,
+      "pMercado": 0.2644,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7169,
+       "odd": 1.2,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Coritiba ou Santos)",
+       "p": 0.7254,
+       "odd": 1.28,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841316",
      "jogo": "Corinthians × Botafogo",
      "comp": "bra.1",
      "inicio": "2026-11-19T00:30Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.909,
+       "casa": "DraftKings",
+       "chance": 0.5111,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Corinthians",
+      "p": 0.4771,
+      "pMercado": 0.5632,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7242,
+       "odd": 1.26,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Corinthians ou Botafogo)",
+       "p": 0.7365,
+       "odd": 1.25,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
