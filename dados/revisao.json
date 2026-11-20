@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-11-19T19:00:31.274Z",
- "jogos": 247,
+ "geradoEm": "2026-11-20T02:21:53.165Z",
+ "jogos": 249,
  "porFamilia": {
   "resultado": {
-   "n": 4438,
-   "llModelo": 0.4649,
-   "llMercado": 0.4519,
-   "nMercado": 4420,
-   "llModeloComMercado": 0.4628,
-   "brier": 0.1512,
+   "n": 4474,
+   "llModelo": 0.464,
+   "llMercado": 0.4509,
+   "nMercado": 4456,
+   "llModeloComMercado": 0.4619,
+   "brier": 0.1509,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 5928,
-   "llModelo": 0.526,
-   "llMercado": 0.5247,
-   "nMercado": 5904,
-   "llModeloComMercado": 0.5253,
-   "brier": 0.1757,
+   "n": 5976,
+   "llModelo": 0.5246,
+   "llMercado": 0.5233,
+   "nMercado": 5952,
+   "llModeloComMercado": 0.5239,
+   "brier": 0.1751,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 3458,
-   "llModelo": 0.5977,
-   "llMercado": 0.5993,
-   "nMercado": 3444,
-   "llModeloComMercado": 0.598,
-   "brier": 0.2064,
+   "n": 3486,
+   "llModelo": 0.597,
+   "llMercado": 0.5985,
+   "nMercado": 3472,
+   "llModeloComMercado": 0.5972,
+   "brier": 0.2061,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 5928,
-   "llModelo": 0.623,
+   "n": 5976,
+   "llModelo": 0.6246,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2165,
+   "brier": 0.2172,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 5434,
-   "llModelo": 0.5678,
+   "n": 5478,
+   "llModelo": 0.5674,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1927,
+   "brier": 0.1926,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 658,
-  "acertos": 480,
-  "esperado": 459.2596
+  "n": 663,
+  "acertos": 485,
+  "esperado": 462.719
  },
  "jogadores": {
-  "n": 1925,
-  "marcaram": 253,
-  "previsto": 431.888,
-  "llModelo": 0.4027,
+  "n": 1941,
+  "marcaram": 255,
+  "previsto": 435.2522,
+  "llModelo": 0.4023,
   "comOdd": 1108,
   "marcaramComOdd": 177,
   "previstoModeloComOdd": 251.3084,
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 750,
+    "n": 758,
     "previsto": 0.1603,
-    "aconteceu": 0.0853
+    "aconteceu": 0.0844
    },
    {
     "de": 0.2,
-    "n": 764,
+    "n": 770,
     "previsto": 0.2406,
-    "aconteceu": 0.144
+    "aconteceu": 0.1442
    },
    {
     "de": 0.3,
-    "n": 250,
-    "previsto": 0.3395,
-    "aconteceu": 0.216
+    "n": 252,
+    "previsto": 0.3393,
+    "aconteceu": 0.2183
    },
    {
     "de": 0.4,
@@ -112,34 +112,34 @@
  },
  "palpites": {
   "principal": {
-   "n": 210,
-   "acertos": 136,
-   "previsto": 0.6412,
-   "comOdd": 210,
-   "lucro": -9.19,
-   "oddMedia": 1.5054,
-   "retorno": -0.0438,
-   "retornoMelhorOdd": -0.0429
+   "n": 212,
+   "acertos": 138,
+   "previsto": 0.6414,
+   "comOdd": 212,
+   "lucro": -8.31,
+   "oddMedia": 1.5048,
+   "retorno": -0.0392,
+   "retornoMelhorOdd": -0.0383
   },
   "destaque": {
-   "n": 97,
-   "acertos": 64,
-   "previsto": 0.697,
-   "comOdd": 97,
-   "lucro": -11.44,
-   "oddMedia": 1.3403,
-   "retorno": -0.1179,
-   "retornoMelhorOdd": -0.1179
+   "n": 98,
+   "acertos": 65,
+   "previsto": 0.6971,
+   "comOdd": 98,
+   "lucro": -11.12,
+   "oddMedia": 1.3401,
+   "retorno": -0.1135,
+   "retornoMelhorOdd": -0.1135
   },
   "oddMaior": {
-   "n": 109,
-   "acertos": 57,
-   "previsto": 0.4837,
-   "comOdd": 109,
-   "lucro": 4.99,
-   "oddMedia": 2.0263,
-   "retorno": 0.0458,
-   "retornoMelhorOdd": 0.0469
+   "n": 111,
+   "acertos": 59,
+   "previsto": 0.4846,
+   "comOdd": 111,
+   "lucro": 6.6,
+   "oddMedia": 2.0223,
+   "retorno": 0.0595,
+   "retornoMelhorOdd": 0.0605
   },
   "jogador": {
    "n": 133,
@@ -153,11 +153,157 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 351,
-  "aFavorDoModelo": 218,
+  "n": 354,
+  "aFavorDoModelo": 219,
   "medio": 0.0059
  },
  "dias": [
+  {
+   "dia": "2026-11-21",
+   "jogos": [
+    {
+     "id": "401874967",
+     "jogo": "Parma × AS Roma",
+     "comp": "ita.1",
+     "inicio": "2026-11-21T17:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874981",
+     "jogo": "Lazio × Lecce",
+     "comp": "ita.1",
+     "inicio": "2026-11-21T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401875056",
+     "jogo": "Como × Cagliari",
+     "comp": "ita.1",
+     "inicio": "2026-11-21T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401876398",
+     "jogo": "Nice × Paris Saint-Germain",
+     "comp": "fra.1",
+     "inicio": "2026-11-21T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401878754",
+     "jogo": "Tottenham Hotspur × Ipswich Town",
+     "comp": "eng.1",
+     "inicio": "2026-11-21T15:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401878756",
+     "jogo": "Aston Villa × Sunderland",
+     "comp": "eng.1",
+     "inicio": "2026-11-21T15:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879232",
+     "jogo": "Newcastle United × Arsenal",
+     "comp": "eng.1",
+     "inicio": "2026-11-21T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401879233",
+     "jogo": "Manchester City × Fulham",
+     "comp": "eng.1",
+     "inicio": "2026-11-21T12:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401879235",
+     "jogo": "Coventry City × Crystal Palace",
+     "comp": "eng.1",
+     "inicio": "2026-11-21T15:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879236",
+     "jogo": "Chelsea × Leeds United",
+     "comp": "eng.1",
+     "inicio": "2026-11-21T15:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879238",
+     "jogo": "AFC Bournemouth × Nottingham Forest",
+     "comp": "eng.1",
+     "inicio": "2026-11-21T15:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882797",
+     "jogo": "Sevilla × Real Betis",
+     "comp": "esp.1",
+     "inicio": "2026-11-21T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882799",
+     "jogo": "Rayo Vallecano × Valencia",
+     "comp": "esp.1",
+     "inicio": "2026-11-21T15:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401882806",
+     "jogo": "Alavés × Deportivo",
+     "comp": "esp.1",
+     "inicio": "2026-11-21T13:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401884728",
+     "jogo": "SV Elversberg × SC Freiburg",
+     "comp": "ger.1",
+     "inicio": "2026-11-21T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884729",
+     "jogo": "Schalke 04 × VfB Stuttgart",
+     "comp": "ger.1",
+     "inicio": "2026-11-21T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884731",
+     "jogo": "Borussia Mönchengladbach × Borussia Dortmund",
+     "comp": "ger.1",
+     "inicio": "2026-11-21T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884732",
+     "jogo": "1. FC Union Berlin × RB Leipzig",
+     "comp": "ger.1",
+     "inicio": "2026-11-21T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884734",
+     "jogo": "Eintracht Frankfurt × TSG Hoffenheim",
+     "comp": "ger.1",
+     "inicio": "2026-11-21T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884735",
+     "jogo": "Bayer Leverkusen × SC Paderborn 07",
+     "comp": "ger.1",
+     "inicio": "2026-11-21T14:30Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-11-20",
    "jogos": [
@@ -193,7 +339,50 @@
      "jogo": "Vasco da Gama × Internacional",
      "comp": "bra.1",
      "inicio": "2026-11-19T22:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.39,
+       "casa": null,
+       "chance": 0.6935,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.89,
+       "casa": null,
+       "chance": 0.5198,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Vasco da Gama",
+      "p": 0.5043,
+      "pMercado": 0.6317,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7052,
+       "odd": 1.39,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Vasco da Gama ou Internacional)",
+       "p": 0.7511,
+       "odd": 1.2,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841309",
@@ -207,7 +396,64 @@
      "jogo": "Vitória × Red Bull Bragantino",
      "comp": "bra.1",
      "inicio": "2026-11-19T22:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória ou empate",
+       "odd": 1.49,
+       "casa": null,
+       "chance": 0.6401,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.72,
+       "casa": null,
+       "chance": 0.5546,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Red Bull Bragantino: mais de 3,5 escanteios",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7065,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Vitória",
+      "p": 0.3854,
+      "pMercado": 0.3585,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7051,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Vitória ou Red Bull Bragantino)",
+       "p": 0.7394,
+       "odd": 1.31,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5586,
+       "odd": 1.72,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
