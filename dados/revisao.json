@@ -1,166 +1,187 @@
 {
- "geradoEm": "2026-11-21T02:21:42.008Z",
- "jogos": 253,
+ "geradoEm": "2026-11-21T17:36:39.975Z",
+ "jogos": 268,
  "porFamilia": {
   "resultado": {
-   "n": 4544,
-   "llModelo": 0.4677,
-   "llMercado": 0.4557,
-   "nMercado": 4526,
-   "llModeloComMercado": 0.4656,
-   "brier": 0.1523,
+   "n": 4814,
+   "llModelo": 0.4683,
+   "llMercado": 0.4554,
+   "nMercado": 4796,
+   "llModeloComMercado": 0.4663,
+   "brier": 0.1525,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 6072,
-   "llModelo": 0.5255,
-   "llMercado": 0.5251,
-   "nMercado": 6048,
-   "llModeloComMercado": 0.5249,
-   "brier": 0.1756,
+   "n": 6432,
+   "llModelo": 0.5278,
+   "llMercado": 0.5281,
+   "nMercado": 6408,
+   "llModeloComMercado": 0.5272,
+   "brier": 0.1766,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 3542,
-   "llModelo": 0.5991,
-   "llMercado": 0.601,
-   "nMercado": 3528,
-   "llModeloComMercado": 0.5994,
-   "brier": 0.207,
+   "n": 3752,
+   "llModelo": 0.5986,
+   "llMercado": 0.6008,
+   "nMercado": 3738,
+   "llModeloComMercado": 0.5988,
+   "brier": 0.2067,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 6072,
-   "llModelo": 0.6237,
+   "n": 6432,
+   "llModelo": 0.6214,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2168,
+   "brier": 0.2158,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 5566,
-   "llModelo": 0.568,
+   "n": 5896,
+   "llModelo": 0.5655,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1929,
+   "brier": 0.1918,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 671,
-  "acertos": 487,
-  "esperado": 468.3731
+  "n": 715,
+  "acertos": 515,
+  "esperado": 498.7864
  },
  "jogadores": {
-  "n": 1976,
-  "marcaram": 258,
-  "previsto": 443.9206,
-  "llModelo": 0.4023,
-  "comOdd": 1123,
-  "marcaramComOdd": 179,
-  "previstoModeloComOdd": 255.6065,
-  "implicitoBrutoComOdd": 362.8949,
+  "n": 2098,
+  "marcaram": 270,
+  "previsto": 471.5969,
+  "llModelo": 0.3998,
+  "comOdd": 1208,
+  "marcaramComOdd": 188,
+  "previstoModeloComOdd": 274.8657,
+  "implicitoBrutoComOdd": 390.798,
   "apostasModeloAcimaDaOdd": {
-   "n": 26,
-   "retorno": -0.6058
+   "n": 28,
+   "retorno": -0.6339
   },
   "faixas": [
    {
     "de": 0,
-    "n": 81,
-    "previsto": 0.0795,
-    "aconteceu": 0.0123
+    "n": 87,
+    "previsto": 0.0793,
+    "aconteceu": 0.0115
    },
    {
     "de": 0.1,
-    "n": 770,
-    "previsto": 0.1602,
-    "aconteceu": 0.0844
+    "n": 813,
+    "previsto": 0.1599,
+    "aconteceu": 0.0824
    },
    {
     "de": 0.2,
-    "n": 787,
-    "previsto": 0.2406,
-    "aconteceu": 0.1436
+    "n": 838,
+    "previsto": 0.241,
+    "aconteceu": 0.1408
    },
    {
     "de": 0.3,
-    "n": 254,
-    "previsto": 0.3393,
-    "aconteceu": 0.2165
+    "n": 274,
+    "previsto": 0.3398,
+    "aconteceu": 0.2153
    },
    {
     "de": 0.4,
-    "n": 69,
-    "previsto": 0.4397,
-    "aconteceu": 0.2754
+    "n": 70,
+    "previsto": 0.4404,
+    "aconteceu": 0.2714
    },
    {
     "de": 0.5,
-    "n": 15,
-    "previsto": 0.548,
-    "aconteceu": 0.3333
+    "n": 16,
+    "previsto": 0.5479,
+    "aconteceu": 0.375
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 216,
-   "acertos": 140,
-   "previsto": 0.6407,
-   "comOdd": 216,
-   "lucro": -9.2,
-   "oddMedia": 1.5065,
-   "retorno": -0.0426,
-   "retornoMelhorOdd": -0.0417
+   "n": 229,
+   "acertos": 147,
+   "previsto": 0.6394,
+   "comOdd": 229,
+   "lucro": -11.17,
+   "oddMedia": 1.51,
+   "retorno": -0.0488,
+   "retornoMelhorOdd": -0.0479
   },
   "destaque": {
-   "n": 99,
-   "acertos": 66,
-   "previsto": 0.697,
-   "comOdd": 99,
-   "lucro": -10.77,
-   "oddMedia": 1.3402,
-   "retorno": -0.1088,
-   "retornoMelhorOdd": -0.1088
+   "n": 108,
+   "acertos": 74,
+   "previsto": 0.6975,
+   "comOdd": 108,
+   "lucro": -9.18,
+   "oddMedia": 1.3391,
+   "retorno": -0.085,
+   "retornoMelhorOdd": -0.085
   },
   "oddMaior": {
-   "n": 114,
-   "acertos": 60,
-   "previsto": 0.4841,
-   "comOdd": 114,
-   "lucro": 5.59,
-   "oddMedia": 2.0254,
-   "retorno": 0.049,
-   "retornoMelhorOdd": 0.0501
+   "n": 117,
+   "acertos": 61,
+   "previsto": 0.4854,
+   "comOdd": 117,
+   "lucro": 4.43,
+   "oddMedia": 2.0199,
+   "retorno": 0.0379,
+   "retornoMelhorOdd": 0.039
   },
   "jogador": {
-   "n": 135,
-   "acertos": 25,
-   "previsto": 0.3116,
-   "comOdd": 135,
-   "lucro": -65.9385,
-   "oddMedia": 3.3197,
-   "retorno": -0.4884,
-   "retornoMelhorOdd": -0.4884
+   "n": 146,
+   "acertos": 27,
+   "previsto": 0.3121,
+   "comOdd": 146,
+   "lucro": -72.5302,
+   "oddMedia": 3.2967,
+   "retorno": -0.4968,
+   "retornoMelhorOdd": -0.4968
   }
  },
  "movimentoDoMercado": {
-  "n": 358,
-  "aFavorDoModelo": 221,
-  "medio": 0.0058
+  "n": 378,
+  "aFavorDoModelo": 236,
+  "medio": 0.0062
  },
  "dias": [
   {
    "dia": "2026-11-22",
    "jogos": [
+    {
+     "id": "401841318",
+     "jogo": "Athletico-PR × Remo",
+     "comp": "bra.1",
+     "inicio": "2026-11-22T19:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401841321",
+     "jogo": "Red Bull Bragantino × Vasco da Gama",
+     "comp": "bra.1",
+     "inicio": "2026-11-22T22:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401841324",
+     "jogo": "Fluminense × Mirassol",
+     "comp": "bra.1",
+     "inicio": "2026-11-22T21:30Z",
+     "pendente": true
+    },
     {
      "id": "401874960",
      "jogo": "Sassuolo × Genoa",
@@ -173,6 +194,13 @@
      "jogo": "AC Milan × Frosinone",
      "comp": "ita.1",
      "inicio": "2026-11-22T17:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401875001",
+     "jogo": "Atalanta × Internazionale",
+     "comp": "ita.1",
+     "inicio": "2026-11-22T19:45Z",
      "pendente": true
     },
     {
@@ -194,6 +222,13 @@
      "jogo": "Paris FC × Angers",
      "comp": "fra.1",
      "inicio": "2026-11-22T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401876400",
+     "jogo": "Marseille × Le Mans",
+     "comp": "fra.1",
+     "inicio": "2026-11-22T19:45Z",
      "pendente": true
     },
     {
@@ -229,6 +264,13 @@
      "jogo": "Osasuna × Málaga",
      "comp": "esp.1",
      "inicio": "2026-11-22T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401882803",
+     "jogo": "Getafe × Atlético Madrid",
+     "comp": "esp.1",
+     "inicio": "2026-11-22T20:00Z",
      "pendente": true
     },
     {
@@ -291,14 +333,110 @@
      "jogo": "Lazio × Lecce",
      "comp": "ita.1",
      "inicio": "2026-11-21T14:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Tijjani Noslin marca",
+       "odd": 2.875,
+       "chance": 0.2904,
+       "ok": 1
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Lazio",
+      "p": 0.6354,
+      "pMercado": 0.7024,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7397,
+       "odd": 1.17,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Lazio",
+       "p": 0.6354,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Lazio ou Lecce)",
+       "p": 0.7787,
+       "odd": 1.17,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401875056",
      "jogo": "Como × Cagliari",
      "comp": "ita.1",
      "inicio": "2026-11-21T14:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.588,
+       "casa": "DraftKings",
+       "chance": 0.616,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Cagliari: mais de 1,5 cartões",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6901,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Jayden Addai marca",
+       "odd": 2.75,
+       "chance": 0.3093,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Como",
+      "p": 0.7249,
+      "pMercado": 0.754,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Como",
+       "p": 0.7249,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6405,
+       "odd": 1.59,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Como ou Cagliari)",
+       "p": 0.8257,
+       "odd": 1.14,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401875067",
@@ -347,14 +485,125 @@
      "jogo": "Tottenham Hotspur × Ipswich Town",
      "comp": "eng.1",
      "inicio": "2026-11-21T15:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Tottenham Hotspur",
+       "odd": 1.571,
+       "casa": "DraftKings",
+       "chance": 0.6294,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.72,
+       "casa": null,
+       "chance": 0.5615,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 9,5",
+       "odd": 1.34,
+       "casa": null,
+       "chance": 0.6956,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Sávio marca",
+       "odd": 3.75,
+       "chance": 0.3013,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Tottenham Hotspur",
+      "p": 0.6366,
+      "pMercado": 0.6222,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Tottenham Hotspur",
+       "p": 0.6366,
+       "odd": 1.56,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6225,
+       "odd": 1.61,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Tottenham Hotspur ou Ipswich Town)",
+       "p": 0.8008,
+       "odd": 1.2,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5707,
+       "odd": 1.72,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401878756",
      "jogo": "Aston Villa × Sunderland",
      "comp": "eng.1",
      "inicio": "2026-11-21T15:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Aston Villa",
+       "odd": 1.769,
+       "casa": "DraftKings",
+       "chance": 0.5611,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Aston Villa",
+      "p": 0.5722,
+      "pMercado": 0.5499,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7196,
+       "odd": 1.42,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Aston Villa ou Sunderland)",
+       "p": 0.7625,
+       "odd": 1.25,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Aston Villa",
+       "p": 0.5722,
+       "odd": 1.76,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879232",
@@ -368,28 +617,237 @@
      "jogo": "Manchester City × Fulham",
      "comp": "eng.1",
      "inicio": "2026-11-21T12:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Manchester City",
+       "odd": 1.392,
+       "casa": "DraftKings",
+       "chance": 0.7051,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Manchester City",
+      "p": 0.7071,
+      "pMercado": 0.7031,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Manchester City",
+       "p": 0.7071,
+       "odd": 1.38,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6181,
+       "odd": 1.38,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Manchester City ou Fulham)",
+       "p": 0.8235,
+       "odd": 1.17,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879235",
      "jogo": "Coventry City × Crystal Palace",
      "comp": "eng.1",
      "inicio": "2026-11-21T15:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.39,
+       "casa": null,
+       "chance": 0.682,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Crystal Palace: menos de 2,5 cartões",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7063,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ismaïla Sarr marca",
+       "odd": 3.1,
+       "chance": 0.2817,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Crystal Palace",
+      "p": 0.4276,
+      "pMercado": 0.3483,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6837,
+       "odd": 1.39,
+       "ok": 0
+      },
+      {
+       "rotulo": "Crystal Palace ou empate",
+       "p": 0.6811,
+       "odd": 1.5,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5732,
+       "odd": 1.64,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879236",
      "jogo": "Chelsea × Leeds United",
      "comp": "eng.1",
      "inicio": "2026-11-21T15:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.76,
+       "casa": null,
+       "chance": 0.5439,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.85,
+       "casa": "Bet 365",
+       "chance": 0.5389,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "João Pedro marca",
+       "odd": 2.3,
+       "chance": 0.3483,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Chelsea",
+      "p": 0.5791,
+      "pMercado": 0.4841,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6617,
+       "odd": 1.34,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Chelsea ou Leeds United)",
+       "p": 0.7755,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879238",
      "jogo": "AFC Bournemouth × Nottingham Forest",
      "comp": "eng.1",
      "inicio": "2026-11-21T15:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.81,
+       "casa": null,
+       "chance": 0.5374,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "AFC Bournemouth: mais de 4,5 escanteios",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7175,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Marcus Tavernier marca",
+       "odd": 4,
+       "chance": 0.2864,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AFC Bournemouth",
+      "p": 0.5615,
+      "pMercado": 0.5068,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6674,
+       "odd": 1.32,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (AFC Bournemouth ou Nottingham Forest)",
+       "p": 0.7703,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória AFC Bournemouth",
+       "p": 0.5615,
+       "odd": 1.91,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5507,
+       "odd": 1.81,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882797",
@@ -410,21 +868,163 @@
      "jogo": "Rayo Vallecano × Valencia",
      "comp": "esp.1",
      "inicio": "2026-11-21T15:15Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.833,
+       "casa": "DraftKings",
+       "chance": 0.5195,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.88,
+       "casa": null,
+       "chance": 0.5083,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7139,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Rayo Vallecano",
+      "p": 0.498,
+      "pMercado": 0.4978,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.735,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Rayo Vallecano ou Valencia)",
+       "p": 0.7431,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882806",
      "jogo": "Alavés × Deportivo",
      "comp": "esp.1",
      "inicio": "2026-11-21T13:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 1,5 gols",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.7029,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Alavés: mais de 4,5 escanteios",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.6997,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Alavés",
+      "p": 0.5581,
+      "pMercado": 0.4114,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7016,
+       "odd": 1.35,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Alavés ou Deportivo)",
+       "p": 0.7468,
+       "odd": 1.32,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884728",
      "jogo": "SV Elversberg × SC Freiburg",
      "comp": "ger.1",
      "inicio": "2026-11-21T14:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.55,
+       "casa": null,
+       "chance": 0.5953,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Lukas Petkov marca",
+       "odd": 3.2,
+       "chance": 0.2733,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória SC Freiburg",
+      "p": 0.3887,
+      "pMercado": 0.4846,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6808,
+       "odd": 1.53,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (SV Elversberg ou SC Freiburg)",
+       "p": 0.7452,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5789,
+       "odd": 1.55,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884729",
@@ -438,28 +1038,236 @@
      "jogo": "Borussia Mönchengladbach × Borussia Dortmund",
      "comp": "ger.1",
      "inicio": "2026-11-21T14:30Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.46,
+       "casa": null,
+       "chance": 0.6378,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Borussia Dortmund: mais de 3,5 escanteios",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7146,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Samuele Inácio marca",
+       "odd": 3.4,
+       "chance": 0.2596,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Borussia Dortmund",
+      "p": 0.5354,
+      "pMercado": 0.6108,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Borussia Dortmund ou empate",
+       "p": 0.758,
+       "odd": 1.17,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6262,
+       "odd": 1.46,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6188,
+       "odd": 1.56,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401884732",
      "jogo": "1. FC Union Berlin × RB Leipzig",
      "comp": "ger.1",
      "inicio": "2026-11-21T14:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      5
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.56,
+       "casa": null,
+       "chance": 0.6165,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Oliver Burke marca",
+       "odd": 4,
+       "chance": 0.2109,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória RB Leipzig",
+      "p": 0.4951,
+      "pMercado": 0.6529,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (1. FC Union Berlin ou RB Leipzig)",
+       "p": 0.77,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6263,
+       "odd": 1.56,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6215,
+       "odd": 1.41,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884734",
      "jogo": "Eintracht Frankfurt × TSG Hoffenheim",
      "comp": "ger.1",
      "inicio": "2026-11-21T14:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6837,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Younes Ebnoutalib marca",
+       "odd": 2.25,
+       "chance": 0.3887,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Eintracht Frankfurt",
+      "p": 0.4674,
+      "pMercado": 0.3982,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Eintracht Frankfurt ou empate",
+       "p": 0.6922,
+       "odd": 1.5,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6684,
+       "odd": 1.33,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6671,
+       "odd": 1.32,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884735",
      "jogo": "Bayer Leverkusen × SC Paderborn 07",
      "comp": "ger.1",
      "inicio": "2026-11-21T14:30Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.38,
+       "casa": null,
+       "chance": 0.685,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.34,
+       "casa": null,
+       "chance": 0.6962,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Patrik Schick marca",
+       "odd": 1.5333333333333332,
+       "chance": 0.5464,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bayer Leverkusen",
+      "p": 0.7815,
+      "pMercado": 0.7728,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.6833,
+       "odd": 1.38,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Bayer Leverkusen",
+       "p": 0.7815,
+       "odd": 1.26,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Bayer Leverkusen ou SC Paderborn 07)",
+       "p": 0.865,
+       "odd": 1.1,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401913961",
