@@ -1,161 +1,161 @@
 {
- "geradoEm": "2026-11-22T17:51:43.944Z",
- "jogos": 291,
+ "geradoEm": "2026-11-22T23:38:12.208Z",
+ "jogos": 301,
  "porFamilia": {
   "resultado": {
-   "n": 5228,
-   "llModelo": 0.4695,
-   "llMercado": 0.4556,
-   "nMercado": 5210,
-   "llModeloComMercado": 0.4677,
-   "brier": 0.1532,
+   "n": 5408,
+   "llModelo": 0.4693,
+   "llMercado": 0.4558,
+   "nMercado": 5390,
+   "llModeloComMercado": 0.4675,
+   "brier": 0.1531,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 6984,
-   "llModelo": 0.5257,
-   "llMercado": 0.5242,
-   "nMercado": 6960,
-   "llModeloComMercado": 0.5251,
-   "brier": 0.1758,
+   "n": 7224,
+   "llModelo": 0.5267,
+   "llMercado": 0.5249,
+   "nMercado": 7200,
+   "llModeloComMercado": 0.5261,
+   "brier": 0.1763,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 4074,
-   "llModelo": 0.5975,
-   "llMercado": 0.599,
-   "nMercado": 4060,
-   "llModeloComMercado": 0.5977,
-   "brier": 0.2062,
+   "n": 4214,
+   "llModelo": 0.5958,
+   "llMercado": 0.597,
+   "nMercado": 4200,
+   "llModeloComMercado": 0.596,
+   "brier": 0.2055,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 6984,
-   "llModelo": 0.6178,
+   "n": 7224,
+   "llModelo": 0.6195,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2143,
+   "brier": 0.215,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 6402,
-   "llModelo": 0.5624,
+   "n": 6622,
+   "llModelo": 0.5614,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1906,
+   "brier": 0.1903,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 775,
-  "acertos": 557,
-  "esperado": 541.319
+  "n": 805,
+  "acertos": 579,
+  "esperado": 562.0172
  },
  "jogadores": {
-  "n": 2281,
-  "marcaram": 296,
-  "previsto": 513.4945,
-  "llModelo": 0.4034,
-  "comOdd": 1305,
-  "marcaramComOdd": 203,
-  "previstoModeloComOdd": 296.8971,
-  "implicitoBrutoComOdd": 422.4937,
+  "n": 2366,
+  "marcaram": 312,
+  "previsto": 534.0999,
+  "llModelo": 0.4043,
+  "comOdd": 1353,
+  "marcaramComOdd": 215,
+  "previstoModeloComOdd": 308.4377,
+  "implicitoBrutoComOdd": 438.5722,
   "apostasModeloAcimaDaOdd": {
-   "n": 28,
-   "retorno": -0.6339
+   "n": 30,
+   "retorno": -0.525
   },
   "faixas": [
    {
     "de": 0,
-    "n": 87,
+    "n": 88,
     "previsto": 0.0793,
-    "aconteceu": 0.0115
+    "aconteceu": 0.0114
    },
    {
     "de": 0.1,
-    "n": 894,
-    "previsto": 0.1598,
-    "aconteceu": 0.0895
+    "n": 928,
+    "previsto": 0.16,
+    "aconteceu": 0.0873
    },
    {
     "de": 0.2,
-    "n": 909,
-    "previsto": 0.2413,
-    "aconteceu": 0.1375
+    "n": 938,
+    "previsto": 0.2414,
+    "aconteceu": 0.1397
    },
    {
     "de": 0.3,
-    "n": 296,
-    "previsto": 0.3398,
-    "aconteceu": 0.2162
+    "n": 310,
+    "previsto": 0.3397,
+    "aconteceu": 0.2226
    },
    {
     "de": 0.4,
-    "n": 77,
-    "previsto": 0.4402,
-    "aconteceu": 0.2597
+    "n": 83,
+    "previsto": 0.4398,
+    "aconteceu": 0.2892
    },
    {
     "de": 0.5,
-    "n": 18,
-    "previsto": 0.5493,
-    "aconteceu": 0.3333
+    "n": 19,
+    "previsto": 0.5475,
+    "aconteceu": 0.3158
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 249,
-   "acertos": 160,
-   "previsto": 0.6396,
-   "comOdd": 249,
-   "lucro": -11.31,
+   "n": 258,
+   "acertos": 166,
+   "previsto": 0.6395,
+   "comOdd": 258,
+   "lucro": -11.46,
    "oddMedia": 1.5103,
-   "retorno": -0.0454,
-   "retornoMelhorOdd": -0.0446
+   "retorno": -0.0444,
+   "retornoMelhorOdd": -0.0436
   },
   "destaque": {
-   "n": 119,
-   "acertos": 82,
-   "previsto": 0.698,
-   "comOdd": 119,
-   "lucro": -9.49,
-   "oddMedia": 1.3383,
-   "retorno": -0.0797,
-   "retornoMelhorOdd": -0.0797
+   "n": 127,
+   "acertos": 87,
+   "previsto": 0.6981,
+   "comOdd": 127,
+   "lucro": -10.74,
+   "oddMedia": 1.3385,
+   "retorno": -0.0846,
+   "retornoMelhorOdd": -0.0846
   },
   "oddMaior": {
-   "n": 128,
-   "acertos": 66,
-   "previsto": 0.4887,
-   "comOdd": 128,
-   "lucro": 2.83,
-   "oddMedia": 2.0052,
-   "retorno": 0.0221,
-   "retornoMelhorOdd": 0.0231
+   "n": 130,
+   "acertos": 67,
+   "previsto": 0.4886,
+   "comOdd": 130,
+   "lucro": 2.68,
+   "oddMedia": 2.0048,
+   "retorno": 0.0206,
+   "retornoMelhorOdd": 0.0216
   },
   "jogador": {
-   "n": 157,
-   "acertos": 30,
-   "previsto": 0.3114,
-   "comOdd": 157,
-   "lucro": -74.5302,
-   "oddMedia": 3.2882,
-   "retorno": -0.4747,
-   "retornoMelhorOdd": -0.4747
+   "n": 163,
+   "acertos": 32,
+   "previsto": 0.3129,
+   "comOdd": 163,
+   "lucro": -72.9302,
+   "oddMedia": 3.2825,
+   "retorno": -0.4474,
+   "retornoMelhorOdd": -0.4474
   }
  },
  "movimentoDoMercado": {
-  "n": 417,
-  "aFavorDoModelo": 257,
-  "medio": 0.0065
+  "n": 433,
+  "aFavorDoModelo": 268,
+  "medio": 0.0061
  },
  "dias": [
   {
@@ -214,7 +214,56 @@
      "jogo": "Athletico-PR × Remo",
      "comp": "bra.1",
      "inicio": "2026-11-22T19:00Z",
-     "pendente": true
+     "placar": [
+      4,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Athletico-PR",
+       "odd": 1.571,
+       "casa": "DraftKings",
+       "chance": 0.6277,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 9,5",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7032,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Athletico-PR",
+      "p": 0.6377,
+      "pMercado": 0.6177,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Athletico-PR",
+       "p": 0.6377,
+       "odd": 1.57,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6278,
+       "odd": 1.36,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Athletico-PR ou Remo)",
+       "p": 0.797,
+       "odd": 1.24,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841321",
@@ -228,7 +277,39 @@
      "jogo": "Fluminense × Mirassol",
      "comp": "bra.1",
      "inicio": "2026-11-22T21:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Fluminense",
+      "p": 0.5523,
+      "pMercado": 0.6096,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7233,
+       "odd": 1.23,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Fluminense ou Mirassol)",
+       "p": 0.751,
+       "odd": 1.22,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Fluminense",
+       "p": 0.5523,
+       "odd": 1.59,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874960",
@@ -292,14 +373,126 @@
      "jogo": "AC Milan × Frosinone",
      "comp": "ita.1",
      "inicio": "2026-11-22T17:00Z",
-     "pendente": true
+     "placar": [
+      5,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.4,
+       "casa": null,
+       "chance": 0.6864,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "AC Milan: mais de 1,5 gols",
+       "odd": 1.43,
+       "casa": null,
+       "chance": 0.698,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Diego Moreira marca",
+       "odd": 3,
+       "chance": 0.447,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AC Milan",
+      "p": 0.7227,
+      "pMercado": 0.6032,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6956,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5791,
+       "odd": 1.49,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (AC Milan ou Frosinone)",
+       "p": 0.8392,
+       "odd": 1.2,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401875001",
      "jogo": "Atalanta × Internazionale",
      "comp": "ita.1",
      "inicio": "2026-11-22T19:45Z",
-     "pendente": true
+     "placar": [
+      4,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.52,
+       "casa": null,
+       "chance": 0.6074,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Internazionale: mais de 3,5 escanteios",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7069,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Nikola Krstovic marca",
+       "odd": 3,
+       "chance": 0.3221,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Internazionale",
+      "p": 0.4736,
+      "pMercado": 0.6425,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Atalanta ou Internazionale)",
+       "p": 0.7576,
+       "odd": 1.18,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7995,
+       "odd": 1.09,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.591,
+       "odd": 1.52,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401875008",
@@ -476,21 +669,203 @@
      "jogo": "Marseille × Le Mans",
      "comp": "fra.1",
      "inicio": "2026-11-22T19:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Marseille",
+       "odd": 1.42,
+       "casa": "Bet 365",
+       "chance": 0.6857,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.85,
+       "casa": null,
+       "chance": 0.5303,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Le Mans: menos de 3,5 escanteios",
+       "odd": 1.34,
+       "casa": null,
+       "chance": 0.6939,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Erwan Colas marca",
+       "odd": 5.5,
+       "chance": 0.1963,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Marseille",
+      "p": 0.6803,
+      "pMercado": 0.6912,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Marseille",
+       "p": 0.6803,
+       "odd": 1.42,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6273,
+       "odd": 1.57,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Marseille ou Le Mans)",
+       "p": 0.8153,
+       "odd": 1.18,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401876401",
      "jogo": "Lorient × Stade Rennais",
      "comp": "fra.1",
      "inicio": "2026-11-22T16:15Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Lorient ou empate",
+       "odd": 1.533,
+       "casa": "Bet 365",
+       "chance": 0.6263,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Mamadou Koné marca",
+       "odd": 3.1,
+       "chance": 0.2585,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Lorient",
+      "p": 0.3923,
+      "pMercado": 0.3184,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Lorient ou Stade Rennais)",
+       "p": 0.7465,
+       "odd": 1.33,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7833,
+       "odd": 1.33,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5828,
+       "odd": 1.87,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401878755",
      "jogo": "Liverpool × Manchester United",
      "comp": "eng.1",
      "inicio": "2026-11-22T16:30Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.48,
+       "casa": null,
+       "chance": 0.6471,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Manchester United ou empate",
+       "odd": 2.1,
+       "casa": "Bet 365",
+       "chance": 0.4285,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Liverpool: mais de 4,5 escanteios",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6886,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Alexander Isak marca",
+       "odd": 2.1,
+       "chance": 0.4004,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Liverpool",
+      "p": 0.568,
+      "pMercado": 0.5751,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6532,
+       "odd": 1.48,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.63,
+       "odd": 1.54,
+       "ok": 0
+      },
+      {
+       "rotulo": "Liverpool ou empate",
+       "p": 0.7795,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Liverpool",
+       "p": 0.568,
+       "odd": 1.69,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401879234",
@@ -616,14 +991,106 @@
      "jogo": "Osasuna × Málaga",
      "comp": "esp.1",
      "inicio": "2026-11-22T17:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.9,
+       "casa": null,
+       "chance": 0.5102,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Cartões: mais de 3,5",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.688,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Osasuna",
+      "p": 0.6054,
+      "pMercado": 0.529,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6762,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Osasuna ou Málaga)",
+       "p": 0.7798,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Osasuna",
+       "p": 0.6054,
+       "odd": 1.83,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882803",
      "jogo": "Getafe × Atlético Madrid",
      "comp": "esp.1",
      "inicio": "2026-11-22T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 1,5 gols",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6999,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Atlético Madrid: mais de 3,5 escanteios",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7179,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Atlético Madrid",
+      "p": 0.5179,
+      "pMercado": 0.6347,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6995,
+       "odd": 1.35,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Getafe ou Atlético Madrid)",
+       "p": 0.7369,
+       "odd": 1.24,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882804",
@@ -684,7 +1151,63 @@
      "jogo": "Werder Bremen × Hamburg SV",
      "comp": "ger.1",
      "inicio": "2026-11-22T16:30Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.44,
+       "casa": null,
+       "chance": 0.6473,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Werder Bremen: mais de 4,5 escanteios",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7062,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Niclas Füllkrug marca",
+       "odd": 2.1,
+       "chance": 0.4955,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Werder Bremen",
+      "p": 0.5244,
+      "pMercado": 0.6162,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Werder Bremen ou empate",
+       "p": 0.756,
+       "odd": 1.17,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6369,
+       "odd": 1.44,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5902,
+       "odd": 1.78,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401884733",
