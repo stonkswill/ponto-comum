@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-22T09:50:21.942Z",
- "jogos": 283,
+ "geradoEm": "2026-11-22T17:51:43.944Z",
+ "jogos": 291,
  "porFamilia": {
   "resultado": {
-   "n": 5084,
-   "llModelo": 0.4673,
-   "llMercado": 0.4536,
-   "nMercado": 5066,
-   "llModeloComMercado": 0.4655,
-   "brier": 0.1523,
+   "n": 5228,
+   "llModelo": 0.4695,
+   "llMercado": 0.4556,
+   "nMercado": 5210,
+   "llModeloComMercado": 0.4677,
+   "brier": 0.1532,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 6792,
-   "llModelo": 0.5264,
-   "llMercado": 0.5262,
-   "nMercado": 6768,
-   "llModeloComMercado": 0.5258,
-   "brier": 0.176,
+   "n": 6984,
+   "llModelo": 0.5257,
+   "llMercado": 0.5242,
+   "nMercado": 6960,
+   "llModeloComMercado": 0.5251,
+   "brier": 0.1758,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 3962,
-   "llModelo": 0.5983,
-   "llMercado": 0.6002,
-   "nMercado": 3948,
-   "llModeloComMercado": 0.5985,
-   "brier": 0.2065,
+   "n": 4074,
+   "llModelo": 0.5975,
+   "llMercado": 0.599,
+   "nMercado": 4060,
+   "llModeloComMercado": 0.5977,
+   "brier": 0.2062,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 6792,
-   "llModelo": 0.6194,
+   "n": 6984,
+   "llModelo": 0.6178,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.215,
+   "brier": 0.2143,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 6226,
-   "llModelo": 0.563,
+   "n": 6402,
+   "llModelo": 0.5624,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1908,
+   "brier": 0.1906,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 753,
-  "acertos": 540,
-  "esperado": 525.4867
+  "n": 775,
+  "acertos": 557,
+  "esperado": 541.319
  },
  "jogadores": {
-  "n": 2213,
-  "marcaram": 287,
-  "previsto": 497.5427,
-  "llModelo": 0.4029,
-  "comOdd": 1265,
-  "marcaramComOdd": 198,
-  "previstoModeloComOdd": 288.0748,
-  "implicitoBrutoComOdd": 410.1689,
+  "n": 2281,
+  "marcaram": 296,
+  "previsto": 513.4945,
+  "llModelo": 0.4034,
+  "comOdd": 1305,
+  "marcaramComOdd": 203,
+  "previstoModeloComOdd": 296.8971,
+  "implicitoBrutoComOdd": 422.4937,
   "apostasModeloAcimaDaOdd": {
    "n": 28,
    "retorno": -0.6339
@@ -80,82 +80,82 @@
    },
    {
     "de": 0.1,
-    "n": 869,
-    "previsto": 0.16,
-    "aconteceu": 0.0898
+    "n": 894,
+    "previsto": 0.1598,
+    "aconteceu": 0.0895
    },
    {
     "de": 0.2,
-    "n": 882,
-    "previsto": 0.2416,
-    "aconteceu": 0.1372
+    "n": 909,
+    "previsto": 0.2413,
+    "aconteceu": 0.1375
    },
    {
     "de": 0.3,
-    "n": 284,
-    "previsto": 0.3401,
-    "aconteceu": 0.2148
+    "n": 296,
+    "previsto": 0.3398,
+    "aconteceu": 0.2162
    },
    {
     "de": 0.4,
-    "n": 74,
+    "n": 77,
     "previsto": 0.4402,
-    "aconteceu": 0.2703
+    "aconteceu": 0.2597
    },
    {
     "de": 0.5,
-    "n": 17,
-    "previsto": 0.5503,
-    "aconteceu": 0.3529
+    "n": 18,
+    "previsto": 0.5493,
+    "aconteceu": 0.3333
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 243,
-   "acertos": 157,
-   "previsto": 0.6398,
-   "comOdd": 243,
-   "lucro": -9.98,
-   "oddMedia": 1.5091,
-   "retorno": -0.0411,
-   "retornoMelhorOdd": -0.0402
+   "n": 249,
+   "acertos": 160,
+   "previsto": 0.6396,
+   "comOdd": 249,
+   "lucro": -11.31,
+   "oddMedia": 1.5103,
+   "retorno": -0.0454,
+   "retornoMelhorOdd": -0.0446
   },
   "destaque": {
-   "n": 115,
-   "acertos": 79,
-   "previsto": 0.6979,
-   "comOdd": 115,
-   "lucro": -9.53,
-   "oddMedia": 1.3382,
-   "retorno": -0.0829,
-   "retornoMelhorOdd": -0.0829
+   "n": 119,
+   "acertos": 82,
+   "previsto": 0.698,
+   "comOdd": 119,
+   "lucro": -9.49,
+   "oddMedia": 1.3383,
+   "retorno": -0.0797,
+   "retornoMelhorOdd": -0.0797
   },
   "oddMaior": {
-   "n": 124,
+   "n": 128,
    "acertos": 66,
-   "previsto": 0.4877,
-   "comOdd": 124,
-   "lucro": 6.83,
-   "oddMedia": 2.0099,
-   "retorno": 0.0551,
-   "retornoMelhorOdd": 0.0562
+   "previsto": 0.4887,
+   "comOdd": 128,
+   "lucro": 2.83,
+   "oddMedia": 2.0052,
+   "retorno": 0.0221,
+   "retornoMelhorOdd": 0.0231
   },
   "jogador": {
-   "n": 152,
-   "acertos": 28,
-   "previsto": 0.3109,
-   "comOdd": 152,
-   "lucro": -75.5302,
-   "oddMedia": 3.3002,
-   "retorno": -0.4969,
-   "retornoMelhorOdd": -0.4969
+   "n": 157,
+   "acertos": 30,
+   "previsto": 0.3114,
+   "comOdd": 157,
+   "lucro": -74.5302,
+   "oddMedia": 3.2882,
+   "retorno": -0.4747,
+   "retornoMelhorOdd": -0.4747
   }
  },
  "movimentoDoMercado": {
-  "n": 406,
-  "aFavorDoModelo": 250,
-  "medio": 0.0066
+  "n": 417,
+  "aFavorDoModelo": 257,
+  "medio": 0.0065
  },
  "dias": [
   {
@@ -235,7 +235,57 @@
      "jogo": "Sassuolo × Genoa",
      "comp": "ita.1",
      "inicio": "2026-11-22T14:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Sassuolo ou empate",
+       "odd": 1.444,
+       "casa": "Bet 365",
+       "chance": 0.6583,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.8,
+       "casa": null,
+       "chance": 0.5287,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Milutin Osmajic marca",
+       "odd": 3.5,
+       "chance": 0.2377,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Sassuolo",
+      "p": 0.4069,
+      "pMercado": 0.3507,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sassuolo ou empate",
+       "p": 0.6746,
+       "odd": 1.44,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7351,
+       "odd": 1.3,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401874989",
@@ -256,21 +306,170 @@
      "jogo": "Juventus × Venezia",
      "comp": "ita.1",
      "inicio": "2026-11-22T11:30Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Juventus",
+       "odd": 1.37,
+       "casa": "DraftKings",
+       "chance": 0.7181,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.91,
+       "casa": null,
+       "chance": 0.5012,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Juventus: mais de 1,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6815,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Juventus",
+      "p": 0.7285,
+      "pMercado": 0.7077,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Juventus",
+       "p": 0.7285,
+       "odd": 1.37,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6266,
+       "odd": 1.59,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Juventus ou Venezia)",
+       "p": 0.8328,
+       "odd": 1.16,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401875047",
      "jogo": "Bologna × Udinese",
      "comp": "ita.1",
      "inicio": "2026-11-22T14:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Bologna",
+       "odd": 1.741,
+       "casa": "DraftKings",
+       "chance": 0.5604,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.975,
+       "casa": "Bet 365",
+       "chance": 0.4849,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Bologna: mais de 4,5 escanteios",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7167,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Federico Bernardeschi marca",
+       "odd": 3.2,
+       "chance": 0.273,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bologna",
+      "p": 0.5715,
+      "pMercado": 0.5494,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7325,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Bologna ou Udinese)",
+       "p": 0.7595,
+       "odd": 1.29,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Bologna",
+       "p": 0.5715,
+       "odd": 1.73,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876397",
      "jogo": "Paris FC × Angers",
      "comp": "fra.1",
      "inicio": "2026-11-22T14:00Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Lassine Sinayoko marca",
+       "odd": 1.9090909090909092,
+       "chance": 0.4498,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Paris FC",
+      "p": 0.6401,
+      "pMercado": 0.7547,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Paris FC ou Angers)",
+       "p": 0.7857,
+       "odd": 1.14,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401876400",
@@ -298,14 +497,119 @@
      "jogo": "Hull City × Brighton & Hove Albion",
      "comp": "eng.1",
      "inicio": "2026-11-22T14:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Brighton & Hove Albion",
+       "odd": 1.5,
+       "casa": "DraftKings",
+       "chance": 0.6707,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.769,
+       "casa": "DraftKings",
+       "chance": 0.5603,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Jack Hinshelwood marca",
+       "odd": 3.5,
+       "chance": 0.286,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Brighton & Hove Albion",
+      "p": 0.6895,
+      "pMercado": 0.6519,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Brighton & Hove Albion",
+       "p": 0.6895,
+       "odd": 1.5,
+       "ok": 0
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6403,
+       "odd": 1.38,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Hull City ou Brighton & Hove Albion)",
+       "p": 0.8123,
+       "odd": 1.2,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882800",
      "jogo": "Racing Santander × Real Sociedad",
      "comp": "esp.1",
      "inicio": "2026-11-22T15:15Z",
-     "pendente": true
+     "placar": [
+      3,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Racing Santander ou empate",
+       "odd": 1.8,
+       "casa": null,
+       "chance": 0.5507,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Real Sociedad: mais de 4,5 escanteios",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7034,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Real Sociedad",
+      "p": 0.426,
+      "pMercado": 0.4726,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Real Sociedad ou empate",
+       "p": 0.6661,
+       "odd": 1.34,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6251,
+       "odd": 1.38,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.8214,
+       "odd": 1.08,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401882801",
@@ -326,7 +630,54 @@
      "jogo": "Barcelona × Villarreal",
      "comp": "esp.1",
      "inicio": "2026-11-22T13:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.5,
+       "casa": null,
+       "chance": 0.6251,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Barcelona",
+      "p": 0.7806,
+      "pMercado": 0.8279,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Barcelona",
+       "p": 0.7806,
+       "odd": 1.19,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6188,
+       "odd": 1.5,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.7831,
+       "odd": 1.13,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Barcelona ou Villarreal)",
+       "p": 0.8717,
+       "odd": 1.06,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401884730",
@@ -340,7 +691,55 @@
      "jogo": "FC Augsburg × Mainz",
      "comp": "ger.1",
      "inicio": "2026-11-22T14:30Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "Mainz: mais de 3,5 escanteios",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.7001,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Michael Gregoritsch marca",
+       "odd": 2.5,
+       "chance": 0.377,
+       "ok": 1
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória FC Augsburg",
+      "p": 0.4165,
+      "pMercado": 0.3505,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "FC Augsburg ou empate",
+       "p": 0.6574,
+       "odd": 1.57,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.625,
+       "odd": 1.38,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.7942,
+       "odd": 1.32,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
