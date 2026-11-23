@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-11-22T23:38:12.208Z",
- "jogos": 301,
+ "geradoEm": "2026-11-23T10:50:58.055Z",
+ "jogos": 302,
  "porFamilia": {
   "resultado": {
-   "n": 5408,
-   "llModelo": 0.4693,
-   "llMercado": 0.4558,
-   "nMercado": 5390,
-   "llModeloComMercado": 0.4675,
-   "brier": 0.1531,
+   "n": 5426,
+   "llModelo": 0.4688,
+   "llMercado": 0.4557,
+   "nMercado": 5408,
+   "llModeloComMercado": 0.467,
+   "brier": 0.1529,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 7224,
-   "llModelo": 0.5267,
-   "llMercado": 0.5249,
-   "nMercado": 7200,
-   "llModeloComMercado": 0.5261,
+   "n": 7248,
+   "llModelo": 0.5268,
+   "llMercado": 0.5252,
+   "nMercado": 7224,
+   "llModeloComMercado": 0.5262,
    "brier": 0.1763,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 4214,
-   "llModelo": 0.5958,
+   "n": 4228,
+   "llModelo": 0.5957,
    "llMercado": 0.597,
-   "nMercado": 4200,
-   "llModeloComMercado": 0.596,
+   "nMercado": 4214,
+   "llModeloComMercado": 0.5959,
    "brier": 0.2055,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 7224,
-   "llModelo": 0.6195,
+   "n": 7248,
+   "llModelo": 0.619,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.215,
+   "brier": 0.2148,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 6622,
-   "llModelo": 0.5614,
+   "n": 6644,
+   "llModelo": 0.5617,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1903,
+   "brier": 0.1904,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 805,
-  "acertos": 579,
-  "esperado": 562.0172
+  "n": 808,
+  "acertos": 581,
+  "esperado": 564.0167
  },
  "jogadores": {
-  "n": 2366,
-  "marcaram": 312,
-  "previsto": 534.0999,
-  "llModelo": 0.4043,
+  "n": 2374,
+  "marcaram": 313,
+  "previsto": 535.8843,
+  "llModelo": 0.4044,
   "comOdd": 1353,
   "marcaramComOdd": 215,
   "previstoModeloComOdd": 308.4377,
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 928,
+    "n": 930,
     "previsto": 0.16,
-    "aconteceu": 0.0873
+    "aconteceu": 0.0871
    },
    {
     "de": 0.2,
-    "n": 938,
-    "previsto": 0.2414,
-    "aconteceu": 0.1397
+    "n": 943,
+    "previsto": 0.2413,
+    "aconteceu": 0.14
    },
    {
     "de": 0.3,
-    "n": 310,
-    "previsto": 0.3397,
-    "aconteceu": 0.2226
+    "n": 311,
+    "previsto": 0.3396,
+    "aconteceu": 0.2219
    },
    {
     "de": 0.4,
@@ -112,24 +112,24 @@
  },
  "palpites": {
   "principal": {
-   "n": 258,
-   "acertos": 166,
-   "previsto": 0.6395,
-   "comOdd": 258,
-   "lucro": -11.46,
-   "oddMedia": 1.5103,
-   "retorno": -0.0444,
-   "retornoMelhorOdd": -0.0436
+   "n": 259,
+   "acertos": 167,
+   "previsto": 0.6396,
+   "comOdd": 259,
+   "lucro": -11.03,
+   "oddMedia": 1.51,
+   "retorno": -0.0426,
+   "retornoMelhorOdd": -0.0418
   },
   "destaque": {
-   "n": 127,
-   "acertos": 87,
-   "previsto": 0.6981,
-   "comOdd": 127,
-   "lucro": -10.74,
-   "oddMedia": 1.3385,
-   "retorno": -0.0846,
-   "retornoMelhorOdd": -0.0846
+   "n": 128,
+   "acertos": 88,
+   "previsto": 0.6982,
+   "comOdd": 128,
+   "lucro": -10.42,
+   "oddMedia": 1.3384,
+   "retorno": -0.0814,
+   "retornoMelhorOdd": -0.0814
   },
   "oddMaior": {
    "n": 130,
@@ -153,11 +153,87 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 433,
+  "n": 435,
   "aFavorDoModelo": 268,
-  "medio": 0.0061
+  "medio": 0.006
  },
  "dias": [
+  {
+   "dia": "2026-11-24",
+   "jogos": [
+    {
+     "id": "401841335",
+     "jogo": "Chapecoense × Palmeiras",
+     "comp": "bra.1",
+     "inicio": "2026-11-24T21:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915294",
+     "jogo": "Feyenoord Rotterdam × FC Porto",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-24T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915295",
+     "jogo": "Arsenal × Borussia Dortmund",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-24T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915296",
+     "jogo": "Como × AEK Athens",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-24T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915297",
+     "jogo": "Slovan Bratislava × Real Betis",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-24T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915298",
+     "jogo": "Real Madrid × PSV Eindhoven",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-24T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915299",
+     "jogo": "RB Leipzig × Lens",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-24T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915300",
+     "jogo": "Galatasaray × Aston Villa",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-24T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915379",
+     "jogo": "Manchester City × Napoli",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-24T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915380",
+     "jogo": "Bodo/Glimt × LASK Linz",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-24T17:45Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-11-23",
    "jogos": [
@@ -270,7 +346,56 @@
      "jogo": "Red Bull Bragantino × Vasco da Gama",
      "comp": "bra.1",
      "inicio": "2026-11-22T22:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.43,
+       "casa": null,
+       "chance": 0.6707,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7045,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Red Bull Bragantino",
+      "p": 0.4824,
+      "pMercado": 0.3561,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6764,
+       "odd": 1.43,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Red Bull Bragantino ou Vasco da Gama)",
+       "p": 0.7539,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5692,
+       "odd": 1.6,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841324",
