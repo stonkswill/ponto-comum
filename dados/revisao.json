@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-23T10:50:58.055Z",
- "jogos": 302,
+ "geradoEm": "2026-11-23T23:57:41.533Z",
+ "jogos": 305,
  "porFamilia": {
   "resultado": {
-   "n": 5426,
-   "llModelo": 0.4688,
-   "llMercado": 0.4557,
-   "nMercado": 5408,
-   "llModeloComMercado": 0.467,
-   "brier": 0.1529,
+   "n": 5480,
+   "llModelo": 0.4711,
+   "llMercado": 0.4589,
+   "nMercado": 5462,
+   "llModeloComMercado": 0.4694,
+   "brier": 0.1537,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 7248,
-   "llModelo": 0.5268,
-   "llMercado": 0.5252,
-   "nMercado": 7224,
-   "llModeloComMercado": 0.5262,
-   "brier": 0.1763,
+   "n": 7320,
+   "llModelo": 0.5269,
+   "llMercado": 0.5257,
+   "nMercado": 7296,
+   "llModeloComMercado": 0.5263,
+   "brier": 0.1764,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 4228,
-   "llModelo": 0.5957,
-   "llMercado": 0.597,
-   "nMercado": 4214,
-   "llModeloComMercado": 0.5959,
-   "brier": 0.2055,
+   "n": 4270,
+   "llModelo": 0.5953,
+   "llMercado": 0.5966,
+   "nMercado": 4256,
+   "llModeloComMercado": 0.5955,
+   "brier": 0.2053,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 7248,
-   "llModelo": 0.619,
+   "n": 7320,
+   "llModelo": 0.6184,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2148,
+   "brier": 0.2146,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 6644,
-   "llModelo": 0.5617,
+   "n": 6710,
+   "llModelo": 0.563,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1904,
+   "brier": 0.191,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 808,
-  "acertos": 581,
-  "esperado": 564.0167
+  "n": 815,
+  "acertos": 585,
+  "esperado": 568.8971
  },
  "jogadores": {
-  "n": 2374,
+  "n": 2400,
   "marcaram": 313,
-  "previsto": 535.8843,
-  "llModelo": 0.4044,
-  "comOdd": 1353,
+  "previsto": 541.3063,
+  "llModelo": 0.4025,
+  "comOdd": 1367,
   "marcaramComOdd": 215,
-  "previstoModeloComOdd": 308.4377,
-  "implicitoBrutoComOdd": 438.5722,
+  "previstoModeloComOdd": 311.4297,
+  "implicitoBrutoComOdd": 442.9483,
   "apostasModeloAcimaDaOdd": {
    "n": 30,
    "retorno": -0.525
@@ -74,27 +74,27 @@
   "faixas": [
    {
     "de": 0,
-    "n": 88,
-    "previsto": 0.0793,
-    "aconteceu": 0.0114
+    "n": 89,
+    "previsto": 0.0795,
+    "aconteceu": 0.0112
    },
    {
     "de": 0.1,
-    "n": 930,
-    "previsto": 0.16,
-    "aconteceu": 0.0871
+    "n": 941,
+    "previsto": 0.1601,
+    "aconteceu": 0.0861
    },
    {
     "de": 0.2,
-    "n": 943,
-    "previsto": 0.2413,
-    "aconteceu": 0.14
+    "n": 956,
+    "previsto": 0.2414,
+    "aconteceu": 0.1381
    },
    {
     "de": 0.3,
-    "n": 311,
+    "n": 312,
     "previsto": 0.3396,
-    "aconteceu": 0.2219
+    "aconteceu": 0.2212
    },
    {
     "de": 0.4,
@@ -112,50 +112,50 @@
  },
  "palpites": {
   "principal": {
-   "n": 259,
-   "acertos": 167,
-   "previsto": 0.6396,
-   "comOdd": 259,
-   "lucro": -11.03,
-   "oddMedia": 1.51,
-   "retorno": -0.0426,
-   "retornoMelhorOdd": -0.0418
+   "n": 261,
+   "acertos": 169,
+   "previsto": 0.6401,
+   "comOdd": 261,
+   "lucro": -10.24,
+   "oddMedia": 1.5092,
+   "retorno": -0.0392,
+   "retornoMelhorOdd": -0.0384
   },
   "destaque": {
-   "n": 128,
+   "n": 129,
    "acertos": 88,
    "previsto": 0.6982,
-   "comOdd": 128,
-   "lucro": -10.42,
-   "oddMedia": 1.3384,
-   "retorno": -0.0814,
-   "retornoMelhorOdd": -0.0814
+   "comOdd": 129,
+   "lucro": -11.42,
+   "oddMedia": 1.3383,
+   "retorno": -0.0885,
+   "retornoMelhorOdd": -0.0885
   },
   "oddMaior": {
-   "n": 130,
-   "acertos": 67,
-   "previsto": 0.4886,
-   "comOdd": 130,
-   "lucro": 2.68,
-   "oddMedia": 2.0048,
-   "retorno": 0.0206,
-   "retornoMelhorOdd": 0.0216
+   "n": 132,
+   "acertos": 68,
+   "previsto": 0.4885,
+   "comOdd": 132,
+   "lucro": 2.51,
+   "oddMedia": 2.0049,
+   "retorno": 0.019,
+   "retornoMelhorOdd": 0.02
   },
   "jogador": {
-   "n": 163,
+   "n": 165,
    "acertos": 32,
-   "previsto": 0.3129,
-   "comOdd": 163,
-   "lucro": -72.9302,
-   "oddMedia": 3.2825,
-   "retorno": -0.4474,
-   "retornoMelhorOdd": -0.4474
+   "previsto": 0.3116,
+   "comOdd": 165,
+   "lucro": -74.9302,
+   "oddMedia": 3.3078,
+   "retorno": -0.4541,
+   "retornoMelhorOdd": -0.4541
   }
  },
  "movimentoDoMercado": {
-  "n": 435,
-  "aFavorDoModelo": 268,
-  "medio": 0.006
+  "n": 439,
+  "aFavorDoModelo": 272,
+  "medio": 0.0061
  },
  "dias": [
   {
@@ -263,21 +263,162 @@
      "jogo": "Monza × Fiorentina",
      "comp": "ita.1",
      "inicio": "2026-11-23T19:45Z",
-     "pendente": true
+     "placar": [
+      3,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "Cartões: mais de 3,5",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.6976,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Alieu Njie marca",
+       "odd": 3.75,
+       "chance": 0.271,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Fiorentina",
+      "p": 0.4372,
+      "pMercado": 0.4978,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Fiorentina ou empate",
+       "p": 0.6921,
+       "odd": 1.25,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7701,
+       "odd": 1.15,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5637,
+       "odd": 1.54,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401879237",
      "jogo": "Brentford × Everton",
      "comp": "eng.1",
      "inicio": "2026-11-23T20:00Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Brentford ou empate",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.7185,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.833,
+       "casa": "DraftKings",
+       "chance": 0.5198,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Tyler Dibling marca",
+       "odd": 7,
+       "chance": 0.1338,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Brentford",
+      "p": 0.4886,
+      "pMercado": 0.4285,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.698,
+       "odd": 1.34,
+       "ok": 0
+      },
+      {
+       "rotulo": "Brentford ou empate",
+       "p": 0.7384,
+       "odd": 1.36,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401882802",
      "jogo": "Levante × Elche",
      "comp": "esp.1",
      "inicio": "2026-11-23T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.43,
+       "casa": null,
+       "chance": 0.6868,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Levante",
+       "odd": 2.2,
+       "casa": "DraftKings",
+       "chance": 0.4459,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Levante",
+      "p": 0.4519,
+      "pMercado": 0.4399,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Levante ou empate",
+       "p": 0.709,
+       "odd": 1.34,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7091,
+       "odd": 1.43,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
