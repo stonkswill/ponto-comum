@@ -1,161 +1,161 @@
 {
- "geradoEm": "2026-11-24T12:33:32.873Z",
- "jogos": 308,
+ "geradoEm": "2026-11-24T23:29:51.939Z",
+ "jogos": 318,
  "porFamilia": {
   "resultado": {
-   "n": 5534,
-   "llModelo": 0.4755,
-   "llMercado": 0.4634,
-   "nMercado": 5516,
-   "llModeloComMercado": 0.4738,
-   "brier": 0.1552,
+   "n": 5714,
+   "llModelo": 0.4768,
+   "llMercado": 0.4622,
+   "nMercado": 5696,
+   "llModeloComMercado": 0.4752,
+   "brier": 0.1555,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 7392,
-   "llModelo": 0.5276,
-   "llMercado": 0.5267,
-   "nMercado": 7368,
-   "llModeloComMercado": 0.5271,
-   "brier": 0.1766,
+   "n": 7632,
+   "llModelo": 0.529,
+   "llMercado": 0.5274,
+   "nMercado": 7608,
+   "llModeloComMercado": 0.5285,
+   "brier": 0.1773,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 4312,
-   "llModelo": 0.595,
-   "llMercado": 0.5963,
-   "nMercado": 4298,
-   "llModeloComMercado": 0.5952,
-   "brier": 0.2052,
+   "n": 4452,
+   "llModelo": 0.5945,
+   "llMercado": 0.5958,
+   "nMercado": 4438,
+   "llModeloComMercado": 0.5947,
+   "brier": 0.2051,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 7392,
-   "llModelo": 0.6181,
+   "n": 7632,
+   "llModelo": 0.6195,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2144,
+   "brier": 0.2152,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 6776,
-   "llModelo": 0.562,
+   "n": 6996,
+   "llModelo": 0.5612,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1906,
+   "brier": 0.1903,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 822,
-  "acertos": 589,
-  "esperado": 573.8788
+  "n": 852,
+  "acertos": 605,
+  "esperado": 595.3095
  },
  "jogadores": {
-  "n": 2424,
-  "marcaram": 318,
-  "previsto": 546.4207,
-  "llModelo": 0.4039,
-  "comOdd": 1367,
-  "marcaramComOdd": 215,
-  "previstoModeloComOdd": 311.4297,
-  "implicitoBrutoComOdd": 442.9483,
+  "n": 2508,
+  "marcaram": 326,
+  "previsto": 566.8377,
+  "llModelo": 0.4028,
+  "comOdd": 1430,
+  "marcaramComOdd": 221,
+  "previstoModeloComOdd": 326.162,
+  "implicitoBrutoComOdd": 462.2527,
   "apostasModeloAcimaDaOdd": {
-   "n": 30,
-   "retorno": -0.525
+   "n": 36,
+   "retorno": -0.5042
   },
   "faixas": [
    {
     "de": 0,
-    "n": 89,
-    "previsto": 0.0795,
-    "aconteceu": 0.0112
+    "n": 93,
+    "previsto": 0.0799,
+    "aconteceu": 0.0108
    },
    {
     "de": 0.1,
-    "n": 951,
-    "previsto": 0.16,
-    "aconteceu": 0.0873
+    "n": 980,
+    "previsto": 0.1597,
+    "aconteceu": 0.0867
    },
    {
     "de": 0.2,
-    "n": 968,
-    "previsto": 0.2413,
-    "aconteceu": 0.1395
+    "n": 996,
+    "previsto": 0.2416,
+    "aconteceu": 0.1365
    },
    {
     "de": 0.3,
-    "n": 314,
-    "previsto": 0.3399,
-    "aconteceu": 0.2197
+    "n": 333,
+    "previsto": 0.3403,
+    "aconteceu": 0.2162
    },
    {
     "de": 0.4,
-    "n": 83,
-    "previsto": 0.4398,
-    "aconteceu": 0.2892
+    "n": 85,
+    "previsto": 0.4392,
+    "aconteceu": 0.2941
    },
    {
     "de": 0.5,
-    "n": 19,
-    "previsto": 0.5475,
-    "aconteceu": 0.3158
+    "n": 21,
+    "previsto": 0.5513,
+    "aconteceu": 0.3333
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 264,
-   "acertos": 170,
-   "previsto": 0.6392,
-   "comOdd": 264,
-   "lucro": -11.41,
-   "oddMedia": 1.5116,
-   "retorno": -0.0432,
-   "retornoMelhorOdd": -0.0424
+   "n": 273,
+   "acertos": 175,
+   "previsto": 0.64,
+   "comOdd": 273,
+   "lucro": -13.37,
+   "oddMedia": 1.5094,
+   "retorno": -0.049,
+   "retornoMelhorOdd": -0.0482
   },
   "destaque": {
-   "n": 130,
-   "acertos": 89,
-   "previsto": 0.6982,
-   "comOdd": 130,
-   "lucro": -11.09,
-   "oddMedia": 1.3382,
-   "retorno": -0.0853,
-   "retornoMelhorOdd": -0.0853
+   "n": 134,
+   "acertos": 90,
+   "previsto": 0.6983,
+   "comOdd": 134,
+   "lucro": -13.79,
+   "oddMedia": 1.338,
+   "retorno": -0.1029,
+   "retornoMelhorOdd": -0.1029
   },
   "oddMaior": {
-   "n": 134,
-   "acertos": 70,
-   "previsto": 0.4883,
-   "comOdd": 134,
-   "lucro": 4.61,
-   "oddMedia": 2.0056,
-   "retorno": 0.0344,
-   "retornoMelhorOdd": 0.0354
+   "n": 137,
+   "acertos": 71,
+   "previsto": 0.4899,
+   "comOdd": 137,
+   "lucro": 3.32,
+   "oddMedia": 1.9995,
+   "retorno": 0.0242,
+   "retornoMelhorOdd": 0.0253
   },
   "jogador": {
-   "n": 165,
-   "acertos": 32,
-   "previsto": 0.3116,
-   "comOdd": 165,
-   "lucro": -74.9302,
-   "oddMedia": 3.3078,
-   "retorno": -0.4541,
-   "retornoMelhorOdd": -0.4541
+   "n": 174,
+   "acertos": 33,
+   "previsto": 0.3158,
+   "comOdd": 174,
+   "lucro": -82.4858,
+   "oddMedia": 3.2635,
+   "retorno": -0.4741,
+   "retornoMelhorOdd": -0.4741
   }
  },
  "movimentoDoMercado": {
-  "n": 443,
-  "aFavorDoModelo": 276,
-  "medio": 0.0062
+  "n": 460,
+  "aFavorDoModelo": 288,
+  "medio": 0.0064
  },
  "dias": [
   {
@@ -242,70 +242,591 @@
      "jogo": "Chapecoense × Palmeiras",
      "comp": "bra.1",
      "inicio": "2026-11-24T21:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.39,
+       "casa": null,
+       "chance": 0.6609,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Palmeiras: menos de 2,5 cartões",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7173,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Palmeiras",
+      "p": 0.6392,
+      "pMercado": 0.4469,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6394,
+       "odd": 1.39,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Chapecoense ou Palmeiras)",
+       "p": 0.7957,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915294",
      "jogo": "Feyenoord Rotterdam × FC Porto",
      "comp": "uefa.champions",
      "inicio": "2026-11-24T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.44,
+       "casa": null,
+       "chance": 0.6551,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Borja Sainz marca",
+       "odd": 3.1,
+       "chance": 0.2711,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória FC Porto",
+      "p": 0.3801,
+      "pMercado": 0.4581,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6525,
+       "odd": 1.44,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Feyenoord Rotterdam ou FC Porto)",
+       "p": 0.7514,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6017,
+       "odd": 1.61,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915295",
      "jogo": "Arsenal × Borussia Dortmund",
      "comp": "uefa.champions",
      "inicio": "2026-11-24T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Arsenal",
+       "odd": 1.455,
+       "casa": "DraftKings",
+       "chance": 0.699,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.741,
+       "casa": "DraftKings",
+       "chance": 0.5593,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Noni Madueke marca",
+       "odd": 3.6,
+       "chance": 0.2709,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Arsenal",
+      "p": 0.7238,
+      "pMercado": 0.6742,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Arsenal",
+       "p": 0.7238,
+       "odd": 1.45,
+       "ok": 0
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6521,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Arsenal ou Borussia Dortmund)",
+       "p": 0.8238,
+       "odd": 1.18,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915296",
      "jogo": "Como × AEK Athens",
      "comp": "uefa.champions",
      "inicio": "2026-11-24T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.74,
+       "casa": null,
+       "chance": 0.5469,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Nico Paz marca",
+       "odd": 2.2,
+       "chance": 0.3674,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Como",
+      "p": 0.7181,
+      "pMercado": 0.776,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Como",
+       "p": 0.7181,
+       "odd": 1.26,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6618,
+       "odd": 1.34,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Como ou AEK Athens)",
+       "p": 0.8333,
+       "odd": 1.11,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.55,
+       "odd": 1.74,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915297",
      "jogo": "Slovan Bratislava × Real Betis",
      "comp": "uefa.champions",
      "inicio": "2026-11-24T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.7023,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.73,
+       "casa": null,
+       "chance": 0.5631,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Abde Ezzalzouli marca",
+       "odd": 2.375,
+       "chance": 0.3682,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Real Betis",
+      "p": 0.7247,
+      "pMercado": 0.7674,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6967,
+       "odd": 1.34,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Real Betis",
+       "p": 0.7247,
+       "odd": 1.27,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5786,
+       "odd": 1.73,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Slovan Bratislava ou Real Betis)",
+       "p": 0.8401,
+       "odd": 1.11,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915298",
      "jogo": "Real Madrid × PSV Eindhoven",
      "comp": "uefa.champions",
      "inicio": "2026-11-24T20:00Z",
-     "pendente": true
+     "placar": [
+      5,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 3,5 gols",
+       "odd": 1.4,
+       "casa": null,
+       "chance": 0.6723,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6911,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Kylian Mbappé marca",
+       "odd": 1.4444444444444444,
+       "chance": 0.6507,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Real Madrid",
+      "p": 0.7654,
+      "pMercado": 0.8712,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 3,5 gols",
+       "p": 0.6672,
+       "odd": 1.4,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Real Madrid ou PSV Eindhoven)",
+       "p": 0.8718,
+       "odd": 1.06,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915299",
      "jogo": "RB Leipzig × Lens",
      "comp": "uefa.champions",
      "inicio": "2026-11-24T20:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.45,
+       "casa": null,
+       "chance": 0.6785,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Christopher Nkunku marca",
+       "odd": 2.3,
+       "chance": 0.3762,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória RB Leipzig",
+      "p": 0.5574,
+      "pMercado": 0.7334,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.7003,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6734,
+       "odd": 1.53,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (RB Leipzig ou Lens)",
+       "p": 0.7943,
+       "odd": 1.14,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915300",
      "jogo": "Galatasaray × Aston Villa",
      "comp": "uefa.champions",
      "inicio": "2026-11-24T17:45Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Aston Villa ou empate",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.6917,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.714,
+       "casa": "DraftKings",
+       "chance": 0.5596,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Aston Villa: mais de 3,5 escanteios",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6873,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Nicolas Jackson marca",
+       "odd": 2.6,
+       "chance": 0.3884,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Aston Villa",
+      "p": 0.4787,
+      "pMercado": 0.4378,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Aston Villa ou empate",
+       "p": 0.7053,
+       "odd": 1.36,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6537,
+       "odd": 1.42,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6511,
+       "odd": 1.43,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915379",
      "jogo": "Manchester City × Napoli",
      "comp": "uefa.champions",
      "inicio": "2026-11-24T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Erling Haaland marca",
+       "odd": 1.5714285714285714,
+       "chance": 0.5234,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Manchester City",
+      "p": 0.7569,
+      "pMercado": 0.7586,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6588,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Manchester City",
+       "p": 0.7569,
+       "odd": 1.29,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Manchester City ou Napoli)",
+       "p": 0.8481,
+       "odd": 1.13,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915380",
      "jogo": "Bodo/Glimt × LASK Linz",
      "comp": "uefa.champions",
      "inicio": "2026-11-24T17:45Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6729,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.706,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Jens Petter Hauge marca",
+       "odd": 2.875,
+       "chance": 0.3265,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bodo/Glimt",
+      "p": 0.611,
+      "pMercado": 0.6995,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6773,
+       "odd": 1.42,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.7282,
+       "odd": 1.23,
+       "ok": 0
+      },
+      {
+       "rotulo": "Bodo/Glimt ou empate",
+       "p": 0.8006,
+       "odd": 1.11,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     }
    ],
    "sugestoes": []
