@@ -1,68 +1,68 @@
 {
- "geradoEm": "2026-11-23T23:57:41.533Z",
- "jogos": 305,
+ "geradoEm": "2026-11-24T12:33:32.873Z",
+ "jogos": 308,
  "porFamilia": {
   "resultado": {
-   "n": 5480,
-   "llModelo": 0.4711,
-   "llMercado": 0.4589,
-   "nMercado": 5462,
-   "llModeloComMercado": 0.4694,
-   "brier": 0.1537,
+   "n": 5534,
+   "llModelo": 0.4755,
+   "llMercado": 0.4634,
+   "nMercado": 5516,
+   "llModeloComMercado": 0.4738,
+   "brier": 0.1552,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 7320,
-   "llModelo": 0.5269,
-   "llMercado": 0.5257,
-   "nMercado": 7296,
-   "llModeloComMercado": 0.5263,
-   "brier": 0.1764,
+   "n": 7392,
+   "llModelo": 0.5276,
+   "llMercado": 0.5267,
+   "nMercado": 7368,
+   "llModeloComMercado": 0.5271,
+   "brier": 0.1766,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 4270,
-   "llModelo": 0.5953,
-   "llMercado": 0.5966,
-   "nMercado": 4256,
-   "llModeloComMercado": 0.5955,
-   "brier": 0.2053,
+   "n": 4312,
+   "llModelo": 0.595,
+   "llMercado": 0.5963,
+   "nMercado": 4298,
+   "llModeloComMercado": 0.5952,
+   "brier": 0.2052,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 7320,
-   "llModelo": 0.6184,
+   "n": 7392,
+   "llModelo": 0.6181,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2146,
+   "brier": 0.2144,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 6710,
-   "llModelo": 0.563,
+   "n": 6776,
+   "llModelo": 0.562,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.191,
+   "brier": 0.1906,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 815,
-  "acertos": 585,
-  "esperado": 568.8971
+  "n": 822,
+  "acertos": 589,
+  "esperado": 573.8788
  },
  "jogadores": {
-  "n": 2400,
-  "marcaram": 313,
-  "previsto": 541.3063,
-  "llModelo": 0.4025,
+  "n": 2424,
+  "marcaram": 318,
+  "previsto": 546.4207,
+  "llModelo": 0.4039,
   "comOdd": 1367,
   "marcaramComOdd": 215,
   "previstoModeloComOdd": 311.4297,
@@ -80,21 +80,21 @@
    },
    {
     "de": 0.1,
-    "n": 941,
-    "previsto": 0.1601,
-    "aconteceu": 0.0861
+    "n": 951,
+    "previsto": 0.16,
+    "aconteceu": 0.0873
    },
    {
     "de": 0.2,
-    "n": 956,
-    "previsto": 0.2414,
-    "aconteceu": 0.1381
+    "n": 968,
+    "previsto": 0.2413,
+    "aconteceu": 0.1395
    },
    {
     "de": 0.3,
-    "n": 312,
-    "previsto": 0.3396,
-    "aconteceu": 0.2212
+    "n": 314,
+    "previsto": 0.3399,
+    "aconteceu": 0.2197
    },
    {
     "de": 0.4,
@@ -112,34 +112,34 @@
  },
  "palpites": {
   "principal": {
-   "n": 261,
-   "acertos": 169,
-   "previsto": 0.6401,
-   "comOdd": 261,
-   "lucro": -10.24,
-   "oddMedia": 1.5092,
-   "retorno": -0.0392,
-   "retornoMelhorOdd": -0.0384
+   "n": 264,
+   "acertos": 170,
+   "previsto": 0.6392,
+   "comOdd": 264,
+   "lucro": -11.41,
+   "oddMedia": 1.5116,
+   "retorno": -0.0432,
+   "retornoMelhorOdd": -0.0424
   },
   "destaque": {
-   "n": 129,
-   "acertos": 88,
+   "n": 130,
+   "acertos": 89,
    "previsto": 0.6982,
-   "comOdd": 129,
-   "lucro": -11.42,
-   "oddMedia": 1.3383,
-   "retorno": -0.0885,
-   "retornoMelhorOdd": -0.0885
+   "comOdd": 130,
+   "lucro": -11.09,
+   "oddMedia": 1.3382,
+   "retorno": -0.0853,
+   "retornoMelhorOdd": -0.0853
   },
   "oddMaior": {
-   "n": 132,
-   "acertos": 68,
-   "previsto": 0.4885,
-   "comOdd": 132,
-   "lucro": 2.51,
-   "oddMedia": 2.0049,
-   "retorno": 0.019,
-   "retornoMelhorOdd": 0.02
+   "n": 134,
+   "acertos": 70,
+   "previsto": 0.4883,
+   "comOdd": 134,
+   "lucro": 4.61,
+   "oddMedia": 2.0056,
+   "retorno": 0.0344,
+   "retornoMelhorOdd": 0.0354
   },
   "jogador": {
    "n": 165,
@@ -153,11 +153,87 @@
   }
  },
  "movimentoDoMercado": {
-  "n": 439,
-  "aFavorDoModelo": 272,
-  "medio": 0.0061
+  "n": 443,
+  "aFavorDoModelo": 276,
+  "medio": 0.0062
  },
  "dias": [
+  {
+   "dia": "2026-11-25",
+   "jogos": [
+    {
+     "id": "401841319",
+     "jogo": "Atlético-MG × Corinthians",
+     "comp": "bra.1",
+     "inicio": "2026-11-25T23:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915291",
+     "jogo": "Atlético Madrid × Viking FK",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-25T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915292",
+     "jogo": "Club Brugge × Liverpool",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-25T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915293",
+     "jogo": "Slavia Prague × Villarreal",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-25T17:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401915373",
+     "jogo": "Sporting CP × Manchester United",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-25T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915374",
+     "jogo": "Paris Saint-Germain × AS Roma",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-25T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915375",
+     "jogo": "Shakhtar Donetsk × Fenerbahce",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-25T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915376",
+     "jogo": "Internazionale × VfB Stuttgart",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-25T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915377",
+     "jogo": "Lille × Bayern Munich",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-25T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401915378",
+     "jogo": "Sabah FK × Barcelona",
+     "comp": "uefa.champions",
+     "inicio": "2026-11-25T17:45Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-11-24",
    "jogos": [
@@ -242,21 +318,156 @@
      "jogo": "Santos × Grêmio",
      "comp": "bra.1",
      "inicio": "2026-11-24T00:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.64,
+       "casa": null,
+       "chance": 0.5603,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Grêmio ou empate",
+       "odd": 2.27,
+       "casa": null,
+       "chance": 0.4412,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.6991,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Santos",
+      "p": 0.5357,
+      "pMercado": 0.5818,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6879,
+       "odd": 1.52,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Santos ou Grêmio)",
+       "p": 0.7607,
+       "odd": 1.22,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841323",
      "jogo": "Internacional × Vitória",
      "comp": "bra.1",
      "inicio": "2026-11-23T22:30Z",
-     "pendente": true
+     "placar": [
+      2,
+      5
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Internacional",
+       "odd": 1.69,
+       "casa": "DraftKings",
+       "chance": 0.5836,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.833,
+       "casa": "DraftKings",
+       "chance": 0.5169,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Internacional",
+      "p": 0.5932,
+      "pMercado": 0.5739,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6984,
+       "odd": 1.33,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Internacional ou Vitória)",
+       "p": 0.7723,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Internacional",
+       "p": 0.5932,
+       "odd": 1.69,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401841326",
      "jogo": "Botafogo × São Paulo",
      "comp": "bra.1",
      "inicio": "2026-11-23T23:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.833,
+       "casa": "DraftKings",
+       "chance": 0.5197,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Botafogo",
+      "p": 0.5087,
+      "pMercado": 0.4257,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7267,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Botafogo ou São Paulo)",
+       "p": 0.7425,
+       "odd": 1.31,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401875009",
