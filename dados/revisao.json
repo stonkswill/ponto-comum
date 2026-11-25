@@ -1,125 +1,125 @@
 {
- "geradoEm": "2026-11-25T11:23:04.930Z",
- "jogos": 318,
+ "geradoEm": "2026-11-25T21:45:05.173Z",
+ "jogos": 320,
  "porFamilia": {
   "resultado": {
-   "n": 5714,
-   "llModelo": 0.4768,
-   "llMercado": 0.4622,
-   "nMercado": 5696,
-   "llModeloComMercado": 0.4752,
-   "brier": 0.1555,
+   "n": 5748,
+   "llModelo": 0.4752,
+   "llMercado": 0.4609,
+   "nMercado": 5730,
+   "llModeloComMercado": 0.4736,
+   "brier": 0.1549,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 7632,
-   "llModelo": 0.529,
-   "llMercado": 0.5274,
-   "nMercado": 7608,
-   "llModeloComMercado": 0.5285,
-   "brier": 0.1773,
+   "n": 7680,
+   "llModelo": 0.5285,
+   "llMercado": 0.5268,
+   "nMercado": 7656,
+   "llModeloComMercado": 0.528,
+   "brier": 0.1771,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 4452,
-   "llModelo": 0.5945,
-   "llMercado": 0.5958,
-   "nMercado": 4438,
-   "llModeloComMercado": 0.5947,
-   "brier": 0.2051,
+   "n": 4480,
+   "llModelo": 0.5937,
+   "llMercado": 0.5949,
+   "nMercado": 4466,
+   "llModeloComMercado": 0.5939,
+   "brier": 0.2048,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 7632,
-   "llModelo": 0.6195,
+   "n": 7680,
+   "llModelo": 0.6194,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2152,
+   "brier": 0.2151,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 6996,
-   "llModelo": 0.5612,
+   "n": 7040,
+   "llModelo": 0.5611,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1903,
+   "brier": 0.1902,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 852,
-  "acertos": 605,
-  "esperado": 595.3095
+  "n": 857,
+  "acertos": 608,
+  "esperado": 598.6749
  },
  "jogadores": {
-  "n": 2508,
-  "marcaram": 326,
-  "previsto": 566.8377,
-  "llModelo": 0.4028,
-  "comOdd": 1430,
-  "marcaramComOdd": 221,
-  "previstoModeloComOdd": 326.162,
-  "implicitoBrutoComOdd": 462.2527,
+  "n": 2525,
+  "marcaram": 329,
+  "previsto": 571.602,
+  "llModelo": 0.4038,
+  "comOdd": 1445,
+  "marcaramComOdd": 223,
+  "previstoModeloComOdd": 330.484,
+  "implicitoBrutoComOdd": 467.4104,
   "apostasModeloAcimaDaOdd": {
-   "n": 36,
-   "retorno": -0.5042
+   "n": 37,
+   "retorno": -0.5176
   },
   "faixas": [
    {
     "de": 0,
-    "n": 93,
-    "previsto": 0.0799,
-    "aconteceu": 0.0108
+    "n": 94,
+    "previsto": 0.08,
+    "aconteceu": 0.0106
    },
    {
     "de": 0.1,
-    "n": 980,
-    "previsto": 0.1597,
-    "aconteceu": 0.0867
+    "n": 986,
+    "previsto": 0.1596,
+    "aconteceu": 0.0872
    },
    {
     "de": 0.2,
-    "n": 996,
-    "previsto": 0.2416,
-    "aconteceu": 0.1365
+    "n": 1000,
+    "previsto": 0.2417,
+    "aconteceu": 0.137
    },
    {
     "de": 0.3,
-    "n": 333,
+    "n": 335,
     "previsto": 0.3403,
-    "aconteceu": 0.2162
+    "aconteceu": 0.2149
    },
    {
     "de": 0.4,
-    "n": 85,
-    "previsto": 0.4392,
-    "aconteceu": 0.2941
+    "n": 87,
+    "previsto": 0.4397,
+    "aconteceu": 0.2989
    },
    {
     "de": 0.5,
-    "n": 21,
-    "previsto": 0.5513,
-    "aconteceu": 0.3333
+    "n": 23,
+    "previsto": 0.5567,
+    "aconteceu": 0.3043
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 273,
+   "n": 274,
    "acertos": 175,
-   "previsto": 0.64,
-   "comOdd": 273,
-   "lucro": -13.37,
-   "oddMedia": 1.5094,
-   "retorno": -0.049,
-   "retornoMelhorOdd": -0.0482
+   "previsto": 0.6399,
+   "comOdd": 274,
+   "lucro": -14.37,
+   "oddMedia": 1.5096,
+   "retorno": -0.0524,
+   "retornoMelhorOdd": -0.0517
   },
   "destaque": {
    "n": 134,
@@ -142,20 +142,20 @@
    "retornoMelhorOdd": 0.0253
   },
   "jogador": {
-   "n": 174,
+   "n": 176,
    "acertos": 33,
-   "previsto": 0.3158,
-   "comOdd": 174,
-   "lucro": -82.4858,
-   "oddMedia": 3.2635,
-   "retorno": -0.4741,
-   "retornoMelhorOdd": -0.4741
+   "previsto": 0.3173,
+   "comOdd": 176,
+   "lucro": -84.4858,
+   "oddMedia": 3.2579,
+   "retorno": -0.48,
+   "retornoMelhorOdd": -0.48
   }
  },
  "movimentoDoMercado": {
-  "n": 460,
+  "n": 463,
   "aFavorDoModelo": 288,
-  "medio": 0.0064
+  "medio": 0.0061
  },
  "dias": [
   {
@@ -452,7 +452,55 @@
      "jogo": "Slavia Prague × Villarreal",
      "comp": "uefa.champions",
      "inicio": "2026-11-25T17:45Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.58,
+       "casa": null,
+       "chance": 0.6179,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Danijel Sturm marca",
+       "odd": 4,
+       "chance": 0.2476,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Villarreal",
+      "p": 0.5451,
+      "pMercado": 0.4399,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6511,
+       "odd": 1.65,
+       "ok": 0
+      },
+      {
+       "rotulo": "Villarreal ou empate",
+       "p": 0.7616,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6363,
+       "odd": 1.58,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915373",
@@ -494,7 +542,41 @@
      "jogo": "Sabah FK × Barcelona",
      "comp": "uefa.champions",
      "inicio": "2026-11-25T17:45Z",
-     "pendente": true
+     "placar": [
+      1,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Raphinha marca",
+       "odd": 1.5333333333333332,
+       "chance": 0.6462,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Barcelona",
+      "p": 0.9225,
+      "pMercado": 0.9243,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 3,5 gols",
+       "p": 0.7639,
+       "odd": 1.35,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5525,
+       "odd": 2.01,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     }
    ],
    "sugestoes": []
