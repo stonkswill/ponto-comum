@@ -1,163 +1,211 @@
 {
- "geradoEm": "2026-11-25T21:45:05.173Z",
- "jogos": 320,
+ "geradoEm": "2026-11-26T10:58:03.680Z",
+ "jogos": 328,
  "porFamilia": {
   "resultado": {
-   "n": 5748,
-   "llModelo": 0.4752,
-   "llMercado": 0.4609,
-   "nMercado": 5730,
-   "llModeloComMercado": 0.4736,
-   "brier": 0.1549,
+   "n": 5892,
+   "llModelo": 0.4747,
+   "llMercado": 0.46,
+   "nMercado": 5874,
+   "llModeloComMercado": 0.4731,
+   "brier": 0.1548,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 7680,
-   "llModelo": 0.5285,
-   "llMercado": 0.5268,
-   "nMercado": 7656,
-   "llModeloComMercado": 0.528,
-   "brier": 0.1771,
+   "n": 7872,
+   "llModelo": 0.5268,
+   "llMercado": 0.525,
+   "nMercado": 7848,
+   "llModeloComMercado": 0.5263,
+   "brier": 0.1765,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 4480,
-   "llModelo": 0.5937,
-   "llMercado": 0.5949,
-   "nMercado": 4466,
-   "llModeloComMercado": 0.5939,
-   "brier": 0.2048,
+   "n": 4592,
+   "llModelo": 0.5924,
+   "llMercado": 0.5934,
+   "nMercado": 4578,
+   "llModeloComMercado": 0.5926,
+   "brier": 0.2042,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 7680,
-   "llModelo": 0.6194,
+   "n": 7872,
+   "llModelo": 0.624,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2151,
+   "brier": 0.217,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 7040,
-   "llModelo": 0.5611,
+   "n": 7216,
+   "llModelo": 0.56,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1902,
+   "brier": 0.1898,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 857,
-  "acertos": 608,
-  "esperado": 598.6749
+  "n": 883,
+  "acertos": 625,
+  "esperado": 616.5607
  },
  "jogadores": {
-  "n": 2525,
-  "marcaram": 329,
-  "previsto": 571.602,
+  "n": 2595,
+  "marcaram": 340,
+  "previsto": 588.5374,
   "llModelo": 0.4038,
-  "comOdd": 1445,
-  "marcaramComOdd": 223,
-  "previstoModeloComOdd": 330.484,
-  "implicitoBrutoComOdd": 467.4104,
+  "comOdd": 1500,
+  "marcaramComOdd": 232,
+  "previstoModeloComOdd": 344.0609,
+  "implicitoBrutoComOdd": 485.8178,
   "apostasModeloAcimaDaOdd": {
-   "n": 37,
-   "retorno": -0.5176
+   "n": 41,
+   "retorno": -0.5646
   },
   "faixas": [
    {
     "de": 0,
-    "n": 94,
-    "previsto": 0.08,
-    "aconteceu": 0.0106
+    "n": 96,
+    "previsto": 0.0799,
+    "aconteceu": 0.0104
    },
    {
     "de": 0.1,
-    "n": 986,
-    "previsto": 0.1596,
-    "aconteceu": 0.0872
+    "n": 1015,
+    "previsto": 0.1595,
+    "aconteceu": 0.0877
    },
    {
     "de": 0.2,
-    "n": 1000,
-    "previsto": 0.2417,
-    "aconteceu": 0.137
+    "n": 1017,
+    "previsto": 0.2415,
+    "aconteceu": 0.1357
    },
    {
     "de": 0.3,
-    "n": 335,
+    "n": 350,
     "previsto": 0.3403,
-    "aconteceu": 0.2149
+    "aconteceu": 0.2143
    },
    {
     "de": 0.4,
-    "n": 87,
-    "previsto": 0.4397,
-    "aconteceu": 0.2989
+    "n": 92,
+    "previsto": 0.4389,
+    "aconteceu": 0.3152
    },
    {
     "de": 0.5,
-    "n": 23,
-    "previsto": 0.5567,
-    "aconteceu": 0.3043
+    "n": 25,
+    "previsto": 0.5536,
+    "aconteceu": 0.32
    }
   ]
  },
  "palpites": {
   "principal": {
-   "n": 274,
-   "acertos": 175,
-   "previsto": 0.6399,
-   "comOdd": 274,
-   "lucro": -14.37,
-   "oddMedia": 1.5096,
-   "retorno": -0.0524,
-   "retornoMelhorOdd": -0.0517
+   "n": 280,
+   "acertos": 180,
+   "previsto": 0.6405,
+   "comOdd": 280,
+   "lucro": -13.34,
+   "oddMedia": 1.5081,
+   "retorno": -0.0476,
+   "retornoMelhorOdd": -0.0469
   },
   "destaque": {
-   "n": 134,
-   "acertos": 90,
+   "n": 137,
+   "acertos": 93,
    "previsto": 0.6983,
-   "comOdd": 134,
-   "lucro": -13.79,
-   "oddMedia": 1.338,
-   "retorno": -0.1029,
-   "retornoMelhorOdd": -0.1029
+   "comOdd": 137,
+   "lucro": -12.74,
+   "oddMedia": 1.3382,
+   "retorno": -0.093,
+   "retornoMelhorOdd": -0.093
   },
   "oddMaior": {
-   "n": 137,
+   "n": 138,
    "acertos": 71,
-   "previsto": 0.4899,
-   "comOdd": 137,
-   "lucro": 3.32,
-   "oddMedia": 1.9995,
-   "retorno": 0.0242,
-   "retornoMelhorOdd": 0.0253
+   "previsto": 0.4891,
+   "comOdd": 138,
+   "lucro": 2.32,
+   "oddMedia": 2.0036,
+   "retorno": 0.0168,
+   "retornoMelhorOdd": 0.0178
   },
   "jogador": {
-   "n": 176,
-   "acertos": 33,
-   "previsto": 0.3173,
-   "comOdd": 176,
-   "lucro": -84.4858,
-   "oddMedia": 3.2579,
-   "retorno": -0.48,
-   "retornoMelhorOdd": -0.48
+   "n": 183,
+   "acertos": 34,
+   "previsto": 0.3182,
+   "comOdd": 183,
+   "lucro": -89.2858,
+   "oddMedia": 3.2438,
+   "retorno": -0.4879,
+   "retornoMelhorOdd": -0.4879
   }
  },
  "movimentoDoMercado": {
-  "n": 463,
-  "aFavorDoModelo": 288,
-  "medio": 0.0061
+  "n": 474,
+  "aFavorDoModelo": 293,
+  "medio": 0.006
  },
  "dias": [
+  {
+   "dia": "2026-11-27",
+   "jogos": [
+    {
+     "id": "401841337",
+     "jogo": "Fluminense × Cruzeiro",
+     "comp": "bra.1",
+     "inicio": "2026-11-27T23:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401875004",
+     "jogo": "Venezia × Bologna",
+     "comp": "ita.1",
+     "inicio": "2026-11-27T19:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401876392",
+     "jogo": "Brest × Paris FC",
+     "comp": "fra.1",
+     "inicio": "2026-11-27T19:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401879225",
+     "jogo": "Nottingham Forest × Chelsea",
+     "comp": "eng.1",
+     "inicio": "2026-11-27T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882791",
+     "jogo": "Levante × Racing Santander",
+     "comp": "esp.1",
+     "inicio": "2026-11-27T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401884720",
+     "jogo": "Werder Bremen × Borussia Mönchengladbach",
+     "comp": "ger.1",
+     "inicio": "2026-11-27T19:30Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-11-26",
    "jogos": [
@@ -431,21 +479,143 @@
      "jogo": "Atlético-MG × Corinthians",
      "comp": "bra.1",
      "inicio": "2026-11-25T23:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Atlético-MG",
+      "p": 0.4393,
+      "pMercado": 0.3651,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Atlético-MG ou Corinthians)",
+       "p": 0.7075,
+       "odd": 1.32,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6433,
+       "odd": 1.32,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915291",
      "jogo": "Atlético Madrid × Viking FK",
      "comp": "uefa.champions",
      "inicio": "2026-11-25T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Jonathan David marca",
+       "odd": 2.05,
+       "chance": 0.53,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Atlético Madrid",
+      "p": 0.8502,
+      "pMercado": 0.8894,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 3,5 gols",
+       "p": 0.6135,
+       "odd": 1.71,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Atlético Madrid",
+       "p": 0.8502,
+       "odd": 1.11,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915292",
      "jogo": "Club Brugge × Liverpool",
      "comp": "uefa.champions",
      "inicio": "2026-11-25T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 4,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6899,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Liverpool: mais de 1,5 gols",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6886,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Alexander Isak marca",
+       "odd": 2.2,
+       "chance": 0.4291,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Liverpool",
+      "p": 0.6266,
+      "pMercado": 0.6008,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6926,
+       "odd": 1.3,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6384,
+       "odd": 1.39,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Liverpool",
+       "p": 0.6266,
+       "odd": 1.62,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Club Brugge ou Liverpool)",
+       "p": 0.8088,
+       "odd": 1.18,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915293",
@@ -507,35 +677,317 @@
      "jogo": "Sporting CP × Manchester United",
      "comp": "uefa.champions",
      "inicio": "2026-11-25T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.47,
+       "casa": null,
+       "chance": 0.6426,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 2.57,
+       "casa": null,
+       "chance": 0.3733,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Flávio Gonçalves marca",
+       "odd": 4.333333333333334,
+       "chance": 0.218,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Sporting CP",
+      "p": 0.4306,
+      "pMercado": 0.3538,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sporting CP ou empate",
+       "p": 0.6669,
+       "odd": 1.53,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6384,
+       "odd": 1.47,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6227,
+       "odd": 1.5,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915374",
      "jogo": "Paris Saint-Germain × AS Roma",
      "comp": "uefa.champions",
      "inicio": "2026-11-25T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.7081,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Paris Saint-Germain: mais de 1,5 gols",
+       "odd": 1.34,
+       "casa": null,
+       "chance": 0.7262,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ferran Torres marca",
+       "odd": 1.9090909090909092,
+       "chance": 0.4298,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Paris Saint-Germain",
+      "p": 0.7262,
+      "pMercado": 0.6529,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.6907,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Paris Saint-Germain",
+       "p": 0.7262,
+       "odd": 1.49,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.592,
+       "odd": 1.49,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Paris Saint-Germain ou AS Roma)",
+       "p": 0.8425,
+       "odd": 1.18,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915375",
      "jogo": "Shakhtar Donetsk × Fenerbahce",
      "comp": "uefa.champions",
      "inicio": "2026-11-25T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.6887,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Gleiker Mendoza marca",
+       "odd": 3.6,
+       "chance": 0.2229,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Shakhtar Donetsk",
+      "p": 0.4731,
+      "pMercado": 0.3497,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6867,
+       "odd": 1.37,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Shakhtar Donetsk ou Fenerbahce)",
+       "p": 0.7505,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5626,
+       "odd": 1.66,
+       "ok": 0
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915376",
      "jogo": "Internazionale × VfB Stuttgart",
      "comp": "uefa.champions",
      "inicio": "2026-11-25T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Internazionale",
+       "odd": 1.42,
+       "casa": "Bet 365",
+       "chance": 0.6687,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Internazionale: mais de 4,5 escanteios",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6887,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Ermedin Demirovic marca",
+       "odd": 3.5,
+       "chance": 0.2311,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Internazionale",
+      "p": 0.6479,
+      "pMercado": 0.6896,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6755,
+       "odd": 1.26,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Internazionale",
+       "p": 0.6479,
+       "odd": 1.42,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6117,
+       "odd": 1.44,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Internazionale ou VfB Stuttgart)",
+       "p": 0.8121,
+       "odd": 1.17,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915377",
      "jogo": "Lille × Bayern Munich",
      "comp": "uefa.champions",
      "inicio": "2026-11-25T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Bayern Munich",
+       "odd": 1.606,
+       "casa": "DraftKings",
+       "chance": 0.6155,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Michael Olise marca",
+       "odd": 2.625,
+       "chance": 0.3317,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bayern Munich",
+      "p": 0.6237,
+      "pMercado": 0.6073,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 4,5 gols",
+       "p": 0.7723,
+       "odd": 1.12,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Bayern Munich",
+       "p": 0.6237,
+       "odd": 1.59,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Lille ou Bayern Munich)",
+       "p": 0.7983,
+       "odd": 1.22,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5842,
+       "odd": 1.86,
+       "ok": 1
+      }
+     ],
+     "filtro": true
     },
     {
      "id": "401915378",
