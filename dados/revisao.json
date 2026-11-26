@@ -1,106 +1,106 @@
 {
- "geradoEm": "2026-11-26T10:58:03.680Z",
- "jogos": 328,
+ "geradoEm": "2026-11-26T21:38:14.731Z",
+ "jogos": 346,
  "porFamilia": {
   "resultado": {
-   "n": 5892,
-   "llModelo": 0.4747,
-   "llMercado": 0.46,
-   "nMercado": 5874,
-   "llModeloComMercado": 0.4731,
-   "brier": 0.1548,
+   "n": 6214,
+   "llModelo": 0.4778,
+   "llMercado": 0.4623,
+   "nMercado": 6178,
+   "llModeloComMercado": 0.4754,
+   "brier": 0.1557,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 7872,
-   "llModelo": 0.5268,
-   "llMercado": 0.525,
-   "nMercado": 7848,
+   "n": 8304,
+   "llModelo": 0.527,
+   "llMercado": 0.5242,
+   "nMercado": 8256,
    "llModeloComMercado": 0.5263,
-   "brier": 0.1765,
+   "brier": 0.1766,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 4592,
-   "llModelo": 0.5924,
-   "llMercado": 0.5934,
-   "nMercado": 4578,
-   "llModeloComMercado": 0.5926,
-   "brier": 0.2042,
+   "n": 4844,
+   "llModelo": 0.5919,
+   "llMercado": 0.5927,
+   "nMercado": 4816,
+   "llModeloComMercado": 0.5922,
+   "brier": 0.2041,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 7872,
-   "llModelo": 0.624,
+   "n": 8304,
+   "llModelo": 0.6242,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.217,
+   "brier": 0.2167,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 7216,
-   "llModelo": 0.56,
+   "n": 7612,
+   "llModelo": 0.5577,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1898,
+   "brier": 0.1889,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 883,
-  "acertos": 625,
-  "esperado": 616.5607
+  "n": 929,
+  "acertos": 659,
+  "esperado": 649.4427
  },
  "jogadores": {
-  "n": 2595,
-  "marcaram": 340,
-  "previsto": 588.5374,
-  "llModelo": 0.4038,
-  "comOdd": 1500,
-  "marcaramComOdd": 232,
-  "previstoModeloComOdd": 344.0609,
-  "implicitoBrutoComOdd": 485.8178,
+  "n": 2740,
+  "marcaram": 360,
+  "previsto": 618.2168,
+  "llModelo": 0.4034,
+  "comOdd": 1560,
+  "marcaramComOdd": 242,
+  "previstoModeloComOdd": 357.0374,
+  "implicitoBrutoComOdd": 504.1077,
   "apostasModeloAcimaDaOdd": {
-   "n": 41,
-   "retorno": -0.5646
+   "n": 43,
+   "retorno": -0.4686
   },
   "faixas": [
    {
     "de": 0,
-    "n": 96,
-    "previsto": 0.0799,
-    "aconteceu": 0.0104
+    "n": 120,
+    "previsto": 0.0802,
+    "aconteceu": 0.0167
    },
    {
     "de": 0.1,
-    "n": 1015,
-    "previsto": 0.1595,
-    "aconteceu": 0.0877
+    "n": 1069,
+    "previsto": 0.1588,
+    "aconteceu": 0.0889
    },
    {
     "de": 0.2,
-    "n": 1017,
-    "previsto": 0.2415,
-    "aconteceu": 0.1357
+    "n": 1057,
+    "previsto": 0.242,
+    "aconteceu": 0.1381
    },
    {
     "de": 0.3,
-    "n": 350,
-    "previsto": 0.3403,
-    "aconteceu": 0.2143
+    "n": 370,
+    "previsto": 0.3399,
+    "aconteceu": 0.2081
    },
    {
     "de": 0.4,
-    "n": 92,
-    "previsto": 0.4389,
-    "aconteceu": 0.3152
+    "n": 99,
+    "previsto": 0.4382,
+    "aconteceu": 0.3232
    },
    {
     "de": 0.5,
@@ -112,52 +112,65 @@
  },
  "palpites": {
   "principal": {
-   "n": 280,
-   "acertos": 180,
-   "previsto": 0.6405,
-   "comOdd": 280,
-   "lucro": -13.34,
-   "oddMedia": 1.5081,
-   "retorno": -0.0476,
-   "retornoMelhorOdd": -0.0469
+   "n": 294,
+   "acertos": 189,
+   "previsto": 0.6395,
+   "comOdd": 294,
+   "lucro": -13.87,
+   "oddMedia": 1.5103,
+   "retorno": -0.0472,
+   "retornoMelhorOdd": -0.0464
   },
   "destaque": {
-   "n": 137,
-   "acertos": 93,
-   "previsto": 0.6983,
-   "comOdd": 137,
-   "lucro": -12.74,
-   "oddMedia": 1.3382,
-   "retorno": -0.093,
-   "retornoMelhorOdd": -0.093
+   "n": 143,
+   "acertos": 96,
+   "previsto": 0.6981,
+   "comOdd": 143,
+   "lucro": -14.68,
+   "oddMedia": 1.3387,
+   "retorno": -0.1027,
+   "retornoMelhorOdd": -0.1027
   },
   "oddMaior": {
-   "n": 138,
-   "acertos": 71,
-   "previsto": 0.4891,
-   "comOdd": 138,
-   "lucro": 2.32,
-   "oddMedia": 2.0036,
-   "retorno": 0.0168,
-   "retornoMelhorOdd": 0.0178
+   "n": 146,
+   "acertos": 76,
+   "previsto": 0.49,
+   "comOdd": 146,
+   "lucro": 3.54,
+   "oddMedia": 1.9989,
+   "retorno": 0.0242,
+   "retornoMelhorOdd": 0.0254
   },
   "jogador": {
-   "n": 183,
-   "acertos": 34,
-   "previsto": 0.3182,
-   "comOdd": 183,
-   "lucro": -89.2858,
-   "oddMedia": 3.2438,
-   "retorno": -0.4879,
-   "retornoMelhorOdd": -0.4879
+   "n": 191,
+   "acertos": 38,
+   "previsto": 0.3181,
+   "comOdd": 191,
+   "lucro": -82.5858,
+   "oddMedia": 3.2383,
+   "retorno": -0.4324,
+   "retornoMelhorOdd": -0.4324
   }
  },
  "movimentoDoMercado": {
-  "n": 474,
-  "aFavorDoModelo": 293,
-  "medio": 0.006
+  "n": 502,
+  "aFavorDoModelo": 314,
+  "medio": 0.007
  },
  "dias": [
+  {
+   "dia": "2026-11-28",
+   "jogos": [
+    {
+     "id": "401882796",
+     "jogo": "Real Betis × Rayo Vallecano",
+     "comp": "esp.1",
+     "inicio": "2026-11-28T13:00Z",
+     "pendente": true
+    }
+   ],
+   "sugestoes": []
+  },
   {
    "dia": "2026-11-27",
    "jogos": [
@@ -256,21 +269,203 @@
      "jogo": "Besiktas × Hapoel Be'er",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6829,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.82,
+       "casa": null,
+       "chance": 0.5335,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Junior Olaitan marca",
+       "odd": 3.1,
+       "chance": 0.2955,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Besiktas",
+      "p": 0.7296,
+      "pMercado": 0.7854,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Besiktas",
+       "p": 0.7296,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6686,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Besiktas ou Hapoel Be'er)",
+       "p": 0.8384,
+       "odd": 1.11,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915507",
      "jogo": "Marseille × Levski Sofia",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Marseille",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.7475,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.96,
+       "casa": null,
+       "chance": 0.4867,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Marseille: mais de 5,5 escanteios",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6848,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Amine Gouiri marca",
+       "odd": 2.1,
+       "chance": 0.4473,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Marseille",
+      "p": 0.7684,
+      "pMercado": 0.7265,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6502,
+       "odd": 1.59,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Marseille",
+       "p": 0.7684,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Marseille ou Levski Sofia)",
+       "p": 0.8519,
+       "odd": 1.17,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915508",
      "jogo": "Union St.-Gilloise × Lech Poznan",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Union St.-Gilloise",
+       "odd": 1.37,
+       "casa": "DraftKings",
+       "chance": 0.704,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Union St.-Gilloise: mais de 1,5 gols",
+       "odd": 1.34,
+       "casa": null,
+       "chance": 0.7121,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Relebohile Mofokeng marca",
+       "odd": 2.4,
+       "chance": 0.3408,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Union St.-Gilloise",
+      "p": 0.6912,
+      "pMercado": 0.7167,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6961,
+       "odd": 1.45,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Union St.-Gilloise",
+       "p": 0.6912,
+       "odd": 1.35,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6034,
+       "odd": 1.75,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Union St.-Gilloise ou Lech Poznan)",
+       "p": 0.8284,
+       "odd": 1.14,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915512",
@@ -312,35 +507,267 @@
      "jogo": "Dinamo Zagreb × Bayer Leverkusen",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória Bayer Leverkusen",
+       "odd": 1.65,
+       "casa": "Bet 365",
+       "chance": 0.6122,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Dinamo Zagreb: menos de 4,5 escanteios",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6835,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Patrik Schick marca",
+       "odd": 2,
+       "chance": 0.4381,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Bayer Leverkusen",
+      "p": 0.6302,
+      "pMercado": 0.5943,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6353,
+       "odd": 1.67,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Bayer Leverkusen",
+       "p": 0.6302,
+       "odd": 1.65,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Dinamo Zagreb ou Bayer Leverkusen)",
+       "p": 0.7937,
+       "odd": 1.22,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915518",
      "jogo": "Viktoria Plzen × Benfica",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.59,
+       "casa": null,
+       "chance": 0.5706,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Prince Adu marca",
+       "odd": 4.5,
+       "chance": 0.1814,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Benfica",
+      "p": 0.5888,
+      "pMercado": 0.6676,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Viktoria Plzen ou Benfica)",
+       "p": 0.7784,
+       "odd": 1.17,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7949,
+       "odd": 1.1,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Benfica",
+       "p": 0.5888,
+       "odd": 1.46,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915519",
      "jogo": "Celta Vigo × AFC Bournemouth",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.81,
+       "casa": null,
+       "chance": 0.5354,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.95,
+       "casa": "Bet 365",
+       "chance": 0.5095,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "AFC Bournemouth: mais de 3,5 escanteios",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6847,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Marcus Tavernier marca",
+       "odd": 3.2,
+       "chance": 0.2547,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AFC Bournemouth",
+      "p": 0.4986,
+      "pMercado": 0.4853,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6978,
+       "odd": 1.31,
+       "ok": 1
+      },
+      {
+       "rotulo": "AFC Bournemouth ou empate",
+       "p": 0.7467,
+       "odd": 1.25,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915520",
      "jogo": "RB Salzburg × Ararat-Armenia",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Sota Kitano marca",
+       "odd": 2.6,
+       "chance": 0.3196,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória RB Salzburg",
+      "p": 0.6873,
+      "pMercado": 0.8633,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6924,
+       "odd": 1.28,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915521",
      "jogo": "Olympiacos × AC Milan",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "AC Milan ou empate",
+       "odd": 1.4,
+       "casa": "Bet 365",
+       "chance": 0.6653,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Diego Moreira marca",
+       "odd": 5,
+       "chance": 0.2427,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AC Milan",
+      "p": 0.3845,
+      "pMercado": 0.3917,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6969,
+       "odd": 1.26,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Olympiacos ou AC Milan)",
+       "p": 0.7195,
+       "odd": 1.29,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915738",
@@ -354,7 +781,50 @@
      "jogo": "Kauno Zalgiris × Riga FC",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.81,
+       "casa": null,
+       "chance": 0.5222,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.87,
+       "casa": "DraftKings",
+       "chance": 0.5166,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Riga FC",
+      "p": 0.409,
+      "pMercado": 0.4705,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Riga FC ou empate",
+       "p": 0.6788,
+       "odd": 1.27,
+       "ok": 0
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7277,
+       "odd": 1.28,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915801",
@@ -410,63 +880,431 @@
      "jogo": "SK Brann × AGF",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      1,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 10,5",
+       "odd": 1.31,
+       "casa": null,
+       "chance": 0.7121,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória SK Brann",
+      "p": 0.6393,
+      "pMercado": 0.4367,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7868,
+       "odd": 1.13,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (SK Brann ou AGF)",
+       "p": 0.7908,
+       "odd": 1.25,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915809",
      "jogo": "Pafos × FC Midtjylland",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.5,
+       "casa": null,
+       "chance": 0.6196,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Pafos",
+       "odd": 1.79,
+       "casa": null,
+       "chance": 0.5191,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Pafos",
+      "p": 0.5191,
+      "pMercado": null,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Pafos ou empate",
+       "p": 0.7487,
+       "odd": 1.24,
+       "ok": 0
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6196,
+       "odd": 1.5,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6055,
+       "odd": 1.54,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915810",
      "jogo": "Egnatia × Lincoln Red Imps",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.48,
+       "casa": null,
+       "chance": 0.6178,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Egnatia: mais de 5,5 escanteios",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6851,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Egnatia",
+      "p": 0.6796,
+      "pMercado": 0.6085,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Egnatia",
+       "p": 0.6796,
+       "odd": 1.61,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6279,
+       "odd": 1.63,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Egnatia ou Lincoln Red Imps)",
+       "p": 0.8151,
+       "odd": 1.19,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915811",
      "jogo": "Heart of Midlothian × AS Monaco",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Vitória AS Monaco",
+       "odd": 1.526,
+       "casa": "DraftKings",
+       "chance": 0.6367,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.73,
+       "casa": null,
+       "chance": 0.5523,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AS Monaco",
+      "p": 0.6326,
+      "pMercado": 0.6409,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória AS Monaco",
+       "p": 0.6326,
+       "odd": 1.53,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6194,
+       "odd": 1.52,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Heart of Midlothian ou AS Monaco)",
+       "p": 0.7968,
+       "odd": 1.19,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5566,
+       "odd": 1.73,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915812",
      "jogo": "Jablonec × FC Lugano",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Jablonec",
+      "p": 0.3867,
+      "pMercado": 0.2951,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Jablonec ou FC Lugano)",
+       "p": 0.7573,
+       "odd": 1.28,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6243,
+       "odd": 1.38,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6231,
+       "odd": 1.67,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915813",
      "jogo": "Iberia 1999 × Getafe",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.37,
+       "casa": null,
+       "chance": 0.4245,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Getafe",
+      "p": 0.4666,
+      "pMercado": 0.6612,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Iberia 1999 ou Getafe)",
+       "p": 0.7182,
+       "odd": 1.2,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6661,
+       "odd": 1.33,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915814",
      "jogo": "Brighton & Hove Albion × CSU Craiova",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.38,
+       "casa": null,
+       "chance": 0.6901,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Brighton & Hove Albion",
+      "p": 0.8449,
+      "pMercado": 0.8786,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6914,
+       "odd": 1.38,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Brighton & Hove Albion",
+       "p": 0.8449,
+       "odd": 1.13,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915815",
      "jogo": "Ajax Amsterdam × FC Thun",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T17:45Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.77,
+       "casa": null,
+       "chance": 0.5354,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Ajax Amsterdam",
+      "p": 0.7427,
+      "pMercado": 0.8342,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Ajax Amsterdam ou FC Thun)",
+       "p": 0.8435,
+       "odd": 1.05,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.8594,
+       "odd": 1.04,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915816",
      "jogo": "Kairat Almaty × Mjällby AIF",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T15:30Z",
-     "pendente": true
+     "placar": [
+      1,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.78,
+       "casa": null,
+       "chance": 0.5305,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Menos de 2,5 gols",
+       "odd": 1.87,
+       "casa": "DraftKings",
+       "chance": 0.5119,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Mjällby AIF",
+      "p": 0.4052,
+      "pMercado": 0.282,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Kairat Almaty ou Mjällby AIF)",
+       "p": 0.7321,
+       "odd": 1.3,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.735,
+       "odd": 1.28,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     }
    ],
    "sugestoes": []
