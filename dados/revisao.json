@@ -1,72 +1,72 @@
 {
- "geradoEm": "2026-11-26T21:38:14.731Z",
- "jogos": 346,
+ "geradoEm": "2026-11-27T10:55:54.710Z",
+ "jogos": 365,
  "porFamilia": {
   "resultado": {
-   "n": 6214,
-   "llModelo": 0.4778,
-   "llMercado": 0.4623,
-   "nMercado": 6178,
-   "llModeloComMercado": 0.4754,
-   "brier": 0.1557,
+   "n": 6552,
+   "llModelo": 0.4773,
+   "llMercado": 0.4635,
+   "nMercado": 6516,
+   "llModeloComMercado": 0.475,
+   "brier": 0.1556,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "gols": {
-   "n": 8304,
-   "llModelo": 0.527,
-   "llMercado": 0.5242,
-   "nMercado": 8256,
-   "llModeloComMercado": 0.5263,
-   "brier": 0.1766,
+   "n": 8760,
+   "llModelo": 0.5288,
+   "llMercado": 0.5249,
+   "nMercado": 8712,
+   "llModeloComMercado": 0.5281,
+   "brier": 0.177,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "tempos": {
-   "n": 4844,
-   "llModelo": 0.5919,
-   "llMercado": 0.5927,
-   "nMercado": 4816,
-   "llModeloComMercado": 0.5922,
-   "brier": 0.2041,
+   "n": 5110,
+   "llModelo": 0.5929,
+   "llMercado": 0.5929,
+   "nMercado": 5082,
+   "llModeloComMercado": 0.5932,
+   "brier": 0.2043,
    "previsto": 0.4286,
    "aconteceu": 0.4286
   },
   "escanteios": {
-   "n": 8304,
-   "llModelo": 0.6242,
+   "n": 8760,
+   "llModelo": 0.6231,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.2167,
+   "brier": 0.2162,
    "previsto": 0.5,
    "aconteceu": 0.5
   },
   "cartoes": {
-   "n": 7612,
-   "llModelo": 0.5577,
+   "n": 8030,
+   "llModelo": 0.5569,
    "llMercado": null,
    "nMercado": 0,
    "llModeloComMercado": null,
-   "brier": 0.1889,
+   "brier": 0.1886,
    "previsto": 0.5,
    "aconteceu": 0.5
   }
  },
  "leitura": {
-  "n": 929,
-  "acertos": 659,
-  "esperado": 649.4427
+  "n": 976,
+  "acertos": 692,
+  "esperado": 682.4605
  },
  "jogadores": {
-  "n": 2740,
-  "marcaram": 360,
-  "previsto": 618.2168,
-  "llModelo": 0.4034,
-  "comOdd": 1560,
-  "marcaramComOdd": 242,
-  "previstoModeloComOdd": 357.0374,
-  "implicitoBrutoComOdd": 504.1077,
+  "n": 2879,
+  "marcaram": 387,
+  "previsto": 647.1135,
+  "llModelo": 0.4068,
+  "comOdd": 1613,
+  "marcaramComOdd": 253,
+  "previstoModeloComOdd": 368.566,
+  "implicitoBrutoComOdd": 520.6124,
   "apostasModeloAcimaDaOdd": {
    "n": 43,
    "retorno": -0.4686
@@ -74,33 +74,33 @@
   "faixas": [
    {
     "de": 0,
-    "n": 120,
-    "previsto": 0.0802,
-    "aconteceu": 0.0167
+    "n": 132,
+    "previsto": 0.0798,
+    "aconteceu": 0.0227
    },
    {
     "de": 0.1,
-    "n": 1069,
-    "previsto": 0.1588,
-    "aconteceu": 0.0889
+    "n": 1131,
+    "previsto": 0.1583,
+    "aconteceu": 0.0928
    },
    {
     "de": 0.2,
-    "n": 1057,
+    "n": 1095,
     "previsto": 0.242,
-    "aconteceu": 0.1381
+    "aconteceu": 0.1397
    },
    {
     "de": 0.3,
-    "n": 370,
-    "previsto": 0.3399,
-    "aconteceu": 0.2081
+    "n": 393,
+    "previsto": 0.34,
+    "aconteceu": 0.2137
    },
    {
     "de": 0.4,
-    "n": 99,
-    "previsto": 0.4382,
-    "aconteceu": 0.3232
+    "n": 103,
+    "previsto": 0.4376,
+    "aconteceu": 0.3301
    },
    {
     "de": 0.5,
@@ -112,60 +112,207 @@
  },
  "palpites": {
   "principal": {
-   "n": 294,
-   "acertos": 189,
-   "previsto": 0.6395,
-   "comOdd": 294,
-   "lucro": -13.87,
-   "oddMedia": 1.5103,
-   "retorno": -0.0472,
-   "retornoMelhorOdd": -0.0464
+   "n": 307,
+   "acertos": 198,
+   "previsto": 0.6392,
+   "comOdd": 307,
+   "lucro": -12.96,
+   "oddMedia": 1.5101,
+   "retorno": -0.0422,
+   "retornoMelhorOdd": -0.0415
   },
   "destaque": {
-   "n": 143,
-   "acertos": 96,
-   "previsto": 0.6981,
-   "comOdd": 143,
-   "lucro": -14.68,
-   "oddMedia": 1.3387,
-   "retorno": -0.1027,
-   "retornoMelhorOdd": -0.1027
+   "n": 149,
+   "acertos": 100,
+   "previsto": 0.6983,
+   "comOdd": 149,
+   "lucro": -15.38,
+   "oddMedia": 1.3383,
+   "retorno": -0.1032,
+   "retornoMelhorOdd": -0.1032
   },
   "oddMaior": {
-   "n": 146,
-   "acertos": 76,
-   "previsto": 0.49,
-   "comOdd": 146,
-   "lucro": 3.54,
-   "oddMedia": 1.9989,
-   "retorno": 0.0242,
-   "retornoMelhorOdd": 0.0254
+   "n": 151,
+   "acertos": 77,
+   "previsto": 0.4895,
+   "comOdd": 151,
+   "lucro": 0.26,
+   "oddMedia": 2.0018,
+   "retorno": 0.0017,
+   "retornoMelhorOdd": 0.0028
   },
   "jogador": {
-   "n": 191,
-   "acertos": 38,
+   "n": 198,
+   "acertos": 40,
    "previsto": 0.3181,
-   "comOdd": 191,
-   "lucro": -82.5858,
-   "oddMedia": 3.2383,
-   "retorno": -0.4324,
-   "retornoMelhorOdd": -0.4324
+   "comOdd": 198,
+   "lucro": -82.8524,
+   "oddMedia": 3.2328,
+   "retorno": -0.4184,
+   "retornoMelhorOdd": -0.4184
   }
  },
  "movimentoDoMercado": {
-  "n": 502,
-  "aFavorDoModelo": 314,
-  "medio": 0.007
+  "n": 536,
+  "aFavorDoModelo": 343,
+  "medio": 0.0077
  },
  "dias": [
   {
    "dia": "2026-11-28",
    "jogos": [
     {
+     "id": "401841336",
+     "jogo": "Botafogo × Bahia",
+     "comp": "bra.1",
+     "inicio": "2026-11-29T00:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874826",
+     "jogo": "Torino × Lazio",
+     "comp": "ita.1",
+     "inicio": "2026-11-28T17:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401874977",
+     "jogo": "Internazionale × Genoa",
+     "comp": "ita.1",
+     "inicio": "2026-11-28T19:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401875081",
+     "jogo": "Frosinone × Parma",
+     "comp": "ita.1",
+     "inicio": "2026-11-28T14:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401876387",
+     "jogo": "Paris Saint-Germain × Lorient",
+     "comp": "fra.1",
+     "inicio": "2026-11-28T19:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401876388",
+     "jogo": "Nice × Troyes",
+     "comp": "fra.1",
+     "inicio": "2026-11-28T19:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401876390",
+     "jogo": "Le Mans × Lille",
+     "comp": "fra.1",
+     "inicio": "2026-11-28T19:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401876391",
+     "jogo": "Le Havre AC × Strasbourg",
+     "comp": "fra.1",
+     "inicio": "2026-11-28T19:45Z",
+     "pendente": true
+    },
+    {
+     "id": "401876394",
+     "jogo": "Angers × Lens",
+     "comp": "fra.1",
+     "inicio": "2026-11-28T16:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401878752",
+     "jogo": "Ipswich Town × Aston Villa",
+     "comp": "eng.1",
+     "inicio": "2026-11-28T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401879226",
+     "jogo": "Manchester United × Brentford",
+     "comp": "eng.1",
+     "inicio": "2026-11-28T15:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401879227",
+     "jogo": "Leeds United × Coventry City",
+     "comp": "eng.1",
+     "inicio": "2026-11-28T15:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882789",
+     "jogo": "Real Madrid × Alavés",
+     "comp": "esp.1",
+     "inicio": "2026-11-28T20:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401882790",
+     "jogo": "Málaga × Athletic Club",
+     "comp": "esp.1",
+     "inicio": "2026-11-28T15:15Z",
+     "pendente": true
+    },
+    {
+     "id": "401882793",
+     "jogo": "Elche × Atlético Madrid",
+     "comp": "esp.1",
+     "inicio": "2026-11-28T17:30Z",
+     "pendente": true
+    },
+    {
      "id": "401882796",
      "jogo": "Real Betis × Rayo Vallecano",
      "comp": "esp.1",
      "inicio": "2026-11-28T13:00Z",
+     "pendente": true
+    },
+    {
+     "id": "401884719",
+     "jogo": "SC Paderborn 07 × Schalke 04",
+     "comp": "ger.1",
+     "inicio": "2026-11-28T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884721",
+     "jogo": "FC Cologne × SV Elversberg",
+     "comp": "ger.1",
+     "inicio": "2026-11-28T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884722",
+     "jogo": "Hamburg SV × Bayern Munich",
+     "comp": "ger.1",
+     "inicio": "2026-11-28T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884723",
+     "jogo": "Mainz × 1. FC Union Berlin",
+     "comp": "ger.1",
+     "inicio": "2026-11-28T14:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401884726",
+     "jogo": "VfB Stuttgart × Eintracht Frankfurt",
+     "comp": "ger.1",
+     "inicio": "2026-11-28T17:30Z",
+     "pendente": true
+    },
+    {
+     "id": "401912519",
+     "jogo": "Palmeiras × Estudiantes de La Plata",
+     "comp": "conmebol.libertadores",
+     "inicio": "2026-11-28T20:00Z",
      "pendente": true
     }
    ],
@@ -227,42 +374,309 @@
      "jogo": "São Paulo × Remo",
      "comp": "bra.1",
      "inicio": "2026-11-26T23:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.87,
+       "casa": "DraftKings",
+       "chance": 0.5131,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória São Paulo",
+      "p": 0.6102,
+      "pMercado": 0.7121,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6959,
+       "odd": 1.32,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (São Paulo ou Remo)",
+       "p": 0.7775,
+       "odd": 1.17,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915501",
      "jogo": "Lyon × Lillestrom",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.99,
+       "casa": null,
+       "chance": 0.4801,
+       "ok": 0
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Lyon: mais de 5,5 escanteios",
+       "odd": 1.33,
+       "casa": null,
+       "chance": 0.7016,
+       "ok": 1
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Lyon",
+      "p": 0.8687,
+      "pMercado": 0.8122,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória Lyon",
+       "p": 0.8687,
+       "odd": 1.21,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915502",
      "jogo": "Juventus × Omonia Nicosia",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      4,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6835,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Juventus",
+      "p": 0.837,
+      "pMercado": 0.8408,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6698,
+       "odd": 1.36,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Juventus",
+       "p": 0.837,
+       "odd": 1.17,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915503",
      "jogo": "OFI Crete × Anderlecht",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.42,
+       "casa": null,
+       "chance": 0.6663,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.72,
+       "casa": null,
+       "chance": 0.5656,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Anderlecht: mais de 3,5 escanteios",
+       "odd": 1.32,
+       "casa": null,
+       "chance": 0.7047,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Marten Winkler marca",
+       "odd": 3.4,
+       "chance": 0.2686,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Anderlecht",
+      "p": 0.4868,
+      "pMercado": 0.551,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Anderlecht ou empate",
+       "p": 0.7295,
+       "odd": 1.18,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6629,
+       "odd": 1.42,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5795,
+       "odd": 1.72,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915504",
      "jogo": "Crystal Palace × Real Sociedad",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Ismaïla Sarr marca",
+       "odd": 3.1,
+       "chance": 0.3169,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Crystal Palace",
+      "p": 0.5289,
+      "pMercado": 0.4732,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6664,
+       "odd": 1.61,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Crystal Palace ou Real Sociedad)",
+       "p": 0.7636,
+       "odd": 1.25,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5641,
+       "odd": 1.49,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915505",
      "jogo": "NEC Nijmegen × Stade Rennais",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Stade Rennais ou empate",
+       "odd": 1.364,
+       "casa": "Bet 365",
+       "chance": 0.6993,
+       "ok": 0
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Vitória Stade Rennais",
+       "odd": 2.1,
+       "casa": "DraftKings",
+       "chance": 0.4661,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Esteban Lepaul marca",
+       "odd": 2.4,
+       "chance": 0.4307,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Stade Rennais",
+      "p": 0.4701,
+      "pMercado": 0.4622,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Stade Rennais ou empate",
+       "p": 0.6968,
+       "odd": 1.36,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6587,
+       "odd": 1.46,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6554,
+       "odd": 1.48,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915506",
@@ -472,35 +886,240 @@
      "jogo": "Torreense × Celtic",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.52,
+       "casa": null,
+       "chance": 0.6203,
+       "ok": 1
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Camilo Durán marca",
+       "odd": 2.4,
+       "chance": 0.3416,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Celtic",
+      "p": 0.4847,
+      "pMercado": 0.5927,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Torreense ou Celtic)",
+       "p": 0.7655,
+       "odd": 1.2,
+       "ok": 1
+      },
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6184,
+       "odd": 1.71,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.6155,
+       "odd": 1.52,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915513",
      "jogo": "Sunderland × Jagiellonia Bialystok",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Wilson Isidor marca",
+       "odd": 2.2,
+       "chance": 0.365,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Sunderland",
+      "p": 0.6821,
+      "pMercado": 0.7863,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Sem empate (Sunderland ou Jagiellonia Bialystok)",
+       "p": 0.7937,
+       "odd": 1.13,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915514",
      "jogo": "Sparta Prague × AZ Alkmaar",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      4
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.45,
+       "casa": null,
+       "chance": 0.6673,
+       "ok": 0
+      },
+      {
+       "tipo": "jogador",
+       "rotulo": "Jizz Hornkamp marca",
+       "odd": 3.75,
+       "chance": 0.2881,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória AZ Alkmaar",
+      "p": 0.3962,
+      "pMercado": 0.4187,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6815,
+       "odd": 1.45,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Sparta Prague ou AZ Alkmaar)",
+       "p": 0.7453,
+       "odd": 1.29,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5779,
+       "odd": 1.58,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915515",
      "jogo": "TSG Hoffenheim × SK Sturm Graz",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "jogador",
+       "rotulo": "Oumar Diakité marca",
+       "odd": 4.333333333333334,
+       "chance": 0.219,
+       "ok": 1
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória TSG Hoffenheim",
+      "p": 0.7098,
+      "pMercado": 0.7423,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Vitória TSG Hoffenheim",
+       "p": 0.7098,
+       "odd": 1.31,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.8097,
+       "odd": 1.08,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (TSG Hoffenheim ou SK Sturm Graz)",
+       "p": 0.8204,
+       "odd": 1.17,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915516",
      "jogo": "Ferencvaros × NK Celje",
      "comp": "uefa.europa",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "destaque",
+       "rotulo": "Ferencvaros: mais de 1,5 gols",
+       "odd": 1.37,
+       "casa": null,
+       "chance": 0.6898,
+       "ok": 0
+      }
+     ],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Ferencvaros",
+      "p": 0.6499,
+      "pMercado": 0.7167,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6824,
+       "odd": 1.51,
+       "ok": 0
+      },
+      {
+       "rotulo": "Vitória Ferencvaros",
+       "p": 0.6499,
+       "odd": 1.38,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Ferencvaros ou NK Celje)",
+       "p": 0.8137,
+       "odd": 1.17,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915517",
@@ -774,7 +1393,42 @@
      "jogo": "Inter D'Escaldes × F.C. København",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.47,
+       "casa": null,
+       "chance": 0.6342,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória F.C. København",
+      "p": 0.5689,
+      "pMercado": 0.7781,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6233,
+       "odd": 1.47,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Inter D'Escaldes ou F.C. København)",
+       "p": 0.7797,
+       "odd": 1.11,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915739",
@@ -831,49 +1485,349 @@
      "jogo": "SC Freiburg × FC Twente",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.63,
+       "casa": null,
+       "chance": 0.5557,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "FC Twente ou empate",
+       "odd": 2.05,
+       "casa": null,
+       "chance": 0.4705,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória SC Freiburg",
+      "p": 0.5216,
+      "pMercado": 0.5375,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.7065,
+       "odd": 1.47,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (SC Freiburg ou FC Twente)",
+       "p": 0.754,
+       "odd": 1.23,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915802",
      "jogo": "Braga × KuPS Kuopio",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      4,
+      0
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.45,
+       "casa": null,
+       "chance": 0.6353,
+       "ok": 1
+      },
+      {
+       "tipo": "oddMaior",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 2.57,
+       "casa": null,
+       "chance": 0.3894,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Braga",
+      "p": 0.8068,
+      "pMercado": 0.8534,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6188,
+       "odd": 1.45,
+       "ok": 1
+      },
+      {
+       "rotulo": "Vitória Braga",
+       "p": 0.8068,
+       "odd": 1.15,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (Braga ou KuPS Kuopio)",
+       "p": 0.8661,
+       "odd": 1.05,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915803",
      "jogo": "CSKA Sofia × Trabzonspor",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Mais de 2,5 gols",
+       "odd": 1.53,
+       "casa": null,
+       "chance": 0.6278,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 9,5",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7138,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Trabzonspor",
+      "p": 0.3963,
+      "pMercado": 0.5659,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.65,
+       "odd": 1.57,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (CSKA Sofia ou Trabzonspor)",
+       "p": 0.7647,
+       "odd": 1.22,
+       "ok": 1
+      },
+      {
+       "rotulo": "Mais de 2,5 gols",
+       "p": 0.6346,
+       "odd": 1.53,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915804",
      "jogo": "KAA Gent × Red Star Belgrade",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      1,
+      1
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "KAA Gent ou empate",
+       "odd": 1.36,
+       "casa": null,
+       "chance": 0.6746,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Escanteios: mais de 8,5",
+       "odd": 1.3,
+       "casa": null,
+       "chance": 0.7147,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória KAA Gent",
+      "p": 0.3675,
+      "pMercado": 0.4298,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.6853,
+       "odd": 1.24,
+       "ok": 1
+      },
+      {
+       "rotulo": "Sem empate (KAA Gent ou Red Star Belgrade)",
+       "p": 0.7154,
+       "odd": 1.29,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915805",
      "jogo": "Hajduk Split × Sint-Truidense",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      0,
+      2
+     ],
+     "palpites": [],
+     "nada": true,
+     "favorito": {
+      "rotulo": "Vitória Hajduk Split",
+      "p": 0.405,
+      "pMercado": 0.4597,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Mais de 1,5 gols",
+       "p": 0.7228,
+       "odd": 1.21,
+       "ok": 1
+      },
+      {
+       "rotulo": "Hajduk Split ou empate",
+       "p": 0.6765,
+       "odd": 1.33,
+       "ok": 0
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915806",
      "jogo": "Borac Banja Luka × Atalanta",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      2,
+      3
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Ambas marcam: sim",
+       "odd": 1.72,
+       "casa": null,
+       "chance": 0.5523,
+       "ok": 1
+      },
+      {
+       "tipo": "destaque",
+       "rotulo": "Atalanta: mais de 4,5 escanteios",
+       "odd": 1.35,
+       "casa": null,
+       "chance": 0.6882,
+       "ok": 1
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Atalanta",
+      "p": 0.5918,
+      "pMercado": 0.6912,
+      "ok": 1
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6501,
+       "odd": 1.65,
+       "ok": 0
+      },
+      {
+       "rotulo": "Sem empate (Borac Banja Luka ou Atalanta)",
+       "p": 0.7807,
+       "odd": 1.16,
+       "ok": 1
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5521,
+       "odd": 1.72,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915807",
      "jogo": "FC Nordsjælland × Panathinaikos",
      "comp": "uefa.europa.conf",
      "inicio": "2026-11-26T20:00Z",
-     "pendente": true
+     "placar": [
+      3,
+      2
+     ],
+     "palpites": [
+      {
+       "tipo": "principal",
+       "rotulo": "Menos de 3,5 gols",
+       "odd": 1.44,
+       "casa": null,
+       "chance": 0.6719,
+       "ok": 0
+      }
+     ],
+     "nada": false,
+     "favorito": {
+      "rotulo": "Vitória Panathinaikos",
+      "p": 0.4054,
+      "pMercado": 0.3426,
+      "ok": 0
+     },
+     "leitura": [
+      {
+       "rotulo": "Menos de 3,5 gols",
+       "p": 0.6871,
+       "odd": 1.44,
+       "ok": 0
+      },
+      {
+       "rotulo": "Panathinaikos ou empate",
+       "p": 0.6611,
+       "odd": 1.56,
+       "ok": 0
+      },
+      {
+       "rotulo": "Ambas marcam: sim",
+       "p": 0.5727,
+       "odd": 1.59,
+       "ok": 1
+      }
+     ],
+     "filtro": false
     },
     {
      "id": "401915808",
